@@ -24,7 +24,7 @@
 * [fd](https://github.com/sharkdp/fd)
 * [bat](https://github.com/sharkdp/bat)
 * [ripgrep](https://github.com/BurntSushi/ripgrep)
-* [make](https://www.gnu.org/software/make/) or [cmake](https://cmake.org/download/)
+* [make](https://www.gnu.org/software/make/)
 
 ### Gitsigns
 * [lazygit](https://github.com/jesseduffield/lazygit)
@@ -55,11 +55,17 @@ Make sure to remove or move your current `nvim` directory
 git clone https://github.com/Alexis12119/nvim-config.git ~/.config/nvim  
 ```
 
-* Windows(Powershell)
+* Windows (Powershell)
 
 ```sh
 git clone https://github.com/Alexis12119/nvim-config.git $env:LOCALAPPDATA\nvim
 ```
+
+* Windows (Cmd) 
+```sh
+git clone https://github.com/Alexis12119/nvim-config.git  %userprofile%\Local\AppData\Local\nvim
+```
+
 Run `nvim` and wait for the plugins to be installed.
 
 **NOTE:** You will notice treesitter installing and compiling bunch of parsers the next time you open Neovim
@@ -97,7 +103,7 @@ npm i -g neovim
 
 ## ⌨️ Keymaps
 
-* [Keymaps](https://github.com/Alexis12119/nvim-config/blob/master/lua/user/core/keymaps.lua) - For most mappings.
+* [Keymaps](https://github.com/Alexis12119/nvim-config/blob/master/lua/user/core/keymaps.lua) - For common mappings.
 * [Lsp-Keymaps](https://github.com/Alexis12119/nvim-config/blob/master/lua/user/lsp/handlers.lua) - For some lsp mappings.
 * [Which-Key-Keymaps](https://github.com/Alexis12119/nvim-config/blob/master/lua/user/plugins/whichkey.lua) - For other mappings.
 
