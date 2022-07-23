@@ -63,7 +63,7 @@ git clone https://github.com/Alexis12119/nvim-config.git $env:LOCALAPPDATA\nvim
 
 * Windows (Cmd) 
 ```sh
-git clone https://github.com/Alexis12119/nvim-config.git  %userprofile%\Local\AppData\Local\nvim
+git clone https://github.com/Alexis12119/nvim-config.git  %userprofile%\AppData\Local\nvim
 ```
 
 Run `nvim` and wait for the plugins to be installed.
