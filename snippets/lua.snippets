@@ -1,5 +1,0 @@
-snippet chk Check if the file/module is loaded
-	local status_ok, ${1:variable name} = pcall(require, "${2:module/file path}")
-	if not status_ok then
-		return
-	end
