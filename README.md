@@ -17,9 +17,6 @@
 ### Git
 * [Git](https://git-scm.com/downloads)
 
-### Powershell (Windows)
-* [Powershell](https://github.com/PowerShell/PowerShell)
-
 ### Telescope
 * [fd](https://github.com/sharkdp/fd)
 * [bat](https://github.com/sharkdp/bat)
