@@ -1,8 +1,10 @@
 <div align="center">
 
+![GitHub repo size](https://img.shields.io/github/repo-size/Alexis12119/nvim-config)
+
 <a href="https://github.com/Alexis12119/nvim-config/blob/master/LICENSE"
         ><img
-            src="https://img.shields.io/github/license/Alexis12119/nvim-config?style=flat-square&logo=GNU&label=License&color=lightblue"
+            src="https://img.shields.io/github/license/Alexis12119/nvim-config?style=flat-square&logo=GNU&label=License&color=lightgreen"
             alt="License"
     />
 [![Last time update this file](https://img.shields.io/github/last-commit/Alexis12119/nvim-config?label=Last%20Activity&style=flat-square&color=lightgreen "Last time update this file")](https://github.com/Alexis12119/nvim-config)
