@@ -82,17 +82,11 @@ local mappings = {
   ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
   ["r"] = { "<cmd>%d+<cr>", "Remove All" },
   ["y"] = { "<cmd>%y+<cr>", "Copy All" },
-  ["b"] = {
-    "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-    "Buffers",
-  },
+  ["b"] = { "<cmd>Telescope buffers<cr>", "Buffers" },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["q"] = { "<cmd>q!<CR>", "Exit" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
-  ["f"] = {
-    "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-    "Find files",
-  },
+  ["f"] = { "<cmd>Telescope find_files<cr>","Find files"},
   ["F"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
   p = {
     name = "Packer",

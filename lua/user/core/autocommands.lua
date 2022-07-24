@@ -31,17 +31,20 @@ autocmd("User", {
   command = "set laststatus=0 | autocmd BufUnload <buffer> set laststatus=3",
 })
 
+-- Reload init.lua when saving
 autocmd("BufWritePre", {
   pattern = "init.lua",
   callback = ReloadConfig,
   group = general,
 })
 
+-- Go To The Last Cursor Postion
 autocmd("BufReadPost", {
   command = [[ if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g`\"" | endif ]],
   group = general,
 })
 
+-- Highlight when yanking
 autocmd("TextYankPost", {
   command = "silent! lua require('vim.highlight').on_yank({higroup = 'Visual', timeout = 200})",
   group = general,
@@ -52,6 +55,7 @@ autocmd("FocusGained", {
   group = general,
 })
 
+-- Auto Change Directory And Disable New Line Comment
 autocmd({ "BufEnter", "BufWinEnter" }, {
   command = "set formatoptions-=cro | lcd %:p:h",
   group = general,
@@ -69,12 +73,13 @@ autocmd("FileType", {
   group = general,
 })
 
+-- Auto Save
 autocmd({ "TextChanged", "TextChangedI" }, {
   command = "silent! w",
   group = general,
 })
 
---Auto Resize
+-- Equalize Splits
 autocmd("VimResized", {
   pattern = "*",
   command = "tabdo wincmd =",

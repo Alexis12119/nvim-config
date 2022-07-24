@@ -52,16 +52,16 @@ return packer.startup(function(use)
   use { "nvim-lua/plenary.nvim" } -- Useful lua functions used by lots of plugins
   use { "windwp/nvim-autopairs" } -- Autopairs, integrates with both cmp and treesitter
   use { "numToStr/Comment.nvim" } -- Easily comment
-  use { "JoosepAlviste/nvim-ts-context-commentstring" }
+  use { "JoosepAlviste/nvim-ts-context-commentstring" } -- Setting the commentstring option based on the cursor location in the file
   use { "kyazdani42/nvim-web-devicons" } -- icons and glyphs
   use { "kyazdani42/nvim-tree.lua" } -- File explorer
   use { "akinsho/bufferline.nvim" } -- Tabline
   use { "moll/vim-bbye" } -- Delete Buffer
   use { "nvim-lualine/lualine.nvim" } -- Statusline
   use { "akinsho/toggleterm.nvim" } -- Terminal Integration
-  use { "lewis6991/impatient.nvim" }
+  use { "lewis6991/impatient.nvim" } -- Improve Neovim Startup Time
   use { "lukas-reineke/indent-blankline.nvim" } -- Indent Guide
-  use { "goolord/alpha-nvim" } -- Startup
+  use { "goolord/alpha-nvim" } -- Startup Screen
   use { "norcalli/nvim-colorizer.lua" } -- Preview Colors
   use { "folke/todo-comments.nvim" } -- TODO, BUG, HACK, FIXME, NOTE Highlighter
 
@@ -100,8 +100,7 @@ return packer.startup(function(use)
 
   -- Telescope
   use { "nvim-telescope/telescope.nvim" } -- FZF
-  use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
-
+  use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" } -- C port of fzf
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter", -- Syntax Higlighter

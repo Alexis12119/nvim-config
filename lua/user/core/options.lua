@@ -31,14 +31,14 @@ local options = {
   wrap = false, -- display lines as one long line
   scrolloff = 8, -- minimal number of columns to scroll horizontally.
   sidescrolloff = 8, -- minimal number of screen columns
-  guifont = "Hack NF:h11:b",
-  lazyredraw = true,
+  guifont = "Hack NF:h11:b", -- Set the font for GUI
+  lazyredraw = true, -- Won't be redrawn while executing macros, register and other commands.
 }
 
 local global = {
-  tokyonight_style = "night",
-  tokyonight_italic_keywords = false,
-  tokyonight_transparent_sidebar = true,
+  tokyonight_style = "night", -- Set theme for tokyonight
+  tokyonight_italic_keywords = false, -- Disable italic on keywords  
+  tokyonight_transparent_sidebar = true, -- Enable Transparent Sidebar
   do_filetype_lua = 1, -- use filetype.lua
   did_load_filetypes = 0, -- don't use filetype.vim
   highlighturl_enabled = true, -- highlight URLs by default
@@ -60,7 +60,7 @@ local global = {
   loaded_zipPlugin = true, -- disable zip
   loaded_vimball = true, -- disable vimball
   loaded_vimballPlugin = true, -- disable vimball
-  mapleader = " ",
+  mapleader = " ", -- Set mapleader to space
   Illuminate_ftblacklist = {
     "alpha",
     "startuptime",

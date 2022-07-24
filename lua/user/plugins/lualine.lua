@@ -86,6 +86,7 @@ local lsp = {
   icon = " LSP:",
   color = { fg = C.magenta, gui = "bold" },
 }
+
 -- cool function for progress
 local progress = function()
   local current_line = vim.fn.line "."
@@ -102,6 +103,7 @@ local spaces = {
   end,
   color = { fg = C.yellow },
 }
+
 lualine.setup {
   options = {
     globalstatus = true,
