@@ -21,6 +21,7 @@
 ### 🔔 Reminder
 
 - Please, run `:h config-reminder` for special reminders and tips.
+- I won't delete the `master` branch, but I will use this branch from now on.
 
 ### 📄 Requirements
 
