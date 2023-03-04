@@ -1,0 +1,361 @@
+*config-info*  Configuration Information
+
+==========================================================================================
+
+Configuration Reminder                  *config-reminder*
+
+Hi, thanks for checking out my neovim setup. This is just my personal
+configuration and it's not a neovim distribution. This help file is the only help i
+can do for you, if you want to try my configuration.
+
+- Make sure the `java` version is >= 17 and it's the one being use.
+- Run `:checkhealth` to check if there's a problem.
+- `:Reload` will only reload the core files.
+- `:FormatOnSaveToggle` to turn on/off Format on Save.
+- Change the statusline components in `lua/plugins/lualine/default.lua`.
+- This configuration is personalized so you might see a personalized keymaps
+and options.
+
+If you want to use powershell, then uncomment this on `lua/core/options.lua`
+line `36` to `41`.
+>
+  shell = vim.fn.executable "pwsh" and "pwsh" or "powershell",
+  shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;",
+  shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait",
+  shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode",
+  shellquote = "",
+  shellxquote = "",
+
+<
+If you want to enable the disabled plugins. Comment them like the example below.
+
+Example:
+>
+  disabled_plugins = {
+        -- "gzip",
+        -- "matchit",
+        -- "matchparen",
+        -- "netrwPlugin",
+        -- "tarPlugin",
+        -- "tohtml",
+        -- "tutor",
+        -- "zipPlugin",
+      },
+<
+It can be found in `lua/plugin-loader.lua`. Line `97` to `105`.
+
+==========================================================================================
+
+Keymaps                *config-keymaps*
+
+- The other keymaps are can be found in `lua/plugins/which-key.lua`
+- Press `<Space>` to enable and run which-key and the other keymaps will show up.
+- Add or Modify keymaps in `lua/core/keymaps.lua` 
+
+-------------------------------
+|	Normal Mode           |
+-------------------------------
+
+`<C-j>` - Go to upper window 
+`<C-k>` -  Go to lower window
+`<C-h>` - Go to left window
+`<C-l>` - Go to right window
+`<C-w>` - Go to next window
+
+`;` - Close window
+
+`<C-Up>` - Add size at the top
+`<C-Down>` - Add size at the bottom
+`<C-Left>` - Add size at the left
+`<C-Right>` - Add size at the right
+
+`H` - Go to previous buffer
+`L` - Go to next buffer
+
+`Left`(Arrow key) - Go to previous tab
+`Right`(Arrow key) - Go to next tab
+`Up`(Arrow key) - New tab
+`Down`(Arrow key) - Close tab
+
+`<` - Indent backward
+`>` - Indent forward
+
+`A-j` - Move the line up
+`A-k` - Move the line down
+
+-------------------------------
+|	Insert Mode           |
+-------------------------------
+
+`A-j` - Move the line up
+`A-k` - Move the line down
+
+-------------------------------
+|	Terminal Mode         |
+-------------------------------
+
+`<Esc>` - Enter insert mode
+
+-------------------------------
+|	Visual Mode           |
+-------------------------------
+`p` - Better Paste
+
+`<` - Indent backward
+`>` - Indent forward
+
+`A-j` - Move the selected text up
+`A-k` - Move the selected text down
+
+-------------------------------
+|	Visual-Block Mode     |
+-------------------------------
+
+`A-j` - Move the selected text up
+`A-k` - Move the selected text down
+
+-------------------------------
+|	Command Mode          |
+-------------------------------
+
+`<Tab>` - Word Search Increment
+`<S-Tab>` - Word Search Decrement
+
+==========================================================================================
+
+Options              *config-options*
+
+The leader key is `<Space>`.
+
+Default Options:
+>
+  backup = false
+  completeopt = { "menuone", "noselect" }
+  conceallevel = 0
+  fileencoding = "utf-8"
+  hidden = true
+  ignorecase = true
+  mouse = "a"
+  pumheight = 8
+  pumblend = 10
+  showmode = false
+  smartcase = true
+  smartindent = true
+  splitbelow = true
+  splitright = true
+  swapfile = true
+  timeoutlen = 500
+  undofile = true
+  updatetime = 100
+  writebackup = false
+  expandtab = true
+  shiftwidth = 2
+  tabstop = 2
+  cursorline = true
+  number = true
+  relativenumber = true
+  numberwidth = 4
+  signcolumn = "yes"
+  wrap = false
+  scrolloff = 8
+  sidescrolloff = 8
+  lazyredraw = true
+  termguicolors = true
+  fillchars = { eob = " " }
+<
+If you don't like something then go to `lua/core/options.lua` to modify the
+options.
+
+==========================================================================================
+
+Snippets              *config-snippets*
+
+- Read `:h luasnip-snippets` for guides
+
+To edit the snippet for the current filetype, run `:LuaSnipEdit`
+
+==========================================================================================
+
+Themes                *config-themes*
+
+----------------------------
+|     Available Themes     |
+----------------------------
+
+* nightly.nvim (Default)
+* tokyonight.nvim
+* catppuccin
+* kanagawa.nvim
+* moonbow.nvim
+* vscode.nvim
+* onedark.nvim
+* onenord.nvim
+* monokai.nvim
+* dracula.nvim
+* palenightfall.nvim
+* vim-nightfly-colors
+* material.nvim
+
+Add colorscheme:
+
+1. Go to `lua/plugins/theme/init.lua`.
+2. Add the colorscheme.
+Example:
+>
+  {
+    "Alexis12119/nightly.nvim",
+    priority = 1000,
+    config = function()
+      -- Do this if you have colorscheme configuration
+      require "plugins.theme.nightly"
+
+      -- or just simply do this to use the theme
+      -- but it'll use the default configuration
+      -- vim.cmd "colorscheme nightly"
+    end,
+  },
+
+3. Install it by running `w` and `:Lazy install`.
+<
+Change colorscheme:
+
+- Make sure the colorscheme you want to use is installed.
+- Make sure the other colorscheme are set `lazy = true` to avoid issues.
+- Restart neovim to take effect.
+
+Example:
+>
+  -- The colorscheme you don't want to use.
+  {
+    "Alexis12119/nightly.nvim",
+    lazy = true, <- make sure to add this when you don't want to use the colorscheme.
+    priority = 1000,
+    config = function()
+      -- Do this if you have colorscheme configuration
+      require "plugins.theme.nightly"
+
+      -- or just simply do this to use the theme
+      -- but it'll use the default configuration
+      -- vim.cmd "colorscheme nightly"
+    end,
+  },
+
+  -- The colorscheme you want to use.
+  {
+    "folke/tokyonight.nvim",
+    priority = 1000,
+    config = function()
+      -- Do this if you have colorscheme configuration
+      require "plugins.theme.tokyonight"
+
+      -- or just simply do this to use the theme
+      -- but it'll use the default configuration
+      -- vim.cmd "colorscheme nightly"
+    end,
+  },
+
+Add colorscheme configuration:
+
+1. Create a file with the name of the theme you're using in `lua/plugins/theme/` directory.
+
+Example:
+
+The current theme is `nightly.nvim`.
+>
+  vim.cmd("colorscheme --> nightly <--")
+
+  The filename should be nightly.lua.
+>
+2. Put the configuration in that file.
+
+Example:
+>
+  -- lua/plugins/theme/nightly.lua
+  requrie("nightly").setup({
+      -- configuration
+  })
+
+  vim.cmd "colorscheme nightly"
+
+==========================================================================================
+
+Tips        *config-tips*
+
+---------------
+|  Clipboard  |
+---------------
+
+Read `:h clipboard` for your clipboard problems.
+
+---------------
+|  Lua-Guide  |
+---------------
+
+https://github.com/nanotee/nvim-lua-guide (It's now archived but still helpful)
+
+or
+
+`:h lua-guide`
+
+---------------
+| Cheatsheet  |
+---------------
+
+This is a wonderful cheatsheet that you can use to improve your vim/neovim skills.
+
+https://vim.rtorr.com/
+
+==========================================================================================
+
+Plugins             *Plugins*
+
+Add Plugin                  *config-add-plugin*
+
+If the plugin is a dependency of other plugin, then add it to `dependencies`.
+
+Example:
+>
+  {
+   "hrsh7th/nvim-cmp",
+    dependencies = {
+      "hrsh7th/cmp-buffer", 
+      -- other dependencies
+      },
+  }
+<
+
+If the plugins isn't dependency then follow the instructions below.
+
+1. Create a plugin configuration on `lua/plugins/<plugin-name>.lua`
+2. Put the plugin configuration in the file you created. 
+Example:
+>
+  return {
+    {
+      "rcarriga/nvim-notify",
+      config  = function()
+	-- plugin configuration
+      end,
+    },
+  }
+<
+3. Then run `:w` and `:Lazy install`.
+
+Remove Plugin               *config-remove-plugin*
+
+1. Either delete the file or comment the plugin configuration
+
+Example:
+>
+  return {
+    -- {
+    --  "rcarriga/nvim-notify",
+    --  config = function()
+    --  -- plugin configuration
+    --  end,
+    -- },
+  }
+<
+2. Then run `:w` and `:Lazy clean`.
+
+vim:noet:tw=78:ts=8:ft=help:norl:

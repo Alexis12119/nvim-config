@@ -1,0 +1,10 @@
+config-info	config.txt	/*config-info*
+config-reminder	config.txt	/*config-reminder*
+config-keymaps	config.txt	/*config-keymaps*
+config-options	config.txt	/*config-options*
+config-snippets	config.txt	/*config-snippets*
+config-themes	config.txt	/*config-themes*
+config-tips	config.txt	/*config-tips*
+config-plugin	config.txt	/*config-plugin*
+config-add-plugin	config.txt	/*config-add-plugin*
+config-remove-plugin	config.txt	/*config-remove-plugin*
