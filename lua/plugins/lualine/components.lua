@@ -14,7 +14,19 @@ end
 
 M.mode = {
   function()
-    local icons = { "", "", "", "", "", "", "", "", "" }
+    -- I made it this way so it won't be hard to find the index
+    local icons = {
+      [1] = "",
+      [2] = "",
+      [3] = "",
+      [4] = "",
+      [5] = "",
+      [6] = "",
+      [7] = "",
+      [8] = "",
+      [9] = "",
+      [10] = "", --> new icon
+    }
     -- local mode_names = require("plugins.lualine.modes").name
     -- local mode_name = vim.api.nvim_get_mode().mode
     -- if mode_names[mode_name] == nil then
@@ -165,12 +177,12 @@ M.percent = {
   separator = { left = "" },
 }
 
--- M.spaces = {
---   function()
---     return vim.api.nvim_buf_get_option(0, "shiftwidth")
---   end,
---   color = { fg = foreground, bg = "NONE" },
--- }
+M.spaces = {
+  function()
+    return vim.api.nvim_buf_get_option(0, "shiftwidth")
+  end,
+  color = { fg = foreground, bg = "NONE" },
+}
 
 M.filetype = {
   "filetype",
@@ -179,12 +191,12 @@ M.filetype = {
   separator = { left = "" },
 }
 
--- M.directory = {
---   function()
---     return vim.fn.expand "%:p:h:t"
---   end,
---   icon = "",
---   color = { fg = foreground },
--- }
+M.directory = {
+  function()
+    return vim.fn.expand "%:p:h:t"
+  end,
+  icon = "",
+  color = { fg = foreground },
+}
 
 return M

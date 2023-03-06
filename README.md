@@ -6,9 +6,9 @@
     
 [![](https://img.shields.io/badge/Neovim-0.8+-blueviolet.svg?style=for-the-badge&color=000F10&logo=Neovim&logoColor=green&labelColor=302D41)](https://github.com/neovim/neovim)
 
-![Screenshot (1654)](https://user-images.githubusercontent.com/74944536/218429815-46bf5149-4c58-451e-b5dc-2ff8f96f8ef9.png)
+![Dark](https://user-images.githubusercontent.com/74944536/223243715-c8774d56-1bd2-4512-8e28-f50ebc53c352.png)
 
-![Screenshot (1678)](https://user-images.githubusercontent.com/74944536/219815906-73fa670d-03e5-4935-96bd-727ce7507502.png)
+![Light](https://user-images.githubusercontent.com/74944536/223243660-b96f33f9-c229-4406-8d8f-a6dfae172dd7.png)
 
 </div>
 

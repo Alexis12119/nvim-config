@@ -43,7 +43,7 @@ return {
 
     local lualine = require "lualine"
 
-    local statusline = require "plugins.lualine.default"
+    local stl = require "plugins.lualine.components"
 
     lualine.setup {
       options = {
@@ -70,18 +70,19 @@ return {
         lualine_a = {},
         lualine_b = {},
         lualine_c = {
-          statusline.branch,
-          statusline.mode,
-          statusline.diagnostics,
-          statusline.lsp,
+          stl.branch,
+          stl.mode,
+          stl.diagnostics,
+          stl.lsp,
         },
         lualine_x = {
-          statusline.diff,
-          statusline.filetype,
-          statusline.filesize,
-          statusline.progress,
-          statusline.percent,
-          statusline.total_lines,
+          stl.directory,
+          stl.diff,
+          stl.filetype,
+          stl.filesize,
+          stl.progress,
+          stl.percent,
+          stl.total_lines,
         },
         lualine_y = {},
         lualine_z = {},
