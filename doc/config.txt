@@ -12,7 +12,8 @@ can do for you, if you want to try my configuration.
 - Run `:checkhealth` to check if there's a problem.
 - `:Reload` will only reload the core files.
 - `:FormatOnSaveToggle` to turn on/off Format on Save.
-- Change the statusline components in `lua/plugins/lualine/default.lua`.
+- Press `<leader>D` to enter `Toggle Distraction Free Mode`.
+- Change the statusline components in `lua/plugins/lualine/components.lua`.
 - This configuration is personalized so you might see a personalized keymaps
 and options.
 

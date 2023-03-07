@@ -81,17 +81,32 @@ return {
       nowait = true, -- use `nowait` when creating keymaps
     }
 
-    local function toggleAlpha()
+    local function toggle_alpha()
       if vim.bo.buftype == "" or vim.bo.filetype == "alpha" or vim.bo.filetype == "checkhealth" then
         vim.cmd ":Alpha"
       end
     end
 
+    local function toggle_distraction_free()
+      if vim.bo.buftype == "" and vim.bo.filetype ~= "" then
+        if vim.o.cmdheight ~= 0 or vim.o.laststatus ~= 0 or vim.o.showtabline ~= 0 then
+          vim.opt.cmdheight = 0
+          vim.opt.laststatus = 0
+          vim.opt.showtabline = 0
+        else
+          vim.opt.cmdheight = 1
+          vim.opt.laststatus = 3
+          vim.opt.showtabline = 2
+        end
+      end
+    end
+
     local mappings = {
-      ["a"] = { toggleAlpha, "Alpha" },
+      ["a"] = { toggle_alpha, "Alpha" },
       ["r"] = { ":%d+<cr>", "Remove All Text" },
       ["y"] = { ":%y+<cr>", "Yank All Text" },
       ["e"] = { ":NvimTreeToggle<cr>", "Explorer" },
+      ["D"] = { toggle_distraction_free, "Distraction Free" },
       ["q"] = { ":qa!<cr>", "Quit" },
       ["c"] = { ":Bdelete!<cr>", "Close Buffer" },
       ["f"] = {
