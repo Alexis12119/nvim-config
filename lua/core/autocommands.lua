@@ -42,7 +42,7 @@ autocmd("User", {
 })
 
 -- remove this if there's an issue
-autocmd({"BufReadPost", "BufNewFile"}, {
+autocmd({ "BufReadPost", "BufNewFile" }, {
   once = true,
   callback = function()
     if vim.fn.has "wsl" == 1 then

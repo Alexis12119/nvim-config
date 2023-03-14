@@ -8,6 +8,10 @@ Hi, thanks for checking out my neovim setup. This is just my personal
 configuration and it's not a neovim distribution. This help file is the only help i
 can do for you, if you want to try my configuration.
 
+Go to `lua/plugins/telescope.lua` and change `url_open_command =
+"<browser-name>"`. And make sure that browser is in the `PATH` so the command
+will work.
+        
 - Make sure the `java` version is >= 17 and it's the one being use.
 - Run `:checkhealth` to check if there's a problem.
 - `:Reload` will only reload the core files.

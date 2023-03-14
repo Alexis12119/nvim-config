@@ -40,7 +40,12 @@ return {
 
   {
     "rcarriga/nvim-notify",
-    enabled = false,
+    event = { "BufReadPost", "BufNewFile" },
+    dependencies = {
+      {
+        "stevearc/dressing.nvim",
+      },
+    },
     config = function()
       require("notify").setup {
         level = 2,
@@ -53,10 +58,5 @@ return {
 
       vim.notify = require "notify"
     end,
-  },
-
-  {
-    "stevearc/dressing.nvim",
-    enabled = false,
   },
 }

@@ -201,7 +201,8 @@ return {
       s = {
         name = "Search",
         a = { ":Telescope autocommands<cr>", "Autocommmands" },
-        b = { ":Telescope git_branches<cr>", "Checkout branch" },
+        b = { ":Telescope bookmarks<cr>", "Browswer Bookmarks" },
+        n = { ":Telescope notify<cr>", "Notify History" },
         c = { ":Telescope colorscheme<cr>", "Colorscheme" },
         h = { ":Telescope help_tags<cr>", "Find Help" },
         k = { ":Telescope keymaps<cr>", "Keymaps" },
