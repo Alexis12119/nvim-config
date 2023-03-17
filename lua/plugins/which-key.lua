@@ -204,6 +204,10 @@ return {
         b = { ":Telescope bookmarks<cr>", "Browswer Bookmarks" },
         n = { ":Telescope notify<cr>", "Notify History" },
         c = { ":Telescope colorscheme<cr>", "Colorscheme" },
+        p = {
+          "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
+          "Colorscheme with Preview",
+        },
         h = { ":Telescope help_tags<cr>", "Find Help" },
         k = { ":Telescope keymaps<cr>", "Keymaps" },
         C = { ":Telescope commands<cr>", "Commands" },
