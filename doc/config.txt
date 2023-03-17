@@ -188,18 +188,6 @@ Themes                *config-themes*
 ----------------------------
 
 * nightly.nvim (Default)
-* tokyonight.nvim
-* catppuccin
-* kanagawa.nvim
-* moonbow.nvim
-* vscode.nvim
-* onedark.nvim
-* onenord.nvim
-* monokai.nvim
-* dracula.nvim
-* palenightfall.nvim
-* vim-nightfly-colors
-* material.nvim
 
 Add colorscheme:
 

@@ -110,18 +110,6 @@ Make sure the `formatter` or `linter` is installed and add it to this setup func
 | [lazy.nvim](https://github.com/folke/lazy.nvim)                                                 | Plugin Manager                                                        |
 | [neodev.nvim](https://github.com/folke/neodev.nvim)                                             | Help for Plugin Development                                           |
 | [nightly.nvim](https://github.com/Alexis12119/nightly.nvim)                                     | Default Colorscheme                                                   |
-| [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)                                     | Colorscheme                                                           |
-| [moonbow.nvim](https://github.com/arturgoms/moonbow.nvim)                                       | Colorscheme                                                           |
-| [kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim)                                       | Colorscheme                                                           |
-| [catppuccin](https://github.com/catppuccin/nvim)                                                | Colorscheme                                                           |
-| [vscode.nvim](https://github.com/Mofiqul/vscode.nvim)                                           | Colorscheme                                                           |
-| [onedark.nvim](https://github.com/navarasu/onedark.nvim)                                        | Colorscheme                                                           |
-| [onenord.nvim](https://github.com/rmehri01/onenord.nvim)                                        | Colorscheme                                                           |
-| [monokai.nvim](https://github.com/tanvirtin/monokai.nvim)                                       | Colorscheme                                                           |
-| [dracula.nvim](https://github.com/Mofiqul/dracula.nvim)                                         | Colorscheme                                                           |
-| [palenightfall.nvim](https://github.com/JoosepAlviste/palenightfall.nvim)                       | Colorscheme                                                           |
-| [vim-nightfly-colors](https://github.com/bluz71/vim-nightfly-colors)                            | Colorscheme                                                           |
-| [material.nvim](https://github.com/marko-cerovac/material.nvim)                                 | Colorscheme                                                           |
 | [nvim-dap](https://github.com/mfussenegger/nvim-dap)                                            | Debug Adapter Protocol                                                |
 | [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)                                          | UI for nvim-dap                                                       |
 | [nvim-jdtls](https://github.com/mfussenegger/nvim-jdtls)                                        | Extensions for the built-in LSP support in Neovim for eclipse.jdt.ls  |
