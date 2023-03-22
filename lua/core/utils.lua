@@ -87,7 +87,7 @@ end
 command("Format", function()
   format_code()
   vim.notify("Format Done", vim.log.levels.INFO, { title = "Format" })
-end, { nargs = "*" })
+end, { nargs = "*", desc = "Code Format" })
 
 command("Reload", function()
   if vim.bo.buftype == "" then
@@ -96,13 +96,13 @@ command("Reload", function()
   else
     vim.notify("Not available in this window/buffer", vim.log.levels.INFO, { title = "Configuration Reload" })
   end
-end, { nargs = "*" })
+end, { nargs = "*", desc = "Core Reload" })
 
 command("Update", function()
   update_config()
   vim.notify("Update Done", vim.log.levels.INFO, { title = "Configuration Update" })
-end, { nargs = "*" })
+end, { nargs = "*", desc = "Configuration Update" })
 
 command("LuaSnipEdit", function()
   require("luasnip.loaders").edit_snippet_files()
-end, { nargs = "*" })
+end, { nargs = "*", desc = "Edit the available snippets in the filetype" })

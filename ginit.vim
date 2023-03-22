@@ -9,7 +9,7 @@ if vim.g.GuiLoaded then
   local font_size = 11
   local not_transparent = false
 
-  local function toggleTransparency()
+  local function toggle_transparency()
     not_transparent = not not_transparent
     if not_transparent then
       vim.cmd("GuiWindowOpacity " .. (0.9))
@@ -18,9 +18,9 @@ if vim.g.GuiLoaded then
     end
   end
 
-  vim.keymap.set("n", "<F10>", toggleTransparency, { silent = true })
+  vim.keymap.set("n", "<F10>", toggle_transparency, { silent = true })
 
-  local function toggleFullscreen()
+  local function toggle_fullscreen()
     if vim.g.GuiWindowFullScreen == 0 then
       vim.cmd("call GuiWindowFullScreen(" .. 1 .. ")")
     else
@@ -28,7 +28,7 @@ if vim.g.GuiLoaded then
     end
   end
 
-  vim.keymap.set("n", "<F11>", toggleFullscreen, { silent = true })
+  vim.keymap.set("n", "<F11>", toggle_fullscreen, { silent = true })
 
   vim.cmd [[
   GuiTabline 0
@@ -46,7 +46,7 @@ if vim.g.neovide then
   vim.g.remember_window_size = true
   vim.g.remember_window_position = true
 
-  local function toggleTransparency()
+  local function toggle_transparency()
     if vim.g.neovide_transparency == 1.0 then
       vim.cmd "let g:neovide_transparency=0.8"
     else
@@ -54,7 +54,7 @@ if vim.g.neovide then
     end
   end
 
-  local function toggleFullscreen()
+  local function toggle_fullscreen()
     if vim.g.neovide_fullscreen == false then
       vim.cmd "let g:neovide_fullscreen=v:true"
     else
@@ -62,8 +62,8 @@ if vim.g.neovide then
     end
   end
 
-  vim.keymap.set("n", "<F11>", toggleFullscreen, { silent = true })
-  vim.keymap.set("n", "<F10>", toggleTransparency, { silent = true })
+  vim.keymap.set("n", "<F11>", toggle_fullscreen, { silent = true })
+  vim.keymap.set("n", "<F10>", toggle_transparency, { silent = true })
 end
 
 EOF
