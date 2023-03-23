@@ -44,7 +44,6 @@ return {
 
         local servers = {
           -- "jsonls",
-          "lua_ls",
           "clangd",
           -- "intelephense",
           -- "cssls",
