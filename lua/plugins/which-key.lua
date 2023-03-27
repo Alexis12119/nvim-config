@@ -202,7 +202,7 @@ return {
         name = "Search",
         a = { ":Telescope autocommands<cr>", "Autocommmands" },
         b = { ":Telescope bookmarks<cr>", "Browswer Bookmarks" },
-        n = { ":Telescope notify<cr>", "Notify History" },
+        n = { ":lua require('telescope').extensions.notify.notify()<cr>", "Notify History" },
         c = { ":Telescope colorscheme<cr>", "Colorscheme" },
         p = {
           "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
