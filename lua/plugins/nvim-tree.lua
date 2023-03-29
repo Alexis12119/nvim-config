@@ -110,7 +110,7 @@ return {
       actions = {
         use_system_clipboard = true,
         change_dir = {
-          enable = false,
+          enable = true,
           global = false,
           restrict_above_cwd = false,
         },
