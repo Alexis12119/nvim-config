@@ -44,19 +44,19 @@ local keymaps = {
     --   desc = "Enter insert mode",
     -- },
 
-    ["C-j"] = {
+    ["<C-j>"] = {
       cmd = "<C-w>j",
       desc = "Go to upper window",
     },
-    ["C-k"] = {
+    ["<C-k>"] = {
       cmd = "<C-w>k",
       desc = "Go to lower window",
     },
-    ["C-h"] = {
+    ["<C-h>"] = {
       cmd = "<C-w>h",
       desc = "Go to left window",
     },
-    ["C-l"] = {
+    ["<C-l>"] = {
       cmd = "<C-w>l",
       desc = "Go to right window",
     },
