@@ -66,11 +66,11 @@ return {
 
   -- {
   --   "Mofiqul/vscode.nvim",
-  -- lazy = true,
+  --  -- lazy = true,
   --   priority = 1000,
-  --   -- config = function()
-  --   --   require "plugins.theme.vscode"
-  --   -- end,
+  --  -- config = function()
+  --  --   require "plugins.theme.vscode"
+  --  -- end,
   -- },
 
   -- {

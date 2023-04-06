@@ -40,6 +40,7 @@ return {
 
   {
     "rcarriga/nvim-notify",
+    enabled = false,
     event = { "BufReadPost", "BufNewFile" },
     dependencies = {
       {

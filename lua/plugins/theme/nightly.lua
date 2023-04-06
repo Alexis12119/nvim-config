@@ -11,7 +11,7 @@
 -- end
 
 require("nightly").setup {
-  color = "black", -- green, light_blue, black, red, blue
+  color = "black", -- blue, green or red
   transparent = false,
 }
 
