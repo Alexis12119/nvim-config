@@ -110,10 +110,10 @@ return {
       ["q"] = { ":qa!<cr>", "Quit" },
       ["c"] = { ":Bdelete!<cr>", "Close Buffer" },
       ["f"] = {
-        ":lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+        ":Telescope find_files<cr>",
         "Find files",
       },
-      ["F"] = { ":Telescope live_grep theme=get_dropdown<cr>", "Find Text" },
+      ["F"] = { ":Telescope live_grep<cr>", "Find Text" },
       p = {
         name = "Plugin",
         c = { ":Lazy clean<cr>", "Clean" },
@@ -202,7 +202,7 @@ return {
         name = "Search",
         a = { ":Telescope autocommands<cr>", "Autocommmands" },
         b = { ":Telescope bookmarks<cr>", "Browswer Bookmarks" },
-        n = { ":lua require('telescope').extensions.notify.notify()<cr>", "Notify History" },
+        -- n = { ":lua require('telescope').extensions.notify.notify()<cr>", "Notify History" },
         c = { ":Telescope colorscheme<cr>", "Colorscheme" },
         p = {
           "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",

@@ -59,7 +59,6 @@ return {
           "startuptime",
           "checkhealth",
           "help",
-          "TelescopePrompt",
           "toggleterm",
           "alpha",
           "lazy",
