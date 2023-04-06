@@ -37,7 +37,6 @@ return {
     telescope.setup {
       defaults = {
         layout_config = {
-          height = 0.80,
           width = 0.8,
           prompt_position = "top",
           preview_cutoff = 120,
@@ -52,7 +51,6 @@ return {
         selection_caret = "ﰲ ",
         path_display = { "smart" },
         file_ignore_patterns = { ".git/", "node_modules" },
-
         mappings = {
           i = {
             ["<A-j>"] = actions.move_selection_next,
