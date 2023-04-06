@@ -131,7 +131,7 @@ return {
         name = "Neovim",
         r = { ":Reload<cr>", "Core Reload " },
         c = { ":e $MYVIMRC<cr>", "Configuration" },
-        s = { ":StartupTime<cr>", "StartupTime" },
+        -- s = { ":StartupTime<cr>", "StartupTime" },
         i = {
           function()
             if vim.fn.has "nvim-0.9.0" == 1 then

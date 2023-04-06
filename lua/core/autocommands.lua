@@ -112,18 +112,29 @@ autocmd("FileType", {
 
 autocmd("BufEnter", {
   callback = function()
-    vim.cmd "silent! lcd %:p:h"
+    local filepath = vim.fn.expand "%:p:h"
+    local ticks = {
+      ".git",
+      ".vscode",
+    }
+    for _, tick in pairs(ticks) do
+      local root = vim.fn.finddir(tick, filepath .. ";")
+      root = root:sub(1, (-1 * #tick) + -1)
+      if root and #root > 0 then
+        vim.cmd("silent! lcd " .. root)
+      end
+    end
   end,
   group = general,
-  desc = "Auto Change Directory",
+  desc = "Change directory if triggered",
 })
 
-autocmd("BufModifiedSet", {
+autocmd({ "BufWinLeave", "BufLeave", "InsertLeave", "InsertEnter", "FocusLost" }, {
   callback = function()
     vim.cmd "silent! w"
   end,
   group = general,
-  desc = "Auto Save",
+  desc = "Auto Save when leaving/entering insert mode, buffer or window",
 })
 
 autocmd("FocusGained", {

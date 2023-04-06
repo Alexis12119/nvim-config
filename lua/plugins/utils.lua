@@ -29,6 +29,7 @@ return {
 
   {
     "dstein64/vim-startuptime",
+    enabled = false,
     init = function()
       vim.g.startuptime_tries = 5
     end,
