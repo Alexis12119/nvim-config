@@ -110,7 +110,7 @@ autocmd("FileType", {
   desc = "Set shiftwidth to 4 in these filetypes",
 })
 
-autocmd("BufEnter", {
+autocmd({ "BufReadPost", "BufNewFile" }, {
   callback = function()
     local filepath = vim.fn.expand "%:p:h"
     local ticks = {
