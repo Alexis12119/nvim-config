@@ -6,6 +6,11 @@
     
 [![](https://img.shields.io/badge/Neovim-0.8+-blueviolet.svg?style=for-the-badge&color=000F10&logo=Neovim&logoColor=green&labelColor=302D41)](https://github.com/neovim/neovim)
 
+![Screenshot (43)](https://user-images.githubusercontent.com/74944536/230518509-35ca1239-618f-4ec7-8d6b-8901de2911a0.png)
+
+![Screenshot (31)](https://user-images.githubusercontent.com/74944536/230518349-e5d9c13d-b58a-4f0a-9db4-69fe50e9bbbd.png)
+
+![Screenshot (30)](https://user-images.githubusercontent.com/74944536/230518336-104e376c-2221-4353-af82-2b3f035f0d66.png)
 </div>
 
 ## 🌟 Stargazers
