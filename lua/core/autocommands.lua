@@ -119,9 +119,9 @@ autocmd("BufEnter", {
     }
     for _, tick in pairs(ticks) do
       local root = vim.fn.finddir(tick, filepath .. ";")
-      root = root:sub(1, (-1 * #tick) + -1)
+      root = root:sub(1, -1 * (#tick + 1))
       if root and #root > 0 then
-        vim.cmd("silent! lcd " .. root)
+        vim.cmd.cd(root)
       end
     end
   end,
