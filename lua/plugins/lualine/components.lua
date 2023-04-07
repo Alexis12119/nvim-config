@@ -39,7 +39,6 @@ M.mode = {
     local mode_color = require("plugins.lualine.modes").colors
     return { fg = mode_color[vim.api.nvim_get_mode().mode], bg = "NONE" }
   end,
-  separator = { right = "" },
 }
 
 M.diagnostics = {
@@ -55,7 +54,6 @@ M.diagnostics = {
   update_in_insert = false,
   always_visible = false,
   color = { fg = foreground, bg = "NONE" },
-  separator = { right = "" },
 }
 
 M.diff = {
@@ -68,7 +66,6 @@ M.diff = {
   },
   cond = hide_in_width,
   color = { fg = foreground, bg = "NONE" },
-  separator = { left = "" },
 }
 
 M.branch = {
@@ -76,7 +73,6 @@ M.branch = {
   icons_enabled = true,
   color = { fg = foreground, bg = "NONE" },
   icon = " ",
-  separator = { right = "" },
 }
 
 M.filesize = {
@@ -102,7 +98,6 @@ M.filesize = {
     return format_file_size(file)
   end,
   color = { fg = foreground, bg = "NONE" },
-  separator = { left = "" },
 }
 
 M.lsp = {
@@ -147,7 +142,6 @@ M.lsp = {
     end
   end,
   color = { fg = foreground, bg = "NONE" },
-  separator = { left = "", right = "" },
 }
 
 M.progress = {
@@ -160,7 +154,6 @@ M.progress = {
     return chars[index]
   end,
   color = { fg = foreground, bg = "NONE" },
-  separator = { left = "" },
 }
 
 M.total_lines = {
@@ -168,13 +161,11 @@ M.total_lines = {
     return "%L"
   end,
   color = { fg = foreground, bg = "NONE" },
-  separator = { left = "" },
 }
 
 M.percent = {
   "progress",
   color = { fg = foreground, bg = "NONE" },
-  separator = { left = "" },
 }
 
 M.spaces = {
@@ -188,7 +179,6 @@ M.filetype = {
   "filetype",
   color = { fg = foreground, bg = "NONE" },
   pading = 0,
-  separator = { left = "" },
 }
 
 M.directory = {
