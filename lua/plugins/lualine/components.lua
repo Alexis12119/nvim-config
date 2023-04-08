@@ -181,12 +181,11 @@ M.filetype = {
   pading = 0,
 }
 
-M.directory = {
-  function()
-    return vim.fn.expand "%:p:h:t"
-  end,
+M.filename = {
+  "filename",
   icon = "",
   color = { fg = foreground },
+  path = 4,
 }
 
 return M

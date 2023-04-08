@@ -75,7 +75,7 @@ return {
           stl.lsp,
         },
         lualine_x = {
-          stl.directory,
+          stl.filename,
           stl.diff,
           stl.filetype,
           stl.filesize,

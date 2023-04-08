@@ -6,11 +6,10 @@
     
 [![](https://img.shields.io/badge/Neovim-0.8+-blueviolet.svg?style=for-the-badge&color=000F10&logo=Neovim&logoColor=green&labelColor=302D41)](https://github.com/neovim/neovim)
 
-![Screenshot (43)](https://user-images.githubusercontent.com/74944536/230518509-35ca1239-618f-4ec7-8d6b-8901de2911a0.png)
+![Normal](https://user-images.githubusercontent.com/74944536/230716410-a4f6b06c-3ab6-456f-a932-2c829a383676.png)
 
-![Screenshot (31)](https://user-images.githubusercontent.com/74944536/230518349-e5d9c13d-b58a-4f0a-9db4-69fe50e9bbbd.png)
+![Telescope](https://user-images.githubusercontent.com/74944536/230716406-c73ce879-353a-4897-a3dc-2c44756311a8.png)
 
-![Screenshot (30)](https://user-images.githubusercontent.com/74944536/230518336-104e376c-2221-4353-af82-2b3f035f0d66.png)
 </div>
 
 ### ✨ Features
@@ -20,6 +19,7 @@
 - Code Runner called [jaq-nvim](https://github.com/is0n/jaq-nvim).
 - Statusline with [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim).
 - Tabline with [bufferline.nvim](https://github.com/akinsho/bufferline.nvim).
+- Buffers per tab with [scope.nvim](https://github.com/tiagovla/scope.nvim).
 - File Explorer [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua).
 - Autocompletion with [nvim-cmp](https://github.com/hrsh7th/nvim-cmp).
 - Language Server Protocol with [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig).
