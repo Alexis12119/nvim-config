@@ -38,6 +38,7 @@ return {
     -- require("luasnip.loaders.from_vscode").lazy_load { paths = vim.fn.stdpath "config" .. "/snippets/vscode" }
 
     local kind_icons = {
+      Namespace = "",
       Text = "",
       Method = "",
       Function = "",
@@ -63,6 +64,18 @@ return {
       Event = "",
       Operator = "",
       TypeParameter = "",
+      Table = "",
+      Object = "",
+      Tag = "",
+      Array = "[]",
+      Boolean = "",
+      Number = "",
+      Null = "ﳠ",
+      String = "",
+      Calendar = "",
+      Watch = "",
+      Package = "",
+      Copilot = "",
     }
 
     cmp.setup {
@@ -162,7 +175,6 @@ return {
         },
       },
       formatting = {
-        -- fields = { 'abbr' },
         format = function(_, vim_item)
           vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
           return vim_item

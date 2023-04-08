@@ -185,7 +185,7 @@ M.directory = {
   function()
     return vim.fn.expand "%:p:h:t"
   end,
-  icon = "",
+  icon = "",
   color = { fg = foreground },
 }
 
