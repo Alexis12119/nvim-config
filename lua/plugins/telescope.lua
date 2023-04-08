@@ -4,6 +4,9 @@ return {
   cmd = "Telescope",
   dependencies = {
     {
+      "nvim-lua/plenary.nvim",
+    },
+    {
       "nvim-telescope/telescope-fzf-native.nvim",
       enabled = false,
       build = ":make",

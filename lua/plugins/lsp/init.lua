@@ -26,6 +26,9 @@ return {
   end,
   dependencies = {
     {
+      "folke/neodev.nvim",
+    },
+    {
       "williamboman/mason.nvim",
       cmd = {
         "Mason",

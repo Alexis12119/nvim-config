@@ -1,21 +1,12 @@
 return {
   {
-    "folke/neodev.nvim",
-    lazy = true,
-  },
-
-  {
     "mfussenegger/nvim-jdtls",
     ft = "java",
   },
 
   {
-    "nvim-lua/plenary.nvim",
-    lazy = true,
-  },
-
-  {
     "moll/vim-bbye",
+    enabled = false,
     cmd = { "Bdelete", "Bwipeout" },
   },
 

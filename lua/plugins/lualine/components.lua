@@ -33,7 +33,7 @@ M.mode = {
     --   return mode_name
     -- end
     -- return mode_names[mode_name]
-    return icons[4]
+    return icons[8]
   end,
   color = function()
     local mode_color = require("plugins.lualine.modes").colors
@@ -58,7 +58,7 @@ M.diagnostics = {
 
 M.diff = {
   "diff",
-  symbols = { added = " ", modified = " ", removed = " " },
+  symbols = { added = " ", modified = " ", removed = " " },
   diff_color = {
     added = { fg = "#98BE65" },
     modified = { fg = "#7AA2F7" },

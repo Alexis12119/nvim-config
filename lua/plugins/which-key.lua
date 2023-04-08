@@ -196,12 +196,10 @@ return {
       f = {
         name = "Find",
         a = { ":Telescope autocommands<cr>", "Autocommmands" },
-        f = {
-          ":Telescope find_files<cr>",
-          "Find files",
-        },
+        f = { ":Telescope find_files<cr>", "Find files" },
         t = { ":Telescope live_grep<cr>", "Find Text" },
         b = { ":Telescope bookmarks<cr>", "Browswer Bookmarks" },
+        B = { ":Telescope buffers<cr>", "Buffers" },
         -- n = { ":lua require('telescope').extensions.notify.notify()<cr>", "Notify History" },
         c = { ":Telescope colorscheme<cr>", "Colorscheme" },
         p = {
