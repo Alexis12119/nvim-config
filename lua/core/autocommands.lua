@@ -118,14 +118,9 @@ autocmd({ "BufReadPost", "BufNewFile" }, {
       ".git",
       ".vscode",
       ".vs",
-      ".vimrc",
     }
     for _, pattern in pairs(patterns) do
-      if vim.fn.isdirectory(filepath .. "/" .. pattern) == 1 then
-        root = vim.fn.finddir(pattern, filepath .. ";")
-      else
-        root = vim.fn.findfile(pattern, filepath, ";")
-      end
+      root = vim.fn.finddir(pattern, filepath .. ";")
       root = root:sub(1, -1 * (#pattern + 1))
       if #root > 0 then
         vim.cmd.cd(root)

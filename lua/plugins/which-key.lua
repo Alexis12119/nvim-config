@@ -109,11 +109,6 @@ return {
       ["D"] = { toggle_distraction_free, "Distraction Free" },
       ["q"] = { ":qa!<cr>", "Quit" },
       ["c"] = { ":Bdelete!<cr>", "Close Buffer" },
-      ["f"] = {
-        ":Telescope find_files<cr>",
-        "Find files",
-      },
-      ["F"] = { ":Telescope live_grep<cr>", "Find Text" },
       p = {
         name = "Plugin",
         c = { ":Lazy clean<cr>", "Clean" },
@@ -198,9 +193,14 @@ return {
         s = { ":Telescope lsp_document_symbols<cr>", "Document Symbols" },
         S = { ":Telescope lsp_workspace_symbols<cr>", "Workspace Symbols" },
       },
-      s = {
-        name = "Search",
+      f = {
+        name = "Find",
         a = { ":Telescope autocommands<cr>", "Autocommmands" },
+        f = {
+          ":Telescope find_files<cr>",
+          "Find files",
+        },
+        t = { ":Telescope live_grep<cr>", "Find Text" },
         b = { ":Telescope bookmarks<cr>", "Browswer Bookmarks" },
         -- n = { ":lua require('telescope').extensions.notify.notify()<cr>", "Notify History" },
         c = { ":Telescope colorscheme<cr>", "Colorscheme" },
