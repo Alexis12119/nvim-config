@@ -1,6 +1,14 @@
 return {
   "akinsho/bufferline.nvim",
   event = { "BufReadPost", "BufNewFile" },
+  dependencies = {
+    {
+      "tiagovla/scope.nvim",
+      config = function()
+        require("scope").setup()
+      end,
+    },
+  },
   config = function()
     local bufferline = require "bufferline"
 
@@ -16,6 +24,7 @@ return {
         indicator = {
           icon = "▎",
         },
+        always_show_bufferline = true,
         buffer_close_icon = "",
         modified_icon = "●",
         close_icon = "",
