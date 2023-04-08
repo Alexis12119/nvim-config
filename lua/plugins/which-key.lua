@@ -102,7 +102,7 @@ return {
     end
 
     local mappings = {
-      ["a"] = { toggle_alpha, "Alpha" },
+      -- ["a"] = { toggle_alpha, "Alpha" },
       ["r"] = { ":%d+<cr>", "Remove All Text" },
       ["y"] = { ":%y+<cr>", "Yank All Text" },
       ["e"] = { ":NvimTreeToggle<cr>", "Explorer" },
