@@ -103,7 +103,7 @@ return {
               staged = "✓",
               unmerged = "",
               renamed = "➜",
-              untracked = "★",
+              untracked = "U",
               deleted = "",
               ignored = "◌",
             },

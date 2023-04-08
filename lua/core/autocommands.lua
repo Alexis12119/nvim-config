@@ -112,15 +112,22 @@ autocmd("FileType", {
 
 autocmd({ "BufReadPost", "BufNewFile" }, {
   callback = function()
+    local root = ""
     local filepath = vim.fn.expand "%:p:h"
-    local ticks = {
+    local patterns = {
       ".git",
       ".vscode",
+      ".vs",
+      ".vimrc",
     }
-    for _, tick in pairs(ticks) do
-      local root = vim.fn.finddir(tick, filepath .. ";")
-      root = root:sub(1, -1 * (#tick + 1))
-      if root and #root > 0 then
+    for _, pattern in pairs(patterns) do
+      if vim.fn.isdirectory(filepath .. "/" .. pattern) == 1 then
+        root = vim.fn.finddir(pattern, filepath .. ";")
+      else
+        root = vim.fn.findfile(pattern, filepath, ";")
+      end
+      root = root:sub(1, -1 * (#pattern + 1))
+      if #root > 0 then
         vim.cmd.cd(root)
       end
     end
