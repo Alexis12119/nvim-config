@@ -81,11 +81,11 @@ return {
       nowait = true, -- use `nowait` when creating keymaps
     }
 
-    local function toggle_alpha()
-      if vim.bo.buftype == "" or vim.bo.filetype == "alpha" or vim.bo.filetype == "checkhealth" then
-        vim.cmd ":Alpha"
-      end
-    end
+    -- local function toggle_alpha()
+    --   if vim.bo.buftype == "" or vim.bo.filetype == "alpha" or vim.bo.filetype == "checkhealth" then
+    --     vim.cmd ":Alpha"
+    --   end
+    -- end
 
     local function toggle_distraction_free()
       if vim.bo.buftype == "" and vim.bo.filetype ~= "" then
@@ -108,7 +108,12 @@ return {
       ["e"] = { ":NvimTreeToggle<cr>", "Explorer" },
       ["D"] = { toggle_distraction_free, "Distraction Free" },
       ["q"] = { ":qa!<cr>", "Quit" },
-      ["c"] = { ":Bdelete!<cr>", "Close Buffer" },
+      ["c"] = {
+        function()
+          vim.api.nvim_buf_delete(0, { force = true })
+        end,
+        "Close Buffer",
+      },
       p = {
         name = "Plugin",
         c = { ":Lazy clean<cr>", "Clean" },
@@ -126,7 +131,6 @@ return {
         name = "Neovim",
         r = { ":Reload<cr>", "Core Reload " },
         c = { ":e $MYVIMRC<cr>", "Configuration" },
-        -- s = { ":StartupTime<cr>", "StartupTime" },
         i = {
           function()
             if vim.fn.has "nvim-0.9.0" == 1 then
