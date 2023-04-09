@@ -123,7 +123,7 @@ autocmd("BufEnter", {
       root = vim.fn.finddir(pattern, filepath .. ";")
       root = root:sub(1, -1 * (#pattern + 1))
       if #root > 0 then
-        vim.cmd.cd(root)
+        vim.cmd("silent! cd " .. root)
       end
     end
   end,
