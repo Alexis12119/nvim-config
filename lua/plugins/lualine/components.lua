@@ -1,11 +1,32 @@
 local M = {}
 
 local foreground = ""
+local add = ""
+local delete = ""
+local change = ""
+local error = ""
+local warn = ""
+local hint = ""
+local mode_color = {}
 
 if vim.o.background == "dark" then
   foreground = "#BBC2CF"
+  add = "#98BE65"
+  delete = "#DB4B4B"
+  change = "#7AA2F7"
+  error = "#DB4B4B"
+  warn = "#ECBE7B"
+  hint = "#A9A1E1"
+  mode_color = require("plugins.lualine.modes").dark_colors
 else
   foreground = "#443D30"
+  add = "#67519B"
+  delete = "#24B4B4"
+  change = "#855D08"
+  error = "#24B4B4"
+  warn = "#2E6576"
+  mode_color = require("plugins.lualine.modes").light_colors
+  hint = "#855D08"
 end
 
 local hide_in_width = function()
@@ -36,7 +57,6 @@ M.mode = {
     return icons[8]
   end,
   color = function()
-    local mode_color = require("plugins.lualine.modes").colors
     return { fg = mode_color[vim.api.nvim_get_mode().mode], bg = "NONE" }
   end,
 }
@@ -47,9 +67,9 @@ M.diagnostics = {
   sections = { "error", "warn", "hint" },
   symbols = { error = " ", warn = " ", hint = " " },
   diagnostics_color = {
-    error = { fg = "#DB4B4B" },
-    warn = { fg = "#ECBE7B" },
-    hint = { fg = "#A9A1E1" },
+    error = { fg = error },
+    warn = { fg = warn },
+    hint = { fg = hint },
   },
   update_in_insert = false,
   always_visible = false,
@@ -60,9 +80,9 @@ M.diff = {
   "diff",
   symbols = { added = " ", modified = " ", removed = " " },
   diff_color = {
-    added = { fg = "#98BE65" },
-    modified = { fg = "#7AA2F7" },
-    removed = { fg = "#DB4B4B" },
+    added = { fg = add },
+    modified = { fg = change },
+    removed = { fg = delete },
   },
   cond = hide_in_width,
   color = { fg = foreground, bg = "NONE" },
