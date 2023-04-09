@@ -135,13 +135,13 @@ local dashboard = require "alpha.themes.dashboard"
 dashboard.section.header.val = headers.pacman
 
 dashboard.section.buttons.val = {
-  dashboard.button("f", "  Find File", ":Telescope find_files<CR>"),
+  dashboard.button("SPC f f", "  Find File"),
   dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
-  dashboard.button("r", "  Recent Files", ":Telescope oldfiles<CR>"),
-  dashboard.button("t", "  Find Text", ":Telescope live_grep<CR>"),
-  dashboard.button("c", "  Configuration", ":e $MYVIMRC<CR>"),
-  dashboard.button("u", "  Update Plugins", ":Lazy update<CR>"),
-  dashboard.button("q", "  Quit Neovim", ":qa!<CR>"),
+  dashboard.button("SPC f r", "  Recent Files"),
+  dashboard.button("SPC f t", "  Find Text"),
+  dashboard.button("SPC n c", "  Configuration", ":e $MYVIMRC<CR>"),
+  dashboard.button("SPC p u", "  Update Plugins"),
+  dashboard.button("SPC q", "  Quit Neovim"),
 }
 
 local footer = function()

@@ -136,13 +136,13 @@ startify.section.header.val = headers.pacman
 startify.section.header.opts.hl = "AlphaHeader"
 
 startify.section.top_buttons.val = {
-  startify.button("f", "  Find File", ":Telescope find_files<CR>"),
+  startify.button("SPC f f", "  Find File"),
   startify.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
-  startify.button("r", "  Recent Files", ":Telescope oldfiles<CR>"),
-  startify.button("t", "  Find Text", ":Telescope live_grep<CR>"),
-  startify.button("c", "  Configuration", ":e $MYVIMRC<CR>"),
-  startify.button("u", "  Update Plugins", ":Lazy update<CR>"),
-  startify.button("q", "  Quit Neovim", ":qa!<CR>"),
+  startify.button("SPC f r", "  Recent Files"),
+  startify.button("SPC f t", "  Find Text"),
+  startify.button("SPC n c", "  Configuration", ":e $MYVIMRC<CR>"),
+  startify.button("SPC p u", "  Update Plugins"),
+  startify.button("SPC q", "  Quit Neovim"),
 }
 -- disable MRU
 startify.section.mru.val = { { type = "padding", val = 0 } }
