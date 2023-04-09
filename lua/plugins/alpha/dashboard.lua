@@ -136,7 +136,6 @@ dashboard.section.header.val = headers.pacman
 
 dashboard.section.buttons.val = {
   dashboard.button("SPC f f", "  Find File"),
-  dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
   dashboard.button("SPC f r", "  Recent Files"),
   dashboard.button("SPC f t", "  Find Text"),
   dashboard.button("SPC n c", "  Configuration", ":e $MYVIMRC<CR>"),

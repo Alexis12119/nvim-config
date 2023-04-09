@@ -137,7 +137,6 @@ startify.section.header.opts.hl = "AlphaHeader"
 
 startify.section.top_buttons.val = {
   startify.button("SPC f f", "  Find File"),
-  startify.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
   startify.button("SPC f r", "  Recent Files"),
   startify.button("SPC f t", "  Find Text"),
   startify.button("SPC n c", "  Configuration", ":e $MYVIMRC<CR>"),
