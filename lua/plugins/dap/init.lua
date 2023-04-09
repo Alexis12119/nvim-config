@@ -23,7 +23,7 @@ return {
     require "plugins.dap.cpptools"
     local mappings = {
       d = {
-        name = " Dap",
+        name = "Dap",
         c = { ":lua require'dap'.continue()<cr>", "Continue" },
         o = { ":lua require'dap'.step_over()<cr>", "Step Over" },
         i = { ":lua require'dap'.step_into()<cr>", "Step Into" },

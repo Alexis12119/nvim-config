@@ -38,7 +38,7 @@ return {
         "Close Buffer",
       },
       p = {
-        name = " Plugin",
+        name = "Plugin",
         c = { ":Lazy clean<cr>", "Clean" },
         C = { ":Lazy check<cr>", "Check" },
         d = { ":Lazy debug<cr>", "Debug" },
@@ -51,7 +51,7 @@ return {
         u = { ":Lazy update<cr>", "Update" },
       },
       n = {
-        name = " Neovim",
+        name = "Neovim",
         r = { ":Reload<cr>", "Core Reload " },
         c = { ":e $MYVIMRC<cr>", "Configuration" },
         i = {
@@ -69,7 +69,7 @@ return {
         v = { ":version<cr>", "Version" },
       },
       g = {
-        name = " Git",
+        name = "Git",
         g = {
           function()
             local Terminal = require("toggleterm.terminal").Terminal
@@ -98,7 +98,7 @@ return {
         },
       },
       l = {
-        name = " LSP",
+        name = "LSP",
         f = { ":Format<cr>", "Format" },
         a = { ":Lspsaga code_action<cr>", "Code Action" },
         i = { ":LspInfo<cr>", "Info" },
@@ -121,7 +121,7 @@ return {
         S = { ":Telescope lsp_workspace_symbols<cr>", "Workspace Symbols" },
       },
       f = {
-        name = " Find",
+        name = "Find",
         a = { ":Telescope autocommands<cr>", "Autocommmands" },
         f = { ":Telescope find_files<cr>", "Find files" },
         t = { ":Telescope live_grep<cr>", "Find Text" },
@@ -140,7 +140,7 @@ return {
         H = { ":Telescope highlights<cr>", "Highlights" },
       },
       t = {
-        name = " Terminal",
+        name = "Terminal",
         f = { ":ToggleTerm direction=float<cr>", "Float" },
         h = { ":ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
         v = { ":ToggleTerm size=50 direction=vertical<cr>", "Vertical" },
