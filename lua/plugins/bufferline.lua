@@ -14,9 +14,13 @@ return {
 
     bufferline.setup {
       options = {
-        mode = "buffers", -- set to "tabs" to only show tabpages instead
-        close_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
-        right_mouse_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
+        mode = "buffers",
+        close_command = function()
+          vim.api.nvim_buf_delete(0, { force = true })
+        end,
+        right_mouse_command = function()
+          vim.api.nvim_buf_delete(0, { force = true })
+        end,
         offsets = {
           { filetype = "NvimTree", text = "File Explorer", highlight = "Directory", padding = 1 },
           { filetype = "lspsagaoutline", text = "Code Outline", highlight = "Directory", padding = 1 },
@@ -33,6 +37,14 @@ return {
         max_name_length = 18,
         max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
         tab_size = 18,
+        custom_areas = {
+          right = function()
+            local result = {}
+            local version = " " .. vim.version().major .. "." .. vim.version().minor .. "." .. vim.version().patch
+            table.insert(result, { text = version })
+            return result
+          end,
+        },
       },
       highlights = {
         buffer_selected = {
