@@ -37,14 +37,14 @@ return {
         max_name_length = 18,
         max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
         tab_size = 18,
-        custom_areas = {
-          right = function()
-            local result = {}
-            local version = " " .. vim.version().major .. "." .. vim.version().minor .. "." .. vim.version().patch
-            table.insert(result, { text = version })
-            return result
-          end,
-        },
+      --   custom_areas = {
+      --     right = function()
+      --       local result = {}
+      --       local version = " " .. vim.version().major .. "." .. vim.version().minor .. "." .. vim.version().patch
+      --       table.insert(result, { text = version })
+      --       return result
+      --     end,
+      --   },
       },
       highlights = {
         buffer_selected = {
