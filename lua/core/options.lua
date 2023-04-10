@@ -31,7 +31,12 @@ local options = {
   sidescrolloff = 8, -- minimal number of screen columns
   lazyredraw = true, -- Won't be redrawn while executing macros, register and other commands.
   termguicolors = true, -- Enables 24-bit RGB color in the TUI
-  fillchars = { eob = " " }, -- make EndOfBuffer invisible
+  foldenable = true,
+  foldlevel = 99,
+  foldlevelstart = 99,
+  foldmethod = "indent",
+  fillchars = { eob = " ", fold = " ", foldopen = "", foldsep = " ", foldclose = "" }, -- make EndOfBuffer invisible
+  -- foldcolumn = "1",
   -- shell = vim.fn.executable "pwsh" and "pwsh" or "powershell",
   -- shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;",
   -- shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait",
