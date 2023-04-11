@@ -131,7 +131,7 @@ autocmd("BufEnter", {
   desc = "Change directory if triggered",
 })
 
-autocmd({ "InsertLeave", "InsertEnter", "FocusLost" }, {
+autocmd("BufModifiedSet", {
   callback = function()
     vim.cmd "silent! w"
   end,

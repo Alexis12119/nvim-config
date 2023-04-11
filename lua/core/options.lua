@@ -48,6 +48,7 @@ local options = {
 local global = {
   mkdp_auto_close = false, -- Don't Exit Preview When Switching Buffers
   mapleader = " ", -- Set mapleader to space
+  auto_formatting = true, -- enabled auto formatting
 }
 
 vim.opt.shortmess:append "Ac" -- Disable asking when editing file with swapfile.
