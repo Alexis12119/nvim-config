@@ -3,9 +3,6 @@ local keymap = vim.keymap.set
 
 local cmp_nvim_lsp = require "cmp_nvim_lsp"
 
--- M.capabilities = vim.lsp.protocol.make_client_capabilities()
--- M.capabilities.offsetEncoding = { "utf-16" }
--- M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 M.capabilities = cmp_nvim_lsp.default_capabilities()
 
 M.setup = function()
@@ -83,10 +80,10 @@ local function lsp_highlight(client, bufnr)
   end
 end
 
--- local function disable_format_on_save()
---   vim.api.nvim_del_augroup_by_name "Format on save"
---   vim.notify("Format on save is now disabled", vim.log.levels.INFO, { title = "Format" })
--- end
+local function disable_format_on_save()
+  vim.api.nvim_del_augroup_by_name "Format on save"
+  vim.notify("Format on save is now disabled", vim.log.levels.INFO, { title = "Format" })
+end
 
 local function enable_format_on_save()
   vim.api.nvim_create_augroup("Format on save", { clear = false })
@@ -102,19 +99,19 @@ local function enable_format_on_save()
     end,
     group = "Format on save",
   })
-  -- vim.notify("Format on save is now enabled", vim.log.levels.INFO, { title = "Format" })
+  vim.notify("Format on save is now enabled", vim.log.levels.INFO, { title = "Format" })
 end
 
 M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr)
   lsp_highlight(client, bufnr)
-  if vim.g.auto_formatting then
-    -- if vim.fn.exists "#Format on save#BufWritePre" == 0 then
-    enable_format_on_save()
-    -- else
-    --   disable_format_on_save()
-    -- end
-  end
+  vim.api.nvim_create_user_command("FormatOnSaveToggle", function()
+    if vim.fn.exists "#Format on save#BufWritePost" == 0 then
+      enable_format_on_save()
+    else
+      disable_format_on_save()
+    end
+  end, { nargs = "*" })
 end
 
 return M
