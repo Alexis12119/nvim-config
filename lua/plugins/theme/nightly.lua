@@ -11,8 +11,8 @@
 -- end
 
 require("nightly").setup {
-  color = "black", -- blue, green or red
-  transparent = false,
+  color = "green", -- black, blue, green or red
+  transparent = true,
 }
 
 vim.cmd "colorscheme nightly"
