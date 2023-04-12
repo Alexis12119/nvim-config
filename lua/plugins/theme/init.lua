@@ -1,120 +1,58 @@
 return {
   {
     "Alexis12119/nightly.nvim",
-    -- lazy = true,
+    lazy = true,
     -- branch = "dev",
     priority = 1000,
+  },
+
+  {
+    "marko-cerovac/material.nvim",
+    lazy = true,
     config = function()
-      require "plugins.theme.nightly"
+      vim.g.material_style = "deep ocean"
     end,
   },
 
-  -- {
-  --   "marko-cerovac/material.nvim",
-  -- lazy = true,
-  --   -- config = function()
-  --   --   vim.g.material_style = "deep ocean"
-  --   --   require "plugins.theme.material"
-  --   -- end,
-  -- },
+  {
+    "folke/tokyonight.nvim",
+    lazy = true,
+    priority = 1000,
+  },
 
-  -- {
-  --   "folke/tokyonight.nvim",
-  -- lazy = true,
-  --   priority = 1000,
-  --   -- config = function()
-  --   --   require "plugins.theme.tokyonight"
-  --   -- end,
-  -- },
+  {
+    "catppuccin/nvim",
+    lazy = true,
+    name = "catppuccin",
+    priority = 1000,
+  },
 
-  -- {
-  --   "catppuccin/nvim",
-  -- lazy = true,
-  --   name = "catppuccin",
-  --   priority = 1000,
-  --   -- config = function()
-  --   --   require "plugins.theme.catppuccin"
-  --   -- end,
-  -- },
+  {
+    "rebelot/kanagawa.nvim",
+    lazy = true,
+    priority = 1000,
+  },
 
-  -- {
-  --   "rebelot/kanagawa.nvim",
-  -- lazy = true,
-  --   priority = 1000,
-  --   -- config = function()
-  --   --   require "plugins.theme.kanagawa"
-  --   -- end,
-  -- },
+  {
+    "arturgoms/moonbow.nvim",
+    lazy = true,
+    priority = 1000,
+  },
 
-  -- {
-  --   "arturgoms/moonbow.nvim",
-  -- lazy = true,
-  --   priority = 1000,
-  --   -- config = function()
-  --   --   require "plugins.theme.moonbow"
-  --   -- end,
-  -- },
+  {
+    "Mofiqul/vscode.nvim",
+    lazy = true,
+    priority = 1000,
+  },
 
-  -- {
-  --   "rmehri01/onenord.nvim",
-  -- lazy = true,
-  --   priority = 1000,
-  --   -- config = function()
-  --   --   require "plugins.theme.onenord"
-  --   -- end,
-  -- },
+  {
+    "navarasu/onedark.nvim",
+    lazy = true,
+  },
 
-  -- {
-  --   "Mofiqul/vscode.nvim",
-  --  -- lazy = true,
-  --   priority = 1000,
-  --  -- config = function()
-  --  --   require "plugins.theme.vscode"
-  --  -- end,
-  -- },
-
-  -- {
-  --   "navarasu/onedark.nvim",
-  -- lazy = true,
-  --   priority = 1000,
-  --   -- config = function()
-  --   --   require "plugins.theme.onedark"
-  --   -- end,
-  -- },
-
-  -- {
-  --   "tanvirtin/monokai.nvim",
-  -- lazy = true,
-  --   priority = 1000,
-  --   -- config = function()
-  --   --   require "plugins.theme.monokai"
-  --   -- end,
-  -- },
-
-  -- {
-  --   "Mofiqul/dracula.nvim",
-  -- lazy = true,
-  --   priority = 1000,
-  --   -- config = function()
-  --   --   require "plugins.theme.dracula"
-  --   -- end,
-  -- },
-
-  -- {
-  --   "JoosepAlviste/palenightfall.nvim",
-  -- lazy = true,
-  --   priority = 1000,
-  --   -- config = function()
-  --   --   require "plugins.theme.palenightfall"
-  --   -- end,
-  -- },
-
-  -- {
-  --   "bluz71/vim-nightfly-colors",
-  -- lazy = true,
-  --   priority = 1000,
-  --   -- config = function()
-  --   --   require "plugins.theme.nightfly"
-  --   -- end,
-  -- },
+  {
+    "Mofiqul/dracula.nvim",
+    lazy = true,
+    priority = 1000,
+  },
 }

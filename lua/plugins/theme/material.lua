@@ -1,5 +1,4 @@
 require("material").setup {
-
   contrast = {
     terminal = false, -- Enable contrast for the built-in terminal
     sidebars = false, -- Enable contrast for sidebar-like windows ( for example Nvim-Tree )
