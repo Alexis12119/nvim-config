@@ -31,7 +31,7 @@ return {
       ["e"] = { ":NvimTreeToggle<cr>", "Explorer" },
       ["D"] = { toggle_distraction_free, "Distraction Free" },
       ["q"] = { ":qa!<cr>", "Quit" },
-      ["P"] = {
+      ["m"] = {
         function()
           if vim.bo.filetype == "markdown" then
             vim.cmd "MarkdownPreviewToggle"
