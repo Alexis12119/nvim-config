@@ -36,7 +36,7 @@ return {
           if vim.bo.filetype == "markdown" then
             vim.cmd "MarkdownPreviewToggle"
           else
-            vim.notify("Only available on markdown", vim.log.levels.WARN)
+            vim.notify("Only available in markdown", vim.log.levels.WARN)
           end
         end,
         "Markdown Preview",
