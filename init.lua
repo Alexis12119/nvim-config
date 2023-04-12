@@ -1,7 +1,7 @@
 require "core"
 require "plugin-loader"
 
-local name = "catppuccin"
+local name = "nightly"
 
 local theme_ok = pcall(vim.cmd.colorscheme, name)
 if not theme_ok then

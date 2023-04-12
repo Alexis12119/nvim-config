@@ -31,6 +31,16 @@ return {
       ["e"] = { ":NvimTreeToggle<cr>", "Explorer" },
       ["D"] = { toggle_distraction_free, "Distraction Free" },
       ["q"] = { ":qa!<cr>", "Quit" },
+      ["P"] = {
+        function()
+          if vim.bo.filetype == "markdown" then
+            vim.cmd "MarkdownPreviewToggle"
+          else
+            vim.notify("Only available on markdown", vim.log.levels.WARN)
+          end
+        end,
+        "Markdown Preview",
+      },
       ["c"] = {
         function()
           vim.api.nvim_buf_delete(0, { force = true })

@@ -5,11 +5,6 @@
     </a>
     
 [![](https://img.shields.io/badge/Neovim-0.8+-blueviolet.svg?style=for-the-badge&color=000F10&logo=Neovim&logoColor=green&labelColor=302D41)](https://github.com/neovim/neovim)
-
-![Normal](https://user-images.githubusercontent.com/74944536/230747577-61abde5f-cd83-447a-8bd9-77af9b4dce2e.png)
-
-![Telescop](https://user-images.githubusercontent.com/74944536/230747579-d23a86ca-e0e2-455e-8b3d-037d5aa6da83.png)
-
 </div>
 
 ### ✨ Features
