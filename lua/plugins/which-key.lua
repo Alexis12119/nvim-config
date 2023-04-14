@@ -4,12 +4,6 @@ return {
   cmd = "WhichKey",
   keys = "<leader>",
   config = function()
-    -- local function toggle_alpha()
-    --   if vim.bo.buftype == "" or vim.bo.filetype == "alpha" or vim.bo.filetype == "checkhealth" then
-    --     vim.cmd ":Alpha"
-    --   end
-    -- end
-
     local function toggle_distraction_free()
       if vim.bo.buftype == "" and vim.bo.filetype ~= "" then
         if vim.o.cmdheight ~= 0 or vim.o.laststatus ~= 0 or vim.o.showtabline ~= 0 then
@@ -25,7 +19,6 @@ return {
     end
 
     local mappings = {
-      -- ["a"] = { toggle_alpha, "Alpha" },
       ["r"] = { ":%d+<cr>", "Remove All Text" },
       ["y"] = { ":%y+<cr>", "Yank All Text" },
       ["e"] = { ":NvimTreeToggle<cr>", "Explorer" },

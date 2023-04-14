@@ -143,12 +143,20 @@ dashboard.section.buttons.val = {
   dashboard.button("SPC q", "  Quit Neovim"),
 }
 
+for _, button in pairs(dashboard.section.buttons.val) do
+  button.opts.hl = "AlphaButton"
+  button.opts.hl_shortcut = "AlphaShortcut"
+end
+
 local footer = function()
+  local version = " " .. vim.version().major .. "." .. vim.version().minor .. "." .. vim.version().patch
   local lazy_ok, lazy = pcall(require, "lazy")
   if lazy_ok then
     local total_plugins = lazy.stats().count .. " Plugins"
     local startuptime = (math.floor(lazy.stats().startuptime * 100 + 0.5) / 100)
-    return " " .. total_plugins .. "  󰄉 " .. startuptime .. " ms"
+    return version .. "   " .. total_plugins .. "  󰄉 " .. startuptime .. " ms"
+  else
+    return version
   end
 end
 
