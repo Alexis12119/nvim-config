@@ -2,7 +2,6 @@ return {
   {
     "Alexis12119/nightly.nvim",
     lazy = true,
-    -- branch = "dev",
     priority = 1000,
   },
 

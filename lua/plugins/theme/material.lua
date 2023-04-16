@@ -63,5 +63,3 @@ require("material").setup {
 
   custom_highlights = {}, -- Overwrite highlights with your own
 }
-
-vim.cmd "colorscheme material"

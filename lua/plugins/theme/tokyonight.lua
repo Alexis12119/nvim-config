@@ -19,5 +19,3 @@ require("tokyonight").setup {
   dim_inactive = false, -- dims inactive windows
   lualine_bold = false, -- When `true`, section headers in the lualine theme will be bold                                                                                                  |
 }
-
-vim.cmd "colorscheme tokyonight"

@@ -3,10 +3,9 @@ require "plugin-loader"
 
 local name = "nightly"
 
-local theme_ok = pcall(vim.cmd.colorscheme, name)
-if not theme_ok then
-  vim.notify("The theme isn't installed or you had a typo", vim.log.levels.ERROR)
-  vim.cmd.colorscheme "habamax"
-else
-  pcall(require, "plugins.theme." .. name)
-end
+-- Check for theme configuration
+-- Theme configs are can be found on lua/plugins/theme 
+pcall(require, "plugins.theme." .. name)
+
+-- Set the theme
+vim.cmd.colorscheme(name)
