@@ -15,6 +15,7 @@
 - Plugin Manager called [lazy.nvim](https://github.com/folke/lazy.nvim).
 - Dark Colorscheme called [nightly.nvim](https://github.com/Alexis12119/nightly.nvim).
 - Code Runner called [jaq-nvim](https://github.com/is0n/jaq-nvim).
+- Session management with [persisted.nvim](https://github.com/olimorris/persisted.nvim).
 - Statusline with [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim).
 - Tabline with [bufferline.nvim](https://github.com/akinsho/bufferline.nvim).
 - Buffers per tab with [scope.nvim](https://github.com/tiagovla/scope.nvim).
