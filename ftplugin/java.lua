@@ -3,11 +3,11 @@ if not status_ok then
   return
 end
 
-local home = vim.env.HOME
 local jdtls_path = vim.fn.stdpath "data" .. "/mason/packages/jdtls/"
+local install_path = require("mason-registry").get_package("jdtls"):get_install_path()
 local equinox_version = "1.6.400.v20210924-0641"
 
-WORKSPACE_PATH = home .. "/workspace/"
+WORKSPACE_PATH = vim.fn.stdpath "data" .. "/workspace/"
 if vim.fn.has "mac" == 1 then
   OS_NAME = "mac"
 elseif vim.fn.has "unix" == 1 then
@@ -35,6 +35,7 @@ local config = {
     "-Declipse.product=org.eclipse.jdt.ls.core.product",
     "-Dlog.protocol=true",
     "-Dlog.level=ALL",
+    "-javaagent:" .. install_path .. "/lombok.jar",
     "-Xms1g",
     "--add-modules=ALL-SYSTEM",
     "--add-opens",
