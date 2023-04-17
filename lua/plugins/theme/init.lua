@@ -8,6 +8,7 @@ return {
   {
     "marko-cerovac/material.nvim",
     lazy = true,
+    priority = 1000,
     config = function()
       vim.g.material_style = "deep ocean"
     end,
@@ -47,6 +48,7 @@ return {
   {
     "navarasu/onedark.nvim",
     lazy = true,
+    priority = 1000,
   },
 
   {
