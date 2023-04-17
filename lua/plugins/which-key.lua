@@ -64,6 +64,7 @@ return {
       n = {
         name = "Neovim",
         r = { ":Reload<cr>", "Core Reload " },
+        s = { ":StartupTime<cr>", "StartupTime" },
         c = { ":e $MYVIMRC<cr>", "Configuration" },
         i = {
           function()

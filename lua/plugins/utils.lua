@@ -5,6 +5,15 @@ return {
   },
 
   {
+    "dstein64/vim-startuptime",
+    cmd = "StartupTime",
+    dependencies = "nvim-lualine/lualine.nvim",
+    config = function ()
+      vim.g.startuptime_tries = 5
+    end
+  },
+
+  {
     "iamcco/markdown-preview.nvim",
     build = function()
       vim.fn["mkdp#util#install"]()
