@@ -22,7 +22,7 @@ return {
     event = { "BufReadPost", "BufNewFile" },
     dependencies = {
       "rcarriga/nvim-notify",
-      -- enabled = false,
+      enabled = false,
       dependencies = {},
       config = function()
         require("notify").setup {

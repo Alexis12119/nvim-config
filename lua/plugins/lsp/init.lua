@@ -8,6 +8,7 @@ return {
   dependencies = {
     {
       "folke/neodev.nvim",
+      event = "LspAttach",
       config = function()
         require("neodev").setup {
           library = {

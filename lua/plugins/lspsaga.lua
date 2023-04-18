@@ -1,6 +1,6 @@
 return {
-  "glepnir/lspsaga.nvim",
-  event = { "BufReadPost", "BufNewFile" },
+  "nvimdev/lspsaga.nvim",
+  event = { "LspAttach" },
   config = function()
     local lspsaga = require "lspsaga"
 
