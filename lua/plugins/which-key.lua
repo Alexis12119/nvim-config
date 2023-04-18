@@ -34,12 +34,7 @@ return {
         end,
         "Markdown Preview",
       },
-      ["c"] = {
-        function()
-          vim.api.nvim_buf_delete(0, { force = true })
-        end,
-        "Close Buffer",
-      },
+      ["c"] = { ":Bdelete!<cr>", "Close Buffer" },
       s = {
         name = "Session",
         s = { ":SessionSave<cr>", "Save" },
@@ -70,7 +65,7 @@ return {
             if vim.fn.has "nvim-0.9.0" == 1 then
               vim.cmd "Inspect"
             else
-              vim.notify("Inspect isn't available in this neovim version", vim.log.levels.WARN, { title = " Inspect" })
+              vim.notify("Inspect isn't available in this neovim version", vim.log.levels.WARN, { title = "Inspect" })
             end
           end,
           "Inspect",

@@ -5,6 +5,11 @@ return {
   },
 
   {
+    "moll/vim-bbye",
+    cmd = { "Bdelete", "Bwipeout" },
+  },
+
+  {
     "iamcco/markdown-preview.nvim",
     build = function()
       vim.fn["mkdp#util#install"]()
