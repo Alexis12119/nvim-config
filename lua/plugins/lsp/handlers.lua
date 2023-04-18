@@ -82,7 +82,7 @@ end
 
 local function disable_format_on_save()
   vim.api.nvim_del_augroup_by_name "Format on save"
-  vim.notify("Format on save is now disabled", vim.log.levels.INFO, { title = "Format" })
+  vim.notify("Format on save is now disabled", vim.log.levels.INFO, { title = " Format" })
 end
 
 local function enable_format_on_save()
@@ -95,11 +95,11 @@ local function enable_format_on_save()
           return client.name == "null-ls"
         end,
       }
-      -- vim.notify("Format Done", vim.log.levels.INFO, { title = "Format" })
+      vim.notify("Format Done", vim.log.levels.INFO, { title = " Format" })
     end,
     group = "Format on save",
   })
-  vim.notify("Format on save is now enabled", vim.log.levels.INFO, { title = "Format" })
+  vim.notify("Format on save is now enabled", vim.log.levels.INFO, { title = " Format" })
 end
 
 M.on_attach = function(client, bufnr)

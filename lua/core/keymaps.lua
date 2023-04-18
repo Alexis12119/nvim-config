@@ -15,7 +15,7 @@ local function close()
   elseif #vim.api.nvim_list_wins() > 1 then
     vim.cmd "silent! close"
   else
-    vim.notify("Can't Close Window", vim.log.levels.WARN, { title = "Close Window" })
+    vim.notify("Can't Close Window", vim.log.levels.WARN, { title = " Close Window" })
   end
 end
 

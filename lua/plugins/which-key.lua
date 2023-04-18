@@ -29,7 +29,7 @@ return {
           if vim.bo.filetype == "markdown" then
             vim.cmd "MarkdownPreviewToggle"
           else
-            vim.notify("Only available in markdown", vim.log.levels.WARN)
+            vim.notify("Only available in markdown", vim.log.levels.WARN, { title = " Markdown-Preview" })
           end
         end,
         "Markdown Preview",
@@ -70,14 +70,20 @@ return {
             if vim.fn.has "nvim-0.9.0" == 1 then
               vim.cmd "Inspect"
             else
-              vim.notify("Inspect isn't available in this neovim version", vim.log.levels.WARN, { title = "Inspect" })
+              vim.notify("Inspect isn't available in this neovim version", vim.log.levels.WARN, { title = " Inspect" })
             end
           end,
           "Inspect",
         }, -- only available on neovim 0.9
         u = { ":Update<cr>", "Update" },
         h = { ":checkhealth<cr>", "Health" },
-        v = { ":version<cr>", "Version" },
+        v = {
+          function()
+            local version = vim.version().major .. "." .. vim.version().minor .. "." .. vim.version().patch
+            return vim.notify(version, vim.log.levels.INFO, { title = " Neovim Version" })
+          end,
+          "Version",
+        },
       },
       g = {
         name = "Git",
