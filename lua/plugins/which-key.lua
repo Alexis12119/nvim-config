@@ -29,7 +29,7 @@ return {
           if vim.bo.filetype == "markdown" then
             vim.cmd "MarkdownPreviewToggle"
           else
-            vim.notify("Only available in markdown", vim.log.levels.WARN, { title = " Markdown-Preview" })
+            vim.notify("Only available in markdown", vim.log.levels.WARN, { title = "Markdown-Preview" })
           end
         end,
         "Markdown Preview",
@@ -80,7 +80,7 @@ return {
         v = {
           function()
             local version = vim.version().major .. "." .. vim.version().minor .. "." .. vim.version().patch
-            return vim.notify(version, vim.log.levels.INFO, { title = " Neovim Version" })
+            return vim.notify(version, vim.log.levels.INFO, { title = "Neovim Version" })
           end,
           "Version",
         },
@@ -145,7 +145,7 @@ return {
         T = { ":TodoTelescope<cr>", "Todo" },
         b = { ":Telescope bookmarks<cr>", "Browswer Bookmarks" },
         B = { ":Telescope buffers<cr>", "Buffers" },
-        -- n = { ":lua require('telescope').extensions.notify.notify()<cr>", "Notify History" },
+        n = { ":lua require('telescope').extensions.notify.notify()<cr>", "Notify History" },
         c = { ":Telescope colorscheme<cr>", "Colorscheme" },
         p = {
           "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",

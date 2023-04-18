@@ -23,9 +23,9 @@ return {
         require("notify").setup {
           level = 2,
           minimum_width = 50,
-          render = "default",
+          render = "compact",
           stages = "fade",
-          timeout = 3000,
+          timeout = 1000,
           top_down = true,
         }
 

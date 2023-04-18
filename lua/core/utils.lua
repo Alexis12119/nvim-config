@@ -86,7 +86,7 @@ end
 
 command("Format", function()
   format_code()
-  vim.notify("Format Done", vim.log.levels.INFO, { title = " Format" })
+  vim.notify("Format Done", vim.log.levels.INFO, { title = "Format" })
 end, { nargs = "*", desc = "Code Format" })
 
 command("Reload", function()
@@ -94,13 +94,13 @@ command("Reload", function()
     reload_core()
     vim.notify("Core Reload Done", vim.log.levels.INFO, { title = "Configuration Reload" })
   else
-    vim.notify("Not available in this window/buffer", vim.log.levels.INFO, { title = " Configuration Reload" })
+    vim.notify("Not available in this window/buffer", vim.log.levels.INFO, { title = "Configuration Reload" })
   end
 end, { nargs = "*", desc = "Core Reload" })
 
 command("Update", function()
   update_config()
-  vim.notify("Update Done", vim.log.levels.INFO, { title = " Configuration Update" })
+  vim.notify("Update Done", vim.log.levels.INFO, { title = "Configuration Update" })
 end, { nargs = "*", desc = "Configuration Update" })
 
 command("LuaSnipEdit", function()

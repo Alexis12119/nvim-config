@@ -15,7 +15,7 @@ elseif vim.fn.has "unix" == 1 then
 elseif vim.fn.has "win32" == 1 then
   OS_NAME = "win"
 else
-  vim.notify("Unsupported OS", vim.log.levels.WARN, { title = " Jdtls" })
+  vim.notify("Unsupported OS", vim.log.levels.WARN, { title = "Jdtls" })
 end
 
 -- local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }
