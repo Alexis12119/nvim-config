@@ -48,19 +48,19 @@ return {
 
         require("lspconfig.ui.windows").default_options.border = "rounded"
 
-        local servers = {
+        local auto_install = {
           -- "jsonls",
           "lua_ls",
           "clangd",
           -- "intelephense",
-          -- "cssls",
-          -- "html",
-          -- "tsserver",
-          -- "emmet_ls",
+          "cssls",
+          "html",
+          "tsserver",
+          "emmet_ls",
           "pyright",
           -- "omnisharp",
           -- "yamlls",
-          -- "gopls",
+          "gopls",
           -- "lemminx",
           "vimls",
           -- "cmake",
@@ -81,24 +81,31 @@ return {
         }
 
         mason_lspconfig.setup {
-          ensure_installed = servers,
+          ensure_installed = auto_install,
+        }
+
+        local disabled_servers = {
+          "jdtls",
         }
 
         mason_lspconfig.setup_handlers {
           function(server_name)
-            if server_name ~= "jdtls" then
-              local opts = {
-                on_attach = require("plugins.lsp.handlers").on_attach,
-                capabilities = require("plugins.lsp.handlers").capabilities,
-              }
-
-              local require_ok, server = pcall(require, "plugins.lsp.settings." .. server_name)
-              if require_ok then
-                opts = vim.tbl_deep_extend("force", server, opts)
+            for _, name in pairs(disabled_servers) do
+              if name == server_name then
+                return
               end
-
-              lspconfig[server_name].setup(opts)
             end
+            local opts = {
+              on_attach = require("plugins.lsp.handlers").on_attach,
+              capabilities = require("plugins.lsp.handlers").capabilities,
+            }
+
+            local require_ok, server = pcall(require, "plugins.lsp.settings." .. server_name)
+            if require_ok then
+              opts = vim.tbl_deep_extend("force", server, opts)
+            end
+
+            lspconfig[server_name].setup(opts)
           end,
         }
       end,
