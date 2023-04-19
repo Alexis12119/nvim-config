@@ -34,7 +34,12 @@ return {
         end,
         "Markdown Preview",
       },
-      ["c"] = { ":Bdelete!<cr>", "Close Buffer" },
+      ["c"] = {
+        function()
+          vim.api.nvim_buf_delete(0, { force = true })
+        end,
+        "Close Buffer",
+      },
       s = {
         name = "Session",
         s = { ":SessionSave<cr>", "Save" },
