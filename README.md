@@ -76,13 +76,13 @@ git clone https://github.com/Alexis12119/nvim-config.git ~/.config/nvim
 
 - Windows (Powershell)
 
-```sh
+```ps1
 Invoke-WebRequest https://raw.githubusercontent.com/Alexis12119/nvim-config/master/installer/install.ps1 -UseBasicParsing | Invoke-Expression
 ```
 
 - Windows (CMD)
 
-```sh
+```cmd
 git clone https://github.com/Alexis12119/nvim-config.git %localappdata%\nvim
 ```
 
