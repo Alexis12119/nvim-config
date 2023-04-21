@@ -1,7 +1,12 @@
+local name = "nightly"
+
+-- Fix for no cmp cursorline when using other themes
+if name ~= "nightly" then
+  vim.api.nvim_set_hl(0, "CmpCursorLine", { link = "CursorLine" })
+end
+
 require "core"
 require "plugin-loader"
-
-local name = "nightly"
 
 -- Check for theme configuration
 -- Theme configs are can be found on lua/plugins/theme
