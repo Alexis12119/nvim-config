@@ -34,24 +34,6 @@ return {
   },
 
   {
-    "arturgoms/moonbow.nvim",
-    lazy = true,
-    priority = 1000,
-  },
-
-  {
-    "Mofiqul/vscode.nvim",
-    lazy = true,
-    priority = 1000,
-  },
-
-  {
-    "navarasu/onedark.nvim",
-    lazy = true,
-    priority = 1000,
-  },
-
-  {
     "Mofiqul/dracula.nvim",
     lazy = true,
     priority = 1000,
