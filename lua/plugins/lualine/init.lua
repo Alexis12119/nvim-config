@@ -47,28 +47,6 @@ return {
         lualine_y = {},
         lualine_z = {},
       },
-
-      --   sections = {
-      --     lualine_a = {},
-      --     lualine_b = {},
-      --     lualine_c = {
-      --       stl.branch,
-      --       stl.mode,
-      --       stl.diagnostics,
-      --       stl.lsp,
-      --     },
-      --     lualine_x = {
-      --       stl.filename,
-      --       stl.diff,
-      --       stl.filetype,
-      --       stl.filesize,
-      --       stl.progress,
-      --       stl.percent,
-      --       stl.total_lines,
-      --     },
-      --     lualine_y = {},
-      --     lualine_z = {},
-      --   },
     }
   end,
 }
