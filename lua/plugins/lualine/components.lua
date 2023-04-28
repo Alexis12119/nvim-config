@@ -36,25 +36,28 @@ end
 M.mode = {
   function()
     -- I made it this way so it won't be hard to find the index
-    local icons = {
-      [1] = "",
-      [2] = "",
-      [3] = "",
-      [4] = "",
-      [5] = "",
-      [6] = "",
-      [7] = "",
-      [8] = "",
-      [9] = "",
-      [10] = "", --> new icon
-    }
-    -- local mode_names = require("plugins.lualine.modes").name
-    -- local mode_name = vim.api.nvim_get_mode().mode
-    -- if mode_names[mode_name] == nil then
-    --   return mode_name
-    -- end
-    -- return mode_names[mode_name]
-    return icons[8]
+    -- local icons = {
+    --   [1] = "",
+    --   [2] = "",
+    --   [3] = "",
+    --   [4] = "",
+    --   [5] = "",
+    --   [6] = "",
+    --   [7] = "",
+    --   [8] = "",
+    --   [9] = "",
+    --   [10] = "",
+    --   [11] = "",
+    --   [12] = "",
+    --   [13] = "", --> new icon
+    -- }
+    local mode_names = require("plugins.lualine.modes").name
+    local mode_name = vim.api.nvim_get_mode().mode
+    if mode_names[mode_name] == nil then
+      return mode_name
+    end
+    return mode_names[mode_name]
+    -- return icons[12]
   end,
   separator = { left = " ", right = "" },
   color = function()
