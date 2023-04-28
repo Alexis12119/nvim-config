@@ -38,7 +38,7 @@ autocmd("User", {
       end,
     })
   end,
-  desc = "Disable Bufferline And Lualine in Alpha",
+  desc = "Disable Tabline And StatusLine in Alpha",
 })
 
 -- remove this if there's an issue
