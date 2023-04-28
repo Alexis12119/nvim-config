@@ -3,8 +3,8 @@ return {
   event = { "BufReadPost", "BufNewFile" },
   config = function()
     local lualine = require "lualine"
-
     local stl = require "plugins.lualine.components"
+    local theme = require "plugins.lualine.theme"
 
     lualine.setup {
       options = {
@@ -12,7 +12,7 @@ return {
         icons_enabled = true,
         component_separators = { left = "", right = "" },
         section_separators = { left = "", right = "" },
-        theme = "auto",
+        theme = theme,
         disabled_filetypes = {
           "dashboard",
           "lspinfo",
@@ -31,8 +31,8 @@ return {
         lualine_b = {},
         lualine_c = {
           stl.mode,
-          stl.diagnostics,
           stl.lsp,
+          stl.diagnostics,
           "%=",
           stl.filename,
         },
