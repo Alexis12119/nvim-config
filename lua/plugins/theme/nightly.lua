@@ -11,7 +11,7 @@
 -- end
 
 require("nightly").setup {
-  color = "black", -- black, blue, green or red
+  color = "gray", -- gray, black, blue, green or red
   transparent = false,
   styles = {
     comments = { italic = true },
