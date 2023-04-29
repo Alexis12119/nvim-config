@@ -182,7 +182,7 @@ M.progress = {
 
 M.total_lines = {
   function()
-    return "%v/%L"
+    return "%L"
   end,
   separator = { left = "", right = " " },
   color = function()

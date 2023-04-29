@@ -37,9 +37,9 @@ return {
           stl.filename,
         },
         lualine_x = {
-          stl.filesize,
           stl.diff,
           stl.branch,
+          stl.filesize,
           stl.percent,
           stl.progress,
           stl.total_lines,
