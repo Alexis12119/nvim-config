@@ -8,6 +8,7 @@ return {
     },
     {
       "olimorris/persisted.nvim",
+      enabled = false,
       cmd = {
         "SessionSave",
         "SessionToggle",
@@ -149,7 +150,7 @@ return {
     -- load_extension, somewhere after setup function:
     -- telescope.load_extension "fzf"
     telescope.load_extension "bookmarks"
-    telescope.load_extension "persisted"
+    -- telescope.load_extension "persisted"
     telescope.load_extension "projects"
   end,
 }
