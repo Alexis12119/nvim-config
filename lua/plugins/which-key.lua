@@ -147,7 +147,8 @@ return {
         B = { ":Telescope buffers<cr>", "Buffers" },
         -- n = { ":lua require('telescope').extensions.notify.notify()<cr>", "Notify History" },
         c = { ":Telescope colorscheme<cr>", "Colorscheme" },
-        p = {
+        p = { ":Telescope projects<cr>", "Projects" },
+        P = {
           "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
           "Colorscheme with Preview",
         },
