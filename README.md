@@ -15,7 +15,7 @@
 - Plugin Manager called [lazy.nvim](https://github.com/folke/lazy.nvim).
 - Personal theme called [nightly.nvim](https://github.com/Alexis12119/nightly.nvim).
 - Code Runner called [jaq-nvim](https://github.com/is0n/jaq-nvim).
-- Session management with [persisted.nvim](https://github.com/olimorris/persisted.nvim).
+<!-- - Session management with [persisted.nvim](https://github.com/olimorris/persisted.nvim). -->
 - Manage projects with [project.nvim](https://github.com/ahmedkhalf/project.nvim).
 - Statusline with [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim).
 - Tabline with [bufferline.nvim](https://github.com/akinsho/bufferline.nvim).
