@@ -13,6 +13,9 @@ return {
         -- Uses external commands such as 'g++' and 'cargo'
         external = {
           typescript = "tsc % && node $fileBase",
+          -- Debugging
+          -- javascript = "node --inspect %",
+          -- Normal
           javascript = "node %",
           python = "python $file",
           rust = "rustc % && $fileBase",

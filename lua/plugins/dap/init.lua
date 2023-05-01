@@ -2,7 +2,7 @@
 -- https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation
 return {
   "mfussenegger/nvim-dap",
-  enabled = false,
+  -- enabled = false,
   config = function()
     local dap = require "dap"
     local dapui = require "dapui"
@@ -21,6 +21,8 @@ return {
     end
 
     require "plugins.dap.cpptools"
+    require "plugins.dap.node-debug2"
+    require "plugins.dap.debugpy"
     local mappings = {
       d = {
         name = "Dap",
