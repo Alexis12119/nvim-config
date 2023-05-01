@@ -25,6 +25,7 @@ return {
     require "plugins.dap.node-debug2"
     require "plugins.dap.debugpy"
     require "plugins.dap.delve"
+    require "plugins.dap.js-debug"
     local mappings = {
       d = {
         name = "Dap",
