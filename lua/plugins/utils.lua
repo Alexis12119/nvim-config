@@ -45,7 +45,6 @@ return {
           default_prompt = "➤ ",
           win_options = {
             winblend = 10,
-            winhighlight = "Normal:Normal,NormalNC:Normal",
           },
         },
         select = {
@@ -54,7 +53,6 @@ return {
           builtin = {
             win_options = {
               winblend = 10,
-              winhighlight = "Normal:Normal,NormalNC:Normal",
             },
           },
         },
