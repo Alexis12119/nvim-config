@@ -1,4 +1,4 @@
--- Check out this for guide
+-- NOTE: Check out this for guide
 -- https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation
 return {
   "mfussenegger/nvim-dap",
@@ -20,9 +20,11 @@ return {
       dapui.close()
     end
 
+    -- NOTE: Make sure to install the needed files/exectubles through mason
     require "plugins.dap.cpptools"
     require "plugins.dap.node-debug2"
     require "plugins.dap.debugpy"
+    require "plugins.dap.delve"
     local mappings = {
       d = {
         name = "Dap",
