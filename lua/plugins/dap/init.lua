@@ -2,6 +2,7 @@
 -- https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation
 return {
   "mfussenegger/nvim-dap",
+  event = { "BufReadPost", "BufNewFile" },
   config = function()
     local dap = require "dap"
     local dapui = require "dapui"
