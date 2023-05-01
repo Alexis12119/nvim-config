@@ -24,6 +24,7 @@ return {
       ["e"] = { ":NvimTreeToggle<cr>", "Explorer" },
       ["D"] = { toggle_distraction_free, "Distraction Free" },
       ["q"] = { ":qa!<cr>", "Quit" },
+      ["c"] = { ":Bdelete!<cr>", "Close Buffer" },
       ["m"] = {
         function()
           if vim.bo.filetype == "markdown" then
@@ -34,20 +35,6 @@ return {
         end,
         "Markdown Preview",
       },
-      ["c"] = {
-        function()
-          vim.api.nvim_buf_delete(0, { force = true })
-        end,
-        "Close Buffer",
-      },
-      -- s = {
-      --   name = "Session",
-      --   s = { ":SessionSave<cr>", "Save" },
-      --   t = { ":SessionToggle<cr>", "Toggle" },
-      --   d = { ":SessionDelete<cr>", "Delete" },
-      --   l = { ":SessionLoad<cr>", "Load" },
-      --   L = { ":SessionLoadLast<cr>", "Load Last" },
-      -- },
       p = {
         name = "Plugin",
         c = { ":Lazy clean<cr>", "Clean" },

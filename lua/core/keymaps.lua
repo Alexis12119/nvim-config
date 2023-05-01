@@ -11,7 +11,7 @@ local modes = {
 
 local function close()
   if vim.bo.buftype == "terminal" then
-    vim.api.nvim_buf_delete(0, { force = true })
+    vim.cmd "Bdelete!"
   elseif #vim.api.nvim_list_wins() > 1 then
     vim.cmd "silent! close"
   else

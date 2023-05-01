@@ -15,12 +15,8 @@ return {
     bufferline.setup {
       options = {
         mode = "buffers",
-        close_command = function()
-          vim.api.nvim_buf_delete(0, { force = true })
-        end,
-        right_mouse_command = function()
-          vim.api.nvim_buf_delete(0, { force = true })
-        end,
+        close_command = ":Bdelete!",
+        right_mouse_command = ":Bdelete!",
         offsets = {
           { filetype = "NvimTree", text = "File Explorer", highlight = "Directory", padding = 1 },
           { filetype = "lspsagaoutline", text = "Code Outline", highlight = "Directory", padding = 1 },
