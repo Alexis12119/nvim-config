@@ -126,6 +126,7 @@ return {
         out = { icon = "", name = "Out", color = "#ABB2BF" },
         ["robots.txt"] = { icon = "ﮧ", name = "Robots", "#ABB2BF" },
         [""] = { icon = "", name = "default", "#ABB2Bf" },
+        norg = { icon = "", name = "default", "#ABB2Bf" },
         ttf = { icon = "", name = "TrueTypeFont", "#ABB2Bf" },
         rpm = { icon = "", name = "Rpm", "#FCA2Aa" },
         woff = { icon = "", name = "WebOpenFontFormat", color = "#ABB2Bf" },

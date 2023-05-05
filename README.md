@@ -4,7 +4,7 @@
       <img alt="Last commit" src="https://img.shields.io/github/last-commit/Alexis12119/nvim-config?style=for-the-badge&logo=git&color=000F10&logoColor=dark orange&labelColor=302D41"/>
     </a>
     
-[![](https://img.shields.io/badge/Neovim-0.8+-blueviolet.svg?style=for-the-badge&color=000F10&logo=Neovim&logoColor=green&labelColor=302D41)](https://github.com/neovim/neovim)
+[![](https://img.shields.io/badge/Neovim-0.9+-blueviolet.svg?style=for-the-badge&color=000F10&logo=Neovim&logoColor=green&labelColor=302D41)](https://github.com/neovim/neovim)
 
 ![Preview](https://user-images.githubusercontent.com/74944536/235295154-0d67e53c-ebda-4029-a5e5-1c2e6cbeaeb4.png)
 
@@ -13,7 +13,7 @@
 ### ✨ Features
 
 - Plugin Manager called [lazy.nvim](https://github.com/folke/lazy.nvim).
-- Personal theme called [nightly.nvim](https://github.com/Alexis12119/nightly.nvim).
+- Personal theme called [nightly.nvim](https://github.com/Alexis12119/nightly.nvim) and many more themes.
 - Code Runner called [jaq-nvim](https://github.com/is0n/jaq-nvim).
 - Debugging with [nvim-dap](https://github.com/mfussenegger/nvim-dap) and [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui).
 - Manage projects with [project.nvim](https://github.com/ahmedkhalf/project.nvim).
@@ -29,6 +29,7 @@
 - Terminal with [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim).
 - Git integration with [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) and [lazygit](https://github.com/jesseduffield/lazygit).
 - Popup Cheatsheet for keymaps with [which-key.nvim](https://github.com/folke/which-key.nvim).
+- Note Taking with [neorg](https://github.com/nvim-neorg/neorg).
 - Markdown Preview with [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim).
 
 ## 🌟 Stargazers
@@ -59,7 +60,7 @@
 
 #### Neovim
 
-- [Neovim 0.8+](https://github.com/neovim/neovim/releases)
+- [Neovim 0.9+](https://github.com/neovim/neovim/releases)
 
 **NOTE:** I'm using [scoop](https://scoop.sh/#/) to install them.
 
