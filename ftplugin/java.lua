@@ -18,7 +18,7 @@ else
   vim.notify("Unsupported OS", vim.log.levels.WARN, { title = "Jdtls" })
 end
 
--- local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }
+local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }
 
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 
@@ -64,7 +64,7 @@ local config = {
   -- 💀
   -- This is the default if not provided, you can remove it. Or adjust as needed.
   -- One dedicated LSP server & client will be started per unique root_dir
-  -- root_dir = require("jdtls.setup").find_root(root_markers) ,
+  root_dir = require("jdtls.setup").find_root(root_markers) ,
 }
 
 local keymap = vim.keymap.set

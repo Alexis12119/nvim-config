@@ -105,7 +105,7 @@ Run `nvim` and wait for the plugins to be installed.
 :TSInstall <filetype>
 ```
 
-Make sure the `formatter` or `linter` is installed and add it to this setup function: [null-ls](https://github.com/Alexis12119/nvim-config/blob/master/lua/user/plugins/lsp/null-ls.lua).
+Make sure the `formatter` or `linter` is installed and add it to this setup function: [null-ls](https://github.com/Alexis12119/nvim-config/blob/main/lua/plugins/null-ls.lua).
 
 ---
 
