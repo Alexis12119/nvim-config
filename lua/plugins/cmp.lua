@@ -145,13 +145,13 @@ return {
       window = {
         completion = cmp.config.window.bordered {
           border = "rounded",
-          winhighlight = "Normal:Normal,FloatBorder:CmpCompletionBorder,CursorLine:CmpCursorLine,Search:Search",
+          winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None",
           col_offset = -3,
           side_padding = 1,
         },
         documentation = cmp.config.window.bordered {
           border = "rounded",
-          winhighlight = "Normal:Normal,FloatBorder:CmpDocumentationBorder,CursorLine:CmpCursorLine,Search:Search",
+          winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None",
           col_offset = -3,
           side_padding = 1,
         },
@@ -169,7 +169,7 @@ return {
       window = {
         completion = cmp.config.window.bordered {
           border = "rounded",
-          winhighlight = "Normal:Normal,FloatBorder:CmpCompletionBorder,CursorLine:CmpCursorLine,Search:Search",
+          winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:Search",
           col_offset = -3,
           side_padding = 1,
         },
