@@ -29,7 +29,7 @@
 - Terminal with [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim).
 - Git integration with [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) and [lazygit](https://github.com/jesseduffield/lazygit).
 - Popup Cheatsheet for keymaps with [which-key.nvim](https://github.com/folke/which-key.nvim).
-- Note Taking with [neorg](https://github.com/nvim-neorg/neorg).
+<!-- - Note Taking with [neorg](https://github.com/nvim-neorg/neorg). -->
 - Markdown Preview with [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim).
 
 ## 🌟 Stargazers
