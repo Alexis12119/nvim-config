@@ -110,27 +110,6 @@ autocmd("FileType", {
   desc = "Set shiftwidth to 4 in these filetypes",
 })
 
--- autocmd("BufEnter", {
---   callback = function()
---     local root = ""
---     local filepath = vim.fn.expand "%:p:h"
---     local patterns = {
---       ".git",
---       ".vscode",
---       ".vs",
---     }
---     for _, pattern in pairs(patterns) do
---       root = vim.fn.finddir(pattern, filepath .. ";")
---       root = root:sub(1, -1 * (#pattern + 1))
---       if #root > 0 then
---         vim.cmd("silent! cd " .. root)
---       end
---     end
---   end,
---   group = general,
---   desc = "Change directory if triggered",
--- })
-
 autocmd("BufModifiedSet", {
   callback = function()
     vim.cmd "silent! w"

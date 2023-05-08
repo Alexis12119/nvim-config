@@ -1,4 +1,4 @@
-local name = "nightly"
+local name = "everblush"
 
 require "core"
 require "plugin-loader"
