@@ -34,8 +34,11 @@ function _G.set_keymaps(keymaps, mode)
 
   for keymap, value in pairs(keymaps) do
     if value.desc ~= nil then
-      opt = vim.tbl_extend("force", opt, { desc = value.desc })
-      vim.keymap.set(mode, keymap, value.cmd, opt)
+      if value.opt ~= nil then
+        vim.keymap.set(mode, keymap, value.cmd, value.opt, { desc = value.desc })
+      else
+        vim.keymap.set(mode, keymap, value.cmd, { desc = value.desc })
+      end
     else
       vim.keymap.set(mode, keymap, value.cmd, opt)
     end

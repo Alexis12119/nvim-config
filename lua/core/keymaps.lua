@@ -41,6 +41,18 @@ local keymaps = {
     --   desc = "Enter insert mode",
     -- },
 
+    ["j"] = {
+      cmd = "v:count == 0 ? 'gj' : 'j'",
+      desc = "Better Up",
+      opt = { expr = true, silent = true },
+    },
+
+    ["k"] = {
+      cmd = "v:count == 0 ? 'gk' : 'k'",
+      desc = "Better Up",
+      opt = { expr = true, silent = true },
+    },
+
     ["<C-j>"] = {
       cmd = "<C-w>j",
       desc = "Go to upper window",
