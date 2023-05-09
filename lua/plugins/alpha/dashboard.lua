@@ -139,7 +139,6 @@ dashboard.section.buttons.val = {
   dashboard.button("SPC f r", "  Recent Files"),
   dashboard.button("SPC f t", "  Find Text"),
   dashboard.button("SPC n c", "  Configuration", ":e $MYVIMRC<CR>"),
-  dashboard.button("SPC f s", "  Sessions", ":Telescope persisted<cr>"),
   dashboard.button("SPC p u", "  Update Plugins"),
   dashboard.button("SPC q", "  Quit Neovim"),
 }

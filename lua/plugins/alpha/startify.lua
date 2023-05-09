@@ -140,7 +140,6 @@ startify.section.top_buttons.val = {
   startify.button("SPC f r", "  Recent Files"),
   startify.button("SPC f t", "  Find Text"),
   startify.button("SPC n c", "  Configuration", ":e $MYVIMRC<CR>"),
-  startify.button("SPC f s", "  Sessions", ":Telescope persisted<cr>"),
   startify.button("SPC p u", "  Update Plugins"),
   startify.button("SPC q", "    Quit Neovim"),
 }
