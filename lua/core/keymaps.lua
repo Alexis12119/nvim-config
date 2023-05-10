@@ -57,14 +57,17 @@ local keymaps = {
       cmd = "<C-w>j",
       desc = "Go to upper window",
     },
+
     ["<C-k>"] = {
       cmd = "<C-w>k",
       desc = "Go to lower window",
     },
+
     ["<C-h>"] = {
       cmd = "<C-w>h",
       desc = "Go to left window",
     },
+
     ["<C-l>"] = {
       cmd = "<C-w>l",
       desc = "Go to right window",
@@ -84,14 +87,17 @@ local keymaps = {
       cmd = ":resize +2<CR>",
       desc = "Add size at the top",
     },
+
     ["<C-Down>"] = {
       cmd = ":resize -2<CR>",
       desc = "Add size at the bottom",
     },
+
     ["<C-Left>"] = {
       cmd = ":vertical resize +2<CR>",
       desc = "Add size at the left",
     },
+
     ["<C-Right>"] = {
       cmd = ":vertical resize -2<CR>",
       desc = "Add size at the right",
@@ -110,14 +116,17 @@ local keymaps = {
       cmd = ":tabprevious<CR>",
       desc = "Go to previous tab",
     },
+
     ["<Right>"] = {
       cmd = ":tabnext<CR>",
       desc = "Go to next tab",
     },
+
     ["<Up>"] = {
       cmd = ":tabnew<CR>",
       desc = "New tab",
     },
+
     ["<Down>"] = {
       cmd = ":tabclose<CR>",
       desc = "Close tab",
@@ -127,6 +136,7 @@ local keymaps = {
       cmd = "<<",
       desc = "Indent backward",
     },
+
     [">"] = {
       cmd = ">>",
       desc = "Indent forward",
@@ -136,6 +146,7 @@ local keymaps = {
       cmd = ":m .+1<CR>==",
       desc = "Move the line up",
     },
+
     ["<A-k>"] = {
       cmd = ":m .-2<CR>==",
       desc = "Move the line down",
@@ -152,6 +163,7 @@ local keymaps = {
       cmd = "<Esc>:m .+1<CR>==gi",
       desc = "Move the line up",
     },
+
     ["<A-k>"] = {
       cmd = "<Esc>:m .-2<CR>==gi",
       desc = "Move the line down",
@@ -180,6 +192,7 @@ local keymaps = {
       cmd = "<gv",
       desc = "Indent backward",
     },
+
     [">"] = {
       cmd = ">gv",
       desc = "Indent forward",
@@ -189,6 +202,7 @@ local keymaps = {
       cmd = ":m '>+1<CR>gv=gv",
       desc = "Move the selected text up",
     },
+
     ["<A-k>"] = {
       cmd = ":m '<-2<CR>gv=gv",
       desc = "Move the selected text down",
@@ -200,6 +214,7 @@ local keymaps = {
       cmd = ":m '>+1<CR>gv=gv",
       desc = "Move the selected text up",
     },
+
     ["<A-k>"] = {
       cmd = ":m '<-2<CR>gv=gv",
       desc = "Move the selected text down",
@@ -211,6 +226,7 @@ local keymaps = {
       cmd = forward_search,
       desc = "Word Search Increment",
     },
+
     ["<S-Tab>"] = {
       cmd = backward_search,
       desc = "Word Search Decrement",
