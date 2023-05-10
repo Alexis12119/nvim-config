@@ -135,12 +135,13 @@ local dashboard = require "alpha.themes.dashboard"
 dashboard.section.header.val = headers.pacman
 
 dashboard.section.buttons.val = {
-  dashboard.button("SPC f f", "  Find File"),
-  dashboard.button("SPC f r", "  Recent Files"),
+  dashboard.button("SPC f f", "  Find File"),
+  dashboard.button("SPC f r", "  Recent Files"),
   dashboard.button("SPC f t", "  Find Text"),
-  dashboard.button("SPC n c", "  Configuration", ":e $MYVIMRC<CR>"),
-  dashboard.button("SPC p u", "  Update Plugins"),
-  dashboard.button("SPC q", "  Quit Neovim"),
+  dashboard.button("SPC f p", "  Find Projects"),
+  dashboard.button("SPC n c", "  Configuration", ":e $MYVIMRC<cr>"),
+  -- dashboard.button("SPC p u", "  Update Plugins"),
+  dashboard.button("SPC q", "  Quit Neovim"),
 }
 
 for _, button in pairs(dashboard.section.buttons.val) do
@@ -164,6 +165,7 @@ vim.api.nvim_create_autocmd("User", {
   pattern = "LazyVimStarted",
   callback = function()
     dashboard.section.footer.val = footer()
+    vim.cmd "AlphaRedraw"
   end,
   desc = "Footer for Alpha",
 })

@@ -136,12 +136,13 @@ startify.section.header.val = headers.pacman
 startify.section.header.opts.hl = "AlphaHeader"
 
 startify.section.top_buttons.val = {
-  startify.button("SPC f f", "  Find File"),
-  startify.button("SPC f r", "  Recent Files"),
+  startify.button("SPC f f", "  Find File"),
+  startify.button("SPC f r", "  Recent Files"),
   startify.button("SPC f t", "  Find Text"),
-  startify.button("SPC n c", "  Configuration", ":e $MYVIMRC<CR>"),
-  startify.button("SPC p u", "  Update Plugins"),
-  startify.button("SPC q", "    Quit Neovim"),
+  startify.button("SPC f p", "  Find Projects"),
+  startify.button("SPC n c", "  Configuration", ":e $MYVIMRC<cr>"),
+  -- startify.button("SPC p u", "  Update Plugins"),
+  startify.button("SPC q", "    Quit Neovim"),
 }
 -- disable MRU
 startify.section.mru.val = { { type = "padding", val = 0 } }
@@ -177,6 +178,7 @@ vim.api.nvim_create_autocmd("User", {
     startify.section.footer.val = {
       { type = "text", val = footer },
     }
+    vim.cmd "AlphaRedraw"
   end,
   desc = "Footer for Alpha",
 })

@@ -13,13 +13,10 @@
 ### ✨ Features
 
 - Plugin Manager called [lazy.nvim](https://github.com/folke/lazy.nvim).
-- Customized forked theme called [everblush](https://github.com/Alexis12119/everblush) and many more themes.
-- Code Runner called [jaq-nvim](https://github.com/is0n/jaq-nvim).
-- Debugging with [nvim-dap](https://github.com/mfussenegger/nvim-dap) and [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui).
+- Customized Everblush theme called [nightly.nvim](https://github.com/Alexis12119/nightly.nvim) and many more themes.
 - Manage projects with [project.nvim](https://github.com/ahmedkhalf/project.nvim).
 - Statusline with [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim).
-- Tabline with [bufferline.nvim](https://github.com/akinsho/bufferline.nvim).
-- Buffers per tab with [scope.nvim](https://github.com/tiagovla/scope.nvim).
+- Tabline with [bufferline.nvim](https://github.com/akinsho/bufferline.nvim) and [scope.nvim](https://github.com/tiagovla/scope.nvim).
 - File Explorer [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua).
 - Autocompletion with [nvim-cmp](https://github.com/hrsh7th/nvim-cmp).
 - Language Server Protocol with [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig).
@@ -29,7 +26,6 @@
 - Terminal with [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim).
 - Git integration with [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) and [lazygit](https://github.com/jesseduffield/lazygit).
 - Popup Cheatsheet for keymaps with [which-key.nvim](https://github.com/folke/which-key.nvim).
-<!-- - Note Taking with [neorg](https://github.com/nvim-neorg/neorg). -->
 - Markdown Preview with [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim).
 
 ## 🌟 Stargazers
