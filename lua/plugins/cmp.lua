@@ -1,6 +1,7 @@
 return {
   "hrsh7th/nvim-cmp",
   event = { "InsertEnter", "CmdlineEnter" },
+  commit = "bd168a2f86f01f2a348e5f4ac2980943737ff459",
   dependencies = {
     "hrsh7th/cmp-buffer", -- Buffer Completions
     "hrsh7th/cmp-path", -- Path Completions
