@@ -12,7 +12,6 @@ return {
   {
     "ahmedkhalf/project.nvim",
     lazy = true,
-    keys = "<leader>",
     config = function()
       require("project_nvim").setup {
         -- Manual mode doesn't automatically change your root directory, so you have
