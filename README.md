@@ -6,7 +6,8 @@
     
 [![](https://img.shields.io/badge/Neovim-0.9+-blueviolet.svg?style=for-the-badge&color=000F10&logo=Neovim&logoColor=green&labelColor=302D41)](https://github.com/neovim/neovim)
 
-![Preview](https://user-images.githubusercontent.com/74944536/236874823-0a136b05-9db1-4e7b-81e7-4403d12aa084.png)
+![Split](https://github.com/Alexis12119/nightly.nvim/assets/74944536/5645cbbb-2182-43fa-977d-6d81f1d68bb7)
+![Telescope](https://github.com/Alexis12119/nightly.nvim/assets/74944536/dcbfa4e3-d3d5-4b09-b205-154cde98cc92)
 
 </div>
 
