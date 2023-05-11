@@ -2,17 +2,17 @@ local M = {}
 
 local foreground = ""
 local mode_color = require("plugins.lualine.modes").colors
-local add = "#98BE65"
-local delete = "#DB4B4B"
-local change = "#7AA2F7"
-local error = "#DB4B4B"
-local warn = "#ECBE7B"
-local hint = "#A9A1E1"
+local add = "#67B0E8"
+local delete = "#E57474"
+local change = "#C47FD5"
+local error = "#E57474"
+local warn = "#E5C76B"
+local hint = "#8CCF7E"
 
 if vim.o.background == "dark" then
   foreground = "#BBC2CF"
 else
-  foreground = "#443D30"
+  foreground = "#000000"
 end
 
 local hide_in_width = function()
