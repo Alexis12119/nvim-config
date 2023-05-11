@@ -8,6 +8,7 @@
 
 ![Split](https://github.com/Alexis12119/nightly.nvim/assets/74944536/5645cbbb-2182-43fa-977d-6d81f1d68bb7)
 ![Telescope](https://github.com/Alexis12119/nightly.nvim/assets/74944536/dcbfa4e3-d3d5-4b09-b205-154cde98cc92)
+![which-key](https://github.com/Alexis12119/nightly.nvim/assets/74944536/56eb49d8-ac84-4ed8-b714-b66bb0faf538)
 
 </div>
 
