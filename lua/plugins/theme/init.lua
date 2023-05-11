@@ -6,12 +6,6 @@ return {
   },
 
   {
-    "Everblush/nvim",
-    name = "everblush",
-    lazy = true,
-    priority = 1000,
-  },
-  {
     "marko-cerovac/material.nvim",
     lazy = true,
     priority = 1000,

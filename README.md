@@ -30,11 +30,11 @@
 - Popup Cheatsheet for keymaps with [which-key.nvim](https://github.com/folke/which-key.nvim).
 - Markdown Preview with [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim).
 
-## 🌟 Stargazers
+<!-- ## 🌟 Stargazers -->
 
-**Thanks for the stars**
+<!-- **Thanks for the stars** -->
 
-[![](https://reporoster.com/stars/dark/notext/Alexis12119/nvim-config)](https://github.com/Alexis12119/nvim-config/stargazers)
+<!-- [![Stargazers repo roster for @Alexis12119/nvim-config](https://reporoster.com/stars/dark/Alexis12119/nvim-config)](https://github.com/Alexis12119/nvim-config/stargazers) -->
 
 ### 📄 Requirements
 
