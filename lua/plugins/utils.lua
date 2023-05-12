@@ -94,6 +94,7 @@ return {
           default_prompt = "➤ ",
           win_options = {
             winblend = 0,
+            winhighlight = "FloatBorder:Normal",
           },
         },
         select = {
