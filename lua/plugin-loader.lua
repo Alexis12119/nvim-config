@@ -1,6 +1,6 @@
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 if vim.fn.isdirectory(lazypath) == 0 then
-  vim.notify("  Installing lazy...", vim.log.levels.INFO, { title = "lazy.nvim" })
+  vim.notify("  Installing lazy and plugins", vim.log.levels.INFO, { title = "lazy.nvim" })
   vim.fn.system {
     "git",
     "clone",

@@ -25,7 +25,7 @@ return {
 
         -- All the patterns used to detect root dir, when **"pattern"** is in
         -- detection_methods
-        patterns = { ".git", ".svn", "Makefile", "package.json" },
+        patterns = { ".git", ".vscode", ".svn", "Makefile", "package.json" },
 
         -- Table of lsp clients to ignore by name
         -- eg: { "efm", ... }
@@ -74,14 +74,13 @@ return {
     dependencies = {
       "rcarriga/nvim-notify",
       enabled = false,
-      dependencies = {},
       config = function()
         require("notify").setup {
           level = 2,
           minimum_width = 50,
-          render = "compact",
+          render = "default",
           stages = "fade",
-          timeout = 1000,
+          timeout = 2000,
           top_down = true,
         }
 
@@ -94,7 +93,7 @@ return {
           enabled = true,
           default_prompt = "➤ ",
           win_options = {
-            winblend = 10,
+            winblend = 0,
           },
         },
         select = {
@@ -102,7 +101,7 @@ return {
           backend = { "telescope", "builtin" },
           builtin = {
             win_options = {
-              winblend = 10,
+              winblend = 0,
             },
           },
         },
