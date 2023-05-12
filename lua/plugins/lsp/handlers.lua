@@ -112,6 +112,7 @@ M.on_attach = function(client, bufnr)
       disable_format_on_save()
     end
   end, { nargs = "*" })
+  client.server_capabilities.semanticTokensProvider = nil
 end
 
 return M
