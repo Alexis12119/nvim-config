@@ -99,22 +99,14 @@ end
 M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr)
   lsp_highlight(client, bufnr)
-  if client.supports_method "textDocument/formatting" then
-    which_key_add({
-      l = {
-        name = "LSP",
-        f = { ":Format<cr>", "Format" },
-      },
-    }, "n")
 
-    vim.api.nvim_create_user_command("FormatOnSaveToggle", function()
-      if vim.fn.exists "#Format on save#BufWritePost" == 0 then
-        enable_format_on_save()
-      else
-        disable_format_on_save()
-      end
-    end, { nargs = "*" })
-  end
+  vim.api.nvim_create_user_command("FormatOnSaveToggle", function()
+    if vim.fn.exists "#Format on save#BufWritePost" == 0 then
+      enable_format_on_save()
+    else
+      disable_format_on_save()
+    end
+  end, { nargs = "*" })
   client.server_capabilities.semanticTokensProvider = nil
 end
 
