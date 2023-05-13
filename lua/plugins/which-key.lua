@@ -103,7 +103,7 @@ return {
       },
       l = {
         name = "LSP",
-        f = { ":Format<cr>", "Format" },
+        -- f = { ":Format<cr>", "Format" },
         a = { ":Lspsaga code_action<cr>", "Code Action" },
         i = { ":LspInfo<cr>", "Info" },
         o = { ":Lspsaga outline<cr>", "Code Outline" },
