@@ -19,9 +19,9 @@ end
 function _G.format_code()
   return vim.lsp.buf.format {
     async = true,
-    filter = function(client)
+    filter = function(client, bufnr)
       local has_null_ls = false
-      for _, clnt in pairs(vim.lsp.get_active_clients { buffer = 0 }) do
+      for _, clnt in pairs(vim.lsp.get_active_clients { buffer = bufnr }) do
         if clnt.name == "null-ls" then
           has_null_ls = true
         end
