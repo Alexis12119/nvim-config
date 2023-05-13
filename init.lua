@@ -1,6 +1,6 @@
 local name = "nightly"
 
-require "core"
+require 'core'
 require "plugin-loader"
 
 -- Check for theme configuration

@@ -20,7 +20,14 @@ function _G.format_code()
   return vim.lsp.buf.format {
     async = true,
     filter = function(client)
-      if client.name == "null-ls" then
+      local has_null_ls = false
+      for _, clnt in pairs(vim.lsp.buf_get_clients()) do
+        if clnt.name == "null-ls" then
+          has_null_ls = true
+        end
+      end
+
+      if has_null_ls then
         return client.name == "null-ls"
       else
         return client.name ~= "null-ls"
