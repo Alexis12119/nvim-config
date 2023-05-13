@@ -89,12 +89,7 @@ local function enable_format_on_save()
   vim.api.nvim_create_augroup("Format on save", { clear = false })
   vim.api.nvim_create_autocmd("BufWritePost", {
     callback = function()
-      vim.lsp.buf.format {
-        async = true,
-        filter = function(client)
-          return client.name == "null-ls"
-        end,
-      }
+      vim.cmd "Format"
       vim.notify("Format Done", vim.log.levels.INFO, { title = "Format" })
     end,
     group = "Format on save",
