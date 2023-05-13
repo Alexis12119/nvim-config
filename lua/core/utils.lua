@@ -21,7 +21,7 @@ function _G.format_code()
     async = true,
     filter = function(client)
       local has_null_ls = false
-      for _, clnt in pairs(vim.lsp.buf_get_clients()) do
+      for _, clnt in pairs(vim.lsp.get_active_clients { buffer = 0 }) do
         if clnt.name == "null-ls" then
           has_null_ls = true
         end
