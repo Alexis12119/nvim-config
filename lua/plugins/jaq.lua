@@ -18,7 +18,7 @@ return {
           -- Normal
           javascript = "node %",
           python = "python $file",
-          rust = "rustc % && $fileBase",
+          -- rust = "rustc % && $fileBase",
           -- Competitive Programming
           -- cpp = "g++ -std=c++17 -Wall -DAL -O2 % -o $fileBase && $fileBase<input.txt",
           -- Debugging
@@ -29,15 +29,15 @@ return {
           go = "go run %",
           ruby = "ruby %",
           perl = "perl %",
-          cs = "dotnet run",
-          julia = "julia %",
+          -- cs = "dotnet run",
+          -- julia = "julia %",
           php = "php %",
           -- java = "javac % && java %",
           java = "java %",
           r = "Rscript %",
-          kotlin = "kotlinc % -include-runtime -d $fileBase.jar && java -jar $fileBase.jar",
-          lua = "lua %",
-          lisp = "clisp %",
+          -- kotlin = "kotlinc % -include-runtime -d $fileBase.jar && java -jar $fileBase.jar",
+          -- lua = "lua %",
+          -- lisp = "clisp %",
         },
 
         -- Uses internal commands such as 'source' and 'luafile'
