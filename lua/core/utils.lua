@@ -19,15 +19,16 @@ end
 function _G.format_code()
   return vim.lsp.buf.format {
     async = true,
-    filter = function(client, bufnr)
-      local has_null_ls = false
-      for _, clnt in pairs(vim.lsp.get_active_clients { buffer = bufnr }) do
-        if clnt.name == "null-ls" then
-          has_null_ls = true
-        end
-      end
+    filter = function(client)
+      local have_nls = package.loaded["null-ls"]
+        and (
+          #require("null-ls.sources").get_available(
+            vim.bo[vim.api.nvim_get_current_buf()].filetype,
+            "NULL_LS_FORMATTING"
+          ) > 0
+        )
 
-      if has_null_ls then
+      if have_nls then
         return client.name == "null-ls"
       else
         return client.name ~= "null-ls"
