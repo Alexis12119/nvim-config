@@ -20,18 +20,20 @@ function _G.format_code()
   return vim.lsp.buf.format {
     async = true,
     filter = function(client)
-      local have_nls = package.loaded["null-ls"]
-        and (
-          #require("null-ls.sources").get_available(
-            vim.bo[vim.api.nvim_get_current_buf()].filetype,
-            "NULL_LS_FORMATTING"
-          ) > 0
-        )
+      if client.supports_method "textDocument/formatting" then
+        local have_nls = package.loaded["null-ls"]
+          and (
+            #require("null-ls.sources").get_available(
+              vim.bo[vim.api.nvim_get_current_buf()].filetype,
+              "NULL_LS_FORMATTING"
+            ) > 0
+          )
 
-      if have_nls then
-        return client.name == "null-ls"
-      else
-        return client.name ~= "null-ls"
+        if have_nls then
+          return client.name == "null-ls"
+        else
+          return client.name ~= "null-ls"
+        end
       end
     end,
   }
