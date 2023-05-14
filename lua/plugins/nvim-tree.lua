@@ -187,7 +187,6 @@ return {
             col = 1,
           },
         },
-        hide_root_folder = false,
       },
     }
   end,
