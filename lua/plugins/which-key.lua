@@ -132,7 +132,7 @@ return {
         T = { ":TodoTelescope<cr>", "Todo" },
         B = { ":Telescope bookmarks<cr>", "Browswer Bookmarks" },
         b = { ":Telescope buffers<cr>", "Buffers" },
-        -- n = { ":lua require('telescope').extensions.notify.notify()<cr>", "Notify History" },
+        n = { ":lua require('telescope').extensions.notify.notify()<cr>", "Notify History" },
         c = { ":Telescope colorscheme<cr>", "Colorscheme" },
         p = { ":Telescope projects<cr>", "Projects" },
         P = {
