@@ -1,7 +1,7 @@
 local alpha = require "alpha"
 
 local headers = {
-  ["nvim"] = {
+  nvim = {
     "                                                     ",
     "                                                     ",
     "  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ",
@@ -11,21 +11,7 @@ local headers = {
     "  ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ",
     "  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
   },
-  -- NvChad:https://github.com/NvChad/NvChad/blob/v2.0/lua/core/default_config.lua#L53-L63
-  ["NvChad"] = {
-    "",
-    "",
-    "           ▄ ▄                   ",
-    "       ▄   ▄▄▄     ▄ ▄▄▄ ▄ ▄     ",
-    "       █ ▄ █▄█ ▄▄▄ █ █▄█ █ █     ",
-    "    ▄▄ █▄█▄▄▄█ █▄█▄█▄▄█▄▄█ █     ",
-    "  ▄ █▄▄█ ▄ ▄▄ ▄█ ▄▄▄▄▄▄▄▄▄▄▄▄▄▄  ",
-    "  █▄▄▄▄ ▄▄▄ █ ▄ ▄▄▄ ▄ ▄▄▄ ▄ ▄ █ ▄",
-    "▄ █ █▄█ █▄█ █ █ █▄█ █ █▄█ ▄▄▄ █ █",
-    "█▄█ ▄ █▄▄█▄▄█ █ ▄▄█ █ ▄ █ █▄█▄█ █",
-    "    █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ █▄█▄▄▄█    ",
-  },
-  ["hydra"] = {
+  hydra = {
     "                                   ",
     "                                   ",
     "                                   ",
@@ -42,7 +28,7 @@ local headers = {
     "       ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃     ",
     "                                   ",
   },
-  ["arch"] = {
+  arch = {
     "                         ▄                          ",
     "                        ▟█▙                         ",
     "                       ▟███▙                        ",
@@ -63,7 +49,7 @@ local headers = {
     "        ▟███▀▘                       ▝▀███▙         ",
     "       ▟▛▀                               ▀▜▙        ",
   },
-  ["pacman"] = {
+  pacman = {
     "                                                                              ",
     "                                                                              ",
     "                                                                              ",
@@ -87,7 +73,7 @@ local headers = {
 }
 
 local dashboard = require "alpha.themes.dashboard"
-dashboard.section.header.val = headers.NvChad
+dashboard.section.header.val = headers.pacman
 
 dashboard.section.buttons.val = {
   dashboard.button("SPC f f", "  Find File"),
