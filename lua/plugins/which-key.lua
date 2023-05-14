@@ -61,7 +61,7 @@ return {
             end
           end,
           "Inspect",
-        }, -- only available on neovim 0.9
+        }, -- only available on neovim >= 0.9
         u = { ":Update<cr>", "Update" },
         h = { ":checkhealth<cr>", "Health" },
         v = {
@@ -143,7 +143,7 @@ return {
         h = { ":Telescope help_tags<cr>", "Help" },
         k = { ":Telescope keymaps<cr>", "Keymaps" },
         C = { ":Telescope commands<cr>", "Commands" },
-        r = { ":Telescope oldfiles<cr>", "Recent File" },
+        r = { ":Telescope oldfiles<cr>", "Recent Files" },
         H = { ":Telescope highlights<cr>", "Highlights" },
       },
       t = {

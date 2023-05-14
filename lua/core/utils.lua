@@ -97,7 +97,7 @@ end
 
 command("Format", function()
   format_code()
-  -- vim.notify("Format Done", vim.log.levels.INFO, { title = "Format" })
+  vim.notify("Format Done", vim.log.levels.INFO, { title = "Format" })
 end, { nargs = "*", desc = "Code Format" })
 
 command("Reload", function()
