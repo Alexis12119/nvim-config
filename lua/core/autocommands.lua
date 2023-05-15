@@ -45,21 +45,7 @@ autocmd("User", {
 autocmd({ "BufReadPost", "BufNewFile" }, {
   once = true,
   callback = function()
-    if vim.fn.has "wsl" == 1 then
-      -- Set a compatible clipboard manager
-      vim.g.clipboard = {
-        copy = {
-          ["+"] = "win32yank.exe -i --crlf",
-          ["*"] = "win32yank.exe -i --crlf",
-        },
-        paste = {
-          ["+"] = "win32yank.exe -o --lf",
-          ["*"] = "win32yank.exe -o --lf",
-        },
-      }
-    end
-
-    vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
+   vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
   end,
   group = general,
   desc = "Lazy load clipboard",
