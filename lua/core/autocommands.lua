@@ -45,25 +45,11 @@ autocmd("User", {
 autocmd({ "BufReadPost", "BufNewFile" }, {
   once = true,
   callback = function()
-    if vim.fn.has "wsl" == 1 then
-      -- To install win32yank.exe on wsl 2
-      -- curl -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip
-      -- unzip -p /tmp/win32yank.zip win32yank.exe > /tmp/win32yank.exe
-      -- chmod +x /tmp/win32yank.exe
-      -- sudo mv /tmp/win32yank.exe /usr/local/bin/
-      -- Set a compatible clipboard manager
-      vim.g.clipboard = {
-
-        copy = {
-          ["+"] = "win32yank.exe -i --crlf",
-          ["*"] = "win32yank.exe -i --crlf",
-        },
-        paste = {
-          ["+"] = "win32yank.exe -o --lf",
-          ["*"] = "win32yank.exe -o --lf",
-        },
-      }
-    end
+    -- In wsl 2, just install xclip
+    -- Ubuntu
+    -- sudo apt install xclip
+    -- Arch linux
+    -- pacman -S xclip
     vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
   end,
   group = general,
