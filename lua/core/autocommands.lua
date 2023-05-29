@@ -106,7 +106,7 @@ autocmd("BufModifiedSet", {
     vim.cmd "silent! w"
   end,
   group = general,
-  desc = "Auto Save when leaving/entering insert mode, buffer or window",
+  desc = "Auto Save",
 })
 
 autocmd("FocusGained", {
