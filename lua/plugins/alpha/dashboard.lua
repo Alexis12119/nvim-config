@@ -76,9 +76,9 @@ local dashboard = require "alpha.themes.dashboard"
 dashboard.section.header.val = headers.pacman
 
 dashboard.section.buttons.val = {
-  dashboard.button("SPC f f", "  Find File"),
-  dashboard.button("SPC f r", "  Recent Files"),
-  dashboard.button("SPC f t", "  Find Text"),
+  dashboard.button("SPC f f", "  Find Files"),
+  dashboard.button("SPC f r", "󱔗  Recent Files"),
+  dashboard.button("SPC f t", "󰈭  Find Text"),
   dashboard.button("SPC f p", "  Find Projects"),
   dashboard.button("SPC n c", "  Configuration", ":e $MYVIMRC<cr>"),
   -- dashboard.button("SPC p u", "  Update Plugins"),
@@ -91,7 +91,7 @@ for _, button in pairs(dashboard.section.buttons.val) do
 end
 
 local footer = function()
-  local version = " " .. vim.version().major .. "." .. vim.version().minor .. "." .. vim.version().patch
+  local version = " " .. vim.version().major .. "." .. vim.version().minor .. "." .. vim.version().patch
   local lazy_ok, lazy = pcall(require, "lazy")
   if lazy_ok then
     local total_plugins = lazy.stats().count .. " Plugins"

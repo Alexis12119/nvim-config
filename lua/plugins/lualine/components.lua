@@ -196,7 +196,7 @@ M.filetype = {
 
 M.filename = {
   "filename",
-  icon = "",
+  icon = "",
   color = { fg = foreground, bg = "NONE" },
   path = 4,
 }

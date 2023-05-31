@@ -100,7 +100,7 @@ return {
       diagnostics = {
         enable = false,
         icons = {
-          hint = "",
+          hint = "💡",
           info = "",
           warning = "",
           error = "",
@@ -141,14 +141,14 @@ return {
 
         icons = {
           glyphs = {
-            default = "",
+            default = "",
             symlink = "",
             folder = {
-              default = "",
-              empty = "",
-              empty_open = "",
-              open = "",
-              symlink = "",
+              default = "",
+              empty = "",
+              empty_open = "",
+              open = "",
+              symlink = "",
               symlink_open = "",
               arrow_open = "",
               arrow_closed = "",

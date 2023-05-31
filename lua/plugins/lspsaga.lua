@@ -89,8 +89,6 @@ return {
         preview = " ",
         code_action = "💡",
         diagnostic = "🐞",
-        incoming = " ",
-        outgoing = " ",
         hover = " ",
         kind = {},
       },

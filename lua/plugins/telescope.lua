@@ -51,7 +51,7 @@ return {
         selection_strategy = "reset",
         sorting_strategy = "ascending",
         prompt_prefix = "   ",
-        selection_caret = "ﰲ ",
+        selection_caret = "󰜴 ",
         path_display = { "smart" },
         file_ignore_patterns = { ".git/", "node_modules" },
         mappings = {

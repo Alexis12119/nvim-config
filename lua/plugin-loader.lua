@@ -40,7 +40,7 @@ local opts = {
     border = "rounded",
     icons = {
       ft = "",
-      lazy = "鈴",
+      lazy = "󰒲 ",
       loaded = "",
       not_loaded = "",
       cmd = " ",
@@ -52,7 +52,7 @@ local opts = {
       runtime = " ",
       source = " ",
       start = "",
-      task = "✔ ",
+      task = " ",
     },
     throttle = 20, -- how frequently should the ui process render events
     custom_keys = {},

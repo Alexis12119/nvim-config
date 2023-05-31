@@ -78,8 +78,8 @@ startify.section.header.opts.hl = "AlphaHeader"
 
 startify.section.top_buttons.val = {
   startify.button("SPC f f", "  Find File"),
-  startify.button("SPC f r", "  Recent Files"),
-  startify.button("SPC f t", "  Find Text"),
+  startify.button("SPC f r", "󱔗  Recent Files"),
+  startify.button("SPC f t", "󰈭  Find Text"),
   startify.button("SPC f p", "  Find Projects"),
   startify.button("SPC n c", "  Configuration", ":e $MYVIMRC<cr>"),
   -- startify.button("SPC p u", "  Update Plugins"),
@@ -97,7 +97,7 @@ startify.nvim_web_devicons.enabled = true
 startify.section.bottom_buttons.val = {}
 
 local footer = function()
-  local version = " " .. vim.version().major .. "." .. vim.version().minor .. "." .. vim.version().patch
+  local version = " " .. vim.version().major .. "." .. vim.version().minor .. "." .. vim.version().patch
   local lazy_ok, lazy = pcall(require, "lazy")
   if lazy_ok then
     local total_plugins = lazy.stats().count .. " Plugins"
