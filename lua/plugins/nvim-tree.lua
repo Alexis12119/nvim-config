@@ -100,7 +100,7 @@ return {
       diagnostics = {
         enable = false,
         icons = {
-          hint = "💡",
+          hint = "",
           info = "",
           warning = "",
           error = "",

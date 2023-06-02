@@ -55,7 +55,7 @@ M.diagnostics = {
   "diagnostics",
   sources = { "nvim_diagnostic" },
   sections = { "error", "warn", "hint" },
-  symbols = { error = " ", warn = " ", hint = " " },
+  symbols = { error = " ", warn = " ", hint = " " },
   diagnostics_color = {
     error = { fg = error },
     warn = { fg = warn },
