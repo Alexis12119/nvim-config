@@ -20,6 +20,9 @@ return {
         formatting.autopep8,
         formatting.stylua,
         formatting.clang_format.with {
+          extra_args = {
+            "-style=file" .. vim.fn.expand("$HOME/.clang_format"),
+          },
           filetypes = { "cpp", "c" },
         },
       },
