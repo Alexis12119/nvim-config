@@ -73,7 +73,7 @@ local headers = {
   },
 }
 
-startify.section.header.val = headers.pacman
+startify.section.header.val = headers.nvim
 startify.section.header.opts.hl = "AlphaHeader"
 
 startify.section.top_buttons.val = {

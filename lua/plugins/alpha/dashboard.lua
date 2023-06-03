@@ -73,7 +73,7 @@ local headers = {
 }
 
 local dashboard = require "alpha.themes.dashboard"
-dashboard.section.header.val = headers.pacman
+dashboard.section.header.val = headers.nvim
 
 dashboard.section.buttons.val = {
   dashboard.button("SPC f f", "  Find Files"),
