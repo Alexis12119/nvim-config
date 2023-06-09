@@ -50,7 +50,7 @@ local keymaps = {
 
     ["k"] = {
       cmd = "v:count == 0 ? 'gk' : 'k'",
-      desc = "Better Up",
+      desc = "Better Down",
       opt = { expr = true, silent = true },
     },
 
@@ -179,6 +179,19 @@ local keymaps = {
   },
   visual_mode = {
 
+    ["j"] = {
+      cmd = "v:count == 0 ? 'gj' : 'j'",
+      desc = "Better Up",
+      opt = { expr = true, silent = true },
+    },
+
+    ["k"] = {
+      cmd = "v:count == 0 ? 'gk' : 'k'",
+      desc = "Better Down",
+      opt = { expr = true, silent = true },
+    },
+
+
     ["p"] = {
       cmd = '"_dP',
       desc = "Better Paste",
@@ -210,6 +223,19 @@ local keymaps = {
     },
   },
   visual_block_mode = {
+
+    ["j"] = {
+      cmd = "v:count == 0 ? 'gj' : 'j'",
+      desc = "Better Up",
+      opt = { expr = true, silent = true },
+    },
+
+    ["k"] = {
+      cmd = "v:count == 0 ? 'gk' : 'k'",
+      desc = "Better Down",
+      opt = { expr = true, silent = true },
+    },
+
 
     ["<A-j>"] = {
       cmd = ":m '>+1<CR>gv=gv",
