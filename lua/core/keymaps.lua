@@ -44,13 +44,13 @@ local keymaps = {
 
     ["j"] = {
       cmd = "v:count == 0 ? 'gj' : 'j'",
-      desc = "Better Up",
+      desc = "Better Down",
       opt = { expr = true, silent = true },
     },
 
     ["k"] = {
       cmd = "v:count == 0 ? 'gk' : 'k'",
-      desc = "Better Down",
+      desc = "Better Up",
       opt = { expr = true, silent = true },
     },
 
@@ -181,16 +181,15 @@ local keymaps = {
 
     ["j"] = {
       cmd = "v:count == 0 ? 'gj' : 'j'",
-      desc = "Better Up",
+      desc = "Better Down",
       opt = { expr = true, silent = true },
     },
 
     ["k"] = {
       cmd = "v:count == 0 ? 'gk' : 'k'",
-      desc = "Better Down",
+      desc = "Better Up",
       opt = { expr = true, silent = true },
     },
-
 
     ["p"] = {
       cmd = '"_dP',
@@ -226,16 +225,15 @@ local keymaps = {
 
     ["j"] = {
       cmd = "v:count == 0 ? 'gj' : 'j'",
-      desc = "Better Up",
+      desc = "Better Down",
       opt = { expr = true, silent = true },
     },
 
     ["k"] = {
       cmd = "v:count == 0 ? 'gk' : 'k'",
-      desc = "Better Down",
+      desc = "Better Up",
       opt = { expr = true, silent = true },
     },
-
 
     ["<A-j>"] = {
       cmd = ":m '>+1<CR>gv=gv",
