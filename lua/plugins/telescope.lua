@@ -53,7 +53,7 @@ return {
         prompt_prefix = "   ",
         selection_caret = "󰜴 ",
         path_display = { "smart" },
-        file_ignore_patterns = { vim.fs.normalize(".git/"), "node_modules" },
+        file_ignore_patterns = { ".git/",".git\\", "node_modules" },
         mappings = {
           i = {
             ["<A-j>"] = actions.move_selection_next,
