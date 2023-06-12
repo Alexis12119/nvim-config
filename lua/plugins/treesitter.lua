@@ -41,7 +41,26 @@ return {
     local configs = require "nvim-treesitter.configs"
 
     configs.setup {
-      ensure_installed = { "cpp", "lua", "c", "go", "python", "java", "markdown", "markdown_inline" }, -- one of "all" or a list of languages
+      ensure_installed = {
+        "c",
+        "cpp",
+        "vim",
+        "lua",
+        "go",
+        "python",
+        "java",
+        "markdown",
+        "markdown_inline",
+        "html",
+        "css",
+        "scss",
+        "javascript",
+        "typescript",
+        "tsx",
+        "php",
+        "json",
+        "rust",
+      }, -- one of "all" or a list of languages
       highlight = {
         enable = true, -- false will disable the whole extension
         disable = "", -- list of language that will be disabled
