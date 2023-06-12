@@ -125,7 +125,8 @@ return {
         full_name = false,
         highlight_opened_files = "none",
         highlight_modified = "none",
-        root_folder_label = ":~:s?$?/..?",
+        -- root_folder_label = ":~:s?$?/..?",
+        root_folder_label = false,
         indent_width = 2,
         indent_markers = {
           enable = true,
@@ -141,7 +142,7 @@ return {
 
         icons = {
           glyphs = {
-            default = "",
+            default = "󰈚",
             symlink = "",
             folder = {
               default = "",
