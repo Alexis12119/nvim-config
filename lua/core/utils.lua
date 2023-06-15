@@ -8,12 +8,6 @@ function _G.reload_core()
   end
 
   dofile(vim.env.MYVIMRC)
-
-  -- For plugin reload but currently not working.
-  -- local plugins = require("lazy.core.config").plugins
-  -- for plugin, _ in pairs(plugins) do
-  --   require("lazy.core.loader").reload(plugins[plugin])
-  -- end
 end
 
 function _G.format_code()
@@ -86,33 +80,13 @@ end
 function _G.list_registered_formatters(filetype)
   local registered_providers = list_registered_providers_names(filetype)
   local method = require("null-ls").methods.FORMATTING
-  local formatters = registered_providers[method] or {}
-
-  -- Filter out formatters that are not available
-  local available_formatters = {}
-  for _, formatter in ipairs(formatters) do
-    if vim.fn.executable(formatter) == 1 then
-      table.insert(available_formatters, formatter)
-    end
-  end
-
-  return available_formatters
+  return registered_providers[method] or {}
 end
 
 function _G.list_registered_linters(filetype)
   local registered_providers = list_registered_providers_names(filetype)
   local method = require("null-ls").methods.DIAGNOSTICS
-  local linters = registered_providers[method] or {}
-
-  -- Filter out linters that are not available
-  local available_linters = {}
-  for _, linter in ipairs(linters) do
-    if vim.fn.executable(linter) == 1 then
-      table.insert(available_linters, linter)
-    end
-  end
-
-  return available_linters
+  return registered_providers[method] or {}
 end
 
 command("Format", function()
