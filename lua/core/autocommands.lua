@@ -146,12 +146,3 @@ autocmd("FileType", {
   group = general,
   desc = "Enable Wrap in these filetypes",
 })
-
-autocmd("BufWritePost", {
-  pattern = "*.vim",
-  callback = function()
-    vim.cmd "source <afile>"
-  end,
-  group = general,
-  desc = "Automatically source vim file whenever you save it",
-})

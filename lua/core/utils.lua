@@ -86,13 +86,33 @@ end
 function _G.list_registered_formatters(filetype)
   local registered_providers = list_registered_providers_names(filetype)
   local method = require("null-ls").methods.FORMATTING
-  return registered_providers[method] or {}
+  local formatters = registered_providers[method] or {}
+
+  -- Filter out formatters that are not available
+  local available_formatters = {}
+  for _, formatter in ipairs(formatters) do
+    if vim.fn.executable(formatter) == 1 then
+      table.insert(available_formatters, formatter)
+    end
+  end
+
+  return available_formatters
 end
 
 function _G.list_registered_linters(filetype)
   local registered_providers = list_registered_providers_names(filetype)
   local method = require("null-ls").methods.DIAGNOSTICS
-  return registered_providers[method] or {}
+  local linters = registered_providers[method] or {}
+
+  -- Filter out linters that are not available
+  local available_linters = {}
+  for _, linter in ipairs(linters) do
+    if vim.fn.executable(linter) == 1 then
+      table.insert(available_linters, linter)
+    end
+  end
+
+  return available_linters
 end
 
 command("Format", function()

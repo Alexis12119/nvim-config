@@ -87,7 +87,7 @@ return {
         expand = "",
         collaspe = "",
         preview = " ",
-        code_action = "",
+        code_action = "󱧣 ",
         diagnostic = "🐞",
         hover = " ",
         kind = {},
