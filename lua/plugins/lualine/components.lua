@@ -45,7 +45,7 @@ M.mode = {
     return mode_names[mode_name]
     -- return icons[12]
   end,
-  separator = { left = " ", right = "" },
+  separator = { right = "", left = "" },
   color = function()
     return { bg = mode_color[vim.api.nvim_get_mode().mode], fg = "Black" }
   end,
@@ -81,7 +81,8 @@ M.diff = {
 M.branch = {
   "branch",
   icons_enabled = true,
-  color = { fg = foreground, bg = "NONE" },
+  separator = { right = "", left = "" },
+  color = { fg = foreground, bg = "#232A2D" },
   icon = " ",
 }
 
@@ -151,7 +152,8 @@ M.lsp = {
       return "LS Inactive"
     end
   end,
-  color = { fg = foreground, bg = "NONE" },
+  separator = { right = "", left = "" },
+  color = { fg = foreground, bg = "#232A2D" },
 }
 
 M.progress = {
@@ -170,15 +172,18 @@ M.total_lines = {
   function()
     return "%L"
   end,
-  separator = { left = "", right = " " },
   color = function()
     return { bg = mode_color[vim.api.nvim_get_mode().mode], fg = "Black" }
   end,
+  separator = { right = "", left = "" },
 }
 
 M.percent = {
   "progress",
-  color = { fg = foreground, bg = "NONE" },
+  color = function()
+    return { bg = mode_color[vim.api.nvim_get_mode().mode], fg = "Black" }
+  end,
+  separator = { right = "", left = "" },
 }
 
 M.spaces = {
@@ -197,7 +202,8 @@ M.filetype = {
 M.filename = {
   "filename",
   icon = "",
-  color = { fg = foreground, bg = "NONE" },
+  color = { fg = foreground, bg = "#232A2D" },
+  separator = { right = "", left = "" },
   path = 4,
 }
 
