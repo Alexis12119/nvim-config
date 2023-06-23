@@ -1,6 +1,7 @@
 local M = {}
 
 local foreground = ""
+local background = ""
 local mode_color = require("plugins.lualine.modes").colors
 local add = "#67B0E8"
 local delete = "#E57474"
@@ -10,7 +11,8 @@ local warn = "#E5C76B"
 local hint = "#8CCF7E"
 
 if vim.o.background == "dark" then
-  foreground = "#BBC2CF"
+  foreground = "#5A5D61"
+  background = "#0F1416"
 else
   foreground = "#000000"
 end
@@ -82,7 +84,7 @@ M.branch = {
   "branch",
   icons_enabled = true,
   separator = { right = "", left = "" },
-  color = { fg = foreground, bg = "#232A2D" },
+  color = { fg = foreground, bg = background },
   icon = " ",
 }
 
@@ -153,7 +155,7 @@ M.lsp = {
     end
   end,
   separator = { right = "", left = "" },
-  color = { fg = foreground, bg = "#232A2D" },
+  color = { fg = foreground, bg = background },
 }
 
 M.progress = {
@@ -202,7 +204,7 @@ M.filetype = {
 M.filename = {
   "filename",
   icon = "",
-  color = { fg = foreground, bg = "#232A2D" },
+  color = { fg = foreground, bg = background },
   separator = { right = "", left = "" },
   path = 4,
 }

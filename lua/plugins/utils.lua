@@ -69,24 +69,24 @@ return {
   },
 
   {
-    "stevearc/dressing.nvim",
-    event = { "BufReadPost", "BufNewFile" },
-    dependencies = {
-      "rcarriga/nvim-notify",
-      -- enabled = false,
-      config = function()
-        require("notify").setup {
-          level = 2,
-          minimum_width = 50,
-          render = "default",
-          stages = "fade",
-          timeout = 2000,
-          top_down = true,
-        }
 
-        vim.notify = require "notify"
-      end,
-    },
+    "rcarriga/nvim-notify",
+    config = function()
+      require("notify").setup {
+        level = 2,
+        minimum_width = 50,
+        render = "default",
+        stages = "fade",
+        timeout = 2000,
+        top_down = true,
+      }
+
+      vim.notify = require "notify"
+    end,
+  },
+
+  {
+    "stevearc/dressing.nvim",
     config = function()
       require("dressing").setup {
         input = {
