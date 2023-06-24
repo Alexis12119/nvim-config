@@ -1,5 +1,6 @@
 return {
   "folke/flash.nvim",
+  event = "CmdlineEnter",
   opts = {
     labels = "asdfghjklqwertyuiopzxcvbnm",
     search = {
