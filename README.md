@@ -20,6 +20,7 @@
 - Statusline with [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim).
 - Tabline with [bufferline.nvim](https://github.com/akinsho/bufferline.nvim) and [scope.nvim](https://github.com/tiagovla/scope.nvim).
 - File Explorer [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua).
+- Improve searching with [flash.nvim](https://github.com/folke/flash.nvim).
 - Autocompletion with [nvim-cmp](https://github.com/hrsh7th/nvim-cmp).
 - Language Server Protocol with [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig).
 - Formatting and Linting with [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim).
