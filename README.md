@@ -6,9 +6,10 @@
     
 [![](https://img.shields.io/badge/Neovim-0.9+-blueviolet.svg?style=for-the-badge&color=000F10&logo=Neovim&logoColor=green&labelColor=302D41)](https://github.com/neovim/neovim)
 
-![Screenshot (153)](https://github.com/Alexis12119/nvim-config/assets/74944536/69aa80d4-c8f5-422b-8600-03fcc0863ff1)
-![Screenshot (155)](https://github.com/Alexis12119/nvim-config/assets/74944536/0db78674-f4df-4203-a7a7-01706fd63bc1)
-![Screenshot (154)](https://github.com/Alexis12119/nvim-config/assets/74944536/b7cae6e6-1236-4d65-9196-e97279777ac8)
+![Screenshot (156)](https://github.com/Alexis12119/nvim-config/assets/74944536/5d629a41-4b74-4087-b935-a46a2b22f146)
+![Screenshot (157)](https://github.com/Alexis12119/nvim-config/assets/74944536/e131ba29-22f4-4c2c-bd1f-2b9bf693c894)
+![Screenshot (158)](https://github.com/Alexis12119/nvim-config/assets/74944536/efe26b9b-ffe0-42ec-a1c8-27d886a6e6f6)
+
 
 </div>
 
