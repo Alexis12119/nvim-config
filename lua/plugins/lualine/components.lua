@@ -209,4 +209,18 @@ M.filename = {
   path = 4,
 }
 
+M.showcmd = {
+  function()
+    return require("noice").api.status.command.get()
+  end,
+  cond = function()
+    return package.loaded["noice"] and require("noice").api.status.command.has()
+  end,
+}
+
+M.has_updates = {
+  require("lazy.status").updates,
+  cond = require("lazy.status").has_updates,
+}
+
 return M
