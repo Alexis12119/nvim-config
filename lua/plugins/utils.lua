@@ -121,7 +121,7 @@ return {
         mp3 = { icon = "󰈣", name = "Mp3", color = "#D39EDE" },
         mp4 = { icon = "", name = "Mp4", color = "#9EA3DE" },
         out = { icon = "󰈚", name = "Out", color = "#ABB2BF" },
-        ["robots.txt"] = { icon = "ﮧ", name = "Robots", "#ABB2BF" },
+        ["robots.txt"] = { icon = "󱜙", name = "Robots", "#ABB2BF" },
         [""] = { icon = "󰈚", name = "default", "#ABB2Bf" },
         norg = { icon = "󰈚", name = "default", "#ABB2Bf" },
         ttf = { icon = "", name = "TrueTypeFont", "#ABB2Bf" },
@@ -135,4 +135,5 @@ return {
       }
     end,
   },
+
 }
