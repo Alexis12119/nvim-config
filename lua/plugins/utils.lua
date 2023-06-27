@@ -9,6 +9,8 @@ return {
     lazy = true,
   },
 
+  { "b0o/schemastore.nvim" },
+
   {
     "ahmedkhalf/project.nvim",
     config = function()
