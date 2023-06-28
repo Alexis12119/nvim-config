@@ -51,21 +51,35 @@ return {
       -- automatically jump when there is only one match
       autojump = false,
     },
-    highlight = {
-      label = {
-        -- add a label for the first match in the current window.
-        -- you can always jump to the first match with `<CR>`
-        current = true,
-        -- show the label after the match
-        after = true, ---@type boolean|number[]
-        -- show the label before the match
-        before = false, ---@type boolean|number[]
-        -- position of the label extmark
-        style = "overlay", ---@type "eol" | "overlay" | "right_align" | "inline"
-        -- flash tries to re-use labels that were already assigned to a position,
-        -- when typing more characters. By default only lower-case labels are re-used.
-        reuse = "lowercase", ---@type "lowercase" | "all"
+    label = {
+      -- allow uppercase labels
+      uppercase = true,
+      -- add a label for the first match in the current window.
+      -- you can always jump to the first match with `<CR>`
+      current = true,
+      -- show the label after the match
+      after = true, ---@type boolean|number[]
+      -- show the label before the match
+      before = false, ---@type boolean|number[]
+      -- position of the label extmark
+      style = "overlay", ---@type "eol" | "overlay" | "right_align" | "inline"
+      -- flash tries to re-use labels that were already assigned to a position,
+      -- when typing more characters. By default only lower-case labels are re-used.
+      reuse = "lowercase", ---@type "lowercase" | "all"
+      -- for the current window, label targets closer to the cursor first
+      distance = true,
+      -- minimum pattern length to show labels
+      -- Ignored for custom labelers.
+      min_pattern_length = 0,
+      -- Enable this to use rainbow colors to highlight labels
+      -- Can be useful for visualizing Treesitter ranges.
+      rainbow = {
+        enabled = false,
+        -- number between 1 and 9
+        shade = 5,
       },
+    },
+    highlight = {
       -- show a backdrop with hl FlashBackdrop
       backdrop = true,
       -- Highlight the search matches
