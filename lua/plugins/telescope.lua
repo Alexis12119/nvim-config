@@ -33,7 +33,7 @@ return {
       },
 
       bookmarks = {
-        url_open_command = "brave",
+        url_open_command = "brave", -- change this with your preferred browser
       },
     }
 

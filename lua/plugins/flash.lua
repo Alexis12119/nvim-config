@@ -51,55 +51,6 @@ return {
       -- automatically jump when there is only one match
       autojump = false,
     },
-    label = {
-      -- allow uppercase labels
-      uppercase = true,
-      -- add a label for the first match in the current window.
-      -- you can always jump to the first match with `<CR>`
-      current = true,
-      -- show the label after the match
-      after = true, ---@type boolean|number[]
-      -- show the label before the match
-      before = false, ---@type boolean|number[]
-      -- position of the label extmark
-      style = "overlay", ---@type "eol" | "overlay" | "right_align" | "inline"
-      -- flash tries to re-use labels that were already assigned to a position,
-      -- when typing more characters. By default only lower-case labels are re-used.
-      reuse = "lowercase", ---@type "lowercase" | "all"
-      -- for the current window, label targets closer to the cursor first
-      distance = true,
-      -- minimum pattern length to show labels
-      -- Ignored for custom labelers.
-      min_pattern_length = 0,
-      -- Enable this to use rainbow colors to highlight labels
-      -- Can be useful for visualizing Treesitter ranges.
-      rainbow = {
-        enabled = false,
-        -- number between 1 and 9
-        shade = 5,
-      },
-    },
-    highlight = {
-      -- show a backdrop with hl FlashBackdrop
-      backdrop = true,
-      -- Highlight the search matches
-      matches = true,
-      -- extmark priority
-      priority = 5000,
-      groups = {
-        match = "FlashMatch",
-        current = "FlashCurrent",
-        backdrop = "FlashBackdrop",
-        label = "FlashLabel",
-      },
-    },
-    -- action to perform when picking a label.
-    -- defaults to the jumping logic depending on the mode.
-    action = nil,
-    -- initial pattern to use when opening flash
-    pattern = "",
-    -- You can override the default options for a specific mode.
-    -- Use it with `require("flash").jump({mode = "forward"})`
     modes = {
       -- options used when flash is activated through
       -- a regular search with `/` or `?`
@@ -123,17 +74,6 @@ return {
         search = { wrap = false },
         highlight = { backdrop = true },
         jump = { register = false },
-      },
-      -- options used for treesitter selections
-      -- `require("flash").treesitter()`
-      treesitter = {
-        labels = "abcdefghijklmnopqrstuvwxyz",
-        jump = { pos = "range" },
-        highlight = {
-          label = { before = true, after = true, style = "inline" },
-          backdrop = false,
-          matches = false,
-        },
       },
       -- options used for remote flash
       remote = {},
