@@ -20,7 +20,7 @@ local opts = {
     url_format = "https://github.com/%s.git",
   },
   lockfile = vim.fn.stdpath "data" .. "/lazy-lock.json", -- lockfile generated after running update.
-  concurrency = nil, ---@type number limit the maximum amount of concurrent tasks
+  concurrency = 4, ---@type number limit the maximum amount of concurrent tasks
   dev = {
     -- directory where you store your local plugin projects
     path = "~/projects",
