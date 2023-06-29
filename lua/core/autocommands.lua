@@ -49,7 +49,7 @@ autocmd({ "BufReadPost", "BufNewFile" }, {
     -- Ubuntu
     -- sudo apt install xclip
     -- Arch linux
-    -- pacman -S xclip
+    -- sudo pacman -S xclip
     vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
   end,
   group = general,
