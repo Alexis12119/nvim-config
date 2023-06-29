@@ -1,16 +1,17 @@
 # Experimental
 if ($IsWindows)
 {
-  # Define a hash table of packages to be installed using Scoop
-  $packages = @{
-    python = "python";
-    lazygit= "lazygit";
-    fd = "fd";
-    bat = "bat";
-    make = "make";
-    rg = "ripgrep";
-    nvim = "neovim";
-  }
+  $packages = @(
+    "python",
+    "lazygit",
+    "fd",
+    "bat",
+    "make",
+    "ripgrep",
+    "neovim",
+    "unzip",
+    "mingw-nuwen"
+  )
 
   # Check if Scoop is already installed
   if (Get-Command -Name 'scoop' -ErrorAction SilentlyContinue)
@@ -32,7 +33,7 @@ if ($IsWindows)
 
   # Display a message and install the required packages
   Write-Host "Installing required packages..."
-  foreach ($package in $packages.Values)
+  foreach ($package in $packages)
   {
     scoop install $package
   }
