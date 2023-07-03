@@ -24,7 +24,7 @@ return {
         indicator = {
           icon = "▎",
         },
-        always_show_bufferline = true,
+        always_show_bufferline = false,
         buffer_close_icon = "",
         modified_icon = "●",
         close_icon = "",

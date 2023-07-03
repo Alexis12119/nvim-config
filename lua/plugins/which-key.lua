@@ -63,6 +63,7 @@ return {
           "Inspect",
         }, -- only available on neovim >= 0.9
         u = { ":Update<cr>", "Update" },
+        m = { ":messages<cr>", "Messages" },
         h = { ":checkhealth<cr>", "Health" },
         v = {
           function()
@@ -130,7 +131,7 @@ return {
         f = { ":Telescope find_files<cr>", "Files" },
         t = { ":Telescope live_grep<cr>", "Text" },
         T = { ":TodoTelescope<cr>", "Todo" },
-        B = { ":Telescope bookmarks<cr>", "Browswer Bookmarks" },
+        -- B = { ":Telescope bookmarks<cr>", "Browswer Bookmarks" },
         b = { ":Telescope buffers<cr>", "Buffers" },
         n = { ":lua require('telescope').extensions.notify.notify()<cr>", "Notify History" },
         c = { ":Telescope colorscheme<cr>", "Colorscheme" },

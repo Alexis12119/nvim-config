@@ -64,30 +64,30 @@ function _G.update_config()
   vim.fn.system(args)
 end
 
-function _G.list_registered_providers_names(filetype)
-  local s = require "null-ls.sources"
-  local available_sources = s.get_available(filetype)
-  local registered = {}
-  for _, source in ipairs(available_sources) do
-    for method in pairs(source.methods) do
-      registered[method] = registered[method] or {}
-      table.insert(registered[method], source.name)
-    end
-  end
-  return registered
-end
+-- function _G.list_registered_providers_names(filetype)
+--   local s = require "null-ls.sources"
+--   local available_sources = s.get_available(filetype)
+--   local registered = {}
+--   for _, source in ipairs(available_sources) do
+--     for method in pairs(source.methods) do
+--       registered[method] = registered[method] or {}
+--       table.insert(registered[method], source.name)
+--     end
+--   end
+--   return registered
+-- end
 
-function _G.list_registered_formatters(filetype)
-  local registered_providers = list_registered_providers_names(filetype)
-  local method = require("null-ls").methods.FORMATTING
-  return registered_providers[method] or {}
-end
+-- function _G.list_registered_formatters(filetype)
+--   local registered_providers = list_registered_providers_names(filetype)
+--   local method = require("null-ls").methods.FORMATTING
+--   return registered_providers[method] or {}
+-- end
 
-function _G.list_registered_linters(filetype)
-  local registered_providers = list_registered_providers_names(filetype)
-  local method = require("null-ls").methods.DIAGNOSTICS
-  return registered_providers[method] or {}
-end
+-- function _G.list_registered_linters(filetype)
+--   local registered_providers = list_registered_providers_names(filetype)
+--   local method = require("null-ls").methods.DIAGNOSTICS
+--   return registered_providers[method] or {}
+-- end
 
 command("Format", function()
   format_code()
@@ -97,7 +97,7 @@ end, { nargs = "*", desc = "Code Format" })
 command("Reload", function()
   if vim.bo.buftype == "" then
     reload_core()
-    vim.notify("Core Reload Done", vim.log.levels.INFO, { title = "Configuration Reload" })
+    vim.notify("Core Reload Done", vim.log.levels.INFO, { title = "Core Reload" })
   else
     vim.notify("Not available in this window/buffer", vim.log.levels.INFO, { title = "Configuration Reload" })
   end
@@ -105,7 +105,7 @@ end, { nargs = "*", desc = "Core Reload" })
 
 command("Update", function()
   update_config()
-  vim.notify("Update Done", vim.log.levels.INFO, { title = "Configuration Update" })
+  vim.notify("Update Done", vim.log.levels.INFO, { title = "Config Update" })
 end, { nargs = "*", desc = "Configuration Update" })
 
 command("LuaSnipEdit", function()

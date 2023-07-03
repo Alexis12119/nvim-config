@@ -4,10 +4,6 @@ return {
   cmd = "Telescope",
   dependencies = {
     {
-      "dhruvmanila/browser-bookmarks.nvim",
-    },
-
-    {
       "nvim-telescope/telescope-fzf-native.nvim",
       build = "make",
     },
@@ -32,9 +28,9 @@ return {
         -- the default case_mode is "smart_case"
       },
 
-      bookmarks = {
-        url_open_command = "brave", -- change this with your preferred browser
-      },
+      -- bookmarks = {
+      --   url_open_command = "brave", -- change this with your preferred browser
+      -- },
     }
 
     telescope.setup {
@@ -71,7 +67,6 @@ return {
     }
 
     telescope.load_extension "fzf"
-    telescope.load_extension "bookmarks"
     telescope.load_extension "projects"
   end,
 }

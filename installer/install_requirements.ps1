@@ -10,7 +10,8 @@ if ($IsWindows)
     "ripgrep",
     "neovim",
     "unzip",
-    "mingw-nuwen"
+    "mingw-nuwen",
+    "nodejs"
   )
 
   # Check if Scoop is already installed
