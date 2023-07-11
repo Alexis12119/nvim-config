@@ -13,7 +13,7 @@ return {
 
   {
     "ahmedkhalf/project.nvim",
-    event = "VeryLazy",
+    -- event = "VeryLazy",
     config = function()
       require("project_nvim").setup {
         -- Manual mode doesn't automatically change your root directory, so you have
@@ -73,6 +73,7 @@ return {
 
   {
     "rcarriga/nvim-notify",
+    enabled = false,
     event = "VeryLazy",
     config = function()
       require("notify").setup {
@@ -90,6 +91,7 @@ return {
 
   {
     "stevearc/dressing.nvim",
+    enabled = false,
     event = "VeryLazy",
     config = function()
       require("dressing").setup {
