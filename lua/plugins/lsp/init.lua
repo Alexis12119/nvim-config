@@ -57,7 +57,6 @@ return {
           "cssls",
           "html",
           "tsserver",
-          "emmet-language-server",
           -- "omnisharp",
           "jdtls",
           -- "yamlls",
