@@ -73,8 +73,7 @@ return {
 
   {
     "rcarriga/nvim-notify",
-    enabled = false,
-    event = "VeryLazy",
+    -- event = "VeryLazy",
     config = function()
       require("notify").setup {
         level = 2,
@@ -91,8 +90,7 @@ return {
 
   {
     "stevearc/dressing.nvim",
-    enabled = false,
-    event = "VeryLazy",
+    -- event = "VeryLazy",
     config = function()
       require("dressing").setup {
         input = {
