@@ -74,10 +74,10 @@ local keymaps = {
       desc = "Go to right window",
     },
 
-    ["<Leader>w"] = {
-      cmd = "<C-w>w",
-      desc = "Go to next window",
-    },
+    -- ["<Leader>w"] = {
+    --   cmd = "<C-w>w",
+    --   desc = "Go to next window",
+    -- },
 
     [";"] = {
       cmd = close,

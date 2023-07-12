@@ -101,7 +101,7 @@ autocmd("FileType", {
   desc = "Set shiftwidth to 4 in these filetypes",
 })
 
-autocmd("BufModifiedSet", {
+autocmd({ "FocusLost", "BufLeave", "BufWinLeave", "InsertLeave" }, {
   callback = function()
     vim.cmd "silent! w"
   end,
