@@ -73,6 +73,7 @@ return {
 
   {
     "kevinhwang91/nvim-ufo",
+    event = { "BufReadPost", "BufNewFile" },
     dependencies = {
       "kevinhwang91/promise-async",
       {
@@ -92,7 +93,7 @@ return {
     },
     config = function()
       require("ufo").setup {
-        provider_selector = function(bufnr, filetype, buftype)
+        provider_selector = function(_, _, _)
           return { "treesitter", "indent" }
         end,
       }
