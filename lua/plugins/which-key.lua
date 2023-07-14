@@ -98,8 +98,9 @@ return {
         b = { ":Telescope git_branches<cr>", "Checkout branch" },
         c = { ":Telescope git_commits<cr>", "Checkout commit" },
         d = {
-          ":Gitsigns diffthis HEAD<cr>",
-          "Diff",
+          name = "Diff",
+          o = { ":DiffviewOpen<cr>", "Open Diffview" },
+          c = { ":DiffviewClose<cr>", "Close Diffview" },
         },
       },
       l = {
