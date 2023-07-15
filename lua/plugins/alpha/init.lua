@@ -1,6 +1,5 @@
 return {
   "goolord/alpha-nvim",
-  enabled = false,
   config = function()
     require "plugins.alpha.dashboard"
     local function toggle_alpha()
