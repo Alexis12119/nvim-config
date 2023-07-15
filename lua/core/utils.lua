@@ -10,6 +10,17 @@ function _G.reload_core()
   dofile(vim.env.MYVIMRC)
 end
 
+function _G.config_files()
+  local cwd = vim.fn.stdpath "config" .. "/"
+  local search_dirs = { cwd .. "lua/" }
+
+  require("telescope.builtin").find_files {
+    prompt_title = "Config Files",
+    search_dirs = search_dirs,
+    cwd = cwd,
+  }
+end
+
 function _G.format_code()
   return vim.lsp.buf.format {
     async = true,
