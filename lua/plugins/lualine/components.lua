@@ -198,7 +198,7 @@ M.spaces = {
 M.filetype = {
   "filetype",
   color = { fg = foreground, bg = "NONE" },
-  pading = 0,
+  padding = 0,
 }
 
 M.filename = {

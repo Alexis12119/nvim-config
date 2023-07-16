@@ -1,10 +1,7 @@
 return {
   "nvimdev/lspsaga.nvim",
   event = { "LspAttach" },
-  config = function()
-    local lspsaga = require "lspsaga"
-
-    lspsaga.setup {
+  opts = {
       preview = {
         lines_above = 0,
         lines_below = 10,
@@ -121,6 +118,5 @@ return {
           expand_collaspe = "u",
         },
       },
-    }
-  end,
+  }
 }

@@ -12,21 +12,8 @@ end
 vim.opt.runtimepath:prepend(lazypath)
 
 local opts = {
-  git = {
-    -- defaults for the `Lazy log` command
-    -- log = { "-10" }, -- show the last 10 commits
-    log = { "--since=3 days ago" }, -- show commits from the last 3 days
-    timeout = 300, -- kill processes that take more than 2 minutes
-    url_format = "https://github.com/%s.git",
-  },
   lockfile = vim.fn.stdpath "data" .. "/lazy-lock.json", -- lockfile generated after running update.
   concurrency = 10, ---@type number limit the maximum amount of concurrent tasks
-  dev = {
-    -- directory where you store your local plugin projects
-    path = "~/projects",
-    ---@type string[] plugins that match these patterns will use your local versions instead of being fetched from GitHub
-    patterns = {}, -- For example {"folke"}
-  },
   install = {
     -- install missing plugins on startup. This doesn't increase startup time.
     missing = true,
@@ -55,7 +42,6 @@ local opts = {
       task = " ",
     },
     throttle = 20, -- how frequently should the ui process render events
-    custom_keys = {},
     diff = {
       -- diff command <d> can be one of:
       -- * browser: opens the github compare view. Note that this is always mapped to <K> as well,
@@ -63,10 +49,9 @@ local opts = {
       -- * git: will run git diff and open a buffer with filetype git
       -- * terminal_git: will open a pseudo terminal with git diff
       -- * diffview.nvim: will open Diffview to show the diff
-      cmd = "git",
+      cmd = "diffview.nvim",
     },
   },
-
   checker = {
     -- automatically check for plugin updates
     enabled = true,
