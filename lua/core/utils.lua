@@ -12,7 +12,7 @@ end
 
 function _G.config_files()
   local cwd = vim.fn.stdpath "config" .. "/"
-  local config_dir = { cwd .. "lua/" }
+  local config_dir = { cwd }
 
   require("telescope.builtin").find_files {
     prompt_title = "Config Files",
