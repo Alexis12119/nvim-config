@@ -37,6 +37,11 @@ end
 local keymaps = {
   normal_mode = {
 
+    ["<F5>"] = {
+      cmd = run_code,
+      desc = "Run Code",
+    },
+
     -- ["jk"] = {
     --   cmd = "<Esc>",
     --   desc = "Enter insert mode",

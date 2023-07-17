@@ -204,3 +204,198 @@ function _G.which_key_add(mappings, mode)
   which_key.setup(setup)
   which_key.register(mappings, opts)
 end
+
+-- HUUUUUUUUUUUUUUUUUUUUUUUGE kudos and thanks to
+-- https://github.com/hown3d for this function <3
+local function substitute(cmd)
+  cmd = cmd:gsub("%%", vim.fn.expand "%")
+  cmd = cmd:gsub("$fileBase", vim.fn.expand "%:r")
+  cmd = cmd:gsub("$filePath", vim.fn.expand "%:p")
+  cmd = cmd:gsub("$file", vim.fn.expand "%")
+  cmd = cmd:gsub("$dir", vim.fn.expand "%:p:h")
+  cmd = cmd:gsub(
+    "$moduleName",
+    vim.fn.substitute(vim.fn.substitute(vim.fn.fnamemodify(vim.fn.expand "%:r", ":~:."), "/", ".", "g"), "\\", ".", "g")
+  )
+  cmd = cmd:gsub("#", vim.fn.expand "#")
+  cmd = cmd:gsub("$altFile", vim.fn.expand "#")
+
+  return cmd
+end
+
+function _G.run_code()
+  local extension = vim.fn.expand "%:e"
+  local config = {
+    position = "bot",
+    size = "10",
+  }
+  local cmd = config.position .. " " .. config.size .. " new | term "
+  local filetype = {
+    c = {
+      default = "gcc % -o $fileBase && $fileBase",
+    },
+    cs = {
+      default = "dotnet run",
+    },
+    cpp = {
+      default = "g++ % -o  $fileBase && $fileBase",
+      debug = "g++ -g % -o  $fileBase && $fileBase",
+      competitive = "g++ -std=c++17 -Wall -DAL -O2 % -o $fileBase && $fileBase<input.txt",
+    },
+    python = {
+      default = "python %",
+    },
+    go = {
+      default = "go run %",
+    },
+    java = {
+      default = "java %",
+    },
+    javascript = {
+      default = "node %",
+      debug = "node --inspect %",
+    },
+    typescript = {
+      default = "tsc % && node $fileBase",
+    },
+    rust = {
+      default = "rustc % && $fileBase",
+    },
+    php = {
+      default = "php %",
+    },
+    r = {
+      default = "Rscript %",
+    },
+    julia = {
+      default = "julia %",
+    },
+    ruby = {
+      default = "ruby %",
+    },
+    perl = {
+      default = "perl %",
+    },
+  }
+
+  if extension == "cpp" then
+    vim.ui.select({ "normal", "debug", "competitive" }, {
+      prompt = "Choose: ",
+    }, function(choice)
+      if choice == "competitive" then
+        vim.cmd(cmd .. substitute(filetype.cpp.competitive))
+      elseif choice == "debug" then
+        vim.cmd(cmd .. substitute(filetype.cpp.debug))
+      else
+        vim.cmd(cmd .. substitute(filetype.cpp.default))
+      end
+    end)
+  elseif extension == "py" then
+    vim.ui.select({ "default" }, {
+      prompt = "Choose: ",
+    }, function(choice)
+      if choice == "default" then
+        vim.cmd(cmd .. substitute(filetype.python.default))
+      end
+    end)
+  elseif extension == "go" then
+    vim.ui.select({ "default" }, {
+      prompt = "Choose: ",
+    }, function(choice)
+      if choice == "default" then
+        vim.cmd(cmd .. substitute(filetype.go.default))
+      end
+    end)
+  elseif extension == "java" then
+    vim.ui.select({ "default" }, {
+      prompt = "Choose: ",
+    }, function(choice)
+      if choice == "default" then
+        vim.cmd(cmd .. substitute(filetype.java.default))
+      end
+    end)
+  elseif extension == "javascript" then
+    vim.ui.select({ "default", "debug" }, {
+      prompt = "Choose: ",
+    }, function(choice)
+      if choice == "default" then
+        vim.cmd(cmd .. substitute(filetype.javascript.default))
+      else
+        vim.cmd(cmd .. substitute(filetype.javascript.debug))
+      end
+    end)
+  elseif extension == "c" then
+    vim.ui.select({ "default" }, {
+      prompt = "Choose: ",
+    }, function(choice)
+      if choice == "default" then
+        vim.cmd(cmd .. substitute(filetype.c.default))
+      else
+      end
+    end)
+  elseif extension == "typescript" then
+    vim.ui.select({ "default" }, {
+      prompt = "Choose: ",
+    }, function(choice)
+      if choice == "default" then
+        vim.cmd(cmd .. substitute(filetype.typescript.default))
+      end
+    end)
+  elseif extension == "rust" then
+    vim.ui.select({ "default" }, {
+      prompt = "Choose: ",
+    }, function(choice)
+      if choice == "default" then
+        vim.cmd(cmd .. substitute(filetype.rust.default))
+      end
+    end)
+  elseif extension == "cs" then
+    vim.ui.select({ "default" }, {
+      prompt = "Choose: ",
+    }, function(choice)
+      if choice == "default" then
+        vim.cmd(cmd .. substitute(filetype.cs.default))
+      end
+    end)
+  elseif extension == "php" then
+    vim.ui.select({ "default" }, {
+      prompt = "Choose: ",
+    }, function(choice)
+      if choice == "default" then
+        vim.cmd(cmd .. substitute(filetype.php.default))
+      end
+    end)
+  elseif extension == "r" then
+    vim.ui.select({ "default" }, {
+      prompt = "Choose: ",
+    }, function(choice)
+      if choice == "default" then
+        vim.cmd(cmd .. substitute(filetype.r.default))
+      end
+    end)
+  elseif extension == "julia" then
+    vim.ui.select({ "default" }, {
+      prompt = "Choose: ",
+    }, function(choice)
+      if choice == "default" then
+        vim.cmd(cmd .. substitute(filetype.julia.default))
+      end
+    end)
+  elseif extension == "ruby" then
+    vim.ui.select({ "default" }, {
+      prompt = "Choose: ",
+    }, function(choice)
+      if choice == "default" then
+        vim.cmd(cmd .. substitute(filetype.ruby.default))
+      end
+    end)
+  elseif extension == "perl" then
+    vim.ui.select({ "default" }, {
+      prompt = "Choose: ",
+    }, function(choice)
+      if choice == "default" then
+        vim.cmd(cmd .. substitute(filetype.perl.default))
+      end
+    end)
+  end
+end
