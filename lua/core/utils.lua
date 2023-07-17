@@ -229,6 +229,7 @@ function _G.run_code()
     position = "bot",
     size = "10",
   }
+  local selectedCmd = ""
   local cmd = config.position .. " " .. config.size .. " new | term "
   local filetypes = {
     c = {
@@ -285,10 +286,14 @@ function _G.run_code()
     end
 
     if #choices == 0 then
-      vim.notify("It doesn't contain any commands", vim.log.levels.WARN, { title = "Code Runner" })
+      vim.notify("It doesn't contain any command", vim.log.levels.WARN, { title = "Code Runner" })
+    elseif #choices == 1 then
+      selectedCmd = filetypes[extension][choices[1]]
+      print(selectedCmd)
+      vim.cmd(cmd .. substitute(selectedCmd))
     else
       vim.ui.select(choices, { prompt = "Choose: " }, function(choice)
-        local selectedCmd = filetypes[extension][choice]
+        selectedCmd = filetypes[extension][choice]
         if selectedCmd then
           vim.cmd(cmd .. substitute(selectedCmd))
         end
