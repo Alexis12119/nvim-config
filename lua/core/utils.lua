@@ -230,7 +230,7 @@ function _G.run_code()
     size = "10",
   }
   local cmd = config.position .. " " .. config.size .. " new | term "
-  local filetype = {
+  local filetypes = {
     c = {
       default = "gcc % -o $fileBase && $fileBase",
     },
@@ -278,124 +278,23 @@ function _G.run_code()
     },
   }
 
-  if extension == "cpp" then
-    vim.ui.select({ "normal", "debug", "competitive" }, {
-      prompt = "Choose: ",
-    }, function(choice)
-      if choice == "competitive" then
-        vim.cmd(cmd .. substitute(filetype.cpp.competitive))
-      elseif choice == "debug" then
-        vim.cmd(cmd .. substitute(filetype.cpp.debug))
-      else
-        vim.cmd(cmd .. substitute(filetype.cpp.default))
-      end
+  local selectedCmd = ""
+
+  if filetypes[extension] and #filetypes[extension] > 0 then
+    local choices = {}
+    for choice, _ in pairs(filetypes[extension]) do
+      table.insert(choices, choice)
+    end
+
+    vim.ui.select(choices, { prompt = "Choose: " }, function(choice)
+      selectedCmd = filetypes[extension][choice]
+      vim.cmd(cmd .. substitute(selectedCmd))
     end)
-  elseif extension == "py" then
-    vim.ui.select({ "default" }, {
-      prompt = "Choose: ",
-    }, function(choice)
-      if choice == "default" then
-        vim.cmd(cmd .. substitute(filetype.python.default))
-      end
-    end)
-  elseif extension == "go" then
-    vim.ui.select({ "default" }, {
-      prompt = "Choose: ",
-    }, function(choice)
-      if choice == "default" then
-        vim.cmd(cmd .. substitute(filetype.go.default))
-      end
-    end)
-  elseif extension == "java" then
-    vim.ui.select({ "default" }, {
-      prompt = "Choose: ",
-    }, function(choice)
-      if choice == "default" then
-        vim.cmd(cmd .. substitute(filetype.java.default))
-      end
-    end)
-  elseif extension == "javascript" then
-    vim.ui.select({ "default", "debug" }, {
-      prompt = "Choose: ",
-    }, function(choice)
-      if choice == "default" then
-        vim.cmd(cmd .. substitute(filetype.javascript.default))
-      else
-        vim.cmd(cmd .. substitute(filetype.javascript.debug))
-      end
-    end)
-  elseif extension == "c" then
-    vim.ui.select({ "default" }, {
-      prompt = "Choose: ",
-    }, function(choice)
-      if choice == "default" then
-        vim.cmd(cmd .. substitute(filetype.c.default))
-      else
-      end
-    end)
-  elseif extension == "typescript" then
-    vim.ui.select({ "default" }, {
-      prompt = "Choose: ",
-    }, function(choice)
-      if choice == "default" then
-        vim.cmd(cmd .. substitute(filetype.typescript.default))
-      end
-    end)
-  elseif extension == "rust" then
-    vim.ui.select({ "default" }, {
-      prompt = "Choose: ",
-    }, function(choice)
-      if choice == "default" then
-        vim.cmd(cmd .. substitute(filetype.rust.default))
-      end
-    end)
-  elseif extension == "cs" then
-    vim.ui.select({ "default" }, {
-      prompt = "Choose: ",
-    }, function(choice)
-      if choice == "default" then
-        vim.cmd(cmd .. substitute(filetype.cs.default))
-      end
-    end)
-  elseif extension == "php" then
-    vim.ui.select({ "default" }, {
-      prompt = "Choose: ",
-    }, function(choice)
-      if choice == "default" then
-        vim.cmd(cmd .. substitute(filetype.php.default))
-      end
-    end)
-  elseif extension == "r" then
-    vim.ui.select({ "default" }, {
-      prompt = "Choose: ",
-    }, function(choice)
-      if choice == "default" then
-        vim.cmd(cmd .. substitute(filetype.r.default))
-      end
-    end)
-  elseif extension == "julia" then
-    vim.ui.select({ "default" }, {
-      prompt = "Choose: ",
-    }, function(choice)
-      if choice == "default" then
-        vim.cmd(cmd .. substitute(filetype.julia.default))
-      end
-    end)
-  elseif extension == "ruby" then
-    vim.ui.select({ "default" }, {
-      prompt = "Choose: ",
-    }, function(choice)
-      if choice == "default" then
-        vim.cmd(cmd .. substitute(filetype.ruby.default))
-      end
-    end)
-  elseif extension == "perl" then
-    vim.ui.select({ "default" }, {
-      prompt = "Choose: ",
-    }, function(choice)
-      if choice == "default" then
-        vim.cmd(cmd .. substitute(filetype.perl.default))
-      end
-    end)
+  else
+    vim.notify(
+      "Either the filetype isn't included in the list or doesn't contain any commands",
+      vim.log.levels.WARN,
+      { title = "Code Runner" }
+    )
   end
 end
