@@ -242,7 +242,7 @@ function _G.run_code()
       debug = "g++ -g % -o  $fileBase && $fileBase",
       competitive = "g++ -std=c++17 -Wall -DAL -O2 % -o $fileBase && $fileBase<input.txt",
     },
-    python = {
+    py = {
       default = "python %",
     },
     go = {
@@ -251,14 +251,14 @@ function _G.run_code()
     java = {
       default = "java %",
     },
-    javascript = {
+    js = {
       default = "node %",
       debug = "node --inspect %",
     },
-    typescript = {
+    ts = {
       default = "tsc % && node $fileBase",
     },
-    rust = {
+    rs = {
       default = "rustc % && $fileBase",
     },
     php = {
@@ -267,13 +267,13 @@ function _G.run_code()
     r = {
       default = "Rscript %",
     },
-    julia = {
+    jl = {
       default = "julia %",
     },
-    ruby = {
+    rb = {
       default = "ruby %",
     },
-    perl = {
+    pl = {
       default = "perl %",
     },
   }
