@@ -278,23 +278,23 @@ function _G.run_code()
     },
   }
 
-  local selectedCmd = ""
-
-  if filetypes[extension] and #filetypes[extension] > 0 then
+  if filetypes[extension] then
     local choices = {}
     for choice, _ in pairs(filetypes[extension]) do
       table.insert(choices, choice)
     end
 
-    vim.ui.select(choices, { prompt = "Choose: " }, function(choice)
-      selectedCmd = filetypes[extension][choice]
-      vim.cmd(cmd .. substitute(selectedCmd))
-    end)
+    if #choices == 0 then
+      vim.notify("It doesn't contain any commands", vim.log.levels.WARN, { title = "Code Runner" })
+    else
+      vim.ui.select(choices, { prompt = "Choose: " }, function(choice)
+        local selectedCmd = filetypes[extension][choice]
+        if selectedCmd then
+          vim.cmd(cmd .. substitute(selectedCmd))
+        end
+      end)
+    end
   else
-    vim.notify(
-      "Either the filetype isn't included in the list or doesn't contain any commands",
-      vim.log.levels.WARN,
-      { title = "Code Runner" }
-    )
+    vim.notify("The filetype isn't included in the list", vim.log.levels.WARN, { title = "Code Runner" })
   end
 end
