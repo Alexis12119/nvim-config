@@ -5,7 +5,7 @@ end
 
 local jdtls_path = vim.fn.stdpath "data" .. "/mason/packages/jdtls/"
 local install_path = require("mason-registry").get_package("jdtls"):get_install_path()
-local equinox_version = "1.6.400.v20210924-0641"
+local equinox_version = "1.6.500.v20230622-2056"
 
 WORKSPACE_PATH = vim.fn.stdpath "data" .. "/workspace/"
 if vim.fn.has "mac" == 1 then
