@@ -289,7 +289,6 @@ function _G.run_code()
       vim.notify("It doesn't contain any command", vim.log.levels.WARN, { title = "Code Runner" })
     elseif #choices == 1 then
       selectedCmd = filetypes[extension][choices[1]]
-      print(selectedCmd)
       vim.cmd(cmd .. substitute(selectedCmd))
     else
       vim.ui.select(choices, { prompt = "Choose: " }, function(choice)
