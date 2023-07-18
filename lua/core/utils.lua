@@ -224,14 +224,14 @@ local function substitute(cmd)
 end
 
 function _G.run_code()
-  local extension = vim.fn.expand "%:e"
+  local file_extension = vim.fn.expand "%:e"
   local config = {
     position = "bot",
     size = "10",
   }
-  local selectedCmd = ""
-  local cmd = config.position .. " " .. config.size .. " new | term "
-  local filetypes = {
+  local selected_cmd = ""
+  local options = config.position .. " " .. config.size .. " new | term "
+  local supported_filetypes = {
     c = {
       default = "gcc % -o $fileBase && $fileBase",
     },
@@ -279,22 +279,22 @@ function _G.run_code()
     },
   }
 
-  if filetypes[extension] then
+  if supported_filetypes[file_extension] then
     local choices = {}
-    for choice, _ in pairs(filetypes[extension]) do
+    for choice, _ in pairs(supported_filetypes[file_extension]) do
       table.insert(choices, choice)
     end
 
     if #choices == 0 then
       vim.notify("It doesn't contain any command", vim.log.levels.WARN, { title = "Code Runner" })
     elseif #choices == 1 then
-      selectedCmd = filetypes[extension][choices[1]]
-      vim.cmd(cmd .. substitute(selectedCmd))
+      selected_cmd = supported_filetypes[file_extension][choices[1]]
+      vim.cmd(options .. substitute(selected_cmd))
     else
       vim.ui.select(choices, { prompt = "Choose: " }, function(choice)
-        selectedCmd = filetypes[extension][choice]
-        if selectedCmd then
-          vim.cmd(cmd .. substitute(selectedCmd))
+        selected_cmd = supported_filetypes[file_extension][choice]
+        if selected_cmd then
+          vim.cmd(options .. substitute(selected_cmd))
         end
       end)
     end
