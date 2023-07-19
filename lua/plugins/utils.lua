@@ -109,6 +109,7 @@ return {
     config = function()
       require("notify").setup {
         level = 2,
+        background_colour = "#000000",
         minimum_width = 50,
         render = "default",
         stages = "fade",
