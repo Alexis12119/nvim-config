@@ -73,7 +73,7 @@ return {
 
     cmp.setup {
       completion = {
-        completeopt = "menu,menuone,noinsert", -- sudgeseted in issue #209
+        completeopt = "menu,menuone,noselect",
       },
       snippet = {
         expand = function(args)
