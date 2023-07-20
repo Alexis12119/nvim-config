@@ -1,6 +1,5 @@
 local options = {
   backup = false, -- creates a backup file
-  completeopt = { "menuone", "noselect" }, -- mostly just for cmp
   conceallevel = 0, -- so that `` is visible in markdown files
   fileencoding = "utf-8", -- the encoding written to a file
   hidden = true, -- required to keep multiple buffers and open multiple buffers
