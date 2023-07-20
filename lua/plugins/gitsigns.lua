@@ -8,8 +8,8 @@ return {
       delete = { hl = "GitSignsDelete", text = "", numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" },
       topdelete = { hl = "GitSignsDelete", text = "", numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" },
       changedelete = { hl = "GitSignsChange", text = "▎", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
+      untracked = { text = "▎" },
     },
-    attach_to_untracked = false,
     preview_config = {
       -- Options passed to nvim_open_win
       border = "rounded",
