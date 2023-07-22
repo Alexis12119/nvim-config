@@ -46,7 +46,7 @@ return {
         local mason_lspconfig = require "mason-lspconfig"
         local lspconfig = require "lspconfig"
 
-        require("lspconfig.ui.windows").default_options.border = "rounded"
+        -- require("lspconfig.ui.windows").default_options.border = "rounded"
 
         local auto_install = {
           "jsonls",
@@ -71,7 +71,7 @@ return {
           ui = {
             -- Whether to automatically check for new versions when opening the :Mason window.
             check_outdated_packages_on_open = false,
-            border = "single",
+            border = "none",
             icons = {
               package_pending = " ",
               package_installed = " ",
