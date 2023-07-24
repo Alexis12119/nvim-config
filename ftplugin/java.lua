@@ -3,15 +3,15 @@ if not status_ok then
   return
 end
 
-local jdtls_path = vim.fn.stdpath "data" .. "/mason/packages/jdtls/"
-local install_path = require("mason-registry").get_package("jdtls"):get_install_path()
+-- local java_debug_path = vim.fn.stdpath "data" .. "/mason/packages/java-debug-adapter/"
+local jdtls_path = require("mason-registry").get_package("jdtls"):get_install_path()
 -- NOTE: Decrease the amount of files to improve speed(Experimental).
 -- INFO: It's annoying to edit the version again and again.
 local equinox_path = vim.split(vim.fn.glob(vim.fn.stdpath "data" .. "/mason/packages/jdtls/plugins/*jar"), "\n")
 local equinox_launcher = ""
 
 for _, file in pairs(equinox_path) do
-  if file:match("launcher_") then
+  if file:match "launcher_" then
     equinox_launcher = file
     break
   end
@@ -45,7 +45,7 @@ local config = {
     "-Declipse.product=org.eclipse.jdt.ls.core.product",
     "-Dlog.protocol=true",
     "-Dlog.level=ALL",
-    "-javaagent:" .. install_path .. "/lombok.jar",
+    "-javaagent:" .. jdtls_path .. "/lombok.jar",
     "-Xms1g",
     "--add-modules=ALL-SYSTEM",
     "--add-opens",
@@ -74,7 +74,12 @@ local config = {
   -- 💀
   -- This is the default if not provided, you can remove it. Or adjust as needed.
   -- One dedicated LSP server & client will be started per unique root_dir
-  root_dir = require("jdtls.setup").find_root(root_markers) ,
+  root_dir = require("jdtls.setup").find_root(root_markers),
+  -- init_options = {
+  --   bundles = {
+  --     vim.fn.glob(java_debug_path .. "extension/server/com.microsoft.java.debug.plugin-*.jar", 1),
+  --   },
+  -- },
 }
 
 local keymap = vim.keymap.set
