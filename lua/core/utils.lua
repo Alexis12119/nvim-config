@@ -225,12 +225,8 @@ end
 
 function _G.run_code()
   local fileExtension = vim.fn.expand "%:e"
-  local config = {
-    position = "bot",
-    size = "10",
-  }
   local selectedCmd = ""
-  local options = config.position .. " " .. config.size .. " new | term "
+  local options = "bot 10 new | term "
   local supportedFiletypes = {
     c = {
       default = "gcc % -o $fileBase && $fileBase",
