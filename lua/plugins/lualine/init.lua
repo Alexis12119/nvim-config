@@ -25,7 +25,7 @@ return {
           "lazy",
           "packer",
           "NvimTree",
-          "lspsagaoutline",
+          "sagaoutline",
         },
         always_divide_middle = true,
       },
