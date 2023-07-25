@@ -22,6 +22,7 @@ return {
 
     -- NOTE: Make sure to install the needed files/exectubles through mason
     require "plugins.dap.cpptools"
+    require "plugins.dap.java-debug"
     require "plugins.dap.node-debug2"
     require "plugins.dap.debugpy"
     require "plugins.dap.delve"
