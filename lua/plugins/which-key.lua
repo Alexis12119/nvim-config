@@ -101,9 +101,14 @@ return {
         b = { ":Telescope git_branches<cr>", "Checkout branch" },
         c = { ":Telescope git_commits<cr>", "Checkout commit" },
         d = {
-          name = "Diff",
-          o = { ":DiffviewOpen<cr>", "Open Diffview" },
-          c = { ":DiffviewClose<cr>", "Close Diffview" },
+          function()
+            if next(require("diffview.lib").views) == nil then
+              vim.cmd "DiffviewOpen"
+            else
+              vim.cmd "DiffviewClose"
+            end
+          end,
+          "Toggle Diffview",
         },
       },
       l = {
