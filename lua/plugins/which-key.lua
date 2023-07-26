@@ -25,6 +25,7 @@ return {
       ["D"] = { toggle_distraction_free, "Distraction Free" },
       ["q"] = { ":qa!<cr>", "Quit" },
       ["c"] = { ":Bdelete!<cr>", "Close Buffer" },
+      ["T"] = { ":TSContextToggle<cr>", "Toggle Context" },
       ["m"] = {
         function()
           if vim.bo.filetype == "markdown" then
