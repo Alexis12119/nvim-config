@@ -228,6 +228,9 @@ function _G.run_code()
   local selectedCmd = ""
   local options = "bot 10 new | term "
   local supportedFiletypes = {
+    html = {
+      default = "%",
+    },
     c = {
       default = "gcc % -o $fileBase && $fileBase",
     },
