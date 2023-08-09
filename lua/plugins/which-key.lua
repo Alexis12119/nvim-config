@@ -87,6 +87,7 @@ return {
           end,
           "Lazygit",
         },
+        n = { ":Neogit<cr>", "Neogit" },
         j = { ":lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
         k = { ":lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
         l = { ":lua require 'gitsigns'.blame_line()<cr>", "Blame" },
