@@ -1,6 +1,5 @@
 return {
   "folke/noice.nvim",
-  event = "CmdlineEnter",
   opts = {
     lsp = {
       progress = {
