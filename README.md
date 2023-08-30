@@ -14,6 +14,7 @@
 
 - Plugin Manager called [lazy.nvim](https://github.com/folke/lazy.nvim).
 - Built-in Code runner.
+- Peek lines with [numb.nvim](https://github.com/nacro90/numb.nvim).
 - Manage projects with [project.nvim](https://github.com/ahmedkhalf/project.nvim).
 - Statusline with [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim).
 - Tabline with [bufferline.nvim](https://github.com/akinsho/bufferline.nvim) and [scope.nvim](https://github.com/tiagovla/scope.nvim).
