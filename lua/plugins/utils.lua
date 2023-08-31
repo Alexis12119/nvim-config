@@ -10,6 +10,18 @@ return {
   },
 
   {
+    "stefanlogue/hydrate.nvim",
+    opts = {
+      -- The interval between notifications in minutes
+      minute_interval = 20,
+
+      -- The render style for notifications
+      -- Accepted values are "default", "minimal", "simple" or "compact"
+      render_style = "compact",
+    },
+  },
+
+  {
     "nacro90/numb.nvim",
     opts = {
       show_numbers = true, -- Enable 'number' for the window while peeking
