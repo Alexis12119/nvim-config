@@ -66,6 +66,8 @@ return {
         -- telescope
         datapath = vim.fn.stdpath "data",
       }
+
+      require("telescope").load_extension "projects"
     end,
   },
 

@@ -6,6 +6,9 @@ return {
     {
       "nvim-telescope/telescope-fzf-native.nvim",
       build = "make",
+      config = function()
+        require("telescope").load_extension "fzf"
+      end,
     },
   },
   config = function()
@@ -27,10 +30,6 @@ return {
         case_mode = "smart_case", -- or "ignore_case" or "respect_case"
         -- the default case_mode is "smart_case"
       },
-
-      -- bookmarks = {
-      --   url_open_command = "brave", -- change this with your preferred browser
-      -- },
     }
 
     telescope.setup {
@@ -50,7 +49,7 @@ return {
         prompt_prefix = "   ",
         selection_caret = "󰜴 ",
         path_display = { "smart" },
-        file_ignore_patterns = { ".git/",".git\\", "node_modules" },
+        file_ignore_patterns = { ".git/", ".git\\", "node_modules" },
         mappings = {
           i = {
             ["<A-j>"] = actions.move_selection_next,
@@ -66,8 +65,5 @@ return {
       pickers = pickers,
       extensions = extensions,
     }
-
-    telescope.load_extension "fzf"
-    telescope.load_extension "projects"
   end,
 }
