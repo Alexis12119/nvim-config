@@ -10,6 +10,8 @@
 
 </div>
 
+### NOTE: I'm now using new [config](https://github.com/Alexis12119/Nvchad-user) which is faster and beautiful.
+
 ### ✨ Features
 
 - Plugin Manager called [lazy.nvim](https://github.com/folke/lazy.nvim).
