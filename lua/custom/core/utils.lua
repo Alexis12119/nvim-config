@@ -1,6 +1,6 @@
 local command = vim.api.nvim_create_user_command
 
-function _G.config_files()
+function _G.find_config_files()
   local cwd = vim.fn.stdpath "config" .. "/"
   local config_dir = { cwd }
 
@@ -58,19 +58,6 @@ function _G.set_global(globals)
   for name, value in pairs(globals) do
     vim.g[name] = value
   end
-end
-
-function _G.nvim_tree_on_attach(bufnr)
-  local api = require "nvim-tree.api"
-
-  local function opts(desc)
-    return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-  end
-
-  api.config.mappings.default_on_attach(bufnr)
-
-  vim.keymap.set("n", "l", api.node.open.edit, opts "Open")
-  vim.keymap.set("n", "u", api.tree.change_root_to_parent, opts "Up")
 end
 
 function _G.update_config()
@@ -222,14 +209,16 @@ function _G.run_code()
     },
     c = {
       default = "gcc % -o $fileBase && $fileBase",
+      make = "make",
     },
     cs = {
       default = "dotnet run",
     },
     cpp = {
       default = "g++ % -o  $fileBase && $fileBase",
-      debug = "g++ -g % -o  $fileBase && $fileBase",
+      debug = "g++ -g % -o  $fileBase",
       competitive = "g++ -std=c++17 -Wall -DAL -O2 % -o $fileBase && $fileBase<input.txt",
+      make = "make",
     },
     py = {
       default = "python %",

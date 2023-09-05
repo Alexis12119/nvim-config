@@ -1,5 +1,18 @@
 local M = {}
 
+local function on_attach(bufnr)
+  local api = require "nvim-tree.api"
+
+  local function opts(desc)
+    return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+  end
+
+  api.config.mappings.default_on_attach(bufnr)
+
+  vim.keymap.set("n", "l", api.node.open.edit, opts "Open")
+  vim.keymap.set("n", "u", api.tree.change_root_to_parent, opts "Up")
+end
+
 M.treesitter = {
   ensure_installed = {
     "vim",
@@ -87,7 +100,7 @@ M.telescope_pickers = {
 }
 
 M.nvimtree = {
-  on_attach = nvim_tree_on_attach,
+  on_attach = on_attach,
   diagnostics = {
     enable = false,
     icons = {
@@ -452,6 +465,26 @@ M.flash = {
     -- options used for remote flash
     remote = {},
   },
+}
+
+M.neodev = {
+  library = {
+    enabled = true, -- when not enabled, neodev will not change any settings to the LSP server
+    -- these settings will be used for your Neovim config directory
+    runtime = true, -- runtime path
+    types = true, -- full signature, docs and completion of vim.api, vim.treesitter, vim.lsp and others
+    plugins = true, -- installed opt or start plugins in packpath
+    -- you can also specify the list of plugins to make available as a workspace library
+    -- plugins = { "nvim-treesitter", "plenary.nvim", "telescope.nvim" },
+  },
+  setup_jsonls = true, -- configures jsonls to provide completion for project specific .luarc.json files
+  -- With lspconfig, Neodev will automatically setup your lua-language-server
+  -- If you disable this, then you have to set {before_init=require("neodev.lsp").before_init}
+  -- in your lsp start options
+  lspconfig = false,
+  -- much faster, but needs a recent built of lua-language-server
+  -- needs lua-language-server >= 3.6.0
+  pathStrict = true,
 }
 
 return M

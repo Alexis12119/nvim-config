@@ -40,7 +40,7 @@ local mappings = {
   n = {
     name = "Neovim",
     c = {
-      config_files,
+      find_config_files,
       "Config Files",
     },
     i = {

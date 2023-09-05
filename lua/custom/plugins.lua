@@ -87,14 +87,16 @@ local plugins = {
       {
         "williamboman/mason-lspconfig.nvim",
       },
-
       {
         "nvimdev/lspsaga.nvim",
         opts = overrides.lspsaga,
       },
+      {
+        "folke/neodev.nvim",
+        opts = overrides.neodev,
+      },
     },
     config = function()
-      require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
     end,
   },
