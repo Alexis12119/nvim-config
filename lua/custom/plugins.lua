@@ -94,6 +94,7 @@ local plugins = {
       },
     },
     config = function()
+      require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
     end,
   },
@@ -179,7 +180,6 @@ local plugins = {
 
   {
     "folke/todo-comments.nvim",
-    lazy = true,
     event = "VeryLazy",
     opts = overrides.todo_comments,
   },
@@ -191,7 +191,6 @@ local plugins = {
 
   {
     "akinsho/toggleterm.nvim",
-    lazy = true,
     cmd = "ToggleTerm",
     opts = overrides.toggleterm,
   },

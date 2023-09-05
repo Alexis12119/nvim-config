@@ -1,5 +1,5 @@
 return {
-  cmd = { "dotnet", vim.fn.stdpath "data" .. "/mason/packages/omnisharp/libexec/OmniSharp.dll" },
+  cmd = { "omnisharp" },
 
   -- Enables support for reading code style, naming convention and analyzer
   -- settings from .editorconfig.
