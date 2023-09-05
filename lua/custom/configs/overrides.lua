@@ -63,7 +63,7 @@ M.nvimtree = {
     ignore_list = {},
   },
   git = {
-    enable = false,
+    enable = true,
     ignore = true,
     show_on_dirs = true,
     show_on_open_dirs = true,
@@ -86,8 +86,41 @@ M.nvimtree = {
   },
 
   renderer = {
-    highlight_git = true,
+    highlight_git = false,
     root_folder_label = ":~:s?$?/..?",
+    icons = {
+      show = {
+        file = true,
+        folder = true,
+        folder_arrow = true,
+        git = true,
+      },
+
+      glyphs = {
+        default = "󰈚",
+        symlink = "",
+        folder = {
+          default = "",
+          empty = "",
+          empty_open = "",
+          open = "",
+          symlink = "",
+          symlink_open = "",
+          arrow_open = "",
+          arrow_closed = "",
+        },
+
+        git = {
+          unstaged = "",
+          staged = "✓",
+          unmerged = "",
+          renamed = "➜",
+          untracked = "U",
+          deleted = "",
+          ignored = "◌",
+        },
+      },
+    },
   },
 }
 
