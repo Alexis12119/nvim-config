@@ -5,6 +5,8 @@ M.disabled = {
   n = {
     -- cycle through buffers
     ["<tab>"] = "",
+    ["<Up>"] = "",
+    ["<Down>"] = "",
     ["<C-c>"] = "",
     ["<C-s>"] = "",
     ["<Esc>"] = "",
