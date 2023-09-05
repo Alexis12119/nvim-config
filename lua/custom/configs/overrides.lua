@@ -10,14 +10,17 @@ M.treesitter = {
     "typescript",
     "tsx",
     "c",
+    "cpp",
     "markdown",
     "markdown_inline",
+    "regex",
+    "bash",
+    "go",
+    "python",
+    "java",
   },
   indent = {
     enable = false,
-    -- disable = {
-    --   "python"
-    -- },
   },
 }
 
@@ -161,20 +164,29 @@ M.mason = {
     },
   },
   ensure_installed = {
-    -- lua stuff
+    -- Lua
     "lua-language-server",
+    "vimls",
     "stylua",
 
-    -- web dev stuff
+    -- web dev
     -- "css-lsp",
     -- "html-lsp",
     -- "typescript-language-server",
     -- "deno",
     -- "prettier",
 
-    -- c/cpp stuff
+    -- C/C++
     "clangd",
     "clang-format",
+
+    -- Python
+    "pyright",
+    -- Go
+    -- "gopls",
+
+    -- C#
+    -- "omnisharp",
   },
 }
 
