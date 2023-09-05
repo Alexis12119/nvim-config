@@ -254,7 +254,7 @@ local plugins = {
     "nvim-telescope/telescope.nvim",
     opts = {
       pickers = overrides.telescope_pickers,
-      extensions_list = { "fzf" },
+      extensions_list = { "themes", "terms", "fzf" },
     },
     dependencies = {
       {
