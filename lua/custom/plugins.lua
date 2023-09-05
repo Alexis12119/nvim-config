@@ -97,6 +97,7 @@ local plugins = {
       },
     },
     config = function()
+      require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
     end,
   },
@@ -201,6 +202,7 @@ local plugins = {
     "rcarriga/nvim-notify",
     event = "VeryLazy",
     config = function()
+      dofile(vim.g.base46_cache .. "notify")
       require("notify").setup {
         level = 2,
         minimum_width = 50,

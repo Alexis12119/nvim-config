@@ -8,6 +8,9 @@ M.ui = {
   lsp_semantic_tokens = true, -- needs nvim v0.9, just adds highlight groups for lsp semantic tokens
   hl_override = highlights.override,
   hl_add = highlights.add,
+  extended_integrations = {
+    "notify",
+  }, -- these aren't compiled by default, ex: "alpha", "notify"
   nvdash = {
     load_on_startup = false,
 
