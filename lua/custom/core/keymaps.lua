@@ -110,11 +110,15 @@ local keymaps = {
     },
 
     ["H"] = {
-      cmd = ":bprevious<CR>",
+      cmd = function()
+        require("nvchad.tabufline").tabuflinePrev()
+      end,
       desc = "Go to previous buffer",
     },
     ["L"] = {
-      cmd = ":bnext<CR>",
+      cmd = function()
+        require("nvchad.tabufline").tabuflineNext()
+      end,
       desc = "Go to next buffer",
     },
 
