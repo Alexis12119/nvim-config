@@ -24,6 +24,43 @@ M.treesitter = {
   },
 }
 
+M.mason = {
+  ui = {
+    -- Whether to automatically check for new versions when opening the :Mason window.
+    check_outdated_packages_on_open = false,
+    icons = {
+      package_pending = " ",
+      package_installed = " ",
+      package_uninstalled = " ",
+    },
+  },
+  ensure_installed = {
+    -- Lua
+    "lua-language-server",
+    "vimls",
+    "stylua",
+
+    -- web dev
+    -- "css-lsp",
+    -- "html-lsp",
+    -- "typescript-language-server",
+    -- "deno",
+    -- "prettier",
+
+    -- C/C++
+    "clangd",
+    "clang-format",
+
+    -- Python
+    "pyright",
+    -- Go
+    -- "gopls",
+
+    -- C#
+    -- "omnisharp",
+  },
+}
+
 M.colorizer = {
   filetypes = {
     css = {
@@ -150,43 +187,6 @@ M.toggleterm = {
   float_opts = {
     border = "rounded",
     winblend = 0,
-  },
-}
-
-M.mason = {
-  ui = {
-    -- Whether to automatically check for new versions when opening the :Mason window.
-    check_outdated_packages_on_open = false,
-    icons = {
-      package_pending = " ",
-      package_installed = " ",
-      package_uninstalled = " ",
-    },
-  },
-  ensure_installed = {
-    -- Lua
-    "lua-language-server",
-    "vimls",
-    "stylua",
-
-    -- web dev
-    -- "css-lsp",
-    -- "html-lsp",
-    -- "typescript-language-server",
-    -- "deno",
-    -- "prettier",
-
-    -- C/C++
-    "clangd",
-    "clang-format",
-
-    -- Python
-    "pyright",
-    -- Go
-    -- "gopls",
-
-    -- C#
-    -- "omnisharp",
   },
 }
 
@@ -452,4 +452,5 @@ M.flash = {
     remote = {},
   },
 }
+
 return M

@@ -1,7 +1,4 @@
 return {
-  defaults = {
-    lazy = false,
-  },
   change_detection = {
     -- automatically check for config file changes and reload the ui
     enabled = true,
