@@ -28,13 +28,12 @@ M.ui = {
       { "󰈚  Recent Files", "Spc f r", "Telescope oldfiles" },
       { "󰈭  Find Word", "Spc f t", "Telescope live_grep" },
       { "  Bookmarks", "Spc f m", "Telescope marks" },
-      { "  Themes", "Spc f c", "Telescope themes" },
+      { "  Themes", "Spc f t", "Telescope themes" },
       { "  Mappings", "Spc f k", "NvCheatsheet" },
     },
   },
 
   cheatsheet = { theme = "simple" }, -- simple/grid
-
 }
 M.lazy_nvim = require "custom.configs.lazy" -- config for lazy.nvim startup options
 

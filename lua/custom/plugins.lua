@@ -180,6 +180,7 @@ local plugins = {
   {
     "folke/todo-comments.nvim",
     lazy = true,
+    event = "VeryLazy",
     opts = overrides.todo_comments,
   },
 
@@ -254,7 +255,14 @@ local plugins = {
     opts = {
       pickers = overrides.telescope_pickers,
     },
+    dependencies = {
+      {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        build = "make",
+      },
+    },
   },
+
   {
     "mfussenegger/nvim-jdtls",
     ft = "java",
