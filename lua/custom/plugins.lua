@@ -1,10 +1,51 @@
 local overrides = require "custom.configs.overrides"
 
 local plugins = {
-  -- Override plugin definition options
   {
     "lukas-reineke/indent-blankline.nvim",
     enabled = false,
+  },
+
+  {
+    "hrsh7th/nvim-cmp",
+    opts = function()
+      local cmp_ui = require("core.utils").load_config().ui.cmp
+      local cmp_style = cmp_ui.style
+      local cmp = require "cmp"
+      local function border(hl_name)
+        return {
+          { "╭", hl_name },
+          { "─", hl_name },
+          { "╮", hl_name },
+          { "│", hl_name },
+          { "╯", hl_name },
+          { "─", hl_name },
+          { "╰", hl_name },
+          { "│", hl_name },
+        }
+      end
+
+      cmp.setup.cmdline(":", {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+          { name = "cmdline" },
+        },
+        window = {
+          completion = {
+            side_padding = (cmp_style ~= "atom" and cmp_style ~= "atom_colored") and 1 or 0,
+            winhighlight = "Normal:CmpPmenu,CursorLine:CmpSel,Search:PmenuSel",
+            scrollbar = false,
+          },
+          documentation = {
+            border = border "CmpDocBorder",
+            winhighlight = "Normal:CmpDoc",
+          },
+        },
+      })
+    end,
+    dependencies = {
+      "hrsh7th/cmp-cmdline",
+    },
   },
 
   {
