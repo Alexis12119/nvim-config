@@ -44,7 +44,7 @@ M.neovim = {
       opts = { silent = true },
     },
     ["<leader>nc"] = {
-      ":NvCheatshee<cr>",
+      ":NvCheatsheet<cr>",
       "Cheatsheet",
       opts = { silent = true },
     },
@@ -106,9 +106,9 @@ M.telescope = {
 
 M.toggleterm = {
   n = {
-    ["<leader>tf"] = { ":ToggleTerm direction=float<cr>", "Float", opts = { silent = true } },
-    ["<leader>th"] = { ":ToggleTerm size=10 direction=horizontal<cr>", "Horizontal", opts = { silent = true } },
-    ["<leader>tv"] = { ":ToggleTerm size=50 direction=vertical<cr>", "Vertical", opts = { silent = true } },
+    ["<leader>tf"] = { ":ToggleTerm direction=float<cr>", "Float Terminal", opts = { silent = true } },
+    ["<leader>th"] = { ":ToggleTerm size=10 direction=horizontal<cr>", "Horizontal Terminal", opts = { silent = true } },
+    ["<leader>tv"] = { ":ToggleTerm size=50 direction=vertical<cr>", "Vertical Terminal", opts = { silent = true } },
   },
 }
 
@@ -179,16 +179,16 @@ M.git = {
 
 M.lazy = {
   n = {
-    ["<leader>pc"] = { ":Lazy clean<cr>", "Clean", opts = { silent = true } },
-    ["<leader>pC"] = { ":Lazy check<cr>", "Check", opts = { silent = true } },
-    ["<leader>pd"] = { ":Lazy debug<cr>", "Debug", opts = { silent = true } },
-    ["<leader>pi"] = { ":Lazy install<cr>", "Install", opts = { silent = true } },
-    ["<leader>ps"] = { ":Lazy sync<cr>", "Sync", opts = { silent = true } },
-    ["<leader>pl"] = { ":Lazy log<cr>", "Log", opts = { silent = true } },
-    ["<leader>ph"] = { ":Lazy home<cr>", "Home", opts = { silent = true } },
-    ["<leader>pH"] = { ":Lazy help<cr>", "Help", opts = { silent = true } },
-    ["<leader>pp"] = { ":Lazy profile<cr>", "Profile", opts = { silent = true } },
-    ["<leader>pu"] = { ":Lazy update<cr>", "Update", opts = { silent = true } },
+    ["<leader>pc"] = { ":Lazy clean<cr>", "Lazy Clean", opts = { silent = true } },
+    ["<leader>pC"] = { ":Lazy check<cr>", "Lazy Check", opts = { silent = true } },
+    ["<leader>pd"] = { ":Lazy debug<cr>", "Lazy Debug", opts = { silent = true } },
+    ["<leader>pi"] = { ":Lazy install<cr>", "Lazy Install", opts = { silent = true } },
+    ["<leader>ps"] = { ":Lazy sync<cr>", "Lazy Sync", opts = { silent = true } },
+    ["<leader>pl"] = { ":Lazy log<cr>", "Lazy Log", opts = { silent = true } },
+    ["<leader>ph"] = { ":Lazy home<cr>", "Lazy Home", opts = { silent = true } },
+    ["<leader>pH"] = { ":Lazy help<cr>", "Lazy Help", opts = { silent = true } },
+    ["<leader>pp"] = { ":Lazy profile<cr>", "Lazy Profile", opts = { silent = true } },
+    ["<leader>pu"] = { ":Lazy update<cr>", "Lazy Update", opts = { silent = true } },
   },
 }
 
@@ -470,7 +470,7 @@ M.general = {
         return "<C-z>"
       end,
       "Word Search Increment",
-      opts = { silent = true },
+      opts = { expr = true, silent = true },
     },
 
     ["<S-Tab>"] = {
@@ -481,7 +481,7 @@ M.general = {
         return "<S-Tab>"
       end,
       "Word Search Decrement",
-      opts = { silent = true },
+      opts = { expr = true, silent = true },
     },
   },
   t = {
