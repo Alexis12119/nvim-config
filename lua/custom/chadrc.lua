@@ -29,10 +29,10 @@ M.ui = {
     buttons = {
       { "  Find File", "Spc f f", "Telescope find_files" },
       { "󰈚  Recent Files", "Spc f r", "Telescope oldfiles" },
-      { "󰈭  Find Word", "Spc f t", "Telescope live_grep" },
+      { "󰈭  Find Word", "Spc f w", "Telescope live_grep" },
       { "  Bookmarks", "Spc f m", "Telescope marks" },
       { "  Themes", "Spc f t", "Telescope themes" },
-      { "  Mappings", "Spc f k", "NvCheatsheet" },
+      { "  Mappings", "Spc n c", "NvCheatsheet" },
     },
   },
 
