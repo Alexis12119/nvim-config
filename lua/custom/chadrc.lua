@@ -12,7 +12,7 @@ M.ui = {
     "notify",
   }, -- these aren't compiled by default, ex: "alpha", "notify"
   nvdash = {
-    load_on_startup = true,
+    load_on_startup = false,
     header = {
       "           ▄ ▄                   ",
       "       ▄   ▄▄▄     ▄ ▄▄▄ ▄ ▄     ",

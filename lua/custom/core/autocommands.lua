@@ -49,6 +49,7 @@ autocmd("FileType", {
   end,
   desc = "Disable Tabline And StatusLine in Nvdash",
 })
+
 -- remove this if there's an issue
 autocmd({ "BufReadPost", "BufNewFile" }, {
   once = true,
