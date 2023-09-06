@@ -214,6 +214,8 @@ M.general = {
     ["<leader>e"] = { ":NvimTreeToggle<cr>", "Explorer", opts = { silent = true } },
     ["<leader>q"] = { ":qa!<cr>", "Quit", opts = { silent = true } },
     ["<leader>c"] = { ":Bdelete!<cr>", "Close Buffer", opts = { silent = true } },
+    ["<leader>ol"] = { ":set nu!<cr>", "Toggle line number", opts = { silent = true } },
+    ["<leader>or"] = { ":set rnu!<cr>", "Toggle relative number", opts = { silent = true } },
     ["<leader>m"] = {
       function()
         if vim.bo.filetype == "markdown" then

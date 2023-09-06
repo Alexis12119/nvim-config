@@ -7,6 +7,12 @@ local plugins = {
   },
 
   {
+    "nacro90/numb.nvim",
+    event = "VeryLazy",
+    config = true,
+  },
+
+  {
     "hrsh7th/nvim-cmp",
     event = { "InsertEnter", "CmdlineEnter" },
     opts = function()
