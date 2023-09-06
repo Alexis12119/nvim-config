@@ -249,9 +249,6 @@ local plugins = {
 
   {
     "folke/which-key.nvim",
-    config = function()
-      require "custom.configs.which-key"
-    end,
   },
 
   {
