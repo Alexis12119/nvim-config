@@ -487,4 +487,87 @@ M.neodev = {
   pathStrict = true,
 }
 
+M.projects = {
+  -- Manual mode doesn't automatically change your root directory, so you have
+  -- the option to manually do so using `:ProjectRoot` command.
+  manual_mode = false,
+
+  -- Methods of detecting the root directory. **"lsp"** uses the native neovim
+  -- lsp, while **"pattern"** uses vim-rooter like glob pattern matching. Here
+  -- order matters: if one is not detected, the other is used as fallback. You
+  -- can also delete or rearangne the detection methods.
+  detection_methods = { "pattern", "lsp" },
+
+  -- All the patterns used to detect root dir, when **"pattern"** is in
+  -- detection_methods
+  patterns = { ".git", ".vscode", ".svn", "Makefile", "package.json" },
+
+  -- Table of lsp clients to ignore by name
+  -- eg: { "efm", ... }
+  ignore_lsp = {},
+
+  -- Don't calculate root dir on specific directories
+  -- Ex: { "~/.cargo/*", ... }
+  exclude_dirs = {},
+
+  -- Show hidden files in telescope
+  show_hidden = false,
+
+  -- When set to false, you will get a message when project.nvim changes your
+  -- directory.
+  silent_chdir = true,
+
+  -- What scope to change the directory, valid options are
+  -- * global (default)
+  -- * tab
+  -- * win
+  scope_chdir = "global",
+
+  -- Path where project.nvim will store the project history for use in
+  -- telescope
+  datapath = vim.fn.stdpath "data",
+}
+
+M.dressing = {
+  input = {
+    enabled = true,
+    default_prompt = "➤ ",
+    win_options = {
+      winblend = 0,
+    },
+  },
+  select = {
+    enabled = true,
+    backend = { "telescope", "builtin" },
+    builtin = {
+      win_options = {
+        winblend = 0,
+      },
+    },
+  },
+}
+
+M.dap_ui = {
+  layouts = {
+    {
+      elements = {
+        -- Elements can be strings or table with id and size keys.
+        { id = "scopes", size = 0.25 },
+        "breakpoints",
+        "stacks",
+        "watches",
+      },
+      size = 40, -- 40 columns
+      position = "left",
+    },
+    {
+      elements = {
+        "repl",
+        "console",
+      },
+      size = 0.25, -- 25% of total lines
+      position = "bottom",
+    },
+  },
+}
 return M

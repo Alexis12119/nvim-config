@@ -1,79 +1,29 @@
 local overrides = require "custom.configs.overrides"
 
 local plugins = {
+  -- Show Indentlines
   {
     "lukas-reineke/indent-blankline.nvim",
     enabled = false,
   },
 
+  -- Peek Lines
   {
     "nacro90/numb.nvim",
     event = "VeryLazy",
     config = true,
   },
 
+  -- Autocompletion
   {
     "hrsh7th/nvim-cmp",
     event = { "InsertEnter", "CmdlineEnter" },
     opts = function()
       local cmp = require "cmp"
-      local cmp_ui = require("core.utils").load_config().ui.cmp
-      local cmp_style = cmp_ui.style
-      local field_arrangement = {
-        atom = { "kind", "abbr", "menu" },
-        atom_colored = { "kind", "abbr", "menu" },
-      }
-
-      local formatting_style = {
-        -- default fields order i.e completion word + item.kind + item.kind icons
-        fields = field_arrangement[cmp_style] or { "abbr", "kind", "menu" },
-
-        format = function(_, item)
-          local icons = require "nvchad.icons.lspkind"
-          local icon = (cmp_ui.icons and icons[item.kind]) or ""
-
-          if cmp_style == "atom" or cmp_style == "atom_colored" then
-            icon = " " .. icon .. " "
-            item.menu = cmp_ui.lspkind_text and "   (" .. item.kind .. ")" or ""
-            item.kind = icon
-          else
-            icon = cmp_ui.lspkind_text and (" " .. icon .. " ") or icon
-            item.kind = string.format("%s %s", icon, cmp_ui.lspkind_text and item.kind or "")
-          end
-
-          return item
-        end,
-      }
-
-      local function border(hl_name)
-        return {
-          { "╭", hl_name },
-          { "─", hl_name },
-          { "╮", hl_name },
-          { "│", hl_name },
-          { "╯", hl_name },
-          { "─", hl_name },
-          { "╰", hl_name },
-          { "│", hl_name },
-        }
-      end
-
       cmp.setup.cmdline(":", {
         mapping = cmp.mapping.preset.cmdline(),
         sources = {
           { name = "cmdline" },
-        },
-        formatting = formatting_style,
-        window = {
-          completion = {
-            side_padding = (cmp_style ~= "atom" and cmp_style ~= "atom_colored") and 1 or 0,
-            winhighlight = "Normal:CmpPmenu,CursorLine:CmpSel,Search:PmenuSel",
-            scrollbar = false,
-          },
-          documentation = {
-            border = border "CmpDocBorder",
-            winhighlight = "Normal:CmpDoc",
-          },
         },
       })
     end,
@@ -82,29 +32,20 @@ local plugins = {
     },
   },
 
+  -- Preview colors
   {
     "NvChad/nvim-colorizer.lua",
     opts = overrides.colorizer,
   },
 
+  -- Utilities
   {
     "nvim-lua/plenary.nvim",
-    lazy = true,
   },
 
-  {
-    "NvChad/nvim-colorizer.lua",
-    lazy = true,
-  },
-
-  {
-    "nvim-tree/nvim-web-devicons",
-    lazy = true,
-  },
-
+  -- Native LSP
   {
     "neovim/nvim-lspconfig",
-    lazy = true,
     event = "VeryLazy",
     dependencies = {
       -- format & linting
@@ -136,8 +77,10 @@ local plugins = {
     end,
   },
 
+  -- File Explorer
   {
     "nvim-tree/nvim-tree.lua",
+    commit = "0a54dcb76b02f3a4e2da370c7a3f6f2b7b43ef01",
     cmd = {
       "NvimTreeOpen",
       "NvimTreeToggle",
@@ -148,73 +91,37 @@ local plugins = {
     opts = overrides.nvimtree,
   },
 
+  -- Icons
+  {
+    "nvim-tree/nvim-web-devicons",
+  },
+
+  -- Syntax Highlighting
   {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
   },
 
-  {
-    "nvim-tree/nvim-tree.lua",
-    commit = "0a54dcb76b02f3a4e2da370c7a3f6f2b7b43ef01",
-    opts = overrides.nvimtree,
-  },
+  -- Schemas
+  { "b0o/schemastore.nvim" },
 
-  { "b0o/schemastore.nvim", lazy = true },
-
+  -- Manage Projects
   {
     "ahmedkhalf/project.nvim",
+    opts = overrides.projects,
     event = "VeryLazy",
-    config = function()
-      require("project_nvim").setup {
-        -- Manual mode doesn't automatically change your root directory, so you have
-        -- the option to manually do so using `:ProjectRoot` command.
-        manual_mode = false,
-
-        -- Methods of detecting the root directory. **"lsp"** uses the native neovim
-        -- lsp, while **"pattern"** uses vim-rooter like glob pattern matching. Here
-        -- order matters: if one is not detected, the other is used as fallback. You
-        -- can also delete or rearangne the detection methods.
-        detection_methods = { "pattern", "lsp" },
-
-        -- All the patterns used to detect root dir, when **"pattern"** is in
-        -- detection_methods
-        patterns = { ".git", ".vscode", ".svn", "Makefile", "package.json" },
-
-        -- Table of lsp clients to ignore by name
-        -- eg: { "efm", ... }
-        ignore_lsp = {},
-
-        -- Don't calculate root dir on specific directories
-        -- Ex: { "~/.cargo/*", ... }
-        exclude_dirs = {},
-
-        -- Show hidden files in telescope
-        show_hidden = false,
-
-        -- When set to false, you will get a message when project.nvim changes your
-        -- directory.
-        silent_chdir = true,
-
-        -- What scope to change the directory, valid options are
-        -- * global (default)
-        -- * tab
-        -- * win
-        scope_chdir = "global",
-
-        -- Path where project.nvim will store the project history for use in
-        -- telescope
-        datapath = vim.fn.stdpath "data",
-      }
-
-      require("telescope").load_extension "projects"
+    config = function(_, opts)
+      require("project_nvim").setup(opts)
     end,
   },
 
+  -- Buffer Delete
   {
     "moll/vim-bbye",
     cmd = { "Bdelete", "Bwipeout" },
   },
 
+  -- Highlight, list and search todo comments in your projects
   {
     "folke/todo-comments.nvim",
     event = "VeryLazy",
@@ -226,12 +133,14 @@ local plugins = {
     enabled = false,
   },
 
+  -- Terminal Integration
   {
     "akinsho/toggleterm.nvim",
     cmd = "ToggleTerm",
     opts = overrides.toggleterm,
   },
 
+  -- Notification
   {
     "rcarriga/nvim-notify",
     event = "VeryLazy",
@@ -250,41 +159,26 @@ local plugins = {
     end,
   },
 
+  -- Improve UI
   {
     "stevearc/dressing.nvim",
     event = "VeryLazy",
-    opts = {
-      input = {
-        enabled = true,
-        default_prompt = "➤ ",
-        win_options = {
-          winblend = 0,
-        },
-      },
-      select = {
-        enabled = true,
-        backend = { "telescope", "builtin" },
-        builtin = {
-          win_options = {
-            winblend = 0,
-          },
-        },
-      },
-    },
+    opts = overrides.dressing,
   },
 
+  -- Search motions
   {
     "folke/flash.nvim",
-    lazy = true,
     event = "VeryLazy",
     opts = overrides.flash,
   },
 
+  -- Fuzzy Finder
   {
     "nvim-telescope/telescope.nvim",
     opts = {
       pickers = overrides.telescope_pickers,
-      extensions_list = { "themes", "terms", "fzf" },
+      extensions_list = { "themes", "terms", "fzf", "projects" },
     },
     dependencies = {
       {
@@ -294,14 +188,15 @@ local plugins = {
     },
   },
 
+  -- For java
   {
     "mfussenegger/nvim-jdtls",
     ft = "java",
   },
 
+  -- Debugging
   {
     "rcarriga/nvim-dap-ui",
-    lazy = true,
     dependencies = {
       {
         "mfussenegger/nvim-dap",
@@ -310,31 +205,10 @@ local plugins = {
         end,
       },
     },
-    opts = {
-      layouts = {
-        {
-          elements = {
-            -- Elements can be strings or table with id and size keys.
-            { id = "scopes", size = 0.25 },
-            "breakpoints",
-            "stacks",
-            "watches",
-          },
-          size = 40, -- 40 columns
-          position = "left",
-        },
-        {
-          elements = {
-            "repl",
-            "console",
-          },
-          size = 0.25, -- 25% of total lines
-          position = "bottom",
-        },
-      },
-    },
+    opts = overrides.dap_ui,
   },
 
+  -- Preview Markdown
   {
     "iamcco/markdown-preview.nvim",
     build = function()
@@ -343,6 +217,7 @@ local plugins = {
     ft = "markdown",
   },
 
+  -- Show diffs
   {
     "sindrets/diffview.nvim",
     event = { "BufReadPost", "BufNewFile" },
