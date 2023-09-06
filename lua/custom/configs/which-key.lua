@@ -4,7 +4,6 @@ local mappings = {
   ["e"] = { ":NvimTreeToggle<cr>", "Explorer" },
   ["q"] = { ":qa!<cr>", "Quit" },
   ["c"] = { ":Bdelete!<cr>", "Close Buffer" },
-  -- ["T"] = { ":TSContextToggle<cr>", "Toggle Context" },
   ["m"] = {
     function()
       if vim.bo.filetype == "markdown" then
@@ -79,7 +78,13 @@ local mappings = {
       end,
       "Inspect",
     }, -- only available on neovim >= 0.9
-    u = { update_config, "Update" },
+    u = {
+      function()
+        local args = "git -C " .. vim.fn.stdpath "config" .. " pull --ff-only"
+        vim.fn.system(args)
+      end,
+      "Update",
+    },
     m = { ":messages<cr>", "Messages" },
     h = { ":checkhealth<cr>", "Health" },
     v = {
