@@ -1,7 +1,7 @@
 local M = {}
 local fn = vim.fn
 
-M.dap = {
+M.DAP = {
   n = {
     ["<leader>dc"] = { ":lua require'dap'.continue()<cr>", "Continue", opts = { silent = true } },
     ["<leader>do"] = { ":lua require'dap'.step_over()<cr>", "Step Over", opts = { silent = true } },
@@ -12,7 +12,7 @@ M.dap = {
   },
 }
 
-M.neovim = {
+M.Neovim = {
   n = {
     ["<leader>nf"] = {
       function()
@@ -78,7 +78,7 @@ M.neovim = {
     },
   },
 }
-M.telescope = {
+M.Telescope = {
   n = {
     ["<leader>fa"] = { ":Telescope autocommands<cr>", "Autocommmands", opts = { silent = true } },
     ["<leader>ff"] = { ":Telescope find_files<cr>", "Files", opts = { silent = true } },
@@ -103,7 +103,7 @@ M.telescope = {
   },
 }
 
-M.toggleterm = {
+M.Toggleterm = {
   n = {
     ["<leader>tf"] = { ":ToggleTerm direction=float<cr>", "Float Terminal", opts = { silent = true } },
     ["<leader>th"] = { ":ToggleTerm size=10 direction=horizontal<cr>", "Horizontal Terminal", opts = { silent = true } },
@@ -111,7 +111,7 @@ M.toggleterm = {
   },
 }
 
-M.lsp = {
+M.LSP = {
   n = {
     ["<leader>lf"] = { ":Format<cr>", "Format", opts = { silent = true } },
     ["<leader>la"] = { ":Lspsaga code_action<cr>", "Code Action", opts = { silent = true } },
@@ -138,7 +138,7 @@ M.lsp = {
   },
 }
 
-M.git = {
+M.Git = {
   n = {
     ["<leader>gg"] = {
       function()
@@ -174,7 +174,7 @@ M.git = {
   },
 }
 
-M.lazy = {
+M.Lazy = {
   n = {
     ["<leader>pc"] = { ":Lazy clean<cr>", "Lazy Clean", opts = { silent = true } },
     ["<leader>pC"] = { ":Lazy check<cr>", "Lazy Check", opts = { silent = true } },
@@ -189,7 +189,7 @@ M.lazy = {
   },
 }
 
-M.general = {
+M.General = {
   i = {
     -- ["jk"] = {
     --   "<Esc>",

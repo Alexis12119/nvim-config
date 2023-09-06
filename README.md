@@ -8,8 +8,6 @@
 
 ## ✨ Features
 
-My Neovim configuration is powered by [lazy.nvim](https://github.com/folke/lazy.nvim) and offers a range of productivity-enhancing features, including:
-
 - **Plugin Management**: Efficiently manage plugins with [lazy.nvim](https://github.com/folke/lazy.nvim).
 - **Built-in Code Runner**: Execute code right from Neovim.
 - **Project Management**: Simplify project handling with [project.nvim](https://github.com/ahmedkhalf/project.nvim).
@@ -34,31 +32,23 @@ I appreciate the support from all the Stargazers! [![Stargazers](https://reporos
 
 Before you dive in, ensure you have the following requirements installed:
 
-<details><summary>Click to view</summary>
+- **Git:**
+  - [lazygit](https://github.com/jesseduffield/lazygit)
 
-#### Git
+- **Telescope:**
+  - [fd](https://github.com/sharkdp/fd)
+  - [bat](https://github.com/sharkdp/bat)
+  - [ripgrep](https://github.com/BurntSushi/ripgrep)
+  - [make](https://www.gnu.org/software/make/)
 
-- [lazygit](https://github.com/jesseduffield/lazygit)
+- **Nerd Font (For Icons):**
+  - [JetBrainsMono](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/JetBrainsMono)
+  - [Other Fonts](https://www.nerdfonts.com/font-downloads)
 
-#### Telescope Dependencies
-
-- [fd](https://github.com/sharkdp/fd)
-- [bat](https://github.com/sharkdp/bat)
-- [ripgrep](https://github.com/BurntSushi/ripgrep)
-- [make](https://www.gnu.org/software/make/)
-
-#### Nerd Font (For Icons)
-
-- [JetBrainsMono](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/JetBrainsMono)
-- [Other Fonts](https://www.nerdfonts.com/font-downloads)
-
-#### Neovim
-
-- [Neovim 0.9+](https://github.com/neovim/neovim/releases)
+- **Neovim:**
+  - [Neovim 0.9+](https://github.com/neovim/neovim/releases)
 
 **NOTE:** I'm using [scoop](https://scoop.sh/#/) to install them.
-
-</details>
 
 ## 💻 Installation
 
