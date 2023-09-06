@@ -32,22 +32,6 @@ function _G.format_code()
   }
 end
 
-function _G.set_keymaps(keymaps, mode)
-  for keymap, value in pairs(keymaps) do
-    if value.opt ~= nil then
-      vim.keymap.set(mode, keymap, value.cmd, value.opt, { desc = value.desc or "" })
-    else
-      local opt = { silent = true }
-
-      if mode == "c" then
-        opt = { expr = true }
-      end
-
-      vim.keymap.set(mode, keymap, value.cmd, opt, { desc = value.desc or "" })
-    end
-  end
-end
-
 function _G.set_option(options)
   for name, value in pairs(options) do
     vim.opt[name] = value

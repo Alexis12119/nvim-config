@@ -8,6 +8,7 @@ local plugins = {
 
   {
     "hrsh7th/nvim-cmp",
+    event = { "InsertEnter", "CmdlineEnter" },
     opts = function()
       local cmp_ui = require("core.utils").load_config().ui.cmp
       local cmp_style = cmp_ui.style
