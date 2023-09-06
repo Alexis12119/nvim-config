@@ -248,10 +248,6 @@ local plugins = {
   },
 
   {
-    "folke/which-key.nvim",
-  },
-
-  {
     "nvim-telescope/telescope.nvim",
     opts = {
       pickers = overrides.telescope_pickers,

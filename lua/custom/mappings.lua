@@ -470,7 +470,7 @@ M.general = {
         return "<C-z>"
       end,
       "Word Search Increment",
-      opts = { expr = true, silent = true },
+      opts = { expr = true },
     },
 
     ["<S-Tab>"] = {
@@ -481,7 +481,7 @@ M.general = {
         return "<S-Tab>"
       end,
       "Word Search Decrement",
-      opts = { expr = true, silent = true },
+      opts = { expr = true },
     },
   },
   t = {
