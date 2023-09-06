@@ -14,7 +14,6 @@ M.dap = {
 
 M.neovim = {
   n = {
-
     ["<leader>nf"] = {
       function()
         local cwd = vim.fn.stdpath "config" .. "/"
@@ -114,7 +113,6 @@ M.toggleterm = {
 
 M.lsp = {
   n = {
-
     ["<leader>lf"] = { ":Format<cr>", "Format", opts = { silent = true } },
     ["<leader>la"] = { ":Lspsaga code_action<cr>", "Code Action", opts = { silent = true } },
     ["<leader>li"] = { ":LspInfo<cr>", "Info", opts = { silent = true } },
@@ -142,7 +140,6 @@ M.lsp = {
 
 M.git = {
   n = {
-
     ["<leader>gg"] = {
       function()
         local Terminal = require("toggleterm.terminal").Terminal
