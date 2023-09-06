@@ -1,16 +1,5 @@
 local command = vim.api.nvim_create_user_command
 
-function _G.find_config_files()
-  local cwd = vim.fn.stdpath "config" .. "/"
-  local config_dir = { cwd }
-
-  require("telescope.builtin").find_files {
-    prompt_title = "Config Files",
-    search_dirs = config_dir,
-    cwd = cwd,
-  }
-end
-
 function _G.format_code()
   return vim.lsp.buf.format {
     async = true,

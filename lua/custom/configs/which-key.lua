@@ -39,9 +39,35 @@ local mappings = {
   },
   n = {
     name = "Neovim",
+    f = {
+      function()
+        local cwd = vim.fn.stdpath "config" .. "/"
+        local config_dir = { cwd }
+
+        require("telescope.builtin").find_files {
+          prompt_title = "Config Files",
+          search_dirs = config_dir,
+          cwd = cwd,
+        }
+      end,
+      "Find Config Files",
+    },
+    g = {
+      function()
+        local cwd = vim.fn.stdpath "config" .. "/"
+        local config_dir = { cwd }
+
+        require("telescope.builtin").live_grep {
+          prompt_title = "Config Files",
+          search_dirs = config_dir,
+          cwd = cwd,
+        }
+      end,
+      "Grep Config Files",
+    },
     c = {
-      find_config_files,
-      "Config Files",
+      ":NvCheatshee<cr>",
+      "Cheatsheet",
     },
     i = {
       function()
