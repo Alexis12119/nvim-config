@@ -209,6 +209,7 @@ M.general = {
     },
   },
   n = {
+    ["<leader>a"] = { ":Nvdash<cr>", "Nvdash", opts = { silent = true } },
     ["<leader>r"] = { ":%d+<cr>", "Remove All Text", opts = { silent = true } },
     ["<leader>y"] = { ":%y+<cr>", "Yank All Text", opts = { silent = true } },
     ["<leader>e"] = { ":NvimTreeToggle<cr>", "Explorer", opts = { silent = true } },
@@ -216,6 +217,12 @@ M.general = {
     ["<leader>c"] = { ":Bdelete!<cr>", "Close Buffer", opts = { silent = true } },
     ["<leader>ol"] = { ":set nu!<cr>", "Toggle line number", opts = { silent = true } },
     ["<leader>or"] = { ":set rnu!<cr>", "Toggle relative number", opts = { silent = true } },
+    ["<leader>ot"] = {
+      function()
+        require("base46").toggle_transparency()
+      end,
+      "Toggle Transparency",
+    },
     ["<leader>m"] = {
       function()
         if vim.bo.filetype == "markdown" then

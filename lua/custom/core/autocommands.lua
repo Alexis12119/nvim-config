@@ -31,6 +31,24 @@ autocmd("FileType", {
   end,
 })
 
+autocmd("FileType", {
+  pattern = "nvdash",
+  callback = function()
+    vim.opt.cmdheight = 0
+    vim.opt.showtabline = 0
+    vim.opt.laststatus = 0
+
+    autocmd("BufUnload", {
+      pattern = "<buffer>",
+      callback = function()
+        vim.opt.cmdheight = 1
+        vim.opt.showtabline = 2
+        vim.opt.laststatus = 3
+      end,
+    })
+  end,
+  desc = "Disable Tabline And StatusLine in Nvdash",
+})
 -- remove this if there's an issue
 autocmd({ "BufReadPost", "BufNewFile" }, {
   once = true,

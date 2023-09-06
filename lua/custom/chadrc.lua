@@ -12,8 +12,7 @@ M.ui = {
     "notify",
   }, -- these aren't compiled by default, ex: "alpha", "notify"
   nvdash = {
-    load_on_startup = false,
-
+    load_on_startup = true,
     header = {
       "           ▄ ▄                   ",
       "       ▄   ▄▄▄     ▄ ▄▄▄ ▄ ▄     ",
@@ -30,7 +29,7 @@ M.ui = {
       { "  Find File", "Spc f f", "Telescope find_files" },
       { "󰈚  Recent Files", "Spc f r", "Telescope oldfiles" },
       { "󰈭  Find Word", "Spc f w", "Telescope live_grep" },
-      { "  Bookmarks", "Spc f m", "Telescope marks" },
+      { "  Find Projects", "Spc f p", "Telescope projects" },
       { "  Themes", "Spc f t", "Telescope themes" },
       { "  Mappings", "Spc n c", "NvCheatsheet" },
     },
