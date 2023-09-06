@@ -1,40 +1,40 @@
 <div align="center">
 
-<a href="">
-      <img alt="Last commit" src="https://img.shields.io/github/last-commit/Alexis12119/nvim-config?style=for-the-badge&logo=git&color=000F10&logoColor=dark orange&labelColor=302D41"/>
-    </a>
-    
+![Last commit](https://img.shields.io/github/last-commit/Alexis12119/nvim-config?style=for-the-badge&logo=git&color=000F10&logoColor=dark%20orange&labelColor=302D41)
+
 [![](https://img.shields.io/badge/Neovim-0.9+-blueviolet.svg?style=for-the-badge&color=000F10&logo=Neovim&logoColor=green&labelColor=302D41)](https://github.com/neovim/neovim)
 
 ![Preview](https://github.com/Alexis12119/nvim-config/assets/74944536/3e0b8f4b-6f78-4f80-be81-3839d9e25aaf)
 
 </div>
 
-### ✨ Features
+## ✨ Features
 
-- Plugin Manager called [lazy.nvim](https://github.com/folke/lazy.nvim).
-- Built-in Code Runner.
-- Manage projects with [project.nvim](https://github.com/ahmedkhalf/project.nvim).
-- File Explorer [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua).
-- Cycling through diffs for all modified files with [diffview.nvim](https://github.com/sindrets/diffview.nvim)
-- Improve searching with [flash.nvim](https://github.com/folke/flash.nvim).
-- Autocompletion with [nvim-cmp](https://github.com/hrsh7th/nvim-cmp).
-- Language Server Protocol with [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig).
-- Formatting and Linting with [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim).
-- Syntax highlighting with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter).
-- Fuzzy finding with [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim).
-- Terminal with [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim).
-- Git integration with [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) and [lazygit](https://github.com/jesseduffield/lazygit).
-- Popup Cheatsheet for keymaps with [which-key.nvim](https://github.com/folke/which-key.nvim).
-- Markdown Preview with [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim).
+My Neovim configuration is powered by [lazy.nvim](https://github.com/folke/lazy.nvim) and offers a range of productivity-enhancing features, including:
+
+- **Plugin Management**: Efficiently manage plugins with [lazy.nvim](https://github.com/folke/lazy.nvim).
+- **Built-in Code Runner**: Execute code right from Neovim.
+- **Project Management**: Simplify project handling with [project.nvim](https://github.com/ahmedkhalf/project.nvim).
+- **File Explorer**: Navigate projects seamlessly using [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua).
+- **Diff Viewer**: Easily cycle through diffs with [diffview.nvim](https://github.com/sindrets/diffview.nvim).
+- **Enhanced Searching**: Improve searching with [flash.nvim](https://github.com/folke/flash.nvim).
+- **Autocompletion**: Experience intelligent autocompletion with [nvim-cmp](https://github.com/hrsh7th/nvim-cmp).
+- **Language Support**: Harness the power of Language Server Protocol with [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig).
+- **Formatting and Linting**: Keep your code clean with [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim).
+- **Syntax Highlighting**: Enjoy enhanced syntax highlighting with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter).
+- **Fuzzy Finding**: Find files and more with ease using [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim).
+- **Integrated Terminal**: Access a terminal within Neovim using [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim).
+- **Git Integration**: Effortlessly manage Git repositories with [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) and [lazygit](https://github.com/jesseduffield/lazygit).
+- **Keymap Cheatsheet**: Quickly reference keymaps with [which-key.nvim](https://github.com/folke/which-key.nvim).
+- **Markdown Preview**: Preview your Markdown files with [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim).
 
 ## 🌟 Stargazers
 
-**Thanks for the stars**
+I appreciate the support from all the Stargazers! [![Stargazers](https://reporoster.com/stars/dark/notext/Alexis12119/nvim-config)](https://github.com/Alexis12119/Nvchad-user/stargazers)
 
-[![Stargazers](https://reporoster.com/stars/dark/notext/Alexis12119/nvim-config)](https://github.com/Alexis12119/Nvchad-user/stargazers)
+## 📄 Requirements
 
-### 📄 Requirements
+Before you dive in, ensure you have the following requirements installed:
 
 <details><summary>Click to view</summary>
 
@@ -42,7 +42,7 @@
 
 - [lazygit](https://github.com/jesseduffield/lazygit)
 
-#### Telescope
+#### Telescope Dependencies
 
 - [fd](https://github.com/sharkdp/fd)
 - [bat](https://github.com/sharkdp/bat)
@@ -62,38 +62,43 @@
 
 </details>
 
-### 💻 Installation
+## 💻 Installation
 
-Make sure to remove or move the current `nvim` directory and neovim isn't open.
+To get started, follow these steps:
 
-- Linux
+1. Remove or move your current `nvim` directory (if it exists) and make sure Neovim is not running.
+2. Clone the configuration:
 
-```sh
-git clone https://github.com/Alexis12119/nvim-config.git ~/.config/nvim
-```
+   - Linux:
 
-- Windows (Powershell)
+     ```sh
+     git clone https://github.com/Alexis12119/nvim-config.git ~/.config/nvim
+     ```
 
-```ps1
-Invoke-WebRequest https://raw.githubusercontent.com/Alexis12119/nvim-config/main/installer/install.ps1 -UseBasicParsing | Invoke-Expression
-```
+   - Windows (Powershell):
 
-- Windows (CMD)
+     ```ps1
+     Invoke-WebRequest https://raw.githubusercontent.com/Alexis12119/nvim-config/main/installer/install.ps1 -UseBasicParsing | Invoke-Expression
+     ```
 
-```cmd
-git clone https://github.com/Alexis12119/nvim-config.git %localappdata%\nvim
-```
+   - Windows (CMD):
 
-Run `nvim` and wait for the plugins to be installed.
+     ```cmd
+     git clone https://github.com/Alexis12119/nvim-config.git %localappdata%\nvim
+     ```
+
+3. Run `nvim` and wait for the plugins to be installed.
 
 ---
 
 ### CREDITS
 
-- [NvChad](https://github.com/NvChad/NvChad)
+This Neovim configuration is built upon the foundation of NvChad. Special thanks to the NvChad community and developers for their fantastic work.
 
-- [nvim-lua-guide](https://github.com/nanotee/nvim-lua-guide) (It's now archived so use `:h lua-guide` instead.)
+- [NvChad](https://github.com/NvChad/NvChad)
 
 > “Make it work, make it right, make it fast.”
 
 \- Kent Beck
+
+---
