@@ -160,46 +160,9 @@ local plugins = {
       }
 
       vim.notify = require "notify"
-      local memeMessages = {
-        "When your code works perfectly on the first try: 'Is this real life, or is it just fantasy?'",
-        "Why did the developer bring a ladder to the coding competition? To take their code to the next level!",
-        "When your code is running slowly: 'It's not a bug; it's a feature that takes its time.'",
-        "Why did the programmer go to therapy? Because their code had too many 'issues'!",
-        "Why was the JavaScript developer sad? Because they didn't 'console' their feelings!",
-        "Why did the developer go broke? Because he used up all his buffer!",
-        "Neovim: Where we use fewer keystrokes than you have friends.",
-        "Why did the developer get locked out of their own codebase? They forgot the 'key'!",
-        "Why do programmers always have an umbrella on their desk? Because you never know when it will start 'raining bugs.'",
-        "Welcome to Neovim, where plugins multiply faster than rabbits!",
-        "Why was the Neovim user always calm? Because they knew they could always :q!",
-        "Why did the programmer go broke? Because they used up all their cache!",
-        "How many programmers does it take to change a lightbulb? None, that's a hardware problem!",
-        "When you're debugging and can't find the issue: 'I swear, it was working yesterday!'",
-        "Why don't programmers trust stairs? Because they're always up to 'something'!",
-        "When you fix a bug without even trying: 'I guess I'm just that good.'",
-        "Why was the computer cold? It left its Windows open!",
-        "Why do Java developers wear glasses? Because they don't C#!",
-        "Why don't programmers like nature? It has too many bugs!",
-        "Why did the programmer quit their job? They didn't get arrays!",
-        "When your code finally compiles without errors: 'I am the master of my fate, I am the captain of my soul.'",
-        "When you write a one-liner that solves a complex problem: 'I am a genius, yes, I am.'",
-        "When your colleague asks for help with Git: 'You underestimate my power!'",
-        "When you find the perfect Stack Overflow answer: 'This is the way.'",
-        "When you refactor your code and it breaks everything: 'I've made a huge mistake.'",
-        "When your code works in the development environment but fails in production: 'I don't know what I expected.'",
-        "When you spend hours debugging a missing semicolon: 'The force is not strong with this one.'",
-        "When you accidentally close your editor with unsaved changes: 'Goodbye, cruel world.'",
-        "When you discover a bug on a Friday afternoon: 'Looks like we're working late again.'",
-        "When you realize your code from last year: 'Who wrote this junk? Oh, wait...'",
-        "When the client wants changes after the project is 'complete': 'Change is the only constant.'",
-        "When you write a comment and six months later can't understand it: 'I speak my own language.'",
-        "When you join a new project with zero documentation: 'Here be dragons.'",
-        "When you Google an error message and find a 10-year-old forum post: 'Am I in a time machine?'",
-        "When you add a 'TODO' comment and hope someone else will deal with it: 'Not my problem.'",
-      }
-
+      local messages = require("custom.configs.messages")
       math.randomseed(os.time())
-      local randomMessage = memeMessages[math.random(#memeMessages)]
+      local randomMessage = messages[math.random(#messages)]
       if vim.g.startup_message then
         vim.notify(randomMessage, vim.log.levels.INFO, { title = "Just For Fun:" })
       end
