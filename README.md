@@ -4,6 +4,8 @@
 
 [![](https://img.shields.io/badge/Neovim-0.9+-blueviolet.svg?style=for-the-badge&color=000F10&logo=Neovim&logoColor=green&labelColor=302D41)](https://github.com/neovim/neovim)
 
+![Preview](https://github.com/Alexis12119/nvim-config/assets/74944536/efee8e5f-bfaf-49b7-ab91-9e67c63dc0ed)
+
 </div>
 
 ## ✨ Features
@@ -33,15 +35,18 @@ I appreciate the support from all the Stargazers! [![Stargazers](https://reporos
 Before you dive in, ensure you have the following requirements installed:
 
 - **Git:**
+
   - [lazygit](https://github.com/jesseduffield/lazygit)
 
 - **Telescope:**
+
   - [fd](https://github.com/sharkdp/fd)
   - [bat](https://github.com/sharkdp/bat)
   - [ripgrep](https://github.com/BurntSushi/ripgrep)
   - [make](https://www.gnu.org/software/make/)
 
 - **Nerd Font (For Icons):**
+
   - [JetBrainsMono](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/JetBrainsMono)
   - [Other Fonts](https://www.nerdfonts.com/font-downloads)
 
