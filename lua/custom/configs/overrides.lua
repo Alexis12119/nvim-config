@@ -35,6 +35,9 @@ M.treesitter = {
   indent = {
     enable = false,
   },
+  context_commentstring = {
+    enable = true,
+  },
 }
 
 M.mason = {
