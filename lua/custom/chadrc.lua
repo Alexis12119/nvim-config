@@ -21,7 +21,7 @@ M.ui = {
   },
 
   nvdash = {
-    load_on_startup = false,
+    load_on_startup = true,
     header = {
       "           ▄ ▄                   ",
       "       ▄   ▄▄▄     ▄ ▄▄▄ ▄ ▄     ",

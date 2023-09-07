@@ -72,7 +72,8 @@ local plugins = {
       },
     },
     config = function()
-      require "plugins.configs.lspconfig"
+      dofile(vim.g.base46_cache .. "lsp")
+      require "nvchad.lsp"
       require "custom.configs.lspconfig"
     end,
   },
@@ -154,7 +155,7 @@ local plugins = {
         minimum_width = 50,
         render = "default",
         stages = "fade",
-        timeout = 2000,
+        timeout = 3000,
         top_down = true,
       }
 
