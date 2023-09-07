@@ -200,7 +200,9 @@ local plugins = {
 
       math.randomseed(os.time())
       local randomMessage = memeMessages[math.random(#memeMessages)]
-      vim.notify(randomMessage, vim.log.levels.INFO, { title = "Just For Fun:" })
+      if vim.g.startup_messages then
+        vim.notify(randomMessage, vim.log.levels.INFO, { title = "Just For Fun:" })
+      end
     end,
   },
 

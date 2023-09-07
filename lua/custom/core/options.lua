@@ -49,6 +49,7 @@ local global = {
   mkdp_auto_close = false, -- Don't Exit Preview When Switching Buffers
   mapleader = " ", -- Set mapleader to space
   snipmate_snippets_path = vim.fn.stdpath "config" .. "/lua/custom/snippets/snipmate",
+  startup_messages = true,
 }
 
 vim.opt.shortmess:append "Ac" -- Disable asking when editing file with swapfile.
