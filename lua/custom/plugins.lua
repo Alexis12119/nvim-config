@@ -160,6 +160,41 @@ local plugins = {
       }
 
       vim.notify = require "notify"
+      local memeMessages = {
+        "Did you hear about the Vim developer who ran into a wall? He thought it was an exit strategy!",
+        "Neovim: Where your mouse goes to die.",
+        "Why did the developer go broke? Because he used up all his buffer!",
+        "Neovim: Where we use fewer keystrokes than you have friends.",
+        "Why did the developer break up with their text editor? It had too many 'commit' issues.",
+        "Welcome to Neovim, where plugins multiply faster than rabbits!",
+        "Why was the Neovim user always calm? Because they knew they could always :q!",
+        "Why did the programmer go broke? Because they used up all their cache!",
+        "How many programmers does it take to change a lightbulb? None, that's a hardware problem!",
+        "Why was the computer cold? It left its Windows open!",
+        "Why do Java developers wear glasses? Because they don't C#!",
+        "Why don't programmers like nature? It has too many bugs!",
+        "Why did the programmer quit their job? They didn't get arrays!",
+        "When your code finally compiles without errors: 'I am the master of my fate, I am the captain of my soul.'",
+        "When you write a one-liner that solves a complex problem: 'I am a genius, yes, I am.'",
+        "When your colleague asks for help with Git: 'You underestimate my power!'",
+        "When you find the perfect Stack Overflow answer: 'This is the way.'",
+        "When you refactor your code and it breaks everything: 'I've made a huge mistake.'",
+        "When your code works in the development environment but fails in production: 'I don't know what I expected.'",
+        "When you spend hours debugging a missing semicolon: 'The force is not strong with this one.'",
+        "When you accidentally close your editor with unsaved changes: 'Goodbye, cruel world.'",
+        "When your commit message becomes a novella: 'Once upon a time in Gitland...'",
+        "When you discover a bug on a Friday afternoon: 'Looks like we're working late again.'",
+        "When you realize your code from last year: 'Who wrote this junk? Oh, wait...'",
+        "When the client wants changes after the project is 'complete': 'Change is the only constant.'",
+        "When you write a comment and six months later can't understand it: 'I speak my own language.'",
+        "When you join a new project with zero documentation: 'Here be dragons.'",
+        "When you Google an error message and find a 10-year-old forum post: 'Am I in a time machine?'",
+        "When you add a 'TODO' comment and hope someone else will deal with it: 'Not my problem.'",
+      }
+
+      math.randomseed(os.time())
+      local randomMessage = memeMessages[math.random(#memeMessages)]
+      vim.notify(randomMessage, vim.log.levels.INFO, { title = "Just For Fun:" })
     end,
   },
 
