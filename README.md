@@ -6,6 +6,8 @@
 
 ![Preview](https://github.com/Alexis12119/nvim-config/assets/74944536/179a3652-023e-46d3-8ac5-e7082b23d37f)
 
+</div>
+
 ## ✨ Features
 
 - **Plugin Management**: Efficiently manage plugins with [lazy.nvim](https://github.com/folke/lazy.nvim).
