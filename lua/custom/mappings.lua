@@ -394,6 +394,12 @@ M.General = {
     },
   },
   v = {
+    ["<leader>la"] = {
+      function()
+        vim.lsp.buf.code_action()
+      end,
+      "Code Action",
+    },
     ["j"] = {
       "v:count == 0 ? 'gj' : 'j'",
       "Better Down",
