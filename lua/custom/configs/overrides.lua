@@ -106,8 +106,6 @@ M.telescope = {
   defaults = {
     mappings = {
       i = {
-        ["<A-k>"] = require("telescope.actions").move_selection_previous,
-        ["<A-j>"] = require("telescope.actions").move_selection_next,
         ["<Tab>"] = require("telescope.actions").move_selection_next,
         ["<S-Tab>"] = require("telescope.actions").move_selection_previous,
       },
