@@ -1,5 +1,6 @@
 local overrides = require "custom.configs.overrides"
 
+---@type NvPluginSpec[]
 local plugins = {
   -- Show Indentlines
   {

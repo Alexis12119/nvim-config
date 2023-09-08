@@ -56,5 +56,10 @@ vim.opt.shortmess:append "Ac" -- Disable asking when editing file with swapfile.
 vim.opt.whichwrap:append "<,>,[,],h,l"
 vim.opt.iskeyword:append "-"
 
-set_option(options)
-set_global(global)
+for name, value in pairs(options) do
+  vim.opt[name] = value
+end
+
+for name, value in pairs(global) do
+  vim.g[name] = value
+end

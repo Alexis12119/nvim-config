@@ -31,7 +31,7 @@ autocmd("FileType", {
   end,
 })
 
--- remove this if there's an issue
+-- Remove this if there's an issue
 autocmd({ "BufReadPost", "BufNewFile" }, {
   once = true,
   callback = function()
@@ -93,7 +93,9 @@ autocmd("FileType", {
 
 autocmd({ "FocusLost", "BufLeave", "BufWinLeave", "InsertLeave" }, {
   callback = function()
-    vim.cmd "silent! w"
+    if vim.bo.filetype ~= "" and vim.bo.buftype == "" then
+      vim.cmd "silent! w"
+    end
   end,
   group = general,
   desc = "Auto Save",

@@ -21,18 +21,6 @@ function _G.format_code()
   }
 end
 
-function _G.set_option(options)
-  for name, value in pairs(options) do
-    vim.opt[name] = value
-  end
-end
-
-function _G.set_global(globals)
-  for name, value in pairs(globals) do
-    vim.g[name] = value
-  end
-end
-
 command("Format", function()
   format_code()
   vim.notify("Format Done", vim.log.levels.INFO, { title = "Format" })

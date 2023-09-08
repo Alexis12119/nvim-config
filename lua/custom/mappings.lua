@@ -1,5 +1,7 @@
+---@type MappingsTable
 local M = {}
 local fn = vim.fn
+
 
 M.DAP = {
   n = {
