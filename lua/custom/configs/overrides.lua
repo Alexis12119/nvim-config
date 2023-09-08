@@ -457,13 +457,14 @@ M.flash = {
     -- options used when flash is activated through
     -- `f`, `F`, `t`, `T`, and `,` motions
     char = {
-      enabled = false,
+      enabled = true,
       -- by default all keymaps are enabled, but you can disable some of them,
       -- by removing them from the list.
       keys = { "f", "F", "t", "T", "," },
       search = { wrap = false },
       highlight = { backdrop = true },
       jump = { register = false },
+      jump_labels = true,
     },
     -- options used for remote flash
     remote = {},

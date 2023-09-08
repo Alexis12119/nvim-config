@@ -160,7 +160,7 @@ local plugins = {
       }
 
       vim.notify = require "notify"
-      local messages = require("custom.configs.messages")
+      local messages = require "custom.configs.messages"
       math.randomseed(os.time())
       local randomMessage = messages[math.random(#messages)]
       if vim.g.startup_message then
