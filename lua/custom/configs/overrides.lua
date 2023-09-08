@@ -96,9 +96,25 @@ M.colorizer = {
   },
 }
 
-M.telescope_pickers = {
-  oldfiles = {
-    prompt_title = "Recent Files",
+M.telescope = {
+  pickers = {
+    oldfiles = {
+      prompt_title = "Recent Files",
+    },
+  },
+  extensions_list = { "themes", "terms", "fzf", "projects" },
+  defaults = {
+    mappings = {
+      i = {
+        ["<A-k>"] = require("telescope.actions").move_selection_previous,
+        ["<A-j>"] = require("telescope.actions").move_selection_next,
+        ["<Tab>"] = require("telescope.actions").move_selection_next,
+        ["<S-Tab>"] = require("telescope.actions").move_selection_previous,
+      },
+      n = {
+        [";"] = require("telescope.actions").close,
+      },
+    },
   },
 }
 

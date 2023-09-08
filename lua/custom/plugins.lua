@@ -187,10 +187,7 @@ local plugins = {
   -- Fuzzy Finder
   {
     "nvim-telescope/telescope.nvim",
-    opts = {
-      pickers = overrides.telescope_pickers,
-      extensions_list = { "themes", "terms", "fzf", "projects" },
-    },
+    opts = overrides.telescope,
     dependencies = {
       {
         "nvim-telescope/telescope-fzf-native.nvim",
