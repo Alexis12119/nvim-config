@@ -61,7 +61,8 @@ M.mason = {
     -- "html-lsp",
     -- "typescript-language-server",
     -- "deno",
-    -- "prettier",
+    "prettier",
+    -- "tailwindcss-language-server",
 
     -- C/C++
     "clangd",
@@ -78,7 +79,7 @@ M.mason = {
 }
 
 M.colorizer = {
-  user_default_optins = {
+  user_default_options = {
     tailwind = true,
   },
   filetypes = {
