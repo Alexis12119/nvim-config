@@ -62,8 +62,7 @@ Before you dive in, ensure you have the following requirements installed:
 To get started, follow these steps:
 
 1. Remove or move your current `nvim` directory (if it exists) and make sure Neovim is not running.
-2. Install [NvChad](https://nvchad.com/docs/quickstart/install)
-3. Clone the configuration:
+2. Clone the configuration:
 
    - Linux:
 
@@ -83,8 +82,7 @@ To get started, follow these steps:
      git clone https://github.com/Alexis12119/nvim-config.git %localappdata%\nvim\lua
      ```
 
-4. Move `ftplugin\` and `ginit.vim` in `~/.config/nvim(Linux)` or `~/AppData/Local/nvim(Windows)`
-5. Run `nvim` and wait for the plugins to be installed.
+3. Run `nvim` and wait for the plugins to be installed.
 
 ---
 

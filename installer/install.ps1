@@ -2,7 +2,7 @@
 if ($IsWindows)
 {
   # Set the location of Neovim configuration
-  $config = $env:LOCALAPPDATA + "\nvim\lua"
+  $config = $env:LOCALAPPDATA + "\nvim"
   
   # Set the repository for Neovim configuration
   $repo = "https://github.com/Alexis12119/nvim-config.git"
