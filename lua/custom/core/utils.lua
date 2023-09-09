@@ -4,7 +4,7 @@ function _G.format_code()
   return vim.lsp.buf.format {
     async = true,
     filter = function(client)
-      local supported_formatters, _ = list_registered_formatters(vim.bo.filetype)
+      local supported_formatters = list_registered_formatters(vim.bo.filetype)
       for _, formatter in pairs(supported_formatters) do
         if vim.fn.executable(formatter) == 1 then
           return client.name == "null-ls"
@@ -16,17 +16,22 @@ function _G.format_code()
   }
 end
 
+local provider_cache = {}
+
 function _G.list_registered_providers_names(filetype)
-  local s = require "null-ls.sources"
-  local available_sources = s.get_available(filetype)
-  local registered = {}
-  for _, source in ipairs(available_sources) do
-    for method in pairs(source.methods) do
-      registered[method] = registered[method] or {}
-      table.insert(registered[method], source.name)
+  if not provider_cache[filetype] then
+    local s = require "null-ls.sources"
+    local available_sources = s.get_available(filetype)
+    local registered = {}
+    for _, source in ipairs(available_sources) do
+      for method in pairs(source.methods) do
+        registered[method] = registered[method] or {}
+        table.insert(registered[method], source.name)
+      end
     end
+    provider_cache[filetype] = registered
   end
-  return registered
+  return provider_cache[filetype]
 end
 
 function _G.list_registered_formatters(filetype)

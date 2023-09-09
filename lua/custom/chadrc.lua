@@ -38,7 +38,8 @@ M.ui = {
           end
         end
 
-        local supported_formatters, _ = list_registered_formatters(vim.bo.filetype)
+        local filetype = vim.bo.filetype
+        local supported_formatters = list_registered_formatters(filetype)
         for _, formatter in pairs(supported_formatters) do
           if vim.fn.executable(formatter) == 1 then
             table.insert(clients, formatter)
