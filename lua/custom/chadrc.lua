@@ -28,6 +28,8 @@ M.ui = {
     overriden_modules = function(modules)
       modules[8] = (function()
         local clients = {}
+        local filetype = vim.bo.filetype
+        local supported_formatters = list_registered_formatters(filetype)
 
         -- Iterate through all the clients for the current buffer
         for _, client in pairs(vim.lsp.buf_get_clients()) do
@@ -47,8 +49,6 @@ M.ui = {
           end
           return executable_cache[file]
         end
-        local filetype = vim.bo.filetype
-        local supported_formatters = list_registered_formatters(filetype)
 
         for _, formatter in pairs(supported_formatters) do
           if is_executable(formatter) then
