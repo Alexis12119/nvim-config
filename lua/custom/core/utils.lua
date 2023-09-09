@@ -4,21 +4,35 @@ function _G.format_code()
   return vim.lsp.buf.format {
     async = true,
     filter = function(client)
-      local have_nls = package.loaded["null-ls"]
-        and (
-          #require("null-ls.sources").get_available(
-            vim.bo[vim.api.nvim_get_current_buf()].filetype,
-            "NULL_LS_FORMATTING"
-          ) > 0
-        )
-
-      if have_nls then
-        return client.name == "null-ls"
-      else
-        return client.name ~= "null-ls"
+      local supported_formatters, _ = list_registered_formatters(vim.bo.filetype)
+      for _, formatter in pairs(supported_formatters) do
+        if vim.fn.executable(formatter) == 1 then
+          return client.name == "null-ls"
+        end
       end
+
+      return client.name ~= "null-ls"
     end,
   }
+end
+
+function _G.list_registered_providers_names(filetype)
+  local s = require "null-ls.sources"
+  local available_sources = s.get_available(filetype)
+  local registered = {}
+  for _, source in ipairs(available_sources) do
+    for method in pairs(source.methods) do
+      registered[method] = registered[method] or {}
+      table.insert(registered[method], source.name)
+    end
+  end
+  return registered
+end
+
+function _G.list_registered_formatters(filetype)
+  local registered_providers = list_registered_providers_names(filetype)
+  local method = require("null-ls").methods.FORMATTING
+  return registered_providers[method] or {}
 end
 
 command("Format", function()
