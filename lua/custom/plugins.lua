@@ -79,6 +79,15 @@ local plugins = {
     end,
   },
 
+  -- Commenter
+  {
+    "numToStr/Comment.nvim",
+    opts = {
+      -- ignores empty lines
+      ignore = "^$",
+    },
+  },
+
   -- File Explorer
   {
     "nvim-tree/nvim-tree.lua",

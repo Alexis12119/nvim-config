@@ -38,30 +38,9 @@ M.ui = {
           end
         end
 
-        -- -- Call the `list_registered_formatters` function and store the result and error (if any)
-        -- local formatters_ok, supported_formatters, _ = pcall(list_registered_formatters, vim.bo.filetype)
-        --
-        -- -- Call the `list_registered_linters` function and store the result and error (if any)
-        -- local linters_ok, supported_linters = pcall(list_registered_linters, vim.bo.filetype)
-        --
-        -- -- If the call to `list_registered_formatters` was successful and there are more than 0 formatters registered
-        -- if formatters_ok and #supported_formatters > 0 then
-        --   -- Extend the `clients` table with the registered formatters
-        --   vim.list_extend(clients, supported_formatters)
-        -- end
-        --
-        -- -- If the call to `list_registered_linters` was successful and there are more than 0 linters registered
-        -- if linters_ok and #supported_linters > 0 then
-        --   -- Extend the `clients` table with the registered linters
-        --   vim.list_extend(clients, supported_linters)
-        -- end
-        --
-        -- If there are more than 0 clients in the `clients` table
-        if #clients > 0 then
-          -- Return the clients concatenated as a string, separated by commas
-          return (vim.o.columns > 100 and "%#St_LspStatus#" .. "   LSP ~ " .. table.concat(clients, ", ") .. " ")
-            or "LS Inactive"
-        end
+        -- Return the clients concatenated as a string, separated by commas
+        return (vim.o.columns > 100 and "%#St_LspStatus#" .. "   LSP ~ " .. table.concat(clients, ", ") .. " ")
+          or "   LSP "
       end)()
     end,
   },
