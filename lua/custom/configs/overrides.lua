@@ -78,6 +78,9 @@ M.mason = {
 }
 
 M.colorizer = {
+  user_default_optins = {
+    tailwind = true,
+  },
   filetypes = {
     css = {
       RGB = true, -- #RGB hex codes
@@ -108,9 +111,6 @@ M.telescope = {
       i = {
         ["<Tab>"] = require("telescope.actions").move_selection_next,
         ["<S-Tab>"] = require("telescope.actions").move_selection_previous,
-      },
-      n = {
-        [";"] = require("telescope.actions").close,
       },
     },
   },
