@@ -67,7 +67,7 @@ To get started, follow these steps:
    - Linux:
 
      ```sh
-     git clone https://github.com/Alexis12119/nvim-config.git ~/.config/nvim/lua/
+     git clone https://github.com/Alexis12119/nvim-config.git ~/.config/nvim
      ```
 
    - Windows (Powershell):
@@ -79,7 +79,7 @@ To get started, follow these steps:
    - Windows (CMD):
 
      ```cmd
-     git clone https://github.com/Alexis12119/nvim-config.git %localappdata%\nvim\lua
+     git clone https://github.com/Alexis12119/nvim-config.git %localappdata%\nvim
      ```
 
 3. Run `nvim` and wait for the plugins to be installed.
