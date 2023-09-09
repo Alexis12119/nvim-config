@@ -26,7 +26,7 @@ function _G.list_registered_providers_names(filetype)
     for _, source in ipairs(available_sources) do
       for method in pairs(source.methods) do
         registered[method] = registered[method] or {}
-        table.insert(registered[method], source.name)
+        table.insert(registered[method], source.generator.opts.command)
       end
     end
     provider_cache[filetype] = registered
