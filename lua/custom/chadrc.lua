@@ -38,8 +38,12 @@ M.ui = {
           end
         end
 
-        -- Return the clients concatenated as a string, separated by commas
-        return (vim.o.columns > 100 and "%#St_LspStatus#" .. "   LSP ~ " .. table.concat(clients, ", ") .. " ")
+        if #clients == 0 then
+          return ""
+        else
+          -- Return the clients concatenated as a string, separated by commas
+          return (vim.o.columns > 100 and "%#St_LspStatus#" .. "   LSP ~ " .. table.concat(clients, ", ") .. " ")
+        end
       end)()
     end,
   },
