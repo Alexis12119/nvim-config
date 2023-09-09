@@ -31,10 +31,17 @@ M.ui = {
 
         -- Iterate through all the clients for the current buffer
         for _, client in pairs(vim.lsp.buf_get_clients()) do
-          -- Skip the client if its name is "null-ls"
+          -- -- Skip the client if its name is "null-ls"
           if client.name ~= "null-ls" then
             -- Add the client name to the `clients` table
             table.insert(clients, client.name)
+          end
+        end
+
+        local supported_formatters, _ = list_registered_formatters(vim.bo.filetype)
+        for _, formatter in pairs(supported_formatters) do
+          if vim.fn.executable(formatter) == 1 then
+            table.insert(clients, formatter)
           end
         end
 
