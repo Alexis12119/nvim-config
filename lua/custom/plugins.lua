@@ -27,9 +27,17 @@ local plugins = {
           { name = "cmdline" },
         },
       })
+
+      require("luasnip.loaders.from_vscode").lazy_load()
     end,
     dependencies = {
-      "hrsh7th/cmp-cmdline",
+      {
+        "hrsh7th/cmp-cmdline",
+      },
+      {
+        "L3MON4D3/LuaSnip",
+        dependencies = "rafamadriz/friendly-snippets",
+      },
     },
   },
 

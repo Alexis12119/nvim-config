@@ -100,6 +100,7 @@ M.colorizer = {
   },
 }
 
+
 M.telescope = {
   pickers = {
     oldfiles = {
