@@ -11,6 +11,6 @@ dap.configurations.go = {
     request = "launch",
     showLog = false,
     program = "${file}",
-    dlvToolPath = vim.fn.stdpath "data" .. "/mason/packages/delve/dlv",
+    dlvToolPath = vim.fn.exepath "dlv",
   },
 }
