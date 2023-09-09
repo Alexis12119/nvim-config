@@ -14,7 +14,9 @@ local sources = {
   b.formatting.gofumpt,
   b.formatting.autopep8,
   -- cpp
-  b.formatting.clang_format,
+  b.formatting.clang_format.with {
+    filetypes = { "c", "cpp" },
+  },
 }
 
 null_ls.setup {
