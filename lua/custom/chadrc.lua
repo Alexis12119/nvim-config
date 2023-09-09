@@ -40,7 +40,6 @@ M.ui = {
 
         -- Return the clients concatenated as a string, separated by commas
         return (vim.o.columns > 100 and "%#St_LspStatus#" .. "   LSP ~ " .. table.concat(clients, ", ") .. " ")
-          or "   LSP "
       end)()
     end,
   },
