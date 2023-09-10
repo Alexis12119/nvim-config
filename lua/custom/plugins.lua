@@ -128,6 +128,7 @@ local plugins = {
     "nvim-treesitter/nvim-treesitter",
     cmd = {
       "TSInstall",
+      "TSUninstall",
       "TSInstallInfo",
       "TSUpdate",
       "TSBufEnable",
