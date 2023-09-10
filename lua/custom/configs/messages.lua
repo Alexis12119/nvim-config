@@ -1,4 +1,9 @@
 local M = {
+  "Why don't Neovim users ever get lost in their text files? Because they always 'find' their way!",
+  "Why don't Neovim users need a GPS? Because they're experts at 'mapping' their routes!",
+  "Why did the Neovim user become a musician? Because they can play the keyboard like a pro!",
+  "Why don't Neovim users ever lose track of time? Because they have a 'status line' to keep them informed!",
+  "Why did the Neovim user open a detective agency? Because they have an 'eye' for spotting code errors!",
   "Why did the developer bring a ladder to the coding competition? To take their code to the next level!",
   "When your code is running slowly: 'It's not a bug; it's a feature that takes its time.'",
   "Why did the programmer go to therapy? Because their code had too many 'issues'!",
@@ -37,13 +42,22 @@ local M = {
   "Stay organized with your project structure. Consistency makes collaboration smoother.",
   "Take regular breaks to prevent burnout. Your productivity will thank you.",
   "Use comments sparingly but effectively. Explain why, not just what.",
-  "Keep up with coding best practices and design patterns.",
   "Consider pair programming or code reviews to catch issues early and learn from others.",
   "Know when to ask for help. Programming is a team effort.",
   "Programming is not just about the code; it's about the problem-solving mindset.",
   "Keep your development environment clean and well-maintained for consistent productivity.",
   "Learn from your mistakes and failures; they are valuable lessons in programming.",
   "When faced with a bug, isolate and reproduce it before attempting to fix it.",
+  "Why don't programmers like to play hide and seek? Good luck hiding when your code has so many 'bugs.'",
+  "Why did the developer stay calm during the crisis? Because they knew how to 'handle' exceptions.",
+  "Why was the JavaScript developer always smiling? Because they had 'callbacks' for everything!",
+  "Why did the programmer break up with their keyboard? It had too many 'commitment' issues.",
+  "Margaret Hamilton coined the term 'software engineer.'",
+  "Ada Lovelace is considered the first computer programmer.",
+  "The first computer bug was a literal moth.",
+  "The first computer virus was the 'Brain' virus.",
+  "Why did the programmer break up with their internet browser? Because they found someone better who understood their 'cookies.'",
+  "Why did the developer go broke? They spent all their money on 'RAMen' noodles.",
 }
 
 return M
