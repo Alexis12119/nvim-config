@@ -55,6 +55,7 @@ local plugins = {
   -- Native LSP
   {
     "neovim/nvim-lspconfig",
+    cmd = { "LspInfo", "LspInstall", "LspUninstall" },
     event = "VeryLazy",
     dependencies = {
       -- format & linting
@@ -66,6 +67,13 @@ local plugins = {
       },
       {
         "williamboman/mason.nvim",
+        cmd = {
+          "Mason",
+          "MasonInstall",
+          "MasonUninstall",
+          "MasonUninstallAll",
+          "MasonLog",
+        },
         opts = overrides.mason,
       },
       {
@@ -118,6 +126,16 @@ local plugins = {
   -- Syntax Highlighting
   {
     "nvim-treesitter/nvim-treesitter",
+    cmd = {
+      "TSInstall",
+      "TSInstallInfo",
+      "TSUpdate",
+      "TSBufEnable",
+      "TSBufDisable",
+      "TSEnable",
+      "TSDisable",
+      "TSModuleInfo",
+    },
     opts = overrides.treesitter,
     dependencies = {
       "JoosepAlviste/nvim-ts-context-commentstring",
