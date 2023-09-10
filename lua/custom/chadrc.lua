@@ -29,7 +29,7 @@ M.ui = {
       modules[8] = (function()
         local clients = {}
         local filetype = vim.bo.filetype
-        local supported_formatters = list_registered_formatters(filetype)
+        local ok, supported_formatters = pcall(list_registered_formatters, filetype)
 
         -- Iterate through all the clients for the current buffer
         for _, client in pairs(vim.lsp.buf_get_clients()) do
@@ -50,9 +50,11 @@ M.ui = {
           return executable_cache[file]
         end
 
-        for _, formatter in pairs(supported_formatters) do
-          if is_executable(formatter) then
-            table.insert(clients, formatter)
+        if ok then
+          for _, formatter in pairs(supported_formatters) do
+            if is_executable(formatter) then
+              table.insert(clients, formatter)
+            end
           end
         end
 

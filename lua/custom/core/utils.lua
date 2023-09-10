@@ -4,10 +4,13 @@ function _G.format_code()
   return vim.lsp.buf.format {
     async = true,
     filter = function(client)
-      local supported_formatters = list_registered_formatters(vim.bo.filetype)
-      for _, formatter in pairs(supported_formatters) do
-        if vim.fn.executable(formatter) == 1 then
-          return client.name == "null-ls"
+      local filetype = vim.bo.filetype
+      local ok, supported_formatters = pcall(list_registered_formatters, filetype)
+      if ok then
+        for _, formatter in pairs(supported_formatters) do
+          if vim.fn.executable(formatter) == 1 then
+            return client.name == "null-ls"
+          end
         end
       end
 
