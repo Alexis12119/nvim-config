@@ -117,6 +117,7 @@ M.Toggleterm = {
 M.LSP = {
   n = {
     ["<leader>lf"] = { ":Format<cr>", "Format", opts = { silent = true } },
+    ["<leader>ll"] = { ":LspLog<cr>", "Log", opts = { silent = true } },
     ["<leader>la"] = { ":Lspsaga code_action<cr>", "Code Action", opts = { silent = true } },
     ["<leader>li"] = { ":LspInfo<cr>", "Info", opts = { silent = true } },
     ["<leader>lo"] = { ":Lspsaga outline<cr>", "Code Outline", opts = { silent = true } },

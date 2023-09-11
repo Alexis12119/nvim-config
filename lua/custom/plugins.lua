@@ -68,6 +68,7 @@ local plugins = {
         cmd = {
           "Mason",
           "MasonInstall",
+          "MasonUpdate",
           "MasonUninstall",
           "MasonUninstallAll",
           "MasonLog",
@@ -134,6 +135,8 @@ local plugins = {
       "TSEnable",
       "TSDisable",
       "TSModuleInfo",
+      "TSToggle",
+      "TSBufToggle",
     },
     opts = overrides.treesitter,
     dependencies = {
@@ -175,7 +178,12 @@ local plugins = {
   -- Terminal Integration
   {
     "akinsho/toggleterm.nvim",
-    cmd = "ToggleTerm",
+    cmd = {
+      "ToggleTerm",
+      "ToggleTermSendCurrentLine",
+      "ToggleTermSendVisualLines",
+      "ToggleTermSendVisualSelection",
+    },
     opts = overrides.toggleterm,
   },
 
@@ -262,7 +270,7 @@ local plugins = {
   -- Show diffs
   {
     "sindrets/diffview.nvim",
-    event = { "BufReadPost", "BufNewFile" },
+    event = "VeryLazy",
   },
 }
 
