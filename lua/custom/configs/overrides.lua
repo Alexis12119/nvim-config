@@ -96,6 +96,8 @@ M.colorizer = {
     html = { mode = "background" },
     markdown = { names = false },
     lua = { names = false },
+    json = { names = false },
+    mason = { names = false },
     "*",
   },
 }
