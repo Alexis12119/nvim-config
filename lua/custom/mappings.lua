@@ -1,6 +1,8 @@
 ---@type MappingsTable
 local M = {}
 local fn = vim.fn
+local cwd = vim.fn.stdpath "config" .. "/"
+local config_dir = { cwd }
 
 M.DAP = {
   n = {
@@ -23,9 +25,6 @@ M.Neovim = {
   n = {
     ["<leader>nf"] = {
       function()
-        local cwd = vim.fn.stdpath "config" .. "/"
-        local config_dir = { cwd }
-
         require("telescope.builtin").find_files {
           prompt_title = "Config Files",
           search_dirs = config_dir,
@@ -37,9 +36,6 @@ M.Neovim = {
     },
     ["<leader>ng"] = {
       function()
-        local cwd = vim.fn.stdpath "config" .. "/"
-        local config_dir = { cwd }
-
         require("telescope.builtin").live_grep {
           prompt_title = "Config Files",
           search_dirs = config_dir,
