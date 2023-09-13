@@ -58,6 +58,12 @@ local M = {
   "The first computer virus was the 'Brain' virus.",
   "Why did the programmer break up with their internet browser? Because they found someone better who understood their 'cookies.'",
   "Why did the developer go broke? They spent all their money on 'RAMen' noodles.",
+  "Why did the C++ programmer always carry a bucket of water to work? To catch memory leaks before they flooded the code!",
+  "I don't always test my code, but when I do, I do it in production. That's where the real memory leaks happen!",
+  "Why was the C++ developer always broke? Because they couldn't stop spending their memory!",
+  "What's a C++ programmer's favorite horror movie? 'The Curse of the Unreleased Memory!'",
+  "When your C++ program enters an infinite loop, but your coffee supply isn't infinite.",
+  "When you encounter a C++ template error message and it looks like ancient hieroglyphics.",
 }
 
 return M
