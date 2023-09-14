@@ -28,8 +28,6 @@ M.ui = {
     overriden_modules = function(modules)
       modules[8] = (function()
         local clients = {}
-        local filetype = vim.bo.filetype
-        local ok, supported_formatters = pcall(list_registered_formatters, filetype)
 
         -- Iterate through all the clients for the current buffer
         for _, client in pairs(vim.lsp.buf_get_clients()) do
@@ -40,22 +38,9 @@ M.ui = {
           end
         end
 
-        -- Initialize a cache table for executable checks
-        local executable_cache = {}
-
-        local function is_executable(file)
-          if executable_cache[file] == nil then
-            executable_cache[file] = vim.fn.executable(file) == 1
-          end
-          return executable_cache[file]
-        end
-
-        if ok then
-          for _, formatter in pairs(supported_formatters) do
-            if is_executable(formatter) then
-              table.insert(clients, formatter)
-            end
-          end
+        local formatters = require("conform").list_formatters(0)
+        for _, formatter in pairs(formatters) do
+          table.insert(clients, formatter.name)
         end
 
         if #clients == 0 then

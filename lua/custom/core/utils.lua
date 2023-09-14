@@ -1,22 +1,7 @@
 local command = vim.api.nvim_create_user_command
 
 function _G.format_code()
-  return vim.lsp.buf.format {
-    async = true,
-    filter = function(client)
-      local filetype = vim.bo.filetype
-      local ok, supported_formatters = pcall(list_registered_formatters, filetype)
-      if ok then
-        for _, formatter in pairs(supported_formatters) do
-          if vim.fn.executable(formatter) == 1 then
-            return client.name == "null-ls"
-          end
-        end
-      end
-
-      return client.name ~= "null-ls"
-    end,
-  }
+  require("conform").format { async = true, lsp_fallback = true }
 end
 
 local provider_cache = {}

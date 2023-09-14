@@ -56,12 +56,22 @@ local plugins = {
     cmd = { "LspInfo", "LspInstall", "LspUninstall" },
     event = "VeryLazy",
     dependencies = {
-      -- format & linting
+      -- formatting
       {
-        "jose-elias-alvarez/null-ls.nvim",
-        config = function()
-          require "custom.configs.null-ls"
-        end,
+        "stevearc/conform.nvim",
+        opts = {
+          formatters_by_ft = {
+            lua = { "stylua" },
+            python = { "autopep8" },
+            javascript = { "prettier" },
+            html = { "prettier" },
+            markdown = { "prettier" },
+            typescript = { "prettier" },
+            cpp = { "clang_format" },
+            c = { "clang_format" },
+            go = { "gofumpt" },
+          },
+        },
       },
       {
         "williamboman/mason.nvim",
@@ -144,6 +154,26 @@ local plugins = {
     },
   },
 
+  {
+    "Exafunction/codeium.vim",
+    enabled = false,
+    event = "VeryLazy",
+    config = function()
+      -- Change '<C-g>' here to any keycode you like.
+      vim.keymap.set("i", "<C-g>", function()
+        return vim.fn["codeium#Accept"]()
+      end, { expr = true })
+      vim.keymap.set("i", "<c-;>", function()
+        return vim.fn["codeium#CycleCompletions"](1)
+      end, { expr = true })
+      vim.keymap.set("i", "<c-,>", function()
+        return vim.fn["codeium#CycleCompletions"](-1)
+      end, { expr = true })
+      vim.keymap.set("i", "<c-x>", function()
+        return vim.fn["codeium#Clear"]()
+      end, { expr = true })
+    end,
+  },
   -- Schemas
   { "b0o/schemastore.nvim" },
 
