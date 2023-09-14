@@ -59,19 +59,7 @@ local plugins = {
       -- formatting
       {
         "stevearc/conform.nvim",
-        opts = {
-          formatters_by_ft = {
-            lua = { "stylua" },
-            python = { "autopep8" },
-            javascript = { "prettier" },
-            html = { "prettier" },
-            markdown = { "prettier" },
-            typescript = { "prettier" },
-            cpp = { "clang_format" },
-            c = { "clang_format" },
-            go = { "gofumpt" },
-          },
-        },
+        opts = overrides.conform,
       },
       {
         "williamboman/mason.nvim",
@@ -159,6 +147,7 @@ local plugins = {
     enabled = false,
     event = "VeryLazy",
     config = function()
+      -- It's working for me :)
       -- Change '<C-g>' here to any keycode you like.
       vim.keymap.set("i", "<C-g>", function()
         return vim.fn["codeium#Accept"]()

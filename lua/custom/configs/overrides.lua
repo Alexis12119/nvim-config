@@ -13,6 +13,19 @@ local function on_attach(bufnr)
   vim.keymap.set("n", "u", api.tree.change_root_to_parent, opts "Up")
 end
 
+M.conform = {
+  formatters_by_ft = {
+    lua = { "stylua" },
+    python = { "autopep8" },
+    javascript = { "prettier" },
+    html = { "prettier" },
+    markdown = { "prettier" },
+    typescript = { "prettier" },
+    cpp = { "clang_format" },
+    c = { "clang_format" },
+    go = { "gofumpt" },
+  },
+}
 M.treesitter = {
   ensure_installed = {
     "vim",

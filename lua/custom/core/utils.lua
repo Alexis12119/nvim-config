@@ -1,7 +1,7 @@
 local command = vim.api.nvim_create_user_command
 
 function _G.format_code()
-  require("conform").format { async = true, lsp_fallback = true }
+  require("conform").format { async = true, lsp_fallback = true, quiet = true }
 end
 
 local provider_cache = {}
