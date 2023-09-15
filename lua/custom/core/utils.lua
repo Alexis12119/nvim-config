@@ -65,7 +65,6 @@ function _G.run_code()
     },
     c = {
       default = "gcc % -o $fileBase && $fileBase",
-      make = "make",
     },
     cs = {
       default = "dotnet run",
@@ -74,7 +73,6 @@ function _G.run_code()
       default = "g++ % -o  $fileBase && $fileBase",
       debug = "g++ -g % -o  $fileBase",
       competitive = "g++ -std=c++17 -Wall -DAL -O2 % -o $fileBase && $fileBase<input.txt",
-      make = "make",
     },
     py = {
       default = "python %",
