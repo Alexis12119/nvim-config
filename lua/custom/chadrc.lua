@@ -38,9 +38,12 @@ M.ui = {
           end
         end
 
-        local formatters = require("conform").list_formatters(0)
-        for _, formatter in pairs(formatters) do
-          table.insert(clients, formatter.name)
+        local status_ok, conform = pcall(require, "conform")
+        if status_ok then
+          local formatters = conform.list_formatters(0)
+          for _, formatter in pairs(formatters) do
+            table.insert(clients, formatter.name)
+          end
         end
 
         if #clients == 0 then
