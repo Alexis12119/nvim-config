@@ -31,11 +31,8 @@ M.ui = {
 
         -- Iterate through all the clients for the current buffer
         for _, client in pairs(vim.lsp.buf_get_clients()) do
-          -- Skip the client if its name is "null-ls"
-          if client.name ~= "null-ls" then
-            -- Add the client name to the `clients` table
-            table.insert(clients, client.name)
-          end
+          -- Add the client name to the `clients` table
+          table.insert(clients, client.name)
         end
 
         local status_ok, conform = pcall(require, "conform")
