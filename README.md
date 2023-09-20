@@ -74,7 +74,7 @@ To get started, follow these steps:
    - Windows (Powershell):
 
      ```ps1
-     Invoke-WebRequest https://raw.githubusercontent.com/Alexis12119/nvim-config/main/lua/custom/installer/install.ps1 -UseBasicParsing | Invoke-Expression
+     Invoke-WebRequest https://raw.githubusercontent.com/Alexis12119/nvim-config/main/installer/install.ps1 -UseBasicParsing | Invoke-Expression
      ```
 
    - Windows (CMD):
