@@ -261,9 +261,6 @@ local plugins = {
   -- For java
   {
     "mfussenegger/nvim-jdtls",
-    config = function()
-      require "custom.configs.nvim-jdtls"
-    end,
     ft = "java",
   },
 
