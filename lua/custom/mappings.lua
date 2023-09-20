@@ -213,7 +213,7 @@ M.General = {
     },
   },
   n = {
-    ["<leader>a"] = { ":Nvdash<cr>", "Nvdash", opts = { silent = true } },
+    -- ["<leader>a"] = { ":Nvdash<cr>", "Nvdash", opts = { silent = true } },
     ["<leader>r"] = { ":%d+<cr>", "Remove All Text", opts = { silent = true } },
     ["<leader>y"] = { ":%y+<cr>", "Yank All Text", opts = { silent = true } },
     ["<leader>e"] = { ":NvimTreeToggle<cr>", "Explorer", opts = { silent = true } },
