@@ -1,4 +1,5 @@
 return {
+  lockfile = vim.fn.stdpath "config" .. "/lua/custom/lazy-lock.json", -- lockfile generated after running update.
   change_detection = {
     -- automatically check for config file changes and reload the ui
     enabled = true,
