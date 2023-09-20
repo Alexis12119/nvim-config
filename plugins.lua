@@ -144,10 +144,8 @@ local plugins = {
 
   {
     "Exafunction/codeium.vim",
-    enabled = false,
     event = "VeryLazy",
     config = function()
-      -- It's working for me :)
       -- Change '<C-g>' here to any keycode you like.
       vim.keymap.set("i", "<C-g>", function()
         return vim.fn["codeium#Accept"]()
@@ -161,8 +159,13 @@ local plugins = {
       vim.keymap.set("i", "<c-x>", function()
         return vim.fn["codeium#Clear"]()
       end, { expr = true })
+
+      vim.g.codeium_filetypes = {
+        ["TelescopePrompt"] = false,
+      }
     end,
   },
+
   -- Schemas
   { "b0o/schemastore.nvim" },
 
