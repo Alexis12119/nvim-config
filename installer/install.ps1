@@ -1,8 +1,11 @@
 # Experimental
 if ($IsWindows)
 {
+  $NvChad_repo = "https://github.com/NvChad/NvChad.git"
+  $NvChad_config = $env:LOCALAPPDATA + "\nvim"
+
   # Set the location of Neovim configuration
-  $config = $env:LOCALAPPDATA + "\nvim"
+  $config = $env:LOCALAPPDATA + "\nvim\lua\custom"
   
   # Set the repository for Neovim configuration
   $repo = "https://github.com/Alexis12119/nvim-config.git"
@@ -20,8 +23,9 @@ if ($IsWindows)
     if ($confirm -eq "Y")
     {
       Write-Output "Removing the existing configuration..."
-      Remove-Item $config -Recurse -Force
+      Remove-Item $NvChad_config -Recurse -Force
       Write-Output "Cloning the new configuration from $repo..."
+      git clone $NvChad_repo $NvChad_config
       git clone $repo $config
     } else
     {
@@ -32,6 +36,7 @@ if ($IsWindows)
   {
     # If a Neovim configuration doesn't exist, clone the configuration
     Write-Output "Cloning the Neovim configuration from $repo..."
+    git clone $NvChad_repo $NvChad_config
     git clone $repo $config
   }
 }

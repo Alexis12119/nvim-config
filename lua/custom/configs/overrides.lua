@@ -26,6 +26,7 @@ M.conform = {
     go = { "gofumpt" },
   },
 }
+
 M.treesitter = {
   ensure_installed = {
     "vim",
@@ -694,4 +695,5 @@ M.dap_ui = {
     },
   },
 }
+
 return M
