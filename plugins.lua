@@ -53,7 +53,6 @@ local plugins = {
   -- Native LSP
   {
     "neovim/nvim-lspconfig",
-    cmd = { "LspInfo", "LspInstall", "LspUninstall" },
     event = "VeryLazy",
     dependencies = {
       -- formatting

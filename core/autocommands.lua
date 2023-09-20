@@ -147,6 +147,8 @@ autocmd("FileType", {
       return
     end
 
+    local bufnr = vim.api.nvim_get_current_buf()
+
     local java_debug_path = vim.fn.stdpath "data" .. "/mason/packages/java-debug-adapter/"
     local jdtls_path = vim.fn.stdpath "data" .. "/mason/packages/jdtls/"
     -- NOTE: Decrease the amount of files to improve speed(Experimental).
@@ -228,12 +230,12 @@ autocmd("FileType", {
 
     local keymap = vim.keymap.set
 
-    keymap("n", "A-o", ":lua require'jdtls'.organize_imports()<cr>", { silent = true })
-    keymap("n", "crv", ":lua require'jdtls'.extract_variable()<cr>", { silent = true })
-    keymap("v", "crv", "<Esc>:lua require'jdtls'.extract_variable(true)<cr>", { silent = true })
-    keymap("n", "crc", ":lua require'jdtls'.extract_constant()<cr>", { silent = true })
-    keymap("v", "crc", "<Esc>:lua require'jdtls'.extract_constant(true)<cr>", { silent = true })
-    keymap("v", "crm", "<Esc>:lua require'jdtls'.extract_method(true)<cr>", { silent = true })
+    keymap("n", "A-o", ":lua require'jdtls'.organize_imports()<cr>", { silent = true, buffer = bufnr })
+    keymap("n", "crv", ":lua require'jdtls'.extract_variable()<cr>", { silent = true, buffer = bufnr })
+    keymap("v", "crv", "<Esc>:lua require'jdtls'.extract_variable(true)<cr>", { silent = true, buffer = bufnr })
+    keymap("n", "crc", ":lua require'jdtls'.extract_constant()<cr>", { silent = true, buffer = bufnr })
+    keymap("v", "crc", "<Esc>:lua require'jdtls'.extract_constant(true)<cr>", { silent = true, buffer = bufnr })
+    keymap("v", "crm", "<Esc>:lua require'jdtls'.extract_method(true)<cr>", { silent = true, buffer = bufnr })
 
     vim.cmd [[
     command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_compile JdtCompile lua require('jdtls').compile(<f-args>)
