@@ -139,6 +139,7 @@ local plugins = {
     opts = overrides.treesitter,
     dependencies = {
       "JoosepAlviste/nvim-ts-context-commentstring",
+      "nvim-treesitter/nvim-treesitter-textobjects",
     },
   },
 
