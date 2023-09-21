@@ -20,7 +20,7 @@
 - **Enhanced Searching**: Improve searching with [flash.nvim](https://github.com/folke/flash.nvim).
 - **Autocompletion**: Experience intelligent autocompletion with [nvim-cmp](https://github.com/hrsh7th/nvim-cmp).
 - **Language Support**: Harness the power of Language Server Protocol with [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig).
-- **Formatting and Linting**: Keep your code clean with [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim).
+- **Formatting**: Keep your code clean with [conform.nvim](https://github.com/stevearc/conform.nvim).
 - **Syntax Highlighting**: Enjoy enhanced syntax highlighting with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter).
 - **Fuzzy Finding**: Find files and more with ease using [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim).
 - **Integrated Terminal**: Access a terminal within Neovim using [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim).
