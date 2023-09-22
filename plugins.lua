@@ -94,10 +94,14 @@ local plugins = {
   -- Commenter
   {
     "numToStr/Comment.nvim",
-    opts = {
-      -- ignores empty lines
-      ignore = "^$",
-    },
+    config = function()
+      require("Comment").setup {
+        -- ignores empty lines
+        ignore = "^$",
+        pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+      }
+    end,
+    dependencies = "JoosepAlviste/nvim-ts-context-commentstring",
   },
 
   -- File Explorer
@@ -144,6 +148,7 @@ local plugins = {
 
   {
     "Exafunction/codeium.vim",
+    enabled = false,
     event = "VeryLazy",
     config = function()
       -- Change '<C-g>' here to any keycode you like.

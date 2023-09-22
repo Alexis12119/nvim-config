@@ -51,10 +51,11 @@ M.treesitter = {
   },
   context_commentstring = {
     enable = true,
+    enable_autocmd = false,
   },
   textobjects = {
     swap = {
-      enable = true,
+      enable = false,
       swap_next = {
         ["<leader>a"] = "@parameter.inner",
       },
