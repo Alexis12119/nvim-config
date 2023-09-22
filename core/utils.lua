@@ -4,30 +4,6 @@ function _G.format_code()
   require("conform").format { async = true, lsp_fallback = true, quiet = true }
 end
 
-local provider_cache = {}
-
-function _G.list_registered_providers_names(filetype)
-  if not provider_cache[filetype] then
-    local s = require "null-ls.sources"
-    local available_sources = s.get_available(filetype)
-    local registered = {}
-    for _, source in ipairs(available_sources) do
-      for method in pairs(source.methods) do
-        registered[method] = registered[method] or {}
-        table.insert(registered[method], source.generator.opts.command)
-      end
-    end
-    provider_cache[filetype] = registered
-  end
-  return provider_cache[filetype]
-end
-
-function _G.list_registered_formatters(filetype)
-  local registered_providers = list_registered_providers_names(filetype)
-  local method = require("null-ls").methods.FORMATTING
-  return registered_providers[method] or {}
-end
-
 command("Format", function()
   format_code()
   vim.notify("Format Done", vim.log.levels.INFO, { title = "Format" })
