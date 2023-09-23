@@ -127,11 +127,10 @@ local plugins = {
   {
     "alexghergh/nvim-tmux-navigation",
     enabled = function()
-      if vim.fn.has "unix" == 1 or vim.fn.has "mac" == 1 then
-        return true
-      else
+      if vim.fn.has "win32" == 1 then
         return false
       end
+      return true
     end,
     event = "VeryLazy",
     opts = {
