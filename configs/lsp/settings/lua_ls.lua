@@ -4,6 +4,7 @@ return {
       semantic = {
         enable = false,
       },
+      hint = { enable = true },
       diagnostics = {
         globals = { "vim" },
       },
