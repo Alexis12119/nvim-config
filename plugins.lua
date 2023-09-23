@@ -123,9 +123,32 @@ local plugins = {
     "nvim-tree/nvim-web-devicons",
   },
 
+  -- Tmux navigation
+  {
+    "alexghergh/nvim-tmux-navigation",
+    enabled = function()
+      if vim.fn.has "unix" == 1 or vim.fn.has "mac" == 1 then
+        return true
+      else
+        return false
+      end
+    end,
+    event = "VeryLazy",
+    opts = {
+      keybindings = {
+        left = "<C-H>",
+        down = "<C-J>",
+        up = "<C-K>",
+        right = "<C-L>",
+        last_active = "<C-\\>",
+        next = "<C-Space>",
+      },
+    },
+  },
   -- Syntax Highlighting
   {
     "nvim-treesitter/nvim-treesitter",
+    commit = "b7f2dd5dfbd24a1239844e15637b637b990df164",
     cmd = {
       "TSInstall",
       "TSUninstall",
