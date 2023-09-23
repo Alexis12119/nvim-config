@@ -1,3 +1,7 @@
+-- ########################
+-- #   Neovim Options    #
+-- #######################
+
 local options = {
   backup = false, -- creates a backup file
   conceallevel = 0, -- so that `` is visible in markdown files

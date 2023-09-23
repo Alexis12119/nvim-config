@@ -1,3 +1,7 @@
+-- #############################
+-- #   Utilities  and Commands #
+-- #############################
+
 local command = vim.api.nvim_create_user_command
 
 function _G.format_code()
@@ -21,10 +25,6 @@ local function substitute(cmd)
   cmd = cmd:gsub("$filePath", vim.fn.expand "%:p")
   cmd = cmd:gsub("$file", vim.fn.expand "%")
   cmd = cmd:gsub("$dir", vim.fn.expand "%:p:h")
-  cmd = cmd:gsub(
-    "$moduleName",
-    vim.fn.substitute(vim.fn.substitute(vim.fn.fnamemodify(vim.fn.expand "%:r", ":~:."), "/", ".", "g"), "\\", ".", "g")
-  )
   cmd = cmd:gsub("#", vim.fn.expand "#")
   cmd = cmd:gsub("$altFile", vim.fn.expand "#")
 
@@ -34,7 +34,7 @@ end
 function _G.run_code()
   local fileExtension = vim.fn.expand "%:e"
   local selectedCmd = ""
-  local options = "bot 10 new | term "
+  local term_cmd = "bot 10 new | term "
   local supportedFiletypes = {
     html = {
       default = "%",
@@ -96,12 +96,12 @@ function _G.run_code()
       vim.notify("It doesn't contain any command", vim.log.levels.WARN, { title = "Code Runner" })
     elseif #choices == 1 then
       selectedCmd = supportedFiletypes[fileExtension][choices[1]]
-      vim.cmd(options .. substitute(selectedCmd))
+      vim.cmd(term_cmd .. substitute(selectedCmd))
     else
       vim.ui.select(choices, { prompt = "Choose: " }, function(choice)
         selectedCmd = supportedFiletypes[fileExtension][choice]
         if selectedCmd then
-          vim.cmd(options .. substitute(selectedCmd))
+          vim.cmd(term_cmd .. substitute(selectedCmd))
         end
       end)
     end
