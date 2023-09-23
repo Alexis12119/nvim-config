@@ -179,11 +179,11 @@ M.mason = {
     "stylua",
 
     -- Web Development
+    "prettier",
     -- "css-lsp",
     -- "html-lsp",
     -- "typescript-language-server",
     -- "deno",
-    "prettier",
     -- "svelte-language-server",
     -- "tailwindcss-language-server",
     -- "emmet-language-server",
@@ -205,7 +205,7 @@ M.mason = {
 
     -- Go
     -- "gopls",
-    -- "gofumpt"
+    -- "gofumpt",
 
     -- C#
     -- "omnisharp",
