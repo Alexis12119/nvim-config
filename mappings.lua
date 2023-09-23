@@ -140,6 +140,14 @@ M.LSP = {
     ["<leader>ls"] = { ":Telescope lsp_document_symbols<cr>", "Buffer Symbols", opts = { silent = true } },
     ["<leader>lS"] = { ":Telescope lsp_workspace_symbols<cr>", "Workspace Symbols", opts = { silent = true } },
   },
+  v = {
+    ["<leader>la"] = {
+      function()
+        vim.lsp.buf.code_action()
+      end,
+      "Code Action",
+    },
+  },
 }
 
 if vim.lsp.inlay_hint then
@@ -402,12 +410,6 @@ M.General = {
     },
   },
   v = {
-    ["<leader>la"] = {
-      function()
-        vim.lsp.buf.code_action()
-      end,
-      "Code Action",
-    },
     ["j"] = {
       "v:count == 0 ? 'gj' : 'j'",
       "Better Down",
