@@ -178,25 +178,38 @@ M.mason = {
     "vimls",
     "stylua",
 
-    -- web dev
+    -- Web Development
     -- "css-lsp",
     -- "html-lsp",
     -- "typescript-language-server",
     -- "deno",
     "prettier",
+    -- "svelte-language-server",
     -- "tailwindcss-language-server",
+    -- "emmet-language-server",
+
+    -- PHP
+    -- "intelephense",
 
     -- C/C++
     "clangd",
     "clang-format",
 
+    -- Java
+    -- "jdtls",
+
     -- Python
     "pyright",
+    -- "autopep8",
+    -- "black",
+
     -- Go
     -- "gopls",
+    -- "gofumpt"
 
     -- C#
     -- "omnisharp",
+    -- "omnisharp-mono",
   },
 }
 
