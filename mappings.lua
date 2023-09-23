@@ -117,10 +117,8 @@ M.Toggleterm = {
 M.LSP = {
   n = {
     ["<leader>lf"] = { ":Format<cr>", "Format", opts = { silent = true } },
-    ["<leader>lF"] = { ":ConformInfo<cr>", "Formatter Info", opts = { silent = true } },
-    ["<leader>ll"] = { ":LspLog<cr>", "Log", opts = { silent = true } },
     ["<leader>la"] = { ":Lspsaga code_action<cr>", "Code Action", opts = { silent = true } },
-    ["<leader>li"] = { ":LspInfo<cr>", "LSP Info", opts = { silent = true } },
+    ["<leader>li"] = { ":LspInfo<cr>", "Info", opts = { silent = true } },
     ["<leader>lo"] = { ":Lspsaga outline<cr>", "Code Outline", opts = { silent = true } },
     ["<leader>lI"] = { ":Lspsaga incoming_calls<cr>", "Incoming Calls", opts = { silent = true } },
     ["<leader>lO"] = { ":Lspsaga outgoing_calls<cr>", "Outgoing Calls", opts = { silent = true } },
@@ -135,6 +133,7 @@ M.LSP = {
       "Prev Diagnostic",
       opts = { silent = true },
     },
+    ["<leader>lR"] = { ":LspRestart<cr>", "Restart", opts = { silent = true } },
     ["<leader>lr"] = { ":Lspsaga rename<cr>", "Rename", opts = { silent = true } },
     ["<leader>ld"] = { ":Telescope diagnostics bufnr=0<cr>", "Buffer Diagnostics", opts = { silent = true } },
     ["<leader>lw"] = { ":Telescope diagnostics<cr>", "Workspace Diagnostics", opts = { silent = true } },
