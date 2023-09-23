@@ -4,8 +4,8 @@ local M = {}
 local highlights = require "custom.highlights"
 
 M.ui = {
-  theme = "catppuccin",
-  theme_toggle = { "catppuccin", "one_light" },
+  theme = "kanagawa",
+  theme_toggle = { "kanagawa", "one_light" },
   lsp_semantic_tokens = false, -- needs nvim v0.9, just adds highlight groups for lsp semantic tokens
   hl_override = highlights.override,
   hl_add = highlights.add,
@@ -21,11 +21,39 @@ M.ui = {
     selected_item_bg = "colored", -- colored / simple
   },
   statusline = {
-    theme = "default", -- default/vscode/vscode_colored/minimal
+    theme = "minimal", -- default/vscode/vscode_colored/minimal
     -- default/round/block/arrow separators work only for default statusline theme
     -- round and block will work for minimal theme only
-    separator_style = "default",
+    separator_style = "round",
     overriden_modules = function(modules)
+      local config = require("core.utils").load_config().ui.statusline
+      local sep_style = config.separator_style
+
+      sep_style = (sep_style ~= "round" and sep_style ~= "block") and "block" or sep_style
+
+      local default_sep_icons = {
+        round = { left = "", right = "" },
+        block = { left = "█", right = "█" },
+      }
+
+      local separators = (type(sep_style) == "table" and sep_style) or default_sep_icons[sep_style]
+
+      local sep_l = separators["left"]
+      local sep_r = "%#St_sep_r#" .. separators["right"] .. " %#ST_EmptySpace#"
+
+      local function gen_block(icon, txt, sep_l_hlgroup, iconHl_group, txt_hl_group)
+        return sep_l_hlgroup .. sep_l .. iconHl_group .. icon .. " " .. txt_hl_group .. " " .. txt .. sep_r
+      end
+
+      modules[7] = (function()
+        return ""
+      end)()
+      modules[11] = (function()
+        return gen_block("", "%L", "%#St_Pos_sep#", "%#St_Pos_bg#", "%#St_Pos_txt#")
+      end)()
+      modules[9] = (function()
+        return ""
+      end)()
       modules[8] = (function()
         local clients = {}
         local bufnr = vim.api.nvim_get_current_buf()
@@ -47,8 +75,10 @@ M.ui = {
         if #clients == 0 then
           return ""
         else
-          -- Return the clients concatenated as a string, separated by commas
-          return (vim.o.columns > 100 and "%#St_LspStatus#" .. "   LSP ~ " .. table.concat(clients, ", ") .. " ")
+          return (
+            vim.o.columns > 100
+            and gen_block("", table.concat(clients, ", "), "%#St_lsp_sep#", "%#St_lsp_bg#", "%#St_lsp_txt#")
+          ) or "  LSP "
         end
       end)()
     end,
