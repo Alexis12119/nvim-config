@@ -29,8 +29,9 @@ M.ui = {
       modules[8] = (function()
         local clients = {}
 
+        local bufnr = vim.api.nvim_get_current_buf()
         -- Iterate through all the clients for the current buffer
-        for _, client in pairs(vim.lsp.buf_get_clients()) do
+        for _, client in pairs(vim.lsp.get_clients { bufnr = bufnr }) do
           -- Add the client name to the `clients` table
           table.insert(clients, client.name)
         end
