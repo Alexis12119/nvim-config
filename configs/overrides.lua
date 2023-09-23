@@ -185,6 +185,7 @@ M.mason = {
     -- "typescript-language-server",
     -- "deno",
     -- "svelte-language-server",
+    -- "vue-language-server",
     -- "tailwindcss-language-server",
     -- "emmet-language-server",
 
@@ -197,6 +198,9 @@ M.mason = {
 
     -- Java
     -- "jdtls",
+
+    -- Yaml
+    -- "yaml-language-server",
 
     -- Python
     "pyright",
