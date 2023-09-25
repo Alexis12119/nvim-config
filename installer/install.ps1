@@ -23,7 +23,8 @@ function Install-NvChadConfig
       Remove-Item $NvChadConfig -Recurse -Force
       Write-Output "Cloning the new configuration from $NvChadRepo..."
       git clone $NvChadRepo $NvChadConfig
-      git clone $ConfigRepo $config
+      Write-Output "Cloning the new configuration from $ConfigRepo to $NvChadConfig\lua\custom..."
+      git clone $ConfigRepo "$NvChadConfig\lua\custom"
     } else
     {
       # If the user cancels, show a message
@@ -34,7 +35,8 @@ function Install-NvChadConfig
     # If a Neovim configuration doesn't exist, clone the configuration
     Write-Output "Cloning the Neovim configuration from $ConfigRepo..."
     git clone $NvChadRepo $NvChadConfig
-    git clone $ConfigRepo $config
+    Write-Output "Cloning the new configuration from $ConfigRepo to $NvChadConfig\lua\custom..."
+    git clone $ConfigRepo "$NvChadConfig\lua\custom"
   }
 }
 
