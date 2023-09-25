@@ -45,6 +45,12 @@ M.ui = {
         return sep_l_hlgroup .. sep_l .. iconHl_group .. icon .. " " .. txt_hl_group .. " " .. txt .. sep_r
       end
 
+      modules[6] = (function()
+        if require("noice").api.status.mode.get() == nil then
+          return " "
+        end
+        return require("noice").api.status.mode.get() .. " "
+      end)()
       modules[7] = (function()
         if require("noice").api.status.command.get() == nil then
           return " "

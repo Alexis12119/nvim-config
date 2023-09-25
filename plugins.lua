@@ -356,11 +356,6 @@ local plugins = {
     dependencies = {
       { "MunifTanjim/nui.nvim" },
       { "rcarriga/nvim-notify" },
-      -- Enhance Macros
-      {
-        "chrisgrieser/nvim-recorder",
-        opts = {},
-      },
     },
   },
 }
