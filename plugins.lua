@@ -348,6 +348,21 @@ local plugins = {
     "sindrets/diffview.nvim",
     event = "VeryLazy",
   },
+
+  {
+    "folke/noice.nvim",
+    lazy = false,
+    enabled = false,
+    opts = overrides.noice,
+    dependencies = {
+      { "MunifTanjim/nui.nvim" },
+      { "rcarriga/nvim-notify" },
+      {
+        "chrisgrieser/nvim-recorder",
+        opts = {},
+      },
+    },
+  },
 }
 
 return plugins
