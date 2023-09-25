@@ -8,6 +8,20 @@ function _G.format_code()
   require("conform").format { async = true, lsp_fallback = true, quiet = true }
 end
 
+function ClickUpdate()
+  vim.cmd "NvChadUpdate"
+end
+
+function ClickGit()
+  local Terminal = require("toggleterm.terminal").Terminal
+  local lazygit = Terminal:new { cmd = "lazygit", hidden = true }
+  lazygit:toggle()
+end
+
+function ClickSplit()
+  vim.cmd "sp"
+end
+
 command("Format", function()
   format_code()
   vim.notify("Format Done", vim.log.levels.INFO, { title = "Format" })

@@ -158,9 +158,7 @@ M.Git = {
   n = {
     ["<leader>gg"] = {
       function()
-        local Terminal = require("toggleterm.terminal").Terminal
-        local lazygit = Terminal:new { cmd = "lazygit", hidden = true }
-        lazygit:toggle()
+        ClickGit()
       end,
       "Lazygit",
       opts = { silent = true },
