@@ -34,11 +34,11 @@ local options = {
   sidescrolloff = 8, -- minimal number of screen columns
   lazyredraw = false, -- Won't be redrawn while executing macros, register and other commands.
   termguicolors = true, -- Enables 24-bit RGB color in the TUI
-  -- foldenable = false,
+  fillchars = { eob = " ", fold = " ", foldopen = "", foldsep = " ", foldclose = "", lastline = " " }, -- make EndOfBuffer invisible
+  -- foldenable = true,
   -- foldlevel = 99,
   -- foldlevelstart = 99,
   -- foldmethod = "indent",
-  -- fillchars = { eob = " ", fold = " ", foldopen = "", foldsep = " ", foldclose = "", lastline = " " }, -- make EndOfBuffer invisible
   -- foldcolumn = "1",
   ruler = false,
   -- shell = vim.fn.executable "pwsh" and "pwsh" or "powershell",
