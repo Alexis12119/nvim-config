@@ -41,6 +41,7 @@ function _G.run_code()
     },
     c = {
       default = "gcc % -o $fileBase && $fileBase",
+      debug = "gcc -g % -o $fileBase && $fileBase",
     },
     cs = {
       default = "dotnet run",
