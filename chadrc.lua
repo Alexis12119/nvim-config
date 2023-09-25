@@ -46,15 +46,12 @@ M.ui = {
       end
 
       modules[7] = (function()
-        return ""
-      end)()
-      modules[11] = (function()
-        return gen_block("", "%L", "%#St_Pos_sep#", "%#St_Pos_bg#", "%#St_Pos_txt#")
+        if require("noice").api.status.command.get() == nil then
+          return " "
+        end
+        return require("noice").api.status.command.get() .. " "
       end)()
       modules[9] = (function()
-        return ""
-      end)()
-      modules[8] = (function()
         local clients = {}
         local bufnr = vim.api.nvim_get_current_buf()
 
@@ -80,6 +77,9 @@ M.ui = {
             and gen_block("", table.concat(clients, ", "), "%#St_lsp_sep#", "%#St_lsp_bg#", "%#St_lsp_txt#")
           ) or "  LSP "
         end
+      end)()
+      modules[11] = (function()
+        return gen_block("", "%L", "%#St_Pos_sep#", "%#St_Pos_bg#", "%#St_Pos_txt#")
       end)()
     end,
   },
