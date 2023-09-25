@@ -1,24 +1,15 @@
-# Experimental
-if ($IsWindows)
+# Function to install required packages using Scoop
+function Install-ScoopPackages
 {
-  $packages = @(
-    "python",
-    "lazygit",
-    "fd",
-    "bat",
-    "make",
-    "ripgrep",
-    "neovim",
-    "unzip",
-    "mingw-nuwen",
-    "nodejs"
+  param (
+    [string[]]$Packages
   )
 
   # Check if Scoop is already installed
   if (Get-Command -Name 'scoop' -ErrorAction SilentlyContinue)
   {
     # If Scoop is already installed, display a message and add the main and extras buckets
-    Write-Host "Scoop is already installed." -f White
+    Write-Host "Scoop is already installed." -ForegroundColor White
     scoop bucket add main
     scoop bucket add extras
   } else
@@ -34,8 +25,28 @@ if ($IsWindows)
 
   # Display a message and install the required packages
   Write-Host "Installing required packages..."
-  foreach ($package in $packages)
+  foreach ($package in $Packages)
   {
     scoop install $package
   }
+}
+
+# List of packages to install
+$packages = @(
+  "python",
+  "lazygit",
+  "fd",
+  "bat",
+  "make",
+  "ripgrep",
+  "neovim",
+  "unzip",
+  "mingw-nuwen",
+  "nodejs"
+)
+
+# Main script
+if ($IsWindows)
+{
+  Install-ScoopPackages -Packages $packages
 }

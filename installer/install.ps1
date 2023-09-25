@@ -1,32 +1,29 @@
-# Experimental
-if ($IsWindows)
+# Function to install Neovim configuration
+function Install-NvChadConfig
 {
-  $NvChad_repo = "https://github.com/NvChad/NvChad.git"
-  $NvChad_config = $env:LOCALAPPDATA + "\nvim"
-
-  # Set the location of Neovim configuration
-  $config = $env:LOCALAPPDATA + "\nvim\lua\custom"
-  
-  # Set the repository for Neovim configuration
-  $repo = "https://github.com/Alexis12119/nvim-config.git"
+  param (
+    [string]$NvChadRepo,
+    [string]$NvChadConfig,
+    [string]$ConfigRepo
+  )
 
   # Check if a Neovim configuration already exists
-  if (Test-Path -Path $config)
+  if (Test-Path -Path $NvChadConfig)
   {
     # If a Neovim configuration already exists, show a message
-    Write-Output "A Neovim configuration already exists at $config."
+    Write-Output "A Neovim configuration already exists at $NvChadConfig."
 
     # Ask the user to confirm the removal of the existing configuration
-    $confirm = Read-Host "Do you want to remove the existing configuration and install the new configuration from $repo? [Y/N]"
+    $confirm = Read-Host "Do you want to remove the existing configuration and install the new configuration from $ConfigRepo? [Y/N]"
 
     # If the user confirms, remove the existing configuration and clone the new one
     if ($confirm -eq "Y")
     {
       Write-Output "Removing the existing configuration..."
-      Remove-Item $NvChad_config -Recurse -Force
-      Write-Output "Cloning the new configuration from $repo..."
-      git clone $NvChad_repo $NvChad_config
-      git clone $repo $config
+      Remove-Item $NvChadConfig -Recurse -Force
+      Write-Output "Cloning the new configuration from $NvChadRepo..."
+      git clone $NvChadRepo $NvChadConfig
+      git clone $ConfigRepo $config
     } else
     {
       # If the user cancels, show a message
@@ -35,8 +32,18 @@ if ($IsWindows)
   } else
   {
     # If a Neovim configuration doesn't exist, clone the configuration
-    Write-Output "Cloning the Neovim configuration from $repo..."
-    git clone $NvChad_repo $NvChad_config
-    git clone $repo $config
+    Write-Output "Cloning the Neovim configuration from $ConfigRepo..."
+    git clone $NvChadRepo $NvChadConfig
+    git clone $ConfigRepo $config
   }
+}
+
+# Main script
+if ($IsWindows)
+{
+  $NvChadRepo = "https://github.com/NvChad/NvChad.git"
+  $NvChadConfig = "$env:LOCALAPPDATA\nvim"
+  $ConfigRepo = "https://github.com/Alexis12119/nvim-config.git"
+
+  Install-NvChadConfig -NvChadRepo $NvChadRepo -NvChadConfig $NvChadConfig -ConfigRepo $ConfigRepo
 }
