@@ -45,17 +45,18 @@ M.ui = {
         return sep_l_hlgroup .. sep_l .. iconHl_group .. icon .. " " .. txt_hl_group .. " " .. txt .. sep_r
       end
 
+      local noice_ok, noice = pcall(require, "noice")
       modules[6] = (function()
-        if require("noice").api.status.mode.get() == nil then
+        if not noice_ok then
           return " "
         end
-        return require("noice").api.status.mode.get() .. " "
+        return noice.api.status.mode.get() .. " "
       end)()
       modules[7] = (function()
-        if require("noice").api.status.command.get() == nil then
+        if not noice_ok then
           return " "
         end
-        return require("noice").api.status.command.get() .. " "
+        return noice.api.status.command.get() .. " "
       end)()
       modules[9] = (function()
         local clients = {}
@@ -67,8 +68,8 @@ M.ui = {
           table.insert(clients, client.name)
         end
 
-        local status_ok, conform = pcall(require, "conform")
-        if status_ok then
+        local conform_ok, conform = pcall(require, "conform")
+        if conform_ok then
           local formatters = conform.list_formatters(0)
           for _, formatter in pairs(formatters) do
             table.insert(clients, formatter.name)
@@ -95,11 +96,11 @@ M.ui = {
     show_numbers = false,
     enabled = true,
     lazyload = true,
-    overriden_modules = function(modules)
-      modules[3] = (function()
-        return "%#TblineFill#%@v:lua.ClickUpdate@  %#TblineFill#%@v:lua.ClickGit@  %#TblineFill#%@v:lua.run_code@  %#TblineFill#%@v:lua.ClickSplit@ "
-      end)()
-    end,
+    -- overriden_modules = function(modules)
+    --   modules[3] = (function()
+    --     return "%#TblineFill#%@v:lua.ClickUpdate@  %#TblineFill#%@v:lua.ClickGit@  %#TblineFill#%@v:lua.run_code@  %#TblineFill#%@v:lua.ClickSplit@ "
+    --   end)()
+    -- end,
   },
 
   nvdash = {

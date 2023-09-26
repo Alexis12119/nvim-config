@@ -352,6 +352,7 @@ local plugins = {
   {
     "folke/noice.nvim",
     lazy = false,
+    enabled = false,
     opts = overrides.noice,
     dependencies = {
       { "MunifTanjim/nui.nvim" },
