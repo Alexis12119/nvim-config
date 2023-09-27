@@ -53,6 +53,9 @@ local plugins = {
   -- Native LSP
   {
     "neovim/nvim-lspconfig",
+    init = function()
+      require("core.utils").load_mappings "LSP"
+    end,
     event = "VeryLazy",
     dependencies = {
       -- formatting
@@ -107,6 +110,9 @@ local plugins = {
   -- File Explorer
   {
     "nvim-tree/nvim-tree.lua",
+    init = function()
+      require("core.utils").load_mappings "NvimTree"
+    end,
     commit = "0a54dcb76b02f3a4e2da370c7a3f6f2b7b43ef01",
     cmd = {
       "NvimTreeOpen",
@@ -168,30 +174,29 @@ local plugins = {
     },
   },
 
-  {
-    "Exafunction/codeium.vim",
-    enabled = false,
-    event = "VeryLazy",
-    config = function()
-      -- Change '<C-g>' here to any keycode you like.
-      vim.keymap.set("i", "<C-g>", function()
-        return vim.fn["codeium#Accept"]()
-      end, { expr = true })
-      vim.keymap.set("i", "<c-;>", function()
-        return vim.fn["codeium#CycleCompletions"](1)
-      end, { expr = true })
-      vim.keymap.set("i", "<c-,>", function()
-        return vim.fn["codeium#CycleCompletions"](-1)
-      end, { expr = true })
-      vim.keymap.set("i", "<c-x>", function()
-        return vim.fn["codeium#Clear"]()
-      end, { expr = true })
+  -- {
+  --   "Exafunction/codeium.vim",
+  --   event = "VeryLazy",
+  --   config = function()
+  --     -- Change '<C-g>' here to any keycode you like.
+  --     vim.keymap.set("i", "<C-g>", function()
+  --       return vim.fn["codeium#Accept"]()
+  --     end, { expr = true })
+  --     vim.keymap.set("i", "<c-;>", function()
+  --       return vim.fn["codeium#CycleCompletions"](1)
+  --     end, { expr = true })
+  --     vim.keymap.set("i", "<c-,>", function()
+  --       return vim.fn["codeium#CycleCompletions"](-1)
+  --     end, { expr = true })
+  --     vim.keymap.set("i", "<c-x>", function()
+  --       return vim.fn["codeium#Clear"]()
+  --     end, { expr = true })
 
-      vim.g.codeium_filetypes = {
-        ["TelescopePrompt"] = false,
-      }
-    end,
-  },
+  --     vim.g.codeium_filetypes = {
+  --       ["TelescopePrompt"] = false,
+  --     }
+  --   end,
+  -- },
 
   -- Schemas
   { "b0o/schemastore.nvim" },
@@ -227,6 +232,9 @@ local plugins = {
   -- Terminal Integration
   {
     "akinsho/toggleterm.nvim",
+    init = function()
+      require("core.utils").load_mappings "Toggleterm"
+    end,
     cmd = {
       "ToggleTerm",
       "ToggleTermSendCurrentLine",
@@ -278,6 +286,9 @@ local plugins = {
   -- Fuzzy Finder
   {
     "nvim-telescope/telescope.nvim",
+    init = function()
+      require("core.utils").load_mappings "Telescope"
+    end,
     opts = overrides.telescope,
     dependencies = {
       {
@@ -287,15 +298,26 @@ local plugins = {
     },
   },
 
-  -- For java
+  -- For Java
   {
     "mfussenegger/nvim-jdtls",
     ft = "java",
   },
 
+  -- Git Signs
+  {
+    "lewis6991/gitsigns.nvim",
+    init = function()
+      require("core.utils").load_mappings "Git"
+    end,
+  },
+
   -- Debugging
   {
     "rcarriga/nvim-dap-ui",
+    init = function()
+      require("core.utils").load_mappings "Dap"
+    end,
     dependencies = {
       {
         "mfussenegger/nvim-dap",
@@ -337,6 +359,9 @@ local plugins = {
   -- Preview Markdown
   {
     "iamcco/markdown-preview.nvim",
+    init = function()
+      require("core.utils").load_mappings "MarkdownPreview"
+    end,
     build = function()
       vim.fn["mkdp#util#install"]()
     end,
@@ -349,16 +374,15 @@ local plugins = {
     event = "VeryLazy",
   },
 
-  {
-    "folke/noice.nvim",
-    lazy = false,
-    enabled = false,
-    opts = overrides.noice,
-    dependencies = {
-      { "MunifTanjim/nui.nvim" },
-      { "rcarriga/nvim-notify" },
-    },
-  },
+  -- {
+  --   "folke/noice.nvim",
+  --   lazy = false,
+  --   opts = overrides.noice,
+  --   dependencies = {
+  --     { "MunifTanjim/nui.nvim" },
+  --     { "rcarriga/nvim-notify" },
+  --   },
+  -- },
 }
 
 return plugins

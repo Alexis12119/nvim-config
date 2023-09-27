@@ -4,7 +4,32 @@ local fn = vim.fn
 local cwd = vim.fn.stdpath "config" .. "/"
 local config_dir = { cwd }
 
-M.DAP = {
+M.MarkdownPreview = {
+  plugin = true,
+  n = {
+    ["<leader>m"] = {
+      function()
+        if vim.bo.filetype == "markdown" then
+          vim.cmd "MarkdownPreviewToggle"
+        else
+          vim.notify("Only available in markdown", vim.log.levels.WARN, { title = "Markdown-Preview" })
+        end
+      end,
+      "Markdown Preview",
+      opts = { silent = true },
+    },
+  },
+}
+
+M.NvimTree = {
+  plugin = true,
+  n = {
+    ["<leader>e"] = { ":NvimTreeToggle<cr>", "Explorer", opts = { silent = true } },
+  },
+}
+
+M.Dap = {
+  plugin = true,
   n = {
     ["<leader>dc"] = { ":lua require'dap'.continue()<cr>", "Continue", opts = { silent = true } },
     ["<leader>do"] = { ":lua require'dap'.step_over()<cr>", "Step Over", opts = { silent = true } },
@@ -81,7 +106,9 @@ M.Neovim = {
     },
   },
 }
+
 M.Telescope = {
+  plugin = true,
   n = {
     ["<leader>fa"] = { ":Telescope autocommands<cr>", "Autocommmands", opts = { silent = true } },
     ["<leader>ff"] = { ":Telescope find_files<cr>", "Files", opts = { silent = true } },
@@ -107,6 +134,7 @@ M.Telescope = {
 }
 
 M.Toggleterm = {
+  plugin = true,
   n = {
     ["<leader>tf"] = { ":ToggleTerm direction=float<cr>", "Float Terminal", opts = { silent = true } },
     ["<leader>th"] = { ":ToggleTerm size=10 direction=horizontal<cr>", "Horizontal Terminal", opts = { silent = true } },
@@ -115,6 +143,7 @@ M.Toggleterm = {
 }
 
 M.LSP = {
+  plugin = true,
   n = {
     ["<leader>lf"] = { ":Format<cr>", "Format", opts = { silent = true } },
     ["<leader>la"] = { ":Lspsaga code_action<cr>", "Code Action", opts = { silent = true } },
@@ -155,6 +184,7 @@ if vim.lsp.inlay_hint then
 end
 
 M.Git = {
+  plugin = true,
   n = {
     ["<leader>gg"] = {
       function()
@@ -226,7 +256,6 @@ M.General = {
     -- ["<leader>a"] = { ":Nvdash<cr>", "Nvdash", opts = { silent = true } },
     ["<leader>r"] = { ":%d+<cr>", "Remove All Text", opts = { silent = true } },
     ["<leader>y"] = { ":%y+<cr>", "Yank All Text", opts = { silent = true } },
-    ["<leader>e"] = { ":NvimTreeToggle<cr>", "Explorer", opts = { silent = true } },
     ["<leader>q"] = { ":qa!<cr>", "Quit", opts = { silent = true } },
     ["<leader>c"] = { ":Bdelete!<cr>", "Close Buffer", opts = { silent = true } },
     ["<leader>ol"] = { ":set nu!<cr>", "Toggle line number", opts = { silent = true } },
@@ -237,18 +266,6 @@ M.General = {
       end,
       "Toggle Transparency",
     },
-    ["<leader>m"] = {
-      function()
-        if vim.bo.filetype == "markdown" then
-          vim.cmd "MarkdownPreviewToggle"
-        else
-          vim.notify("Only available in markdown", vim.log.levels.WARN, { title = "Markdown-Preview" })
-        end
-      end,
-      "Markdown Preview",
-      opts = { silent = true },
-    },
-
     ["<F5>"] = {
       function()
         run_code()
