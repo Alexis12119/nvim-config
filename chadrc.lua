@@ -98,7 +98,7 @@ M.ui = {
     lazyload = true,
     -- overriden_modules = function(modules)
     --   modules[3] = (function()
-    --     return "%#TblineFill#%@v:lua.ClickUpdate@  %#TblineFill#%@v:lua.ClickGit@  %#TblineFill#%@v:lua.run_code@  %#TblineFill#%@v:lua.ClickSplit@ "
+    --     return "%#TblineFill#%@v:lua.ClickUpdate@  %#TblineFill#%@v:lua.ClickGit@  %#TblineFill#%@v:lua.RunCode@  %#TblineFill#%@v:lua.ClickSplit@ "
     --   end)()
     -- end,
   },

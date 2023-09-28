@@ -268,7 +268,7 @@ M.General = {
     },
     ["<F5>"] = {
       function()
-        run_code()
+        RunCode()
       end,
       "Run Code",
       opts = { silent = true },

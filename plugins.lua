@@ -58,11 +58,12 @@ local plugins = {
     end,
     event = "VeryLazy",
     dependencies = {
-      -- formatting
+      -- Formatting
       {
         "stevearc/conform.nvim",
         opts = overrides.conform,
       },
+      -- Installer
       {
         "williamboman/mason.nvim",
         cmd = {
@@ -78,10 +79,12 @@ local plugins = {
       {
         "williamboman/mason-lspconfig.nvim",
       },
+      -- Improve Other LSP Functionalities
       {
         "nvimdev/lspsaga.nvim",
         opts = overrides.lspsaga,
       },
+      -- For Plugin Development
       {
         "folke/neodev.nvim",
         opts = overrides.neodev,
@@ -150,6 +153,7 @@ local plugins = {
       },
     },
   },
+
   -- Syntax Highlighting
   {
     "nvim-treesitter/nvim-treesitter",
@@ -174,6 +178,7 @@ local plugins = {
     },
   },
 
+  -- AI Autocomplete
   -- {
   --   "Exafunction/codeium.vim",
   --   event = "VeryLazy",
@@ -387,6 +392,7 @@ local plugins = {
     event = "VeryLazy",
   },
 
+  -- UI for messages, cmdline, and popup
   -- {
   --   "folke/noice.nvim",
   --   lazy = false,

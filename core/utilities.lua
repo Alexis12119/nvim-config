@@ -4,7 +4,7 @@
 
 local command = vim.api.nvim_create_user_command
 
-function _G.format_code()
+function FormatCode()
   require("conform").format { async = true, lsp_fallback = true, quiet = true }
 end
 
@@ -23,7 +23,7 @@ function ClickSplit()
 end
 
 command("Format", function()
-  format_code()
+  FormatCode()
   vim.notify("Format Done", vim.log.levels.INFO, { title = "Format" })
 end, { nargs = "*", desc = "Code Format" })
 
@@ -45,7 +45,7 @@ local function substitute(cmd)
   return cmd
 end
 
-function _G.run_code()
+function RunCode()
   local file_extension = vim.fn.expand "%:e"
   local selected_cmd = ""
   local term_cmd = "bot 10 new | term "
