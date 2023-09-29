@@ -157,7 +157,6 @@ local plugins = {
   -- Syntax Highlighting
   {
     "nvim-treesitter/nvim-treesitter",
-    commit = "b7f2dd5dfbd24a1239844e15637b637b990df164",
     cmd = {
       "TSInstall",
       "TSUninstall",
