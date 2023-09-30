@@ -15,7 +15,7 @@ M.override = {
   Substitute = { fg = "black", bg = "green" },
   NvDashAscii = { bg = "NONE", fg = "blue" },
   NvDashButtons = { bg = "NONE" },
-  FoldColumn = { link = "Normal" },
+  FoldColumn = { bg = "black" },
 }
 
 ---@type HLTable
