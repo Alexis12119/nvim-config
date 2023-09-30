@@ -4,7 +4,7 @@
 
 [![](https://img.shields.io/badge/Neovim-0.9+-blueviolet.svg?style=for-the-badge&color=000F10&logo=Neovim&logoColor=green&labelColor=302D41)](https://github.com/neovim/neovim)
 
-![Preview](https://github.com/Alexis12119/nvim-config/assets/74944536/213b0127-5794-4fca-9f74-d57eb0acc740)
+![Preview](https://github.com/Alexis12119/nvim-config/assets/74944536/6eb62857-5f7b-40a6-83aa-e3dbf919fda0)
 
 </div>
 
@@ -51,7 +51,12 @@ Before you dive in, ensure you have the following requirements installed:
   - [Other Fonts](https://www.nerdfonts.com/font-downloads)
 
 - **Neovim:**
+
   - [Neovim 0.9+](https://github.com/neovim/neovim/releases)
+
+- **nvim-treesitter**
+
+  - [mingw-nuwen](https://nuwen.net/mingw.html)
 
 **NOTE:** I'm using [scoop](https://scoop.sh/#/) to install them.
 

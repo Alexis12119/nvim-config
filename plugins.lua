@@ -257,7 +257,7 @@ local plugins = {
     cmd = { "Bdelete", "Bwipeout" },
   },
 
-  -- Highlight, list and search todo comments in your projects
+  -- Highlight, List and Search Todo comments in your projects
   {
     "folke/todo-comments.nvim",
     event = "VeryLazy",
