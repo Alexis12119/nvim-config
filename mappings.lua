@@ -170,12 +170,8 @@ M.LSP = {
     ["<leader>lS"] = { ":Telescope lsp_workspace_symbols<cr>", "Workspace Symbols", opts = { silent = true } },
   },
   v = {
-    ["<leader>la"] = {
-      function()
-        vim.lsp.buf.code_action()
-      end,
-      "Code Action",
-    },
+    ["<leader>lf"] = { ":Format<cr>", "Format", opts = { silent = true } },
+    ["<leader>la"] = { ":Lspsaga code_action<cr>", "Code Action", opts = { silent = true } },
   },
 }
 
