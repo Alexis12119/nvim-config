@@ -35,11 +35,6 @@ local options = {
   lazyredraw = false, -- Won't be redrawn while executing macros, register and other commands.
   termguicolors = true, -- Enables 24-bit RGB color in the TUI
   fillchars = { eob = " ", fold = " ", foldopen = "", foldsep = " ", foldclose = "", lastline = " " }, -- make EndOfBuffer invisible
-  -- foldenable = true,
-  -- foldlevel = 99,
-  -- foldlevelstart = 99,
-  -- foldmethod = "indent",
-  -- foldcolumn = "1",
   ruler = false,
   -- shell = vim.fn.executable "pwsh" and "pwsh" or "powershell",
   -- shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;",
