@@ -21,7 +21,7 @@ M.conform = {
     lsp_fallback = true,
   },
   formatters_by_ft = {
-  lua = { "stylua" },
+    lua = { "stylua" },
     python = { "autopep8" },
     cpp = { "clang_format" },
     c = { "clang_format" },
