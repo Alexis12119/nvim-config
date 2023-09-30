@@ -170,7 +170,6 @@ M.LSP = {
     ["<leader>lS"] = { ":Telescope lsp_workspace_symbols<cr>", "Workspace Symbols", opts = { silent = true } },
   },
   v = {
-    ["<leader>lf"] = { ":Format<cr>", "Format", opts = { silent = true } },
     ["<leader>la"] = { ":Lspsaga code_action<cr>", "Code Action", opts = { silent = true } },
   },
 }
