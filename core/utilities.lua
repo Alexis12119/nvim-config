@@ -5,7 +5,11 @@
 local command = vim.api.nvim_create_user_command
 
 function FormatCode()
-  require("conform").format { async = true, lsp_fallback = true, quiet = true }
+  local status_ok, conform = pcall(require, "conform")
+  if not status_ok then
+    return vim.notify "conform.nvim isn't installed!!!"
+  end
+  conform.format { async = true, lsp_fallback = true, quiet = true }
 end
 
 function ClickUpdate()
@@ -13,6 +17,11 @@ function ClickUpdate()
 end
 
 function ClickGit()
+  local status_ok, _ = pcall(require, "toggleterm")
+  if not status_ok then
+    return vim.notify "toggleterm.nvim isn't installed!!!"
+  end
+
   local Terminal = require("toggleterm.terminal").Terminal
   local lazygit = Terminal:new { cmd = "lazygit", hidden = true }
   lazygit:toggle()
