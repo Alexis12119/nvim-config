@@ -47,16 +47,18 @@ M.ui = {
 
       local noice_ok, noice = pcall(require, "noice")
       modules[6] = (function()
-        if not noice_ok then
+        if noice_ok and noice.api.status.mode.has() then
+          return noice.api.status.mode.get() .. " "
+        else
           return " "
         end
-        return noice.api.status.mode.get() .. " "
       end)()
       modules[7] = (function()
-        if not noice_ok then
+        if noice_ok and noice.api.status.command.has() then
+          return noice.api.status.command.get() .. " "
+        else
           return " "
         end
-        return noice.api.status.command.get() .. " "
       end)()
       modules[9] = (function()
         local clients = {}
