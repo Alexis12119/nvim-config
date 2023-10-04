@@ -181,7 +181,7 @@ M.mason = {
   ensure_installed = {
     -- Lua
     "lua-language-server",
-    "vimls",
+    "vim-language-server",
     "stylua",
 
     -- Web Development
