@@ -1,0 +1,24 @@
+snippet ctem Cmake Template
+	cmake_minimum_required(VERSION ${1:version})
+	project(${2:project name} CXX)
+
+	# Retrieve the value of the CPLUS_INCLUDE_PATH environment variable
+	if(DEFINED ENV{CPLUS_INCLUDE_PATH})
+			set(CPLUS_INCLUDE_PATH $ENV{CPLUS_INCLUDE_PATH})
+	endif()
+
+	# Add the paths from CPLUS_INCLUDE_PATH to include directories
+	include_directories(
+			include
+			${CPLUS_INCLUDE_PATH}
+			# Add any other include paths specific to your project here
+	)
+
+	# Add your source files
+	add_executable(${3:executable} ${4:filename})
+
+	# If you have additional libraries to link, use target_link_libraries
+	# target_link_libraries(your_executable_name some_library)
+
+	# Optionally, generate a compile_commands.json file
+	set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
