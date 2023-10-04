@@ -54,10 +54,6 @@ Before you dive in, ensure you have the following requirements installed:
 
   - [Neovim 0.9+](https://github.com/neovim/neovim/releases)
 
-- **nvim-treesitter**
-
-  - [mingw-nuwen](https://nuwen.net/mingw.html)
-
 **NOTE:** I'm using [scoop](https://scoop.sh/#/) to install them.
 
 ## 💻 Installation
