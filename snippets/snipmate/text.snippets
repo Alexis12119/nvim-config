@@ -17,8 +17,8 @@ snippet ctem Cmake Template
 	# Add your source files
 	add_executable(${3:executable} ${4:filename})
 
-	# If you have additional libraries to link, use target_link_libraries
-	# target_link_libraries(your_executable_name some_library)
+	# Specify the library directories
+	link_directories(lib)
 
 	# Optionally, generate a compile_commands.json file
 	set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
