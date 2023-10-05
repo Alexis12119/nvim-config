@@ -43,6 +43,7 @@ $packages = @(
   "unzip",
   "mingw-nuwen",
   "nodejs"
+  "tar"
 )
 
 # Main script

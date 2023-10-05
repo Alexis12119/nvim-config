@@ -8,6 +8,12 @@ local plugins = {
     enabled = false,
   },
 
+  {
+    "NvChad/ui",
+    branch = "v2.0",
+    commit = "4c00182f728ad565b1140ca95b802bd24860965f",
+  },
+
   -- Peek Lines
   {
     "nacro90/numb.nvim",

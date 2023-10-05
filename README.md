@@ -54,6 +54,12 @@ Before you dive in, ensure you have the following requirements installed:
 
   - [Neovim 0.9+](https://github.com/neovim/neovim/releases)
 
+- **Tree-sitter(Windows):**
+
+  - [tar](https://www.gnu.org/software/tar/)
+
+Add the tar path to the `System Variables Path`. This is necessary because the `default tar` may encounter issues.
+
 **NOTE:** I'm using [scoop](https://scoop.sh/#/) to install them.
 
 ## 💻 Installation
