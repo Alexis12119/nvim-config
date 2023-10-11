@@ -4,7 +4,6 @@
 
 [![](https://img.shields.io/badge/Neovim-0.9+-blueviolet.svg?style=for-the-badge&color=000F10&logo=Neovim&logoColor=green&labelColor=302D41)](https://github.com/neovim/neovim)
 
-
 ![Preview](https://github.com/Alexis12119/nvim-config/assets/74944536/898642af-1ca8-467c-9ffc-52c790d71b39)
 
 </div>
@@ -54,14 +53,6 @@ Before you dive in, ensure you have the following requirements installed:
 - **Neovim:**
 
   - [Neovim 0.9+](https://github.com/neovim/neovim/releases)
-
-- **Tree-sitter(Windows):**
-
-  - [tar](https://www.gnu.org/software/tar/)
-
-Add the tar path to the `System Variables Path`. This is necessary because the `default tar` may encounter issues.
-
-**NOTE:** I'm using [scoop](https://scoop.sh/#/) to install them.
 
 ## 💻 Installation
 
