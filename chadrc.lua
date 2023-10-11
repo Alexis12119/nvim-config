@@ -4,8 +4,8 @@ local M = {}
 local highlights = require "custom.highlights"
 
 M.ui = {
-  theme = "kanagawa",
-  theme_toggle = { "kanagawa", "one_light" },
+  theme = "catppuccin",
+  theme_toggle = { "catppuccin", "one_light" },
   lsp_semantic_tokens = false, -- needs nvim v0.9, just adds highlight groups for lsp semantic tokens
   hl_override = highlights.override,
   hl_add = highlights.add,
@@ -131,6 +131,7 @@ M.ui = {
 
   cheatsheet = { theme = "grid" }, -- simple/grid
 }
+
 M.lazy_nvim = require "custom.configs.lazy" -- config for lazy.nvim startup options
 
 M.plugins = "custom.plugins"

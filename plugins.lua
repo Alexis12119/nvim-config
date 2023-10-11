@@ -8,11 +8,6 @@ local plugins = {
     enabled = false,
   },
 
-  {
-    "NvChad/ui",
-    branch = "v2.0",
-  },
-
   -- Peek Lines
   {
     "nacro90/numb.nvim",
@@ -132,7 +127,6 @@ local plugins = {
     init = function()
       require("core.utils").load_mappings "NvimTree"
     end,
-    commit = "0a54dcb76b02f3a4e2da370c7a3f6f2b7b43ef01",
     cmd = {
       "NvimTreeOpen",
       "NvimTreeToggle",
