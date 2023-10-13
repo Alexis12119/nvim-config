@@ -65,6 +65,7 @@ local plugins = {
       -- Linting
       {
         "mfussenegger/nvim-lint",
+        enabled = false,
         config = overrides.linters,
       },
       -- Start/Stop LSP when focus is lost/gained
