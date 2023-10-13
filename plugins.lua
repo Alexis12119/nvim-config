@@ -60,7 +60,12 @@ local plugins = {
       -- Formatting
       {
         "stevearc/conform.nvim",
-        opts = overrides.conform,
+        opts = overrides.format,
+      },
+      -- Linting
+      {
+        "mfussenegger/nvim-lint",
+        opts = overrides.lint,
       },
       -- Start/Stop LSP when focus is lost/gained
       -- {
