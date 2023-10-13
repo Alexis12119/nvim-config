@@ -19,18 +19,17 @@ local plugins = {
   {
     "hrsh7th/nvim-cmp",
     event = { "InsertEnter", "CmdlineEnter" },
-    opts = function()
-      local cmp = require "cmp"
-      cmp.setup.cmdline(":", {
-        mapping = cmp.mapping.preset.cmdline(),
-        sources = {
-          { name = "cmdline" },
-        },
-      })
+    config = function()
+      require "custom.configs.cmp"
     end,
     dependencies = {
       {
         "hrsh7th/cmp-cmdline",
+      },
+      -- AI Autocomplete
+      {
+        "Exafunction/codeium.nvim",
+        opts = {},
       },
       {
         "L3MON4D3/LuaSnip",
@@ -225,32 +224,6 @@ local plugins = {
       "JoosepAlviste/nvim-ts-context-commentstring",
       "nvim-treesitter/nvim-treesitter-textobjects",
     },
-  },
-
-  -- AI Autocomplete
-  {
-    "Exafunction/codeium.vim",
-    enabled = false,
-    event = "VeryLazy",
-    config = function()
-      -- Change '<C-g>' here to any keycode you like.
-      vim.keymap.set("i", "<C-g>", function()
-        return vim.fn["codeium#Accept"]()
-      end, { expr = true })
-      vim.keymap.set("i", "<c-;>", function()
-        return vim.fn["codeium#CycleCompletions"](1)
-      end, { expr = true })
-      vim.keymap.set("i", "<c-,>", function()
-        return vim.fn["codeium#CycleCompletions"](-1)
-      end, { expr = true })
-      vim.keymap.set("i", "<c-x>", function()
-        return vim.fn["codeium#Clear"]()
-      end, { expr = true })
-
-      vim.g.codeium_filetypes = {
-        ["TelescopePrompt"] = false,
-      }
-    end,
   },
 
   -- Schemas
