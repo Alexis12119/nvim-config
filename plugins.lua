@@ -63,16 +63,16 @@ local plugins = {
         opts = overrides.conform,
       },
       -- Start/Stop LSP when focus is lost/gained
-      {
-        "hinell/lsp-timeout.nvim",
-        config = function()
-          vim.g["lsp-timeout-config"] = {
-            stopTimeout = 0,
-            startTimeout = 1,
-            silent = true, -- true to suppress notifications
-          }
-        end,
-      },
+      -- {
+      --   "hinell/lsp-timeout.nvim",
+      --   config = function()
+      --     vim.g["lsp-timeout-config"] = {
+      --       stopTimeout = 0,
+      --       startTimeout = 1,
+      --       silent = true, -- true to suppress notifications
+      --     }
+      --   end,
+      -- },
       -- Installer
       {
         "williamboman/mason.nvim",
