@@ -6,12 +6,6 @@ function Install-NvChadConfig {
         [string]$ConfigRepo
     )
 
-    # Check if Git is available
-    if (!(Test-Path git)) {
-        Write-Host "Git is not installed. Please install Git and rerun the script."
-        return
-    }
-
     # Check if a Neovim configuration already exists
     if (Test-Path -Path $NvChadConfig) {
         Write-Host "A Neovim configuration already exists at $NvChadConfig."
