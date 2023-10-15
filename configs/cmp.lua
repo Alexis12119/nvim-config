@@ -109,6 +109,7 @@ local options = {
     { name = "luasnip" },
     { name = "buffer" },
     { name = "nvim_lua" },
+    { name = "crates" },
     { name = "path" },
   },
 }

@@ -24,6 +24,11 @@ local plugins = {
     end,
     dependencies = {
       {
+        "saecki/crates.nvim",
+        tag = "v0.4.0",
+        opts = {},
+      },
+      {
         "hrsh7th/cmp-cmdline",
       },
       -- AI Autocomplete
