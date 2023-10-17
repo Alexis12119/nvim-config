@@ -1,31 +1,18 @@
-# Function to install the configuration
-function Install-NvChadConfig {
+# Function to clone a Git repository with error handling
+function Clone-Repository {
     param (
-        [string]$NvChadRepo,
-        [string]$NvChadConfig,
-        [string]$ConfigRepo
+        [string]$RepoUrl,
+        [string]$TargetDir
     )
 
-    # Check if a Neovim configuration already exists
-    if (Test-Path -Path $NvChadConfig) {
-        Write-Host "A Neovim configuration already exists at $NvChadConfig."
-        $confirm = Read-Host "Do you want to replace it with the new configuration? [Y/N]"
-
-        if ($confirm -eq "Y" -or $confirm -eq "y") {
-            Write-Host "Removing the existing configuration..."
-            Remove-Item $NvChadConfig -Recurse -Force
-        } else {
-            Write-Host "Installation cancelled."
-            return
-        }
+    Write-Host "Cloning $RepoUrl to $TargetDir..."
+    try {
+        git clone $RepoUrl $TargetDir
+        Write-Host "Clone successful."
+    } catch {
+        Write-Host "Error: Could not clone $RepoUrl to $TargetDir."
+        exit 1
     }
-
-    # Clone the Git repositories
-    Write-Host "Cloning the Neovim configuration from $NvChadRepo..."
-    git clone $NvChadRepo $NvChadConfig
-    Write-Host "Cloning the new configuration from $ConfigRepo to $NvChadConfig\lua\custom..."
-    git clone $ConfigRepo "$NvChadConfig\lua\custom"
-    Write-Host "Installation complete. Your Neovim configuration is now set up."
 }
 
 # Main script
@@ -33,4 +20,32 @@ $NvChadRepo = "https://github.com/NvChad/NvChad.git"
 $NvChadConfig = "$env:LOCALAPPDATA\nvim"
 $ConfigRepo = "https://github.com/Alexis12119/nvim-config.git"
 
-Install-NvChadConfig -NvChadRepo $NvChadRepo -NvChadConfig $NvChadConfig -ConfigRepo $ConfigRepo
+# Check if a Neovim configuration already exists
+if (Test-Path -Path $NvChadConfig) {
+    Write-Host "A Neovim configuration already exists at $NvChadConfig."
+    $confirm = Read-Host "Do you want to replace it with the new configuration? [Y/N]"
+
+    if ($confirm -eq "Y" -or $confirm -eq "y") {
+        Write-Host "Removing the existing configuration..."
+        Remove-Item $NvChadConfig -Recurse -Force
+    } else {
+        Write-Host "Installation cancelled."
+        return
+    }
+}
+
+# Clone the Git repositories
+Clone-Repository -RepoUrl $NvChadRepo -TargetDir $NvChadConfig
+nvim
+
+Clone-Repository -RepoUrl $ConfigRepo -TargetDir "$NvChadConfig\custom"
+
+# Copy the files from $NvChadConfig\custom to $NvChadConfig\lua
+Copy-Item -Path "$NvChadConfig\custom" -Destination "$NvChadConfig\lua" -Recurse
+
+# Remove the "$NvChadConfig\custom" directory recursively
+Remove-Item -Path "$NvChadConfig\custom" -Recurse -Force
+
+nvim
+
+Write-Host "Installation complete. Your Neovim configuration is now set up."
