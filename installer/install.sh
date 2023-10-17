@@ -38,7 +38,6 @@ fi
 
 # Clone the Git repositories
 clone_repository "$nvchad_repo" "$config_dir"
-nvim
 clone_repository "$config_repo" "$config_dir/lua/custom"
-nvim
+
 echo "Installation complete. Your neovim configuration is now set up!"
