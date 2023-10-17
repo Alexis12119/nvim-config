@@ -34,7 +34,6 @@ local plugins = {
       -- AI Autocomplete
       {
         "Exafunction/codeium.nvim",
-        enabled = false,
         opts = {},
       },
       {

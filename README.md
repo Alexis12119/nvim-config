@@ -73,8 +73,6 @@ To get started, follow these steps:
       Invoke-WebRequest https://raw.githubusercontent.com/Alexis12119/nvim-config/main/installer/install.ps1 -UseBasicParsing | Invoke-Expression
       ```
 
-3.  Run `nvim` and wait for the plugins to be installed.
-
 ---
 
 ### CREDITS
