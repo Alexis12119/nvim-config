@@ -8,6 +8,30 @@
 
 </div>
 
+## 📄 Requirements
+
+Before you dive in, ensure you have the following requirements installed:
+
+- **Git:**
+
+  - [lazygit](https://github.com/jesseduffield/lazygit)
+
+- **Telescope:**
+
+  - [fd](https://github.com/sharkdp/fd)
+  - [bat](https://github.com/sharkdp/bat)
+  - [ripgrep](https://github.com/BurntSushi/ripgrep)
+  - [make](https://www.gnu.org/software/make/)
+
+- **Nerd Font (For Icons):**
+
+  - [JetBrainsMono](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/JetBrainsMono)
+  - [Other Fonts](https://www.nerdfonts.com/font-downloads)
+
+- **Neovim:**
+
+  - [Neovim 0.9+](https://github.com/neovim/neovim/releases)
+
 ## 💻 Installation
 
 Please follow these steps:
@@ -51,30 +75,6 @@ Please follow these steps:
 - **Git Integration**: Effortlessly manage Git repositories with [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) and [lazygit](https://github.com/jesseduffield/lazygit).
 - **Keymap Cheatsheet**: Quickly reference keymaps with [which-key.nvim](https://github.com/folke/which-key.nvim).
 - **Markdown Preview**: Preview your Markdown files with [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim).
-
-## 📄 Requirements
-
-Before you dive in, ensure you have the following requirements installed:
-
-- **Git:**
-
-  - [lazygit](https://github.com/jesseduffield/lazygit)
-
-- **Telescope:**
-
-  - [fd](https://github.com/sharkdp/fd)
-  - [bat](https://github.com/sharkdp/bat)
-  - [ripgrep](https://github.com/BurntSushi/ripgrep)
-  - [make](https://www.gnu.org/software/make/)
-
-- **Nerd Font (For Icons):**
-
-  - [JetBrainsMono](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/JetBrainsMono)
-  - [Other Fonts](https://www.nerdfonts.com/font-downloads)
-
-- **Neovim:**
-
-  - [Neovim 0.9+](https://github.com/neovim/neovim/releases)
 
 ## 🌟 Stargazers
 
