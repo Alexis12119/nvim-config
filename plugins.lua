@@ -1,5 +1,3 @@
-local overrides = require "custom.configs.overrides"
-
 ---@type NvPluginSpec[]
 local plugins = {
   -- Show Indentlines
@@ -46,7 +44,7 @@ local plugins = {
   -- Preview colors
   {
     "NvChad/nvim-colorizer.lua",
-    opts = overrides.colorizer,
+    opts = require "custom.configs.colorizer",
   },
 
   -- Utilities
@@ -65,13 +63,15 @@ local plugins = {
       -- Formatting
       {
         "stevearc/conform.nvim",
-        opts = overrides.formatters,
+        opts = require "custom.configs.conform",
       },
       -- Linting
       {
         "mfussenegger/nvim-lint",
         enabled = false,
-        config = overrides.linters,
+        config = function()
+          require "custom.configs.nvim-lint"
+        end,
       },
       -- Start/Stop LSP when focus is lost/gained
       -- {
@@ -95,7 +95,7 @@ local plugins = {
           "MasonUninstallAll",
           "MasonLog",
         },
-        opts = overrides.mason,
+        opts = require "custom.configs.mason",
       },
       {
         "williamboman/mason-lspconfig.nvim",
@@ -103,12 +103,12 @@ local plugins = {
       -- Improve Other LSP Functionalities
       {
         "nvimdev/lspsaga.nvim",
-        opts = overrides.lspsaga,
+        opts = require "custom.configs.lspsaga",
       },
       -- For Plugin Development
       {
         "folke/neodev.nvim",
-        opts = overrides.neodev,
+        opts = require "custom.configs.neodev",
       },
     },
     config = function()
@@ -144,7 +144,7 @@ local plugins = {
       "NvimTreeFindFile",
       "NvimTreeFindFileToggle",
     },
-    opts = overrides.nvimtree,
+    opts = require "custom.configs.nvim-tree",
   },
 
   -- Icons
@@ -232,7 +232,7 @@ local plugins = {
       "TSToggle",
       "TSBufToggle",
     },
-    opts = overrides.treesitter,
+    opts = require "custom.configs.treesitter",
     config = function(_, opts)
       dofile(vim.g.base46_cache .. "syntax")
       require("nvim-treesitter.install").prefer_git = false
@@ -250,7 +250,7 @@ local plugins = {
   -- Manage Projects
   {
     "ahmedkhalf/project.nvim",
-    opts = overrides.projects,
+    opts = require "custom.configs.project",
     event = "VeryLazy",
     config = function(_, opts)
       require("project_nvim").setup(opts)
@@ -267,7 +267,7 @@ local plugins = {
   {
     "folke/todo-comments.nvim",
     event = "VeryLazy",
-    opts = overrides.todo_comments,
+    opts = require "custom.configs.todo-comments",
   },
 
   {
@@ -287,7 +287,7 @@ local plugins = {
       "ToggleTermSendVisualLines",
       "ToggleTermSendVisualSelection",
     },
-    opts = overrides.toggleterm,
+    opts = require "custom.configs.toggleterm",
   },
 
   -- Notification
@@ -306,7 +306,7 @@ local plugins = {
       }
 
       vim.notify = require "notify"
-      local messages = require "custom.configs.messages"
+      local messages = require "custom.core.messages"
       math.randomseed(os.time())
       local randomMessage = messages[math.random(#messages)]
       if vim.g.startup_message then
@@ -319,14 +319,14 @@ local plugins = {
   {
     "stevearc/dressing.nvim",
     event = "VeryLazy",
-    opts = overrides.dressing,
+    opts = require "custom.configs.dressing",
   },
 
   -- Search motions
   {
     "folke/flash.nvim",
     event = "VeryLazy",
-    opts = overrides.flash,
+    opts = require "custom.configs.flash",
   },
 
   -- Fuzzy Finder
@@ -335,7 +335,7 @@ local plugins = {
     init = function()
       require("core.utils").load_mappings "Telescope"
     end,
-    opts = overrides.telescope,
+    opts = require "custom.configs.telescope",
     dependencies = {
       {
         "nvim-telescope/telescope-fzf-native.nvim",
@@ -406,16 +406,16 @@ local plugins = {
           -- end
 
           -- NOTE: Make sure to install the needed files/exectubles through mason
-          require "custom.configs.dap.cpptools"
-          require "custom.configs.dap.java-debug"
-          require "custom.configs.dap.node-debug2"
-          require "custom.configs.dap.debugpy"
-          require "custom.configs.dap.go-debug-adapter"
-          require "custom.configs.dap.js-debug"
+          require "custom.configs.dap.settings.cpptools"
+          require "custom.configs.dap.settings.java-debug"
+          require "custom.configs.dap.settings.node-debug2"
+          require "custom.configs.dap.settings.debugpy"
+          require "custom.configs.dap.settings.go-debug-adapter"
+          require "custom.configs.dap.settings.js-debug"
         end,
       },
     },
-    opts = overrides.dap_ui,
+    opts = require "custom.configs.dap.ui",
   },
 
   -- Preview Markdown
@@ -441,7 +441,7 @@ local plugins = {
     "folke/noice.nvim",
     lazy = false,
     enabled = false,
-    opts = overrides.noice,
+    opts = require "custom.configs.noice",
     dependencies = {
       { "MunifTanjim/nui.nvim" },
       { "rcarriga/nvim-notify" },
