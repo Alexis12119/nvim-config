@@ -12,6 +12,9 @@
 
 Before you dive in, ensure you have the following requirements installed:
 
+<details>
+<summary>Click to see the requirements</summary>
+
 - **Git:**
 
   - [lazygit](https://github.com/jesseduffield/lazygit)
@@ -31,6 +34,7 @@ Before you dive in, ensure you have the following requirements installed:
 - **Neovim:**
 
   - [Neovim 0.9+](https://github.com/neovim/neovim/releases)
+  </details>
 
 ## 💻 Installation
 
