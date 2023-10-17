@@ -56,24 +56,29 @@ Before you dive in, ensure you have the following requirements installed:
 
 ## 💻 Installation
 
-To get started, follow these steps:
+Please follow these steps:
 
-1.  Remove or move your current `nvim` directory (if it exists) and make sure Neovim is not running.
-2.  Clone the configuration and NvChad:
+1. **Preparation**:
 
-    - Linux/MacOS:
+   - Ensure that Neovim is not running.
+   - Remove or move your current `nvim` directory (if it exists).
 
-      ```sh
-      bash <(curl -s https://raw.githubusercontent.com/Alexis12119/nvim-config/main/installer/install.sh)
-      ```
+2. **Installation**:
 
-    - Windows (Powershell):
+   - On Linux/MacOS:
 
-      ```ps1
-      Invoke-WebRequest https://raw.githubusercontent.com/Alexis12119/nvim-config/main/installer/install.ps1 -UseBasicParsing | Invoke-Expression
-      ```
+     ```sh
+     bash <(curl -s https://raw.githubusercontent.com/Alexis12119/nvim-config/main/installer/install.sh)
+     ```
 
----
+   - On Windows (Powershell):
+     ```ps1
+     Invoke-WebRequest https://raw.githubusercontent.com/Alexis12119/nvim-config/main/installer/install.ps1 -UseBasicParsing | Invoke-Expression
+     ```
+
+3. **Plugin Installation**:
+   - The NvChad repository will be cloned to `~/.config/nvim`, and the required plugins will be installed.
+   - To complete the plugin installation, exit Neovim and then restart it. This ensures that the plugins associated with this custom configuration are properly set up.
 
 ### CREDITS
 

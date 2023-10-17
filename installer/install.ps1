@@ -38,14 +38,10 @@ if (Test-Path -Path $NvChadConfig) {
 Clone-Repository -RepoUrl $NvChadRepo -TargetDir $NvChadConfig
 nvim
 
-Clone-Repository -RepoUrl $ConfigRepo -TargetDir "$NvChadConfig\custom"
-
-# Copy the files from $NvChadConfig\custom to $NvChadConfig\lua
-Copy-Item -Path "$NvChadConfig\custom" -Destination "$NvChadConfig\lua" -Recurse
-
 # Remove the "$NvChadConfig\custom" directory recursively
 Remove-Item -Path "$NvChadConfig\custom" -Recurse -Force
 
+Clone-Repository -RepoUrl $ConfigRepo -TargetDir "$NvChadConfig\lua\custom"
 nvim
 
 Write-Host "Installation complete. Your Neovim configuration is now set up."
