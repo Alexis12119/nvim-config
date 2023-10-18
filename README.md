@@ -60,7 +60,7 @@ Please follow these steps:
 
 3. **Plugin Installation**:
    - The NvChad repository will be cloned to `~/.config/nvim` or `AppData/Local/nvim`, and the required plugins will be installed.
-   - To complete the plugin installation, exit Neovim and then restart it. This ensures that the plugins associated with this custom configuration are properly set up.
+   - To complete the plugin installation, exit Neovim and then start it again. This ensures that the plugins associated with this custom configuration are properly set up.
 
 ## ✨ Features
 
