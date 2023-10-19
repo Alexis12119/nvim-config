@@ -17,8 +17,18 @@ local plugins = {
   {
     "hrsh7th/nvim-cmp",
     event = { "InsertEnter", "CmdlineEnter" },
-    config = function()
-      require "custom.configs.cmp"
+    opts = function()
+      local cmp = require "cmp"
+      cmp.setup.cmdline(":", {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+          { name = "cmdline" },
+        },
+      })
+    end,
+    config = function(_, opts)
+      table.insert(opts.sources, { name = "codeium" })
+      require("cmp").setup(opts)
     end,
     dependencies = {
       {
