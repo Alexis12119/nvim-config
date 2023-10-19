@@ -132,7 +132,7 @@ M.ui = {
   cheatsheet = { theme = "grid" }, -- simple/grid
 }
 
-M.lazy_nvim = require "custom.configs.lazy" -- config for lazy.nvim startup options
+M.lazy_nvim = require "custom.core.lazy" -- config for lazy.nvim startup options
 
 M.plugins = "custom.plugins"
 
