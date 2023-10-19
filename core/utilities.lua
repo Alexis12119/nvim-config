@@ -4,25 +4,6 @@
 
 local command = vim.api.nvim_create_user_command
 
-function ClickUpdate()
-  vim.cmd "NvChadUpdate"
-end
-
-function ClickGit()
-  local status_ok, _ = pcall(require, "toggleterm")
-  if not status_ok then
-    return vim.notify "toggleterm.nvim isn't installed!!!"
-  end
-
-  local Terminal = require("toggleterm.terminal").Terminal
-  local lazygit = Terminal:new { cmd = "lazygit", hidden = true }
-  lazygit:toggle()
-end
-
-function ClickSplit()
-  vim.cmd "sp"
-end
-
 command("Format", function(args)
   local status_ok, conform = pcall(require, "conform")
   if not status_ok then
@@ -44,6 +25,25 @@ end, { nargs = "*", desc = "Code Format", range = true })
 command("LuaSnipEdit", function()
   require("luasnip.loaders").edit_snippet_files()
 end, { nargs = "*", desc = "Edit the available snippets in the filetype" })
+
+function ClickUpdate()
+  vim.cmd "NvChadUpdate"
+end
+
+function ClickGit()
+  local status_ok, _ = pcall(require, "toggleterm")
+  if not status_ok then
+    return vim.notify "toggleterm.nvim isn't installed!!!"
+  end
+
+  local Terminal = require("toggleterm.terminal").Terminal
+  local lazygit = Terminal:new { cmd = "lazygit", hidden = true }
+  lazygit:toggle()
+end
+
+function ClickSplit()
+  vim.cmd "sp"
+end
 
 -- HUUUUUUUUUUUUUUUUUUUUUUUGE kudos and thanks to
 -- https://github.com/hown3d for this function <3

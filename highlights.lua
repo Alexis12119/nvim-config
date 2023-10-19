@@ -16,6 +16,9 @@ M.override = {
   NvDashAscii = { bg = "NONE", fg = "blue" },
   NvDashButtons = { bg = "NONE" },
   FoldColumn = { bg = "NONE" },
+  LspReferenceRead = { link = "Underlined" },
+  LspReferenceText = { link = "Underlined" },
+  LspReferenceWrite = { link = "Underlined" },
 }
 
 ---@type HLTable
