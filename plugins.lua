@@ -27,7 +27,7 @@ local plugins = {
       })
     end,
     config = function(_, opts)
-      table.insert(opts.sources, { name = "codeium" })
+      table.insert(opts.sources, 2, { name = "codeium" })
       require("cmp").setup(opts)
     end,
     dependencies = {
