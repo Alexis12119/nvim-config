@@ -1,5 +1,6 @@
 local M = {}
 local keymap = vim.keymap.set
+local utils = require "core.utils"
 
 local cmp_nvim_lsp = require "cmp_nvim_lsp"
 
@@ -48,8 +49,6 @@ M.on_attach = function(client, bufnr)
   if client.server_capabilities.signatureHelpProvider then
     require("nvchad.signature").setup(client)
   end
-
-  local utils = require "core.utils"
 
   if not utils.load_config().ui.lsp_semantic_tokens and client.supports_method "textDocument/semanticTokens" then
     client.server_capabilities.semanticTokensProvider = nil
