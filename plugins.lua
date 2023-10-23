@@ -432,7 +432,7 @@ local plugins = {
           require "custom.configs.dap.settings.java-debug"
           require "custom.configs.dap.settings.node-debug2"
           require "custom.configs.dap.settings.debugpy"
-          -- require "custom.configs.dap.settings.go-debug-adapter"
+          require "custom.configs.dap.settings.go-debug-adapter"
           require "custom.configs.dap.settings.js-debug"
         end,
       },
