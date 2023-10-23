@@ -41,6 +41,7 @@ local mason_lspconfig = require "mason-lspconfig"
 
 local disabled_servers = {
   "jdtls",
+  "tsserver",
 }
 
 mason_lspconfig.setup_handlers {
