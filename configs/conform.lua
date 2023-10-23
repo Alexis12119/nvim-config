@@ -1,9 +1,18 @@
+local custom_formatters = {
+  csharpier = {
+    command = "dotnet-csharpier",
+    args = "--write-stdout",
+    stdin = true,
+  },
+}
+
 local formatters = {
   lua = { "stylua" },
   python = { "autopep8" },
   cpp = { "clang_format" },
   c = { "clang_format" },
   go = { "gofumpt" },
+  cs = { "csharpier" },
 }
 
 local prettier_ft = {
@@ -28,6 +37,7 @@ for _, filetype in pairs(prettier_ft) do
 end
 
 return {
+  formatters = custom_formatters,
   format_on_save = {
     -- These options will be passed to conform.format()
     async = true,
