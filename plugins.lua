@@ -193,10 +193,10 @@ local plugins = {
     event = "VeryLazy",
     opts = {
       keybindings = {
-        left = "<C-H>",
-        down = "<C-J>",
-        up = "<C-K>",
-        right = "<C-L>",
+        left = "<C-h>",
+        down = "<C-j>",
+        up = "<C-k>",
+        right = "<C-l>",
         last_active = "<C-\\>",
         next = "<C-Space>",
       },
