@@ -18,7 +18,6 @@ local M = {
   "Why do Java developers wear glasses? Because they don't C#!",
   "Why did the programmer quit their job? They didn't get arrays!",
   "When you write a one-liner that solves a complex problem: 'I am a genius, yes, I am.'",
-  "When you find the perfect Stack Overflow answer: 'This is the way.'",
   "When you refactor your code and it breaks everything: 'I've made a huge mistake.'",
   "When you accidentally close your editor with unsaved changes: 'Goodbye, cruel world.'",
   "When you discover a bug on a Friday afternoon: 'Looks like we're working late again.'",
