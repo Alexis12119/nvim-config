@@ -45,17 +45,17 @@ M.ui = {
         return sep_l_hlgroup .. sep_l .. iconHl_group .. icon .. " " .. txt_hl_group .. " " .. txt .. sep_r
       end
 
-      local noice_ok, noice = pcall(require, "noice")
+      local noice_ok, noice = pcall(require, "noice.api")
       modules[6] = (function()
-        if noice_ok and noice.api.status.mode.has() then
-          return noice.api.status.mode.get() .. " "
+        if noice_ok and noice.status.mode.has() then
+          return noice.status.mode.get() .. " "
         else
           return " "
         end
       end)()
       modules[7] = (function()
-        if noice_ok and noice.api.status.command.has() then
-          return noice.api.status.command.get() .. " "
+        if noice_ok and noice.status.command.has() then
+          return noice.status.command.get() .. " "
         else
           return " "
         end
