@@ -1,6 +1,8 @@
 return {
   user_default_options = {
     tailwind = true,
+    sass = { enable = true, parsers = { "css" } }, -- Enable sass colors
+    always_update = true,
   },
   filetypes = {
     css = {
