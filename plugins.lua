@@ -9,7 +9,7 @@ local plugins = {
   -- Peek Lines
   {
     "nacro90/numb.nvim",
-    event = "VeryLazy",
+    event = "CmdlineEnter",
     config = true,
   },
 
@@ -288,7 +288,7 @@ local plugins = {
   -- Highlight, List and Search Todo comments in your projects
   {
     "folke/todo-comments.nvim",
-    event = "VeryLazy",
+    cmd = { "TodoLocList", "TodoQuickFix", "TodoTelescope" },
     opts = require "custom.configs.todo-comments",
   },
 
@@ -347,7 +347,7 @@ local plugins = {
   -- Search motions
   {
     "folke/flash.nvim",
-    event = "VeryLazy",
+    event = "CmdlineEnter",
     opts = require "custom.configs.flash",
   },
 
