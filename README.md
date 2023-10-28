@@ -80,7 +80,9 @@ Please follow these steps:
 
 ## 🌟 Stargazers
 
-I appreciate the support from all the Stargazers! [![Stargazers](https://reporoster.com/stars/dark/notext/Alexis12119/nvim-config)](https://github.com/Alexis12119/Nvchad-user/stargazers)
+I appreciate the support from all the Stargazers!
+
+[![Stargazers](https://reporoster.com/stars/dark/notext/Alexis12119/nvim-config)](https://github.com/Alexis12119/Nvchad-user/stargazers)
 
 ### CREDITS
 
