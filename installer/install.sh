@@ -1,7 +1,7 @@
 #!/bin/bash
 
 config_dir="$HOME/.config/nvim"
-nvchad_repo="https://github.com/NvChad/NvChad.git"
+nvchad_repo="https://github.com/NvChad/NvChad.git --depth 1"
 config_repo="https://github.com/Alexis12119/nvim-config.git"
 
 # Function to clone a Git repository with error handling
@@ -38,8 +38,6 @@ fi
 
 # Clone the Git repositories
 clone_repository "$nvchad_repo" "$config_dir"
-nvim
-rm -rf "$config_dir/lua/custom"
 clone_repository "$config_repo" "$config_dir/lua/custom"
 nvim
 

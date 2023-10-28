@@ -16,7 +16,7 @@ function Clone-Repository {
 }
 
 # Main script
-$NvChadRepo = "https://github.com/NvChad/NvChad.git"
+$NvChadRepo = "https://github.com/NvChad/NvChad.git --depth 1"
 $NvChadConfig = "$env:LOCALAPPDATA\nvim"
 $ConfigRepo = "https://github.com/Alexis12119/nvim-config.git"
 
@@ -36,11 +36,6 @@ if (Test-Path -Path $NvChadConfig) {
 
 # Clone the Git repositories
 Clone-Repository -RepoUrl $NvChadRepo -TargetDir $NvChadConfig
-nvim
-
-# Remove the "$NvChadConfig\custom" directory recursively
-Remove-Item -Path "$NvChadConfig\custom" -Recurse -Force
-
 Clone-Repository -RepoUrl $ConfigRepo -TargetDir "$NvChadConfig\lua\custom"
 nvim
 
