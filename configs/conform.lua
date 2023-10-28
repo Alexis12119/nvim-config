@@ -38,11 +38,11 @@ end
 
 return {
   formatters = custom_formatters,
-  format_on_save = {
-    -- These options will be passed to conform.format()
-    async = true,
-    quiet = true,
-    lsp_fallback = true,
-  },
+  -- format_on_save = {
+  --   -- These options will be passed to conform.format()
+  --   async = true,
+  --   quiet = true,
+  --   lsp_fallback = true,
+  -- },
   formatters_by_ft = formatters,
 }
