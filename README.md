@@ -47,7 +47,7 @@ Please follow these steps:
 
 2. **Installation**:
 
-   **NOTE:** If you encountered an error after the plugin installation. Just restart `nvim` or press `<Space> + p + s` after you restart `nvim`.
+   **NOTE:** If you encountered an error after the plugin installation. Just restart `nvim` or press `<Space> + p + s` after you restarted `nvim`.
 
    - On Linux/MacOS:
 
