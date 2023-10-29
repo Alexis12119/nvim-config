@@ -16,7 +16,7 @@ function Clone-Repository {
 }
 
 # Main script
-$NvChadRepo = "https://github.com/NvChad/NvChad.git --depth 1"
+$NvChadRepo = "https://github.com/NvChad/NvChad.git"
 $NvChadConfig = "$env:LOCALAPPDATA\nvim"
 $ConfigRepo = "https://github.com/Alexis12119/nvim-config.git"
 
