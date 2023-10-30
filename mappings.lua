@@ -70,6 +70,13 @@ M.Neotest = {
       "Run Nearest",
       opts = { silent = true },
     },
+    ["<leader>Td"] = {
+      function()
+        require("neotest").run.run { strategy = "dap" }
+      end,
+      "Run Dap",
+      opts = { silent = true },
+    },
     ["<leader>Ts"] = {
       function()
         require("neotest").summary.toggle()
@@ -77,7 +84,6 @@ M.Neotest = {
       "Toggle Summary",
       opts = { silent = true },
     },
-
     ["<leader>To"] = {
       function()
         require("neotest").output.open { enter = true, auto_close = true }
@@ -85,7 +91,6 @@ M.Neotest = {
       "Show Output",
       opts = { silent = true },
     },
-
     ["<leader>TO"] = {
       function()
         require("neotest").output_panel.toggle()
@@ -93,7 +98,6 @@ M.Neotest = {
       "Toggle Output Panel",
       opts = { silent = true },
     },
-
     ["<leader>TS"] = {
       function()
         require("neotest").run.stop()
