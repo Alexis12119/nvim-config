@@ -297,6 +297,24 @@ local plugins = {
     enabled = false,
   },
 
+  {
+    "nvim-neotest/neotest",
+    init = function()
+      require("core.utils").load_mappings "Neotest"
+    end,
+    dependencies = {
+      "nvim-neotest/neotest-python",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      require("neotest").setup {
+        adapters = {
+          require "neotest-python",
+        },
+      }
+    end,
+  },
+
   -- Terminal Integration
   {
     "akinsho/toggleterm.nvim",

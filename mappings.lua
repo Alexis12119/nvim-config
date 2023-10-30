@@ -46,6 +46,64 @@ M.Dap = {
   },
 }
 
+M.Neotest = {
+  plugin = true,
+  n = {
+    ["<leader>Tt"] = {
+      function()
+        require("neotest").run.run(vim.fn.expand "%")
+      end,
+      "Run File",
+      opts = { silent = true },
+    },
+    ["<leader>TT"] = {
+      function()
+        require("neotest").run.run(vim.loop.cwd())
+      end,
+      "Run All Test Files",
+      opts = { silent = true },
+    },
+    ["<leader>Tr"] = {
+      function()
+        require("neotest").run.run()
+      end,
+      "Run Nearest",
+      opts = { silent = true },
+    },
+    ["<leader>Ts"] = {
+      function()
+        require("neotest").summary.toggle()
+      end,
+      "Toggle Summary",
+      opts = { silent = true },
+    },
+
+    ["<leader>To"] = {
+      function()
+        require("neotest").output.open { enter = true, auto_close = true }
+      end,
+      "Show Output",
+      opts = { silent = true },
+    },
+
+    ["<leader>TO"] = {
+      function()
+        require("neotest").output_panel.toggle()
+      end,
+      "Toggle Output Panel",
+      opts = { silent = true },
+    },
+
+    ["<leader>TS"] = {
+      function()
+        require("neotest").run.stop()
+      end,
+      "Stop",
+      opts = { silent = true },
+    },
+  },
+}
+
 M.Neovim = {
   n = {
     ["<leader>nf"] = {
