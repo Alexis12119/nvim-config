@@ -304,14 +304,16 @@ local plugins = {
     end,
     dependencies = {
       "nvim-neotest/neotest-python",
+      "nvim-neotest/neotest-go",
+      -- "marilari88/neotest-vitest",
+      -- "nvim-neotest/neotest-jest",
+      -- "nvim-neotest/neotest-rust",
+      -- "nvim-neotest/neotest-dotnet",
+      -- "nvim-neotest/neotest-java",
       "nvim-treesitter/nvim-treesitter",
     },
     config = function()
-      require("neotest").setup {
-        adapters = {
-          require "neotest-python",
-        },
-      }
+      require "custom.configs.neotest"
     end,
   },
 
