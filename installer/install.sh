@@ -1,6 +1,6 @@
 #!/bin/bash
 
-config_dir="$HOME/.config/nvim"
+config_dir="$HOME/.config/nvim --depth 1"
 nvchad_repo="https://github.com/NvChad/NvChad.git"
 config_repo="https://github.com/Alexis12119/nvim-config.git"
 
