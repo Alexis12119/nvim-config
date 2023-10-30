@@ -4,7 +4,7 @@ return {
       prompt_title = "Recent Files",
     },
   },
-  extensions_list = { "themes", "terms", "fzf", "projects" },
+  extensions_list = { "themes", "terms", "fzf", "projects", "flutter" },
   defaults = {
     mappings = {
       i = {

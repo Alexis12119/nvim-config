@@ -28,6 +28,7 @@ local plugins = {
     end,
     config = function(_, opts)
       table.insert(opts.sources, 2, { name = "codeium" })
+      opts.completion["completeopt"] = "menu,menuone,noselect" -- disable autoselect
       require("cmp").setup(opts)
     end,
     dependencies = {
@@ -297,6 +298,15 @@ local plugins = {
     enabled = false,
   },
 
+  {
+    "akinsho/flutter-tools.nvim",
+    ft = "dart",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "stevearc/dressing.nvim",
+    },
+    config = true,
+  },
   {
     "nvim-neotest/neotest",
     init = function()
