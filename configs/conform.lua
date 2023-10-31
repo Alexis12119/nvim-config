@@ -1,11 +1,3 @@
-local custom_formatters = {
-  csharpier = {
-    command = "dotnet-csharpier",
-    args = "--write-stdout",
-    stdin = true,
-  },
-}
-
 local formatters = {
   lua = { "stylua" },
   python = { "autopep8" },

@@ -307,6 +307,7 @@ local plugins = {
     },
     config = true,
   },
+
   {
     "nvim-neotest/neotest",
     init = function()

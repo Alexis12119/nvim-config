@@ -230,6 +230,35 @@ autocmd("FileType", {
           vim.fn.glob(java_debug_path .. "extension/server/com.microsoft.java.debug.plugin-*.jar", 1),
         },
       },
+      settings = {
+        eclipse = {
+          downloadSources = true,
+        },
+        maven = {
+          downloadSources = true,
+        },
+        implementationsCodeLens = {
+          enabled = true,
+        },
+        referencesCodeLens = {
+          enabled = true,
+        },
+        references = {
+          includeDecompiledSources = true,
+        },
+
+        signatureHelp = { enabled = true },
+        extendedClientCapabilities = require("jdtls").extendedClientCapabilities,
+        sources = {
+          organizeImports = {
+            starThreshold = 9999,
+            staticStarThreshold = 9999,
+          },
+        },
+      },
+      flags = {
+        allow_incremental_sync = true,
+      },
     }
 
     local keymap = vim.keymap.set
