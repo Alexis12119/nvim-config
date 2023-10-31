@@ -299,16 +299,6 @@ local plugins = {
   },
 
   {
-    "akinsho/flutter-tools.nvim",
-    ft = "dart",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "stevearc/dressing.nvim",
-    },
-    config = true,
-  },
-
-  {
     "nvim-neotest/neotest",
     init = function()
       require("core.utils").load_mappings "Neotest"
