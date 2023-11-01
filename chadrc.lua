@@ -48,14 +48,14 @@ M.ui = {
       local noice_ok, noice = pcall(require, "noice.api")
       modules[6] = (function()
         if noice_ok and noice.status.mode.has() then
-          return noice.status.mode.get() .. " "
+          return "%#St_lsp_sep#" .. noice.status.mode.get() .. " "
         else
           return " "
         end
       end)()
       modules[7] = (function()
         if noice_ok and noice.status.command.has() then
-          return noice.status.command.get() .. " "
+          return "%#NoTexthl#" .. noice.status.command.get() .. " "
         else
           return " "
         end
