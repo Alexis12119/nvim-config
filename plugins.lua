@@ -288,10 +288,11 @@ local plugins = {
   -- Highlight, List and Search Todo comments in your projects
   {
     "folke/todo-comments.nvim",
-    cmd = { "TodoLocList", "TodoQuickFix", "TodoTelescope" },
+    cmd = { "TodoTrouble", "TodoLocList", "TodoQuickFix", "TodoTelescope" },
     opts = require "custom.configs.todo-comments",
   },
 
+  -- NvChad Built-in Terminal
   {
     "NvChad/nvterm",
     enabled = false,
@@ -406,6 +407,7 @@ local plugins = {
     },
   },
 
+  -- Pretty Diagnostics and Lists
   {
     "folke/trouble.nvim",
     cmd = { "TroubleToggle", "Trouble" },
