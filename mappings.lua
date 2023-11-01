@@ -148,14 +148,6 @@ M.Neovim = {
       "Inspect",
       opts = { silent = true },
     }, -- only available on neovim >= 0.9
-    ["<leader>nu"] = {
-      function()
-        local args = "git -C " .. vim.fn.stdpath "config" .. " pull --ff-only"
-        vim.fn.system(args)
-      end,
-      "Update",
-      opts = { silent = true },
-    },
     ["<leader>nm"] = { ":messages<cr>", "Messages", opts = { silent = true } },
     ["<leader>nh"] = { ":checkhealth<cr>", "Health", opts = { silent = true } },
     ["<leader>nv"] = {
