@@ -491,7 +491,6 @@ local plugins = {
   -- UI for messages, cmdline, and popup
   {
     "folke/noice.nvim",
-    event = "CmdlineEnter",
     opts = require "custom.configs.noice",
     dependencies = { { "MunifTanjim/nui.nvim" }, { "rcarriga/nvim-notify" } },
   },
