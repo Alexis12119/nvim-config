@@ -29,7 +29,6 @@ for _, filetype in pairs(prettier_ft) do
 end
 
 return {
-  formatters = custom_formatters,
   -- format_on_save = {
   --   -- These options will be passed to conform.format()
   --   async = true,

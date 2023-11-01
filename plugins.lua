@@ -377,7 +377,24 @@ local plugins = {
     init = function()
       require("core.utils").load_mappings "Telescope"
     end,
-    opts = require "custom.configs.telescope",
+    opts = function()
+      local conf = require "plugins.configs.telescope"
+      local actions = require "telescope.actions"
+      local trouble = require "trouble.providers.telescope"
+      conf.pickers = {
+        oldfiles = {
+          prompt_title = "Recent Files",
+        },
+      }
+      conf.extensions_list = { "themes", "terms", "fzf", "projects" }
+      conf.defaults.mappings.i = {
+        ["<Tab>"] = actions.move_selection_next,
+        ["<S-Tab>"] = actions.move_selection_previous,
+        ["<C-q>"] = trouble.open_with_trouble,
+      }
+
+      return conf
+    end,
     dependencies = {
       {
         "nvim-telescope/telescope-fzf-native.nvim",
@@ -387,6 +404,12 @@ local plugins = {
         end,
       },
     },
+  },
+
+  {
+    "folke/trouble.nvim",
+    cmd = { "TroubleToggle", "Trouble" },
+    opts = require "custom.configs.trouble",
   },
 
   -- For Java
