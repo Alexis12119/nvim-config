@@ -31,6 +31,7 @@ return {
     -- C/C++
     "clangd",
     "clang-format",
+    -- "neocmakelsp",
 
     -- Java
     -- "jdtls",
