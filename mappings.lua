@@ -51,56 +51,56 @@ M.Neotest = {
   n = {
     ["<leader>Tt"] = {
       function()
-        require("neotest").run.run(vim.fn.expand "%")
+        vim.cmd 'lua require("neotest").run.run(vim.fn.expand "%")'
       end,
       "Run File",
       opts = { silent = true },
     },
     ["<leader>TT"] = {
       function()
-        require("neotest").run.run(vim.loop.cwd())
+        vim.cmd 'lua require("neotest").run.run(vim.loop.cwd())'
       end,
       "Run All Test Files",
       opts = { silent = true },
     },
     ["<leader>Tr"] = {
       function()
-        require("neotest").run.run()
+        vim.cmd 'lua require("neotest").run.run()'
       end,
       "Run Nearest",
       opts = { silent = true },
     },
     ["<leader>Td"] = {
       function()
-        require("neotest").run.run { strategy = "dap" }
+        vim.cmd 'lua require("neotest").run.run { strategy = "dap" }'
       end,
       "Run Dap",
       opts = { silent = true },
     },
     ["<leader>Ts"] = {
       function()
-        require("neotest").summary.toggle()
+        vim.cmd 'lua require("neotest").summary.toggle()'
       end,
       "Toggle Summary",
       opts = { silent = true },
     },
     ["<leader>To"] = {
       function()
-        require("neotest").output.open { enter = true, auto_close = true }
+        vim.cmd 'lua require("neotest").output.open { enter = true, auto_close = true }'
       end,
       "Show Output",
       opts = { silent = true },
     },
     ["<leader>TO"] = {
       function()
-        require("neotest").output_panel.toggle()
+        vim.cmd 'lua require("neotest").output_panel.toggle()'
       end,
       "Toggle Output Panel",
       opts = { silent = true },
     },
     ["<leader>TS"] = {
       function()
-        require("neotest").run.stop()
+        vim.cmd 'lua require("neotest").run.stop()'
       end,
       "Stop",
       opts = { silent = true },
