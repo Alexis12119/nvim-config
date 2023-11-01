@@ -379,22 +379,7 @@ local plugins = {
       require("core.utils").load_mappings "Telescope"
     end,
     opts = function()
-      local conf = require "plugins.configs.telescope"
-      local actions = require "telescope.actions"
-      local trouble = require "trouble.providers.telescope"
-      conf.pickers = {
-        oldfiles = {
-          prompt_title = "Recent Files",
-        },
-      }
-      conf.extensions_list = { "themes", "terms", "fzf", "projects" }
-      conf.defaults.mappings.i = {
-        ["<Tab>"] = actions.move_selection_next,
-        ["<S-Tab>"] = actions.move_selection_previous,
-        ["<C-q>"] = trouble.open_with_trouble,
-      }
-
-      return conf
+      return require "custom.configs.telescope"
     end,
     dependencies = {
       {
@@ -508,10 +493,7 @@ local plugins = {
     "folke/noice.nvim",
     event = "CmdlineEnter",
     opts = require "custom.configs.noice",
-    dependencies = {
-      { "MunifTanjim/nui.nvim" },
-      { "rcarriga/nvim-notify" },
-    },
+    dependencies = { { "MunifTanjim/nui.nvim" }, { "rcarriga/nvim-notify" } },
   },
 }
 
