@@ -15,7 +15,7 @@ return {
     "stylua",
 
     -- Web Development
-    "prettier",
+    -- "prettier",
     -- "css-lsp",
     -- "html-lsp",
     -- "typescript-language-server",
@@ -29,8 +29,8 @@ return {
     -- "intelephense",
 
     -- C/C++
-    "clangd",
-    "clang-format",
+    -- "clangd",
+    -- "clang-format",
     -- "neocmakelsp",
 
     -- Java
@@ -40,7 +40,7 @@ return {
     -- "yaml-language-server",
 
     -- Python
-    "pyright",
+    -- "pyright",
     -- "autopep8",
     -- "black",
     -- "flake8"
