@@ -4,7 +4,7 @@
 
 [![](https://img.shields.io/badge/Neovim-0.9+-blueviolet.svg?style=for-the-badge&color=000F10&logo=Neovim&logoColor=green&labelColor=302D41)](https://github.com/neovim/neovim)
 
-![nvim_preview](https://github.com/Alexis12119/nvim-config/assets/74944536/acdc332b-6554-444e-a386-798c87efd751)
+![nvim_preview](https://github.com/Alexis12119/nvim-config/assets/74944536/2e773425-265a-4aa3-8754-fe42f9ff9c93)
 
 </div>
 
