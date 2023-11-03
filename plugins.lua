@@ -66,10 +66,6 @@ local plugins = {
   -- Native LSP
   {
     "neovim/nvim-lspconfig",
-    init = function()
-      require("core.utils").load_mappings "LSP"
-    end,
-    event = "VeryLazy",
     dependencies = {
       -- Formatting
       {
@@ -110,6 +106,10 @@ local plugins = {
       -- Installer
       {
         "williamboman/mason.nvim",
+        init = function()
+          require("core.utils").load_mappings "Mason"
+          require("core.utils").load_mappings "LSP"
+        end,
         cmd = {
           "Mason",
           "MasonInstall",
@@ -129,6 +129,9 @@ local plugins = {
       -- Improve Other LSP Functionalities
       {
         "nvimdev/lspsaga.nvim",
+        init = function()
+          require("core.utils").load_mappings "Lspsaga"
+        end,
         opts = require "custom.configs.lspsaga",
       },
       -- For Plugin Development
@@ -393,6 +396,9 @@ local plugins = {
   -- Pretty Diagnostics and Lists
   {
     "folke/trouble.nvim",
+    init = function()
+      require("core.utils").load_mappings "Trouble"
+    end,
     cmd = { "TroubleToggle", "Trouble" },
     opts = require "custom.configs.trouble",
   },

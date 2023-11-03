@@ -169,7 +169,6 @@ M.Telescope = {
     ["<leader>fm"] = { ":Telescope marks<cr>", "Marks", opts = { silent = true } },
     ["<leader>fw"] = { ":Telescope live_grep<cr>", "Word", opts = { silent = true } },
     ["<leader>ft"] = { ":Telescope themes<cr>", "Themes", opts = { silent = true } },
-    ["<leader>fT"] = { ":TodoTrouble<cr>", "Todo", opts = { silent = true } },
     -- B = { ":Telescope bookmarks<cr>", "Browswer Bookmarks" , opts = { silent = true }},
     ["<leader>fb"] = { ":Telescope buffers<cr>", "Buffers", opts = { silent = true } },
     ["<leader>fn"] = {
@@ -184,6 +183,11 @@ M.Telescope = {
     ["<leader>fC"] = { ":Telescope commands<cr>", "Commands", opts = { silent = true } },
     ["<leader>fr"] = { ":Telescope oldfiles<cr>", "Recent Files", opts = { silent = true } },
     ["<leader>fH"] = { ":Telescope highlights<cr>", "Highlights", opts = { silent = true } },
+    ["<leader>ls"] = { ":Telescope lsp_document_symbols<cr>", "Buffer Symbols", opts = { silent = true } },
+    ["<leader>lS"] = { ":Telescope lsp_workspace_symbols<cr>", "Workspace Symbols", opts = { silent = true } },
+    ["<leader>go"] = { ":Telescope git_status<cr>", "Open changed file", opts = { silent = true } },
+    ["<leader>gb"] = { ":Telescope git_branches<cr>", "Checkout branch", opts = { silent = true } },
+    ["<leader>gc"] = { ":Telescope git_commits<cr>", "Checkout commit", opts = { silent = true } },
   },
 }
 
@@ -196,15 +200,32 @@ M.Toggleterm = {
   },
 }
 
-M.LSP = {
+M.Trouble = {
   plugin = true,
   n = {
-    ["<leader>lf"] = { ":Format<cr>", "Format", opts = { silent = true } },
+    ["<leader>ld"] = { ":TroubleToggle document_diagnostics<cr>", "Buffer Diagnostics", opts = { silent = true } },
+    ["<leader>lw"] = { ":TroubleToggle workspace_diagnostics<cr>", "Workspace Diagnostics", opts = { silent = true } },
+    ["<leader>fT"] = { ":TodoTrouble<cr>", "Todo", opts = { silent = true } },
+  },
+}
+
+M.Lspsaga = {
+  plugin = true,
+  n = {
     ["<leader>la"] = { ":Lspsaga code_action<cr>", "Code Action", opts = { silent = true } },
-    ["<leader>li"] = { ":LspInfo<cr>", "Info", opts = { silent = true } },
     ["<leader>lo"] = { ":Lspsaga outline<cr>", "Code Outline", opts = { silent = true } },
     ["<leader>lI"] = { ":Lspsaga incoming_calls<cr>", "Incoming Calls", opts = { silent = true } },
     ["<leader>lO"] = { ":Lspsaga outgoing_calls<cr>", "Outgoing Calls", opts = { silent = true } },
+    ["<leader>lr"] = { ":Lspsaga rename<cr>", "Rename", opts = { silent = true } },
+  },
+  v = {
+    ["<leader>la"] = { ":Lspsaga code_action<cr>", "Code Action", opts = { silent = true } },
+  },
+}
+
+M.Mason = {
+  plugin = true,
+  n = {
     ["<leader>lm"] = { ":Mason<cr>", "Mason Installer", opts = { silent = true } },
     ["<leader>lj"] = {
       ":Lspsaga diagnostic_jump_next<cr>",
@@ -216,16 +237,18 @@ M.LSP = {
       "Prev Diagnostic",
       opts = { silent = true },
     },
+  },
+}
+
+M.LSP = {
+  plugin = true,
+  n = {
+    ["<leader>lf"] = { ":Format<cr>", "Format", opts = { silent = true } },
+    ["<leader>li"] = { ":LspInfo<cr>", "Info", opts = { silent = true } },
     ["<leader>lR"] = { ":LspRestart<cr>", "Restart", opts = { silent = true } },
-    ["<leader>lr"] = { ":Lspsaga rename<cr>", "Rename", opts = { silent = true } },
-    ["<leader>ld"] = { ":TroubleToggle document_diagnostics<cr>", "Buffer Diagnostics", opts = { silent = true } },
-    ["<leader>lw"] = { ":TroubleToggle workspace_diagnostics<cr>", "Workspace Diagnostics", opts = { silent = true } },
-    ["<leader>ls"] = { ":Telescope lsp_document_symbols<cr>", "Buffer Symbols", opts = { silent = true } },
-    ["<leader>lS"] = { ":Telescope lsp_workspace_symbols<cr>", "Workspace Symbols", opts = { silent = true } },
   },
   v = {
     ["<leader>lf"] = { ":Format<cr>", "Format", opts = { silent = true } },
-    ["<leader>la"] = { ":Lspsaga code_action<cr>", "Code Action", opts = { silent = true } },
   },
 }
 
@@ -251,9 +274,6 @@ M.Git = {
     ["<leader>gR"] = { ":lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer", opts = { silent = true } },
     ["<leader>gs"] = { ":lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk", opts = { silent = true } },
     ["<leader>gu"] = { ":lua reguire 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stgge Hunk", opts = { silent = true } },
-    ["<leader>go"] = { ":Telescope git_status<cr>", "Open changed file", opts = { silent = true } },
-    ["<leader>gb"] = { ":Telescope git_branches<cr>", "Checkout branch", opts = { silent = true } },
-    ["<leader>gc"] = { ":Telescope git_commits<cr>", "Checkout commit", opts = { silent = true } },
     ["<leader>gd"] = {
       function()
         if next(require("diffview.lib").views) == nil then
