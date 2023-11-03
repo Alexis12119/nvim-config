@@ -119,6 +119,10 @@ local plugins = {
           "MasonLog",
         },
         opts = require "custom.configs.mason",
+        config = function()
+          dofile(vim.g.base46_cache .. "lsp")
+          require "custom.configs.lspconfig"
+        end,
       },
       {
         "williamboman/mason-lspconfig.nvim",
@@ -134,11 +138,6 @@ local plugins = {
         opts = require "custom.configs.neodev",
       },
     },
-    config = function()
-      dofile(vim.g.base46_cache .. "lsp")
-      require "nvchad.lsp"
-      require "custom.configs.lspconfig"
-    end,
   },
 
   -- Commenter

@@ -1,3 +1,5 @@
+require "nvchad.lsp"
+
 local on_attach = require("custom.configs.lsp").on_attach
 local capabilities = require("custom.configs.lsp").capabilities
 
