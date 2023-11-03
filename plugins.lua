@@ -120,7 +120,6 @@ local plugins = {
         },
         opts = require "custom.configs.mason",
         config = function()
-          dofile(vim.g.base46_cache .. "lsp")
           require "custom.configs.lspconfig"
         end,
       },
