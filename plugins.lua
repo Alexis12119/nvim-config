@@ -66,6 +66,9 @@ local plugins = {
   -- Native LSP
   {
     "neovim/nvim-lspconfig",
+    config = function()
+      require "custom.configs.lspconfig"
+    end,
     dependencies = {
       -- Formatting
       {
@@ -119,9 +122,6 @@ local plugins = {
           "MasonLog",
         },
         opts = require "custom.configs.mason",
-        config = function()
-          require "custom.configs.lspconfig"
-        end,
       },
       {
         "williamboman/mason-lspconfig.nvim",
