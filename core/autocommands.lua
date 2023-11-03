@@ -26,13 +26,14 @@ autocmd("VimEnter", {
   desc = "Open NvimTree when it's a Directory",
 })
 
--- Disable foldcolumn and statuscolumn in lspsaga outline
+-- Hide folds and Disable statuscolumn in these filetypes
 autocmd("FileType", {
-  pattern = "sagaoutline",
+  pattern = { "nvdash", "sagaoutline" },
   callback = function()
     vim.opt_local.foldcolumn = "0"
-    vim.opt_local.stc = ""
+    vim.opt_local.stc = "" -- not really important
   end,
+  group = general,
 })
 
 -- Remove this if there's an issue
