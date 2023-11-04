@@ -28,6 +28,10 @@ local plugins = {
     end,
     config = function(_, opts)
       table.insert(opts.sources, 2, { name = "codeium" })
+      opts.mapping = vim.tbl_extend("force", {}, opts.mapping, {
+        -- You can add here new mappings.
+      })
+
       opts.completion["completeopt"] = "menu,menuone,noselect" -- disable autoselect
       require("cmp").setup(opts)
     end,
