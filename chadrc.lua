@@ -1,6 +1,23 @@
 ---@type ChadrcConfig
 local M = {}
 
+local headers = require "custom.core.headers"
+
+local function get_header()
+  if vim.g.random_header then
+    local headerNames = {}
+    for name, _ in pairs(headers) do
+      table.insert(headerNames, name)
+    end
+
+    local randomName = headerNames[math.random(#headerNames)]
+    local randomHeader = headers[randomName]
+    return randomHeader
+  else
+    return headers["nvchad"]
+  end
+end
+
 local highlights = require "custom.highlights"
 
 M.ui = {
@@ -106,19 +123,8 @@ M.ui = {
   },
 
   nvdash = {
-    load_on_startup = false,
-    header = {
-      "           ▄ ▄                   ",
-      "       ▄   ▄▄▄     ▄ ▄▄▄ ▄ ▄     ",
-      "       █ ▄ █▄█ ▄▄▄ █ █▄█ █ █     ",
-      "    ▄▄ █▄█▄▄▄█ █▄█▄█▄▄█▄▄█ █     ",
-      "  ▄ █▄▄█ ▄ ▄▄ ▄█ ▄▄▄▄▄▄▄▄▄▄▄▄▄▄  ",
-      "  █▄▄▄▄ ▄▄▄ █ ▄ ▄▄▄ ▄ ▄▄▄ ▄ ▄ █ ▄",
-      "▄ █ █▄█ █▄█ █ █ █▄█ █ █▄█ ▄▄▄ █ █",
-      "█▄█ ▄ █▄▄█▄▄█ █ ▄▄█ █ ▄ █ █▄█▄█ █",
-      "    █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ █▄█▄▄▄█    ",
-    },
-
+    load_on_startup = true,
+    header = get_header(),
     buttons = {
       { "  Find File", "Spc f f", "Telescope find_files" },
       { "󰈚  Recent Files", "Spc f r", "Telescope oldfiles" },
