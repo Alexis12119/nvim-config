@@ -9,15 +9,15 @@ M.capabilities = cmp_nvim_lsp.default_capabilities()
 local function lsp_keymaps(bufnr)
   local buf_opts = { buffer = bufnr, silent = true }
   -- keymap("n", "gD", vim.lsp.buf.declaration, buf_opts)
-  keymap("n", "gD", ":Lspsaga finder<CR>", buf_opts)
-  keymap("n", "gd", ":Lspsaga goto_definition<CR>", buf_opts)
+  keymap("n", "gD", "<cmd>Lspsaga finder<cr>", buf_opts)
+  keymap("n", "gd", "<cmd>Lspsaga goto_definition<cr>", buf_opts)
   -- keymap("n", "gd", vim.lsp.buf.definition, buf_opts)
-  keymap("n", "gl", ":Lspsaga show_line_diagnostics<CR>", buf_opts)
-  keymap("n", "gc", ":Lspsaga show_cursor_diagnostics<CR>", buf_opts)
-  keymap("n", "gp", ":Lspsaga peek_definition<CR>", buf_opts)
+  keymap("n", "gl", "<cmd>Lspsaga show_line_diagnostics<cr>", buf_opts)
+  keymap("n", "gc", "<cmd>Lspsaga show_cursor_diagnostics<cr>", buf_opts)
+  keymap("n", "gp", "<cmd>Lspsaga peek_definition<cr>", buf_opts)
   -- keymap("n", "K", vim.lsp.buf.hover, buf_opts)
-  keymap("n", "K", ":Lspsaga hover_doc<CR>", buf_opts)
-  keymap("n", "gi", ":Telescope lsp_implementations<CR>", buf_opts)
+  keymap("n", "K", "<cmd>Lspsaga hover_doc<cr>", buf_opts)
+  keymap("n", "gi", "<cmd>Telescope lsp_implementations<cr>", buf_opts)
 end
 
 -- Highlight symbol under cursor
