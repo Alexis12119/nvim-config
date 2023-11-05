@@ -24,25 +24,25 @@ M.MarkdownPreview = {
 M.NvimTree = {
   plugin = true,
   n = {
-    ["<leader>e"] = { ":NvimTreeToggle<cr>", "Explorer", opts = { silent = true } },
+    ["<leader>e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer", opts = { silent = true } },
   },
 }
 
 M.Dap = {
   plugin = true,
   n = {
-    ["<leader>dc"] = { ":lua require'dap'.continue()<cr>", "Continue", opts = { silent = true } },
-    ["<leader>do"] = { ":lua require'dap'.step_over()<cr>", "Step Over", opts = { silent = true } },
-    ["<leader>di"] = { ":lua require'dap'.step_into()<cr>", "Step Into", opts = { silent = true } },
-    ["<leader>du"] = { ":lua require'dap'.step_out()<cr>", "Step Out", opts = { silent = true } },
-    ["<leader>db"] = { ":lua require'dap'.toggle_breakpoint()<cr>", "Breakpoint", opts = { silent = true } },
+    ["<leader>dc"] = { "<cmd>lua require'dap'.continue()<cr>", "Continue", opts = { silent = true } },
+    ["<leader>do"] = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over", opts = { silent = true } },
+    ["<leader>di"] = { "<cmd>lua require'dap'.step_into()<cr>", "Step Into", opts = { silent = true } },
+    ["<leader>du"] = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out", opts = { silent = true } },
+    ["<leader>db"] = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Breakpoint", opts = { silent = true } },
     ["<leader>dB"] = {
-      ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>",
+      "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>",
       "Breakpoint Condition",
       opts = { silent = true },
     },
-    ["<leader>dd"] = { ":lua require'dapui'.toggle()<cr>", "Dap UI", opts = { silent = true } },
-    ["<leader>dl"] = { ":lua require'dap'.run_last()<cr>", "Run Last", opts = { silent = true } },
+    ["<leader>dd"] = { "<cmd>lua require'dapui'.toggle()<cr>", "Dap UI", opts = { silent = true } },
+    ["<leader>dl"] = { "<cmd>lua require'dap'.run_last()<cr>", "Run Last", opts = { silent = true } },
   },
 }
 
@@ -133,7 +133,7 @@ M.Neovim = {
       opts = { silent = true },
     },
     ["<leader>nc"] = {
-      ":NvCheatsheet<cr>",
+      "<cmd>NvCheatsheet<cr>",
       "Cheatsheet",
       opts = { silent = true },
     },
@@ -148,8 +148,8 @@ M.Neovim = {
       "Inspect",
       opts = { silent = true },
     }, -- only available on neovim >= 0.9
-    ["<leader>nm"] = { ":messages<cr>", "Messages", opts = { silent = true } },
-    ["<leader>nh"] = { ":checkhealth<cr>", "Health", opts = { silent = true } },
+    ["<leader>nm"] = { "<cmd>messages<cr>", "Messages", opts = { silent = true } },
+    ["<leader>nh"] = { "<cmd>checkhealth<cr>", "Health", opts = { silent = true } },
     ["<leader>nv"] = {
       function()
         local version = vim.version().major .. "." .. vim.version().minor .. "." .. vim.version().patch
@@ -164,76 +164,76 @@ M.Neovim = {
 M.Telescope = {
   plugin = true,
   n = {
-    ["<leader>fa"] = { ":Telescope autocommands<cr>", "Autocommmands", opts = { silent = true } },
-    ["<leader>ff"] = { ":Telescope find_files<cr>", "Files", opts = { silent = true } },
-    ["<leader>fm"] = { ":Telescope marks<cr>", "Marks", opts = { silent = true } },
-    ["<leader>fw"] = { ":Telescope live_grep<cr>", "Word", opts = { silent = true } },
-    ["<leader>ft"] = { ":Telescope themes<cr>", "Themes", opts = { silent = true } },
-    -- B = { ":Telescope bookmarks<cr>", "Browswer Bookmarks" , opts = { silent = true }},
-    ["<leader>fb"] = { ":Telescope buffers<cr>", "Buffers", opts = { silent = true } },
+    ["<leader>fa"] = { "<cmd>Telescope autocommands<cr>", "Autocommmands", opts = { silent = true } },
+    ["<leader>ff"] = { "<cmd>Telescope find_files<cr>", "Files", opts = { silent = true } },
+    ["<leader>fm"] = { "<cmd>Telescope marks<cr>", "Marks", opts = { silent = true } },
+    ["<leader>fw"] = { "<cmd>Telescope live_grep<cr>", "Word", opts = { silent = true } },
+    ["<leader>ft"] = { "<cmd>Telescope themes<cr>", "Themes", opts = { silent = true } },
+    -- B = { "<cmd>Telescope bookmarks<cr>", "Browswer Bookmarks" , opts = { silent = true }},
+    ["<leader>fb"] = { "<cmd>Telescope buffers<cr>", "Buffers", opts = { silent = true } },
     ["<leader>fn"] = {
-      ":lua require('telescope').extensions.notify.notify()<cr>",
+      "<cmd>lua require('telescope').extensions.notify.notify()<cr>",
       "Notify History",
       opts = { silent = true },
     },
-    ["<leader>fp"] = { ":Telescope projects<cr>", "Projects", opts = { silent = true } },
-    -- s = { ":Telescope persisted<cr>", "Sessions" , opts = { silent = true }},
-    ["<leader>fh"] = { ":Telescope help_tags<cr>", "Help", opts = { silent = true } },
-    ["<leader>fk"] = { ":Telescope keymaps<cr>", "Keymaps", opts = { silent = true } },
-    ["<leader>fC"] = { ":Telescope commands<cr>", "Commands", opts = { silent = true } },
-    ["<leader>fr"] = { ":Telescope oldfiles<cr>", "Recent Files", opts = { silent = true } },
-    ["<leader>fH"] = { ":Telescope highlights<cr>", "Highlights", opts = { silent = true } },
-    ["<leader>ls"] = { ":Telescope lsp_document_symbols<cr>", "Buffer Symbols", opts = { silent = true } },
-    ["<leader>lS"] = { ":Telescope lsp_workspace_symbols<cr>", "Workspace Symbols", opts = { silent = true } },
-    ["<leader>go"] = { ":Telescope git_status<cr>", "Open changed file", opts = { silent = true } },
-    ["<leader>gb"] = { ":Telescope git_branches<cr>", "Checkout branch", opts = { silent = true } },
-    ["<leader>gc"] = { ":Telescope git_commits<cr>", "Checkout commit", opts = { silent = true } },
+    ["<leader>fp"] = { "<cmd>Telescope projects<cr>", "Projects", opts = { silent = true } },
+    -- s = { "<cmd>Telescope persisted<cr>", "Sessions" , opts = { silent = true }},
+    ["<leader>fh"] = { "<cmd>Telescope help_tags<cr>", "Help", opts = { silent = true } },
+    ["<leader>fk"] = { "<cmd>Telescope keymaps<cr>", "Keymaps", opts = { silent = true } },
+    ["<leader>fC"] = { "<cmd>Telescope commands<cr>", "Commands", opts = { silent = true } },
+    ["<leader>fr"] = { "<cmd>Telescope oldfiles<cr>", "Recent Files", opts = { silent = true } },
+    ["<leader>fH"] = { "<cmd>Telescope highlights<cr>", "Highlights", opts = { silent = true } },
+    ["<leader>ls"] = { "<cmd>Telescope lsp_document_symbols<cr>", "Buffer Symbols", opts = { silent = true } },
+    ["<leader>lS"] = { "<cmd>Telescope lsp_workspace_symbols<cr>", "Workspace Symbols", opts = { silent = true } },
+    ["<leader>go"] = { "<cmd>Telescope git_status<cr>", "Open changed file", opts = { silent = true } },
+    ["<leader>gb"] = { "<cmd>Telescope git_branches<cr>", "Checkout branch", opts = { silent = true } },
+    ["<leader>gc"] = { "<cmd>Telescope git_commits<cr>", "Checkout commit", opts = { silent = true } },
   },
 }
 
 M.Toggleterm = {
   plugin = true,
   n = {
-    ["<leader>tf"] = { ":ToggleTerm direction=float<cr>", "Float Terminal", opts = { silent = true } },
-    ["<leader>th"] = { ":ToggleTerm size=10 direction=horizontal<cr>", "Horizontal Terminal", opts = { silent = true } },
-    ["<leader>tv"] = { ":ToggleTerm size=50 direction=vertical<cr>", "Vertical Terminal", opts = { silent = true } },
+    ["<leader>tf"] = { "<cmd>ToggleTerm direction=float<cr>", "Float Terminal", opts = { silent = true } },
+    ["<leader>th"] = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal Terminal", opts = { silent = true } },
+    ["<leader>tv"] = { "<cmd>ToggleTerm size=50 direction=vertical<cr>", "Vertical Terminal", opts = { silent = true } },
   },
 }
 
 M.Trouble = {
   plugin = true,
   n = {
-    ["<leader>ld"] = { ":TroubleToggle document_diagnostics<cr>", "Buffer Diagnostics", opts = { silent = true } },
-    ["<leader>lw"] = { ":TroubleToggle workspace_diagnostics<cr>", "Workspace Diagnostics", opts = { silent = true } },
-    ["<leader>fT"] = { ":TodoTrouble<cr>", "Todo", opts = { silent = true } },
+    ["<leader>ld"] = { "<cmd>TroubleToggle document_diagnostics<cr>", "Buffer Diagnostics", opts = { silent = true } },
+    ["<leader>lw"] = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace Diagnostics", opts = { silent = true } },
+    ["<leader>fT"] = { "<cmd>TodoTrouble<cr>", "Todo", opts = { silent = true } },
   },
 }
 
 M.Lspsaga = {
   plugin = true,
   n = {
-    ["<leader>la"] = { ":Lspsaga code_action<cr>", "Code Action", opts = { silent = true } },
-    ["<leader>lo"] = { ":Lspsaga outline<cr>", "Code Outline", opts = { silent = true } },
-    ["<leader>lI"] = { ":Lspsaga incoming_calls<cr>", "Incoming Calls", opts = { silent = true } },
-    ["<leader>lO"] = { ":Lspsaga outgoing_calls<cr>", "Outgoing Calls", opts = { silent = true } },
-    ["<leader>lr"] = { ":Lspsaga rename<cr>", "Rename", opts = { silent = true } },
+    ["<leader>la"] = { "<cmd>Lspsaga code_action<cr>", "Code Action", opts = { silent = true } },
+    ["<leader>lo"] = { "<cmd>Lspsaga outline<cr>", "Code Outline", opts = { silent = true } },
+    ["<leader>lI"] = { "<cmd>Lspsaga incoming_calls<cr>", "Incoming Calls", opts = { silent = true } },
+    ["<leader>lO"] = { "<cmd>Lspsaga outgoing_calls<cr>", "Outgoing Calls", opts = { silent = true } },
+    ["<leader>lr"] = { "<cmd>Lspsaga rename<cr>", "Rename", opts = { silent = true } },
   },
   v = {
-    ["<leader>la"] = { ":Lspsaga code_action<cr>", "Code Action", opts = { silent = true } },
+    ["<leader>la"] = { "<cmd>Lspsaga code_action<cr>", "Code Action", opts = { silent = true } },
   },
 }
 
 M.Mason = {
   plugin = true,
   n = {
-    ["<leader>lm"] = { ":Mason<cr>", "Mason Installer", opts = { silent = true } },
+    ["<leader>lm"] = { "<cmd>Mason<cr>", "Mason Installer", opts = { silent = true } },
     ["<leader>lj"] = {
-      ":Lspsaga diagnostic_jump_next<cr>",
+      "<cmd>Lspsaga diagnostic_jump_next<cr>",
       "Next Diagnostic",
       opts = { silent = true },
     },
     ["<leader>lk"] = {
-      ":Lspsaga diagnostic_jump_prev<cr>",
+      "<cmd>Lspsaga diagnostic_jump_prev<cr>",
       "Prev Diagnostic",
       opts = { silent = true },
     },
@@ -243,17 +243,17 @@ M.Mason = {
 M.LSP = {
   plugin = true,
   n = {
-    ["<leader>lf"] = { ":Format<cr>", "Format", opts = { silent = true } },
-    ["<leader>li"] = { ":LspInfo<cr>", "Info", opts = { silent = true } },
-    ["<leader>lR"] = { ":LspRestart<cr>", "Restart", opts = { silent = true } },
+    ["<leader>lf"] = { "<cmd>Format<cr>", "Format", opts = { silent = true } },
+    ["<leader>li"] = { "<cmd>LspInfo<cr>", "Info", opts = { silent = true } },
+    ["<leader>lR"] = { "<cmd>LspRestart<cr>", "Restart", opts = { silent = true } },
   },
   v = {
-    ["<leader>lf"] = { ":Format<cr>", "Format", opts = { silent = true } },
+    ["<leader>lf"] = { "<cmd>Format<cr>", "Format", opts = { silent = true } },
   },
 }
 
 if vim.lsp.inlay_hint then
-  M.LSP.n["<leader>lh"] = { ":lua vim.lsp.inlay_hint(0, nil)<cr>", "Inlay Hint", opts = { silent = true } }
+  M.LSP.n["<leader>lh"] = { "<cmd>lua vim.lsp.inlay_hint(0, nil)<cr>", "Inlay Hint", opts = { silent = true } }
 end
 
 M.Git = {
@@ -266,14 +266,14 @@ M.Git = {
       "Lazygit",
       opts = { silent = true },
     },
-    ["<leader>gj"] = { ":lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk", opts = { silent = true } },
-    ["<leader>gk"] = { ":lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk", opts = { silent = true } },
-    ["<leader>gl"] = { ":lua require 'gitsigns'.blame_line()<cr>", "Blame", opts = { silent = true } },
-    ["<leader>gp"] = { ":lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk", opts = { silent = true } },
-    ["<leader>gr"] = { ":lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk", opts = { silent = true } },
-    ["<leader>gR"] = { ":lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer", opts = { silent = true } },
-    ["<leader>gs"] = { ":lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk", opts = { silent = true } },
-    ["<leader>gu"] = { ":lua reguire 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stgge Hunk", opts = { silent = true } },
+    ["<leader>gj"] = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk", opts = { silent = true } },
+    ["<leader>gk"] = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk", opts = { silent = true } },
+    ["<leader>gl"] = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame", opts = { silent = true } },
+    ["<leader>gp"] = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk", opts = { silent = true } },
+    ["<leader>gr"] = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk", opts = { silent = true } },
+    ["<leader>gR"] = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer", opts = { silent = true } },
+    ["<leader>gs"] = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk", opts = { silent = true } },
+    ["<leader>gu"] = { "<cmd>lua reguire 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stgge Hunk", opts = { silent = true } },
     ["<leader>gd"] = {
       function()
         if next(require("diffview.lib").views) == nil then
@@ -290,16 +290,16 @@ M.Git = {
 
 M.Lazy = {
   n = {
-    ["<leader>pc"] = { ":Lazy clean<cr>", "Lazy Clean", opts = { silent = true } },
-    ["<leader>pC"] = { ":Lazy check<cr>", "Lazy Check", opts = { silent = true } },
-    ["<leader>pd"] = { ":Lazy debug<cr>", "Lazy Debug", opts = { silent = true } },
-    ["<leader>pi"] = { ":Lazy install<cr>", "Lazy Install", opts = { silent = true } },
-    ["<leader>ps"] = { ":Lazy sync<cr>", "Lazy Sync", opts = { silent = true } },
-    ["<leader>pl"] = { ":Lazy log<cr>", "Lazy Log", opts = { silent = true } },
-    ["<leader>ph"] = { ":Lazy home<cr>", "Lazy Home", opts = { silent = true } },
-    ["<leader>pH"] = { ":Lazy help<cr>", "Lazy Help", opts = { silent = true } },
-    ["<leader>pp"] = { ":Lazy profile<cr>", "Lazy Profile", opts = { silent = true } },
-    ["<leader>pu"] = { ":Lazy update<cr>", "Lazy Update", opts = { silent = true } },
+    ["<leader>pc"] = { "<cmd>Lazy clean<cr>", "Lazy Clean", opts = { silent = true } },
+    ["<leader>pC"] = { "<cmd>Lazy check<cr>", "Lazy Check", opts = { silent = true } },
+    ["<leader>pd"] = { "<cmd>Lazy debug<cr>", "Lazy Debug", opts = { silent = true } },
+    ["<leader>pi"] = { "<cmd>Lazy install<cr>", "Lazy Install", opts = { silent = true } },
+    ["<leader>ps"] = { "<cmd>Lazy sync<cr>", "Lazy Sync", opts = { silent = true } },
+    ["<leader>pl"] = { "<cmd>Lazy log<cr>", "Lazy Log", opts = { silent = true } },
+    ["<leader>ph"] = { "<cmd>Lazy home<cr>", "Lazy Home", opts = { silent = true } },
+    ["<leader>pH"] = { "<cmd>Lazy help<cr>", "Lazy Help", opts = { silent = true } },
+    ["<leader>pp"] = { "<cmd>Lazy profile<cr>", "Lazy Profile", opts = { silent = true } },
+    ["<leader>pu"] = { "<cmd>Lazy update<cr>", "Lazy Update", opts = { silent = true } },
   },
 }
 
@@ -323,13 +323,13 @@ M.General = {
     },
   },
   n = {
-    -- ["<leader>a"] = { ":Nvdash<cr>", "Nvdash", opts = { silent = true } },
-    ["<leader>r"] = { ":%d+<cr>", "Remove All Text", opts = { silent = true } },
-    ["<leader>y"] = { ":%y+<cr>", "Yank All Text", opts = { silent = true } },
-    ["<leader>q"] = { ":qa!<cr>", "Quit", opts = { silent = true } },
-    ["<leader>c"] = { ":Bdelete!<cr>", "Close Buffer", opts = { silent = true } },
-    ["<leader>ol"] = { ":set nu!<cr>", "Toggle line number", opts = { silent = true } },
-    ["<leader>or"] = { ":set rnu!<cr>", "Toggle relative number", opts = { silent = true } },
+    -- ["<leader>a"] = { "<cmd>Nvdash<cr>", "Nvdash", opts = { silent = true } },
+    ["<leader>r"] = { "<cmd>%d+<cr>", "Remove All Text", opts = { silent = true } },
+    ["<leader>y"] = { "<cmd>%y+<cr>", "Yank All Text", opts = { silent = true } },
+    ["<leader>q"] = { "<cmd>qa!<cr>", "Quit", opts = { silent = true } },
+    ["<leader>c"] = { "<cmd>Bdelete!<cr>", "Close Buffer", opts = { silent = true } },
+    ["<leader>ol"] = { "<cmd>set nu!<cr>", "Toggle line number", opts = { silent = true } },
+    ["<leader>or"] = { "<cmd>set rnu!<cr>", "Toggle relative number", opts = { silent = true } },
     ["<leader>ot"] = {
       function()
         require("base46").toggle_transparency()
@@ -408,25 +408,25 @@ M.General = {
     },
 
     ["<C-Up>"] = {
-      ":resize +2<CR>",
+      "<cmd>resize +2<CR>",
       "Add size at the top",
       opts = { silent = true },
     },
 
     ["<C-Down>"] = {
-      ":resize -2<CR>",
+      "<cmd>resize -2<CR>",
       "Add size at the bottom",
       opts = { silent = true },
     },
 
     ["<C-Left>"] = {
-      ":vertical resize +2<CR>",
+      "<cmd>vertical resize +2<CR>",
       "Add size at the left",
       opts = { silent = true },
     },
 
     ["<C-Right>"] = {
-      ":vertical resize -2<CR>",
+      "<cmd>vertical resize -2<CR>",
       "Add size at the right",
       opts = { silent = true },
     },
@@ -447,25 +447,25 @@ M.General = {
     },
 
     ["<Left>"] = {
-      ":tabprevious<CR>",
+      "<cmd>tabprevious<CR>",
       "Go to previous tab",
       opts = { silent = true },
     },
 
     ["<Right>"] = {
-      ":tabnext<CR>",
+      "<cmd>tabnext<CR>",
       "Go to next tab",
       opts = { silent = true },
     },
 
     ["<Up>"] = {
-      ":tabnew<CR>",
+      "<cmd>tabnew<CR>",
       "New tab",
       opts = { silent = true },
     },
 
     ["<Down>"] = {
-      ":tabclose<CR>",
+      "<cmd>tabclose<CR>",
       "Close tab",
       opts = { silent = true },
     },
