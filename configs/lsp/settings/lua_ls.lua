@@ -16,6 +16,7 @@ return {
           [vim.fn.stdpath "data" .. "/lazy/ui/nvchad_types"] = true,
           [vim.fn.stdpath "data" .. "/lazy/lazy.nvim/lua/lazy"] = true,
         },
+        checkThirdParty = false,
         maxPreload = 100000,
         preloadFileSize = 10000,
       },
