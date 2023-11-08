@@ -3,6 +3,18 @@ local M = {}
 
 local headers = require "custom.core.headers"
 
+local function get_venv(variable)
+  local venv = os.getenv(variable)
+  if venv ~= nil and string.find(venv, "/") then
+    local orig_venv = venv
+    for w in orig_venv:gmatch "([^/]+)" do
+      venv = w
+    end
+    venv = string.format("%s", venv)
+  end
+  return venv
+end
+
 local function get_header()
   if vim.g.random_header then
     local headerNames = {}
@@ -82,19 +94,8 @@ M.ui = {
           return " "
         end
 
-        local conda_env = os.getenv "CONDA_DEFAULT_ENV"
-        local venv_path = os.getenv "VIRTUAL_ENV"
-
-        if venv_path == nil then
-          if conda_env == nil then
-            return " "
-          else
-            return "%#St_pos_text#" .. string.format("  %s (conda)", conda_env) .. " "
-          end
-        else
-          local venv_name = vim.fn.fnamemodify(venv_path, ":t")
-          return "%#St_pos_text#" .. string.format("  %s (venv)", venv_name) .. " "
-        end
+        local venv = get_venv "CONDA_DEFAULT_ENV" or get_venv "VIRTUAL_ENV" or " "
+        return " " .. venv
       end)()
       modules[9] = (function()
         local clients = {}
