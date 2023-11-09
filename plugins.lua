@@ -467,6 +467,13 @@ local plugins = {
 
           -- NOTE: Make sure to install the needed files/exectubles through mason
           require "custom.configs.dap.settings.cpptools"
+          require "custom.configs.dap.settings.netcoredbg"
+          require "custom.configs.dap.settings.godot"
+          require "custom.configs.dap.settings.bash-debug-adapter"
+          require "custom.configs.dap.settings.php-debug-adapter"
+          require "custom.configs.dap.settings.dart-debug-adapter"
+          require "custom.configs.dap.settings.chrome-debug-adapter"
+          require "custom.configs.dap.settings.firefox-debug-adapter"
           require "custom.configs.dap.settings.java-debug"
           require "custom.configs.dap.settings.node-debug2"
           require "custom.configs.dap.settings.debugpy"
