@@ -1,16 +1,10 @@
 local dap = require "dap"
 local executable = ""
 
-if vim.fn.has "win32" == 1 then
-  executable = "OpenDebugAD7.exe"
-else
-  executable = "OpenDebugAD7"
-end
-
 dap.adapters.cppdbg = {
   id = "cppdbg",
   type = "executable",
-  command = vim.fn.stdpath "data" .. "/mason/packages/cpptools/extension/debugAdapters/bin/" .. executable,
+  command = "OpenDebugAD7",
   options = {
     detached = false,
   },

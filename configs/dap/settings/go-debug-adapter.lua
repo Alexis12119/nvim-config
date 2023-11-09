@@ -2,7 +2,7 @@ local dap = require "dap"
 dap.adapters.go = {
   type = "executable",
   command = "node",
-  args = { vim.fn.stdpath "data" .. "/mason/packages/go-debug-adapter/extension/dist/debugAdapter.js" },
+  args = { "go-debug-adapter" },
 }
 dap.configurations.go = {
   {

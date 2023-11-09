@@ -3,13 +3,13 @@ local dap = require "dap"
 -- Dart / Flutter
 dap.adapters.dart = {
   type = "executable",
-  command = vim.fn.stdpath "data" .. "/mason/bin/dart-debug-adapter",
+  command = "dart-debug-adapter",
   args = { "dart" },
 }
 
 dap.adapters.flutter = {
   type = "executable",
-  command = vim.fn.stdpath "data" .. "/mason/bin/dart-debug-adapter",
+  command = "dart-debug-adapter",
   args = { "flutter" },
 }
 
