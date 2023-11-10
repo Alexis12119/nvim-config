@@ -1,5 +1,4 @@
 local dap = require "dap"
-local executable = ""
 
 dap.adapters.cppdbg = {
   id = "cppdbg",
