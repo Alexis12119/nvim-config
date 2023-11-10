@@ -87,6 +87,7 @@ local plugins = {
           require "custom.configs.nvim-lint"
         end,
       },
+      -- For Typescript
       {
         "pmizio/typescript-tools.nvim",
         opts = {
@@ -110,7 +111,7 @@ local plugins = {
       --     }
       --   end,
       -- },
-      -- Installer
+      -- Package Installer
       {
         "williamboman/mason.nvim",
         init = function()
