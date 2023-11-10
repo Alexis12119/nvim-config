@@ -1,4 +1,7 @@
 return {
+  autotag = {
+    enable = true,
+  },
   ensure_installed = {
     "vim",
     "lua",
