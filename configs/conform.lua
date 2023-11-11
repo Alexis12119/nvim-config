@@ -15,7 +15,7 @@ local prettier_ft = {
   "html",
   "json",
   "jsx",
-  "javaScript",
+  "javascript",
   "less",
   "markdown",
   "scss",
