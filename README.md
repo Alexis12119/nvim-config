@@ -13,7 +13,7 @@
 Before you dive in, ensure you have the following requirements installed:
 
 <details>
-<summary>Click to see the requirements</summary>
+<summary>Click to see the requirements</summary><br />
 
 In windows, you can use [scoop](https://scoop.sh/) to install them.
 
