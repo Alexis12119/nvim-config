@@ -6,7 +6,7 @@ local plugins = {
     enabled = false,
   },
 
-  -- Peek Lines
+  -- Peek At Lines
   {
     "nacro90/numb.nvim",
     event = "CmdlineEnter",
@@ -41,6 +41,7 @@ local plugins = {
         tag = "v0.4.0",
         opts = {},
       },
+      -- Commandline completions
       {
         "hrsh7th/cmp-cmdline",
       },

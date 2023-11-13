@@ -15,6 +15,8 @@ Before you dive in, ensure you have the following requirements installed:
 <details>
 <summary>Click to see the requirements</summary>
 
+In windows, you can use [scoop](https://scoop.sh/) to install them.
+
 - **Git:**
 
   - [lazygit](https://github.com/jesseduffield/lazygit)
@@ -25,6 +27,7 @@ Before you dive in, ensure you have the following requirements installed:
   - [bat](https://github.com/sharkdp/bat)
   - [ripgrep](https://github.com/BurntSushi/ripgrep)
   - [make](https://www.gnu.org/software/make/)
+  - [mingw-nuwen](https://nuwen.net/mingw.html)
 
 - **Nerd Font (For Icons):**
 
@@ -47,7 +50,7 @@ Please follow these steps:
 
 2. **Installation**:
 
-   **NOTE:** If you encountered an error after the plugin installation. Just restart `nvim` or press `<Space> + p + s` after you restarted `nvim`.
+   **NOTE:** If you encountered an error after the plugin installation. Just restart `nvim`.
 
    - On Linux/MacOS:
 
