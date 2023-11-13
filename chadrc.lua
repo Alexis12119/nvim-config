@@ -98,7 +98,7 @@ M.ui = {
         if venv == " " then
           return " "
         else
-          return " " .. venv
+          return "  " .. venv
         end
       end)()
       modules[9] = (function()
