@@ -95,7 +95,11 @@ M.ui = {
         end
 
         local venv = get_venv "CONDA_DEFAULT_ENV" or get_venv "VIRTUAL_ENV" or " "
-        return " " .. venv
+        if venv == " " then
+          return " "
+        else
+          return " " .. venv
+        end
       end)()
       modules[9] = (function()
         local clients = {}
