@@ -287,7 +287,6 @@ M.Lspsaga = {
     ["<leader>lr"] = { "<cmd>Lspsaga rename<cr>", "Rename", opts = { silent = true } },
   },
   v = {
-
     ["<leader>la"] = { "<cmd>Lspsaga code_action<cr>", "Code Action", opts = { silent = true } },
   },
 }
