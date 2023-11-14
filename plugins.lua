@@ -519,7 +519,7 @@ local plugins = {
     init = function()
       require("core.utils").load_mappings "Compiler"
     end,
-    event = "VeryLazy",
+    cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
     dependencies = {
       {
         "stevearc/overseer.nvim",
