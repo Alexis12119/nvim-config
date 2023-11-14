@@ -66,7 +66,6 @@ Please follow these steps:
 ## ✨ Features
 
 - **Plugin Management**: Efficiently manage plugins with [lazy.nvim](https://github.com/folke/lazy.nvim).
-- **Built-in Code Runner**: Execute code right from Neovim.
 - **Project Management**: Simplify project handling with [project.nvim](https://github.com/ahmedkhalf/project.nvim).
 - **File Explorer**: Navigate projects seamlessly using [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua).
 - **Diff Viewer**: Easily cycle through diffs with [diffview.nvim](https://github.com/sindrets/diffview.nvim).

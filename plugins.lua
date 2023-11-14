@@ -512,6 +512,30 @@ local plugins = {
     opts = require "custom.configs.noice",
     dependencies = { { "MunifTanjim/nui.nvim" }, { "rcarriga/nvim-notify" } },
   },
+
+  -- Code Runner
+  {
+    "Zeioth/compiler.nvim",
+    init = function()
+      require("core.utils").load_mappings "Compiler"
+    end,
+    event = "VeryLazy",
+    dependencies = {
+      {
+        "stevearc/overseer.nvim",
+        commit = "400e762648b70397d0d315e5acaf0ff3597f2d8b",
+        opts = {
+          task_list = {
+            direction = "bottom",
+            min_height = 25,
+            max_height = 25,
+            default_detail = 1,
+          },
+        },
+      },
+    },
+    opts = {},
+  },
 }
 
 return plugins
