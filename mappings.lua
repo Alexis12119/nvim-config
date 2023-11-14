@@ -31,13 +31,13 @@ M.NvimTree = {
 M.Compiler = {
   plugin = true,
   n = {
-    ["<leader>Co"] = { "<cmd>CompilerOpen<cr>", "Open Compiler", opts = { silent = true } },
+    ["<F6>"] = { "<cmd>CompilerRedo<cr>", "Redo Last Action", opts = { silent = true } },
 
-    ["<leader>Cr"] = { "<cmd>CompilerRedo<cr>", "Redo Last Action", opts = { silent = true } },
+    ["<F5>"] = { "<cmd>CompilerOpen<cr>", "Open Compiler", opts = { silent = true } },
 
-    ["<leader>Cs"] = { "<cmd>CompilerStop<cr>", "Stop All Tasks", opts = { silent = true } },
+    ["<F4>"] = { "<cmd>CompilerStop<cr>", "Stop All Tasks", opts = { silent = true } },
 
-    ["<leader>Ct"] = {
+    ["<F3>"] = {
       "<cmd>CompilerToggleResults<cr>",
       "Toggle Compiler Results.",
       opts = { silent = true },
