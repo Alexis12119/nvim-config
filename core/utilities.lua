@@ -45,6 +45,20 @@ function ClickSplit()
   vim.cmd "sp"
 end
 
+function ConfigUpdate()
+  local config_path = vim.fn.stdpath "config" .. "/lua/custom"
+  local branch = "main"
+
+  -- Fetch the latest changes from the remote repository
+  vim.fn.system("git -C " .. config_path .. " fetch origin")
+
+  -- Hard reset to the latest commit on the main branch
+  vim.fn.system("git -C " .. config_path .. " reset --hard origin/" .. branch)
+
+  -- Pull the latest changes
+  vim.fn.system("git -C " .. config_path .. " pull origin " .. branch)
+end
+
 -- HUUUUUUUUUUUUUUUUUUUUUUUGE kudos and thanks to
 -- https://github.com/hown3d for this function <3
 -- local function substitute(cmd)

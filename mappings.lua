@@ -165,6 +165,14 @@ M.Neovim = {
       opts = { silent = true },
     },
 
+    ["<leader>nu"] = {
+      function()
+        vim.cmd "ConfigUpdate"
+      end,
+      "Update Config",
+      opts = { silent = true },
+    },
+
     ["<leader>nc"] = {
       "<cmd>NvCheatsheet<cr>",
       "Cheatsheet",
