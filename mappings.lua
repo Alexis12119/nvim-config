@@ -31,13 +31,13 @@ M.NvimTree = {
 M.Compiler = {
   plugin = true,
   n = {
-    ["<F6>"] = { "<cmd>CompilerRedo<cr>", "Redo Last Action", opts = { silent = true } },
+    ["<leader>rr"] = { "<cmd>CompilerRedo<cr>", "Redo Last Action", opts = { silent = true } },
 
-    ["<F5>"] = { "<cmd>CompilerOpen<cr>", "Open Compiler", opts = { silent = true } },
+    ["<leader>ro"] = { "<cmd>CompilerOpen<cr>", "Open Compiler", opts = { silent = true } },
 
-    ["<F4>"] = { "<cmd>CompilerStop<cr>", "Stop All Tasks", opts = { silent = true } },
+    ["<leader>rs"] = { "<cmd>CompilerStop<cr>", "Stop All Tasks", opts = { silent = true } },
 
-    ["<F3>"] = {
+    ["<leader>rt"] = {
       "<cmd>CompilerToggleResults<cr>",
       "Toggle Compiler Results.",
       opts = { silent = true },
@@ -374,25 +374,25 @@ M.Git = {
 
 M.Lazy = {
   n = {
-    ["<leader>pc"] = { "<cmd>Lazy clean<cr>", "Lazy Clean", opts = { silent = true } },
+    ["<leader>pc"] = { "<cmd>Lazy clean<cr>", "Clean", opts = { silent = true } },
 
-    ["<leader>pC"] = { "<cmd>Lazy check<cr>", "Lazy Check", opts = { silent = true } },
+    ["<leader>pC"] = { "<cmd>Lazy check<cr>", "Check", opts = { silent = true } },
 
-    ["<leader>pd"] = { "<cmd>Lazy debug<cr>", "Lazy Debug", opts = { silent = true } },
+    ["<leader>pd"] = { "<cmd>Lazy debug<cr>", "Debug", opts = { silent = true } },
 
-    ["<leader>pi"] = { "<cmd>Lazy install<cr>", "Lazy Install", opts = { silent = true } },
+    ["<leader>pi"] = { "<cmd>Lazy install<cr>", "Install", opts = { silent = true } },
 
-    ["<leader>ps"] = { "<cmd>Lazy sync<cr>", "Lazy Sync", opts = { silent = true } },
+    ["<leader>ps"] = { "<cmd>Lazy sync<cr>", "Sync", opts = { silent = true } },
 
-    ["<leader>pl"] = { "<cmd>Lazy log<cr>", "Lazy Log", opts = { silent = true } },
+    ["<leader>pl"] = { "<cmd>Lazy log<cr>", "Log", opts = { silent = true } },
 
-    ["<leader>ph"] = { "<cmd>Lazy home<cr>", "Lazy Home", opts = { silent = true } },
+    ["<leader>ph"] = { "<cmd>Lazy home<cr>", "Home", opts = { silent = true } },
 
-    ["<leader>pH"] = { "<cmd>Lazy help<cr>", "Lazy Help", opts = { silent = true } },
+    ["<leader>pH"] = { "<cmd>Lazy help<cr>", "Help", opts = { silent = true } },
 
-    ["<leader>pp"] = { "<cmd>Lazy profile<cr>", "Lazy Profile", opts = { silent = true } },
+    ["<leader>pp"] = { "<cmd>Lazy profile<cr>", "Profile", opts = { silent = true } },
 
-    ["<leader>pu"] = { "<cmd>Lazy update<cr>", "Lazy Update", opts = { silent = true } },
+    ["<leader>pu"] = { "<cmd>Lazy update<cr>", "Update", opts = { silent = true } },
   },
 }
 
