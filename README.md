@@ -50,8 +50,6 @@ Please follow these steps:
 
 2. **Installation**:
 
-   **NOTE:** If you encountered an error after the plugin installation. Just restart `nvim`.
-
    - On Linux/MacOS:
 
      ```sh
