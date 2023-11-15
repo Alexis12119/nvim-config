@@ -61,6 +61,7 @@ autocmd("FileType", {
   group = general,
   desc = "Enter Normal Mode In OverseerList",
 })
+
 autocmd("TermOpen", {
   callback = function()
     vim.opt_local.relativenumber = false
