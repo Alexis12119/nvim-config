@@ -51,6 +51,16 @@ autocmd({ "BufReadPost", "BufNewFile" }, {
   desc = "Lazy load clipboard",
 })
 
+autocmd("FileType", {
+  pattern = "OverseerList",
+  callback = function()
+    vim.opt_local.relativenumber = false
+    vim.opt_local.number = false
+    vim.cmd "startinsert!"
+  end,
+  group = general,
+  desc = "Enter Normal Mode In OverseerList",
+})
 autocmd("TermOpen", {
   callback = function()
     vim.opt_local.relativenumber = false
