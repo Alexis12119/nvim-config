@@ -75,8 +75,8 @@ function ConfigUpdate()
 
   -- set lines & highlight for updater title
   vim.api.nvim_buf_set_lines(buf, 0, -1, false, content)
-  local configUpdate = api.nvim_create_namespace "configUpdate"
-  api.nvim_buf_add_highlight(buf, configUpdate, "configUpdateTitle", 1, 0, -1)
+  local nvUpdater = api.nvim_create_namespace "nvUpdater"
+  api.nvim_buf_add_highlight(buf, nvUpdater, "nvUpdaterTitle", 1, 0, -1)
 
   local git_outputs = {} -- list of commits fill here after 3-4 seconds
 
@@ -95,8 +95,8 @@ function ConfigUpdate()
       if #git_outputs == 0 then
         content[2] = header .. " " .. spinners[index % #spinners + 1] .. "  "
         vim.api.nvim_buf_set_lines(buf, 0, -1, false, content)
-        api.nvim_buf_add_highlight(buf, configUpdate, "configUpdateTitle", 1, 0, #header)
-        api.nvim_buf_add_highlight(buf, configUpdate, "configUpdateProgress", 1, #header, -1)
+        api.nvim_buf_add_highlight(buf, nvUpdater, "nvUpdaterTitle", 1, 0, #header)
+        api.nvim_buf_add_highlight(buf, nvUpdater, "nvUpdaterProgress", 1, #header, -1)
       end
     end)
 
@@ -141,23 +141,16 @@ function ConfigUpdate()
       -- draw the output on buffer
       vim.api.nvim_buf_set_lines(buf, 0, -1, false, content)
 
-      local title_hl = "configUpdateTitle" .. (git_fetch_err and "FAIL" or "DONE")
-      local progress_hl = "configUpdateProgress" .. (git_fetch_err and "FAIL" or "DONE")
+      local title_hl = "nvUpdaterTitle" .. (git_fetch_err and "FAIL" or "DONE")
+      local progress_hl = "nvUpdaterProgress" .. (git_fetch_err and "FAIL" or "DONE")
 
       -- highlight title & finish icon
-      api.nvim_buf_add_highlight(buf, configUpdate, title_hl, 1, 0, #header)
-      api.nvim_buf_add_highlight(buf, configUpdate, progress_hl, 1, #header, -1)
+      api.nvim_buf_add_highlight(buf, nvUpdater, title_hl, 1, 0, #header)
+      api.nvim_buf_add_highlight(buf, nvUpdater, progress_hl, 1, #header, -1)
 
       -- 7 = length of git commit hash aliases + 1 :
       for i = 3, #content do
-        api.nvim_buf_add_highlight(
-          buf,
-          configUpdate,
-          (git_fetch_err and "configUpdateFAIL" or "configUpdateCommits"),
-          i,
-          2,
-          13
-        )
+        api.nvim_buf_add_highlight(buf, nvUpdater, (git_fetch_err and "nvUpdaterFAIL" or "nvUpdaterCommits"), i, 2, 13)
       end
       -- Fetch the latest changes from the remote repository
       vim.fn.jobstart({ "git", "fetch", "origin" }, { silent = true, cwd = nvim_config })
