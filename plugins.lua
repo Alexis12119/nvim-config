@@ -6,6 +6,7 @@ local plugins = {
     enabled = false,
   },
 
+  -- Keymaps Popup
   {
     "folke/which-key.nvim",
     opts = {
