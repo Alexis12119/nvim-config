@@ -11,7 +11,18 @@ return {
 
   -- All the patterns used to detect root dir, when **"pattern"** is in
   -- detection_methods
-  patterns = { ".git", "Cargo.toml", "*.cfg", "CMakeLists.txt", ".vscode", ".svn", "Makefile", "package.json" },
+  patterns = {
+    ".git",
+    "Cargo.toml",
+    "pubspec.yaml",
+    "*.cfg",
+    "CMakeLists.txt",
+    "build.zig",
+    ".vscode",
+    ".svn",
+    "Makefile",
+    "package.json",
+  },
 
   -- Table of lsp clients to ignore by name
   -- eg: { "efm", ... }
