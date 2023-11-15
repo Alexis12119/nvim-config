@@ -48,7 +48,7 @@ end
 function ConfigUpdate()
   -- Inspired by NvChad/ui (https://github.com/NvChad/ui)
   dofile(vim.g.base46_cache .. "nvchad_updater")
-  local nvim_config = vim.fn.stdpath "config" .. "/lua/custom"
+  local config_path = vim.fn.stdpath "config" .. "/lua/custom"
   local config_branch = "main"
 
   local api = vim.api
@@ -111,11 +111,11 @@ function ConfigUpdate()
     -- using vim.schedule because we cant use set_lines & systemlist in callback
     vim.schedule(function()
       if not git_fetch_err then
-        local head_hash = vim.fn.systemlist("git -C " .. nvim_config .. " rev-parse HEAD")
+        local head_hash = vim.fn.systemlist("git -C " .. config_path .. " rev-parse HEAD")
 
         -- git log --format="format:%h: %s"  HEAD..origin/somebranch
         git_outputs = vim.fn.systemlist(
-          "git -C " .. nvim_config .. ' log --format="format:%h: %s" ' .. head_hash[1] .. "..origin/" .. config_branch
+          "git -C " .. config_path .. ' log --format="format:%h: %s" ' .. head_hash[1] .. "..origin/" .. config_branch
         )
 
         if #git_outputs == 0 then
@@ -154,16 +154,16 @@ function ConfigUpdate()
         api.nvim_buf_add_highlight(buf, nvUpdater, (git_fetch_err and "nvUpdaterFAIL" or "nvUpdaterCommits"), i, 2, 13)
       end
       -- Fetch the latest changes from the remote repository
-      vim.fn.jobstart({ "git", "fetch", "origin" }, { silent = true, cwd = nvim_config })
+      vim.fn.jobstart({ "git", "fetch", "origin" }, { silent = true, cwd = config_path })
       -- Hard reset to the latest commit on the main config_branch
-      vim.fn.jobstart({ "git", "reset", "--hard", "origin", config_branch }, { silent = true, cwd = nvim_config })
+      vim.fn.jobstart({ "git", "reset", "--hard", "origin", config_branch }, { silent = true, cwd = config_path })
       -- Pull the latest changes
-      vim.fn.jobstart({ "git", "pull", "origin", config_branch }, { silent = true, cwd = nvim_config })
+      vim.fn.jobstart({ "git", "pull", "origin", config_branch }, { silent = true, cwd = config_path })
     end)
   end
 
   vim.fn.jobstart({ "git", "fetch" }, {
-    cwd = nvim_config,
+    cwd = config_path,
     on_exit = function(_, code, _)
       get_commits_data()
 
