@@ -46,6 +46,7 @@ function ClickSplit()
 end
 
 function ConfigUpdate()
+  -- Inspired by NvChad/ui (https://github.com/NvChad/ui)
   dofile(vim.g.base46_cache .. "nvchad_updater")
   local nvim_config = vim.fn.stdpath "config" .. "/lua/custom"
   local config_branch = "main"
