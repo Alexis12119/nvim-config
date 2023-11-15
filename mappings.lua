@@ -33,13 +33,13 @@ M.Compiler = {
   n = {
     ["<leader>rr"] = { "<cmd>CompilerRedo<cr>", "Redo Last Action", opts = { silent = true } },
 
-    ["<leader>ro"] = { "<cmd>CompilerOpen<cr>", "Open Compiler", opts = { silent = true } },
+    ["<leader>ro"] = { "<cmd>CompilerOpen<cr>", "Open", opts = { silent = true } },
 
     ["<leader>rs"] = { "<cmd>CompilerStop<cr>", "Stop All Tasks", opts = { silent = true } },
 
     ["<leader>rt"] = {
       "<cmd>CompilerToggleResults<cr>",
-      "Toggle Compiler Results.",
+      "Toggle Results.",
       opts = { silent = true },
     },
   },
@@ -426,9 +426,9 @@ M.General = {
 
     ["<leader>c"] = { "<cmd>Bdelete!<cr>", "Close Buffer", opts = { silent = true } },
 
-    ["<leader>ol"] = { "<cmd>set nu!<cr>", "Toggle line number", opts = { silent = true } },
+    ["<leader>ol"] = { "<cmd>set nu!<cr>", "Toggle Line Number", opts = { silent = true } },
 
-    ["<leader>or"] = { "<cmd>set rnu!<cr>", "Toggle relative number", opts = { silent = true } },
+    ["<leader>or"] = { "<cmd>set rnu!<cr>", "Toggle Relative Number", opts = { silent = true } },
 
     ["<leader>ot"] = {
       function()

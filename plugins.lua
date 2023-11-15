@@ -21,7 +21,7 @@ local plugins = {
       require("which-key").register {
         {
           ["<leader>"] = {
-            d = { name = "󰃤 Debug" },
+            d = { name = "󰃤 Debugger" },
             r = { name = " Runner" },
             f = { name = " Find" },
             g = { name = "󰊢 Git" },
