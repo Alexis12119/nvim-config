@@ -159,13 +159,11 @@ function ConfigUpdate()
         )
       end
       -- Fetch the latest changes from the remote repository
-      vim.fn.system("git -C " .. nvim_config .. " fetch origin")
-
+      vim.fn.jobstart({ "git", "fetch", "origin" }, { silent = true, cwd = nvim_config })
       -- Hard reset to the latest commit on the main config_branch
-      vim.fn.system("git -C " .. nvim_config .. " reset --hard origin/" .. config_branch)
-
+      vim.fn.jobstart({ "git", "reset", "--hard", "origin", config_branch }, { silent = true, cwd = nvim_config })
       -- Pull the latest changes
-      vim.fn.system("git -C " .. nvim_config .. " pull origin " .. config_branch)
+      vim.fn.jobstart({ "git", "pull", "origin", config_branch }, { silent = true, cwd = nvim_config })
     end)
   end
 
