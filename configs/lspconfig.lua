@@ -48,7 +48,7 @@ local disabled_servers = {
 }
 
 mason_lspconfig.setup_handlers {
-  -- Automatically configured LSP installed
+  -- Automatically configure the LSP installed
   function(server_name)
     for _, name in pairs(disabled_servers) do
       if name == server_name then
