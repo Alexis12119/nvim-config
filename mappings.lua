@@ -215,6 +215,8 @@ M.Telescope = {
 
     ["<leader>fm"] = { "<cmd>Telescope marks<cr>", "Marks", opts = { silent = true } },
 
+    ["<leader>fM"] = { "<cmd>Telescope man_pages<cr>", "Man Pages", opts = { silent = true } },
+
     ["<leader>fw"] = { "<cmd>Telescope live_grep<cr>", "Word", opts = { silent = true } },
 
     ["<leader>ft"] = { "<cmd>Telescope themes<cr>", "Themes", opts = { silent = true } },
