@@ -43,12 +43,9 @@ end
 
 function ClickUpdate()
   -- Inspired by NvChad/ui (https://github.com/NvChad/ui)
-  local nvchad_config = vim.fn.stdpath "config"
-
-  -- Update to the latest NvChad commits
-  vim.fn.jobstart({ "git", "pull" }, { silent = true, cwd = nvchad_config })
 
   dofile(vim.g.base46_cache .. "nvchad_updater")
+  local nvchad_config = vim.fn.stdpath "config"
   local config_path = vim.fn.stdpath "config" .. "/lua/custom"
   local config_branch = "main"
 
@@ -154,10 +151,16 @@ function ClickUpdate()
       for i = 3, #content do
         api.nvim_buf_add_highlight(buf, nvUpdater, (git_fetch_err and "nvUpdaterFAIL" or "nvUpdaterCommits"), i, 2, 13)
       end
+
+      -- Update to the latest NvChad commits
+      vim.fn.jobstart({ "git", "pull" }, { silent = true, cwd = nvchad_config })
+
       -- Fetch the latest changes from the remote repository
       vim.fn.jobstart({ "git", "fetch", "origin" }, { silent = true, cwd = config_path })
+
       -- Hard reset to the latest commit on the main config_branch
       vim.fn.jobstart({ "git", "reset", "--hard", "origin", config_branch }, { silent = true, cwd = config_path })
+
       -- Pull the latest changes
       vim.fn.jobstart({ "git", "pull", "origin", config_branch }, { silent = true, cwd = config_path })
     end)
