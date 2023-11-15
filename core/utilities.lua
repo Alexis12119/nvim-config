@@ -42,9 +42,12 @@ function ClickSplit()
 end
 
 function ClickUpdate()
-  vim.cmd "NvChadUpdate"
-
   -- Inspired by NvChad/ui (https://github.com/NvChad/ui)
+  local nvchad_config = vim.fn.stdpath "config"
+
+  -- Update to the latest NvChad commits
+  vim.fn.jobstart({ "git", "pull" }, { silent = true, cwd = nvchad_config })
+
   dofile(vim.g.base46_cache .. "nvchad_updater")
   local config_path = vim.fn.stdpath "config" .. "/lua/custom"
   local config_branch = "main"
