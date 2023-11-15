@@ -52,7 +52,7 @@ local global = {
   random_header = true, -- Show random header
 }
 
-vim.opt.shortmess:append "Ac" -- Disable asking when editing file with swapfile.
+vim.opt.shortmess:append "Aco" -- Disable asking
 vim.opt.whichwrap:append "<,>,[,],h,l"
 vim.opt.iskeyword:append "-"
 
