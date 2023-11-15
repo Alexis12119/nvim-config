@@ -6,6 +6,9 @@ conf.pickers = {
   oldfiles = {
     prompt_title = "Recent Files",
   },
+  find_files = {
+    hidden = false,
+  },
 }
 
 conf.extensions_list = { "themes", "terms", "fzf", "projects" }

@@ -419,7 +419,7 @@ local plugins = {
       require("core.utils").load_mappings "Telescope"
     end,
     opts = function()
-      return require "custom.configs.telescope"
+      require "custom.configs.telescope"
     end,
     dependencies = {
       {
