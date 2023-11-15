@@ -167,9 +167,9 @@ M.Neovim = {
 
     ["<leader>nu"] = {
       function()
-        vim.cmd "ConfigUpdate"
+        ConfigUpdate()
       end,
-      "Update Config",
+      "Config Update",
       opts = { silent = true },
     },
 
