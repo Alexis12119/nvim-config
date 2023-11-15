@@ -26,10 +26,6 @@ command("LuaSnipEdit", function()
   require("luasnip.loaders").edit_snippet_files()
 end, { nargs = "*", desc = "Edit the available snippets in the filetype" })
 
-function ClickUpdate()
-  vim.cmd "NvChadUpdate"
-end
-
 function ClickGit()
   local status_ok, _ = pcall(require, "toggleterm")
   if not status_ok then
@@ -45,7 +41,9 @@ function ClickSplit()
   vim.cmd "sp"
 end
 
-function ConfigUpdate()
+function ClickUpdate()
+  vim.cmd "NvChadUpdate"
+
   -- Inspired by NvChad/ui (https://github.com/NvChad/ui)
   dofile(vim.g.base46_cache .. "nvchad_updater")
   local config_path = vim.fn.stdpath "config" .. "/lua/custom"

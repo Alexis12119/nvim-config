@@ -167,7 +167,7 @@ M.Neovim = {
 
     ["<leader>nu"] = {
       function()
-        ConfigUpdate()
+        ClickUpdate()
       end,
       "Config Update",
       opts = { silent = true },
