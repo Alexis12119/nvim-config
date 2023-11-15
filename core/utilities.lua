@@ -49,6 +49,7 @@ function ConfigUpdate()
   local config_path = vim.fn.stdpath "config" .. "/lua/custom"
   local branch = "main"
 
+  vim.cmd "new"
   -- Fetch the latest changes from the remote repository
   vim.fn.system("git -C " .. config_path .. " fetch origin")
 
@@ -57,6 +58,8 @@ function ConfigUpdate()
 
   -- Pull the latest changes
   vim.fn.system("git -C " .. config_path .. " pull origin " .. branch)
+
+  vim.api.nvim_buf_delete(0, { force = true })
 end
 
 -- HUUUUUUUUUUUUUUUUUUUUUUUGE kudos and thanks to
