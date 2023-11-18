@@ -147,6 +147,7 @@ M.ui = {
       { "󰈚  Recent Files", "Spc f r", "Telescope oldfiles" },
       { "󰈭  Find Word", "Spc f w", "Telescope live_grep" },
       { "  Find Projects", "Spc f p", "Telescope projects" },
+      { "󰔚  Find Sessions", "Spc f s", "Telescope persisted" },
       { "  Themes", "Spc f t", "Telescope themes" },
       { "  Mappings", "Spc n c", "NvCheatsheet" },
     },

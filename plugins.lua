@@ -24,6 +24,7 @@ local plugins = {
           ["<leader>"] = {
             d = { name = "󰃤 Debugger" },
             r = { name = " Runner" },
+            s = { name = "󰔚 Sessions" },
             f = { name = " Find" },
             g = { name = "󰊢 Git" },
             l = { name = " LSP" },
@@ -183,6 +184,9 @@ local plugins = {
   -- Sessions
   {
     "olimorris/persisted.nvim",
+    init = function()
+      require("core.utils").load_mappings "Sessions"
+    end,
     opts = {
       save_dir = vim.fn.expand(vim.fn.stdpath "data" .. "/sessions/"), -- directory where session files are saved
       silent = false, -- silent nvim message when sourcing session file

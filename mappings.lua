@@ -206,6 +206,16 @@ M.Neovim = {
   },
 }
 
+M.Sessions = {
+  plugin = true,
+  n = {
+    ["<leader>ss"] = { "<cmd>SessionStart<cr>", "Start", opts = { silent = true } },
+    ["<leader>so"] = { "<cmd>SessionStop<cr>", "Stop", opts = { silent = true } },
+    ["<leader>st"] = { "<cmd>SessionToggle<cr>", "Toggle", opts = { silent = true } },
+    ["<leader>sl"] = { "<cmd>SessionLoad<cr>", "Load", opts = { silent = true } },
+  },
+}
+
 M.Telescope = {
   plugin = true,
   n = {
