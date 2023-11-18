@@ -272,12 +272,12 @@ M.Toggleterm = {
     ["<leader>tf"] = { "<cmd>ToggleTerm direction=float<cr>", "Float Terminal", opts = { silent = true } },
 
     ["<leader>th"] = {
-      "<cmd>ToggleTerm size=10 direction=horizontal<cr>",
+      "<cmd>ToggleTerm direction=horizontal<cr>",
       "Horizontal Terminal",
       opts = { silent = true },
     },
 
-    ["<leader>tv"] = { "<cmd>ToggleTerm size=50 direction=vertical<cr>", "Vertical Terminal", opts = { silent = true } },
+    ["<leader>tv"] = { "<cmd>ToggleTerm direction=vertical<cr>", "Vertical Terminal", opts = { silent = true } },
   },
 }
 
