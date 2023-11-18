@@ -50,6 +50,7 @@ local global = {
   snipmate_snippets_path = vim.fn.stdpath "config" .. "/lua/custom/snippets/snipmate",
   startup_message = false, -- Show startup message
   random_header = true, -- Show random header
+  skip_ts_context_commentstring_module = true,
 }
 
 vim.opt.shortmess:append "Aco" -- Disable asking
