@@ -191,7 +191,7 @@ local plugins = {
       save_dir = vim.fn.expand(vim.fn.stdpath "data" .. "/sessions/"), -- directory where session files are saved
       silent = false, -- silent nvim message when sourcing session file
       use_git_branch = true, -- create session files based on the branch of the git enabled repository
-      autosave = true, -- automatically save session files when exiting Neovim
+      autosave = false, -- automatically save session files when exiting Neovim
       should_autosave = nil, -- function to determine if a session should be autosaved
       autoload = false, -- automatically load the session for the cwd on Neovim startup
       on_autoload_no_session = nil, -- function to run when `autoload = true` but there is no session to load
