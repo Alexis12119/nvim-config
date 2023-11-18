@@ -213,6 +213,8 @@ M.Telescope = {
 
     ["<leader>ff"] = { "<cmd>Telescope find_files<cr>", "Files", opts = { silent = true } },
 
+    ["<leader>fs"] = { "<cmd>Telescope persisted<cr>", "Sessions", opts = { silent = true } },
+
     ["<leader>fm"] = { "<cmd>Telescope marks<cr>", "Marks", opts = { silent = true } },
 
     ["<leader>fM"] = { "<cmd>Telescope man_pages<cr>", "Man Pages", opts = { silent = true } },
