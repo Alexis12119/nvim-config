@@ -42,7 +42,7 @@ function ClickSplit()
 end
 
 function ClickUpdate()
-  vim.cmd "NvDash"
+  vim.cmd "Nvdash"
 
   -- Inspired by NvChad/ui (https://github.com/NvChad/ui)
   dofile(vim.g.base46_cache .. "nvchad_updater")
@@ -181,6 +181,11 @@ function ClickUpdate()
   })
   vim.cmd("Bdelete!")
   vim.cmd("Bdelete!")
+
+
+
+
+
 end
 
 -- HUUUUUUUUUUUUUUUUUUUUUUUGE kudos and thanks to
