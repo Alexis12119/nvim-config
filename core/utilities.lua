@@ -179,13 +179,6 @@ function ClickUpdate()
       end
     end,
   })
-  vim.cmd("Bdelete!")
-  vim.cmd("Bdelete!")
-
-
-
-
-
 end
 
 -- HUUUUUUUUUUUUUUUUUUUUUUUGE kudos and thanks to
