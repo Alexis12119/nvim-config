@@ -42,8 +42,6 @@ function ClickSplit()
 end
 
 function ClickUpdate()
-  vim.cmd "Nvdash"
-
   -- Inspired by NvChad/ui (https://github.com/NvChad/ui)
   dofile(vim.g.base46_cache .. "nvchad_updater")
   local nvchad_config = vim.fn.stdpath "config"
