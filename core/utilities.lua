@@ -154,11 +154,11 @@ function ClickUpdate()
       -- Update to the latest NvChad commits
       vim.fn.jobstart({ "git", "pull" }, { silent = true, cwd = nvchad_config })
 
-      -- Fetch the latest changes from the remote repository
-      vim.fn.jobstart({ "git", "fetch", "origin" }, { silent = true, cwd = config_path })
+      -- -- Fetch the latest changes from the remote repository
+      -- vim.fn.jobstart({ "git", "fetch", "origin" }, { silent = true, cwd = config_path })
 
-      -- Hard reset to the latest commit on the main config_branch
-      vim.fn.jobstart({ "git", "reset", "--hard", "origin", config_branch }, { silent = true, cwd = config_path })
+      -- -- Hard reset to the latest commit on the main config_branch
+      -- vim.fn.jobstart({ "git", "reset", "--hard", "origin", config_branch }, { silent = true, cwd = config_path })
 
       -- Pull the latest changes
       vim.fn.jobstart({ "git", "pull" }, { silent = true, cwd = config_path })
