@@ -439,7 +439,7 @@ M.General = {
     },
   },
   n = {
-    ["<leader>a"] = { "<cmd>Nvdash<cr>", "Nvdash", opts = { silent = true } },
+    -- ["<leader>a"] = { "<cmd>Nvdash<cr>", "Nvdash", opts = { silent = true } },
 
     ["<leader>R"] = { "<cmd>%d+<cr>", "Remove All Text", opts = { silent = true } },
 
