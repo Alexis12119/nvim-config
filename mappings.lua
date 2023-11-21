@@ -347,8 +347,8 @@ M.LSP = {
   },
 }
 
-if vim.lsp.inlay_hint then
-  M.LSP.n["<leader>lh"] = { "<cmd>lua vim.lsp.inlay_hint(0, nil)<cr>", "Inlay Hint", opts = { silent = true } }
+if vim.lsp.inlay_hint.enable then
+  M.LSP.n["<leader>lh"] = { "<cmd>lua vim.lsp.inlay_hint.enable(0, nil)<cr>", "Inlay Hints", opts = { silent = true } }
 end
 
 M.Git = {
