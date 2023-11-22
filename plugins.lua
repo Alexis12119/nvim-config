@@ -46,7 +46,7 @@ local plugins = {
     config = true,
   },
 
-  -- Autocompletion
+  -- Completion Engine
   {
     "hrsh7th/nvim-cmp",
     event = { "InsertEnter", "CmdlineEnter" },
