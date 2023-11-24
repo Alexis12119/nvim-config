@@ -284,7 +284,7 @@ M.Toggleterm = {
 M.Trouble = {
   plugin = true,
   n = {
-    ["<leader>ld"] = { "<cmd>TroubleToggle document_diagnostics<cr>", "Buffer Diagnostics", opts = { silent = true } },
+    ["<leader>lb"] = { "<cmd>TroubleToggle document_diagnostics<cr>", "Buffer Diagnostics", opts = { silent = true } },
 
     ["<leader>lw"] = {
       "<cmd>TroubleToggle workspace_diagnostics<cr>",
