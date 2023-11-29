@@ -440,6 +440,12 @@ M.General = {
   },
   n = {
     -- ["<leader>a"] = { "<cmd>Nvdash<cr>", "Nvdash", opts = { silent = true } },
+    -- ["<F5>"] = {
+    --   function()
+    --     RunCode()
+    --   end,
+    --   opts = { silent = true },
+    -- },
 
     ["<leader>R"] = { "<cmd>%d+<cr>", "Remove All Text", opts = { silent = true } },
 

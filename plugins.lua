@@ -116,7 +116,6 @@ local plugins = {
       -- Linting
       {
         "mfussenegger/nvim-lint",
-        enabled = false,
         config = function()
           require "custom.configs.nvim-lint"
         end,
