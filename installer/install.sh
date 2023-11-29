@@ -1,6 +1,7 @@
 #!/bin/bash
 
 config_dir="$HOME/.config/nvim"
+config_plugins="$HOME/.local/share/nvim/lazy"
 nvchad_repo="https://github.com/NvChad/NvChad.git"
 config_repo="https://github.com/Alexis12119/nvim-config.git"
 
@@ -22,6 +23,9 @@ clone_repository() {
 if [ -d "$config_dir" ]; then
     read -p "Neovim configuration directory already exists. Do you want to replace it with the new configuration? (y/n): " response
     if [[ "$response" =~ ^[Yy] ]]; then
+        # Remove the existing plugins 
+        echo "Removing the existing plugins..."
+        rm -rf "$config_plugins"
         # Remove the existing neovim configuration directory
         echo "Removing the existing neovim configuration directory..."
         if rm -rf "$config_dir" 2>/dev/null; then
