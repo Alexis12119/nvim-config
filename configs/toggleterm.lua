@@ -25,7 +25,7 @@ return {
   },
   float_opts = {
     border = "rounded",
-    height = 25,
+    height = 20,
     width = 95,
     winblend = 0,
   },
