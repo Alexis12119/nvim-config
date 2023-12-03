@@ -347,7 +347,7 @@ M.LSP = {
   },
 }
 
-if vim.lsp.inlay_hint.enable then
+if vim.fn.has "nvim-0.10" == 1 then
   M.LSP.n["<leader>lh"] = { "<cmd>lua vim.lsp.inlay_hint.enable(0, nil)<cr>", "Inlay Hints", opts = { silent = true } }
 end
 
