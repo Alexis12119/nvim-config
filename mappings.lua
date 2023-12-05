@@ -348,7 +348,17 @@ M.LSP = {
 }
 
 if vim.fn.has "nvim-0.10" == 1 then
-  M.LSP.n["<leader>lh"] = { "<cmd>lua vim.lsp.inlay_hint.enable(0, nil)<cr>", "Inlay Hints", opts = { silent = true } }
+  M.LSP.n["<leader>lh"] = {
+    function()
+      if vim.lsp.inlay_hint.is_enabled(0) then
+        vim.cmd "lua=vim.lsp.inlay_hint.enable(0, false)"
+      else
+        vim.cmd "lua=vim.lsp.inlay_hint.enable(0, true)"
+      end
+    end,
+    "Inlay Hints",
+    opts = { silent = true },
+  }
 end
 
 M.Git = {
