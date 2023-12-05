@@ -28,7 +28,7 @@ local plugins = {
             f = { name = " Find" },
             g = { name = "󰊢 Git" },
             l = { name = " LSP" },
-            n = { name = "󰰓 Neovim" },
+            n = { name = " Neovim" },
             o = { name = " Options" },
             p = { name = " Plugins" },
             t = { name = " Terminal" },
