@@ -507,7 +507,7 @@ local plugins = {
           local dap = require "dap"
           vim.fn.sign_define(
             "DapBreakpoint",
-            { text = "🛑", texthl = "DiagnosticSignError", linehl = "", numhl = "" }
+            { text = "", texthl = "DiagnosticSignError", linehl = "", numhl = "" }
           )
 
           local dapui = require "dapui"
