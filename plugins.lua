@@ -1,5 +1,16 @@
 ---@type NvPluginSpec[]
 local plugins = {
+  -- For Flutter Development
+  {
+    "akinsho/flutter-tools.nvim",
+    ft = "dart",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "stevearc/dressing.nvim", -- optional for vim.ui.select
+    },
+    config = true,
+  },
+
   -- Show Indentlines
   {
     "lukas-reineke/indent-blankline.nvim",
