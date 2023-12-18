@@ -382,9 +382,8 @@ local plugins = {
       "nvim-neotest/neotest-go",
       -- "marilari88/neotest-vitest",
       -- "nvim-neotest/neotest-jest",
-      -- "nvim-neotest/neotest-rust",
-      -- "nvim-neotest/neotest-dotnet",
-      -- "nvim-neotest/neotest-java",
+      -- "rouge8/neotest-rust",
+      -- "rcasia/neotest-java",
       "nvim-treesitter/nvim-treesitter",
     },
     config = function()
