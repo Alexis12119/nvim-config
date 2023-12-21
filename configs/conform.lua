@@ -5,10 +5,10 @@ local formatters = {
   c = { "clang_format" },
   go = { "gofumpt" },
   cs = { "csharpier" },
+  yaml = { "yamlfmt" },
 }
 
 local prettier_ft = {
-  "angular",
   "css",
   "flow",
   "graphql",
@@ -22,7 +22,6 @@ local prettier_ft = {
   "typescript",
   "typescriptreact",
   "vue",
-  "yaml",
 }
 
 for _, filetype in pairs(prettier_ft) do
