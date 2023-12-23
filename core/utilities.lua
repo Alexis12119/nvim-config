@@ -38,7 +38,7 @@ function ClickGit()
 end
 
 function ClickSplit()
-  vim.cmd "sp"
+  vim.cmd "vsp"
 end
 
 function ClickUpdate()
