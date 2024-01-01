@@ -125,9 +125,7 @@ local plugins = {
   -- Native LSP
   {
     "neovim/nvim-lspconfig",
-    config = function()
-      require("custom.configs.lsp").config()
-    end,
+    config = require("custom.configs.lsp").config,
     dependencies = {
       -- Formatting
       {
@@ -155,17 +153,6 @@ local plugins = {
           },
         },
       },
-      -- Start/Stop LSP when focus is lost/gained
-      -- {
-      --   "hinell/lsp-timeout.nvim",
-      --   config = function()
-      --     vim.g["lsp-timeout-config"] = {
-      --       stopTimeout = 0,
-      --       startTimeout = 1,
-      --       silent = true, -- true to suppress notifications
-      --     }
-      --   end,
-      -- },
       -- Package Installer
       {
         "williamboman/mason.nvim",
@@ -183,11 +170,11 @@ local plugins = {
           "MasonLog",
         },
         opts = require "custom.configs.lsp.mason",
-        dependencies = {
-          "williamboman/mason-lspconfig.nvim",
-          opts = require("custom.configs.lsp.mason-lspconfig").opts,
-          config = require("custom.configs.lsp.mason-lspconfig").config,
-        },
+      },
+      {
+        "williamboman/mason-lspconfig.nvim",
+        opts = require("custom.configs.lsp.mason-lspconfig").opts,
+        config = require("custom.configs.lsp.mason-lspconfig").config,
       },
       -- Improve Other LSP Functionalities
       {
