@@ -4,6 +4,13 @@ local fn = vim.fn
 local cwd = vim.fn.stdpath "config" .. "/"
 local config_dir = { cwd }
 
+M.Swenv = {
+  plugin = true,
+  n = {
+    ["<leader>vp"] = { ":lua=require('swenv.api').pick_venv()<cr>", "Pick Venv", opts = { silent = true } },
+  },
+}
+
 M.MarkdownPreview = {
   plugin = true,
   n = {
