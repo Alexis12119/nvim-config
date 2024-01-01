@@ -125,7 +125,9 @@ local plugins = {
   -- Native LSP
   {
     "neovim/nvim-lspconfig",
-    config = require("custom.configs.lsp").config,
+    config = function()
+      require "custom.configs.lsp.lspconfig"
+    end,
     dependencies = {
       -- Formatting
       {
@@ -153,7 +155,6 @@ local plugins = {
           },
         },
       },
-      -- Package Installer
       {
         "williamboman/mason.nvim",
         init = function()
@@ -169,12 +170,10 @@ local plugins = {
           "MasonUninstallAll",
           "MasonLog",
         },
-        opts = require "custom.configs.lsp.mason",
-      },
-      {
-        "williamboman/mason-lspconfig.nvim",
-        opts = require("custom.configs.lsp.mason-lspconfig").opts,
-        config = require("custom.configs.lsp.mason-lspconfig").config,
+        config = function()
+          require "custom.configs.lsp.mason"
+        end,
+        dependencies = "williamboman/mason-lspconfig.nvim",
       },
       -- Improve Other LSP Functionalities
       {
@@ -191,7 +190,7 @@ local plugins = {
       },
     },
   },
-
+  -- Package Installer
   -- Sessions
   {
     "olimorris/persisted.nvim",
