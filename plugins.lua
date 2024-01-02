@@ -170,10 +170,12 @@ local plugins = {
           "MasonUninstallAll",
           "MasonLog",
         },
-        config = function()
-          require "custom.configs.lsp.mason"
-        end,
-        dependencies = "williamboman/mason-lspconfig.nvim",
+        dependencies = {
+          "williamboman/mason-lspconfig.nvim",
+          config = function()
+            require "custom.configs.lsp.mason"
+          end,
+        },
       },
       -- Improve Other LSP Functionalities
       {
