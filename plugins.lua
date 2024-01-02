@@ -600,6 +600,12 @@ local plugins = {
     },
     opts = {},
   },
+
+  -- Just For Fun
+  {
+    "eandrju/cellular-automaton.nvim",
+    cmd = "CellularAutomaton",
+  },
 }
 
 return plugins
