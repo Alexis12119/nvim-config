@@ -412,6 +412,7 @@ local plugins = {
   -- Notification
   {
     "rcarriga/nvim-notify",
+    enabled = false,
     event = "VeryLazy",
     config = function()
       dofile(vim.g.base46_cache .. "notify")
