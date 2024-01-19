@@ -283,7 +283,7 @@ local plugins = {
   -- Improve Folds
   {
     "kevinhwang91/nvim-ufo",
-    event = "VeryLazy",
+    event = { "BufReadPost", "BufNewFile" },
     init = function()
       vim.o.foldcolumn = "1"
       vim.o.foldlevel = 99
@@ -412,7 +412,6 @@ local plugins = {
   -- Notification
   {
     "rcarriga/nvim-notify",
-    enabled = false,
     event = "VeryLazy",
     config = function()
       dofile(vim.g.base46_cache .. "notify")
@@ -422,7 +421,7 @@ local plugins = {
         render = "default",
         stages = "fade",
         timeout = 3000,
-        top_down = true,
+        top_down = false,
       }
 
       vim.notify = require "notify"
