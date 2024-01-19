@@ -412,7 +412,7 @@ local plugins = {
   -- Notification
   {
     "rcarriga/nvim-notify",
-    event = "VeryLazy",
+    -- lazy = false,
     config = function()
       dofile(vim.g.base46_cache .. "notify")
       require("notify").setup {
@@ -424,13 +424,13 @@ local plugins = {
         top_down = false,
       }
 
-      vim.notify = require "notify"
-      local messages = require "custom.core.messages"
-      math.randomseed(os.time())
-      local randomMessage = messages[math.random(#messages)]
-      if vim.g.startup_message then
-        vim.notify(randomMessage, vim.log.levels.INFO, { title = "Just For Fun:" })
-      end
+      -- vim.notify = require "notify"
+      -- local messages = require "custom.core.messages"
+      -- math.randomseed(os.time())
+      -- local randomMessage = messages[math.random(#messages)]
+      -- if vim.g.startup_message then
+      --   vim.notify(randomMessage, vim.log.levels.INFO, { title = "Just For Fun:" })
+      -- end
     end,
   },
 
