@@ -130,7 +130,7 @@ M.ui = {
   -- lazyload it when there are 1+ buffers
   tabufline = {
     show_numbers = false,
-    enabled = true,
+    enabled = false,
     lazyload = true,
     -- overriden_modules = function(modules)
     --   modules[3] = (function()
