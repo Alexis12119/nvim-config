@@ -421,7 +421,7 @@ local plugins = {
         render = "default",
         stages = "fade",
         timeout = 3000,
-        top_down = false,
+        top_down = true,
       }
 
       vim.notify = require "notify"
