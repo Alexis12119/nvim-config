@@ -472,15 +472,48 @@ M.General = {
 
     ["<leader>c"] = { "<cmd>Bdelete!<cr>", "Close Buffer", opts = { silent = true } },
 
-    ["<leader>ol"] = { "<cmd>set nu!<cr>", "Toggle Line Number", opts = { silent = true } },
+    ["<leader>ol"] = {
+      function()
+        if vim.o.number then
+          vim.o.number = false
+        else
+          vim.o.number = true
+        end
+      end,
+      "Toggle Line Number",
+      opts = { silent = true },
+    },
 
-    ["<leader>or"] = { "<cmd>set rnu!<cr>", "Toggle Relative Number", opts = { silent = true } },
+    ["<leader>or"] = {
+      function()
+        if vim.o.relativenumber then
+          vim.o.relativenumber = false
+        else
+          vim.o.relativenumber = true
+        end
+      end,
+      "Toggle Relative Number",
+      opts = { silent = true },
+    },
 
     ["<leader>ot"] = {
       function()
         require("base46").toggle_transparency()
       end,
       "Toggle Transparency",
+      opts = { silent = true },
+    },
+
+    ["<leader>ow"] = {
+      function()
+        if vim.o.wrap then
+          vim.o.wrap = false
+        else
+          vim.o.wrap = true
+        end
+      end,
+      "Toggle Wrap",
+      opts = { silent = true },
     },
 
     -- ["jk"] = {
