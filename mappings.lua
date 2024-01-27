@@ -4,6 +4,16 @@ local fn = vim.fn
 local cwd = vim.fn.stdpath "config" .. "/"
 local config_dir = { cwd }
 
+M.Harpoon = {
+  plugin = true,
+  n = {
+    ["<leader>ha"] = { ":lua require('harpoon.mark').add_file()<cr>", "Add Mark", opts = { silent = true } },
+    ["<leader>hh"] = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Menu", opts = { silent = true } },
+    -- ["<leader>hn"] = { ":lua require('harpoon.ui').nav_next()<cr>", "Next", opts = { silent = true } },
+    -- ["<leader>hp"] = { ":lua require('harpoon.ui').nav_prev()<cr>", "Previous", opts = { silent = true } },
+  },
+}
+
 M.Swenv = {
   plugin = true,
   n = {

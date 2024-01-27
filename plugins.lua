@@ -1,5 +1,14 @@
 ---@type NvPluginSpec[]
 local plugins = {
+  -- Marks
+  {
+    "ThePrimeagen/harpoon",
+    init = function()
+      require("core.utils").load_mappings "Harpoon"
+    end,
+    opts = {},
+  },
+
   -- For Flutter Development
   {
     "akinsho/flutter-tools.nvim",
