@@ -58,11 +58,11 @@ return {
   },
 
   symbol_in_winbar = {
-    enable = false,
+    enable = true,
     separator = "  ",
     hide_keyword = true,
-    show_file = true,
-    folder_level = 2,
+    show_file = false,
+    folder_level = 0,
   },
 
   definition = {
