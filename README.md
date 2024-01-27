@@ -6,7 +6,6 @@
 
 ![Preview](https://github.com/Alexis12119/nvim-config/assets/74944536/8a857736-cc33-4e78-b0f5-4b5d0c21439c)
 
-
 </div>
 
 ## 📄 Requirements
