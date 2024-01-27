@@ -244,8 +244,6 @@ M.Sessions = {
 M.Telescope = {
   plugin = true,
   n = {
-    ["<leader>e"] = { ":Telescope file_browser<CR>", "Explorer", opts = { silent = true } },
-
     ["<leader>fa"] = { "<cmd>Telescope autocommands<cr>", "Autocommmands", opts = { silent = true } },
 
     ["<leader>ff"] = { "<cmd>Telescope find_files<cr>", "Files", opts = { silent = true } },

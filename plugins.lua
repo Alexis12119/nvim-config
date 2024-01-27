@@ -243,7 +243,6 @@ local plugins = {
   -- File Explorer
   {
     "nvim-tree/nvim-tree.lua",
-    enabled = false,
     init = function()
       require("core.utils").load_mappings "NvimTree"
     end,
@@ -475,9 +474,6 @@ local plugins = {
         enabled = function()
           return vim.fn.executable "make" == 1
         end,
-      },
-      {
-        "nvim-telescope/telescope-file-browser.nvim",
       },
     },
   },

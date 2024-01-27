@@ -12,7 +12,7 @@ conf.pickers = {
 }
 
 conf.defaults.file_ignore_patterns = { "node_modules", ".git" }
-conf.extensions_list = { "themes", "terms", "fzf", "projects", "persisted", "file_browser", "harpoon" }
+conf.extensions_list = { "themes", "terms", "fzf", "projects", "persisted", "harpoon" }
 
 conf.defaults.mappings.i = {
   ["<Tab>"] = actions.move_selection_next,
