@@ -1,8 +1,8 @@
 return {
-  autotag = {
-    enable = true,
-    filetypes = { "html", "javascriptreact", "typescriptreact", "xml" },
-  },
+  -- autotag = {
+  --   enable = true,
+  --   filetypes = { "html", "javascriptreact", "typescriptreact", "xml" },
+  -- },
   ensure_installed = {
     "vim",
     "lua",

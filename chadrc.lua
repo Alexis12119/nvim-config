@@ -33,8 +33,8 @@ end
 local highlights = require "custom.highlights"
 
 M.ui = {
-  theme = "tomorrow_night",
-  theme_toggle = { "tomorrow_night", "one_light" },
+  theme = "gruvchad",
+  theme_toggle = { "gruvchad", "one_light" },
   lsp_semantic_tokens = false, -- needs nvim v0.9, just adds highlight groups for lsp semantic tokens
   hl_override = highlights.override,
   hl_add = highlights.add,
@@ -130,7 +130,7 @@ M.ui = {
   -- lazyload it when there are 1+ buffers
   tabufline = {
     show_numbers = false,
-    enabled = true,
+    enabled = false,
     lazyload = true,
     -- overriden_modules = function(modules)
     --   modules[3] = (function()
@@ -140,7 +140,7 @@ M.ui = {
   },
 
   nvdash = {
-    load_on_startup = true,
+    load_on_startup = false,
     header = get_header(),
     buttons = {
       { "  Find File", "Spc f f", "Telescope find_files" },
