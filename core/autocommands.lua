@@ -18,12 +18,12 @@ autocmd("VimEnter", {
     -- change to the directory
     if directory then
       vim.cmd.cd(data.file)
-      -- open the tree
-      require("nvim-tree.api").tree.open()
+      vim.cmd "Telescope find_files"
+      -- require("nvim-tree.api").tree.open()
     end
   end,
   group = general,
-  desc = "Open NvimTree when it's a Directory",
+  desc = "Open Telescope when it's a Directory",
 })
 
 -- Hide folds and Disable statuscolumn in these filetypes
