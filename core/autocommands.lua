@@ -18,7 +18,8 @@ autocmd("VimEnter", {
     -- change to the directory
     if directory then
       vim.cmd.cd(data.file)
-      vim.cmd "Telescope find_files"
+      -- Open File Browser
+      vim.cmd "Telescope file_browser"
       -- require("nvim-tree.api").tree.open()
     end
   end,
