@@ -1,4 +1,5 @@
 local mason = require "mason"
+-- local path = require "mason-core.path"
 local mason_lspconfig = require "mason-lspconfig"
 local on_attach = require("custom.configs.lsp").on_attach
 local capabilities = require("custom.configs.lsp").capabilities
@@ -13,6 +14,7 @@ mason.setup {
       package_uninstalled = " ",
     },
   },
+  -- install_root_dir = path.concat { vim.fn.stdpath "config", "/lua/custom/mason" },
 }
 
 mason_lspconfig.setup {
