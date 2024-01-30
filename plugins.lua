@@ -9,6 +9,9 @@ local plugins = {
     opts = {},
   },
 
+  -- Extend Neovim powers
+  { "echasnovski/mini.ai", event = "VeryLazy", opts = {} },
+
   -- For Flutter Development
   {
     "akinsho/flutter-tools.nvim",
