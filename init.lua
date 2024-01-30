@@ -4,3 +4,5 @@ require "custom.core.options"
 require "custom.core.autocommands"
 -- For personal functions and commands
 require "custom.core.utilities"
+-- For additional filetypes
+require "custom.core.filetypes"
