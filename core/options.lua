@@ -3,6 +3,7 @@
 -- #######################
 
 local options = {
+  writeany = true, --	Allows writing to any file with no need for "!" override.
   backup = false, -- creates a backup file
   conceallevel = 0, -- so that `` is visible in markdown files
   fileencoding = "utf-8", -- the encoding written to a file
@@ -53,7 +54,7 @@ local global = {
   skip_ts_context_commentstring_module = true,
 }
 
-vim.opt.shortmess:append "Aco" -- Disable asking
+vim.opt.shortmess:append "Ac" -- Disable asking
 vim.opt.whichwrap:append "<,>,[,],h,l"
 vim.opt.iskeyword:append "-"
 
