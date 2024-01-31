@@ -597,7 +597,7 @@ M.General = {
     -- opts = { silent = true },
     -- },
 
-    [";"] = {
+    ["<C-;>"] = {
       function()
         if vim.bo.buftype == "terminal" then
           vim.cmd "Bdelete!"
