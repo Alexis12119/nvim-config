@@ -3,6 +3,7 @@ local plugins = {
   -- Marks
   {
     "ThePrimeagen/harpoon",
+    branch = "harpoon2",
     init = function()
       require("core.utils").load_mappings "Harpoon"
     end,

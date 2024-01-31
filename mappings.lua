@@ -9,15 +9,33 @@ M.Harpoon = {
   n = {
     ["<leader>ha"] = {
       function()
-        require("harpoon.mark").add_file()
-        vim.notify(" 󰍎 Marked file", vim.log.levels.INFO, { title = "Harpoon" })
+        require("harpoon"):list():append()
+        vim.notify("   Marked file", vim.log.levels.INFO, { title = "Harpoon" })
       end,
       "Add Mark",
       opts = { silent = true },
     },
-    ["<leader>hh"] = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon Menu", opts = { silent = true } },
-    -- ["<leader>hn"] = { ":lua require('harpoon.ui').nav_next()<cr>", "Next", opts = { silent = true } },
-    -- ["<leader>hp"] = { ":lua require('harpoon.ui').nav_prev()<cr>", "Previous", opts = { silent = true } },
+    ["<leader>hh"] = {
+      function()
+        require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())
+      end,
+      "Harpoon Menu",
+      opts = { silent = true },
+    },
+    -- ["<leader>hn"] = {
+    --   function()
+    --     require("harpoon"):list():next()
+    --   end,
+    --   "Next",
+    --   opts = { silent = true },
+    -- },
+    -- ["<leader>hp"] = {
+    --   function()
+    --     require("harpoon"):list():prev()
+    --   end,
+    --   "Previous",
+    --   opts = { silent = true },
+    -- },
   },
 }
 
