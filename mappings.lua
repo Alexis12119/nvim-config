@@ -7,7 +7,14 @@ local config_dir = { cwd }
 M.Harpoon = {
   plugin = true,
   n = {
-    ["<leader>ha"] = { ":lua require('harpoon.mark').add_file()<cr>", "Add Mark", opts = { silent = true } },
+    ["<leader>ha"] = {
+      function()
+        require("harpoon.mark").add_file()
+        vim.notify(" 󰍎 Marked file", vim.log.levels.INFO, { title = "Harpoon" })
+      end,
+      "Add Mark",
+      opts = { silent = true },
+    },
     ["<leader>hh"] = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon Menu", opts = { silent = true } },
     -- ["<leader>hn"] = { ":lua require('harpoon.ui').nav_next()<cr>", "Next", opts = { silent = true } },
     -- ["<leader>hp"] = { ":lua require('harpoon.ui').nav_prev()<cr>", "Previous", opts = { silent = true } },
