@@ -49,7 +49,7 @@ local global = {
   mapleader = " ", -- Set mapleader to space
   snipmate_snippets_path = vim.fn.stdpath "config" .. "/lua/custom/snippets/snipmate",
   startup_message = false, -- Show startup message
-  random_header = true, -- Show random header
+  random_header = false, -- Show random header
   skip_ts_context_commentstring_module = true,
 }
 
