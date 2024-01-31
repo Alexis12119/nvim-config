@@ -3,7 +3,6 @@
 -- #######################
 
 local options = {
-  writeany = true, --	Allows writing to any file with no need for "!" override.
   backup = false, -- creates a backup file
   conceallevel = 0, -- so that `` is visible in markdown files
   fileencoding = "utf-8", -- the encoding written to a file
