@@ -105,6 +105,7 @@ local plugins = {
       luasnip.filetype_extend("javascriptreact", { "html" })
       luasnip.filetype_extend("typescriptreact", { "html" })
       luasnip.filetype_extend("svelte", { "html" })
+      luasnip.filetype_extend("vue", { "html" })
 
       opts.completion["completeopt"] = "menu,menuone,noselect" -- disable autoselect
       require("cmp").setup(opts)
