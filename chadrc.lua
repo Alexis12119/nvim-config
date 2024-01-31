@@ -127,7 +127,7 @@ M.ui = {
     end,
   },
 
-  -- lazyload it when there are 1+ buffers
+  -- lazyload it when there are 1+ tabs
   tabufline = {
     show_numbers = false,
     enabled = true,
@@ -135,15 +135,6 @@ M.ui = {
     overriden_modules = function(modules)
       modules[2] = (function()
         return "%#TblineFill#" .. "%=" -- empty space
-      end)()
-      modules[4] = (function()
-        if #vim.api.nvim_list_tabpages() > 1 then
-          local toggle_themeBtn = "%@TbToggle_theme@%#TbLineThemeToggleBtn#" .. vim.g.toggle_theme_icon .. "%X"
-          local CloseAllBufsBtn = "%@TbCloseAllBufs@%#TbLineCloseAllBufsBtn#" .. " 󰅖 " .. "%X"
-          return toggle_themeBtn .. CloseAllBufsBtn
-        else
-          return " "
-        end
       end)()
       -- modules[3] = (function()
       --   return " %#TblineFill#%@v:lua.ClickUpdate@  %#TblineFill#%@v:lua.ClickGit@  %#TblineFill#%@v:lua.RunCode@  %#TblineFill#%@v:lua.ClickSplit@  "
