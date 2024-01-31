@@ -19,6 +19,7 @@ M.override = {
   LspReferenceRead = { link = "Underlined" },
   LspReferenceText = { link = "Underlined" },
   LspReferenceWrite = { link = "Underlined" },
+  TblineFill = { link = "Normal" },
 }
 
 ---@type HLTable
