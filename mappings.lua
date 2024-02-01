@@ -293,13 +293,15 @@ M.Telescope = {
 
     ["<leader>fp"] = { "<cmd>Telescope projects<cr>", "Projects", opts = { silent = true } },
 
+    ["<leader>fh"] = { "<cmd>Telescope help_tags<cr>", "Help", opts = { silent = true } },
+
     ["<leader>fk"] = { "<cmd>Telescope keymaps<cr>", "Keymaps", opts = { silent = true } },
 
     ["<leader>fC"] = { "<cmd>Telescope commands<cr>", "Commands", opts = { silent = true } },
 
     ["<leader>fr"] = { "<cmd>Telescope oldfiles<cr>", "Recent Files", opts = { silent = true } },
 
-    ["<leader>fh"] = { "<cmd>Telescope highlights<cr>", "Highlights", opts = { silent = true } },
+    ["<leader>fH"] = { "<cmd>Telescope highlights<cr>", "Highlights", opts = { silent = true } },
 
     ["<leader>ls"] = { "<cmd>Telescope lsp_document_symbols<cr>", "Buffer Symbols", opts = { silent = true } },
 
