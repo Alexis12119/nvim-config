@@ -139,6 +139,9 @@ M.ui = {
       -- modules[3] = (function()
       --   return " %#TblineFill#%@v:lua.ClickUpdate@  %#TblineFill#%@v:lua.ClickGit@  %#TblineFill#%@v:lua.RunCode@  %#TblineFill#%@v:lua.ClickSplit@  "
       -- end)()
+      modules[4] = (function()
+        return " "
+      end)()
     end,
   },
 

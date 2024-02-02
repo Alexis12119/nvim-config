@@ -530,8 +530,15 @@ M.General = {
       "Toggle Relative Number",
       opts = { silent = true },
     },
-
     ["<leader>ot"] = {
+      function()
+        require("base46").toggle_theme()
+      end,
+      "Toggle Theme",
+      opts = { silent = true },
+    },
+
+    ["<leader>os"] = {
       function()
         require("base46").toggle_transparency()
       end,
