@@ -217,6 +217,15 @@ local plugins = {
   -- Sessions
   {
     "olimorris/persisted.nvim",
+    cmd = {
+      "SessionSave",
+      "SessionStart",
+      "SessionToggle",
+      "SessionLoad",
+      "SessionLoadLast",
+      "SessionLoadFromFile",
+      "SessionLoadDelete",
+    },
     init = function()
       require("core.utils").load_mappings "Sessions"
     end,
