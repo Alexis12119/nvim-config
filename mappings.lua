@@ -213,7 +213,7 @@ M.Neovim = {
     ["<leader>nl"] = {
       cursor_lock "z",
       "Toggle Cursor Lock",
-      -- opts = { silent = true },
+      opts = { silent = true },
     },
     ["<leader>nf"] = {
       function()
