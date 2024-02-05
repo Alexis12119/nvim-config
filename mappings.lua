@@ -6,9 +6,9 @@ local config_dir = { cwd }
 
 M.Oil = {
   n = {
-    ["-"] = {
+    ["<leader>e"] = {
       "<cmd>Oil<cr>",
-      "Open Oil",
+      "File Explorer",
       opts = { silent = true },
     },
   },
