@@ -146,6 +146,7 @@ local plugins = {
   -- Native LSP
   {
     "neovim/nvim-lspconfig",
+    cmd = "LspInfo",
     config = function()
       require "custom.configs.lsp.lspconfig"
     end,
