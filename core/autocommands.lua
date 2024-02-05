@@ -295,3 +295,11 @@ autocmd("FileType", {
     jdtls.start_or_attach(config)
   end,
 })
+
+autocmd({ "FileType" }, {
+  pattern = { "help", "text", "log" },
+  callback = function()
+    vim.opt_local.scrolloff = 999
+  end,
+  desc = "Keep the cursor in the middle of the screen when scrolling",
+})

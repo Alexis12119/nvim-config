@@ -4,33 +4,6 @@ local fn = vim.fn
 local cwd = vim.fn.stdpath "config" .. "/"
 local config_dir = { cwd }
 
--- From: https://github.com/b0o
-local function cursor_lock(lock)
-  return function()
-    local win = vim.api.nvim_get_current_win()
-    local augid = vim.api.nvim_create_augroup("user_cursor_lock_" .. win, { clear = true })
-    if not lock or vim.w.cursor_lock == lock then
-      vim.w.cursor_lock = nil
-      vim.notify("Disabled", vim.log.levels.INFO, { title = "Cursor Lock" })
-      return
-    end
-    local cb = function()
-      if vim.w.cursor_lock then
-        vim.cmd("silent normal z" .. vim.w.cursor_lock)
-      end
-    end
-    vim.w.cursor_lock = lock
-    vim.api.nvim_create_autocmd("CursorMoved", {
-      desc = "Cursor lock for window " .. win,
-      buffer = 0,
-      group = augid,
-      callback = cb,
-    })
-    cb()
-    vim.notify("Enabled", vim.log.levels.INFO, { title = "Cursor Lock" })
-  end
-end
-
 M.Harpoon = {
   plugin = true,
   n = {
@@ -210,11 +183,6 @@ M.Neotest = {
 
 M.Neovim = {
   n = {
-    ["<leader>nl"] = {
-      cursor_lock "z",
-      "Toggle Cursor Lock",
-      opts = { silent = true },
-    },
     ["<leader>nf"] = {
       function()
         require("telescope.builtin").find_files {
