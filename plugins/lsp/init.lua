@@ -46,9 +46,7 @@ return {
     -- Formatting
     {
       "stevearc/conform.nvim",
-      opts = function()
-        require "custom.plugins.lsp.conform"
-      end,
+      opts = require "custom.plugins.lsp.conform",
     },
     -- Linting
     {
