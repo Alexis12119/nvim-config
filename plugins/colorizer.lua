@@ -1,0 +1,29 @@
+-- Preview colors
+return {
+  "NvChad/nvim-colorizer.lua",
+  opts = {
+    user_default_options = {
+      tailwind = true,
+      sass = { enable = true, parsers = { "css" } }, -- Enable sass colors
+      always_update = true,
+    },
+    filetypes = {
+      css = {
+        RGB = true, -- #RGB hex codes
+        RRGGBB = true, -- #RRGGBB hex codes
+        names = true, -- "Name" codes like Blue
+        RRGGBBAA = true, -- #RRGGBBAA hex codes
+        rgb_fn = true, -- CSS rgb() and rgba() functions
+        hsl_fn = true, -- CSS hsl() and hsla() functions
+        css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+        css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+      },
+      html = { mode = "background" },
+      markdown = { names = false },
+      lua = { names = false },
+      json = { names = false },
+      mason = { names = false },
+      "*",
+    },
+  },
+}

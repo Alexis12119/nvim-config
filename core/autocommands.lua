@@ -230,9 +230,8 @@ autocmd("FileType", {
         "-data",
         workspace_dir,
       },
-      on_attach = require("custom.configs.lsp").on_attach,
-      capabilities = require("custom.configs.lsp").capabilities,
-
+      on_attach = require("custom.plugins.lsp.opts").on_attach,
+      capabilities = require("custom.plugins.lsp.opts").capabilities,
       -- 💀
       -- This is the default if not provided, you can remove it. Or adjust as needed.
       -- One dedicated LSP server & client will be started per unique root_dir

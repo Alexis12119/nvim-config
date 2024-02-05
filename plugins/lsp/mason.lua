@@ -1,8 +1,8 @@
 local mason = require "mason"
 -- local path = require "mason-core.path"
 local mason_lspconfig = require "mason-lspconfig"
-local on_attach = require("custom.configs.lsp").on_attach
-local capabilities = require("custom.configs.lsp").capabilities
+local on_attach = require("custom.plugins.lsp.opts").on_attach
+local capabilities = require("custom.plugins.lsp.opts").capabilities
 
 mason.setup {
   ui = {
@@ -78,7 +78,7 @@ mason_lspconfig.setup_handlers {
       capabilities = capabilities,
     }
 
-    local require_ok, server = pcall(require, "custom.configs.lsp.settings." .. server_name)
+    local require_ok, server = pcall(require, "custom.plugins.lsp.settings." .. server_name)
     if require_ok then
       opts = vim.tbl_deep_extend("force", server, opts)
     end
