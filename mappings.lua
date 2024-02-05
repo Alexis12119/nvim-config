@@ -4,6 +4,16 @@ local fn = vim.fn
 local cwd = vim.fn.stdpath "config" .. "/"
 local config_dir = { cwd }
 
+M.Oil = {
+  n = {
+    ["-"] = {
+      "<cmd>Oil<cr>",
+      "Open Oil",
+      opts = { silent = true },
+    },
+  },
+}
+
 M.Harpoon = {
   plugin = true,
   n = {
