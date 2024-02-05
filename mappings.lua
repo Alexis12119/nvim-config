@@ -4,16 +4,6 @@ local fn = vim.fn
 local cwd = vim.fn.stdpath "config" .. "/"
 local config_dir = { cwd }
 
-M.Oil = {
-  n = {
-    ["<leader>e"] = {
-      "<cmd>Oil<cr>",
-      "File Explorer",
-      opts = { silent = true },
-    },
-  },
-}
-
 M.Harpoon = {
   plugin = true,
   n = {
