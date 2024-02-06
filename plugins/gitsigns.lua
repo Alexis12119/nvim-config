@@ -2,7 +2,7 @@
 return {
   "lewis6991/gitsigns.nvim",
   init = function()
-    require("core.utils").load_mappings "Git"
+    require("core.utils").load_mappings "GitSigns"
     -- load gitsigns only when a git file is opened
     vim.api.nvim_create_autocmd({ "BufRead" }, {
       group = vim.api.nvim_create_augroup("GitSignsLazyLoad", { clear = true }),

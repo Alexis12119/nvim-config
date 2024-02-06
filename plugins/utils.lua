@@ -1,5 +1,5 @@
--- Utilities
 return {
+  -- Utilities
   {
     "nvim-lua/plenary.nvim",
   },

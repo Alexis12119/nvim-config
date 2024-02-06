@@ -104,6 +104,7 @@ return {
       "folke/neodev.nvim",
       opts = require "custom.plugins.lsp.neodev",
     },
+    -- For managing error and warning messages
     {
       "folke/trouble.nvim",
       init = function()
@@ -111,6 +112,16 @@ return {
       end,
       cmd = { "TroubleToggle", "Trouble" },
       opts = require "custom.plugins.lsp.trouble",
+    },
+    --  Displaying References and Definition
+    {
+      "VidocqH/lsp-lens.nvim",
+      init = function()
+        require("core.utils").load_mappings "LspLens"
+      end,
+      opts = {
+        enable = true,
+      },
     },
   },
 }
