@@ -437,6 +437,20 @@ M.Git = {
 
     ["<leader>gl"] = {
       "<cmd>lua require 'gitsigns'.blame_line()<cr>",
+      "Blame Line",
+      opts = { silent = true },
+    },
+
+    ["<leader>gt"] = {
+      function()
+        if vim.g.gitblame_enabled ~= true then
+          vim.cmd "GitBlameEnable"
+          vim.g.gitblame_enabled = true
+        else
+          vim.cmd "GitBlameDisable"
+          vim.g.gitblame_enabled = false
+        end
+      end,
       "Toggle Blame",
       opts = { silent = true },
     },
