@@ -1,6 +1,5 @@
 return {
   url = "https://gitlab.com/schrieveslaach/sonarlint.nvim",
-  enabled = false,
   ft = { "python", "cpp", "java" },
   config = function()
     local mason = vim.fn.stdpath "data" .. "/mason"
