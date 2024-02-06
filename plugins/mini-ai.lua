@@ -1,6 +1,6 @@
 -- Extend Neovim powers
 return {
   "echasnovski/mini.ai",
-  event = "VeryLazy",
+  event = "User FilePost",
   opts = {},
 }

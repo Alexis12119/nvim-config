@@ -1,5 +1,5 @@
 return {
   "kylechui/nvim-surround",
-  event = "VeryLazy",
+  event = "User FilePost",
   opts = {},
 }
