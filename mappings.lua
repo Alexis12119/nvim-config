@@ -425,21 +425,32 @@ M.Git = {
 
     ["<leader>gk"] = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk", opts = { silent = true } },
 
-    ["<leader>gl"] = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame", opts = { silent = true } },
+    ["<leader>gO"] = { "<cmd>GitBlameOpenCommitURL<cr>", "Open Commit Url", opts = { silent = true } },
+
+    ["<leader>gc"] = { "<cmd>GitBlameCopyCommitURL<cr>", "Copy Commit Url", opts = { silent = true } },
+
+    ["<leader>gf"] = { "<cmd>GitBlameOpenFileURL<cr>", "Open File Url", opts = { silent = true } },
+
+    ["<leader>gC"] = { "<cmd>GitBlameCopyFileURL<cr>", "Copy File Url", opts = { silent = true } },
+
+    ["<leader>gs"] = { "<cmd>GitBlameCopySHA<cr>", "Copy SHA", opts = { silent = true } },
+
+    ["<leader>gl"] = {
+      function()
+        if vim.g.gitblame_enabled ~= true then
+          vim.cmd "GitBlameEnable"
+          vim.g.gitblame_enabled = true
+        else
+          vim.cmd "GitBlameDisable"
+          vim.g.gitblame_enabled = false
+        end
+      end,
+      "Toggle Blame",
+      opts = { silent = true },
+    },
 
     ["<leader>gp"] = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk", opts = { silent = true } },
 
-    ["<leader>gr"] = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk", opts = { silent = true } },
-
-    ["<leader>gR"] = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer", opts = { silent = true } },
-
-    ["<leader>gs"] = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk", opts = { silent = true } },
-
-    ["<leader>gu"] = {
-      "<cmd>lua reguire 'gitsigns'.undo_stage_hunk()<cr>",
-      "Undo Stgge Hunk",
-      opts = { silent = true },
-    },
     ["<leader>gd"] = {
       function()
         if next(require("diffview.lib").views) == nil then
