@@ -73,6 +73,9 @@ mason_lspconfig.setup_handlers {
         return
       end
     end
+    if server_name == "omnisharp" and vim.g.godot then
+      return
+    end
     local opts = {
       on_attach = on_attach,
       capabilities = capabilities,
