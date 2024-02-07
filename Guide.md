@@ -73,8 +73,9 @@ return {
 
 - You can find here the [supported](https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#supported-languages) languages.
 - You can install the `language parser` through `:TSInstall <language_name>`.
+- Most of the `Tree-sitter` problems can be solved by running `:TSUpdate` or reinstalling the parser by `:TSInstall`.
 
-#### 8. Want to know how to override the `statusline` and `tabufline`?`
+#### 8. Want to know how to override the `statusline` and `tabufline`?
 
 - Read this [guide](https://nvchad.com/docs/config/nvchad_ui).
 - Edit them in `lua/custom/chadrc.lua`.
@@ -87,7 +88,7 @@ return {
 
 - Read this [guide](https://nvchad.com/docs/config/theming)
 
-#### 10. Override and Add Highlights?
+#### 10. Override and Add Highlights/Colors?
 
 - Edit them in `lua/custom/highlights.lua`.
 - You can run `:Telescope highlights` to see all the available highlights.
