@@ -92,4 +92,10 @@ return {
 
 - Edit them in `lua/custom/highlights.lua`.
 - You can run `:Telescope highlights` to see all the available highlights.
-- You can also press `<Space> + n + i` the highlight at your current cursor.
+- You can also press `<Space> + n + i` to see the `highlight group` at your cursor position.
+
+#### 11. `lazy.nvim` vs. `mason.nvim` vs `LazyVim`
+
+- lazy.nvim is the plugin manager that install, delete, update plugins.
+- LazyVim is a neovim configuration that uses `lazy.nvim` as the plugin manager.
+- mason.nvim is a package manager that install, delete, update packages such as `LSP`, `Formatters`, `DAP(Debug Adapter Protocol)`, and `Linters`.
