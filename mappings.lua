@@ -16,14 +16,15 @@ M.SideBar = {
   n = {
     ["<leader>e"] = {
       function()
-        if vim.bo.filetype ~= "SidebarNvim" then
-          vim.cmd [[
-          SidebarNvimOpen
-          SidebarNvimFocus
-          ]]
-        else
-          vim.cmd "SidebarNvimClose"
-        end
+        -- if vim.bo.filetype ~= "SidebarNvim" then
+        --   vim.cmd [[
+        --   SidebarNvimOpen
+        --   SidebarNvimFocus
+        --   ]]
+        -- else
+        --   vim.cmd "SidebarNvimClose"
+        -- end
+        vim.cmd "SidebarNvimToggle"
       end,
       "Toggle Explorer",
       opts = { silent = true },
@@ -340,8 +341,6 @@ M.Telescope = {
     ["<leader>ls"] = { "<cmd>Telescope lsp_document_symbols<cr>", "Buffer Symbols", opts = { silent = true } },
 
     ["<leader>lS"] = { "<cmd>Telescope lsp_workspace_symbols<cr>", "Workspace Symbols", opts = { silent = true } },
-
-    ["<leader>go"] = { "<cmd>Telescope git_status<cr>", "Open changed file", opts = { silent = true } },
 
     ["<leader>gb"] = { "<cmd>Telescope git_branches<cr>", "Checkout branch", opts = { silent = true } },
 
