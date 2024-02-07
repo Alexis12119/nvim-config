@@ -4,6 +4,33 @@ local fn = vim.fn
 local cwd = vim.fn.stdpath "config" .. "/"
 local config_dir = { cwd }
 
+M.Oil = {
+  plugin = true,
+  n = {
+    ["<leader>O"] = { "<cmd>Oil --float<cr>", "Open Oil", opts = { silent = true } },
+  },
+}
+
+M.SideBar = {
+  plugin = true,
+  n = {
+    ["<leader>e"] = {
+      function()
+        if vim.bo.filetype ~= "SidebarNvim" then
+          vim.cmd [[
+          SidebarNvimOpen
+          SidebarNvimFocus
+          ]]
+        else
+          vim.cmd "SidebarNvimClose"
+        end
+      end,
+      "Toggle Explorer",
+      opts = { silent = true },
+    },
+  },
+}
+
 M.LspLens = {
   plugin = true,
   n = {

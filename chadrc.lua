@@ -133,15 +133,15 @@ M.ui = {
     enabled = true,
     lazyload = true,
     overriden_modules = function(modules)
-      -- modules[2] = (function()
-      --   return "%#TblineFill#" .. "%=" -- empty space
-      -- end)()
+      modules[2] = (function()
+        return "%#TblineFill#" .. "%=" -- empty space
+      end)()
       -- modules[3] = (function()
       --   return " %#TblineFill#%@v:lua.ClickUpdate@  %#TblineFill#%@v:lua.ClickGit@  %#TblineFill#%@v:lua.RunCode@  %#TblineFill#%@v:lua.ClickSplit@  "
       -- end)()
-      -- modules[4] = (function()
-      --   return " "
-      -- end)()
+      modules[4] = (function()
+        return " "
+      end)()
     end,
   },
 

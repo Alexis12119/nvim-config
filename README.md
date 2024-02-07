@@ -69,7 +69,7 @@ Please follow these steps:
 - **Debugging**: Debug issues with [nvim-dap](https://github.com/mfussenegger/nvim-dap) with [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui).
 - **Tests**: Run tests with [neotest](https://github.com/nvim-neotest/neotest).
 - **Project Management**: Simplify project handling with [project.nvim](https://github.com/ahmedkhalf/project.nvim).
-- **File Explorer**: Navigate projects seamlessly using [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua).
+- **File Explorer**: Easy File Operations with [oil.nvim](https://github.com/stevearc/oil.nvim).
 - **Diff Viewer**: Easily cycle through diffs with [diffview.nvim](https://github.com/sindrets/diffview.nvim).
 - **Enhanced Searching**: Improve searching with [flash.nvim](https://github.com/folke/flash.nvim).
 - **Autocompletion**: Experience intelligent autocompletion with [nvim-cmp](https://github.com/hrsh7th/nvim-cmp).
