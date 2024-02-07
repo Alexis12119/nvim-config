@@ -11,7 +11,7 @@
 
 #### 3. Install the `LSP(Language Server Protocol)` or `Intellisense(VSCode)`
 
-- Run the command `:Mason` and press `Enter`. You can install them by pressing `i` at the same line of the `LSP`.
+- Run the command `:Mason`. You can install them by pressing `i` at the same line of the `LSP`.
 - You can also directly install them by `:MasonInstall <package_name>`.
 
 > Read `:h mason-commands` for more info.
