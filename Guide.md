@@ -63,9 +63,11 @@ return {
 }
 ```
 
+- Run `:w` and `:Lazy install` to install the plugin.
+
 > Read [lazy.nvim](https://github.com/folke/lazy.nvim?tab=readme-ov-file#-plugin-spec) for more options that you can use.
 
-- Run `:w` and `:Lazy install` to install the plugin.
+> Read [this](https://github.com/folke/lazy.nvim?tab=readme-ov-file#-migration-guide). If you've used `packer.nvim` before.
 
 #### 7. Tree-sitter(Syntax Highlighting)
 
