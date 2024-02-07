@@ -43,7 +43,7 @@
 | Neovim     | Neovim and Config related operations.         |
 | Runner     | Code runner related operations.               |
 | Venv       | Switch Virtual Environment.                   |
-| Harpoon    | Mark and Manage bookmarks.                    |
+| Harpoon    | Mark and Manage your marks.                   |
 
 #### 6. Add plugins
 
