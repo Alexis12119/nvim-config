@@ -308,7 +308,7 @@ autocmd({ "FileType" }, {
 local godot = augroup("Godot", { clear = true })
 
 autocmd("FileType", {
-  pattern = { "gdscript", "cs" },
+  pattern = { "gdscript" },
   callback = function()
     vim.g.godot = true
     local port = os.getenv "GDScript_Port" or "6005"
