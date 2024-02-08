@@ -6,7 +6,7 @@ return {
   end,
   opts = {
     -- Send deleted files to the trash instead of permanently deleting them (:help oil-trash)
-    delete_to_trash = true,
+    delete_to_trash = false,
     view_options = {
       -- Show files and directories that start with "."
       show_hidden = false,
