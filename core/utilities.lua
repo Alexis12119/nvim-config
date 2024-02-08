@@ -26,6 +26,17 @@ command("LuaSnipEdit", function()
   require("luasnip.loaders").edit_snippet_files()
 end, { nargs = "*", desc = "Edit the available snippets in the filetype" })
 
+command("RemoveEmptyLines", function()
+  vim.cmd ":g/^$/d"
+  -- :v/./d
+  --
+  -- :g/^\s*$/d
+  -- :v/\S/d
+end, { nargs = "*", desc = "Remove all empty lines" })
+command("RemoveTrailingSpaces", function()
+  vim.cmd ":%s/s+$//e"
+end, { nargs = "*", desc = "Remove all trailing spaces " })
+
 function ClickGit()
   local status_ok, _ = pcall(require, "toggleterm")
   if not status_ok then
