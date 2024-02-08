@@ -47,7 +47,7 @@ function DeleteFirstEmptyBuffer()
   local buffers = vim.api.nvim_list_bufs()
 
   -- Check if there are more than one buffer
-  if buffers > 1 then
+  if #buffers > 1 then
     for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
       local buffer_lines = vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)
       -- If it's the first buffer and it's empty, delete it
