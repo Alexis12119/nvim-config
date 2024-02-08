@@ -16,7 +16,7 @@ return {
       -- Padding around the floating window
       padding = 2,
       max_height = math.ceil(vim.o.lines * 0.8 - 4),
-      max_width = math.ceil(vim.o.columns * 0.8),
+      max_width = math.ceil(vim.o.columns * 0.4),
       border = "rounded",
       win_options = {
         winblend = 0,
