@@ -10,6 +10,14 @@ local augroup = vim.api.nvim_create_augroup
 -- General Settings
 local general = augroup("General Settings", { clear = true })
 
+autocmd("BufReadPost", {
+  callback = function()
+    DeleteFirstEmptyBuffer()
+  end,
+  group = general,
+  desc = "Delete First Empty Buffer",
+})
+
 autocmd("VimEnter", {
   callback = function(data)
     -- buffer is a directory
