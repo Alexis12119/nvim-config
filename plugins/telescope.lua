@@ -34,6 +34,8 @@ return {
     conf.defaults.mappings.i = {
       ["<Tab>"] = actions.move_selection_next,
       ["<S-Tab>"] = actions.move_selection_previous,
+      ["<C-j>"] = actions.toggle_selection + actions.move_selection_worse,
+      ["<C-k>"] = actions.toggle_selection + actions.move_selection_better,
       ["<C-q>"] = trouble.open_with_trouble,
     }
 
