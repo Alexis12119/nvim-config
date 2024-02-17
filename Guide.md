@@ -47,7 +47,7 @@
 
 #### 6. Add plugins
 
-- Create a new file in `lua/custom/plugins`. Like this `numb.lua`.
+- Create a new file in `lua/custom/plugins` folder. Like this `numb.lua`.
 - Inside that file is put the plugin you want to add.
   Example:
 
@@ -96,6 +96,6 @@ return {
 
 #### 11. `lazy.nvim` vs. `mason.nvim` vs `LazyVim`
 
-- lazy.nvim is the plugin manager that install, delete, update plugins.
-- LazyVim is a neovim configuration that uses `lazy.nvim` as the plugin manager.
-- mason.nvim is a package manager that install, delete, update packages such as `LSP`, `Formatters`, `DAP(Debug Adapter Protocol)`, and `Linters`.
+- `lazy.nvim` is the plugin manager that install, delete, update plugins.
+- `LazyVim` is a neovim configuration that uses `lazy.nvim` as the plugin manager.
+- `mason.nvim` is a package manager that install, delete, update packages such as `LSP`, `Formatters`, `DAP(Debug Adapter Protocol)`, and `Linters`.
