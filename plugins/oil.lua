@@ -1,7 +1,6 @@
 return {
   "stevearc/oil.nvim",
   cmd = "Oil",
-  enabled = false,
   init = function()
     require("core.utils").load_mappings "Oil"
   end,
