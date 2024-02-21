@@ -9,7 +9,7 @@ return {
     delete_to_trash = false,
     view_options = {
       -- Show files and directories that start with "."
-      show_hidden = false,
+      show_hidden = true,
     },
     -- Configuration for the floating window in oil.open_float
     float = {
