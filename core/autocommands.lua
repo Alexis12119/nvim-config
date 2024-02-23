@@ -174,7 +174,14 @@ autocmd("FileType", {
     local bufnr = vim.api.nvim_get_current_buf()
 
     local java_debug_path = vim.fn.stdpath "data" .. "/mason/packages/java-debug-adapter/"
+    local java_test_path = vim.fn.stdpath "data" .. "/mason/packages/java-test/"
     local jdtls_path = vim.fn.stdpath "data" .. "/mason/packages/jdtls/"
+
+    local bundles = {
+      vim.fn.glob(java_debug_path .. "extension/server/com.microsoft.java.debug.plugin-*.jar", 1),
+    };
+    vim.list_extend(bundles, vim.split(vim.fn.glob(java_test_path .. "extension/server/*.jar", 1), "\n"))
+
     -- NOTE: Decrease the amount of files to improve speed(Experimental).
     -- INFO: It's annoying to edit the version again and again.
     local equinox_path = vim.split(vim.fn.glob(vim.fn.stdpath "data" .. "/mason/packages/jdtls/plugins/*jar"), "\n")
@@ -245,9 +252,7 @@ autocmd("FileType", {
       -- One dedicated LSP server & client will be started per unique root_dir
       root_dir = require("jdtls.setup").find_root(root_markers),
       init_options = {
-        bundles = {
-          vim.fn.glob(java_debug_path .. "extension/server/com.microsoft.java.debug.plugin-*.jar", 1),
-        },
+        bundles = bundles,
       },
       settings = {
         eclipse = {
@@ -296,6 +301,8 @@ autocmd("FileType", {
     command! -buffer JdtJol lua require('jdtls').jol()
     command! -buffer JdtBytecode lua require('jdtls').javap()
     command! -buffer JdtJshell lua require('jdtls').jshell()
+    command! -buffer JavaTestCurrentClass lua require('jdtls').test_class()
+    command! -buffer JavaTestNearestMethod lua require('jdtls').test_nearest_method()
     ]]
 
     -- This starts a new client & server,
