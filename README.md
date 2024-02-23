@@ -1,10 +1,10 @@
 <div align="center">
 
-![Last commit](https://img.shields.io/github/last-commit/Alexis12119/nvim-config?style=for-the-badge&logo=git&color=000F10&logoColor=dark%20orange&labelColor=302D41)
+![Last commit](https://img.shields.io/github/last-commit/anthonydmays/nvim-config?style=for-the-badge&logo=git&color=000F10&logoColor=dark%20orange&labelColor=302D41)
 
 [![](https://img.shields.io/badge/Neovim-0.9+-blueviolet.svg?style=for-the-badge&color=000F10&logo=Neovim&logoColor=green&labelColor=302D41)](https://github.com/neovim/neovim)
 
-![Preview](https://github.com/Alexis12119/nvim-config/assets/74944536/c6a3225a-eb52-4c21-bd9d-12a689173a0f)
+![Preview](https://github.com/anthonydmays/nvim-config/assets/74944536/c6a3225a-eb52-4c21-bd9d-12a689173a0f)
 
 </div>
 
@@ -53,12 +53,12 @@ Please follow these steps:
    - On Linux/MacOS:
 
      ```sh
-     bash <(curl -s https://raw.githubusercontent.com/Alexis12119/nvim-config/main/installer/install.sh)
+     bash <(curl -s https://raw.githubusercontent.com/anthonydmays/nvim-config/main/installer/install.sh)
      ```
 
    - On Windows (Powershell):
      ```ps1
-     Invoke-WebRequest https://raw.githubusercontent.com/Alexis12119/nvim-config/main/installer/install.ps1 -UseBasicParsing | Invoke-Expression
+     Invoke-WebRequest https://raw.githubusercontent.com/anthonydmays/nvim-config/main/installer/install.ps1 -UseBasicParsing | Invoke-Expression
      ```
 
 ## ✨ Features
@@ -81,20 +81,8 @@ Please follow these steps:
 - **Keymap Cheatsheet**: Quickly reference keymaps with [which-key.nvim](https://github.com/folke/which-key.nvim).
 - **Markdown Preview**: Preview your Markdown files with [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim).
 
-## 🌟 Stargazers
-
-I appreciate the support from all the Stargazers!
-
-[![Stargazers](http://reporoster.com/stars/dark/notext/Alexis12119/nvim-config)](https://github.com/Alexis12119/nvim-config/stargazers)
-
 ### CREDITS
 
-This Neovim configuration is built upon the foundation of NvChad. Special thanks to the NvChad community and developers for their fantastic work.
-
-- [NvChad](https://github.com/NvChad/NvChad)
-
-> “Make it work, make it right, make it fast.”
-
-\- Kent Beck
+Thanks to @Alexis12119 for the excellent starting setup! Checkout the original repo at [Alexis12119/nvim-config](https://github.com/Alexis12119/nvim-config).
 
 ---
