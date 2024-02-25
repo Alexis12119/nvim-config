@@ -99,3 +99,7 @@ return {
 - `lazy.nvim` is the plugin manager that install, delete, update plugins.
 - `LazyVim` is a neovim configuration that uses `lazy.nvim` as the plugin manager.
 - `mason.nvim` is a package manager that install, delete, update packages such as `LSP`, `Formatters`, `DAP(Debug Adapter Protocol)`, and `Linters`.
+
+#### 12. `Jdtls` debugging tip
+
+- Run `:JdtUpdateDebugConfig` to get the debug configurations.
