@@ -40,6 +40,7 @@ return {
     -- },
     ensure_installed = {
       "vim",
+      "vimdoc",
       "lua",
       "html",
       "css",
