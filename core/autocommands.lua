@@ -179,7 +179,7 @@ autocmd("FileType", {
 
     local bundles = {
       vim.fn.glob(java_debug_path .. "extension/server/com.microsoft.java.debug.plugin-*.jar", 1),
-    };
+    }
     vim.list_extend(bundles, vim.split(vim.fn.glob(java_test_path .. "extension/server/*.jar", 1), "\n"))
 
     -- NOTE: Decrease the amount of files to improve speed(Experimental).
