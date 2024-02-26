@@ -55,18 +55,20 @@ return {
       "go",
       "python",
       "java",
+      "http",
+      "json",
     },
     indent = {
       enable = false,
     },
     textobjects = {
       swap = {
-        enable = false,
+        enable = true,
         swap_next = {
-          ["<leader>a"] = "@parameter.inner",
+          ["sa"] = "@parameter.inner",
         },
         swap_previous = {
-          ["<leader>A"] = "@parameter.inner",
+          ["sA"] = "@parameter.inner",
         },
       },
       move = {
