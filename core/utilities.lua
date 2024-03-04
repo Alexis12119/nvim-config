@@ -1,6 +1,4 @@
--- #############################
--- #   Utilities  and Commands #
--- #############################
+-- NOTE: Utilities and Commands
 
 local command = vim.api.nvim_create_user_command
 

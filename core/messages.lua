@@ -1,3 +1,4 @@
+-- NOTE: For startup message
 local M = {
   "Why don't Neovim users ever get lost in their text files? Because they always 'find' their way!",
   "Why don't Neovim users need a GPS? Because they're experts at 'mapping' their routes!",

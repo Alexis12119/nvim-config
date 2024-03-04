@@ -1,4 +1,4 @@
--- Sessions
+-- NOTE: Sessions
 return {
   "olimorris/persisted.nvim",
   cmd = {

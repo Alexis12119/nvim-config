@@ -1,4 +1,4 @@
--- Manage Projects
+-- NOTE: Manage Projects
 return {
   "ahmedkhalf/project.nvim",
   event = "VeryLazy",

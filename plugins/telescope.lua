@@ -1,4 +1,4 @@
--- Fuzzy Finder
+-- NOTE: Fuzzy Finder
 return {
   "nvim-telescope/telescope.nvim",
   init = function()

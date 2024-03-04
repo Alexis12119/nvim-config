@@ -1,4 +1,4 @@
--- Native LSP
+--  NOTE: LSP Configuration
 return {
   "neovim/nvim-lspconfig",
   cmd = "LspInfo",
@@ -43,12 +43,12 @@ return {
     })
   end,
   dependencies = {
-    -- Formatting
+    -- NOTE: Formatting
     {
       "stevearc/conform.nvim",
       opts = require "custom.plugins.lsp.conform",
     },
-    -- Linting
+    -- NOTE: Linting
     {
       "mfussenegger/nvim-lint",
       enabled = false,
@@ -56,7 +56,7 @@ return {
         require "custom.plugins.lsp.nvim-lint"
       end,
     },
-    -- For Typescript
+    -- NOTE: For Typescript
     {
       "pmizio/typescript-tools.nvim",
       opts = {
@@ -69,6 +69,7 @@ return {
         },
       },
     },
+    -- NOTE: Package installer
     {
       "williamboman/mason.nvim",
       init = function()
@@ -97,7 +98,7 @@ return {
         },
       },
     },
-    -- Improve Other LSP Functionalities
+    -- NOTE: Improve Other LSP Functionalities
     {
       "nvimdev/lspsaga.nvim",
       init = function()
@@ -105,12 +106,12 @@ return {
       end,
       opts = require "custom.plugins.lsp.lspsaga",
     },
-    -- For Plugin Development
+    -- NOTE: For Plugin Development
     {
       "folke/neodev.nvim",
       opts = require "custom.plugins.lsp.neodev",
     },
-    -- For managing error and warning messages
+    -- NOTE: For managing error and warning messages
     {
       "folke/trouble.nvim",
       init = function()
@@ -119,7 +120,7 @@ return {
       cmd = { "TroubleToggle", "Trouble" },
       opts = require "custom.plugins.lsp.trouble",
     },
-    --  Displaying References and Definition
+    -- NOTE: Displaying References and Definition
     {
       "VidocqH/lsp-lens.nvim",
       init = function()

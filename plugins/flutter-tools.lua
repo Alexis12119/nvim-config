@@ -1,4 +1,4 @@
--- For Flutter Development
+-- NOTE: For Flutter Development
 return {
   "akinsho/flutter-tools.nvim",
   ft = "dart",

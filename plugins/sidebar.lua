@@ -1,3 +1,4 @@
+-- NOTE: Sidebar
 return {
   "sidebar-nvim/sidebar.nvim",
   enabled = false,

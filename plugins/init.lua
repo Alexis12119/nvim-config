@@ -1,3 +1,4 @@
+-- NOTE: Default Plugins
 return {
   -- NvChad Default Terminal
   {

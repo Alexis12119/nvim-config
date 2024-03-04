@@ -1,4 +1,4 @@
--- Terminal Integration
+-- NOTE: Terminal Integration
 return {
   "akinsho/toggleterm.nvim",
   init = function()

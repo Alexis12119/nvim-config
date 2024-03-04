@@ -1,8 +1,5 @@
--- For neovim options
+-- NOTE: Read :h lua-guide for better understanding of how this works
 require "custom.core.options"
--- For neovim autocommands. Read `:h lua-guide-autocommand-create`
 require "custom.core.autocommands"
--- For personal functions and commands
 require "custom.core.utilities"
--- For additional filetypes
 require "custom.core.filetypes"

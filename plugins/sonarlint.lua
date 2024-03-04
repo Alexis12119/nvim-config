@@ -1,3 +1,4 @@
+-- NOTE: SonarLint
 return {
   url = "https://gitlab.com/schrieveslaach/sonarlint.nvim",
   enabled = false,

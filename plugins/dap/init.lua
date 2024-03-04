@@ -1,4 +1,4 @@
--- Debugging
+-- NOTE: Debugging
 return {
   "rcarriga/nvim-dap-ui",
   init = function()

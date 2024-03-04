@@ -1,3 +1,4 @@
+-- NOTE: Note Taking
 return {
   "nvim-neorg/neorg",
   build = ":Neorg sync-parsers",

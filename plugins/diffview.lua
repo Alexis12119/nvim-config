@@ -1,4 +1,4 @@
--- Show diffs
+-- NOTE: Show diffs
 return {
   "sindrets/diffview.nvim",
   init = function()

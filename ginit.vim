@@ -1,5 +1,5 @@
 lua << EOF
-
+-- NOTE: GUI Options
 -------------
 -- Nvim-qt --
 -------------

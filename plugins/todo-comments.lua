@@ -1,4 +1,4 @@
--- Highlight, List and Search Todo comments in your projects
+-- NOTE: Highlight, List and Search Todo comments in your projects
 return {
   "folke/todo-comments.nvim",
   cmd = { "TodoTrouble", "TodoLocList", "TodoQuickFix", "TodoTelescope" },

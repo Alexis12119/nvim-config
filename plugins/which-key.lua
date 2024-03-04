@@ -1,4 +1,4 @@
--- Keymaps Popup
+-- NOTE: Keymaps Popup/Guide
 return {
   "folke/which-key.nvim",
   opts = {

@@ -1,6 +1,4 @@
--- ########################
--- #   Neovim Options    #
--- #######################
+-- NOTE: Neovim options
 
 local options = {
   backup = false, -- creates a backup file

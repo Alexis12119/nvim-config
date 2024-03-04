@@ -1,4 +1,4 @@
--- Code Runner
+-- NOTE: Code Runner
 return {
   "Zeioth/compiler.nvim",
   init = function()

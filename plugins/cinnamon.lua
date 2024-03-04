@@ -1,3 +1,4 @@
+-- NOTE: Smooth scrolling with Cinnamon
 return {
   "declancm/cinnamon.nvim",
   event = "User FilePost",

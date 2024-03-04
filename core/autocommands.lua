@@ -1,6 +1,4 @@
--- ################
--- # Autocommands #
--- ################
+-- NOTE: Autocommands
 
 local fn = vim.fn
 

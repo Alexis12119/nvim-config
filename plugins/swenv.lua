@@ -1,4 +1,4 @@
--- For switching between Python venv
+-- NOTE: For switching between Python venv
 return {
   "AckslD/swenv.nvim",
   init = function()

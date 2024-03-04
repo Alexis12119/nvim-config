@@ -1,4 +1,4 @@
--- Show Indentlines
+-- NOTE: Show Indentlines
 return {
   "lukas-reineke/indent-blankline.nvim",
   event = "User FilePost",

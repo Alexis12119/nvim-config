@@ -1,4 +1,4 @@
--- Preview Markdown
+-- NOTE: Preview Markdown
 return {
   "iamcco/markdown-preview.nvim",
   init = function()

@@ -1,4 +1,4 @@
--- Git Signs
+-- NOTE: Git Signs
 return {
   "lewis6991/gitsigns.nvim",
   init = function()

@@ -1,3 +1,4 @@
+-- NOTE: Lazy(Plugin Manager) options
 return {
   lockfile = vim.fn.stdpath "config" .. "/lua/custom/lazy-lock.json", -- lockfile generated after running update.
   change_detection = {

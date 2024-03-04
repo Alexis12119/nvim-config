@@ -1,4 +1,4 @@
--- Tmux navigation
+-- NOTE: Tmux navigation
 return {
   "alexghergh/nvim-tmux-navigation",
   event = "VeryLazy",

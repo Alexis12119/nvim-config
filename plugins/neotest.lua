@@ -1,3 +1,4 @@
+-- NOTE: Tests
 return {
   "nvim-neotest/neotest",
   init = function()

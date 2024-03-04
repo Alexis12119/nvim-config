@@ -1,4 +1,4 @@
--- Syntax Highlighting
+-- NOTE: Syntax Highlighting
 return {
   "nvim-treesitter/nvim-treesitter",
   cmd = {

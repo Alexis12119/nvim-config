@@ -1,5 +1,9 @@
 ## Configuration Guide
 
+> Quick Tip: Press `<Space> + fT` inside the `custom` directory to show my notes in this configuration .
+
+![guide](https://github.com/Alexis12119/nvim-config/assets/74944536/0fe305e0-a52d-49d5-9f20-6a855cb610a3)
+
 #### 1. Icons not showing?
 
 - Install a [Nerd Font](https://www.nerdfonts.com/font-downloads) and set it in your terminal.

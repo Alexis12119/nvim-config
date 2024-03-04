@@ -1,4 +1,4 @@
--- Marks
+-- NOTE: Marks
 return {
   "ThePrimeagen/harpoon",
   branch = "harpoon2",

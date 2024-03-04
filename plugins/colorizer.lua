@@ -1,4 +1,4 @@
--- Preview colors
+-- NOTE: Preview colors
 return {
   "NvChad/nvim-colorizer.lua",
   opts = {

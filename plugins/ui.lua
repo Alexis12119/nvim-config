@@ -1,3 +1,4 @@
+-- NOTE: UI related plugins
 return {
   -- Icons
   {

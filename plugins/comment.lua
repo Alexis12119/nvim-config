@@ -1,4 +1,4 @@
--- Commenter
+-- NOTE: Commenter
 return {
   "numToStr/Comment.nvim",
   config = function()

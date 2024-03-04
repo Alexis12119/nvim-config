@@ -1,4 +1,4 @@
--- Completion Engine
+-- NOTE: Completion Engine
 return {
   "hrsh7th/nvim-cmp",
   event = { "InsertEnter", "CmdlineEnter" },

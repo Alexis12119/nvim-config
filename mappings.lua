@@ -1,3 +1,4 @@
+-- NOTE: NvChad Related Mappings
 ---@type MappingsTable
 local M = {}
 local fn = vim.fn
@@ -381,7 +382,7 @@ M.Trouble = {
       opts = { silent = true },
     },
 
-    ["<leader>fT"] = { "<cmd>TodoTrouble<cr>", "Todo", opts = { silent = true } },
+    ["<leader>fT"] = { "<cmd>TodoTelescope<cr>", "Todo", opts = { silent = true } },
   },
 }
 

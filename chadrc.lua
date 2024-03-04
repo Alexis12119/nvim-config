@@ -1,3 +1,4 @@
+-- NOTE: NvChad Related Options
 ---@type ChadrcConfig
 local M = {}
 
