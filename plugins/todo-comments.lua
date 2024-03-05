@@ -1,6 +1,7 @@
 -- NOTE: Highlight, List and Search Todo comments in your projects
 return {
   "folke/todo-comments.nvim",
+  event = "User FilePost",
   cmd = { "TodoTrouble", "TodoLocList", "TodoQuickFix", "TodoTelescope" },
   opts = {
     signs = true, -- show icons in the signs column
