@@ -39,14 +39,13 @@ M.ui = {
   lsp_semantic_tokens = false, -- needs nvim v0.9, just adds highlight groups for lsp semantic tokens
   hl_override = highlights.override,
   hl_add = highlights.add,
-  extended_integrations = {
-  },                                    -- these aren't compiled by default, ex: "alpha", "notify"
+  extended_integrations = {}, -- these aren't compiled by default, ex: "alpha", "notify"
   telescope = { style = "borderless" }, -- borderless / bordered
   cmp = {
     icons = true,
     lspkind_text = true,
-    style = "default",            -- default/flat_light/flat_dark/atom/atom_colored
-    border_color = "grey_fg",     -- only applicable for "default" style, use color names from base30 variables
+    style = "default", -- default/flat_light/flat_dark/atom/atom_colored
+    border_color = "grey_fg", -- only applicable for "default" style, use color names from base30 variables
     selected_item_bg = "colored", -- colored / simple
   },
   statusline = {
@@ -54,7 +53,7 @@ M.ui = {
     -- default/round/block/arrow separators work only for default statusline theme
     -- round and block will work for minimal theme only
     separator_style = "round",
-    order = { "mode", "file", "git", "%=", "python_venv", "command", "diagnostics", "lsp", "cwd" },
+    order = { "mode", "file", "git", "%=", "python_venv", "diagnostics", "command", "clients", "cwd", "cursor" },
     modules = {
       python_venv = function()
         if vim.bo.filetype ~= "python" then
@@ -71,35 +70,12 @@ M.ui = {
       command = function()
         local noice_ok, noice = pcall(require, "noice.api")
         if noice_ok and noice.status.command.has() then
-          return "%#NoTexthl#" .. noice.status.command.get() .. " "
+          return " %#St_gitIcons#" .. noice.status.command.get() .. " "
         else
           return " "
         end
       end,
-
-    },
-    overriden_modules = function(modules)
-      local config = require("nvconfig").ui.statusline
-      local sep_style = config.separator_style
-
-      sep_style = (sep_style ~= "round" and sep_style ~= "block") and "block" or sep_style
-
-      local default_sep_icons = {
-        round = { left = "", right = "" },
-        block = { left = "█", right = "█" },
-      }
-
-      local separators = (type(sep_style) == "table" and sep_style) or default_sep_icons[sep_style]
-
-      local sep_l = separators["left"]
-      local sep_r = "%#St_sep_r#" .. separators["right"] .. " %#ST_EmptySpace#"
-
-      local function gen_block(icon, txt, sep_l_hlgroup, iconHl_group, txt_hl_group)
-        return sep_l_hlgroup .. sep_l .. iconHl_group .. icon .. " " .. txt_hl_group .. " " .. txt .. sep_r
-      end
-
-
-      modules[9] = (function()
+      clients = function()
         local clients = {}
         local buf = vim.api.nvim_get_current_buf()
 
@@ -120,16 +96,10 @@ M.ui = {
         if #clients == 0 then
           return ""
         else
-          return (
-            vim.o.columns > 100
-            and gen_block("", table.concat(clients, ", "), "%#St_lsp_sep#", "%#St_lsp_bg#", "%#St_lsp_txt#")
-          ) or "  LSP "
+          return (vim.o.columns > 100 and (" %#St_gitIcons#" .. table.concat(clients, ", ") .. " ")) or "  LSP "
         end
-      end)()
-      modules[11] = (function()
-        return gen_block("", "%L", "%#St_Pos_sep#", "%#St_Pos_bg#", "%#St_Pos_txt#")
-      end)()
-    end,
+      end,
+    },
   },
 
   -- lazyload it when there are 1+ tabs
@@ -141,7 +111,7 @@ M.ui = {
     modules = {
       blank = function()
         return "%#Normal#" .. "%=" -- empty space
-      end
+      end,
     },
     -- modules[3] = (function()
     --   return " %#TblineFill#%@v:lua.ClickUpdate@  %#TblineFill#%@v:lua.ClickGit@  %#TblineFill#%@v:lua.RunCode@  %#TblineFill#%@v:lua.ClickSplit@  "

@@ -10,7 +10,7 @@ M.LspLens = {
     ["<leader>ll"] = {
       "<cmd>LspLensToggle<cr>",
       desc = "Toggle Code Lens",
-      opts = { silent = true }
+      opts = { silent = true },
     },
   },
 }
@@ -54,7 +54,7 @@ M.Swenv = {
     ["<leader>vp"] = {
       ":lua=require('swenv.api').pick_venv()<cr>",
       desc = "Pick Venv",
-      opts = { silent = true }
+      opts = { silent = true },
     },
   },
 }
@@ -80,7 +80,7 @@ M.NvimTree = {
     ["<leader>e"] = {
       "<cmd>NvimTreeToggle<cr>",
       desc = "Explorer",
-      opts = { silent = true }
+      opts = { silent = true },
     },
   },
 }
@@ -90,19 +90,19 @@ M.Compiler = {
     ["<leader>rr"] = {
       "<cmd>CompilerRedo<cr>",
       desc = "Redo Last Action",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>ro"] = {
       "<cmd>CompilerOpen<cr>",
       desc = "Open",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>rs"] = {
       "<cmd>CompilerStop<cr>",
       desc = "Stop All Tasks",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>rt"] = {
@@ -119,31 +119,31 @@ M.Dap = {
     ["<leader>dc"] = {
       "<cmd>lua require'dap'.continue()<cr>",
       desc = "Continue",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>do"] = {
       "<cmd>lua require'dap'.step_over()<cr>",
       desc = "Step Over",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>di"] = {
       "<cmd>lua require'dap'.step_into()<cr>",
       desc = "Step Into",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>du"] = {
       "<cmd>lua require'dap'.step_out()<cr>",
       desc = "Step Out",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>db"] = {
       "<cmd>lua require'dap'.toggle_breakpoint()<cr>",
       desc = "Breakpoint",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>dB"] = {
@@ -155,13 +155,13 @@ M.Dap = {
     ["<leader>dd"] = {
       "<cmd>lua require'dapui'.toggle()<cr>",
       desc = "Dap UI",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>dl"] = {
       "<cmd>lua require'dap'.run_last()<cr>",
       desc = "Run Last",
-      opts = { silent = true }
+      opts = { silent = true },
     },
   },
 }
@@ -290,13 +290,13 @@ M.Neovim = {
     ["<leader>nm"] = {
       "<cmd>messages<cr>",
       desc = "Messages",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>nh"] = {
       "<cmd>checkhealth<cr>",
       desc = "Health",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>nv"] = {
@@ -323,25 +323,25 @@ M.Sessions = {
     ["<leader>so"] = {
       "<cmd>SessionStop<cr>",
       desc = "Stop",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>sl"] = {
       "<cmd>SessionLoad<cr>",
       desc = "Load",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>sL"] = {
       "<cmd>SessionLoad<cr>",
       desc = "Load Last",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>sd"] = {
       "<cmd>SessionDelete<cr>",
       desc = "Delete",
-      opts = { silent = true }
+      opts = { silent = true },
     },
   },
 }
@@ -352,49 +352,49 @@ M.Telescope = {
     ["<leader>fa"] = {
       "<cmd>Telescope autocommands<cr>",
       desc = "Autocommmands",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>ff"] = {
       "<cmd>Telescope find_files<cr>",
       desc = "Files",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>fs"] = {
       "<cmd>Telescope persisted<cr>",
       desc = "Sessions",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>fm"] = {
       "<cmd>Telescope marks<cr>",
       desc = "Marks",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>fM"] = {
       "<cmd>Telescope man_pages<cr>",
       desc = "Man Pages",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>fw"] = {
       "<cmd>Telescope live_grep<cr>",
       desc = "Word",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>ft"] = {
       "<cmd>Telescope themes<cr>",
       desc = "Themes",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>fb"] = {
       "<cmd>Telescope buffers<cr>",
       desc = "Buffers",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>fn"] = {
@@ -406,61 +406,61 @@ M.Telescope = {
     ["<leader>fp"] = {
       "<cmd>Telescope projects<cr>",
       desc = "Projects",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>fh"] = {
       "<cmd>Telescope help_tags<cr>",
       desc = "Help",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>fk"] = {
       "<cmd>Telescope keymaps<cr>",
       desc = "Keymaps",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>fC"] = {
       "<cmd>Telescope commands<cr>",
       desc = "Commands",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>fr"] = {
       "<cmd>Telescope oldfiles<cr>",
       desc = "Recent Files",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>fH"] = {
       "<cmd>Telescope highlights<cr>",
       desc = "Highlights",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>ls"] = {
       "<cmd>Telescope lsp_document_symbols<cr>",
       desc = "Buffer Symbols",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>lS"] = {
       "<cmd>Telescope lsp_workspace_symbols<cr>",
       desc = "Workspace Symbols",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>gb"] = {
       "<cmd>Telescope git_branches<cr>",
       desc = "Checkout branch",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>gc"] = {
       "<cmd>Telescope git_commits<cr>",
       desc = "Checkout commit",
-      opts = { silent = true }
+      opts = { silent = true },
     },
   },
 }
@@ -471,7 +471,7 @@ M.Toggleterm = {
     ["<leader>tf"] = {
       "<cmd>ToggleTerm direction=float<cr>",
       desc = "Float Terminal",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>th"] = {
@@ -483,7 +483,7 @@ M.Toggleterm = {
     ["<leader>tv"] = {
       "<cmd>ToggleTerm direction=vertical<cr>",
       desc = "Vertical Terminal",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>gg"] = {
@@ -502,7 +502,7 @@ M.Trouble = {
     ["<leader>lb"] = {
       "<cmd>TroubleToggle document_diagnostics<cr>",
       desc = "Buffer Diagnostics",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>lw"] = {
@@ -514,7 +514,7 @@ M.Trouble = {
     ["<leader>fT"] = {
       "<cmd>TodoTelescope<cr>",
       desc = "Todo",
-      opts = { silent = true }
+      opts = { silent = true },
     },
   },
 }
@@ -525,38 +525,38 @@ M.Lspsaga = {
     ["<leader>la"] = {
       "<cmd>Lspsaga code_action<cr>",
       desc = "Code Action",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>lo"] = {
       "<cmd>Lspsaga outline<cr>",
       desc = "Code Outline",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>lI"] = {
       "<cmd>Lspsaga incoming_calls<cr>",
       desc = "Incoming Calls",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>lO"] = {
       "<cmd>Lspsaga outgoing_calls<cr>",
       desc = "Outgoing Calls",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>lr"] = {
       "<cmd>Lspsaga rename<cr>",
       desc = "Rename",
-      opts = { silent = true }
+      opts = { silent = true },
     },
   },
   v = {
     ["<leader>la"] = {
       "<cmd>Lspsaga code_action<cr>",
       desc = "Code Action",
-      opts = { silent = true }
+      opts = { silent = true },
     },
   },
 }
@@ -567,7 +567,7 @@ M.Mason = {
     ["<leader>lm"] = {
       "<cmd>Mason<cr>",
       desc = "Mason Installer",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>lj"] = {
@@ -590,26 +590,26 @@ M.LSP = {
     ["<leader>lf"] = {
       "<cmd>Format<cr>",
       desc = "Format",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>li"] = {
       "<cmd>LspInfo<cr>",
       desc = "Info",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>lR"] = {
       "<cmd>LspRestart<cr>",
       desc = "Restart",
-      opts = { silent = true }
+      opts = { silent = true },
     },
   },
   v = {
     ["<leader>lf"] = {
       "<cmd>Format<cr>",
       desc = "Format",
-      opts = { silent = true }
+      opts = { silent = true },
     },
   },
 }
@@ -635,31 +635,31 @@ M.GitBlame = {
     ["<leader>gO"] = {
       "<cmd>GitBlameOpenCommitURL<cr>",
       desc = "Open Commit Url",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>gc"] = {
       "<cmd>GitBlameCopyCommitURL<cr>",
       desc = "Copy Commit Url",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>gf"] = {
       "<cmd>GitBlameOpenFileURL<cr>",
       desc = "Open File Url",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>gC"] = {
       "<cmd>GitBlameCopyFileURL<cr>",
       desc = "Copy File Url",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>gs"] = {
       "<cmd>GitBlameCopySHA<cr>",
       desc = "Copy SHA",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>gt"] = {
@@ -684,19 +684,19 @@ M.GitSigns = {
     ["<leader>gp"] = {
       "<cmd>lua require 'gitsigns'.preview_hunk()<cr>",
       desc = "Preview Hunk",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>gj"] = {
       "<cmd>lua require 'gitsigns'.next_hunk()<cr>",
       desc = "Next Hunk",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>gk"] = {
       "<cmd>lua require 'gitsigns'.prev_hunk()<cr>",
       desc = "Prev Hunk",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>gl"] = {
@@ -729,61 +729,61 @@ M.Lazy = {
     ["<leader>pc"] = {
       "<cmd>Lazy clean<cr>",
       desc = "Clean",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>pC"] = {
       "<cmd>Lazy check<cr>",
       desc = "Check",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>pd"] = {
       "<cmd>Lazy debug<cr>",
       desc = "Debug",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>pi"] = {
       "<cmd>Lazy install<cr>",
       desc = "Install",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>ps"] = {
       "<cmd>Lazy sync<cr>",
       desc = "Sync",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>pl"] = {
       "<cmd>Lazy log<cr>",
       desc = "Log",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>ph"] = {
       "<cmd>Lazy home<cr>",
       desc = "Home",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>pH"] = {
       "<cmd>Lazy help<cr>",
       desc = "Help",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>pp"] = {
       "<cmd>Lazy profile<cr>",
       desc = "Profile",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>pu"] = {
       "<cmd>Lazy update<cr>",
       desc = "Update",
-      opts = { silent = true }
+      opts = { silent = true },
     },
   },
 }
@@ -793,25 +793,25 @@ local mappings = {
     ["<leader>R"] = {
       "<cmd>%d+<cr>",
       desc = "Remove All Text",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>y"] = {
       "<cmd>%y+<cr>",
       desc = "Yank All Text",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>q"] = {
       "<cmd>qa!<cr>",
       desc = "Quit",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>c"] = {
       "<cmd>Bdelete!<cr>",
       desc = "Close Buffer",
-      opts = { silent = true }
+      opts = { silent = true },
     },
 
     ["<leader>ob"] = {
@@ -1034,7 +1034,6 @@ local mappings = {
       desc = "Move the line down",
       opts = { silent = true },
     },
-
   },
   i = {
     -- ["jk"] = {
@@ -1135,7 +1134,28 @@ local mappings = {
 }
 
 -- Merge mappings from each module into the main mappings table
-for _, module in pairs({ M.LspLens, M.Harpoon, M.Swenv, M.MarkdownPreview, M.NvimTree, M.Compiler, M.Dap, M.Neotest, M.Neovim, M.Sessions, M.Telescope, M.Toggleterm, M.Trouble, M.Lspsaga, M.Mason, M.LSP, M.GitBlame, M.GitSigns, M.Diffview, M.Lazy }) do
+for _, module in pairs {
+  M.LspLens,
+  M.Harpoon,
+  M.Swenv,
+  M.MarkdownPreview,
+  M.NvimTree,
+  M.Compiler,
+  M.Dap,
+  M.Neotest,
+  M.Neovim,
+  M.Sessions,
+  M.Telescope,
+  M.Toggleterm,
+  M.Trouble,
+  M.Lspsaga,
+  M.Mason,
+  M.LSP,
+  M.GitBlame,
+  M.GitSigns,
+  M.Diffview,
+  M.Lazy,
+} do
   for mode, maps in pairs(module) do
     mappings[mode] = mappings[mode] or {}
     for key, val in pairs(maps) do
