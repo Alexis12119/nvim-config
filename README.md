@@ -53,12 +53,12 @@ Please follow these steps:
    - On Linux/MacOS:
 
      ```sh
-     bash <(curl -s https://raw.githubusercontent.com/Alexis12119/nvim-config/main/installer/install.sh)
+     bash <(curl -s https://raw.githubusercontent.com/Alexis12119/nvim-config/main/lua/installer/install.sh)
      ```
 
    - On Windows (Powershell):
      ```ps1
-     Invoke-WebRequest https://raw.githubusercontent.com/Alexis12119/nvim-config/main/installer/install.ps1 -UseBasicParsing | Invoke-Expression
+     Invoke-WebRequest https://raw.githubusercontent.com/Alexis12119/nvim-config/main/lua/installer/install.ps1 -UseBasicParsing | Invoke-Expression
      ```
 
 ## ✨ Features

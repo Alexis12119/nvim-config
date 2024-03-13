@@ -51,7 +51,7 @@
 
 #### 6. Add plugins
 
-- Create a new file in `lua/custom/plugins` folder. Like this `numb.lua`.
+- Create a new file in `lua/plugins` folder. Like this `numb.lua`.
 - Inside that file is put the plugin you want to add.
   Example:
 
@@ -94,7 +94,7 @@ return {
 
 #### 10. Override and Add Highlights/Colors?
 
-- Edit them in `lua/custom/highlights.lua`.
+- Edit them in `lua/highlights.lua`.
 - You can run `:Telescope highlights` to see all the available highlights.
 - You can also press `<Space> + n + i` to see the `highlight group` at your cursor position.
 
