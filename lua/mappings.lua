@@ -788,7 +788,7 @@ M.Lazy = {
   },
 }
 
-local mappings = {
+M.General = {
   n = {
     ["<leader>R"] = {
       "<cmd>%d+<cr>",
@@ -936,7 +936,6 @@ local mappings = {
     --   "Go to next window",
     -- opts = { silent = true },
     -- },
-
     ["<leader>w"] = {
       function()
         if vim.bo.buftype == "terminal" then
@@ -1133,41 +1132,11 @@ local mappings = {
   },
 }
 
--- Merge mappings from each module into the main mappings table
-for _, module in pairs {
-  M.LspLens,
-  M.Harpoon,
-  M.Swenv,
-  M.MarkdownPreview,
-  M.NvimTree,
-  M.Compiler,
-  M.Dap,
-  M.Neotest,
-  M.Neovim,
-  M.Sessions,
-  M.Telescope,
-  M.Toggleterm,
-  M.Trouble,
-  M.Lspsaga,
-  M.Mason,
-  M.LSP,
-  M.GitBlame,
-  M.GitSigns,
-  M.Diffview,
-  M.Lazy,
-} do
+for _, module in pairs(M) do
   for mode, maps in pairs(module) do
-    mappings[mode] = mappings[mode] or {}
     for key, val in pairs(maps) do
-      mappings[mode][key] = val
+      local opts = vim.tbl_deep_extend("force", val.opts, { desc = val.desc })
+      vim.keymap.set(mode, key, val[1], opts)
     end
-  end
-end
-
--- Apply merged mappings
-for mode, maps in pairs(mappings) do
-  for key, val in pairs(maps) do
-    local opts = vim.tbl_deep_extend("force", val.opts, { desc = val.desc })
-    vim.keymap.set(mode, key, val[1], opts)
   end
 end
