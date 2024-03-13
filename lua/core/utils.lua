@@ -71,8 +71,7 @@ end
 function ClickUpdate()
   -- Inspired by NvChad/ui (https://github.com/NvChad/ui)
   dofile(vim.g.base46_cache .. "nvchad_updater")
-  local nvchad_config = vim.fn.stdpath "config"
-  local config_path = vim.fn.stdpath "config" .. "/lua/custom"
+  local config_path = vim.fn.stdpath "config"
   local config_branch = "main"
 
   local api = vim.api
@@ -177,9 +176,6 @@ function ClickUpdate()
       for i = 3, #content do
         api.nvim_buf_add_highlight(buf, nvUpdater, (git_fetch_err and "nvUpdaterFAIL" or "nvUpdaterCommits"), i, 2, 13)
       end
-
-      -- Update to the latest NvChad commits
-      vim.fn.system("git -C " .. nvchad_config .. " pull")
 
       -- Fetch the latest changes from the remote repository
       vim.fn.system("git -C " .. config_path .. " fetch origin")
