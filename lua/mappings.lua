@@ -1130,6 +1130,20 @@ if vim.fn.has "nvim-0.10" == 1 then
   }
 end
 
+-- local disabled = {
+--   n = {
+--     "<leader>rh",
+--     "<leader>ph",
+--     "<leader>gb",
+--   },
+-- }
+
+-- for mode, maps in pairs(disabled) do
+--   for _, val in pairs(maps) do
+--     vim.keymap.del(mode, val)
+--   end
+-- end
+
 for _, module in pairs(mappings) do
   for mode, maps in pairs(module) do
     for key, val in pairs(maps) do
