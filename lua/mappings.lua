@@ -261,19 +261,11 @@ M.Neovim = {
       opts = { silent = true },
     },
 
-    ["<leader>nu"] = {
-      function()
-        ClickUpdate()
-      end,
-      desc = "Config Update",
-      opts = { silent = true },
-    },
-
-    ["<leader>nc"] = {
-      "<cmd>NvCheatsheet<cr>",
-      desc = "Cheatsheet",
-      opts = { silent = true },
-    },
+    -- ["<leader>nc"] = {
+    --   "<cmd>NvCheatsheet<cr>",
+    --   desc = "Cheatsheet",
+    --   opts = { silent = true },
+    -- },
 
     ["<leader>ni"] = {
       function()
