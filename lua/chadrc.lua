@@ -135,11 +135,11 @@ M.ui = {
   cheatsheet = { theme = "grid" }, -- simple/grid
 }
 
-M.lazy_nvim = require "core.lazy" -- config for lazy.nvim startup options
+-- M.lazy_nvim = require "core.lazy" -- config for lazy.nvim startup options
 
-M.plugins = "plugins"
+-- M.plugins = "plugins"
 
 -- check core.mappings for table structure
-M.mappings = require "mappings"
+-- M.mappings = require "mappings"
 
 return M
