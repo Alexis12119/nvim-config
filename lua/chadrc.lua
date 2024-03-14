@@ -113,7 +113,6 @@ M.ui = {
     },
   },
 
-  -- lazyload it when there are 1+ tabs
   tabufline = {
     enabled = true,
     order = { "treeOffset", "blank", "tabs", "btns" },
