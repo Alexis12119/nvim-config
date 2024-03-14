@@ -18,10 +18,11 @@ function Clone-Repository {
 # Main script
 $ConfigRepo = "https://github.com/Alexis12119/nvim-config.git"
 $ConfigPlugins = "$env:LOCALAPPDATA\nvim-data\lazy"
+$ConfigPath = "$env:LOCALAPPDATA\nvim"
 
 # Check if a Neovim configuration already exists
-if (Test-Path -Path $NvChadConfig) {
-    Write-Host "A Neovim configuration already exists at $NvChadConfig."
+if (Test-Path -Path $ConfigPath) {
+    Write-Host "A Neovim configuration already exists at $ConfigPath."
     $confirmReplace = Read-Host "Do you want to replace it with the new configuration? [Y/N]"
     if ($confirmReplace -eq "Y" -or $confirmReplace -eq "y") {
         $confirmRemovePlugins = Read-Host "Do you want to remove the existing plugins as well? [Y/N]"
@@ -31,7 +32,7 @@ if (Test-Path -Path $NvChadConfig) {
         }
 
         Write-Host "Removing the existing configuration..."
-        Remove-Item $NvChadConfig -Recurse -Force
+        Remove-Item $ConfigPath -Recurse -Force
     } else {
         Write-Host "Installation cancelled."
         return
@@ -39,7 +40,7 @@ if (Test-Path -Path $NvChadConfig) {
 }
 
 # Clone the Git repositories
-Clone-Repository -RepoUrl $ConfigRepo -TargetDir $NvChadConfig
+Clone-Repository -RepoUrl $ConfigRepo -TargetDir $ConfigPath
 nvim
 
 Write-Host "Installation complete. Your Neovim configuration is now set up."
