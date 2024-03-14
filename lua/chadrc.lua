@@ -103,7 +103,7 @@ M.ui = {
         end
 
         if #clients == 0 then
-          return ""
+          return "No Active LSP"
         else
           return (vim.o.columns > 100 and (" %#St_gitIcons#" .. table.concat(clients, ", ") .. " ")) or "  LSP "
         end
@@ -112,7 +112,7 @@ M.ui = {
   },
 
   tabufline = {
-    enabled = true,
+    enabled = false,
     order = { "treeOffset", "blank", "tabs", "btns" },
     modules = {
       blank = function()
@@ -139,6 +139,28 @@ M.ui = {
   },
 
   cheatsheet = { theme = "grid" }, -- simple/grid
+}
+
+M.base46 = {
+  integrations = {
+    "notify",
+    "blankline",
+    "cmp",
+    "defaults",
+    "devicons",
+    "git",
+    "lsp",
+    "mason",
+    "nvcheatsheet",
+    "nvdash",
+    "nvimtree",
+    "statusline",
+    "syntax",
+    "treesitter",
+    "tbline",
+    "telescope",
+    "whichkey",
+  },
 }
 
 -- M.lazy_nvim = require "core.lazy" -- config for lazy.nvim startup options

@@ -16,6 +16,7 @@ return {
     "rcarriga/nvim-notify",
     -- lazy = false,
     config = function()
+      dofile(vim.g.base46_cache .. "notify")
       require("notify").setup {
         level = 2,
         minimum_width = 50,
