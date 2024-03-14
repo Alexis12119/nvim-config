@@ -968,12 +968,12 @@ M.General = {
     },
 
     ["H"] = {
-      "<cmd>tabp<cr>",
+      "<cmd>bp<cr>",
       desc = "Go to previous buffer",
       opts = { silent = true },
     },
     ["L"] = {
-      "<cmd>tabn<cr>",
+      "<cmd>bn<cr>",
       desc = "Go to next buffer",
       opts = { silent = true },
     },
