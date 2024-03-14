@@ -103,7 +103,7 @@ M.ui = {
         end
 
         if #clients == 0 then
-          return "No Active LSP"
+          return ""
         else
           return (vim.o.columns > 100 and (" %#St_gitIcons#" .. table.concat(clients, ", ") .. " ")) or "  LSP "
         end
@@ -112,7 +112,7 @@ M.ui = {
   },
 
   tabufline = {
-    enabled = false,
+    enabled = true,
     order = { "treeOffset", "blank", "tabs", "btns" },
     modules = {
       blank = function()
