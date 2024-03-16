@@ -66,6 +66,7 @@ M.ui = {
     },
     modules = {
       harpoon = function()
+        -- simplified version of this https://github.com/letieu/harpoon-lualine
         local options = {
           icon = "󰀱 ",
           indicators = { "1", "2", "3", "4" },
