@@ -57,7 +57,6 @@ M.ui = {
       "git",
       "%=",
       "python_venv",
-      "harpoon",
       "diagnostics",
       "command",
       "clients",
