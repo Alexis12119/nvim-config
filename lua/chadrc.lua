@@ -100,6 +100,7 @@ M.ui = {
 
         return table.concat(status, options.separator)
       end,
+
       python_venv = function()
         if vim.bo.filetype ~= "python" then
           return " "
@@ -112,6 +113,7 @@ M.ui = {
           return "  " .. venv
         end
       end,
+
       command = function()
         local noice_ok, noice = pcall(require, "noice.api")
         if noice_ok and noice.status.command.has() then
@@ -120,6 +122,7 @@ M.ui = {
           return " "
         end
       end,
+
       clients = function()
         local clients = {}
         local buf = vim.api.nvim_get_current_buf()
