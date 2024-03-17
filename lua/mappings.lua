@@ -116,7 +116,6 @@ local mappings = {
   },
 
   Dap = {
-
     n = {
       ["<leader>dc"] = {
         "<cmd>lua require'dap'.continue()<cr>",
@@ -169,7 +168,6 @@ local mappings = {
   },
 
   Neotest = {
-
     n = {
       ["<leader>Tt"] = {
         function()
@@ -312,7 +310,6 @@ local mappings = {
   },
 
   Sessions = {
-
     n = {
       ["<leader>so"] = {
         "<cmd>SessionStop<cr>",
@@ -341,7 +338,6 @@ local mappings = {
   },
 
   Telescope = {
-
     n = {
       ["<leader>fa"] = {
         "<cmd>Telescope autocommands<cr>",
@@ -460,7 +456,6 @@ local mappings = {
   },
 
   Toggleterm = {
-
     n = {
       ["<leader>tf"] = {
         "<cmd>ToggleTerm direction=float<cr>",
@@ -491,7 +486,6 @@ local mappings = {
   },
 
   Trouble = {
-
     n = {
       ["<leader>lb"] = {
         "<cmd>TroubleToggle document_diagnostics<cr>",
@@ -514,7 +508,6 @@ local mappings = {
   },
 
   Lspsaga = {
-
     n = {
       ["<leader>la"] = {
         "<cmd>Lspsaga code_action<cr>",
@@ -545,24 +538,6 @@ local mappings = {
         desc = "Rename",
         opts = { silent = true },
       },
-    },
-    v = {
-      ["<leader>la"] = {
-        "<cmd>Lspsaga code_action<cr>",
-        desc = "Code Action",
-        opts = { silent = true },
-      },
-    },
-  },
-
-  Mason = {
-
-    n = {
-      ["<leader>lm"] = {
-        "<cmd>Mason<cr>",
-        desc = "Mason Installer",
-        opts = { silent = true },
-      },
 
       ["<leader>lj"] = {
         "<cmd>Lspsaga diagnostic_jump_next<cr>",
@@ -576,10 +551,26 @@ local mappings = {
         opts = { silent = true },
       },
     },
+    v = {
+      ["<leader>la"] = {
+        "<cmd>Lspsaga code_action<cr>",
+        desc = "Code Action",
+        opts = { silent = true },
+      },
+    },
+  },
+
+  Mason = {
+    n = {
+      ["<leader>lm"] = {
+        "<cmd>Mason<cr>",
+        desc = "Mason Installer",
+        opts = { silent = true },
+      },
+    },
   },
 
   LSP = {
-
     n = {
       ["<leader>lf"] = {
         "<cmd>Format<cr>",
@@ -609,9 +600,7 @@ local mappings = {
   },
 
   GitBlame = {
-
     n = {
-
       ["<leader>gO"] = {
         "<cmd>GitBlameOpenCommitURL<cr>",
         desc = "Open Commit Url",
@@ -659,7 +648,6 @@ local mappings = {
   },
 
   GitSigns = {
-
     n = {
       ["<leader>gp"] = {
         "<cmd>lua require 'gitsigns'.preview_hunk()<cr>",
@@ -688,7 +676,6 @@ local mappings = {
   },
 
   Diffview = {
-
     n = {
       ["<leader>gd"] = {
         function()
