@@ -65,7 +65,6 @@ Please follow these steps:
 
 - **Plugin Management**: Efficiently manage plugins with [lazy.nvim](https://github.com/folke/lazy.nvim).
 - **Compiler**: Compile your code with [compiler.nvim](https://github.com/Zeioth/compiler.nvim).
-- **Built-In Configuration Syncing**: Synchronize the configuration with `<Space> + n + u`.
 - **Debugging**: Debug issues with [nvim-dap](https://github.com/mfussenegger/nvim-dap) with [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui).
 - **Tests**: Run tests with [neotest](https://github.com/nvim-neotest/neotest).
 - **Project Management**: Simplify project handling with [project.nvim](https://github.com/ahmedkhalf/project.nvim).
