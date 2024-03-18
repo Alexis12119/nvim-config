@@ -931,13 +931,13 @@ local mappings = {
         opts = { silent = true },
       },
 
-      ["<C-Left>"] = {
+      ["<C-Right>"] = {
         "<cmd>vertical resize +2<CR>",
         desc = "Add size at the left",
         opts = { silent = true },
       },
 
-      ["<C-Right>"] = {
+      ["<C-Left>"] = {
         "<cmd>vertical resize -2<CR>",
         desc = "Add size at the right",
         opts = { silent = true },
