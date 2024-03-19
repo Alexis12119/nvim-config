@@ -9,7 +9,7 @@ local mappings = {
     n = {
       ["<leader>ll"] = {
         "<cmd>LspLensToggle<cr>",
-        desc = "Toggle Code Lens",
+        "Toggle Code Lens",
         opts = { silent = true },
       },
     },
@@ -22,14 +22,14 @@ local mappings = {
           require("harpoon"):list():append()
           vim.notify("   Marked file", vim.log.levels.INFO, { title = "Harpoon" })
         end,
-        desc = "Add Mark",
+        "Add Mark",
         opts = { silent = true },
       },
       ["<leader>hh"] = {
         function()
           require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())
         end,
-        desc = "Harpoon Menu",
+        "Harpoon Menu",
         opts = { silent = true },
       },
 
@@ -37,7 +37,7 @@ local mappings = {
       --   function()
       --     require("harpoon"):list():next()
       --   end,
-      --   desc = "Next",
+      --   "Next",
       --   opts = { silent = true },
       -- },
 
@@ -45,7 +45,7 @@ local mappings = {
       --   function()
       --     require("harpoon"):list():prev()
       --   end,
-      --   desc = "Previous",
+      --   "Previous",
       --   opts = { silent = true },
       -- },
     },
@@ -55,7 +55,7 @@ local mappings = {
     n = {
       ["<leader>vp"] = {
         ":lua=require('swenv.api').pick_venv()<cr>",
-        desc = "Pick Venv",
+        "Pick Venv",
         opts = { silent = true },
       },
     },
@@ -71,7 +71,7 @@ local mappings = {
             vim.notify("Only available in markdown", vim.log.levels.WARN, { title = "Markdown-Preview" })
           end
         end,
-        desc = "Markdown Preview",
+        "Markdown Preview",
         opts = { silent = true },
       },
     },
@@ -81,7 +81,7 @@ local mappings = {
     n = {
       ["<leader>e"] = {
         "<cmd>NvimTreeToggle<cr>",
-        desc = "Explorer",
+        "Explorer",
         opts = { silent = true },
       },
     },
@@ -91,25 +91,25 @@ local mappings = {
     n = {
       ["<leader>rr"] = {
         "<cmd>CompilerRedo<cr>",
-        desc = "Redo Last Action",
+        "Redo Last Action",
         opts = { silent = true },
       },
 
       ["<leader>ro"] = {
         "<cmd>CompilerOpen<cr>",
-        desc = "Open",
+        "Open",
         opts = { silent = true },
       },
 
       ["<leader>rs"] = {
         "<cmd>CompilerStop<cr>",
-        desc = "Stop All Tasks",
+        "Stop All Tasks",
         opts = { silent = true },
       },
 
       ["<leader>rt"] = {
         "<cmd>CompilerToggleResults<cr>",
-        desc = "Toggle Results.",
+        "Toggle Results.",
         opts = { silent = true },
       },
     },
@@ -119,49 +119,49 @@ local mappings = {
     n = {
       ["<leader>dc"] = {
         "<cmd>lua require'dap'.continue()<cr>",
-        desc = "Continue",
+        "Continue",
         opts = { silent = true },
       },
 
       ["<leader>do"] = {
         "<cmd>lua require'dap'.step_over()<cr>",
-        desc = "Step Over",
+        "Step Over",
         opts = { silent = true },
       },
 
       ["<leader>di"] = {
         "<cmd>lua require'dap'.step_into()<cr>",
-        desc = "Step Into",
+        "Step Into",
         opts = { silent = true },
       },
 
       ["<leader>du"] = {
         "<cmd>lua require'dap'.step_out()<cr>",
-        desc = "Step Out",
+        "Step Out",
         opts = { silent = true },
       },
 
       ["<leader>db"] = {
         "<cmd>lua require'dap'.toggle_breakpoint()<cr>",
-        desc = "Breakpoint",
+        "Breakpoint",
         opts = { silent = true },
       },
 
       ["<leader>dB"] = {
         "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>",
-        desc = "Breakpoint Condition",
+        "Breakpoint Condition",
         opts = { silent = true },
       },
 
       ["<leader>dd"] = {
         "<cmd>lua require'dapui'.toggle()<cr>",
-        desc = "Dap UI",
+        "Dap UI",
         opts = { silent = true },
       },
 
       ["<leader>dl"] = {
         "<cmd>lua require'dap'.run_last()<cr>",
-        desc = "Run Last",
+        "Run Last",
         opts = { silent = true },
       },
     },
@@ -173,7 +173,7 @@ local mappings = {
         function()
           vim.cmd 'lua require("neotest").run.run(vim.fn.expand "%")'
         end,
-        desc = "Run File",
+        "Run File",
         opts = { silent = true },
       },
 
@@ -181,7 +181,7 @@ local mappings = {
         function()
           vim.cmd 'lua require("neotest").run.run(vim.loop.cwd())'
         end,
-        desc = "Run All Test Files",
+        "Run All Test Files",
         opts = { silent = true },
       },
 
@@ -189,7 +189,7 @@ local mappings = {
         function()
           vim.cmd 'lua require("neotest").run.run()'
         end,
-        desc = "Run Nearest",
+        "Run Nearest",
         opts = { silent = true },
       },
 
@@ -197,7 +197,7 @@ local mappings = {
         function()
           vim.cmd 'lua require("neotest").run.run { strategy = "dap" }'
         end,
-        desc = "Run Dap",
+        "Run Dap",
         opts = { silent = true },
       },
 
@@ -205,7 +205,7 @@ local mappings = {
         function()
           vim.cmd 'lua require("neotest").summary.toggle()'
         end,
-        desc = "Toggle Summary",
+        "Toggle Summary",
         opts = { silent = true },
       },
 
@@ -213,7 +213,7 @@ local mappings = {
         function()
           vim.cmd 'lua require("neotest").output.open { enter = true, auto_close = true }'
         end,
-        desc = "Show Output",
+        "Show Output",
         opts = { silent = true },
       },
 
@@ -221,7 +221,7 @@ local mappings = {
         function()
           vim.cmd 'lua require("neotest").output_panel.toggle()'
         end,
-        desc = "Toggle Output Panel",
+        "Toggle Output Panel",
         opts = { silent = true },
       },
 
@@ -229,7 +229,7 @@ local mappings = {
         function()
           vim.cmd 'lua require("neotest").run.stop()'
         end,
-        desc = "Stop",
+        "Stop",
         opts = { silent = true },
       },
     },
@@ -245,7 +245,7 @@ local mappings = {
             cwd = cwd,
           }
         end,
-        desc = "Find Config Files",
+        "Find Config Files",
         opts = { silent = true },
       },
 
@@ -257,13 +257,13 @@ local mappings = {
             cwd = cwd,
           }
         end,
-        desc = "Grep Config Files",
+        "Grep Config Files",
         opts = { silent = true },
       },
 
       -- ["<leader>nc"] = {
       --   "<cmd>NvCheatsheet<cr>",
-      --   desc = "Cheatsheet",
+      --   "Cheatsheet",
       --   opts = { silent = true },
       -- },
 
@@ -275,19 +275,19 @@ local mappings = {
             vim.notify("Inspect isn't available in this neovim version", vim.log.levels.WARN, { title = "Inspect" })
           end
         end,
-        desc = "Inspect",
+        "Inspect",
         opts = { silent = true },
       }, -- only available on neovim >= 0.9
 
       ["<leader>nm"] = {
         "<cmd>messages<cr>",
-        desc = "Messages",
+        "Messages",
         opts = { silent = true },
       },
 
       ["<leader>nh"] = {
         "<cmd>checkhealth<cr>",
-        desc = "Health",
+        "Health",
         opts = { silent = true },
       },
 
@@ -296,14 +296,14 @@ local mappings = {
           local version = vim.version().major .. "." .. vim.version().minor .. "." .. vim.version().patch
           return vim.notify(version, vim.log.levels.INFO, { title = "Neovim Version" })
         end,
-        desc = "Version",
+        "Version",
         opts = { silent = true },
       },
       ["<leader>nr"] = {
         function()
           RunCode()
         end,
-        desc = "Run Code",
+        "Run Code",
         opts = { silent = true },
       },
     },
@@ -313,25 +313,25 @@ local mappings = {
     n = {
       ["<leader>so"] = {
         "<cmd>SessionStop<cr>",
-        desc = "Stop",
+        "Stop",
         opts = { silent = true },
       },
 
       ["<leader>sl"] = {
         "<cmd>SessionLoad<cr>",
-        desc = "Load",
+        "Load",
         opts = { silent = true },
       },
 
       ["<leader>sL"] = {
         "<cmd>SessionLoad<cr>",
-        desc = "Load Last",
+        "Load Last",
         opts = { silent = true },
       },
 
       ["<leader>sd"] = {
         "<cmd>SessionDelete<cr>",
-        desc = "Delete",
+        "Delete",
         opts = { silent = true },
       },
     },
@@ -341,115 +341,115 @@ local mappings = {
     n = {
       ["<leader>fa"] = {
         "<cmd>Telescope autocommands<cr>",
-        desc = "Autocommmands",
+        "Autocommmands",
         opts = { silent = true },
       },
 
       ["<leader>ff"] = {
         "<cmd>Telescope find_files<cr>",
-        desc = "Files",
+        "Files",
         opts = { silent = true },
       },
 
       ["<leader>fs"] = {
         "<cmd>Telescope persisted<cr>",
-        desc = "Sessions",
+        "Sessions",
         opts = { silent = true },
       },
 
       ["<leader>fm"] = {
         "<cmd>Telescope marks<cr>",
-        desc = "Marks",
+        "Marks",
         opts = { silent = true },
       },
 
       ["<leader>fM"] = {
         "<cmd>Telescope man_pages<cr>",
-        desc = "Man Pages",
+        "Man Pages",
         opts = { silent = true },
       },
 
       ["<leader>fw"] = {
         "<cmd>Telescope live_grep<cr>",
-        desc = "Word",
+        "Word",
         opts = { silent = true },
       },
 
       ["<leader>ft"] = {
         "<cmd>Telescope themes<cr>",
-        desc = "Themes",
+        "Themes",
         opts = { silent = true },
       },
 
       ["<leader>fb"] = {
         "<cmd>Telescope buffers<cr>",
-        desc = "Buffers",
+        "Buffers",
         opts = { silent = true },
       },
 
       ["<leader>fn"] = {
         "<cmd>lua require('telescope').extensions.notify.notify()<cr>",
-        desc = "Notify History",
+        "Notify History",
         opts = { silent = true },
       },
 
       ["<leader>fp"] = {
         "<cmd>Telescope projects<cr>",
-        desc = "Projects",
+        "Projects",
         opts = { silent = true },
       },
 
       ["<leader>fh"] = {
         "<cmd>Telescope help_tags<cr>",
-        desc = "Help",
+        "Help",
         opts = { silent = true },
       },
 
       ["<leader>fk"] = {
         "<cmd>Telescope keymaps<cr>",
-        desc = "Keymaps",
+        "Keymaps",
         opts = { silent = true },
       },
 
       ["<leader>fC"] = {
         "<cmd>Telescope commands<cr>",
-        desc = "Commands",
+        "Commands",
         opts = { silent = true },
       },
 
       ["<leader>fr"] = {
         "<cmd>Telescope oldfiles<cr>",
-        desc = "Recent Files",
+        "Recent Files",
         opts = { silent = true },
       },
 
       ["<leader>fH"] = {
         "<cmd>Telescope highlights<cr>",
-        desc = "Highlights",
+        "Highlights",
         opts = { silent = true },
       },
 
       ["<leader>ls"] = {
         "<cmd>Telescope lsp_document_symbols<cr>",
-        desc = "Buffer Symbols",
+        "Buffer Symbols",
         opts = { silent = true },
       },
 
       ["<leader>lS"] = {
         "<cmd>Telescope lsp_workspace_symbols<cr>",
-        desc = "Workspace Symbols",
+        "Workspace Symbols",
         opts = { silent = true },
       },
 
       ["<leader>gb"] = {
         "<cmd>Telescope git_branches<cr>",
-        desc = "Checkout branch",
+        "Checkout branch",
         opts = { silent = true },
       },
 
       ["<leader>gc"] = {
         "<cmd>Telescope git_commits<cr>",
-        desc = "Checkout commit",
+        "Checkout commit",
         opts = { silent = true },
       },
     },
@@ -459,19 +459,19 @@ local mappings = {
     n = {
       ["<leader>tf"] = {
         "<cmd>ToggleTerm direction=float<cr>",
-        desc = "Float Terminal",
+        "Float Terminal",
         opts = { silent = true },
       },
 
       ["<leader>th"] = {
         "<cmd>ToggleTerm direction=horizontal<cr>",
-        desc = "Horizontal Terminal",
+        "Horizontal Terminal",
         opts = { silent = true },
       },
 
       ["<leader>tv"] = {
         "<cmd>ToggleTerm direction=vertical<cr>",
-        desc = "Vertical Terminal",
+        "Vertical Terminal",
         opts = { silent = true },
       },
 
@@ -479,7 +479,7 @@ local mappings = {
         function()
           ClickGit()
         end,
-        desc = "Lazygit",
+        "Lazygit",
         opts = { silent = true },
       },
     },
@@ -489,19 +489,19 @@ local mappings = {
     n = {
       ["<leader>lb"] = {
         "<cmd>TroubleToggle document_diagnostics<cr>",
-        desc = "Buffer Diagnostics",
+        "Buffer Diagnostics",
         opts = { silent = true },
       },
 
       ["<leader>lw"] = {
         "<cmd>TroubleToggle workspace_diagnostics<cr>",
-        desc = "Workspace Diagnostics",
+        "Workspace Diagnostics",
         opts = { silent = true },
       },
 
       ["<leader>fT"] = {
         "<cmd>TodoTelescope<cr>",
-        desc = "Todo",
+        "Todo",
         opts = { silent = true },
       },
     },
@@ -511,50 +511,50 @@ local mappings = {
     n = {
       ["<leader>la"] = {
         "<cmd>Lspsaga code_action<cr>",
-        desc = "Code Action",
+        "Code Action",
         opts = { silent = true },
       },
 
       ["<leader>lo"] = {
         "<cmd>Lspsaga outline<cr>",
-        desc = "Code Outline",
+        "Code Outline",
         opts = { silent = true },
       },
 
       ["<leader>lI"] = {
         "<cmd>Lspsaga incoming_calls<cr>",
-        desc = "Incoming Calls",
+        "Incoming Calls",
         opts = { silent = true },
       },
 
       ["<leader>lO"] = {
         "<cmd>Lspsaga outgoing_calls<cr>",
-        desc = "Outgoing Calls",
+        "Outgoing Calls",
         opts = { silent = true },
       },
 
       ["<leader>lr"] = {
         "<cmd>Lspsaga rename<cr>",
-        desc = "Rename",
+        "Rename",
         opts = { silent = true },
       },
 
       ["<leader>lj"] = {
         "<cmd>Lspsaga diagnostic_jump_next<cr>",
-        desc = "Next Diagnostic",
+        "Next Diagnostic",
         opts = { silent = true },
       },
 
       ["<leader>lk"] = {
         "<cmd>Lspsaga diagnostic_jump_prev<cr>",
-        desc = "Prev Diagnostic",
+        "Prev Diagnostic",
         opts = { silent = true },
       },
     },
     v = {
       ["<leader>la"] = {
         "<cmd>Lspsaga code_action<cr>",
-        desc = "Code Action",
+        "Code Action",
         opts = { silent = true },
       },
     },
@@ -564,7 +564,7 @@ local mappings = {
     n = {
       ["<leader>lm"] = {
         "<cmd>Mason<cr>",
-        desc = "Mason Installer",
+        "Mason Installer",
         opts = { silent = true },
       },
     },
@@ -574,26 +574,26 @@ local mappings = {
     n = {
       ["<leader>lf"] = {
         "<cmd>Format<cr>",
-        desc = "Format",
+        "Format",
         opts = { silent = true },
       },
 
       ["<leader>li"] = {
         "<cmd>LspInfo<cr>",
-        desc = "Info",
+        "Info",
         opts = { silent = true },
       },
 
       ["<leader>lR"] = {
         "<cmd>LspRestart<cr>",
-        desc = "Restart",
+        "Restart",
         opts = { silent = true },
       },
     },
     v = {
       ["<leader>lf"] = {
         "<cmd>Format<cr>",
-        desc = "Format",
+        "Format",
         opts = { silent = true },
       },
     },
@@ -603,31 +603,31 @@ local mappings = {
     n = {
       ["<leader>gO"] = {
         "<cmd>GitBlameOpenCommitURL<cr>",
-        desc = "Open Commit Url",
+        "Open Commit Url",
         opts = { silent = true },
       },
 
       ["<leader>gc"] = {
         "<cmd>GitBlameCopyCommitURL<cr>",
-        desc = "Copy Commit Url",
+        "Copy Commit Url",
         opts = { silent = true },
       },
 
       ["<leader>gf"] = {
         "<cmd>GitBlameOpenFileURL<cr>",
-        desc = "Open File Url",
+        "Open File Url",
         opts = { silent = true },
       },
 
       ["<leader>gC"] = {
         "<cmd>GitBlameCopyFileURL<cr>",
-        desc = "Copy File Url",
+        "Copy File Url",
         opts = { silent = true },
       },
 
       ["<leader>gs"] = {
         "<cmd>GitBlameCopySHA<cr>",
-        desc = "Copy SHA",
+        "Copy SHA",
         opts = { silent = true },
       },
 
@@ -641,7 +641,7 @@ local mappings = {
             vim.g.gitblame_enabled = false
           end
         end,
-        desc = "Toggle Blame",
+        "Toggle Blame",
         opts = { silent = true },
       },
     },
@@ -651,25 +651,25 @@ local mappings = {
     n = {
       ["<leader>gp"] = {
         "<cmd>lua require 'gitsigns'.preview_hunk()<cr>",
-        desc = "Preview Hunk",
+        "Preview Hunk",
         opts = { silent = true },
       },
 
       ["<leader>gj"] = {
         "<cmd>lua require 'gitsigns'.next_hunk()<cr>",
-        desc = "Next Hunk",
+        "Next Hunk",
         opts = { silent = true },
       },
 
       ["<leader>gk"] = {
         "<cmd>lua require 'gitsigns'.prev_hunk()<cr>",
-        desc = "Prev Hunk",
+        "Prev Hunk",
         opts = { silent = true },
       },
 
       ["<leader>gl"] = {
         "<cmd>lua require 'gitsigns'.blame_line()<cr>",
-        desc = "Blame Line",
+        "Blame Line",
         opts = { silent = true },
       },
     },
@@ -685,7 +685,7 @@ local mappings = {
             vim.cmd "DiffviewClose"
           end
         end,
-        desc = "Toggle Diffview",
+        "Toggle Diffview",
         opts = { silent = true },
       },
     },
@@ -695,61 +695,61 @@ local mappings = {
     n = {
       ["<leader>pc"] = {
         "<cmd>Lazy clean<cr>",
-        desc = "Clean",
+        "Clean",
         opts = { silent = true },
       },
 
       ["<leader>pC"] = {
         "<cmd>Lazy check<cr>",
-        desc = "Check",
+        "Check",
         opts = { silent = true },
       },
 
       ["<leader>pd"] = {
         "<cmd>Lazy debug<cr>",
-        desc = "Debug",
+        "Debug",
         opts = { silent = true },
       },
 
       ["<leader>pi"] = {
         "<cmd>Lazy install<cr>",
-        desc = "Install",
+        "Install",
         opts = { silent = true },
       },
 
       ["<leader>ps"] = {
         "<cmd>Lazy sync<cr>",
-        desc = "Sync",
+        "Sync",
         opts = { silent = true },
       },
 
       ["<leader>pl"] = {
         "<cmd>Lazy log<cr>",
-        desc = "Log",
+        "Log",
         opts = { silent = true },
       },
 
       ["<leader>ph"] = {
         "<cmd>Lazy home<cr>",
-        desc = "Home",
+        "Home",
         opts = { silent = true },
       },
 
       ["<leader>pH"] = {
         "<cmd>Lazy help<cr>",
-        desc = "Help",
+        "Help",
         opts = { silent = true },
       },
 
       ["<leader>pp"] = {
         "<cmd>Lazy profile<cr>",
-        desc = "Profile",
+        "Profile",
         opts = { silent = true },
       },
 
       ["<leader>pu"] = {
         "<cmd>Lazy update<cr>",
-        desc = "Update",
+        "Update",
         opts = { silent = true },
       },
     },
@@ -759,25 +759,25 @@ local mappings = {
     n = {
       ["<leader>R"] = {
         "<cmd>%d+<cr>",
-        desc = "Remove All Text",
+        "Remove All Text",
         opts = { silent = true },
       },
 
       ["<leader>y"] = {
         "<cmd>%y+<cr>",
-        desc = "Yank All Text",
+        "Yank All Text",
         opts = { silent = true },
       },
 
       ["<leader>q"] = {
         "<cmd>qa!<cr>",
-        desc = "Quit",
+        "Quit",
         opts = { silent = true },
       },
 
       ["<leader>c"] = {
         "<cmd>Bdelete!<cr>",
-        desc = "Close Buffer",
+        "Close Buffer",
         opts = { silent = true },
       },
 
@@ -789,7 +789,7 @@ local mappings = {
             vim.o.showtabline = 2
           end
         end,
-        desc = "Toggle Tabufline",
+        "Toggle Tabufline",
         opts = { silent = true },
       },
 
@@ -801,7 +801,7 @@ local mappings = {
             vim.o.laststatus = 3
           end
         end,
-        desc = "Toggle Statusline",
+        "Toggle Statusline",
         opts = { silent = true },
       },
 
@@ -813,7 +813,7 @@ local mappings = {
             vim.o.number = true
           end
         end,
-        desc = "Toggle Line Number",
+        "Toggle Line Number",
         opts = { silent = true },
       },
 
@@ -825,14 +825,14 @@ local mappings = {
             vim.o.relativenumber = true
           end
         end,
-        desc = "Toggle Relative Number",
+        "Toggle Relative Number",
         opts = { silent = true },
       },
       ["<leader>ot"] = {
         function()
           require("base46").toggle_theme()
         end,
-        desc = "Toggle Theme",
+        "Toggle Theme",
         opts = { silent = true },
       },
 
@@ -840,7 +840,7 @@ local mappings = {
         function()
           require("base46").toggle_transparency()
         end,
-        desc = "Toggle Transparency",
+        "Toggle Transparency",
         opts = { silent = true },
       },
 
@@ -852,55 +852,55 @@ local mappings = {
             vim.o.wrap = true
           end
         end,
-        desc = "Toggle Wrap",
+        "Toggle Wrap",
         opts = { silent = true },
       },
 
       -- ["jk"] = {
       --   "<Esc>",
-      --   desc = "Enter insert mode",
+      --   "Enter insert mode",
       --   opts = { silent = true },
       -- },
 
       ["j"] = {
         "v:count == 0 ? 'gj' : 'j'",
-        desc = "Better Down",
+        "Better Down",
         opts = { expr = true, silent = true },
       },
 
       ["k"] = {
         "v:count == 0 ? 'gk' : 'k'",
-        desc = "Better Up",
+        "Better Up",
         opts = { expr = true, silent = true },
       },
 
       ["<C-j>"] = {
         "<C-w>j",
-        desc = "Go to upper window",
+        "Go to upper window",
         opts = { silent = true },
       },
 
       ["<C-k>"] = {
         "<C-w>k",
-        desc = "Go to lower window",
+        "Go to lower window",
         opts = { silent = true },
       },
 
       ["<C-h>"] = {
         "<C-w>h",
-        desc = "Go to left window",
+        "Go to left window",
         opts = { silent = true },
       },
 
       ["<C-l>"] = {
         "<C-w>l",
-        desc = "Go to right window",
+        "Go to right window",
         opts = { silent = true },
       },
 
       -- ["<Leader>w"] = {
       --   "<C-w>w",
-      --   desc = "Go to next window",
+      --   "Go to next window",
       --   opts = { silent = true },
       -- },
 
@@ -915,158 +915,158 @@ local mappings = {
             vim.notify("Can't Close Window", vim.log.levels.WARN, { title = "Close Window" })
           end
         end,
-        desc = "Close window",
+        "Close window",
         opts = { silent = true },
       },
 
       ["<C-Up>"] = {
         "<cmd>resize +2<CR>",
-        desc = "Add size at the top",
+        "Add size at the top",
         opts = { silent = true },
       },
 
       ["<C-Down>"] = {
         "<cmd>resize -2<CR>",
-        desc = "Add size at the bottom",
+        "Add size at the bottom",
         opts = { silent = true },
       },
 
       ["<C-Right>"] = {
         "<cmd>vertical resize +2<CR>",
-        desc = "Add size at the left",
+        "Add size at the left",
         opts = { silent = true },
       },
 
       ["<C-Left>"] = {
         "<cmd>vertical resize -2<CR>",
-        desc = "Add size at the right",
+        "Add size at the right",
         opts = { silent = true },
       },
 
       ["H"] = {
         "<cmd>bp<cr>",
-        desc = "Go to previous buffer",
+        "Go to previous buffer",
         opts = { silent = true },
       },
       ["L"] = {
         "<cmd>bn<cr>",
-        desc = "Go to next buffer",
+        "Go to next buffer",
         opts = { silent = true },
       },
 
       ["<Left>"] = {
         "<cmd>tabprevious<CR>",
-        desc = "Go to previous tab",
+        "Go to previous tab",
         opts = { silent = true },
       },
 
       ["<Right>"] = {
         "<cmd>tabnext<CR>",
-        desc = "Go to next tab",
+        "Go to next tab",
         opts = { silent = true },
       },
 
       ["<Up>"] = {
         "<cmd>tabnew<CR>",
-        desc = "New tab",
+        "New tab",
         opts = { silent = true },
       },
 
       ["<Down>"] = {
         "<cmd>tabclose<CR>",
-        desc = "Close tab",
+        "Close tab",
         opts = { silent = true },
       },
 
       ["<"] = {
         "<<",
-        desc = "Indent backward",
+        "Indent backward",
         opts = { silent = true },
       },
 
       [">"] = {
         ">>",
-        desc = "Indent forward",
+        "Indent forward",
         opts = { silent = true },
       },
 
       ["<A-j>"] = {
         ":m .+1<CR>==",
-        desc = "Move the line up",
+        "Move the line up",
         opts = { silent = true },
       },
 
       ["<A-k>"] = {
         ":m .-2<CR>==",
-        desc = "Move the line down",
+        "Move the line down",
         opts = { silent = true },
       },
     },
     i = {
       -- ["jk"] = {
       --   "<Esc>",
-      --   desc = "Enter insert mode",
+      --   "Enter insert mode",
       --   opts = { silent = true },
       -- },
 
       ["<A-j>"] = {
         "<Esc>:m .+1<CR>==gi",
-        desc = "Move the line up",
+        "Move the line up",
         opts = { silent = true },
       },
 
       ["<A-k>"] = {
         "<Esc>:m .-2<CR>==gi",
-        desc = "Move the line down",
+        "Move the line down",
         opts = { silent = true },
       },
     },
     v = {
       ["j"] = {
         "v:count == 0 ? 'gj' : 'j'",
-        desc = "Better Down",
+        "Better Down",
         opts = { expr = true, silent = true },
       },
 
       ["k"] = {
         "v:count == 0 ? 'gk' : 'k'",
-        desc = "Better Up",
+        "Better Up",
         opts = { expr = true, silent = true },
       },
 
       ["p"] = {
         '"_dP',
-        desc = "Better Paste",
+        "Better Paste",
         opts = { silent = true },
       },
 
       -- ["jk"] = {
       --   "<Esc>",
-      --   desc = "Enter insert mode",
+      --   "Enter insert mode",
       --   opts = { silent = true },
       -- },
 
       ["<"] = {
         "<gv",
-        desc = "Indent backward",
+        "Indent backward",
         opts = { silent = true },
       },
 
       [">"] = {
         ">gv",
-        desc = "Indent forward",
+        "Indent forward",
         opts = { silent = true },
       },
 
       ["<A-j>"] = {
         ":m '>+1<CR>gv=gv",
-        desc = "Move the selected text up",
+        "Move the selected text up",
         opts = { silent = true },
       },
 
       ["<A-k>"] = {
         ":m '<-2<CR>gv=gv",
-        desc = "Move the selected text down",
+        "Move the selected text down",
         opts = { silent = true },
       },
     },
@@ -1078,7 +1078,7 @@ local mappings = {
           end
           return "<C-z>"
         end,
-        desc = "Word Search Increment",
+        "Word Search Increment",
         opts = { expr = true },
       },
 
@@ -1089,14 +1089,14 @@ local mappings = {
           end
           return "<S-Tab>"
         end,
-        desc = "Word Search Decrement",
+        "Word Search Decrement",
         opts = { expr = true },
       },
     },
     t = {
       ["<Esc>"] = {
         "<C-\\><C-n>",
-        desc = "Enter insert mode",
+        "Enter insert mode",
         opts = { silent = true },
       },
     },
@@ -1112,7 +1112,7 @@ if vim.fn.has "nvim-0.10" == 1 then
         vim.cmd "lua=vim.lsp.inlay_hint.enable(0, true)"
       end
     end,
-    desc = "Inlay Hints",
+    "Inlay Hints",
     opts = { silent = true },
   }
 end
@@ -1134,7 +1134,7 @@ end
 for _, module in pairs(mappings) do
   for mode, maps in pairs(module) do
     for key, val in pairs(maps) do
-      local opts = vim.tbl_deep_extend("force", val.opts, { desc = val.desc })
+      local opts = vim.tbl_deep_extend("force", val.opts, { desc = val[2] })
       vim.keymap.set(mode, key, val[1], opts)
     end
   end
