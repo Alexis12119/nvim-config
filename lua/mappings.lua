@@ -944,12 +944,16 @@ local mappings = {
       },
 
       ["H"] = {
-        "<cmd>bp<cr>",
+        function()
+          require("nvchad.tabufline").prev()
+        end,
         "Go to previous buffer",
         opts = { silent = true },
       },
       ["L"] = {
-        "<cmd>bn<cr>",
+        function()
+          require("nvchad.tabufline").next()
+        end,
         "Go to next buffer",
         opts = { silent = true },
       },
