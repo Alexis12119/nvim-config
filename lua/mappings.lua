@@ -1,5 +1,4 @@
 -- NOTE: NvChad Related Mappings
----@type MappingsTable
 local fn = vim.fn
 local cwd = vim.fn.stdpath "config" .. "/"
 local config_dir = { cwd }
