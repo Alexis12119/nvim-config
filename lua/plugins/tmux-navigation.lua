@@ -3,10 +3,7 @@ return {
   "alexghergh/nvim-tmux-navigation",
   event = "VeryLazy",
   enabled = function()
-    if vim.fn.has "win32" == 1 then
-      return false
-    end
-    return true
+    return vim.fn.has "win32" == 1
   end,
   opts = {
     keybindings = {
