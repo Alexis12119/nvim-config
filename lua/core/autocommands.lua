@@ -6,7 +6,7 @@ local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
 
 -- General Settings
-local general = augroup("General Settings", { clear = true })
+local general = augroup("General", { clear = true })
 
 autocmd("BufReadPost", {
   callback = function()
@@ -40,6 +40,7 @@ autocmd("FileType", {
     vim.opt_local.stc = "" -- not really important
   end,
   group = general,
+  desc = "Disable Fold & StatusColumn",
 })
 
 -- Remove this if there's an issue
@@ -55,17 +56,6 @@ autocmd({ "BufReadPost", "BufNewFile" }, {
   end,
   group = general,
   desc = "Lazy load clipboard",
-})
-
-autocmd("FileType", {
-  pattern = "OverseerList",
-  callback = function()
-    vim.opt_local.relativenumber = false
-    vim.opt_local.number = false
-    vim.cmd "startinsert!"
-  end,
-  group = general,
-  desc = "Enter Normal Mode In OverseerList",
 })
 
 autocmd("TermOpen", {
@@ -94,6 +84,14 @@ autocmd("TextYankPost", {
   end,
   group = general,
   desc = "Highlight when yanking",
+})
+
+autocmd({ "BufEnter", "BufNew" }, {
+  callback = function()
+    vim.o.showtabline = 0
+  end,
+  group = general,
+  desc = "Disable Tabline",
 })
 
 autocmd("BufEnter", {
@@ -160,6 +158,21 @@ autocmd("FileType", {
   group = general,
   desc = "Enable Wrap in these filetypes",
 })
+
+local overseer = augroup("Overseer", { clear = true })
+
+autocmd("FileType", {
+  pattern = "OverseerList",
+  callback = function()
+    vim.opt_local.relativenumber = false
+    vim.opt_local.number = false
+    vim.cmd "startinsert!"
+  end,
+  group = overseer,
+  desc = "Enter Normal Mode In OverseerList",
+})
+
+local java = augroup("Java", { clear = true })
 
 autocmd("FileType", {
   pattern = "java",
@@ -307,6 +320,8 @@ autocmd("FileType", {
     -- or attaches to an existing client & server depending on the `root_dir`.
     jdtls.start_or_attach(config)
   end,
+  group = java,
+  desc = "Start/Attach Java LSP",
 })
 
 -- For Godot
