@@ -260,11 +260,17 @@ local mappings = {
         opts = { silent = true },
       },
 
-      -- ["<leader>nc"] = {
-      --   "<cmd>NvCheatsheet<cr>",
-      --   "Cheatsheet",
-      --   opts = { silent = true },
-      -- },
+      ["<leader>nc"] = {
+        function()
+          if vim.bo.filetype == "nvcheatsheet" then
+            vim.cmd "Bdelete!"
+          else
+            vim.cmd "NvCheatsheet"
+          end
+        end,
+        "Toggle Cheatsheet",
+        opts = { silent = true },
+      },
 
       ["<leader>ni"] = {
         function()
