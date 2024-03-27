@@ -1,18 +1,18 @@
 -- NOTE: Note Taking
 return {
   "nvim-neorg/neorg",
-  build = ":Neorg sync-parsers",
+  dependencies = { "luarocks.nvim" },
   ft = "norg",
   config = function()
     require("neorg").setup {
       load = {
-        ["core.defaults"] = {},
+        ["core.defaults"] = {}, -- Loads default behaviour
+        ["core.concealer"] = { config = { folds = true, icon_preset = "varied" } }, -- Adds pretty icons to your documents
         ["core.keybinds"] = {
           config = {
             neorg_leader = ",",
           },
         },
-        ["core.concealer"] = {},
         ["core.dirman"] = {
           config = {
             workspaces = {
@@ -23,8 +23,5 @@ return {
         },
       },
     }
-
-    vim.wo.foldlevel = 99
-    vim.wo.conceallevel = 2
   end,
 }
