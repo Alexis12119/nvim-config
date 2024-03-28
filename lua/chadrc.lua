@@ -60,13 +60,34 @@ M.ui = {
       "diagnostics",
       "command",
       "clients",
-      "total_lines",
       "cwd",
+      "total_lines",
     },
     modules = {
       total_lines = function()
-        return " %#St_gitIcons#" .. "Lines: %L "
+        local config = require("nvconfig").ui.statusline
+        local sep_style = config.separator_style
+
+        sep_style = (sep_style ~= "round" and sep_style ~= "block") and "block" or sep_style
+
+        local default_sep_icons = {
+          round = { left = "", right = "" },
+          block = { left = "█", right = "█" },
+        }
+
+        local separators = (type(sep_style) == "table" and sep_style) or default_sep_icons[sep_style]
+
+        local sep_l = separators["left"]
+        local sep_r = "%#St_sep_r#" .. separators["right"] .. " %#ST_EmptySpace#"
+
+        -- From: NvChad/ui
+        local function gen_block(icon, txt, sep_l_hlgroup, iconHl_group, txt_hl_group)
+          return sep_l_hlgroup .. sep_l .. iconHl_group .. icon .. " " .. txt_hl_group .. " " .. txt .. sep_r
+        end
+
+        return gen_block("", "%L", "%#St_Pos_sep#", "%#St_Pos_bg#", "%#St_Pos_txt#")
       end,
+
       harpoon = function()
         -- simplified version of this https://github.com/letieu/harpoon-lualine
         local options = {
