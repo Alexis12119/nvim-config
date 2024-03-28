@@ -60,10 +60,13 @@ M.ui = {
       "diagnostics",
       "command",
       "clients",
+      "total_lines",
       "cwd",
-      "cursor",
     },
     modules = {
+      total_lines = function()
+        return " %#St_gitIcons#" .. "Lines: %L "
+      end,
       harpoon = function()
         -- simplified version of this https://github.com/letieu/harpoon-lualine
         local options = {
@@ -177,7 +180,7 @@ M.ui = {
     },
   },
 
-  cheatsheet = { theme = "grid" }, -- simple/grid
+  cheatsheet = { theme = "simple" }, -- simple/grid
 }
 
 M.base46 = {
