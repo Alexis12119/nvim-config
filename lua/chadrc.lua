@@ -78,11 +78,11 @@ M.ui = {
         local separators = (type(sep_style) == "table" and sep_style) or default_sep_icons[sep_style]
 
         local sep_l = separators["left"]
-        local sep_r = "%#St_sep_r#" .. separators["right"] .. " %#ST_EmptySpace#"
+        local sep_end = "%#St_sep_r#" .. separators["right"]
 
         -- From: NvChad/ui
         local function gen_block(icon, txt, sep_l_hlgroup, iconHl_group, txt_hl_group)
-          return sep_l_hlgroup .. sep_l .. iconHl_group .. icon .. " " .. txt_hl_group .. " " .. txt .. sep_r
+          return sep_l_hlgroup .. sep_l .. iconHl_group .. icon .. " " .. txt_hl_group .. " " .. txt .. sep_end
         end
 
         return gen_block("", "%L", "%#St_Pos_sep#", "%#St_Pos_bg#", "%#St_Pos_txt#")
