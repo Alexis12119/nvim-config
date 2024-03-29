@@ -1140,10 +1140,10 @@ end
 --   end
 -- end
 
-for _, module in pairs(mappings) do
+for name, module in pairs(mappings) do
   for mode, maps in pairs(module) do
     for key, val in pairs(maps) do
-      local opts = vim.tbl_deep_extend("force", val.opts, { desc = val[2] })
+      local opts = vim.tbl_deep_extend("force", val.opts, { desc = name .. " | " .. val[2] })
       vim.keymap.set(mode, key, val[1], opts)
     end
   end
