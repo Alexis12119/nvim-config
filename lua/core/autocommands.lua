@@ -86,13 +86,13 @@ autocmd("TextYankPost", {
   desc = "Highlight when yanking",
 })
 
-autocmd({ "BufEnter", "BufNew" }, {
-  callback = function()
-    vim.o.showtabline = 0
-  end,
-  group = general,
-  desc = "Disable Tabline",
-})
+-- autocmd({ "BufEnter", "BufNew" }, {
+--   callback = function()
+--     vim.o.showtabline = 0
+--   end,
+--   group = general,
+--   desc = "Disable Tabline",
+-- })
 
 autocmd("BufEnter", {
   callback = function()
