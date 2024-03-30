@@ -5,6 +5,7 @@
 
 local M = {}
 
+print("test")
 ---@type Base46HLGroupsList
 M.override = {
   Comment = {
@@ -29,7 +30,7 @@ M.add = {
   WinBarNC = { link = "Normal" },
   NvimTreeOpenedFolderName = { fg = "green", bold = false },
   DiffviewDiffAdd = { fg = "black", bg = "green" },
-  DiffviewDiffChange = { fg = "black", bg = "light_grey" },
+  DiffviewDiffChange = { fg = "black", bg = "green" },
   DiffviewDiffDelete = { fg = "black", bg = "red" },
   DiffviewDiffAddAsDelete = { fg = "black", bg = "red" },
 }
