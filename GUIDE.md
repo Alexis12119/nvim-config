@@ -30,7 +30,7 @@
 #### 5. Keybindings, keymaps or mappings.
 
 - Read on how to create one [here](https://nvchad.com/docs/config/mappings) for `NvChad`.
-- Edit it in the `custom/mappings.lua`.
+- Edit it in the `lua/mappings.lua`.
 - You can see all the available keymaps in `:NvCheatsheet` or just press `<Space> + f + k`.
 
 | Group Name | Description                                   |
@@ -82,7 +82,7 @@ return {
 #### 8. Want to know how to override the `statusline` and `tabufline`?
 
 - Read this [guide](https://nvchad.com/docs/config/nvchad_ui).
-- Edit them in `lua/custom/chadrc.lua`.
+- Edit them in `lua/chadrc.lua`.
 
 > statusline - the bar at the bottom of the window.
 
