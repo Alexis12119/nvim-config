@@ -109,6 +109,9 @@ return {
       "folke/trouble.nvim",
       cmd = { "TroubleToggle", "Trouble" },
       opts = require "plugins.lsp.trouble",
+      config = function()
+        dofile(vim.g.base46_cache .. "trouble")
+      end,
     },
     -- NOTE: Displaying References and Definition
     {

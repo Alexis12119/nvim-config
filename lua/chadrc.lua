@@ -207,22 +207,8 @@ M.ui = {
 M.base46 = {
   integrations = {
     "notify",
-    "blankline",
-    "cmp",
-    "defaults",
-    "devicons",
-    "git",
-    "lsp",
-    "mason",
-    "nvcheatsheet",
-    "nvdash",
-    "nvimtree",
-    "statusline",
-    "syntax",
-    "treesitter",
-    "tbline",
-    "telescope",
-    "whichkey",
+    "dap",
+    "trouble",
   },
 }
 
