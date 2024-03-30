@@ -50,24 +50,6 @@ function ClickSplit()
   vim.cmd "vsp"
 end
 
--- Function to delete the first buffer if it's empty
--- From: tomando
-function DeleteFirstEmptyBuffer()
-  local buffers = vim.api.nvim_list_bufs()
-
-  -- Check if there are more than one buffer
-  if #buffers > 1 then
-    for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
-      local buffer_lines = vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)
-      -- If it's the first buffer and it's empty, delete it
-      if bufnr == 1 and #buffer_lines == 1 and buffer_lines[1] == "" then
-        vim.api.nvim_buf_delete(bufnr, { force = false })
-        return
-      end
-    end
-  end
-end
-
 -- HUUUUUUUUUUUUUUUUUUUUUUUGE kudos and thanks to
 -- https://github.com/hown3d for this function <3
 local function substitute(cmd)
