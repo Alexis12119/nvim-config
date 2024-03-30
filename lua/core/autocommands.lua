@@ -78,7 +78,7 @@ autocmd("TextYankPost", {
   desc = "Highlight when yanking",
 })
 
-autocmd({ "BufEnter", "BufNew" }, {
+autocmd({ "BufReadPost", "BufNewFile" }, {
   callback = function()
     vim.o.showtabline = 0
   end,
