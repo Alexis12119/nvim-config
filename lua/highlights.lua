@@ -5,7 +5,6 @@
 
 local M = {}
 
-print("test")
 ---@type Base46HLGroupsList
 M.override = {
   Comment = {
