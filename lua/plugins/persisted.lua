@@ -1,6 +1,7 @@
 -- NOTE: Sessions
 return {
   "olimorris/persisted.nvim",
+  enabled = false,
   cmd = {
     "SessionSave",
     "SessionStart",

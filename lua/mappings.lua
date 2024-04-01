@@ -314,33 +314,33 @@ local mappings = {
     },
   },
 
-  Sessions = {
-    n = {
-      ["<leader>so"] = {
-        "<cmd>SessionStop<cr>",
-        "Stop",
-        opts = { silent = true },
-      },
+  -- Sessions = {
+  --   n = {
+  --     ["<leader>so"] = {
+  --       "<cmd>SessionStop<cr>",
+  --       "Stop",
+  --       opts = { silent = true },
+  --     },
 
-      ["<leader>sl"] = {
-        "<cmd>SessionLoad<cr>",
-        "Load",
-        opts = { silent = true },
-      },
+  --     ["<leader>sl"] = {
+  --       "<cmd>SessionLoad<cr>",
+  --       "Load",
+  --       opts = { silent = true },
+  --     },
 
-      ["<leader>sL"] = {
-        "<cmd>SessionLoad<cr>",
-        "Load Last",
-        opts = { silent = true },
-      },
+  --     ["<leader>sL"] = {
+  --       "<cmd>SessionLoad<cr>",
+  --       "Load Last",
+  --       opts = { silent = true },
+  --     },
 
-      ["<leader>sd"] = {
-        "<cmd>SessionDelete<cr>",
-        "Delete",
-        opts = { silent = true },
-      },
-    },
-  },
+  --     ["<leader>sd"] = {
+  --       "<cmd>SessionDelete<cr>",
+  --       "Delete",
+  --       opts = { silent = true },
+  --     },
+  --   },
+  -- },
 
   Telescope = {
     n = {
