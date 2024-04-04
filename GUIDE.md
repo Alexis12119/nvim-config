@@ -33,22 +33,6 @@
 - Edit it in the `lua/mappings.lua`.
 - You can see all the available keymaps in `:NvCheatsheet` or just press `<Space> + f + k`.
 
-| Group Name | Description                                   |
-| ---------- | --------------------------------------------- |
-| Find       | For searching buffers, themes, and many more. |
-| Git        | Git related operations.                       |
-| Debugger   | Debugging related operations.                 |
-| LSP        | LSP related operations.                       |
-| Options    | Toggle Options.                               |
-| Plugins    | Plugins related operations.                   |
-| Tests      | Tests related operations.                     |
-| Terminal   | Terminal related operations.                  |
-| Sessions   | Sessions related operations.                  |
-| Neovim     | Neovim and Config related operations.         |
-| Runner     | Code runner related operations.               |
-| Venv       | Switch Virtual Environment.                   |
-| Harpoon    | Mark and Manage your marks.                   |
-
 #### 6. Add plugins
 
 - Create a new file in `lua/plugins` folder. Like this `numb.lua`.
