@@ -10,6 +10,7 @@ M.override = {
   Comment = {
     italic = true,
   },
+  ["@comment"] = { italic = true },
   Search = { fg = "black", bg = "blue" },
   IncSearch = { fg = "black", bg = "red" },
   CurSearch = { fg = "black", bg = "blue" },
