@@ -4,6 +4,16 @@ local cwd = vim.fn.stdpath "config" .. "/"
 local config_dir = { cwd }
 
 local mappings = {
+  Spectre = {
+    n = {
+      ["<leader>fR"] = {
+        "<cmd>Spectre<cr>",
+        "Find And Replace",
+        opts = { silent = true },
+      },
+    },
+  },
+
   LspLens = {
     n = {
       ["<leader>ll"] = {
