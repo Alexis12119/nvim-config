@@ -82,7 +82,6 @@ autocmd({ "BufEnter", "BufReadPost" ,"BufNewFile" }, {
   callback = function()
     vim.o.showtabline = 0
   end,
-  once = true,
   group = general,
   desc = "Disable Tabline",
 })
