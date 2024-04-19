@@ -366,11 +366,11 @@ local mappings = {
         opts = { silent = true },
       },
 
-      ["<leader>fs"] = {
-        "<cmd>Telescope persisted<cr>",
-        "Sessions",
-        opts = { silent = true },
-      },
+      -- ["<leader>fs"] = {
+      --   "<cmd>Telescope persisted<cr>",
+      --   "Sessions",
+      --   opts = { silent = true },
+      -- },
 
       ["<leader>fm"] = {
         "<cmd>Telescope marks<cr>",
