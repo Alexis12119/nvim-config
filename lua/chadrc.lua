@@ -65,18 +65,31 @@ M.ui = {
     },
     modules = {
       total_lines = function()
+        local separators = {}
         local config = require("nvconfig").ui.statusline
         local theme = config.theme
         local sep_style = config.separator_style
 
-        local default_sep_icons = {
-          default = { left = "", right = "" },
-          round = { left = "", right = "" },
-          block = { left = "█", right = "█" },
-          arrow = { left = "", right = "" },
+        local mode = {
+          default = {
+            default = { left = "", right = "" },
+            round = { left = "", right = "" },
+            block = { left = "█", right = "█" },
+            arrow = { left = "", right = "" },
+          },
+          minimal = {
+            default = { left = "█", right = "█" },
+            round = { left = "", right = "" },
+            block = { left = "█", right = "█" },
+            arrow = { left = "", right = "" },
+          },
         }
 
-        local separators = (type(sep_style) == "table" and sep_style) or default_sep_icons[sep_style]
+        if theme == "minimal" then
+          separators = (type(sep_style) == "table" and sep_style) or mode.minimal[sep_style]
+        else
+          separators = (type(sep_style) == "table" and sep_style) or mode.default[sep_style]
+        end
 
         local sep_l = separators["left"]
         local sep_end = "%#St_sep_r#" .. separators["right"]
