@@ -12,7 +12,7 @@ return {
     })
   end,
   config = function(_, opts)
-    table.insert(opts.sources, 2, { name = "codeium" })
+    -- table.insert(opts.sources, 2, { name = "codeium" })
     opts.mapping = vim.tbl_extend("force", {}, opts.mapping, {
       -- You can add here new mappings.
     })
@@ -39,6 +39,7 @@ return {
     -- AI Autocomplete
     {
       "Exafunction/codeium.nvim",
+      enabled = false,
       opts = {},
     },
     {

@@ -42,21 +42,21 @@ local mappings = {
         opts = { silent = true },
       },
 
-      -- ["<leader>hn"] = {
-      --   function()
-      --     require("harpoon"):list():next()
-      --   end,
-      --   "Next",
-      --   opts = { silent = true },
-      -- },
+      ["<leader>hn"] = {
+        function()
+          require("harpoon"):list():next()
+        end,
+        "Next",
+        opts = { silent = true },
+      },
 
-      -- ["<leader>hp"] = {
-      --   function()
-      --     require("harpoon"):list():prev()
-      --   end,
-      --   "Previous",
-      --   opts = { silent = true },
-      -- },
+      ["<leader>hp"] = {
+        function()
+          require("harpoon"):list():prev()
+        end,
+        "Previous",
+        opts = { silent = true },
+      },
     },
   },
 
@@ -324,33 +324,33 @@ local mappings = {
     },
   },
 
-  -- Sessions = {
-  --   n = {
-  --     ["<leader>so"] = {
-  --       "<cmd>SessionStop<cr>",
-  --       "Stop",
-  --       opts = { silent = true },
-  --     },
+  Sessions = {
+    n = {
+      ["<leader>so"] = {
+        "<cmd>SessionStop<cr>",
+        "Stop",
+        opts = { silent = true },
+      },
 
-  --     ["<leader>sl"] = {
-  --       "<cmd>SessionLoad<cr>",
-  --       "Load",
-  --       opts = { silent = true },
-  --     },
+      ["<leader>sl"] = {
+        "<cmd>SessionLoad<cr>",
+        "Load",
+        opts = { silent = true },
+      },
 
-  --     ["<leader>sL"] = {
-  --       "<cmd>SessionLoad<cr>",
-  --       "Load Last",
-  --       opts = { silent = true },
-  --     },
+      ["<leader>sL"] = {
+        "<cmd>SessionLoad<cr>",
+        "Load Last",
+        opts = { silent = true },
+      },
 
-  --     ["<leader>sd"] = {
-  --       "<cmd>SessionDelete<cr>",
-  --       "Delete",
-  --       opts = { silent = true },
-  --     },
-  --   },
-  -- },
+      ["<leader>sd"] = {
+        "<cmd>SessionDelete<cr>",
+        "Delete",
+        opts = { silent = true },
+      },
+    },
+  },
 
   Telescope = {
     n = {
@@ -366,11 +366,11 @@ local mappings = {
         opts = { silent = true },
       },
 
-      -- ["<leader>fs"] = {
-      --   "<cmd>Telescope persisted<cr>",
-      --   "Sessions",
-      --   opts = { silent = true },
-      -- },
+      ["<leader>fs"] = {
+        "<cmd>Telescope persisted<cr>",
+        "Sessions",
+        opts = { silent = true },
+      },
 
       ["<leader>fm"] = {
         "<cmd>Telescope marks<cr>",
@@ -958,6 +958,12 @@ local mappings = {
         opts = { silent = true },
       },
 
+      ["<C-s>"] = {
+        "<cmd>w<CR>",
+        "Save",
+        opts = { silent = true },
+      },
+
       ["H"] = {
         function()
           require("nvchad.tabufline").prev()
@@ -1022,11 +1028,11 @@ local mappings = {
       },
     },
     i = {
-      -- ["jk"] = {
-      --   "<Esc>",
-      --   "Enter insert mode",
-      --   opts = { silent = true },
-      -- },
+      ["jk"] = {
+        "<Esc>",
+        "Enter insert mode",
+        opts = { silent = true },
+      },
 
       ["<A-j>"] = {
         "<Esc>:m .+1<CR>==gi",
@@ -1037,6 +1043,12 @@ local mappings = {
       ["<A-k>"] = {
         "<Esc>:m .-2<CR>==gi",
         "Move the line down",
+        opts = { silent = true },
+      },
+
+      ["<C-s>"] = {
+        "<cmd>w<CR>",
+        "Save",
         opts = { silent = true },
       },
     },
@@ -1088,6 +1100,12 @@ local mappings = {
         "Move the selected text down",
         opts = { silent = true },
       },
+
+      ["<C-s>"] = {
+        "<cmd>w<CR>",
+        "Save",
+        opts = { silent = true },
+      },
     },
     c = {
       ["<Tab>"] = {
@@ -1110,6 +1128,12 @@ local mappings = {
         end,
         "Word Search Decrement",
         opts = { expr = true },
+      },
+
+      ["<C-s>"] = {
+        "<cmd>w<CR>",
+        "Save",
+        opts = { silent = true },
       },
     },
     t = {

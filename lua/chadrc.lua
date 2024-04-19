@@ -27,30 +27,30 @@ local function get_header()
     local randomHeader = headers[randomName]
     return randomHeader
   else
-    return headers["nvchad"]
+    return headers["kevim"]
   end
 end
 
 local highlights = require "highlights"
 
 M.ui = {
-  theme = "mountain",
-  theme_toggle = { "mountain", "one_light" },
+  theme = "catppuccin",
+  theme_toggle = { "catppuccin", "one_light" },
   lsp_semantic_tokens = false, -- needs nvim v0.9, just adds highlight groups for lsp semantic tokens
   hl_override = highlights.override,
   hl_add = highlights.add,
   extended_integrations = {}, -- these aren't compiled by default, ex: "alpha", "notify"
-  telescope = { style = "borderless" }, -- borderless / bordered
+  telescope = { style = "bordered" }, -- borderless / bordered
   cmp = {
     icons = true,
     lspkind_text = true,
     style = "default", -- default/flat_light/flat_dark/atom/atom_colored
   },
   statusline = {
-    theme = "minimal", -- default/vscode/vscode_colored/minimal
+    theme = "default", -- default/vscode/vscode_colored/minimal
     -- default/round/block/arrow separators work only for default statusline theme
     -- round and block will work for minimal theme only
-    separator_style = "round",
+    separator_style = "default",
     order = {
       "mode",
       "file",
@@ -60,6 +60,7 @@ M.ui = {
       "diagnostics",
       "command",
       "clients",
+      "cursor",
       "cwd",
       "total_lines",
     },

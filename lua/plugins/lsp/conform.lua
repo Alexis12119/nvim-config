@@ -1,11 +1,14 @@
 local formatters = {
   lua = { "stylua" },
-  python = { "autopep8" },
+  python = {
+    "ruff_fix",
+    "ruff_format",
+    -- "isort",
+  },
   cpp = { "clang_format" },
   c = { "clang_format" },
   go = { "gofumpt" },
   cs = { "csharpier" },
-  yaml = { "yamlfmt" },
 }
 
 local prettier_ft = {
@@ -22,6 +25,7 @@ local prettier_ft = {
   "typescript",
   "typescriptreact",
   "vue",
+  "yaml",
 }
 
 for _, filetype in pairs(prettier_ft) do
@@ -29,11 +33,11 @@ for _, filetype in pairs(prettier_ft) do
 end
 
 return {
-  -- format_on_save = {
-  --   -- These options will be passed to conform.format()
-  --   async = true,
-  --   quiet = true,
-  --   lsp_fallback = true,
-  -- },
+  format_on_save = {
+    -- These options will be passed to conform.format()
+    async = true,
+    quiet = true,
+    lsp_fallback = true,
+  },
   formatters_by_ft = formatters,
 }

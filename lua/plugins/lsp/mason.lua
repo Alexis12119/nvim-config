@@ -26,18 +26,18 @@ mason_lspconfig.setup {
 
     -- Web Development
     -- "cssls",
-    -- "html",
-    -- "tsserver",
+    "html",
+    "tsserver",
     -- "denols",
     -- "vuels",
     -- "tailwindcss",
-    -- "emmet_language_server",
+    "emmet_language_server",
 
     -- PHP
     -- "intelephense",
 
     -- C/C++
-    -- "clangd",
+    "clangd",
 
     -- CMake
     -- "neocmake",
@@ -46,10 +46,10 @@ mason_lspconfig.setup {
     -- "jdtls",
 
     -- Yaml
-    -- "yamlls",
+    "yamlls",
 
     -- Python
-    -- "pyright",
+    "pyright",
 
     -- Go
     -- "gopls",
@@ -61,8 +61,8 @@ mason_lspconfig.setup {
 }
 
 local disabled_servers = {
-  "jdtls",
-  "tsserver",
+  -- "jdtls",
+  -- "tsserver",
 }
 
 mason_lspconfig.setup_handlers {

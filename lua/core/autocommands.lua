@@ -78,7 +78,7 @@ autocmd("TextYankPost", {
   desc = "Highlight when yanking",
 })
 
-autocmd({ "BufEnter", "BufReadPost" ,"BufNewFile" }, {
+autocmd({ "BufEnter", "BufReadPost", "BufNewFile" }, {
   callback = function()
     vim.o.showtabline = 0
   end,
@@ -187,3 +187,12 @@ autocmd("FileType", {
   group = godot,
   desc = "Start Godot LSP",
 })
+
+-- Restore Windows terminal cursor
+-- https://github.com/microsoft/terminal/issues/13420
+if vim.fn.has "win32" == 1 then
+  vim.api.nvim_create_autocmd("VimLeave", {
+    desc = "Restore Cursor when VimLeave",
+    command = "set guicursor= | call chansend(v:stderr, '\x1b[ q')",
+  })
+end

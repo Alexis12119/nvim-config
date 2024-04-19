@@ -42,6 +42,8 @@ local options = {
   -- shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode",
   -- shellquote = "",
   -- shellxquote = "",
+  fixendofline = false,
+  fileformats = "unix,dos",
 }
 
 local global = {
