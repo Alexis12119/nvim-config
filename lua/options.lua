@@ -3,10 +3,14 @@ require "nvchad.options"
 
 local options = {
   backup = false, -- creates a backup file
+  breakindent = true,
   conceallevel = 0, -- so that `` is visible in markdown files
   fileencoding = "utf-8", -- the encoding written to a file
+  fileformats = "unix,dos",
+  fixendofline = false,
   hidden = true, -- required to keep multiple buffers and open multiple buffers
   ignorecase = true, -- ignore case in search patterns
+  linebreak = true, -- for wrap to not break word
   mouse = "a", -- allow the mouse to be used in neovim
   pumheight = 8, -- pop up menu height
   pumblend = 0, -- transparency of pop-up menu
@@ -19,6 +23,7 @@ local options = {
   timeoutlen = 500, -- time to wait for a mapped sequence to complete (in milliseconds)
   undofile = true, -- enable persistent undo
   updatetime = 100, -- faster completion (4000ms default)
+  winblend = 0,
   writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
   expandtab = true, -- convert tabs to spaces
   shiftwidth = 2, -- the number of spaces inserted for each indentation
@@ -28,7 +33,7 @@ local options = {
   relativenumber = true, -- set relative numbered lines
   numberwidth = 4, -- set number column width to 4 {default 4}
   signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time
-  wrap = false, -- display lines as one long line
+  wrap = true, -- display lines as one long line
   scrolloff = 8, -- minimal number of columns to scroll horizontally.
   sidescrolloff = 8, -- minimal number of screen columns
   lazyredraw = false, -- Won't be redrawn while executing macros, register and other commands.
@@ -42,8 +47,6 @@ local options = {
   -- shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode",
   -- shellquote = "",
   -- shellxquote = "",
-  fixendofline = false,
-  fileformats = "unix,dos",
 }
 
 local global = {

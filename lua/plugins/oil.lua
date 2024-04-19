@@ -2,7 +2,7 @@
 return {
   "stevearc/oil.nvim",
   cmd = "Oil",
-  enabled = false,
+  enabled = true,
   opts = {
     -- Send deleted files to the trash instead of permanently deleting them (:help oil-trash)
     delete_to_trash = false,
@@ -40,9 +40,10 @@ return {
       ["`"] = "actions.cd",
       ["~"] = "actions.tcd",
       ["gs"] = "actions.change_sort",
-      ["gx"] = "actions.open_external",
+      ["ge"] = "actions.open_external",
       ["g."] = "actions.toggle_hidden",
       ["g\\"] = "actions.toggle_trash",
     },
+    use_default_keymaps = false,
   },
 }

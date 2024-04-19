@@ -5,6 +5,7 @@ return {
   config = function()
     dofile(vim.g.base46_cache .. "notify")
     require("notify").setup {
+      background_colour = "#000000",
       level = 2,
       minimum_width = 50,
       render = "default",

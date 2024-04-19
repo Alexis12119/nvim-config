@@ -50,7 +50,7 @@ return {
       -- clear highlight after jump
       nohlsearch = true,
       -- automatically jump when there is only one match
-      autojump = false,
+      autojump = true,
     },
     modes = {
       -- options used when flash is activated through

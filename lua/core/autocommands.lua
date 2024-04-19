@@ -196,3 +196,10 @@ if vim.fn.has "win32" == 1 then
     command = "set guicursor= | call chansend(v:stderr, '\x1b[ q')",
   })
 end
+
+-- Highlight on yank
+vim.api.nvim_create_autocmd("TextYankPost", {
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})

@@ -36,21 +36,22 @@ local highlights = require "highlights"
 M.ui = {
   theme = "catppuccin",
   theme_toggle = { "catppuccin", "one_light" },
+  transparency = false,
   lsp_semantic_tokens = false, -- needs nvim v0.9, just adds highlight groups for lsp semantic tokens
   hl_override = highlights.override,
   hl_add = highlights.add,
   extended_integrations = {}, -- these aren't compiled by default, ex: "alpha", "notify"
-  telescope = { style = "bordered" }, -- borderless / bordered
+  telescope = { style = "borderless" }, -- borderless / bordered
   cmp = {
     icons = true,
     lspkind_text = true,
     style = "default", -- default/flat_light/flat_dark/atom/atom_colored
   },
   statusline = {
-    theme = "default", -- default/vscode/vscode_colored/minimal
+    theme = "minimal", -- default/vscode/vscode_colored/minimal
     -- default/round/block/arrow separators work only for default statusline theme
     -- round and block will work for minimal theme only
-    separator_style = "default",
+    separator_style = "round",
     order = {
       "mode",
       "file",
@@ -60,8 +61,8 @@ M.ui = {
       "diagnostics",
       "command",
       "clients",
-      "cursor",
       "cwd",
+      "cursor",
       "total_lines",
     },
     modules = {

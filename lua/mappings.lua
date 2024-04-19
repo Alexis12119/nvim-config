@@ -176,6 +176,18 @@ local mappings = {
     },
   },
 
+  Neogen = {
+    n = {
+      ["<leader>ln"] = {
+        function()
+          require("neogen").generate()
+        end,
+        "Gen Doc",
+        opts = { silent = true },
+      },
+    },
+  },
+
   Neotest = {
     n = {
       ["<leader>Tt"] = {
@@ -1024,6 +1036,12 @@ local mappings = {
       ["<A-k>"] = {
         ":m .-2<CR>==",
         "Move the line down",
+        opts = { silent = true },
+      },
+
+      ["<Esc>"] = {
+        "<cmd>noh<CR>",
+        "Clear highlights",
         opts = { silent = true },
       },
     },
