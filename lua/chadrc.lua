@@ -66,13 +66,14 @@ M.ui = {
     modules = {
       total_lines = function()
         local config = require("nvconfig").ui.statusline
+        local theme = config.theme
         local sep_style = config.separator_style
 
-        sep_style = (sep_style ~= "round" and sep_style ~= "block") and "block" or sep_style
-
         local default_sep_icons = {
+          default = { left = "", right = "" },
           round = { left = "", right = "" },
           block = { left = "█", right = "█" },
+          arrow = { left = "", right = "" },
         }
 
         local separators = (type(sep_style) == "table" and sep_style) or default_sep_icons[sep_style]
@@ -85,6 +86,9 @@ M.ui = {
           return sep_l_hlgroup .. sep_l .. iconHl_group .. icon .. " " .. txt_hl_group .. " " .. txt .. sep_end
         end
 
+        if theme == "default" then
+          return "%#St_pos_sep#" .. sep_l .. "%#St_pos_icon# %#St_pos_text# %p %% "
+        end
         return gen_block("", "%L", "%#St_Pos_sep#", "%#St_Pos_bg#", "%#St_Pos_txt#")
       end,
 
