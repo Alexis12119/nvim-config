@@ -808,6 +808,12 @@ local mappings = {
         opts = { silent = true },
       },
 
+      ["<leader>C"] = {
+        "<cmd>bd|e#<cr>",
+        "Close Other Buffers",
+        opts = { silent = true },
+      },
+
       ["<leader>ob"] = {
         function()
           if vim.o.showtabline == 2 then
