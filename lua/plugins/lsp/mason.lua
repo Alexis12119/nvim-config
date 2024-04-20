@@ -60,6 +60,9 @@ mason_lspconfig.setup {
 
     -- Markdown
     "vale_ls",
+
+    -- Powershell
+    "powershell_es",
   },
 }
 
