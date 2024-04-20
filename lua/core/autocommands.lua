@@ -72,7 +72,8 @@ autocmd("BufReadPost", {
 
 autocmd("TextYankPost", {
   callback = function()
-    require("vim.highlight").on_yank { higroup = "Visual", timeout = 200 }
+    -- require("vim.highlight").on_yank { higroup = "Visual", timeout = 200 }
+    require("vim.highlight").on_yank { timeout = 200 }
   end,
   group = general,
   desc = "Highlight when yanking",
@@ -191,15 +192,8 @@ autocmd("FileType", {
 -- Restore Windows terminal cursor
 -- https://github.com/microsoft/terminal/issues/13420
 if vim.fn.has "win32" == 1 then
-  vim.api.nvim_create_autocmd("VimLeave", {
+  autocmd("VimLeave", {
     desc = "Restore Cursor when VimLeave",
     command = "set guicursor= | call chansend(v:stderr, '\x1b[ q')",
   })
 end
-
--- Highlight on yank
-vim.api.nvim_create_autocmd("TextYankPost", {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-})

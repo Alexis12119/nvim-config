@@ -491,6 +491,12 @@ local mappings = {
         "Checkout commit",
         opts = { silent = true },
       },
+
+      ["<leader>gm"] = {
+        "<cmd>Telescope gitmoji<cr>",
+        "Gitmoji",
+        opts = { silent = true },
+      },
     },
   },
 
@@ -545,6 +551,42 @@ local mappings = {
       },
     },
   },
+
+  --[[ Truezen = {
+    n = {
+      ["<leader>za"] = {
+        "<cmd>TZAtaraxis<cr>",
+        "Toggle Ataraxis",
+        opts = { silent = true },
+      },
+
+      ["<leader>zm"] = {
+        "<cmd>TZMinimalist<cr>",
+        "Toggle TZMinimalist",
+        opts = { silent = true },
+      },
+
+      ["<leader>zn"] = {
+        "<cmd>TZNarrow<cr>",
+        "Toggle TZNarrow",
+        opts = { silent = true },
+      },
+
+      ["<leader>zf"] = {
+        "<cmd>TZFocus<cr>",
+        "Toggle TZFocus",
+        opts = { silent = true },
+      },
+    },
+
+    v = {
+      ["<leader>zn"] = {
+        "<cmd>'<,'>TZNarrow<cr>",
+        "Toggle Narrow",
+        opts = { silent = true },
+      },
+    },
+  }, ]]
 
   Lspsaga = {
     n = {
@@ -838,6 +880,12 @@ local mappings = {
         opts = { silent = true },
       },
 
+      ["<leader>oc"] = {
+        "<cmd>CloakToggle<CR>",
+        "Toggle Cloak",
+        opts = { silent = true },
+      },
+
       ["<leader>os"] = {
         function()
           if vim.o.laststatus == 3 then
@@ -889,6 +937,12 @@ local mappings = {
         opts = { silent = true },
       },
 
+      ["<leader>ou"] = {
+        "<cmd>UndotreeToggle<cr>",
+        "Toggle Undotree",
+        opts = { silent = true },
+      },
+
       ["<leader>ow"] = {
         function()
           if vim.o.wrap then
@@ -898,6 +952,12 @@ local mappings = {
           end
         end,
         "Toggle Wrap",
+        opts = { silent = true },
+      },
+
+      ["<leader>oz"] = {
+        "<cmd>ZenMode<cr>",
+        "Toggle Zen",
         opts = { silent = true },
       },
 
@@ -1058,6 +1118,18 @@ local mappings = {
       },
 
       ["<Esc>"] = {
+        "<cmd>noh<CR>",
+        "Clear highlights",
+        opts = { silent = true },
+      },
+
+      ["<Tab>"] = {
+        "<cmd>noh<CR>",
+        "Clear highlights",
+        opts = { silent = true },
+      },
+
+      ["<S-Tab>"] = {
         "<cmd>noh<CR>",
         "Clear highlights",
         opts = { silent = true },

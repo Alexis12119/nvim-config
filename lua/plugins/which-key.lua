@@ -27,6 +27,7 @@ return {
           t = { name = " Terminal" },
           T = { name = "󰙨 Tests" },
           v = { name = " Venv" },
+          z = { name = "󰡌 Zen" },
         },
       },
     }

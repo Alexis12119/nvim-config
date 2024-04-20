@@ -19,4 +19,14 @@ return {
     autosave = true, -- automatically save session files when exiting Neovim
     autoload = false, -- automatically load the session for the cwd on Neovim startup
   },
+  init = function()
+    -- close nvim-tree before exist while using persisted
+    vim.api.nvim_create_autocmd("ExitPre", {
+      callback = function()
+        require("nvim-tree.view").close_all_tabs()
+      end,
+      group = vim.api.nvim_create_augroup("Persisted", { clear = true }),
+      desc = "Close nvim-tree before exit",
+    })
+  end,
 }
