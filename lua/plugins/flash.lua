@@ -1,6 +1,7 @@
 -- NOTE: Search motions
 return {
   "folke/flash.nvim",
+  enabled = false,
   event = "CmdlineEnter",
   opts = {
     labels = "asdfghjklqwertyuiopzxcvbnm",

@@ -24,7 +24,7 @@ local mappings = {
     },
   },
 
-  Harpoon = {
+  --[[ Harpoon = {
     n = {
       ["<leader>ha"] = {
         function()
@@ -58,7 +58,7 @@ local mappings = {
         opts = { silent = true },
       },
     },
-  },
+  }, ]]
 
   Swenv = {
     n = {
@@ -331,6 +331,18 @@ local mappings = {
           RunCode()
         end,
         "Run Code",
+        opts = { silent = true },
+      },
+    },
+  },
+
+  Oil = {
+    n = {
+      ["-"] = {
+        function()
+          require("oil").toggle_float()
+        end,
+        "Toggle Oil Float",
         opts = { silent = true },
       },
     },

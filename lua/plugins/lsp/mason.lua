@@ -57,6 +57,9 @@ mason_lspconfig.setup {
     -- C#
     -- "omnisharp",
     -- "omnisharp-mono",
+
+    -- Markdown
+    "vale_ls",
   },
 }
 

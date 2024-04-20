@@ -5,7 +5,7 @@ return {
   opts = {
     -- KEYMAPS:
     default_keymaps = true, -- Create default keymaps.
-    extra_keymaps = true, -- Create extra keymaps.
+    extra_keymaps = false, -- Create extra keymaps.
     extended_keymaps = false, -- Create extended keymaps.
     override_keymaps = false, -- The plugin keymaps will override any existing keymaps.
     horizontal_scroll = true,

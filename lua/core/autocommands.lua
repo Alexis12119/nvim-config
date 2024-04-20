@@ -78,13 +78,13 @@ autocmd("TextYankPost", {
   desc = "Highlight when yanking",
 })
 
-autocmd({ "BufEnter", "BufReadPost", "BufNewFile" }, {
-  callback = function()
-    vim.o.showtabline = 0
-  end,
-  group = general,
-  desc = "Disable Tabline",
-})
+-- autocmd({ "BufEnter", "BufReadPost", "BufNewFile" }, {
+--   callback = function()
+--     vim.o.showtabline = 0
+--   end,
+--   group = general,
+--   desc = "Disable Tabline",
+-- })
 
 autocmd("BufEnter", {
   callback = function()
@@ -134,7 +134,7 @@ autocmd("ModeChanged", {
     if fn.getcmdtype() == "/" or fn.getcmdtype() == "?" then
       vim.opt.hlsearch = true
     else
-      vim.opt.hlsearch = false
+      -- vim.opt.hlsearch = false
     end
   end,
   group = general,

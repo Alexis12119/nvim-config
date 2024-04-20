@@ -19,7 +19,7 @@ return {
           s = { name = "󰔚 Sessions" },
           f = { name = " Find" },
           g = { name = "󰊢 Git" },
-          h = { name = " Harpoon" },
+          -- h = { name = " Harpoon" },
           l = { name = " LSP" },
           n = { name = " Neovim" },
           o = { name = " Options" },

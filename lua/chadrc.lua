@@ -48,10 +48,10 @@ M.ui = {
     style = "default", -- default/flat_light/flat_dark/atom/atom_colored
   },
   statusline = {
-    theme = "minimal", -- default/vscode/vscode_colored/minimal
+    theme = "default", -- default/vscode/vscode_colored/minimal
     -- default/round/block/arrow separators work only for default statusline theme
     -- round and block will work for minimal theme only
-    separator_style = "round",
+    separator_style = "default",
     order = {
       "mode",
       "file",
@@ -62,10 +62,10 @@ M.ui = {
       "command",
       "clients",
       "cwd",
-      "cursor",
+      -- "cursor",
       "total_lines",
     },
-modules = {
+    modules = {
       total_lines = function()
         local separators = {}
         local config = require("nvconfig").ui.statusline

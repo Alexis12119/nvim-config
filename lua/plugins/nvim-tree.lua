@@ -48,9 +48,9 @@ return {
         "*.SECURITY.*",
         ".*yarn.lock",
         ".*package.json",
-        ".*lazy-lock.json",
-        ".*.bak$",
-        ".*.git",
+        "lazy-lock.json",
+        ".*\\.bak$",
+        "\\.git$",
         ".*.idea",
         ".*node_modules",
         ".*__pycache__",
@@ -58,12 +58,13 @@ return {
         ".*build",
         ".*dist",
         ".*.spec$",
-        ".*.venv",
-        ".*.vs",
-        ".*.vscode",
+        "\\.?.v?env",
+        "\\.?vs",
+        "\\.?vscode",
       },
     },
-    sync_root_with_cwd = true,
+    -- sync_root_with_cwd = true,
+    sync_root_with_cwd = false, -- not to sync git folder upper :v
     update_focused_file = {
       enable = true,
       update_cwd = true,
@@ -97,8 +98,8 @@ return {
 
     renderer = {
       highlight_git = false,
-      root_folder_label = false,
-      -- root_folder_label = ":~:s?$?",
+      -- root_folder_label = false,
+      root_folder_label = ":~:s?$?",
       icons = {
         show = {
           file = true,

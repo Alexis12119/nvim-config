@@ -1,5 +1,5 @@
 -- NOTE: NvDash Headers
--- math.randomseed(os.time())
+math.randomseed(os.time())
 local headers = {
   default = {
     "           ▄ ▄                   ",
