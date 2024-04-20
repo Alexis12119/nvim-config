@@ -67,7 +67,8 @@ end
 function RunCode()
   local file_extension = vim.fn.expand "%:e"
   local selected_cmd = ""
-  local term_cmd = "bot 10 new | term "
+  -- local term_cmd = "bot 10 new | term "
+  local term_cmd = "bot 20 new | term "
   local supported_filetypes = {
     html = {
       default = "%",
@@ -86,7 +87,9 @@ function RunCode()
       competitive = "g++ -std=c++17 -Wall -DAL -O2 % -o $fileBase && $fileBase",
     },
     py = {
-      default = "python %",
+      -- default = "python %",
+      linux = "python3 %",
+      windows = "python %",
     },
     go = {
       default = "go run %",

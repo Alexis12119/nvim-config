@@ -821,7 +821,7 @@ local mappings = {
       },
 
       ["<leader>C"] = {
-        "<cmd>bd|e#<cr>",
+        "<cmd>%bd|e#|bd#<cr>",
         "Close Other Buffers",
         opts = { silent = true },
       },
