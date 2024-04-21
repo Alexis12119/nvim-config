@@ -49,8 +49,10 @@ return {
           fallback()
         end
       end, { "i", "s" }),
+      ["<A-;>"] = cmp.mapping.complete(), -- For Windows Terminal: Send Ctrl+Space into Alt+;
     })
   end,
+
   config = function(_, opts)
     -- table.insert(opts.sources, 2, { name = "codeium" })
     table.insert(opts.sources, 2, { name = "copilot" })
