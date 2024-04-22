@@ -1024,6 +1024,18 @@ local mappings = {
         opts = { silent = true },
       },
 
+      ["ss"] = {
+        "<cmd>split<CR>",
+        "Split horizontal",
+        opts = { silent = true },
+      },
+
+      ["sv"] = {
+        "<cmd>vsplit<CR>",
+        "Split vertical",
+        opts = { silent = true },
+      },
+
       ["<C-Up>"] = {
         "<cmd>resize +2<CR>",
         "Add size at the top",
@@ -1093,17 +1105,17 @@ local mappings = {
         opts = { silent = true },
       },
 
-      ["<"] = {
-        "<<",
-        "Indent backward",
-        opts = { silent = true },
-      },
+      -- ["<"] = {
+      --   "<<",
+      --   "Indent backward",
+      --   opts = { silent = true },
+      -- },
 
-      [">"] = {
-        ">>",
-        "Indent forward",
-        opts = { silent = true },
-      },
+      -- [">"] = {
+      --   ">>",
+      --   "Indent forward",
+      --   opts = { silent = true },
+      -- },
 
       ["<A-j>"] = {
         ":m .+1<CR>==",
@@ -1124,17 +1136,18 @@ local mappings = {
       },
 
       ["<Tab>"] = {
-        "<cmd>noh<CR>",
-        "Clear highlights",
+        "<cmd>bnext<CR>",
+        "Next Buffer",
         opts = { silent = true },
       },
 
       ["<S-Tab>"] = {
-        "<cmd>noh<CR>",
-        "Clear highlights",
+        "<cmd>bprevious<CR>",
+        "Previous Buffer",
         opts = { silent = true },
       },
     },
+
     i = {
       ["jk"] = {
         "<Esc>",

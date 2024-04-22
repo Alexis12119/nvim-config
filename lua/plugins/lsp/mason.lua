@@ -31,7 +31,8 @@ mason_lspconfig.setup {
     -- "denols",
     -- "vuels",
     -- "tailwindcss",
-    "emmet_language_server",
+    -- "emmet_language_server",
+    "jsonls",
 
     -- PHP
     -- "intelephense",
