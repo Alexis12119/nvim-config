@@ -98,6 +98,6 @@ This is a window specific problem. The problem is that the version of `gcc` is o
 
 To solve this:
 
-- Install the updated compiler here called [mingw-nuwen](https://nuwen.net/mingw.html).
+- Just make sure to use the updated compiler like this [one](https://nuwen.net/mingw.html).
 - Run `:TSUinstall all` to remove all the language parsers.
 - Install the parser again for the language you want to use.
