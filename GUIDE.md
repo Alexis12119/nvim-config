@@ -91,3 +91,13 @@ return {
 #### 12. `Jdtls` debugging tip
 
 - Run `:JdtUpdateDebugConfig` to get the debug configurations.
+
+#### 13. `UV_DLOPEN ERROR` not a valid win32 application
+
+This is a window specific problem. The problem is that the version of `gcc` is outdated.
+
+To solve this:
+
+- Just make sure to use the updated compiler like this [one](https://nuwen.net/mingw.html).
+- Run `:TSUinstall all` to remove all the language parsers.
+- Install the parser again for the language you want to use.

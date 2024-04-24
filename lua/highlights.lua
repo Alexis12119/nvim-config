@@ -22,13 +22,13 @@ M.override = {
   LspReferenceText = { link = "Underlined" },
   LspReferenceWrite = { link = "Underlined" },
   TblineFill = { link = "Normal" },
+  NvimTreeRootFolder = { link = "NvimTreeFolderName" },
 }
 
 ---@type HLTable
 M.add = {
   WinBar = { link = "Normal" },
   WinBarNC = { link = "Normal" },
-  NvimTreeOpenedFolderName = { fg = "green", bold = false },
   DiffviewDiffAdd = { fg = "black", bg = "green" },
   DiffviewDiffChange = { fg = "black", bg = "green" },
   DiffviewDiffDelete = { fg = "black", bg = "red" },
