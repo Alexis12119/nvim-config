@@ -179,9 +179,7 @@ local mappings = {
   Neogen = {
     n = {
       ["<leader>ln"] = {
-        function()
-          require("neogen").generate()
-        end,
+        "<cmd>Neogen<CR>",
         "Gen Doc",
         opts = { silent = true },
       },

@@ -89,6 +89,8 @@ return {
     {
       "zbirenbaum/copilot-cmp",
       dependencies = { "zbirenbaum/copilot.lua" },
+      fix_pairs = true,
+      config = true,
     },
     {
       "L3MON4D3/LuaSnip",
@@ -97,6 +99,8 @@ return {
     -- Neogen
     {
       "danymat/neogen",
+      cmd = "Neogen",
+      config = true,
     },
   },
 }
