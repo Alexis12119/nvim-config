@@ -3,6 +3,7 @@ return {
   "olimorris/persisted.nvim",
   -- enabled = false,
   enabled = true,
+  event = "VeryLazy",
   cmd = {
     "SessionSave",
     "SessionStart",
