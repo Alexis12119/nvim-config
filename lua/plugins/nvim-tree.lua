@@ -14,6 +14,7 @@ end
 -- NOTE: File Explorer
 return {
   "nvim-tree/nvim-tree.lua",
+  event = "VeryLazy",
   cmd = {
     "NvimTreeOpen",
     "NvimTreeToggle",
