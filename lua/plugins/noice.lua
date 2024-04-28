@@ -36,6 +36,14 @@ return {
         },
         opts = { skip = true },
       },
+      {
+        filter = {
+          event = "msg_show",
+          kind = "",
+          find = "Offline", -- for Copilot while disable
+        },
+        opts = { skip = true },
+      },
     },
     lsp = {
       progress = {
