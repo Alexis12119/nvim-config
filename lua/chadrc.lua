@@ -83,15 +83,23 @@ M.ui = {
             default = { left = "█", right = "█" },
             round = { left = "", right = "" },
             block = { left = "█", right = "█" },
+            arrow = { left = "█", right = "█" },
+          },
+          vscode = {
+            default = { left = "█", right = "█" },
+            round = { left = "", right = "" },
+            block = { left = "█", right = "█" },
+            arrow = { left = "", right = "" },
+          },
+          vscode_colored = {
+            default = { left = "█", right = "█" },
+            round = { left = "", right = "" },
+            block = { left = "█", right = "█" },
             arrow = { left = "", right = "" },
           },
         }
 
-        if theme == "minimal" then
-          separators = (type(sep_style) == "table" and sep_style) or mode.minimal[sep_style]
-        else
-          separators = (type(sep_style) == "table" and sep_style) or mode.default[sep_style]
-        end
+        separators = (type(sep_style) == "table" and sep_style) or mode[theme][sep_style]
 
         local sep_l = separators["left"]
         local sep_end = "%#St_sep_r#" .. separators["right"]
@@ -103,6 +111,8 @@ M.ui = {
 
         if theme == "default" then
           return "%#St_pos_sep#" .. sep_l .. "%#St_pos_icon# %#St_pos_text# %p %% "
+        elseif theme == "vscode" or theme == "vscode_colored" then
+          return "%#StText# %L"
         end
         return gen_block("", "%L", "%#St_Pos_sep#", "%#St_Pos_bg#", "%#St_Pos_txt#")
       end,
