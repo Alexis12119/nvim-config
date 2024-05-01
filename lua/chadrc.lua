@@ -62,8 +62,8 @@ M.ui = {
       "command",
       "clients",
       "cwd",
-      -- "cursor",
-      "total_lines",
+      "cursor",
+      -- "total_lines",
     },
     modules = {
       total_lines = function()
