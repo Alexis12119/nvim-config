@@ -189,11 +189,9 @@ autocmd("FileType", {
   desc = "Start Godot LSP",
 })
 
--- Restore Windows terminal cursor
+-- Restore terminal i-beam cursor
 -- https://github.com/microsoft/terminal/issues/13420
-if vim.fn.has "win32" == 1 then
-  autocmd("VimLeave", {
-    desc = "Restore Cursor when VimLeave",
-    command = "set guicursor= | call chansend(v:stderr, '\x1b[ q')",
-  })
-end
+autocmd("VimLeave", {
+  desc = "Restore Cursor when VimLeave",
+  command = "set guicursor= | call chansend(v:stderr, '\x1b[ q')",
+})
