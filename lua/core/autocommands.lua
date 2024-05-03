@@ -189,9 +189,19 @@ autocmd("FileType", {
   desc = "Start Godot LSP",
 })
 
+local kevinnitro = augroup("kevinnitro", { clear = true })
+
 -- Restore terminal i-beam cursor
 -- https://github.com/microsoft/terminal/issues/13420
 autocmd("VimLeave", {
   desc = "Restore Cursor when VimLeave",
   command = "set guicursor= | call chansend(v:stderr, '\x1b[ q')",
+  group = kevinnitro,
+})
+
+autocmd("BufReadPost", {
+  desc = "Set JSON to JSONC",
+  pattern = "*.json",
+  command = "set filetype=jsonc",
+  group = kevinnitro,
 })

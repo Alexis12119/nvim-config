@@ -58,6 +58,8 @@ return {
       "java",
       "http",
       "json",
+      "json5",
+      "jsonc",
     },
     indent = {
       enable = false,
