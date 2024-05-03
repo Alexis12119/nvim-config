@@ -64,6 +64,9 @@ mason_lspconfig.setup {
 
     -- Powershell
     "powershell_es",
+
+    -- Bash
+    "bashls",
   },
 }
 
