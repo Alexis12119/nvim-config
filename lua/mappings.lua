@@ -383,6 +383,15 @@ local mappings = {
     },
 
     v = {
+      ["<leader>Rs"] = {
+        function()
+          -- require("refactoring").select_refactor()
+          require("telescope").extensions.refactoring.refactors()
+        end,
+        "Select",
+        opts = { silent = true },
+      },
+
       ["<leader>Re"] = {
         "<cmd>Refactor extract<cr>",
         "Extract Function",
