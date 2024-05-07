@@ -346,6 +346,69 @@ local mappings = {
     },
   },
 
+  Refactor = {
+    n = {
+      ["<leader>Rs"] = {
+        function()
+          -- require("refactoring").select_refactor()
+          require("telescope").extensions.refactoring.refactors()
+        end,
+        "Select",
+        opts = { silent = true },
+      },
+
+      ["<leader>Ri"] = {
+        "<cmd>Refactor inline_var<cr>",
+        "Extract Inline Variable",
+        opts = { silent = true },
+      },
+
+      ["<leader>RI"] = {
+        "<cmd>Refactor inline_func<cr>",
+        "Extract Inline Inline Function",
+        opts = { silent = true },
+      },
+
+      ["<leader>Rb"] = {
+        "<cmd>Refactor extract_block<cr>",
+        "Extract Block",
+        opts = { silent = true },
+      },
+
+      ["<leader>RB"] = {
+        "<cmd>Refactor extract_block_to_file<cr>",
+        "Extract Block to File",
+        opts = { silent = true },
+      },
+    },
+
+    v = {
+      ["<leader>Re"] = {
+        "<cmd>Refactor extract<cr>",
+        "Extract Function",
+        opts = { silent = true },
+      },
+
+      ["<leader>Rf"] = {
+        "<cmd>Refactor extract_to_file<cr>",
+        "Extract Function to File",
+        opts = { silent = true },
+      },
+
+      ["<leader>Rv"] = {
+        "<cmd>Refactor extract_var<cr>",
+        "Extract Variable",
+        opts = { silent = true },
+      },
+
+      ["<leader>Ri"] = {
+        "<cmd>Refactor inline_var<cr>",
+        "Extract Inline Variable",
+        opts = { silent = true },
+      },
+    },
+  },
+
   Sessions = {
     n = {
       ["<leader>so"] = {

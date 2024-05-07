@@ -16,6 +16,7 @@ return {
         ["<leader>"] = {
           d = { name = "󰃤 Debugger" },
           r = { name = " Runner" },
+          R = { name = "󰮓 Refactor" },
           s = { name = "󰔚 Sessions" },
           f = { name = " Find" },
           g = { name = "󰊢 Git" },
