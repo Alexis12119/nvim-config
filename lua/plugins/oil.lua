@@ -1,8 +1,10 @@
 -- NOTE: File explorer like vim-vinegar
 return {
   "stevearc/oil.nvim",
+  init = function()
+    vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Oil | Open Oil" })
+  end,
   cmd = "Oil",
-  enabled = false,
   opts = {
     -- Send deleted files to the trash instead of permanently deleting them (:help oil-trash)
     delete_to_trash = false,
