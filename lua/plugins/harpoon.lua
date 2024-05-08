@@ -3,7 +3,7 @@ return {
   "ThePrimeagen/harpoon",
   init = function()
     vim.keymap.set("n", "<leader>ha", function()
-      require("harpoon"):list():append()
+      require("harpoon"):list():add()
       vim.notify("   Marked file", vim.log.levels.INFO, { title = "Harpoon" })
     end, { desc = "Harpoon | Add Mark" })
 
