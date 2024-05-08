@@ -1,6 +1,7 @@
 -- NOTE: Fuzzy Finder
 return {
   "nvim-telescope/telescope.nvim",
+  lazy = false,
   init = function()
     vim.keymap.set(
       "n",
@@ -11,11 +12,7 @@ return {
 
     vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Telescope | Files", silent = true })
 
-    -- ["<leader>fs"] = {
-    --   "<cmd>Telescope persisted<cr>",
-    --   "Telescope | Sessions",
-    --   opts = { silent = true },
-    -- },
+    -- vim.keymap.set("n", "<leader>fs", "<cmd>Telescope persisted<cr>", { desc = "Telescope | Sessions", silent = true })
 
     vim.keymap.set("n", "<leader>fm", "<cmd>Telescope marks<cr>", { desc = "Telescope | Marks", silent = true })
 
