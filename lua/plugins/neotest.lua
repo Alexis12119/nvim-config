@@ -1,6 +1,39 @@
 -- NOTE: Tests
 return {
   "nvim-neotest/neotest",
+  init = function()
+    vim.keymap.set("n", "<leader>Tt", function()
+      vim.cmd 'lua require("neotest").run.run(vim.fn.expand "%")'
+    end, { desc = "Neotest | Run File", silent = true })
+
+    vim.keymap.set("n", "<leader>TT", function()
+      vim.cmd 'lua require("neotest").run.run(vim.loop.cwd())'
+    end, { desc = "Neotest | Run All Test Files", silent = true })
+
+    vim.keymap.set("n", "<leader>Tr", function()
+      vim.cmd 'lua require("neotest").run.run()'
+    end, { desc = "Neotest | Run Nearest", silent = true })
+
+    vim.keymap.set("n", "<leader>Td", function()
+      vim.cmd 'lua require("neotest").run.run { strategy = "dap" }'
+    end, { desc = "Neotest | Run Dap", silent = true })
+
+    vim.keymap.set("n", "<leader>Ts", function()
+      vim.cmd 'lua require("neotest").summary.toggle()'
+    end, { desc = "Neotest | Toggle Summary", silent = true })
+
+    vim.keymap.set("n", "<leader>To", function()
+      vim.cmd 'lua require("neotest").output.open { enter = true, auto_close = true }'
+    end, { desc = "Neotest | Show Output", silent = true })
+
+    vim.keymap.set("n", "<leader>TO", function()
+      vim.cmd 'lua require("neotest").output_panel.toggle()'
+    end, { desc = "Neotest | Toggle Output Panel", silent = true })
+
+    vim.keymap.set("n", "<leader>TS", function()
+      vim.cmd 'lua require("neotest").run.stop()'
+    end, { desc = "Neotest | Stop", silent = true })
+  end,
   dependencies = {
     "nvim-neotest/neotest-python",
     "nvim-neotest/neotest-go",

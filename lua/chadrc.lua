@@ -227,7 +227,7 @@ M.ui = {
     },
   },
 
-  cheatsheet = { theme = "simple" }, -- simple/grid
+  cheatsheet = { theme = "grid" }, -- simple/grid
 }
 
 M.base46 = {
