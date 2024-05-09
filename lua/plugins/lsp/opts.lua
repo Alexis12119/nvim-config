@@ -4,7 +4,7 @@ local cmp_nvim_lsp = require "cmp_nvim_lsp"
 
 M.capabilities = cmp_nvim_lsp.default_capabilities()
 
-local function lsp_keymaps(bufnr, opts)
+local function lsp_keymaps(bufnr)
   local buf_opts = { buffer = bufnr, silent = true }
   -- keymap("n", "gD", vim.lsp.buf.declaration, buf_opts)
   keymap("n", "gD", "<cmd>Lspsaga finder<cr>", buf_opts)
