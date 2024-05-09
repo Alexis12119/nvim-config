@@ -22,7 +22,7 @@ return {
         require("statuscol").setup {
           relculright = true,
           segments = {
-            { text = { builtin.foldfunc, " " }, click = "v:lua.ScFa" },
+            { text = { builtin.foldfunc, "  " }, click = "v:lua.ScFa" },
             { sign = { namespace = { "diagnostic" } } },
             { text = { " ", builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
             {
