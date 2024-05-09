@@ -26,7 +26,6 @@ autocmd("VimEnter", {
 
 -- Hide folds and Disable statuscolumn in these filetypes
 autocmd("BufEnter", {
-  pattern = "*",
   callback = function()
     if vim.bo.buftype == "nofile" then
       vim.opt_local.foldcolumn = "0"
