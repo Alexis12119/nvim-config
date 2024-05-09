@@ -139,10 +139,10 @@ vim.keymap.set("n", "<", "<<", { desc = "General | Indent backward", silent = tr
 vim.keymap.set("n", ">", ">>", { desc = "General | Indent forward", silent = true })
 
 -- Move the line up
-vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { desc = "General | Move the line up", silent = true })
+vim.keymap.set("n", "<A-j>", "<cmd>m .+1<CR>==", { desc = "General | Move the line up", silent = true })
 
 -- Move the line down
-vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { desc = "General | Move the line down", silent = true })
+vim.keymap.set("n", "<A-k>", "<cmd>m .-2<CR>==", { desc = "General | Move the line down", silent = true })
 
 -- Move the line up (Insert Mode)
 vim.keymap.set("i", "<A-j>", "<Esc>:m .+1<CR>==gi", { desc = "General | Move the line up", silent = true })
@@ -166,10 +166,10 @@ vim.keymap.set("v", "<", "<gv", { desc = "General | Indent backward", silent = t
 vim.keymap.set("v", ">", ">gv", { desc = "General | Indent forward", silent = true })
 
 -- Move the selected text up (Visual Mode)
-vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "General | Move the selected text up", silent = true })
+vim.keymap.set("v", "<A-j>", "<cmd>m '>+1<CR>gv=gv", { desc = "General | Move the selected text up", silent = true })
 
 -- Move the selected text down (Visual Mode)
-vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "General | Move the selected text down", silent = true })
+vim.keymap.set("v", "<A-k>", "<cmd>m '<-2<CR>gv=gv", { desc = "General | Move the selected text down", silent = true })
 
 -- Word Search Increment
 vim.keymap.set("c", "<Tab>", function()
