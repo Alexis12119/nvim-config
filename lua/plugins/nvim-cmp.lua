@@ -101,6 +101,9 @@ return {
       "danymat/neogen",
       cmd = "Neogen",
       config = true,
+      init = function()
+        vim.keymap.set("n", "<leader>ln", "<cmd>NvimTreeToggle<cr>", { desc = "Neogen | Gen Docs", silent = true })
+      end,
     },
   },
 }

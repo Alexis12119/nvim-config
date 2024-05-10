@@ -77,8 +77,15 @@ return {
     vim.keymap.set(
       "n",
       "<leader>gc",
-      "<cmd>Telescope git_commits<cr>",
-      { desc = "Telescope | Checkout commit", silent = true }
+      "<cmd>telescope git_commits<cr>",
+      { desc = "telescope | checkout commit", silent = true }
+    )
+
+    vim.keymap.set(
+      "n",
+      "<leader>gm",
+      "<cmd>Telescope gitmoji<cr>",
+      { desc = "Telescope | Gitmoji", silent = true }
     )
   end,
   dependencies = {

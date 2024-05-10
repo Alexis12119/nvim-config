@@ -133,10 +133,10 @@ vim.keymap.set("n", "<Up>", "<cmd>tabnew<CR>", { desc = "General | New tab", sil
 vim.keymap.set("n", "<Down>", "<cmd>tabclose<CR>", { desc = "General | Close tab", silent = true })
 
 -- Indent backward
-vim.keymap.set("n", "<", "<<", { desc = "General | Indent backward", silent = true })
+-- vim.keymap.set("n", "<", "<<", { desc = "General | Indent backward", silent = true })
 
 -- Indent forward
-vim.keymap.set("n", ">", ">>", { desc = "General | Indent forward", silent = true })
+-- vim.keymap.set("n", ">", ">>", { desc = "General | Indent forward", silent = true })
 
 -- Move the line up
 vim.keymap.set("n", "<A-j>", "<cmd>m .+1<CR>==", { desc = "General | Move the line up", silent = true })
@@ -270,5 +270,12 @@ vim.keymap.set("n", "<leader>pp", "<cmd>Lazy profile<cr>", { desc = "Lazy | Prof
 -- Update
 vim.keymap.set("n", "<leader>pu", "<cmd>Lazy update<cr>", { desc = "Lazy | Update", silent = true })
 
--- Escape fast
-vim.keymap.set({"n", "i", "v"}, "", "<ESC>", { desc = "Lazy | Update", silent = true })
+-- Escape
+vim.keymap.set({"n", "i", "v"}, "jk", "<Esc>", { desc = "Enter Normal Mode", silent = true })
+
+-- Split window
+vim.keymap.set("n", "ss", "<cmd>split<cr>", { desc = "Split Horizontal", silent = true })
+vim.keymap.set("n", "sv", "<cmd>vsplit<cr>", { desc = "Split Vertical", silent = true })
+
+-- Save
+vim.keymap.set({"n", "i", "v"}, "<C-s>", "<cmd>w<cr>", { desc = "Save", silent = true })
