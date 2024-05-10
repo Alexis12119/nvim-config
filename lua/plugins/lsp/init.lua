@@ -143,13 +143,13 @@ return {
         vim.keymap.set("n", "<leader>lr", "<cmd>Lspsaga rename<cr>", { desc = "Lspsaga | Rename", silent = true })
         vim.keymap.set(
           "n",
-          "<leader>j",
+          "<leader>lj",
           "<cmd>Lspsaga diagnostic_jump_next<cr>",
           { desc = "Lspsaga | Next Diagnostic", silent = true }
         )
         vim.keymap.set(
           "n",
-          "<leader>k",
+          "<leader>lk",
           "<cmd>Lspsaga diagnostic_jump_prev<cr>",
           { desc = "Lspsaga | Prev Diagnostic", silent = true }
         )
