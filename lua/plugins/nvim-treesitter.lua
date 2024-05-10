@@ -29,11 +29,11 @@ return {
           "n",
           "<leader>oc",
           "<cmd>TSContextToggle<cr>",
-          { desc = "Options | Toggle Treesitter Context", silent = true }
+          { desc = "Treesitter | Toggle Context", silent = true }
         )
         vim.keymap.set("n", "[c", function()
           require("treesitter-context").go_to_context(vim.v.count1)
-        end, { "Context | Jumping to context (upwards)", silent = true })
+        end, { desc = "Treesitter | Jumping to context (upwards)", silent = true })
       end,
       opts = {
         enable = false,

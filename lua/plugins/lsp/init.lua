@@ -88,7 +88,7 @@ return {
     {
       "williamboman/mason.nvim",
       init = function()
-        vim.keymap.set("n", "<leader>lm", "<cmd>Mason<cr>", { desc = "Mason |  Installer", silent = true })
+        vim.keymap.set("n", "<leader>lm", "<cmd>Mason<cr>", { desc = "Mason | Mason Installer", silent = true })
       end,
       cmd = {
         "Mason",
@@ -143,13 +143,13 @@ return {
         vim.keymap.set("n", "<leader>lr", "<cmd>Lspsaga rename<cr>", { desc = "Lspsaga | Rename", silent = true })
         vim.keymap.set(
           "n",
-          "<leader>lj",
+          "[d",
           "<cmd>Lspsaga diagnostic_jump_next<cr>",
           { desc = "Lspsaga | Next Diagnostic", silent = true }
         )
         vim.keymap.set(
           "n",
-          "<leader>lk",
+          "]d",
           "<cmd>Lspsaga diagnostic_jump_prev<cr>",
           { desc = "Lspsaga | Prev Diagnostic", silent = true }
         )
