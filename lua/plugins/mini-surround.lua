@@ -2,6 +2,6 @@ return {
   {
     "echasnovski/mini.surround",
     enabled = false,
-    event = "BufReadPost",
+    event = { "BufReadPost", "BufNewFile" },
   },
 }

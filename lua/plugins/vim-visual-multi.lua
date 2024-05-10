@@ -1,6 +1,6 @@
 return {
   "mg979/vim-visual-multi",
-  event = "BufReadPost",
+  event = { "BufReadPost", "BufNewFile" },
   init = function(_)
     vim.g.VM_mouse_mappings = 1
     vim.g.VM_maps = {
