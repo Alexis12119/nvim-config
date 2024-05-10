@@ -273,9 +273,15 @@ vim.keymap.set("n", "<leader>pu", "<cmd>Lazy update<cr>", { desc = "Lazy | Updat
 -- Escape
 vim.keymap.set("i", "jk", "<Esc>", { desc = "Enter Normal Mode", silent = true })
 
--- Split window
+-- Split Window
 vim.keymap.set("n", "ss", "<cmd>split<cr>", { desc = "Split Horizontal", silent = true })
 vim.keymap.set("n", "sv", "<cmd>vsplit<cr>", { desc = "Split Vertical", silent = true })
 
 -- Save
 vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<cmd>w<cr>", { desc = "Save", silent = true })
+
+-- Close Other Buffers
+vim.keymap.set("n", "<leader>C", "<cmd>bd|e#<cr>", { desc = "Close Other Buffers", silent = true })
+
+-- Clear Search Highlight
+vim.keymap.set("n", "<Esc>", "<cmd>noh<cr>", { desc = "Clear Search Highlight", silent = true })
