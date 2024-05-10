@@ -15,6 +15,9 @@ end
 return {
   "nvim-tree/nvim-tree.lua",
   event = "VeryLazy",
+  init = function()
+    vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { desc = "NvimTree | Explorer", silent = true })
+  end,
   cmd = {
     "NvimTreeOpen",
     "NvimTreeToggle",
