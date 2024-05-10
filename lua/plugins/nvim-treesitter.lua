@@ -32,6 +32,9 @@ return {
           { desc = "Options | Toggle Treesitter Context", silent = true }
         )
       end,
+      opts = {
+        enable = false,
+      },
     },
   },
   opts = {
