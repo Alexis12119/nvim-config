@@ -271,11 +271,11 @@ vim.keymap.set("n", "<leader>pp", "<cmd>Lazy profile<cr>", { desc = "Lazy | Prof
 vim.keymap.set("n", "<leader>pu", "<cmd>Lazy update<cr>", { desc = "Lazy | Update", silent = true })
 
 -- Escape
-vim.keymap.set({"n", "i", "v"}, "jk", "<Esc>", { desc = "Enter Normal Mode", silent = true })
+vim.keymap.set("i", "jk", "<Esc>", { desc = "Enter Normal Mode", silent = true })
 
 -- Split window
 vim.keymap.set("n", "ss", "<cmd>split<cr>", { desc = "Split Horizontal", silent = true })
 vim.keymap.set("n", "sv", "<cmd>vsplit<cr>", { desc = "Split Vertical", silent = true })
 
 -- Save
-vim.keymap.set({"n", "i", "v"}, "<C-s>", "<cmd>w<cr>", { desc = "Save", silent = true })
+vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<cmd>w<cr>", { desc = "Save", silent = true })
