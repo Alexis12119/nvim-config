@@ -88,7 +88,7 @@ return {
     {
       "williamboman/mason.nvim",
       init = function()
-        vim.keymap.set("n", "<leader>lm", "<cmd>Mason<cr>", { desc = "Mason |  Installer", silent = true })
+        vim.keymap.set("n", "<leader>lm", "<cmd>Mason<cr>", { desc = "Mason | Installer", silent = true })
       end,
       cmd = {
         "Mason",

@@ -22,7 +22,7 @@ vim.keymap.set("n", "<leader>ob", function()
   else
     vim.o.showtabline = 2
   end
-end, { desc = "General | Toggle Tabufline", silent = true })
+end, { desc = "Options | Toggle Tabufline", silent = true })
 
 -- Toggle Statusline
 vim.keymap.set("n", "<leader>os", function()
@@ -31,32 +31,32 @@ vim.keymap.set("n", "<leader>os", function()
   else
     vim.o.laststatus = 3
   end
-end, { desc = "General | Toggle Statusline", silent = true })
+end, { desc = "Options | Toggle Statusline", silent = true })
 
 -- Toggle Line Number
 vim.keymap.set("n", "<leader>ol", function()
   vim.o.number = not vim.o.number
-end, { desc = "General | Toggle Line Number", silent = true })
+end, { desc = "Options | Toggle Line Number", silent = true })
 
 -- Toggle Relative Number
 vim.keymap.set("n", "<leader>or", function()
   vim.o.relativenumber = not vim.o.relativenumber
-end, { desc = "General | Toggle Relative Number", silent = true })
+end, { desc = "Options | Toggle Relative Number", silent = true })
 
 -- Toggle Theme
 vim.keymap.set("n", "<leader>ot", function()
   require("base46").toggle_theme()
-end, { desc = "General | Toggle Theme", silent = true })
+end, { desc = "Options | Toggle Theme", silent = true })
 
 -- Toggle Transparency
 vim.keymap.set("n", "<leader>oT", function()
   require("base46").toggle_transparency()
-end, { desc = "General | Toggle Transparency", silent = true })
+end, { desc = "Options | Toggle Transparency", silent = true })
 
 -- Toggle Wrap
 vim.keymap.set("n", "<leader>ow", function()
   vim.o.wrap = not vim.o.wrap
-end, { desc = "General | Toggle Wrap", silent = true })
+end, { desc = "Options | Toggle Wrap", silent = true })
 
 -- Better Down
 vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { desc = "General | Better Down", expr = true, silent = true })

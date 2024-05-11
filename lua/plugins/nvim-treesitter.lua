@@ -22,6 +22,23 @@ return {
     "JoosepAlviste/nvim-ts-context-commentstring",
     -- "windwp/nvim-ts-autotag",
     "nvim-treesitter/nvim-treesitter-textobjects",
+    {
+      "nvim-treesitter/nvim-treesitter-context",
+      init = function()
+        vim.keymap.set(
+          "n",
+          "<leader>oc",
+          "<cmd>TSContextToggle<cr>",
+          { desc = "Treesitter | Toggle Context", silent = true }
+        )
+        vim.keymap.set("n", "[c", function()
+          require("treesitter-context").go_to_context(vim.v.count1)
+        end, { desc = "Treesitter | Jumping to context (upwards)", silent = true })
+      end,
+      opts = {
+        enable = false,
+      },
+    },
   },
   opts = {
     -- autotag = {
