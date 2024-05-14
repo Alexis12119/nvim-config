@@ -25,7 +25,7 @@ return {
             { text = { builtin.foldfunc, "  " }, click = "v:lua.ScFa" },
             -- { sign = { namespace = { "diagnostic" } } },
             { text = { " ", builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
-            { text = { "%s" }, click = "v:lua.ScLa" },
+            { text = { "%s" }, click = "v:lua.ScSa" },
             -- {
             --   sign = {
             --     name = { "GitSigns*" },
