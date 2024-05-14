@@ -296,3 +296,6 @@ end, { desc = "Close Other Buffers", silent = true })
 
 -- Clear Search Highlight
 vim.keymap.set("n", "<Esc>", "<cmd>noh<cr>", { desc = "Clear Search Highlight", silent = true })
+
+-- Select All
+vim.keymap.set("n", "<leader>a", "ggVG", { desc = "Select All", silent = true })
