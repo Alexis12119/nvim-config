@@ -19,8 +19,10 @@ vim.keymap.set("n", "<leader>c", "<cmd>Bdelete!<cr>", { desc = "General | Close 
 vim.keymap.set("n", "<leader>ob", function()
   if vim.o.showtabline == 2 then
     vim.o.showtabline = 0
+    vim.notify("Toggled Off", vim.log.levels.INFO, { title = "Tabufline" })
   else
     vim.o.showtabline = 2
+    vim.notify("Toggled On", vim.log.levels.INFO, { title = "Tabufline" })
   end
 end, { desc = "Options | Toggle Tabufline", silent = true })
 
@@ -28,34 +30,63 @@ end, { desc = "Options | Toggle Tabufline", silent = true })
 vim.keymap.set("n", "<leader>os", function()
   if vim.o.laststatus == 3 then
     vim.o.laststatus = 0
+    vim.notify("Toggled Off", vim.log.levels.INFO, { title = "Statusline" })
   else
     vim.o.laststatus = 3
+    vim.notify("Toggled On", vim.log.levels.INFO, { title = "Statusline" })
   end
 end, { desc = "Options | Toggle Statusline", silent = true })
 
 -- Toggle Line Number
 vim.keymap.set("n", "<leader>ol", function()
   vim.o.number = not vim.o.number
+  if vim.o.number then
+    vim.notify("Toggled On", vim.log.levels.INFO, { title = "Line Number" })
+  else
+    vim.notify("Toggled Off", vim.log.levels.INFO, { title = "Line Number" })
+  end
 end, { desc = "Options | Toggle Line Number", silent = true })
 
 -- Toggle Relative Number
 vim.keymap.set("n", "<leader>or", function()
   vim.o.relativenumber = not vim.o.relativenumber
+  if vim.o.relativenumber then
+    vim.notify("Toggled On", vim.log.levels.INFO, { title = "Relative Number" })
+  else
+    vim.notify("Toggled Off", vim.log.levels.INFO, { title = "Relative Number" })
+  end
 end, { desc = "Options | Toggle Relative Number", silent = true })
 
 -- Toggle Theme
 vim.keymap.set("n", "<leader>ot", function()
+  vim.g.switch_theme = not vim.g.switch_theme
   require("base46").toggle_theme()
+  if vim.g.switch_theme then
+    vim.notify("Light Mode", vim.log.levels.INFO, { title = "Theme" })
+  else
+    vim.notify("Dark Mode", vim.log.levels.INFO, { title = "Theme" })
+  end
 end, { desc = "Options | Toggle Theme", silent = true })
 
 -- Toggle Transparency
 vim.keymap.set("n", "<leader>oT", function()
+  vim.g.transparency_enabled = not vim.g.transparency_enabled
   require("base46").toggle_transparency()
+  if vim.g.transparency_enabled then
+    vim.notify("Toggled On", vim.log.levels.INFO, { title = "Transparency" })
+  else
+    vim.notify("Toggled Off", vim.log.levels.INFO, { title = "Transparency" })
+  end
 end, { desc = "Options | Toggle Transparency", silent = true })
 
 -- Toggle Wrap
 vim.keymap.set("n", "<leader>ow", function()
   vim.o.wrap = not vim.o.wrap
+  if vim.o.wrap then
+    vim.notify("Toggled On", vim.log.levels.INFO, { title = "Line Wrap" })
+  else
+    vim.notify("Toggled Off", vim.log.levels.INFO, { title = "Line Wrap" })
+  end
 end, { desc = "Options | Toggle Wrap", silent = true })
 
 -- Better Down
@@ -170,6 +201,9 @@ vim.keymap.set("v", "<A-j>", "<cmd>m '>+1<CR>gv=gv", { desc = "General | Move th
 
 -- Move the selected text down (Visual Mode)
 vim.keymap.set("v", "<A-k>", "<cmd>m '<-2<CR>gv=gv", { desc = "General | Move the selected text down", silent = true })
+
+-- Enter Insert Mode Terminal
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Enter Insert Mode", silent = true })
 
 -- Word Search Increment
 vim.keymap.set("c", "<Tab>", function()
