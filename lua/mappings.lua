@@ -4,7 +4,7 @@ local cwd = vim.fn.stdpath "config" .. "/"
 local config_dir = { cwd }
 
 -- Remove All Text
-vim.keymap.set("n", "<leader>R", "<cmd>%d+<cr>", { desc = "General | Remove All Text", silent = true })
+vim.keymap.set("n", "<leader>D", "<cmd>%d+<cr>", { desc = "General | Remove All Text", silent = true })
 
 -- Yank All Text
 vim.keymap.set("n", "<leader>y", "<cmd>%y+<cr>", { desc = "General | Yank All Text", silent = true })
@@ -277,17 +277,17 @@ vim.keymap.set("n", "<leader>pp", "<cmd>Lazy profile<cr>", { desc = "Lazy | Prof
 vim.keymap.set("n", "<leader>pu", "<cmd>Lazy update<cr>", { desc = "Lazy | Update", silent = true })
 
 -- Escape
-vim.keymap.set("i", "jk", "<Esc>", { desc = "Enter Normal Mode", silent = true })
+vim.keymap.set("i", "jk", "<Esc>", { desc = "General | Enter Normal Mode", silent = true })
 
 -- Split Window
-vim.keymap.set("n", "ss", "<cmd>split<cr>", { desc = "Split Horizontal", silent = true })
-vim.keymap.set("n", "sv", "<cmd>vsplit<cr>", { desc = "Split Vertical", silent = true })
+vim.keymap.set("n", "ss", "<cmd>split<cr>", { desc = "General | Split Horizontal", silent = true })
+vim.keymap.set("n", "sv", "<cmd>vsplit<cr>", { desc = "General | Split Vertical", silent = true })
 
 -- Close Current Window
-vim.keymap.set("n", "sq", "<cmd>close<cr>", { desc = "Close Current Windows", silent = true })
+vim.keymap.set("n", "sq", "<cmd>close<cr>", { desc = "General | Close Current Windows", silent = true })
 
 -- Save
-vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<cmd>w<cr>", { desc = "Save", silent = true })
+vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<cmd>w<cr>", { desc = "General | Save", silent = true })
 
 -- Close Other Buffers
 vim.keymap.set("n", "<leader>C", function()
@@ -298,10 +298,10 @@ vim.keymap.set("n", "<leader>C", function()
       vim.api.nvim_buf_delete(i, {})
     end
   end
-end, { desc = "Close Other Buffers", silent = true })
+end, { desc = "General | Close Other Buffers", silent = true })
 
 -- Clear Search Highlight
-vim.keymap.set("n", "<Esc>", "<cmd>noh<cr>", { desc = "Clear Search Highlight", silent = true })
+vim.keymap.set("n", "<Esc>", "<cmd>noh<cr>", { desc = "General | Clear Search Highlight", silent = true })
 
 -- Select All
-vim.keymap.set("n", "<leader>a", "ggVG", { desc = "Select All", silent = true })
+vim.keymap.set("n", "<leader>a", "ggVG", { desc = "General | Select All", silent = true })
