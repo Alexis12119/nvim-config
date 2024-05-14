@@ -1,6 +1,6 @@
 return {
   {
     "echasnovski/mini.bracketed",
-    event = { "BufReadPost", "BufNewFile" },
+    event = { "User FilePost" },
   },
 }
