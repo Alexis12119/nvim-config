@@ -150,6 +150,12 @@ vim.keymap.set("i", "<A-j>", "<Esc>:m .+1<CR>==gi", { desc = "General | Move the
 -- Move the line down (Insert Mode)
 vim.keymap.set("i", "<A-k>", "<Esc>:m .-2<CR>==gi", { desc = "General | Move the line down", silent = true })
 
+-- Move selected lines up (Visual Mode)
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "General | Move selected lines up", silent = true })
+
+-- Move selected lines down (Visual Mode)
+vim.keymap.set("i", "<A-j>", ":m '<-2<CR>gv=gv", { desc = "General | Move selecte lines down", silent = true })
+
 -- Better Down (Visual Mode)
 vim.keymap.set("v", "j", "v:count == 0 ? 'gj' : 'j'", { desc = "General | Better Down", expr = true, silent = true })
 
