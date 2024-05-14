@@ -23,16 +23,17 @@ return {
           relculright = true,
           segments = {
             { text = { builtin.foldfunc, "  " }, click = "v:lua.ScFa" },
-            { sign = { namespace = { "diagnostic" } } },
+            -- { sign = { namespace = { "diagnostic" } } },
             { text = { " ", builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
-            {
-              sign = {
-                name = { "GitSigns*" },
-                namespace = { "gitsigns" },
-                colwidth = 1,
-              },
-              click = "v:lua.ScSa",
-            },
+            { text = { "%s" }, click = "v:lua.ScSa" },
+            -- {
+            --   sign = {
+            --     name = { "GitSigns*" },
+            --     namespace = { "gitsigns" },
+            --     colwidth = 1,
+            --   },
+            --   click = "v:lua.ScSa",
+            -- },
           },
         }
       end,
