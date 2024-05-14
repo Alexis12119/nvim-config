@@ -25,7 +25,7 @@ return {
       -- You can add here new mappings.
     })
     opts.enabled = function()
-      return vim.g.toggle_cmp
+      return (vim.g.toggle_cmp and not vim.bo.buftype == "nofile")
     end
 
     local luasnip = require "luasnip"
