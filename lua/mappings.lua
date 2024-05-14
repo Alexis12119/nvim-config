@@ -277,11 +277,22 @@ vim.keymap.set("i", "jk", "<Esc>", { desc = "Enter Normal Mode", silent = true }
 vim.keymap.set("n", "ss", "<cmd>split<cr>", { desc = "Split Horizontal", silent = true })
 vim.keymap.set("n", "sv", "<cmd>vsplit<cr>", { desc = "Split Vertical", silent = true })
 
+-- Close Current Window
+vim.keymap.set("n", "sq", "<cmd>close<cr>", { desc = "Close Current Windows", silent = true })
+
 -- Save
 vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<cmd>w<cr>", { desc = "Save", silent = true })
 
 -- Close Other Buffers
-vim.keymap.set("n", "<leader>C", "<cmd>bd|e#<cr>", { desc = "Close Other Buffers", silent = true })
+vim.keymap.set("n", "<leader>C", function()
+  local bufs = vim.api.nvim_list_bufs()
+  local current_buf = vim.api.nvim_get_current_buf()
+  for _, i in ipairs(bufs) do
+    if i ~= current_buf then
+      vim.api.nvim_buf_delete(i, {})
+    end
+  end
+end, { desc = "Close Other Buffers", silent = true })
 
 -- Clear Search Highlight
 vim.keymap.set("n", "<Esc>", "<cmd>noh<cr>", { desc = "Clear Search Highlight", silent = true })
