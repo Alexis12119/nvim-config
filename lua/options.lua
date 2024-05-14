@@ -51,6 +51,7 @@ local global = {
   startup_message = false, -- Show startup message
   random_header = false, -- Show random header
   skip_ts_context_commentstring_module = true,
+  toggle_cmp = true,
 }
 
 vim.opt.shortmess:append "Ac" -- Disable asking

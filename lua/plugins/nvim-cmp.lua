@@ -2,6 +2,14 @@
 return {
   "hrsh7th/nvim-cmp",
   event = { "InsertEnter", "CmdlineEnter" },
+  init = function()
+    vim.keymap.set(
+      "n",
+      "<leader>oa",
+      "<cmd>lua vim.g.toggle_cmp = not vim.g.toggle_cmp<CR>",
+      { desc = "Options | Toggle Autocompletion" }
+    )
+  end,
   opts = function()
     local cmp = require "cmp"
     cmp.setup.cmdline(":", {
@@ -16,6 +24,9 @@ return {
     opts.mapping = vim.tbl_extend("force", {}, opts.mapping, {
       -- You can add here new mappings.
     })
+    opts.enabled = function()
+      return vim.g.toggle_cmp
+    end
 
     local luasnip = require "luasnip"
     luasnip.filetype_extend("javascriptreact", { "html" })
