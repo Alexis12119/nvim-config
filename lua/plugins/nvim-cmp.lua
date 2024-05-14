@@ -2,6 +2,14 @@
 return {
   "hrsh7th/nvim-cmp",
   event = { "InsertEnter", "CmdlineEnter" },
+  init = function()
+    vim.keymap.set(
+      "n",
+      "<leader>oa",
+      "<cmd>lua vim.g.toggle_cmp = not vim.g.toggle_cmp<CR>",
+      { desc = "Options | Toggle Autocompletion" }
+    )
+  end,
   opts = function(_, opts)
     local cmp = require "cmp"
     local neogen = require "neogen"
@@ -59,12 +67,16 @@ return {
     opts.mapping = vim.tbl_extend("force", {}, opts.mapping, {
       -- You can add here new mappings.
     })
+    opts.enabled = function()
+      return (vim.g.toggle_cmp and vim.bo.buftype == "")
+    end
 
     local luasnip = require "luasnip"
     luasnip.filetype_extend("javascriptreact", { "html" })
     luasnip.filetype_extend("typescriptreact", { "html" })
     luasnip.filetype_extend("svelte", { "html" })
     luasnip.filetype_extend("vue", { "html" })
+    luasnip.filetype_extend("php", { "html" })
 
     opts.completion["completeopt"] = "menu,menuone,noselect" -- disable autoselect
     require("cmp").setup(opts)
