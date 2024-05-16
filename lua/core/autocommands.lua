@@ -108,7 +108,6 @@ autocmd({ "FocusLost", "BufLeave", "InsertLeave" }, {
   callback = function()
     if vim.bo.filetype ~= "" and vim.bo.buftype == "" then
       vim.cmd "silent! w"
-      vim.notify("File has been saved", vim.log.levels.INFO, { title = "Autosave" })
     end
   end,
   group = general,
