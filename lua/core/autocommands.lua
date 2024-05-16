@@ -105,6 +105,7 @@ autocmd("FileType", {
 })
 
 autocmd({ "FocusLost", "BufLeave", "BufWinLeave", "InsertLeave" }, {
+  -- nested = true, -- for format on save
   callback = function()
     if vim.bo.filetype ~= "" and vim.bo.buftype == "" then
       vim.cmd "silent! w"
