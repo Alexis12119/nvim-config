@@ -104,17 +104,18 @@ autocmd("FileType", {
   group = general,
   desc = "Set shiftwidth to 4 in these filetypes",
 })
-
--- autocmd({ "FocusLost", "BufLeave", "BufWinLeave", "InsertLeave" }, {
---   callback = function()
---     if vim.bo.filetype ~= "" and vim.bo.buftype == "" then
---       vim.cmd "silent! w"
---     end
---   end,
---   group = general,
---   desc = "Auto Save",
--- })
-
+--[[
+autocmd({ "FocusLost", "BufLeave", "BufWinLeave", "InsertLeave" }, {
+  -- nested = true, -- for format on save
+  callback = function()
+    if vim.bo.filetype ~= "" and vim.bo.buftype == "" then
+      vim.cmd "silent! w"
+    end
+  end,
+  group = general,
+  desc = "Auto Save",
+})
+]]
 autocmd("FocusGained", {
   callback = function()
     vim.cmd "checktime"
