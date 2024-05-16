@@ -29,9 +29,11 @@ for _, filetype in pairs(prettier_ft) do
 end
 
 return {
+  -- format_after_save = {
+  --   async = true,
+  -- },
   -- format_on_save = {
   --   -- These options will be passed to conform.format()
-  --   async = true,
   --   quiet = true,
   --   lsp_fallback = true,
   -- },

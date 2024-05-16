@@ -104,7 +104,7 @@ autocmd("FileType", {
   desc = "Set shiftwidth to 4 in these filetypes",
 })
 
-autocmd({ "FocusLost", "BufLeave", "InsertLeave" }, {
+autocmd({ "FocusLost", "BufLeave", "BufWinLeave", "InsertLeave" }, {
   callback = function()
     if vim.bo.filetype ~= "" and vim.bo.buftype == "" then
       vim.cmd "silent! w"
