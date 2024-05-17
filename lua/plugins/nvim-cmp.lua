@@ -1,4 +1,5 @@
 -- NOTE: Completion Engine
+local cmp = require "cmp"
 return {
   "hrsh7th/nvim-cmp",
   event = { "InsertEnter", "CmdlineEnter" },
@@ -13,7 +14,6 @@ return {
     end, { desc = "Options | Toggle Autocomplete" })
   end,
   opts = function()
-    local cmp = require "cmp"
     cmp.setup.cmdline(":", {
       mapping = cmp.mapping.preset.cmdline(),
       sources = {
