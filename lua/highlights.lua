@@ -33,6 +33,7 @@ M.add = {
   DiffviewDiffChange = { fg = "black", bg = "green" },
   DiffviewDiffDelete = { fg = "black", bg = "red" },
   DiffviewDiffAddAsDelete = { fg = "black", bg = "red" },
+  LspInlayHint = { link = "Comment" },
 }
 
 return M
