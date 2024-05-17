@@ -32,6 +32,7 @@ mason_lspconfig.setup {
     -- "vuels",
     -- "tailwindcss",
     -- "emmet_language_server",
+    -- "eslint-lsp",
 
     -- PHP
     -- "intelephense",
