@@ -92,7 +92,7 @@ return {
   },
   opts = function(_, opts)
     local actions = require "telescope.actions"
-    local trouble = require "trouble.providers.telescope"
+    -- local trouble = require "trouble.providers.telescope"
 
     opts.pickers = {
       oldfiles = {
@@ -112,7 +112,7 @@ return {
       ["<S-Tab>"] = actions.move_selection_previous,
       ["<C-j>"] = actions.toggle_selection + actions.move_selection_worse,
       ["<C-k>"] = actions.toggle_selection + actions.move_selection_better,
-      ["<C-q>"] = trouble.open_with_trouble,
+      -- ["<C-q>"] = trouble.open_with_trouble,
     }
 
     return opts
