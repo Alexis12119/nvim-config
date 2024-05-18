@@ -56,6 +56,7 @@ M.ui = {
       "file",
       "git",
       "%=",
+      "lsp_msg",
       "python_venv",
       "diagnostics",
       "command",
