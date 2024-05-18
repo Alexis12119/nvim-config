@@ -1,4 +1,5 @@
 -- NOTE: Completion Engine
+local luasnip = require "luasnip"
 local cmp = require "cmp"
 return {
   "hrsh7th/nvim-cmp",
@@ -30,7 +31,6 @@ return {
       return (vim.g.toggle_cmp and vim.bo.buftype == "")
     end
 
-    local luasnip = require "luasnip"
     luasnip.filetype_extend("javascriptreact", { "html" })
     luasnip.filetype_extend("typescriptreact", { "html" })
     luasnip.filetype_extend("svelte", { "html" })
