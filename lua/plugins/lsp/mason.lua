@@ -33,6 +33,7 @@ mason_lspconfig.setup {
     -- "tailwindcss",
     -- "emmet_language_server",
     "jsonls",
+    -- "eslint-lsp",
 
     -- PHP
     -- "intelephense",
