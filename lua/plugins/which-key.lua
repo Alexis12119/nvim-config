@@ -22,6 +22,7 @@ return {
           g = { name = "󰊢 Git" },
           -- h = { name = " Harpoon" },
           l = { name = " LSP" },
+          m = { name = " Markdown" },
           n = { name = " Neovim" },
           o = { name = " Options" },
           p = { name = " Plugins" },
