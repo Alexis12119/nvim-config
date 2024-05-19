@@ -11,7 +11,7 @@ return {
       telemetry = { enable = false },
       workspace = {
         library = {
-          vim.api.nvim_get_runtime_file("", true),
+          vim.env.VIMRUNTIME,
           vim.fn.stdpath "data" .. "/lazy/ui/nvchad_types",
         },
         checkThirdParty = false,
