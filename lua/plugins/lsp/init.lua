@@ -5,6 +5,9 @@ return {
     vim.keymap.set("n", "<leader>lf", "<cmd>Format<cr>", { desc = "LSP | Format", silent = true })
     vim.keymap.set("n", "<leader>li", "<cmd>LspInfo<cr>", { desc = "LSP | Info", silent = true })
     vim.keymap.set("n", "<leader>lR", "<cmd>LspRestart<cr>", { desc = "LSP | Restart", silent = true })
+
+    vim.keymap.set("v", "<leader>lf", "<cmd>Format<cr>", { desc = "LSP | Format", silent = true })
+
     vim.keymap.set("n", "<leader>lh", function()
       if vim.fn.has "nvim-0.10" == 1 then
         vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled())
