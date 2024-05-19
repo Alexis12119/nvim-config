@@ -9,7 +9,7 @@ return {
 
     vim.keymap.set("n", "<leader>hh", function()
       require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())
-    end, { desc = "Harpoon Menu" })
+    end, { desc = "Harpoon | Menu" })
 
     -- Uncomment below to enable navigation keymaps
     vim.keymap.set("n", "<leader>hn", function()
