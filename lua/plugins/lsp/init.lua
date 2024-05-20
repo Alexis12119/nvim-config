@@ -10,7 +10,7 @@ return {
 
     vim.keymap.set("n", "<leader>lh", function()
       if vim.fn.has "nvim-0.10" == 1 then
-        local ok = pcall(vim.lsp.inlay_hint.enable, not vim.lsp.inlay_hint.is_enabled())
+        local ok = pcall(vim.lsp.inlay_hint.enable, vim.lsp.inlay_hint.is_enabled())
         if ok then
           vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
         else
