@@ -14,7 +14,7 @@ return {
     -- Uncomment below to enable navigation keymaps
     vim.keymap.set("n", "<leader>hn", function()
       require("harpoon"):list():next()
-    end, { desc = "Harpoo | Next" })
+    end, { desc = "Harpoon | Next" })
 
     vim.keymap.set("n", "<leader>hp", function()
       require("harpoon"):list():prev()

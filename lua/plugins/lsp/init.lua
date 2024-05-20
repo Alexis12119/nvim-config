@@ -9,10 +9,8 @@ return {
     vim.keymap.set("v", "<leader>lf", "<cmd>Format<cr>", { desc = "LSP | Format", silent = true })
 
     vim.keymap.set("n", "<leader>lh", function()
-      if vim.lsp.inlay_hint.is_enabled(0) and vim.fn.has "nvim-0.10" == 1 then
-        vim.cmd "lua=vim.lsp.inlay_hint.enable(0, false)"
-      else
-        vim.cmd "lua=vim.lsp.inlay_hint.enable(0, true)"
+      if vim.fn.has "nvim-0.10" == 1 then
+        vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled())
       end
     end, { desc = "LSP | Inlay Hints", silent = true })
   end,
