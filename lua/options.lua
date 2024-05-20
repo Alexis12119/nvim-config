@@ -70,3 +70,13 @@ end
 for name, value in pairs(global) do
   vim.g[name] = value
 end
+
+-- Inlay hint by default
+if vim.fn.has "nvim-0.10" == 1 then
+  local ok = pcall(vim.lsp.inlay_hint.enable, vim.lsp.inlay_hint.is_enabled())
+  if ok then
+    vim.lsp.inlay_hint.enable()
+  else
+    vim.lsp.inlay_hint.enable(0)
+  end
+end
