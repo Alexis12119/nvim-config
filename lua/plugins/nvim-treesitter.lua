@@ -21,7 +21,17 @@ return {
   end,
   dependencies = {
     "JoosepAlviste/nvim-ts-context-commentstring",
-    -- "windwp/nvim-ts-autotag",
+    {
+      "windwp/nvim-ts-autotag",
+      opts = {
+        opts = {
+          -- Defaults
+          enable_close = true, -- Auto close tags
+          enable_rename = true, -- Auto rename pairs of tags
+          enable_close_on_slash = false, -- Auto close on trailing </
+        },
+      },
+    },
     "nvim-treesitter/nvim-treesitter-textobjects",
     {
       "nvim-treesitter/nvim-treesitter-context",
@@ -42,10 +52,6 @@ return {
     },
   },
   opts = {
-    -- autotag = {
-    --   enable = true,
-    --   filetypes = { "html", "javascriptreact", "typescriptreact", "xml" },
-    -- },
     -- highlight = {
     --   enable = true,
     --   disable = function(_, buf)
