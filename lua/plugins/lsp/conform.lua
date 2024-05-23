@@ -31,6 +31,7 @@ end
 return {
   -- NOTE: Formatting
   "stevearc/conform.nvim",
+  event = "User FilePost",
   opts = {
     -- format_after_save = {
     --   async = true,

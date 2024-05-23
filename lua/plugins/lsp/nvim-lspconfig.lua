@@ -55,33 +55,4 @@ return {
       border = "rounded",
     })
   end,
-  dependencies = {
-    {
-      "stevearc/conform.nvim",
-    },
-    {
-      "mfussenegger/nvim-lint",
-    },
-    {
-      "pmizio/typescript-tools.nvim",
-    },
-    {
-      "williamboman/mason.nvim",
-      dependencies = {
-        "williamboman/mason-lspconfig.nvim",
-      },
-    },
-    {
-      "nvimdev/lspsaga.nvim",
-    },
-    {
-      "folke/neodev.nvim",
-    },
-    {
-      "folke/trouble.nvim",
-    },
-    {
-      "VidocqH/lsp-lens.nvim",
-    },
-  },
 }

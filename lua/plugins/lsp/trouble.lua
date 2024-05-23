@@ -1,6 +1,7 @@
 -- NOTE: For managing error and warning messages
 return {
   "folke/trouble.nvim",
+  event = "User FilePost",
   init = function()
     vim.keymap.set(
       "n",

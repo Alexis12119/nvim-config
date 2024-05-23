@@ -1,6 +1,7 @@
 -- NOTE: Linting
 return {
   "mfussenegger/nvim-lint",
+  event = "User FilePost",
   enabled = false,
   config = function()
     require("lint").linters_by_ft = {
