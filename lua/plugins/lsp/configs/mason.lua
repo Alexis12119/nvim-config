@@ -20,8 +20,8 @@ return {
       local mason = require "mason"
       -- local path = require "mason-core.path"
       local mason_lspconfig = require "mason-lspconfig"
-      local on_attach = require("plugins.lsp.settings.opts").on_attach
-      local capabilities = require("plugins.lsp.settings.opts").capabilities
+      local on_attach = require("plugins.lsp.opts").on_attach
+      local capabilities = require("plugins.lsp.opts").capabilities
 
       mason.setup {
         ui = {
