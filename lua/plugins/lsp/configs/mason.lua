@@ -39,54 +39,54 @@ return {
       mason_lspconfig.setup {
         automatic_installation = true,
         ensure_installed = {
-      -- Lua
-      "lua_ls",
-      "vimls",
+          -- Lua
+          "lua_ls",
+          "vimls",
 
-      -- Web Development
-      -- "cssls",
-      "html",
-      "tsserver",
-      -- "denols",
-      -- "vuels",
-      -- "tailwindcss",
-      -- "emmet_language_server",
-      "jsonls",
-      -- "eslint-lsp",
+          -- Web Development
+          -- "cssls",
+          "html",
+          "tsserver",
+          -- "denols",
+          -- "vuels",
+          -- "tailwindcss",
+          -- "emmet_language_server",
+          "jsonls",
+          -- "eslint-lsp",
 
-      -- PHP
-      -- "intelephense",
+          -- PHP
+          -- "intelephense",
 
-      -- C/C++
-      "clangd",
+          -- C/C++
+          "clangd",
 
-      -- CMake
-      -- "neocmake",
+          -- CMake
+          -- "neocmake",
 
-      -- Java
-      -- "jdtls",
+          -- Java
+          -- "jdtls",
 
-      -- Yaml
-      "yamlls",
+          -- Yaml
+          "yamlls",
 
-      -- Python
-      "pyright",
+          -- Python
+          "pyright",
 
-      -- Go
-      -- "gopls",
+          -- Go
+          -- "gopls",
 
-      -- C#
-      -- "omnisharp",
-      -- "omnisharp-mono",
+          -- C#
+          -- "omnisharp",
+          -- "omnisharp-mono",
 
-      -- Markdown
-      "vale_ls",
+          -- Markdown
+          "vale_ls",
 
-      -- Powershell
-      "powershell_es",
+          -- Powershell
+          "powershell_es",
 
-      -- Bash
-      "bashls",
+          -- Bash
+          "bashls",
         },
       }
 
