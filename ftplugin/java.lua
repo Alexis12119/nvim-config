@@ -77,8 +77,8 @@ local config = {
     "-data",
     workspace_dir,
   },
-  on_attach = require("plugins.lsp.opts").on_attach,
-  capabilities = require("plugins.lsp.opts").capabilities,
+  on_attach = require("plugins.lsp.settings.opts").on_attach,
+  capabilities = require("plugins.lsp.settings.opts").capabilities,
   -- 💀
   -- This is the default if not provided, you can remove it. Or adjust as needed.
   -- One dedicated LSP server & client will be started per unique root_dir
