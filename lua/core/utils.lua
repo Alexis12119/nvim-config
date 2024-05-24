@@ -90,7 +90,8 @@ function RunCode()
       -- default = "python %",
       -- linux = "python3 %",
       -- windows = "python %",
-      default = vim.fn.has "win32" == 1 and "python %" or "python3 %",
+      -- default = vim.fn.has "win32" == 1 and "python %" or "python3 %",
+      default = vim.fn.executable "python" and "python %" or "python3 %",
     },
     go = {
       default = "go run %",
