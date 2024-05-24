@@ -24,13 +24,12 @@ autocmd("VimEnter", {
   desc = "Open Telescope when it's a Directory",
 })
 
--- Hide folds and Disable statuscolumn in `nofile` buftype
-autocmd("BufEnter", {
+-- Hide folds and Disable statuscolumn in these filetypes
+autocmd("FileType", {
+  pattern = { "sagaoutline", "nvcheatsheet" },
   callback = function()
-    if vim.bo.buftype == "nofile" then
-      vim.opt_local.foldcolumn = "0"
-      vim.opt_local.stc = "" -- not really important
-    end
+    vim.opt_local.foldcolumn = "0"
+    vim.opt_local.stc = "" -- not really important
   end,
   group = general,
   desc = "Disable Fold & StatusColumn",
