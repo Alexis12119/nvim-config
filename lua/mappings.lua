@@ -57,6 +57,15 @@ vim.keymap.set("n", "<leader>or", function()
   end
 end, { desc = "Options | Toggle Relative Number", silent = true })
 
+vim.keymap.set("n", "<leader>oS", function()
+  vim.wo.spell = not vim.wo.spell
+  if vim.wo.spell then
+    vim.notify("Toggled On", vim.log.levels.INFO, { title = "Spell Check" })
+  else
+    vim.notify("Toggled Off", vim.log.levels.INFO, { title = "Spell Check" })
+  end
+end, { desc = "Options | Toggle Spell Check", silent = true })
+
 -- Toggle Theme
 vim.keymap.set("n", "<leader>ot", function()
   vim.g.switch_theme = not vim.g.switch_theme
