@@ -10,7 +10,7 @@ return {
       render = "default",
       stages = "fade",
       timeout = 3000,
-      top_down = true,
+      top_down = false,
     }
 
     vim.notify = require "notify"
