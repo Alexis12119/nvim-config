@@ -1,6 +1,7 @@
 -- NOTE: For Plugin Development
 return {
   "folke/neodev.nvim",
+  enabled = false,
   event = "LspAttach",
   opts = {
     library = {

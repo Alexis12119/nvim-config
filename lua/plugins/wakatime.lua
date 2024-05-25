@@ -1,7 +1,7 @@
 return {
   {
     "wakatime/vim-wakatime",
-    -- lazy = false,
     event = "VeryLazy",
+    enabled = vim.fn.filereadable(vim.fn.getenv "HOME" .. "/.wakatime.cfg"),
   },
 }
