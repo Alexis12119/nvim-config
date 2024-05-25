@@ -63,7 +63,7 @@ return {
     },
 
     rename = {
-      quit = ";",
+      quit = "q",
       exec = "<CR>",
       in_select = false,
     },
