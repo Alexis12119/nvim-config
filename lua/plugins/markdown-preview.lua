@@ -8,7 +8,7 @@ return {
       else
         vim.notify("Only available in markdown", vim.log.levels.WARN, { title = "Markdown-Preview" })
       end
-    end, { desc = "Markdown Preview", silent = true })
+    end, { desc = "Markdown | Preview", silent = true })
   end,
   build = function()
     vim.fn["mkdp#util#install"]()
