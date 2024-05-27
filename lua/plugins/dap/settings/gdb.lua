@@ -14,7 +14,9 @@ dap.configurations.cpp = {
       return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
     end,
     cwd = "${workspaceFolder}",
+    stopAtBeginningOfMainSubprogram = false,
   },
 }
 
 dap.configurations.c = dap.configurations.cpp
+dap.configurations.rust = dap.configurations.cpp
