@@ -1,11 +1,31 @@
 return {
   "monaqa/dial.nvim",
-  keys = {
-    { "<c-a>", "<Plug>(dial-increment)", { desc = "Dial | Increment", mode = { "n", "v" } } },
-    { "<c-x>", "<Plug>(dial-decrement)", { desc = "Dial | Decrement", mode = { "n", "v" } } },
-    { "g<c-a>", "g<Plug>(dial-increment)", { desc = "Dial | Increment", mode = { "n", "v" } } },
-    { "g<c-x>", "g<Plug>(dial-decrement)", { desc = "Dial | Decrement", mode = { "n", "v" } } },
-  },
+  init = function()
+    vim.keymap.set("n", "<C-a>", function()
+      require("dial.map").manipulate("increment", "normal")
+    end, { desc = "Dial | Increment", silent = true })
+    vim.keymap.set("n", "<C-x>", function()
+      require("dial.map").manipulate("decrement", "normal")
+    end, { desc = "Dial | Decrement", silent = true })
+    vim.keymap.set("n", "g<C-a>", function()
+      require("dial.map").manipulate("increment", "gnormal")
+    end, { desc = "Dial | Increment", silent = true })
+    vim.keymap.set("n", "g<C-x>", function()
+      require("dial.map").manipulate("decrement", "gnormal")
+    end, { desc = "Dial | Decrement", silent = true })
+    vim.keymap.set("v", "<C-a>", function()
+      require("dial.map").manipulate("increment", "visual")
+    end, { desc = "Dial | Increment", silent = true })
+    vim.keymap.set("v", "<C-x>", function()
+      require("dial.map").manipulate("decrement", "visual")
+    end, { desc = "Dial | Decrement", silent = true })
+    vim.keymap.set("v", "g<C-a>", function()
+      require("dial.map").manipulate("increment", "gvisual")
+    end, { desc = "Dial | Increment", silent = true })
+    vim.keymap.set("v", "g<C-x>", function()
+      require("dial.map").manipulate("decrement", "gvisual")
+    end, { desc = "Dial | Decrement", silent = true })
+  end,
   config = function()
     local augend = require "dial.augend"
     require("dial.config").augends:register_group {
