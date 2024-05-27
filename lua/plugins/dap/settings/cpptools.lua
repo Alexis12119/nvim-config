@@ -5,7 +5,7 @@ dap.adapters.cppdbg = {
   type = "executable",
   command = "OpenDebugAD7",
   options = {
-    detached = false,
+    detached = vim.fn.has "win32" == 0,
   },
 }
 

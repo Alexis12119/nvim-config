@@ -21,7 +21,7 @@ return {
     -- end
 
     -- NOTE: Make sure to install the needed files/exectubles through mason
-    -- require "plugins.dap.settings.cpptools"
+    require "plugins.dap.settings.cpptools"
     -- require "plugins.dap.settings.netcoredbg"
     -- require "plugins.dap.settings.godot"
     -- require "plugins.dap.settings.bash-debug-adapter"
@@ -34,7 +34,6 @@ return {
     require "plugins.dap.settings.debugpy"
     -- require "plugins.dap.settings.go-debug-adapter"
     require "plugins.dap.settings.js-debug"
-    require "plugins.dap.settings.gdb"
-    -- require "plugins.dap.settings.codelldb"
+    -- require "plugins.dap.settings.lldb-dap"
   end,
 }
