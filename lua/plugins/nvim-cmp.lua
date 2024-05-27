@@ -1,6 +1,4 @@
 -- NOTE: Completion Engine
-local luasnip = require "luasnip"
-local cmp = require "cmp"
 return {
   "hrsh7th/nvim-cmp",
   event = { "InsertEnter", "CmdlineEnter" },
@@ -14,14 +12,6 @@ return {
       end
     end, { desc = "Options | Toggle Autocomplete" })
   end,
-  opts = function()
-    cmp.setup.cmdline(":", {
-      mapping = cmp.mapping.preset.cmdline(),
-      sources = {
-        { name = "cmdline" },
-      },
-    })
-  end,
   config = function(_, opts)
     table.insert(opts.sources, 2, { name = "codeium" })
     opts.mapping = vim.tbl_extend("force", {}, opts.mapping, {
@@ -31,14 +21,20 @@ return {
       return (vim.g.toggle_cmp and vim.bo.buftype == "")
     end
 
-    luasnip.filetype_extend("javascriptreact", { "html" })
-    luasnip.filetype_extend("typescriptreact", { "html" })
-    luasnip.filetype_extend("svelte", { "html" })
-    luasnip.filetype_extend("vue", { "html" })
-    luasnip.filetype_extend("php", { "html" })
+    require("luasnip").filetype_extend("javascriptreact", { "html" })
+    require("luasnip").filetype_extend("typescriptreact", { "html" })
+    require("luasnip").filetype_extend("svelte", { "html" })
+    require("luasnip").filetype_extend("vue", { "html" })
+    require("luasnip").filetype_extend("php", { "html" })
 
     opts.completion["completeopt"] = "menu,menuone,noselect" -- disable autoselect
     require("cmp").setup(opts)
+    require("cmp").setup.cmdline(":", {
+      mapping = require("cmp").mapping.preset.cmdline(),
+      sources = {
+        { name = "cmdline" },
+      },
+    })
   end,
   dependencies = {
     {
