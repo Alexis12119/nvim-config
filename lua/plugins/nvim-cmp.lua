@@ -1,6 +1,4 @@
 -- NOTE: Completion Engine
-local luasnip = require "luasnip"
-local cmp = require "cmp"
 return {
   "hrsh7th/nvim-cmp",
   event = { "InsertEnter", "CmdlineEnter" },
@@ -17,12 +15,6 @@ return {
   opts = function(_, opts)
     local neogen = require "neogen"
     local luasnip = require "luasnip"
-    cmp.setup.cmdline(":", {
-      mapping = cmp.mapping.preset.cmdline(),
-      sources = {
-        { name = "cmdline" },
-      },
-    })
     -- Copilot tab completion: https://github.com/zbirenbaum/copilot-cmp?tab=readme-ov-file#tab-completion-configuration-highly-recommended
     -- Neogen tab cycling: https://github.com/danymat/neogen?tab=readme-ov-file#default-cycling-support
     -- Supertab from LazyVim: https://www.lazyvim.org/configuration/recipes#supertab
@@ -63,7 +55,6 @@ return {
       ["<A-;>"] = cmp.mapping.complete(), -- For Windows Terminal: Send Ctrl+Space into Alt+;
     })
   end,
-
   config = function(_, opts)
     -- table.insert(opts.sources, 2, { name = "codeium" })
     table.insert(opts.sources, 2, { name = "copilot" })
@@ -74,14 +65,20 @@ return {
       return (vim.g.toggle_cmp and vim.bo.buftype == "")
     end
 
-    luasnip.filetype_extend("javascriptreact", { "html" })
-    luasnip.filetype_extend("typescriptreact", { "html" })
-    luasnip.filetype_extend("svelte", { "html" })
-    luasnip.filetype_extend("vue", { "html" })
-    luasnip.filetype_extend("php", { "html" })
+    require("luasnip").filetype_extend("javascriptreact", { "html" })
+    require("luasnip").filetype_extend("typescriptreact", { "html" })
+    require("luasnip").filetype_extend("svelte", { "html" })
+    require("luasnip").filetype_extend("vue", { "html" })
+    require("luasnip").filetype_extend("php", { "html" })
 
     opts.completion["completeopt"] = "menu,menuone,noselect" -- disable autoselect
     require("cmp").setup(opts)
+    require("cmp").setup.cmdline(":", {
+      mapping = require("cmp").mapping.preset.cmdline(),
+      sources = {
+        { name = "cmdline" },
+      },
+    })
   end,
   dependencies = {
     {

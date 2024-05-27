@@ -43,7 +43,7 @@ return {
     code_action = {
       num_shortcut = true,
       keys = {
-        quit = "q",
+        quit = ";",
         exec = "<CR>",
       },
     },
@@ -63,7 +63,7 @@ return {
     },
 
     rename = {
-      quit = "q",
+      quit = ";",
       exec = "<CR>",
       in_select = false,
     },
