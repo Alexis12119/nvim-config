@@ -13,6 +13,7 @@ return {
     end, { desc = "Options | Toggle Autocomplete" })
   end,
   opts = function(_, opts)
+    local cmp = require "cmp"
     local neogen = require "neogen"
     local luasnip = require "luasnip"
     -- Copilot tab completion: https://github.com/zbirenbaum/copilot-cmp?tab=readme-ov-file#tab-completion-configuration-highly-recommended
