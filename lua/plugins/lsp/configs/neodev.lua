@@ -2,7 +2,7 @@
 return {
   "folke/neodev.nvim",
   enabled = false,
-  event = "LspAttach",
+  event = "User FilePost",
   opts = {
     library = {
       enabled = true, -- when not enabled, neodev will not change any settings to the LSP server
