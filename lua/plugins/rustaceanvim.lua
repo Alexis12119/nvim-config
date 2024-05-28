@@ -1,7 +1,8 @@
 return {
   "mrcjkb/rustaceanvim",
+  enabled = false, -- Disabled by Kev
   version = "^4", -- Recommended
-  lazy = false, -- This plugin is already lazy
+  lazy = false,   -- This plugin is already lazy
   config = function()
     local extension_path = vim.env.HOME .. "/.local/share/nvim/mason/packages/codelldb/extension/"
     local codelldb_path = extension_path .. "adapter/codelldb"

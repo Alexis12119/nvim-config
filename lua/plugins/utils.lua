@@ -14,6 +14,7 @@ return {
   -- Add Luarocks support for lazy.nvim
   {
     "vhyrro/luarocks.nvim",
+    enabled = false, -- Disabled by Kev
     priority = 1000,
     config = true,
   },

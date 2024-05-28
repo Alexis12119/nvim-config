@@ -1,7 +1,7 @@
 -- NOTE: Search motions
 return {
   "folke/flash.nvim",
-  enabled = false,
+  enabled = false, -- Disabled by Kev
   event = "CmdlineEnter",
   keys = { "f", "F", "t", "T" },
   opts = {

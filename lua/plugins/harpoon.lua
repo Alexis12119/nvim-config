@@ -1,6 +1,7 @@
 -- NOTE: Marks
 return {
   "ThePrimeagen/harpoon",
+  enabled = false, -- Disabled by Kev
   init = function()
     vim.keymap.set("n", "<leader>ha", function()
       require("harpoon"):list():add()
@@ -21,6 +22,5 @@ return {
     end, { desc = "Harpoon | Previous" })
   end,
   branch = "harpoon2",
-  enabled = false,
   opts = {},
 }
