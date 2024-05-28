@@ -41,7 +41,7 @@ return {
         ensure_installed = {
           -- Lua
           "lua_ls",
-          "vimls",
+          -- "vimls",
 
           -- Web Development
           -- "cssls",
