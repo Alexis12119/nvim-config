@@ -9,6 +9,7 @@ local formatters = {
   c = { "clang_format" },
   go = { "gofumpt" },
   cs = { "csharpier" },
+  sh = { "shfmt" },
 }
 
 local prettier_ft = {
