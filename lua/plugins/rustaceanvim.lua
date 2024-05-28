@@ -9,6 +9,7 @@ return {
     local this_os = vim.uv.os_uname().sysname
     local cfg = require "rustaceanvim.config"
     local on_attach = require("plugins.lsp.opts").on_attach
+    local capabilities = require("plugins.lsp.opts").capabilities
 
     -- The path is different on Windows
     if this_os:find "Windows" then
@@ -27,7 +28,9 @@ return {
         on_attach = on_attach,
         default_settings = {
           -- rust-analyzer language server configuration
-          ["rust-analyzer"] = {},
+          ["rust-analyzer"] = {
+            capabilities = capabilities,
+          },
         },
       },
       -- DAP configuration
