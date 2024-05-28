@@ -7,6 +7,8 @@ return {
     local codelldb_path = extension_path .. "adapter/codelldb"
     local liblldb_path = extension_path .. "lldb/lib/liblldb"
     local this_os = vim.uv.os_uname().sysname
+    local cfg = require "rustaceanvim.config"
+    local on_attach = require("plugins.lsp.opts").on_attach
 
     -- The path is different on Windows
     if this_os:find "Windows" then
@@ -16,8 +18,7 @@ return {
       -- The liblldb extension is .so for Linux and .dylib for MacOS
       liblldb_path = liblldb_path .. (this_os == "Linux" and ".so" or ".dylib")
     end
-    local cfg = require "rustaceanvim.config"
-    local on_attach = require("plugins.lsp.opts").on_attach
+
     vim.g.rustaceanvim = {
       -- Plugin configuration
       tools = {},
