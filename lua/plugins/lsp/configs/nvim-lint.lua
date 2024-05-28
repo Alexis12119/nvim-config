@@ -11,6 +11,7 @@ return {
       cpp = { "cpplint" },
       javascript = { "eslint" },
       typescript = { "eslint" },
+      yaml = { "actionlint" },
     }
 
     vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
