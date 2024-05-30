@@ -52,7 +52,7 @@ return {
           -- "tailwindcss",
           -- "emmet_language_server",
           "jsonls",
-          -- "eslint-lsp",
+          "eslint",
 
           -- PHP
           -- "intelephense",
