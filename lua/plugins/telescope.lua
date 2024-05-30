@@ -109,7 +109,7 @@ return {
           ["<C-j>"] = require("telescope.actions").toggle_selection + require("telescope.actions").move_selection_worse,
           ["<C-k>"] = require("telescope.actions").toggle_selection
             + require("telescope.actions").move_selection_better,
-          ["<C-q>"] = require("trouble.providers.telescope").open_with_trouble,
+          ["<C-q>"] = require("trouble.sources.telescope").open,
         },
       },
       file_ignore_patterns = { "node_modules", ".git" },
