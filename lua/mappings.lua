@@ -251,7 +251,7 @@ end, { desc = "Neovim | Grep Config Files", silent = true })
 -- Toggle Cheatsheet
 vim.keymap.set("n", "<leader>nc", function()
   if vim.bo.filetype == "nvcheatsheet" then
-    vim.cmd "Bdelete!"
+    vim.cmd "silent! close"
   else
     vim.cmd "NvCheatsheet"
   end
