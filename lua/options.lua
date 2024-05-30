@@ -1,5 +1,4 @@
 -- NOTE: Neovim options
-require "nvchad.options"
 
 local options = {
   backup = false, -- creates a backup file
@@ -28,7 +27,7 @@ local options = {
   expandtab = true, -- convert tabs to spaces
   shiftwidth = 2, -- the number of spaces inserted for each indentation
   tabstop = 2, -- insert 2 spaces for a tab
-  cursorline = true, -- highlight the current line
+  cursorline = false, -- highlight the current line
   number = true, -- set numbered lines
   relativenumber = true, -- set relative numbered lines
   numberwidth = 5, -- set number column width to 4 {default 4}
@@ -51,12 +50,16 @@ local options = {
 
 local global = {
   mkdp_auto_close = false, -- Don't Exit Preview When Switching Buffers
-  mapleader = " ", -- Set mapleader to space
   snipmate_snippets_path = vim.fn.stdpath "config" .. "/snippets/snipmate",
   startup_message = false, -- Show startup message
   random_header = false, -- Show random header
   skip_ts_context_commentstring_module = true,
   toggle_cmp = true,
+  ["loaded_node_provider"] = 0,
+  ["loaded_python3_provider"] = 0,
+  ["loaded_perl_provider"] = 0,
+  ["loaded_ruby_provider"] = 0,
+  toggle_theme_icon = "   ",
 }
 
 vim.opt.shortmess:append "Ac" -- Disable asking
@@ -80,3 +83,7 @@ if vim.fn.has "nvim-0.10" == 1 then
     vim.lsp.inlay_hint.enable(0)
   end
 end
+
+-- add binaries installed by mason.nvim to path
+local is_windows = vim.fn.has "win32" ~= 0
+vim.env.PATH = vim.fn.stdpath "data" .. "/mason/bin" .. (is_windows and ";" or ":") .. vim.env.PATH
