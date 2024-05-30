@@ -58,7 +58,7 @@ local global = {
 }
 
 vim.opt.shortmess:append "Ac" -- Disable asking
-vim.opt.whichwrap:append "<,>,[,],h,l"
+vim.opt.whichwrap:append "<>[]hl"
 vim.opt.iskeyword:append "-"
 
 for name, value in pairs(options) do
