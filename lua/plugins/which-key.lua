@@ -14,6 +14,7 @@ return {
     require("which-key").register {
       {
         ["<leader>"] = {
+          a = { name = " AI" },
           d = { name = "󰃤 Debugger" },
           r = { name = " Runner" },
           R = { name = "󰮓 Refactor" },

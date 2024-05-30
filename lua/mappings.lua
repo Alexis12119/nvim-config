@@ -347,4 +347,4 @@ end, { desc = "General | Close Other Buffers", silent = true })
 vim.keymap.set("n", "<Esc>", "<cmd>noh<cr>", { desc = "General | Clear Search Highlight", silent = true })
 
 -- Select All
-vim.keymap.set("n", "<leader>a", "ggVG", { desc = "General | Select All", silent = true })
+vim.keymap.set("n", "<leader>A", "ggVG", { desc = "General | Select All", silent = true })

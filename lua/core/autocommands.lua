@@ -206,3 +206,19 @@ autocmd("BufReadPost", {
   command = "set filetype=jsonc",
   group = kevinnitro,
 })
+
+local copilotchat = augroup("kevinnitro", { clear = true })
+
+-- Source: https://github.com/CopilotC-Nvim/CopilotChat.nvim#customizing-buffers
+autocmd("BufEnter", {
+  desc = "CopilotChat Autocommand",
+  pattern = "copilot-*",
+  callback = function()
+    vim.opt_local.relativenumber = true
+    -- C-p to print last response
+    vim.keymap.set("n", "<C-p>", function()
+      print(require("CopilotChat").response())
+    end, { buffer = true, remap = true })
+  end,
+  group = copilotchat,
+})
