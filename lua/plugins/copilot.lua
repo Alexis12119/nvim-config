@@ -34,6 +34,7 @@ return {
         "<Plug>(copilot-previous)",
         { desc = "Copilot | Show Previous Suggestion", silent = true }
       )
+      vim.g.copilot_filetypes = { ["copilot-chat"] = false }
     end,
   },
   {
