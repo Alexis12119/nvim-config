@@ -34,8 +34,10 @@ return {
           neogen.jump_next()
         elseif cmp.visible() then
           cmp.select_next_item()
-        elseif luasnip.expand_or_jumpable() then
-          luasnip.expand_or_jump()
+        -- elseif luasnip.expand_or_jumpable() then
+        --   luasnip.expand_or_jump()
+        elseif luasnip.expandable() then
+          luasnip.expand()
         elseif has_words_before() then
           cmp.complete()
         else
@@ -58,7 +60,7 @@ return {
   end,
   config = function(_, opts)
     -- table.insert(opts.sources, 2, { name = "codeium" })
-    table.insert(opts.sources, 2, { name = "copilot" })
+    -- table.insert(opts.sources, 2, { name = "copilot" })
     opts.mapping = vim.tbl_extend("force", {}, opts.mapping, {
       -- You can add here new mappings.
     })
@@ -98,12 +100,12 @@ return {
       opts = {},
     },
     -- AI Copilot
-    {
-      "zbirenbaum/copilot-cmp",
-      dependencies = { "zbirenbaum/copilot.lua" },
-      fix_pairs = true,
-      config = true,
-    },
+    -- {
+    --   "zbirenbaum/copilot-cmp",
+    --   dependencies = { "zbirenbaum/copilot.lua" },
+    --   fix_pairs = true,
+    --   config = true,
+    -- },
     {
       "L3MON4D3/LuaSnip",
       dependencies = "rafamadriz/friendly-snippets",

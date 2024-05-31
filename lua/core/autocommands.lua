@@ -207,7 +207,7 @@ autocmd("BufReadPost", {
   group = kevinnitro,
 })
 
-local copilotchat = augroup("kevinnitro", { clear = true })
+local copilotchat = augroup("copilotchat", { clear = true })
 
 -- Source: https://github.com/CopilotC-Nvim/CopilotChat.nvim#customizing-buffers
 autocmd("BufEnter", {
@@ -221,4 +221,18 @@ autocmd("BufEnter", {
     end, { buffer = true, remap = true })
   end,
   group = copilotchat,
+})
+
+local copilot = augroup("copilot", { clear = true })
+
+autocmd("ColorScheme", {
+  pattern = "solarized",
+  callback = function()
+    vim.api.nvim_set_hl(0, "CopilotSuggestion", {
+      fg = "#555555",
+      ctermfg = 8,
+      force = true,
+    })
+  end,
+  group = copilot,
 })
