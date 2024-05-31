@@ -2,6 +2,14 @@ vim.g.base46_cache = vim.fn.stdpath "data" .. "/nvchad/base46/"
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+if vim.fn.has "nvim-0.11" == 1 then
+  vim.tbl_add_reverse_lookup = function(tbl)
+    for k, v in pairs(tbl) do
+      tbl[v] = k
+    end
+  end
+end
+
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
