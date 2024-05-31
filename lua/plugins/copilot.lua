@@ -96,6 +96,12 @@ return {
         local actions = require "CopilotChat.actions"
         require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
       end, { desc = "CopilotChat | Prompt Actions", silent = true })
+      vim.keymap.set(
+        { "n", "v" },
+        "<leader>ac",
+        "<cmd>CopilotChatToggle<cr>",
+        { desc = "CopilotChat | Toggle Chat", silent = true }
+      )
     end,
     config = function(_, opts)
       local chat = require "CopilotChat"
