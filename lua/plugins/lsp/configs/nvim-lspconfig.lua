@@ -63,7 +63,7 @@ return {
         local hl = "DiagnosticSign" .. type
         vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
       end
-      config.signs.active = signs
+      config.signs = { active = signs }
     end
 
     vim.diagnostic.config(config)
