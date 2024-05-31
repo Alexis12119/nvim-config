@@ -1,6 +1,7 @@
 -- NOTE: Neovim options
 
 local options = {
+  laststatus = 3, -- global statusline
   backup = false, -- creates a backup file
   breakindent = true,
   conceallevel = 0, -- so that `` is visible in markdown files

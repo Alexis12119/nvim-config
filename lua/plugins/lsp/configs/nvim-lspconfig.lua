@@ -19,19 +19,9 @@ return {
     dofile(vim.g.base46_cache .. "lsp")
     require "nvchad.lsp"
 
-    local signs = { Error = "", Warn = "", Hint = "󰌵", Info = "" }
-    for type, icon in pairs(signs) do
-      local hl = "DiagnosticSign" .. type
-      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-    end
-
     local config = {
       -- Enable virtual text
       virtual_text = true,
-      -- show signs
-      signs = {
-        active = signs,
-      },
       update_in_insert = true,
       underline = true,
       severity_sort = true,
@@ -44,6 +34,37 @@ return {
         prefix = "",
       },
     }
+
+    local signs = { Error = "", Warn = "", Hint = "󰌵", Info = "" }
+
+    if vim.fn.has "nvim-0.11" == 1 then
+      config.signs = {
+        text = {
+          [vim.diagnostic.severity.ERROR] = signs.Error,
+          [vim.diagnostic.severity.WARN] = signs.Warn,
+          [vim.diagnostic.severity.HINT] = signs.Hint,
+          [vim.diagnostic.severity.INFO] = signs.Info,
+        },
+        linehl = {
+          [vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
+          [vim.diagnostic.severity.WARN] = "DiagnosticSignWarn",
+          [vim.diagnostic.severity.HINT] = "DiagnosticSignHint",
+          [vim.diagnostic.severity.INFO] = "DiagnosticSignInfo",
+        },
+        numhl = {
+          [vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
+          [vim.diagnostic.severity.WARN] = "DiagnosticSignWarn",
+          [vim.diagnostic.severity.HINT] = "DiagnosticSignHint",
+          [vim.diagnostic.severity.INFO] = "DiagnosticSignInfo",
+        },
+      }
+    else
+      for type, icon in pairs(signs) do
+        local hl = "DiagnosticSign" .. type
+        vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+      end
+      config.signs.active = signs
+    end
 
     vim.diagnostic.config(config)
 
