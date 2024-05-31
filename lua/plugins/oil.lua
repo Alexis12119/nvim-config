@@ -2,7 +2,7 @@
 return {
   "stevearc/oil.nvim",
   init = function()
-    vim.keymap.set("n", "-", "<CMD>Oil --float<CR>", { desc = "Oil | Open Oil Window" })
+    vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Oil | Open Oil" })
   end,
   cmd = "Oil",
   opts = {
