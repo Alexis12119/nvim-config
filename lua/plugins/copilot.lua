@@ -82,17 +82,17 @@ return {
       -- },
     },
     init = function()
-      vim.keymap.set("n", "<leader>aq", function()
+      vim.keymap.set({ "n", "v" }, "<leader>aq", function()
         local input = vim.fn.input "Quick Chat: "
         if input ~= "" then
           require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
         end
       end, { desc = "CopilotChat | Quick Chat", silent = true })
-      vim.keymap.set("n", "<leader>ah", function()
+      vim.keymap.set({ "n", "v" }, "<leader>ah", function()
         local actions = require "CopilotChat.actions"
         require("CopilotChat.integrations.telescope").pick(actions.help_actions())
       end, { desc = "CopilotChat | Help Actions", silent = true })
-      vim.keymap.set("n", "<leader>ap", function()
+      vim.keymap.set({ "n", "v" }, "<leader>ap", function()
         local actions = require "CopilotChat.actions"
         require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
       end, { desc = "CopilotChat | Prompt Actions", silent = true })
