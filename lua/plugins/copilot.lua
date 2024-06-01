@@ -20,20 +20,18 @@ return {
       vim.keymap.set("n", "<leader>ad", "<cmd>Copilot disable<cr>", { desc = "Copilot | Disable", silent = true })
       vim.keymap.set("n", "<leader>ae", "<cmd>Copilot enable<cr>", { desc = "Copilot | Enable", silent = true })
       vim.keymap.set("n", "<leader>aP", "<cmd>Copilot panel<cr>", { desc = "Copilot | Panel", silent = true })
-      vim.keymap.set("i", "<C-Right>", "<Plug>(copilot-accept-word)", { desc = "Copilot | Accept Word", silent = true })
-      vim.keymap.set(
-        "i",
-        "<M-C-Right>",
-        "<Plug>(copilot-accept-line)",
-        { desc = "Copilot | Accept Line", silent = true }
-      )
-      vim.keymap.set("i", "<M-]>", "<Plug>(copilot-next)", { desc = "Copilot | Show Next Suggestion", silent = true })
-      vim.keymap.set(
-        "i",
-        "<M-[>",
-        "<Plug>(copilot-previous)",
-        { desc = "Copilot | Show Previous Suggestion", silent = true }
-      )
+      vim.keymap.set("i", "<M-Right>", function()
+        vim.cmd "<Plug>(copilot-accept-word)"
+      end, { desc = "Copilot | Accept Word", silent = true })
+      vim.keymap.set("i", "<M-C-Right>", function()
+        vim.cmd "<Plug>(copilot-accept-line)"
+      end, { desc = "Copilot | Accept Line", silent = true })
+      vim.keymap.set("i", "<M-]>", function()
+        vim.cmd "<Plug>(copilot-next)"
+      end, { desc = "Copilot | Show Next Suggestion", silent = true })
+      vim.keymap.set("i", "<M-[>", function()
+        vim.cmd "<Plug>(copilot-previous)"
+      end, { desc = "Copilot | Show Previous Suggestion", silent = true })
       vim.g.copilot_filetypes = { ["copilot-chat"] = false }
     end,
   },
