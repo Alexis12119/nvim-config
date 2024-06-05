@@ -82,16 +82,13 @@ function RunCode()
     },
     cpp = {
       default = "g++ % -o  $fileBase && $fileBase",
-      -- debug = "g++ -g % -o  $fileBase",
+      debug = "g++ -g % -o  $fileBase",
       -- competitive = "g++ -std=c++17 -Wall -DAL -O2 % -o $fileBase && $fileBase<input.txt",
       -- competitive = "g++ -std=c++17 -Wall -DAL -O2 % -o $fileBase && $fileBase",
     },
     py = {
       -- default = "python %",
-      -- linux = "python3 %",
-      -- windows = "python %",
-      -- default = vim.fn.has "win32" == 1 and "python %" or "python3 %",
-      default = vim.fn.executable "python" and "python %" or "python3 %",
+      default = vim.fn.executable "python" == 1 and "python %" or "python3 %",
     },
     go = {
       default = "go run %",
