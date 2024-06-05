@@ -101,7 +101,7 @@ return {
         hidden = true,
       },
     },
-    extensions_list = { "themes", "terms", "fzf", "projects", "flutter" },
+    extensions_list = { "themes", "terms", "fzf", "projects" },
     defaults = {
       path_display = { "smart" },
       mappings = {

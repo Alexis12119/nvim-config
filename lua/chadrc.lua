@@ -37,10 +37,8 @@ M.ui = {
   theme = "catppuccin",
   theme_toggle = { "catppuccin", "one_light" },
   transparency = false,
-  lsp_semantic_tokens = false, -- needs nvim v0.9, just adds highlight groups for lsp semantic tokens
   hl_override = highlights.override,
   hl_add = highlights.add,
-  extended_integrations = {}, -- these aren't compiled by default, ex: "alpha", "notify"
   telescope = { style = "borderless" }, -- borderless / bordered
   cmp = {
     icons = true,
