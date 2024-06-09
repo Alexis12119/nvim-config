@@ -28,12 +28,12 @@ return {
     end
     opts.mapping = vim.tbl_extend("force", opts.mapping, {
       ["<tab>"] = cmp.mapping(function(fallback)
-        if cmp.visible() and has_words_before() then
-          cmp.select_next_item { behavior = cmp.SelectBehavior.Select }
-        elseif neogen.jumpable() then
+        -- if cmp.visible() and has_words_before() then
+        --   cmp.select_next_item { behavior = cmp.SelectBehavior.Select }
+        if neogen.jumpable() then
           neogen.jump_next()
-        elseif cmp.visible() then
-          cmp.select_next_item()
+        -- elseif cmp.visible() then
+        --   cmp.select_next_item()
         -- elseif luasnip.expand_or_jumpable() then
         --   luasnip.expand_or_jump()
         -- elseif luasnip.expandable() then
@@ -49,8 +49,8 @@ return {
       ["<S-tab>"] = cmp.mapping(function(fallback)
         if neogen.jumpable(true) then
           neogen.jump_prev()
-        elseif cmp.visible() then
-          cmp.select_prev_item()
+        -- elseif cmp.visible() then
+        --   cmp.select_prev_item()
         elseif luasnip.jumpable(-1) then
           luasnip.jump(-1)
         else
