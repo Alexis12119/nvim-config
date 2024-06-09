@@ -101,6 +101,12 @@ return {
         "<cmd>CopilotChatToggle<cr>",
         { desc = "CopilotChat | Toggle Chat", silent = true }
       )
+      vim.keymap.set("n", "<leader>ap", function()
+        vim.cmd("CopilotChatSave" .. vim.fn.getcwd())
+      end, { desc = "CopilotChat | Save Chat History", silent = true })
+      vim.keymap.set("n", "<leader>ap", function()
+        vim.cmd("CopilotChatLoad" .. vim.fn.getcwd())
+      end, { desc = "CopilotChat | Load Chat History", silent = true })
     end,
     config = function(_, opts)
       local chat = require "CopilotChat"
