@@ -16,7 +16,6 @@ return {
     "--fallback-style=Microsoft",
     -- "--header-insertion=never",
     -- "--query-driver=<list-of-white-listed-complers>"
-    "--query-driver=C:/ProgramData/mingw64/mingw64/bin/*",
     "--inlay-hints=true",
   },
 }
