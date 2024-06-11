@@ -6,6 +6,7 @@ return {
   config = function()
     require("lint").linters_by_ft = {
       -- python = { "flake8" },
+      -- ghaction = { "actionlint" },
     }
 
     vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
