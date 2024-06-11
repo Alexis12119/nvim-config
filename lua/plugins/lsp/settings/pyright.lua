@@ -2,7 +2,9 @@ return {
   settings = {
     python = {
       analysis = {
-        typeCheckingMode = "off",
+        typeCheckingMode = "standard",
+        diagnosticMode = "workspace",
+        disableOrganizeImports = true,
       },
     },
   },

@@ -1,9 +1,8 @@
-local formatters = {
+local formatters_by_ft = {
   lua = { "stylua" },
   python = {
     "ruff_fix",
     "ruff_format",
-    -- "isort",
   },
   -- cpp = { "clang_format" },
   -- c = { "clang_format" },
@@ -30,11 +29,12 @@ local prettier_ft = {
 }
 
 for _, filetype in pairs(prettier_ft) do
-  formatters[filetype] = { "prettier" }
+  formatters_by_ft[filetype] = { "prettier" }
 end
 
 local formatters = {
-  clang_format = { prepend_args = "--fallback-style", "Microsoft" },
+  clang_format = { append_args = { "--fallback-style=Microsoft" } },
+  ruff_fix = { append_args = { "--select=I", "--ignore=F401" } },
 }
 
 return {
@@ -50,6 +50,7 @@ return {
       quiet = true,
       lsp_fallback = true,
     },
-    formatters_by_ft = formatters,
+    formatters_by_ft = formatters_by_ft,
+    formatters = formatters,
   },
 }

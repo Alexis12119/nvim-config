@@ -230,13 +230,6 @@ autocmd("VimLeave", {
 })
 
 autocmd("BufReadPost", {
-  desc = "Set JSON to JSONC",
-  pattern = "*.json",
-  command = "set filetype=jsonc",
-  group = kevinnitro,
-})
-
-autocmd("BufReadPost", {
   desc = "Set tab width to 2 for some filetype",
   pattern = { "*.json", "*.markdown", "*.yaml", "*toml", "*.js", "*.ts" },
   command = "set tabstop=2 shiftwidth=2 expandtab",
