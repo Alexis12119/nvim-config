@@ -48,6 +48,13 @@ return {
 
     vim.keymap.set(
       "n",
+      "<leader><leader>",
+      "<cmd>Telescope oldfiles<cr>",
+      { desc = "Telescope | Recent Files", silent = true }
+    )
+
+    vim.keymap.set(
+      "n",
       "<leader>fH",
       "<cmd>Telescope highlights<cr>",
       { desc = "Telescope | Highlights", silent = true }
