@@ -348,3 +348,11 @@ vim.keymap.set("n", "<Esc>", "<cmd>noh<cr>", { desc = "General | Clear Search Hi
 
 -- Select All
 vim.keymap.set("n", "<leader>A", "ggVG", { desc = "General | Select All", silent = true })
+
+-- Move window
+vim.keymap.set("n", "sh", "<C-w>H", { desc = "General | Move Window to Far Left", silent = true })
+vim.keymap.set("n", "sj", "<C-w>J", { desc = "General | Move Window to Far Down", silent = true })
+vim.keymap.set("n", "sk", "<C-w>K", { desc = "General | Move Window to Far Up", silent = true })
+vim.keymap.set("n", "sl", "<C-w>L", { desc = "General | Move Window to Far Right", silent = true })
+vim.keymap.set("n", "sr", "<C-w>r", { desc = "General | Rotate Window Down/Right", silent = true })
+vim.keymap.set("n", "sR", "<C-w>R", { desc = "General | Rotate Window Up/Left", silent = true })
