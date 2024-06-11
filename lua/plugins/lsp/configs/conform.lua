@@ -5,8 +5,8 @@ local formatters = {
     "ruff_format",
     -- "isort",
   },
-  cpp = { "clang_format" },
-  c = { "clang_format" },
+  -- cpp = { "clang_format" },
+  -- c = { "clang_format" },
   go = { "gofumpt" },
   cs = { "csharpier" },
   sh = { "shfmt" },
@@ -32,6 +32,10 @@ local prettier_ft = {
 for _, filetype in pairs(prettier_ft) do
   formatters[filetype] = { "prettier" }
 end
+
+local formatters = {
+  clang_format = { prepend_args = "--fallback-style", "Microsoft" },
+}
 
 return {
   -- NOTE: Formatting
