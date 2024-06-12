@@ -1,4 +1,4 @@
-local formatters = {
+local formatters_by_ft = {
   lua = { "stylua" },
   python = { "autopep8" },
   cpp = { "clang_format" },
@@ -25,7 +25,7 @@ local prettier_ft = {
 }
 
 for _, filetype in pairs(prettier_ft) do
-  formatters[filetype] = { "prettier" }
+  formatters_by_ft[filetype] = { "prettier" }
 end
 
 return {
@@ -41,6 +41,6 @@ return {
     --   quiet = true,
     --   lsp_fallback = true,
     -- },
-    formatters_by_ft = formatters,
+    formatters_by_ft = formatters_by_ft,
   },
 }
