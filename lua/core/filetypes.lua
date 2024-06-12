@@ -8,4 +8,8 @@ vim.filetype.add {
     [".*/.github/workflows/.*%.yml"] = "yaml.ghaction",
     [".*/.github/workflows/.*%.yaml"] = "yaml.ghaction",
   },
+    pattern = {
+    [".*/.github/workflows/.*%.yml"] = "yaml.ghaction",
+    [".*/.github/workflows/.*%.yaml"] = "yaml.ghaction",
+  },
 }
