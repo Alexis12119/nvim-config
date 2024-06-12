@@ -84,6 +84,7 @@ return {
       "json",
       "json5",
       "jsonc",
+      "dockerfile",
     },
     indent = {
       enable = false,

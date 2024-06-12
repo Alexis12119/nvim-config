@@ -88,6 +88,10 @@ return {
 
           -- Bash
           "bashls",
+
+          -- Docker
+          "docker_compose_language_service",
+          "dockerls",
         },
       }
 
