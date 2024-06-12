@@ -106,6 +106,7 @@ return {
       },
       find_files = {
         hidden = true,
+        follow = true,
       },
     },
     extensions_list = { "themes", "terms", "fzf", "projects" },
