@@ -356,3 +356,6 @@ vim.keymap.set("n", "sk", "<C-w>K", { desc = "General | Move Window to Far Up", 
 vim.keymap.set("n", "sl", "<C-w>L", { desc = "General | Move Window to Far Right", silent = true })
 vim.keymap.set("n", "sr", "<C-w>r", { desc = "General | Rotate Window Down/Right", silent = true })
 vim.keymap.set("n", "sR", "<C-w>R", { desc = "General | Rotate Window Up/Left", silent = true })
+
+-- Close other windows
+vim.keymap.set("n", "<leader>W", "<cmd>only<cr>", { desc = "General | Close Other Windows", silent = true })
