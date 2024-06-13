@@ -122,7 +122,7 @@ return {
           ["<C-q>"] = require("trouble.sources.telescope").open,
         },
       },
-      file_ignore_patterns = { "node_modules/", "node_modules\\", ".git/", ".git\\" },
+      file_ignore_patterns = { "node_modules", ".git/", ".git\\" },
     },
   },
 }
