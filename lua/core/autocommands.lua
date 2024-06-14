@@ -232,13 +232,13 @@ local kevinnitro = augroup("kevinnitro", { clear = true })
 -- Docs about change vim cursor in terminal: https://neovim.io/doc/user/faq.html#faq
 autocmd({ "VimEnter", "VimResume" }, {
   desc = "Set Cursor in Neovim",
-  command = "set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175",
+  command = "set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:Cursor/lCursor,sm:block",
   group = kevinnitro,
 })
 
 autocmd({ "VimLeave", "VimSuspend" }, {
   desc = "Restore Cursor when exit Neovim",
-  command = "set guicursor=a:ver25-blinkon1000",
+  command = "set guicursor=a:ver25",
   group = kevinnitro,
 })
 
