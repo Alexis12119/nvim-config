@@ -119,7 +119,7 @@ return {
       cmd = "Neogen",
       config = true,
       init = function()
-        vim.keymap.set("n", "<leader>ln", "<cmd>NvimTreeToggle<cr>", { desc = "Neogen | Gen Docs", silent = true })
+        vim.keymap.set("n", "<leader>ld", "<cmd>Neogen<cr>", { desc = "Neogen | Generate Docs", silent = true })
       end,
     },
   },
