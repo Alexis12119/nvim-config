@@ -3,16 +3,10 @@ return {
   dependencies = {
     "nvim-telescope/telescope.nvim",
   },
-  keys = {
-    {
-      "<leader>gm",
-      function()
-        require("telescope").extensions.gitmoji.gitmoji()
-      end,
-      mode = "n",
-      desc = "telescope gitmoji",
-    },
-  },
+  cmd = "Telescope gitmoji",
+  init = function()
+    vim.keymap.set("n", "<leader>gm", "<cmd>Telescope gitmoji<cr>", { desc = "Telescope | Gitmoji", silent = true })
+  end,
   config = function()
     require("telescope").load_extension "gitmoji"
   end,
