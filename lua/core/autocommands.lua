@@ -242,16 +242,16 @@ autocmd({ "VimLeave", "VimSuspend" }, {
   group = kevinnitro,
 })
 
-autocmd("BufReadPost", {
+autocmd("FileType", {
   desc = "Set tab width to 2 for some filetype",
-  pattern = { "*.json", "*.markdown", "*.yaml", "*toml", "*.js", "*.ts" },
+  pattern = { "json", "markdown", "yaml", "toml", "javascript", "typescript", "html", "htmlx", "jsonc" },
   command = "set tabstop=2 shiftwidth=2 expandtab",
   group = kevinnitro,
 })
 
-autocmd("BufReadPost", {
+autocmd("FileType", {
   desc = "Set tab width to 4 for some filetype",
-  pattern = { "*.c", "*.cpp", "*.cs", "*.h", "*.py" },
+  pattern = { "c", "cpp", "cs", "py" },
   command = "set tabstop=4 shiftwidth=4 expandtab",
   group = kevinnitro,
 })
