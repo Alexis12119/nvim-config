@@ -12,8 +12,8 @@ return {
       markdown = { "markdownlint" },
       latex = { "vale" },
       cpp = { "cpplint" },
-      javascript = { "eslint" },
-      typescript = { "eslint" },
+      -- javascript = { "eslint" },
+      -- typescript = { "eslint" },
       ghaction = { "actionlint" },
     }
 
