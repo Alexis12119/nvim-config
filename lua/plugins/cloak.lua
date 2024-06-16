@@ -4,17 +4,18 @@ return {
     init = function()
       vim.keymap.set("n", "<leader>oc", "<cmd>CloakToggle<cr>", { desc = "Cloak | Toggle Cloak", silent = true })
     end,
-    cmd = { "CloakToggle" },
+    ft = { "yaml", "json", "jsonc", "toml", "env" },
+    cmd = { "CloakToggle", "CloakEnable", "CloakDisable" },
     opts = {
       cloak_length = "5",
       patterns = {
         {
           file_pattern = {
-            "**/*env*.{json,yml,yaml,toml}",
-            "**/*account*.{json,yml,yaml,toml}",
-            "**/*credential*.{json,yml,yaml,toml}",
-            "**/*password*.{json,yml,yaml,toml}",
-            "**/*config*.{json,yml,yaml,toml}",
+            "**/*env*.{json,jsonc,yml,yaml,toml,env}",
+            "**/*account*.{json,jsonc,yml,yaml,toml,env}",
+            "**/*credential*.{json,jsonc,yml,yaml,toml,env}",
+            "**/*password*.{json,jsonc,yml,yaml,toml,env}",
+            "**/*config*.{json,jsonc,yml,yaml,toml,env}",
           },
           cloak_pattern = {
             "=.+",
