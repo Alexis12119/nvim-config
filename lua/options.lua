@@ -12,6 +12,7 @@ local options = {
   ignorecase = true, -- ignore case in search patterns
   linebreak = true, -- for wrap to not break word
   mouse = "a", -- allow the mouse to be used in neovim
+  confirm = true, -- Confirm to save changes before exiting modified buffer
   pumheight = 8, -- pop up menu height
   pumblend = 0, -- transparency of pop-up menu
   showmode = false, -- we don't need to see things like -- INSERT -- anymore
