@@ -3,6 +3,33 @@ local fn = vim.fn
 local cwd = vim.fn.stdpath "config" .. "/"
 local config_dir = { cwd }
 
+-- local get_nvim_tree_buf_id = function()
+--   local windows = vim.api.nvim_list_wins()
+--   for _, win in ipairs(windows) do
+--     local buf = vim.api.nvim_win_get_buf(win)
+--     local name = vim.api.nvim_buf_get_name(buf)
+--     if string.find(name, "NvimTree") then
+--       return buf
+--     end
+--   end
+--   return ""
+-- end
+
+local delete_buffer = function(buf)
+  local cmd = buf and "Bdelete! " .. buf or "Bdelete!"
+  if vim.bo.modified then
+    local choice = vim.fn.confirm(("Save changes to %q?"):format(vim.fn.bufname()), "&Yes\n&No\n&Cancel")
+    if choice == 1 then -- Yes
+      vim.cmd.write()
+      vim.cmd(cmd)
+    elseif choice == 2 then -- No
+      vim.cmd(cmd)
+    end
+  else -- No changes
+    vim.cmd(cmd)
+  end
+end
+
 -- Remove All Text
 vim.keymap.set("n", "<leader>D", "<cmd>%d+<cr>", { desc = "General | Remove All Text", silent = true })
 
@@ -13,7 +40,10 @@ vim.keymap.set("n", "<leader>y", "<cmd>%y+<cr>", { desc = "General | Yank All Te
 vim.keymap.set("n", "<leader>q", "<cmd>qa!<cr>", { desc = "General | Quit", silent = true })
 
 -- Close Buffer
-vim.keymap.set("n", "<leader>c", "<cmd>Bdelete!<cr>", { desc = "General | Close Buffer", silent = true })
+-- vim.keymap.set("n", "<leader>c", "<cmd>Bdelete!<cr>", { desc = "General | Close Buffer", silent = true })
+vim.keymap.set("n", "<leader>c", function()
+  delete_buffer ""
+end, { desc = "General | Close Buffer", silent = true })
 
 -- Toggle Tabufline
 vim.keymap.set("n", "<leader>ob", function()
