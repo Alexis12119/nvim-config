@@ -18,6 +18,7 @@ return {
       loaded = "",
       not_loaded = "",
     },
+    border = "rounded",
   },
   performance = {
     rtp = {
