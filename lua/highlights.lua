@@ -23,6 +23,10 @@ M.override = {
   LspReferenceWrite = { link = "Underlined" },
   TblineFill = { link = "Normal" },
   NvimTreeRootFolder = { link = "NvimTreeFolderName" },
+  -- NOTE: Change visual color for easier to see the selection in catppuccin theme (based on Mocha)
+  Visual = {
+    bg = "#585b70",
+  },
 }
 
 ---@type HLTable

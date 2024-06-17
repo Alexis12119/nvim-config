@@ -36,7 +36,7 @@ local highlights = require "highlights"
 M.ui = {
   theme = "catppuccin",
   theme_toggle = { "catppuccin", "one_light" },
-  transparency = false,
+  transparency = true,
   hl_override = highlights.override,
   hl_add = highlights.add,
   telescope = { style = "borderless" }, -- borderless / bordered
