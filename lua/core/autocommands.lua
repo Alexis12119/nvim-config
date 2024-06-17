@@ -212,7 +212,8 @@ autocmd("ColorScheme", {
   pattern = "solarized",
   callback = function()
     vim.api.nvim_set_hl(0, "CopilotSuggestion", {
-      ctermfg = 8,
+      ctermfg = "light_grey",
+      fg = "light_grey",
       force = true,
     })
   end,

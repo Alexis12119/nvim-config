@@ -8,9 +8,10 @@ local M = {}
 ---@type Base46HLGroupsList
 M.override = {
   Comment = {
+    fg = "light_grey",
     italic = true,
   },
-  ["@comment"] = { italic = true },
+  ["@comment"] = { fg = "light_grey", italic = true },
   Search = { fg = "black", bg = "blue" },
   IncSearch = { fg = "black", bg = "red" },
   CurSearch = { fg = "black", bg = "blue" },
@@ -25,7 +26,7 @@ M.override = {
   NvimTreeRootFolder = { link = "NvimTreeFolderName" },
   -- NOTE: Change visual color for easier to see the selection in catppuccin theme (based on Mocha)
   Visual = {
-    bg = "#585b70",
+    bg = "#45475a",
   },
 }
 
