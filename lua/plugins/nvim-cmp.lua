@@ -28,9 +28,9 @@ return {
     end
     opts.mapping = vim.tbl_extend("force", opts.mapping, {
       ["<tab>"] = cmp.mapping(function(fallback)
-        -- if cmp.visible() and has_words_before() then
-        --   cmp.select_next_item { behavior = cmp.SelectBehavior.Select }
-        if neogen.jumpable() then
+        if cmp.visible() and has_words_before() then
+          cmp.select_next_item { behavior = cmp.SelectBehavior.Select }
+        elseif neogen.jumpable() then
           neogen.jump_next()
         -- elseif cmp.visible() then
         --   cmp.select_next_item()
