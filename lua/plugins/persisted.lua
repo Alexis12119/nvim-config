@@ -7,7 +7,7 @@ return {
     vim.keymap.set("n", "<leader>ss", "<cmd>SessionSave<cr>", { desc = "Persisted | Save", silent = true })
     vim.keymap.set("n", "<leader>so", "<cmd>SessionStop<cr>", { desc = "Persisted | Stop", silent = true })
     vim.keymap.set("n", "<leader>sl", "<cmd>SessionLoad<cr>", { desc = "Persisted | Load", silent = true })
-    vim.keymap.set("n", "<leader>sL", "<cmd>SessionLoad<cr>", { desc = "Persisted | Load Last", silent = true })
+    vim.keymap.set("n", "<leader>sL", "<cmd>SessionLoadLast<cr>", { desc = "Persisted | Load Last", silent = true })
     vim.keymap.set("n", "<leader>sd", "<cmd>SessionDelete<cr>", { desc = "Persisted | Delete", silent = true })
     vim.keymap.set("n", "<leader>st", "<cmd>SessionToggle<cr>", { desc = "Persisted | Toggle", silent = true })
   end,
