@@ -2,7 +2,7 @@
 return {
   "olimorris/persisted.nvim",
   enabled = true,
-  lazy = false,
+  lazy = true,
   init = function()
     vim.keymap.set("n", "<leader>ss", "<cmd>SessionSave<cr>", { desc = "Persisted | Save", silent = true })
     vim.keymap.set("n", "<leader>so", "<cmd>SessionStop<cr>", { desc = "Persisted | Stop", silent = true })
@@ -24,8 +24,8 @@ return {
     save_dir = vim.fn.expand(vim.fn.stdpath "data" .. "/sessions/"), -- directory where session files are saved
     silent = false, -- silent nvim message when sourcing session file
     use_git_branch = true, -- create session files based on the branch of the git enabled repository
-    autosave = true, -- automatically save session files when exiting Neovim
-    autoload = true, -- automatically load the session for the cwd on Neovim startup
+    autosave = false, -- automatically save session files when exiting Neovim
+    autoload = false, -- automatically load the session for the cwd on Neovim startup
     should_autosave = function()
       local fts = { "NvimTree", "nvdash" }
       local current_ft = vim.bo.filetype
