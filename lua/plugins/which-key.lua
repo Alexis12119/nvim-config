@@ -7,6 +7,9 @@ return {
       separator = "➜", -- symbol used between a key and it's label
       group = "", -- symbol prepended to a group
     },
+    window = {
+      border = "single",
+    },
   },
   config = function(_, opts)
     dofile(vim.g.base46_cache .. "whichkey")
