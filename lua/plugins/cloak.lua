@@ -2,7 +2,7 @@ return {
   {
     "laytan/cloak.nvim",
     init = function()
-      vim.keymap.set("n", "<leader>oc", "<cmd>CloakToggle<cr>", { desc = "Cloak | Toggle Cloak", silent = true })
+      vim.keymap.set("n", "<leader>oC", "<cmd>CloakToggle<cr>", { desc = "Cloak | Toggle Cloak", silent = true })
     end,
     ft = { "yaml", "json", "jsonc", "toml", "env" },
     cmd = { "CloakToggle", "CloakEnable", "CloakDisable" },

@@ -109,6 +109,6 @@ return {
     },
   },
   init = function()
-    vim.keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<cr>", { desc = "Noice | Dismiss", silent = true })
+    vim.keymap.set("n", "<leader>od", "<cmd>NoiceDismiss<cr>", { desc = "Noice | Dismiss", silent = true })
   end,
 }
