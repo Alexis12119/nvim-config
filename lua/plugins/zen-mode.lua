@@ -8,5 +8,12 @@ return {
     window = {
       width = 0.7,
     },
+    plugins = {
+      options = {
+        laststatus = 0,
+      },
+      gitsigns = { enabled = true },
+      tmux = { enabled = true },
+    },
   },
 }
