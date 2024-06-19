@@ -48,13 +48,6 @@ return {
 
     vim.keymap.set(
       "n",
-      "<leader><leader>",
-      "<cmd>Telescope oldfiles<cr>",
-      { desc = "Telescope | Recent Files", silent = true }
-    )
-
-    vim.keymap.set(
-      "n",
       "<leader>fH",
       "<cmd>Telescope highlights<cr>",
       { desc = "Telescope | Highlights", silent = true }
@@ -87,6 +80,23 @@ return {
       "<cmd>telescope git_commits<cr>",
       { desc = "telescope | checkout commit", silent = true }
     )
+
+    vim.keymap.set("n", "<leader><leader>", function()
+      require("telescope.builtin").find_files {
+        find_command = {
+          "fd",
+          "--type",
+          "file",
+          "--color",
+          "never",
+          "--hidden",
+          "--no-ignore",
+          "--follow",
+          "--exclude",
+          "**/{.git,node_modules,__pycache__,.venv,venv,*cache*}/**",
+        },
+      }
+    end, { desc = "Telescope | All Files", silent = true })
   end,
   dependencies = {
     {
@@ -101,10 +111,17 @@ return {
     pickers = {
       oldfiles = {
         prompt_title = "Recent Files",
+        only_cwd = true,
       },
       find_files = {
         hidden = true,
         follow = true,
+      },
+      live_grep = {
+        additional_args = { "--hidden" },
+      },
+      grep_string = {
+        additional_args = { "--hidden" },
       },
     },
     extensions_list = { "themes", "terms", "fzf", "projects" },
