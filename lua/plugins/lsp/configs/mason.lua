@@ -63,7 +63,7 @@ return {
           "clangd",
 
           -- CMake
-          -- "neocmake",
+          "neocmake",
 
           -- Java
           -- "jdtls",
