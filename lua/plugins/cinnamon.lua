@@ -9,8 +9,8 @@ return {
     extended_keymaps = false, -- Create extended keymaps.
     override_keymaps = false, -- The plugin keymaps will override any existing keymaps.
     horizontal_scroll = true,
-    default_delay = 1,
+    default_delay = 2,
     scroll_limit = 100,
-    max_length = -1,
+    max_length = 50,
   },
 }
