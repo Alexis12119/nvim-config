@@ -16,14 +16,13 @@ M.override = {
   IncSearch = { fg = "black", bg = "red" },
   CurSearch = { fg = "black", bg = "blue" },
   Substitute = { fg = "black", bg = "green" },
-  -- NvDashAscii = { bg = "NONE", fg = "blue" },
-  -- NvDashButtons = { bg = "NONE" },
   FoldColumn = { bg = "NONE" },
   LspReferenceRead = { link = "Underlined" },
   LspReferenceText = { link = "Underlined" },
   LspReferenceWrite = { link = "Underlined" },
   TblineFill = { link = "Normal" },
   NvimTreeRootFolder = { link = "NvimTreeFolderName" },
+  gitcommitComment = { link = "Comment", fg = "grey_fg2" },
   -- NOTE: Change visual color for easier to see the selection in catppuccin theme (based on Mocha)
   Visual = {
     bg = "#45475a",
