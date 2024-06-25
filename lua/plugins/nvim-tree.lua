@@ -67,8 +67,7 @@ return {
         "^\\.?vscode$",
       },
     },
-    -- sync_root_with_cwd = true,
-    sync_root_with_cwd = false, -- not to sync git folder upper :v
+    sync_root_with_cwd = true,
     update_focused_file = {
       enable = true,
       update_cwd = true,
