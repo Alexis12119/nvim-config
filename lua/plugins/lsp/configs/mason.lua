@@ -83,7 +83,8 @@ return {
           -- "omnisharp-mono",
 
           -- Markdown
-          "vale_ls",
+          -- "vale_ls",
+          "marksman",
 
           -- Powershell
           "powershell_es",
