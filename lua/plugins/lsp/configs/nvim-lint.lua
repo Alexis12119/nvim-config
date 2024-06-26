@@ -11,7 +11,7 @@ return {
       python = { "ruff" },
       markdown = { "markdownlint" },
       latex = { "vale" },
-      cpp = { "cpplint" },
+      -- cpp = { "cpplint" },
       -- javascript = { "eslint" },
       -- typescript = { "eslint" },
       ghaction = { "actionlint" },
