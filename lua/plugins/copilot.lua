@@ -102,6 +102,12 @@ return {
         { desc = "CopilotChat | Toggle Chat", silent = true }
       )
       vim.keymap.set(
+        { "n", "v" },
+        "<leader>aS",
+        "<cmd>CopilotChatStop<cr>",
+        { desc = "CopilotChat | Stop Chat", silent = true }
+      )
+      vim.keymap.set(
         "n",
         "<leader>as",
         "<cmd>CopilotChatSave<cr>",
