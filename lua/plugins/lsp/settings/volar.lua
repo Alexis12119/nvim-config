@@ -1,5 +1,4 @@
 return {
-  filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
   settings = {
     init_options = {
       vue = {
