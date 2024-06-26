@@ -3,14 +3,16 @@ return {
   "declancm/cinnamon.nvim",
   event = "User FilePost",
   opts = {
-    -- KEYMAPS:
-    default_keymaps = true, -- Create default keymaps.
-    extra_keymaps = false, -- Create extra keymaps.
-    extended_keymaps = false, -- Create extended keymaps.
-    override_keymaps = false, -- The plugin keymaps will override any existing keymaps.
-    horizontal_scroll = true,
-    default_delay = 2,
-    scroll_limit = 100,
-    max_length = 50,
+    keymaps = {
+        basic = true,           -- Enable the basic keymaps
+        extra = false,          -- Enable the extra keymaps
+    },
+    options = {
+        delay = 7,              -- Delay between each movement step (in ms)
+        max_delta = {
+            line = 150,         -- Maximum delta for line movements
+            column = 200,       -- Maximum delta for column movements
+        },
+    },
   },
 }
