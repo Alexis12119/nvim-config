@@ -20,26 +20,27 @@ return {
     -- Neogen tab cycling: https://github.com/danymat/neogen?tab=readme-ov-file#default-cycling-support
     -- Supertab from LazyVim: https://www.lazyvim.org/configuration/recipes#supertab
     local has_words_before = function()
-      if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
-        return false
-      end
+      unpack = unpack or table.unpack
       local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-      return col ~= 0 and vim.api.nvim_buf_get_text(0, line - 1, 0, line - 1, col, {})[1]:match "^%s*$" == nil
+      return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match "%s" == nil
     end
     opts.mapping = vim.tbl_extend("force", opts.mapping, {
       ["<tab>"] = cmp.mapping(function(fallback)
-        if cmp.visible() and has_words_before() then
-          cmp.select_next_item { behavior = cmp.SelectBehavior.Select }
+        if cmp.visible() then
+          -- You could replace select_next_item() with confirm({ select = true }) to get VS Code autocompletion behavior
+          cmp.select_next_item()
         elseif neogen.jumpable() then
           neogen.jump_next()
-        -- elseif cmp.visible() then
-        --   cmp.select_next_item()
         -- elseif luasnip.expand_or_jumpable() then
         --   luasnip.expand_or_jump()
         -- elseif luasnip.expandable() then
         --   luasnip.expand()
-        elseif luasnip.jumpable() then
-          luasnip.jump()
+        -- elseif luasnip.jumpable() then
+        --   luasnip.jump()
+        elseif vim.snippet.active { direction = 1 } then
+          vim.schedule(function()
+            vim.snippet.jump(1)
+          end)
         elseif has_words_before() then
           cmp.complete()
         else
@@ -47,12 +48,14 @@ return {
         end
       end, { "i", "s" }),
       ["<S-tab>"] = cmp.mapping(function(fallback)
-        if neogen.jumpable(true) then
+        if cmp.visible() then
+          cmp.select_prev_item()
+        elseif neogen.jumpable(true) then
           neogen.jump_prev()
-        -- elseif cmp.visible() then
-        --   cmp.select_prev_item()
-        elseif luasnip.jumpable(-1) then
-          luasnip.jump(-1)
+        elseif vim.snippet.active { direction = -1 } then
+          vim.schedule(function()
+            vim.snippet.jump(-1)
+          end)
         else
           fallback()
         end
