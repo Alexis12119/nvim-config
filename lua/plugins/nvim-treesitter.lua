@@ -20,7 +20,6 @@ return {
     require("nvim-treesitter.configs").setup(opts)
   end,
   dependencies = {
-    "JoosepAlviste/nvim-ts-context-commentstring",
     {
       "windwp/nvim-ts-autotag",
       opts = {
