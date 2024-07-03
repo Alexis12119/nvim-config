@@ -14,7 +14,7 @@ return {
   end,
   config = function(_, opts)
     -- table.insert(opts.sources, 2, { name = "codeium" })
-    -- table.insert(opts.sources, 1, { name = "supermaven" })
+    table.insert(opts.sources, 1, { name = "supermaven" })
     opts.mapping = vim.tbl_extend("force", {}, opts.mapping, {
       -- You can add here new mappings.
     })
@@ -52,6 +52,19 @@ return {
       "Exafunction/codeium.nvim",
       enabled = false,
       opts = {},
+    },
+    {
+      "supermaven-inc/supermaven-nvim",
+      event = "User FilePost",
+      opts = {
+        disable_keymaps = true,
+        disable_inline_completion = true,
+        keymaps = {
+          accept_suggestion = "<C-y>",
+          clear_suggestion = "<C-]>",
+          accept_word = "<C-j>",
+        },
+      },
     },
     {
       "L3MON4D3/LuaSnip",
