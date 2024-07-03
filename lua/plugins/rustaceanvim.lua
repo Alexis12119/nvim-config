@@ -1,3 +1,4 @@
+-- NOTE: Improve Rust Development
 return {
   "mrcjkb/rustaceanvim",
   version = "^4", -- Recommended

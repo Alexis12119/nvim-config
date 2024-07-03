@@ -1,3 +1,4 @@
+-- NOTE: Vim Motions Guide
 return {
   "tris203/precognition.nvim",
   enabled = false,
