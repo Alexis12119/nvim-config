@@ -1,4 +1,5 @@
 -- NOTE: Completion Engine
+
 return {
   "hrsh7th/nvim-cmp",
   event = { "InsertEnter", "CmdlineEnter" },
@@ -15,7 +16,6 @@ return {
   opts = function(_, opts)
     local cmp = require "cmp"
     local neogen = require "neogen"
-    local luasnip = require "luasnip"
     -- Copilot tab completion: https://github.com/zbirenbaum/copilot-cmp?tab=readme-ov-file#tab-completion-configuration-highly-recommended
     -- Neogen tab cycling: https://github.com/danymat/neogen?tab=readme-ov-file#default-cycling-support
     -- Supertab from LazyVim: https://www.lazyvim.org/configuration/recipes#supertab
@@ -64,8 +64,9 @@ return {
     })
   end,
   config = function(_, opts)
-    -- table.insert(opts.sources, 2, { name = "codeium" })
     -- table.insert(opts.sources, 2, { name = "copilot" })
+    -- table.insert(opts.sources, 2, { name = "codeium" })
+    -- table.insert(opts.sources, 1, { name = "supermaven" })
     opts.mapping = vim.tbl_extend("force", {}, opts.mapping, {
       -- You can add here new mappings.
     })
@@ -111,6 +112,20 @@ return {
     --   fix_pairs = true,
     --   config = true,
     -- },
+    {
+      "supermaven-inc/supermaven-nvim",
+      enabled = false,
+      event = "User FilePost",
+      opts = {
+        -- disable_keymaps = true,
+        -- disable_inline_completion = true,
+        keymaps = {
+          accept_suggestion = "<C-y>",
+          clear_suggestion = "<C-]>",
+          accept_word = "<C-j>",
+        },
+      },
+    },
     {
       "L3MON4D3/LuaSnip",
       dependencies = "rafamadriz/friendly-snippets",

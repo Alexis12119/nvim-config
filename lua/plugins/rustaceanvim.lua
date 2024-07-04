@@ -1,3 +1,4 @@
+-- NOTE: Improve Rust Development
 return {
   "mrcjkb/rustaceanvim",
   enabled = false, -- Disabled by Kev
