@@ -1,5 +1,9 @@
 return {
   "richardbizik/nvim-toc",
+  cmd = {
+    "TOCList",
+    "TOC",
+  },
   init = function()
     vim.keymap.set("n", "<leader>ml", function()
       if vim.bo.filetype == "markdown" then

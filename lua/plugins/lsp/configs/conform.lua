@@ -6,9 +6,11 @@ local formatters_by_ft = {
   },
   -- cpp = { "clang_format" },
   -- c = { "clang_format" },
-  go = { "gofumpt" },
-  cs = { "csharpier" },
+  -- go = { "gofumpt" },
+  -- cs = { "csharpier" },
   sh = { "shfmt" },
+  ["markdown"] = { "prettier", "markdown-toc" },
+  ["markdown.mdx"] = { "prettier", "markdown-toc" },
 }
 
 local prettier_ft = {
@@ -20,7 +22,6 @@ local prettier_ft = {
   "javascriptreact",
   "javascript",
   "less",
-  "markdown",
   "scss",
   "typescript",
   "typescriptreact",

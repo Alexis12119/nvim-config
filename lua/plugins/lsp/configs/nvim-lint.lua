@@ -9,7 +9,7 @@ return {
 
     require("lint").linters_by_ft = {
       python = { "ruff" },
-      markdown = { "markdownlint" },
+      -- markdown = { "markdownlint" },
       latex = { "vale" },
       -- cpp = { "cpplint" },
       -- javascript = { "eslint" },
