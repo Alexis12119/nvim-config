@@ -1,3 +1,2 @@
 - snippets:
   - https://github.com/webalorn/competitive_snippets
-  - https://github.com/webalorn/competitive_snippets
