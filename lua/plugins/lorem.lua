@@ -5,22 +5,18 @@ return {
   init = function()
     vim.keymap.set("n", "<leader>oL", function()
       vim.ui.input({ prompt = "Number of word(s) / paragraph(s)" }, function(number)
-        if number == nil then
-          vim.notify("LoremIpsum needs number!", vim.log.levels.WARN, { title = "Lorem" })
-          return
-        end
+        number = number ~= nil and number or ""
 
         local options = { "words", "paragraphs" }
         vim.ui.select(options, {
           prompt = "Schemes",
           telescope = require("telescope.themes").get_cursor(),
-        }, function(selected)
-          if selected == nil then
-            vim.notify("LoremIpsum needs schemes!", vim.log.levels.WARN, { title = "Lorem" })
+        }, function(schemes)
+          if schemes == nil then
             return
           end
 
-          vim.cmd("LoremIpsum " .. number .. " " .. selected)
+          vim.cmd("LoremIpsum " .. number .. " " .. schemes)
         end)
       end)
     end, { desc = "Lorem | Generate", silent = true })
