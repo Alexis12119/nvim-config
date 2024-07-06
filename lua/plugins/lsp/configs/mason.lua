@@ -52,7 +52,7 @@ return {
           -- "denols",
           -- "vuels",
           -- "tailwindcss",
-          -- "emmet_language_server",
+          "emmet_language_server",
           "jsonls",
           -- "eslint",
 
