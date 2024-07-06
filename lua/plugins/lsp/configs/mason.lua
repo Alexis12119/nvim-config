@@ -46,7 +46,7 @@ return {
           -- "vimls",
 
           -- Web Development
-          -- "cssls",
+          "cssls",
           "html",
           "tsserver",
           -- "denols",
