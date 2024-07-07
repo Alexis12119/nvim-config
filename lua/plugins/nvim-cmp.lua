@@ -14,7 +14,7 @@ return {
     end, { desc = "Options | Toggle Autocomplete" })
   end,
   config = function(_, opts)
-    -- table.insert(opts.sources, 2, { name = "codeium" })
+    table.insert(opts.sources, 2, { name = "codeium" })
     -- table.insert(opts.sources, 1, { name = "supermaven" })
     opts.mapping = vim.tbl_extend("force", {}, opts.mapping, {
       -- You can add here new mappings.
@@ -51,11 +51,11 @@ return {
     -- AI Autocomplete
     {
       "Exafunction/codeium.nvim",
-      enabled = false,
       opts = {},
     },
     {
       "supermaven-inc/supermaven-nvim",
+      enabled = false,
       event = "User FilePost",
       opts = {
         -- disable_keymaps = true,
