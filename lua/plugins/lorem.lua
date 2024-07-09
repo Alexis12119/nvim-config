@@ -4,19 +4,16 @@ return {
   cmd = { "LoremIpsum" },
   init = function()
     vim.keymap.set("n", "<leader>oL", function()
-      vim.ui.input({ prompt = "Number of word(s) / paragraph(s)" }, function(number)
+      vim.ui.input({ prompt = "Enter number of word(s) / paragraph(s)" }, function(number)
         number = number ~= nil and number or ""
-
-        local options = { "words", "paragraphs" }
-        vim.ui.select(options, {
-          prompt = "Schemes",
-          telescope = require("telescope.themes").get_cursor(),
-        }, function(schemes)
-          if schemes == nil then
+        vim.ui.select({ "words", "paragraphs" }, {
+          prompt = "Select Lorem scheme",
+          telescope = require("telescope.themes").get_dropdown(),
+        }, function(scheme)
+          if scheme == nil then
             return
           end
-
-          vim.cmd("LoremIpsum " .. number .. " " .. schemes)
+          vim.cmd("LoremIpsum " .. number .. " " .. scheme)
         end)
       end)
     end, { desc = "Lorem | Generate", silent = true })

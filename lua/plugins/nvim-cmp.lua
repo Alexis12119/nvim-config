@@ -15,7 +15,7 @@ return {
   end,
   opts = function(_, opts)
     local cmp = require "cmp"
-    local neogen = require "neogen"
+    -- local neogen = require "neogen"
     -- Copilot tab completion: https://github.com/zbirenbaum/copilot-cmp?tab=readme-ov-file#tab-completion-configuration-highly-recommended
     -- Neogen tab cycling: https://github.com/danymat/neogen?tab=readme-ov-file#default-cycling-support
     -- Supertab from LazyVim: https://www.lazyvim.org/configuration/recipes#supertab
@@ -130,18 +130,6 @@ return {
       "L3MON4D3/LuaSnip",
       dependencies = "rafamadriz/friendly-snippets",
       build = "make install_jsregexp",
-    },
-    -- Neogen
-    {
-      "danymat/neogen",
-      cmd = "Neogen",
-      config = true,
-      init = function()
-        vim.keymap.set("n", "<leader>ld", "<cmd>Neogen<cr>", { desc = "Neogen | Generate Docs", silent = true })
-      end,
-      opts = {
-        snippet_engine = "luasnip",
-      },
     },
   },
 }
