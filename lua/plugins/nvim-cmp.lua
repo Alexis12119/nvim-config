@@ -29,8 +29,8 @@ return {
         if cmp.visible() then
           -- You could replace select_next_item() with confirm({ select = true }) to get VS Code autocompletion behavior
           cmp.select_next_item()
-        elseif neogen.jumpable() then
-          neogen.jump_next()
+        -- elseif neogen.jumpable() then
+        --   neogen.jump_next()
         -- elseif luasnip.expand_or_jumpable() then
         --   luasnip.expand_or_jump()
         -- elseif luasnip.expandable() then
@@ -50,8 +50,8 @@ return {
       ["<S-tab>"] = cmp.mapping(function(fallback)
         if cmp.visible() then
           cmp.select_prev_item()
-        elseif neogen.jumpable(true) then
-          neogen.jump_prev()
+        -- elseif neogen.jumpable(true) then
+        --   neogen.jump_prev()
         elseif vim.snippet.active { direction = -1 } then
           vim.schedule(function()
             vim.snippet.jump(-1)
@@ -139,6 +139,9 @@ return {
       init = function()
         vim.keymap.set("n", "<leader>ld", "<cmd>Neogen<cr>", { desc = "Neogen | Generate Docs", silent = true })
       end,
+      opts = {
+        snippet_engine = "luasnip",
+      },
     },
   },
 }
