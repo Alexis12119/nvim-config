@@ -18,7 +18,7 @@ return {
     end, { desc = "Markdown | Render", silent = true })
   end,
   opts = {
-    start_enabled = false,
+    enabled = false,
   },
   config = function(_, opts)
     require("render-markdown").setup(opts)
