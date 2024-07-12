@@ -153,6 +153,81 @@ autocmd("FileType", {
   desc = "Enable Wrap in these filetypes",
 })
 
+autocmd("FileType", {
+  desc = "Set tab width to 2 for specific filetypes",
+  pattern = { "json", "markdown", "yaml", "toml", "javascript", "typescript", "html", "htmlx", "jsonc" },
+  command = "set tabstop=2 shiftwidth=2 expandtab",
+  group = general,
+})
+
+autocmd("FileType", {
+  desc = "Set tab width to 4 for specific filetypes",
+  pattern = { "c", "cpp", "cs", "py" },
+  command = "set tabstop=4 shiftwidth=4 expandtab",
+  group = general,
+})
+
+-- NOTE: Taken from LazyVim documentation: https://www.lazyvim.org/configuration/general#auto-commands
+
+local lazyvim = augroup("lazyvim", { clear = true })
+
+-- Close some filetypes with <q>
+vim.api.nvim_create_autocmd("FileType", {
+  group = lazyvim,
+  pattern = {
+    "PlenaryTestPopup",
+    "help",
+    "lspinfo",
+    "notify",
+    "qf",
+    "spectre_panel",
+    "startuptime",
+    "tsplayground",
+    "neotest-output",
+    "checkhealth",
+    "neotest-summary",
+    "neotest-output-panel",
+    "dbout",
+    "gitsigns.blame",
+  },
+  callback = function(event)
+    vim.bo[event.buf].buflisted = false
+    vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = event.buf, silent = true })
+  end,
+})
+
+-- Make it easier to close man-files when opened inline
+vim.api.nvim_create_autocmd("FileType", {
+  group = lazyvim,
+  pattern = { "man" },
+  callback = function(event)
+    vim.bo[event.buf].buflisted = false
+  end,
+})
+
+-- Auto create dir when saving a file, in case some intermediate directory does not exist
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  group = lazyvim,
+  callback = function(event)
+    if event.match:match "^%w%w+:[\\/][\\/]" then
+      return
+    end
+    local file = vim.uv.fs_realpath(event.match) or event.match
+    vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  group = lazyvim,
+  pattern = "bigfile",
+  callback = function(ev)
+    vim.b.minianimate_disable = true
+    vim.schedule(function()
+      vim.bo[ev.buf].syntax = vim.filetype.match { buf = ev.buf } or ""
+    end)
+  end,
+})
+
 local overseer = augroup("Overseer", { clear = true })
 
 autocmd("FileType", {
@@ -190,6 +265,20 @@ autocmd("FileType", {
   desc = "Start Godot LSP",
 })
 
+local copilot = augroup("copilot", { clear = true })
+
+autocmd("ColorScheme", {
+  pattern = "solarized",
+  callback = function()
+    vim.api.nvim_set_hl(0, "CopilotSuggestion", {
+      ctermfg = "light_grey",
+      fg = "light_grey",
+      force = true,
+    })
+  end,
+  group = copilot,
+})
+
 local copilotchat = augroup("copilotchat", { clear = true })
 
 -- Source: https://github.com/CopilotC-Nvim/CopilotChat.nvim#customizing-buffers
@@ -206,53 +295,25 @@ autocmd("BufEnter", {
   group = copilotchat,
 })
 
-local copilot = augroup("copilot", { clear = true })
+local settings = augroup("settings", { clear = true })
 
-autocmd("ColorScheme", {
-  pattern = "solarized",
-  callback = function()
-    vim.api.nvim_set_hl(0, "CopilotSuggestion", {
-      ctermfg = "light_grey",
-      fg = "light_grey",
-      force = true,
-    })
-  end,
-  group = copilot,
+-- Docs about change vim cursor in terminal: https://neovim.io/doc/user/faq.html#faq
+autocmd({ "VimEnter", "VimResume" }, {
+  desc = "Set Cursor in Neovim",
+  command = "set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:Cursor/lCursor,sm:block",
+  group = settings,
 })
 
-local kevinnitro = augroup("kevinnitro", { clear = true })
+autocmd({ "VimLeave", "VimSuspend" }, {
+  desc = "Restore Cursor when exit Neovim",
+  command = "set guicursor=a:ver25",
+  group = settings,
+})
 
 -- Restore terminal i-beam cursor
 -- https://github.com/microsoft/terminal/issues/13420
 -- autocmd("VimLeave", {
 --   desc = "Restore Cursor when VimLeave",
 --   command = "set guicursor= | call chansend(v:stderr, '\x1b[ q')",
---   group = kevinnitro,
+--   group = settings,
 -- })
-
--- Docs about change vim cursor in terminal: https://neovim.io/doc/user/faq.html#faq
-autocmd({ "VimEnter", "VimResume" }, {
-  desc = "Set Cursor in Neovim",
-  command = "set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:Cursor/lCursor,sm:block",
-  group = kevinnitro,
-})
-
-autocmd({ "VimLeave", "VimSuspend" }, {
-  desc = "Restore Cursor when exit Neovim",
-  command = "set guicursor=a:ver25",
-  group = kevinnitro,
-})
-
-autocmd("FileType", {
-  desc = "Set tab width to 2 for some filetype",
-  pattern = { "json", "markdown", "yaml", "toml", "javascript", "typescript", "html", "htmlx", "jsonc" },
-  command = "set tabstop=2 shiftwidth=2 expandtab",
-  group = kevinnitro,
-})
-
-autocmd("FileType", {
-  desc = "Set tab width to 4 for some filetype",
-  pattern = { "c", "cpp", "cs", "py" },
-  command = "set tabstop=4 shiftwidth=4 expandtab",
-  group = kevinnitro,
-})
