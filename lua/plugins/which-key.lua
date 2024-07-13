@@ -15,16 +15,16 @@ return {
     require("which-key").add {
       {
         { "<leader>T", group = "󰙨 Tests" },
-        { "<leader>d", group = "󰃤 Debugger" },
+        { "<leader>d", group = "Debugging" },
         { "<leader>f", group = " Find" },
-        { "<leader>g", group = "󰊢 Git" },
+        { "<leader>g", group = "Git" },
         { "<leader>h", group = " Harpoon" },
         { "<leader>l", group = " LSP" },
         { "<leader>n", group = " Neovim" },
         { "<leader>o", group = " Options" },
         { "<leader>p", group = " Plugins" },
         { "<leader>r", group = " Runner" },
-        { "<leader>t", group = " Terminal" },
+        { "<leader>t", group = "Terminal" },
         { "<leader>v", group = " Venv" },
       },
     }
