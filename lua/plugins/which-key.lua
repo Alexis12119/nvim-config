@@ -10,31 +10,30 @@ return {
     window = {
       border = "single",
     },
+    delay = 0,
   },
   config = function(_, opts)
     dofile(vim.g.base46_cache .. "whichkey")
     require("which-key").setup(opts)
-    require("which-key").register {
+    require("which-key").add {
       {
-        ["<leader>"] = {
-          a = { name = " AI" },
-          d = { name = "󰃤 Debugger" },
-          r = { name = " Runner" },
-          R = { name = "󰮓 Refactor" },
-          s = { name = "󰔚 Sessions" },
-          f = { name = " Find" },
-          g = { name = "󰊢 Git" },
-          -- h = { name = " Harpoon" },
-          l = { name = " LSP" },
-          m = { name = " Markdown" },
-          n = { name = " Neovim" },
-          o = { name = " Options" },
-          p = { name = " Plugins" },
-          t = { name = " Terminal" },
-          T = { name = "󰙨 Tests" },
-          v = { name = " Venv" },
-          z = { name = "󰡌 Zen" },
-        },
+        { "<leader>T", group = "󰙨 Tests" },
+        { "<leader>d", group = "Debugging" },
+        { "<leader>f", group = " Find" },
+        { "<leader>g", group = "Git" },
+        -- { "<leader>h", group = " Harpoon" },
+        { "<leader>l", group = " LSP" },
+        { "<leader>n", group = " Neovim" },
+        { "<leader>o", group = " Options" },
+        { "<leader>p", group = " Plugins" },
+        { "<leader>r", group = " Runner" },
+        { "<leader>t", group = "Terminal" },
+        { "<leader>v", group = " Venv" },
+        { "<leader>a", group = " AI" },
+        { "<leader>s", group = "󰔚 Sessions" },
+        { "<leader>m", group = " Markdown" },
+        { "<leader>z", group = "󰡌 Zen" },
+        { "<leader>R", group = "󰮓 Refactor" },
       },
     }
   end,
