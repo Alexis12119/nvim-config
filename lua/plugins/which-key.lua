@@ -9,7 +9,7 @@ return {
       group = "", -- symbol prepended to a group
     },
     win = {
-      border = "single",
+      border = "rounded",
     },
     delay = 800,
   },
