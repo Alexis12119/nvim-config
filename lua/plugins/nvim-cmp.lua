@@ -102,6 +102,7 @@ return {
     -- AI Autocomplete
     {
       "Exafunction/codeium.nvim",
+      enabled = false,
       opts = {},
     },
     -- AI Copilot
