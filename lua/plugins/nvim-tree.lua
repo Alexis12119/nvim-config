@@ -1,5 +1,6 @@
 local function on_attach(bufnr)
   local api = require "nvim-tree.api"
+  local preview = require "nvim-tree-preview"
 
   local function opts(desc)
     return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
@@ -9,12 +10,28 @@ local function on_attach(bufnr)
 
   vim.keymap.set("n", "l", api.node.open.edit, opts "Open")
   vim.keymap.set("n", "u", api.tree.change_root_to_parent, opts "Up")
+  -- NOTE: Config for "b0o/nvim-tree-preview.lua"
+  vim.keymap.set("n", "P", preview.watch, opts "Preview (Watch)")
+  vim.keymap.set("n", "<Esc>", preview.unwatch, opts "Close Preview/Unwatch")
+  vim.keymap.set("n", "<Tab>", function()
+    local ok, node = pcall(api.tree.get_node_under_cursor)
+    if ok and node then
+      if node.type == "directory" then
+        api.node.open.edit()
+      else
+        preview.node(node, { toggle_focus = true })
+      end
+    end
+  end, opts "Preview")
 end
 
 -- NOTE: File Explorer
 return {
   "nvim-tree/nvim-tree.lua",
   event = "VeryLazy",
+  dependencies = {
+    "b0o/nvim-tree-preview.lua",
+  },
   init = function()
     vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { desc = "NvimTree | Explorer", silent = true })
   end,
