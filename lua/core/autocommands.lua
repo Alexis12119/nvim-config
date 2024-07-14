@@ -222,6 +222,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = "bigfile",
   callback = function(ev)
     vim.b.minianimate_disable = true
+    vim.b.cinnamon_disable = true
     vim.schedule(function()
       vim.bo[ev.buf].syntax = vim.filetype.match { buf = ev.buf } or ""
     end)
