@@ -63,7 +63,7 @@ return {
     },
 
     rename = {
-      quit = ";",
+      quit = { ";", "<ESC>" },
       exec = "<CR>",
       in_select = false,
     },
@@ -112,7 +112,8 @@ return {
 
     ui = {
       theme = "round",
-      border = vim.g.border_enabled and "rounded" or "none",
+      -- border = vim.g.border_enabled and "rounded" or "none",
+      border = true,
       winblend = 0,
       expand = "",
       collaspe = "",
