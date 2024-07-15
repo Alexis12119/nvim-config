@@ -69,16 +69,16 @@ return {
     vim.diagnostic.config(config)
 
     --NOTE: Enable border for lsp on hover and signature help
-    -- But now we use Noice setup
+    -- But currently we use from Noice's config
 
-    if vim.g.border_enabled then
-      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-        border = "rounded",
-      })
+    -- if vim.g.border_enabled then
+    --   vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+    --     border = "rounded",
+    --   })
 
-      vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-        border = "rounded",
-      })
-    end
+    --   vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+    --     border = "rounded",
+    --   })
+    -- end
   end,
 }
