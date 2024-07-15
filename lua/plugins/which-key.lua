@@ -1,6 +1,7 @@
 -- NOTE: Keymaps Popup/Guide
 return {
   "folke/which-key.nvim",
+  event = "VeryLazy",
   opts = {
     icons = {
       breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
@@ -14,18 +15,18 @@ return {
     require("which-key").setup(opts)
     require("which-key").add {
       {
-        { "<leader>T", group = "󰙨 Tests" },
-        { "<leader>d", group = "Debugging" },
-        { "<leader>f", group = " Find" },
-        { "<leader>g", group = "Git" },
-        { "<leader>h", group = " Harpoon" },
-        { "<leader>l", group = " LSP" },
-        { "<leader>n", group = " Neovim" },
-        { "<leader>o", group = " Options" },
-        { "<leader>p", group = " Plugins" },
-        { "<leader>r", group = " Runner" },
-        { "<leader>t", group = "Terminal" },
-        { "<leader>v", group = " Venv" },
+        { "<leader>T", group = "Tests", icon = "󰙨" },
+        { "<leader>d", group = "Debugging", icon = "" },
+        { "<leader>f", group = "Find", icon = "" },
+        { "<leader>g", group = "Git", icon = "󰊢" },
+        { "<leader>h", group = "Harpoon", icon = "" },
+        { "<leader>l", group = "LSP", icon = "" },
+        { "<leader>n", group = "Neovim", icon = "" },
+        { "<leader>o", group = "Options", icon = "" },
+        { "<leader>p", group = "Plugins", icon = "" },
+        { "<leader>r", group = "Runner", icon = "" },
+        { "<leader>t", group = "Terminal", icon = "" },
+        { "<leader>v", group = "Venv", icon = "" },
       },
     }
   end,
