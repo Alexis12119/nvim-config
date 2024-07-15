@@ -1,4 +1,5 @@
 -- NOTE: Improve Other LSP Functionalities
+
 return {
   "nvimdev/lspsaga.nvim",
   event = "LspAttach",
@@ -112,8 +113,7 @@ return {
 
     ui = {
       theme = "round",
-      -- border = vim.g.border_enabled and "rounded" or "none",
-      border = true,
+      border = vim.g.border_enabled and "rounded" or "none",
       winblend = 0,
       expand = "",
       collaspe = "",

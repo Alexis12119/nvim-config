@@ -64,7 +64,6 @@ local global = {
   ["loaded_ruby_provider"] = 0,
   toggle_theme_icon = "   ",
   bigfile_size = 1024 * 1024 * 1.5, -- 1.5 MB
-  border_enabled = true,
 }
 
 vim.opt.shortmess:append "Ac" -- Disable asking
