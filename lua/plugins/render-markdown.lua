@@ -15,7 +15,7 @@ return {
       else
         vim.notify("Only available in markdown", vim.log.levels.WARN, { title = "Markdown-Render" })
       end
-    end, { desc = "Markdown | Render", silent = true })
+    end, { desc = "Markdown | Toggle Render", silent = true })
   end,
   opts = {
     enabled = false,
