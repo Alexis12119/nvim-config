@@ -33,7 +33,7 @@ return {
             package_installed = " ",
             package_uninstalled = " ",
           },
-          border = "rounded",
+          border = vim.g.border_enabled and "rounded" or "none",
         },
         -- install_root_dir = path.concat { vim.fn.stdpath "config", "/lua/custom/mason" },
       }

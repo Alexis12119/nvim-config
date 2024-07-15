@@ -112,7 +112,7 @@ return {
 
     ui = {
       theme = "round",
-      border = "rounded",
+      border = vim.g.border_enabled and "rounded" or "none",
       winblend = 0,
       expand = "",
       collaspe = "",

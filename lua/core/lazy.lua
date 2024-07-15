@@ -18,6 +18,8 @@ return {
       loaded = "",
       not_loaded = "",
     },
+    -- NOTE: LazyVim setup load before "options.lua" so that it cannot read vim.g.border_enabled
+    -- Have to change manually
     border = "rounded",
   },
   performance = {

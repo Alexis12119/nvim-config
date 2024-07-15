@@ -9,7 +9,7 @@ return {
       group = "", -- symbol prepended to a group
     },
     win = {
-      border = "rounded",
+      border = vim.g.border_enabled and "rounded" or "none",
     },
     delay = 800,
   },
