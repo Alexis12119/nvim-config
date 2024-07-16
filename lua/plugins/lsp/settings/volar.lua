@@ -2,7 +2,7 @@ return {
   settings = {
     init_options = {
       vue = {
-        hybridMode = false,
+        hybridMode = true,
       },
       typescript = {
         tsdk = vim.fn.stdpath "data" .. "/mason/packages/vue-language-server/node_modules/typescript/lib",
