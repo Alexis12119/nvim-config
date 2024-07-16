@@ -8,7 +8,10 @@ return {
       separator = "➜", -- symbol used between a key and it's label
       group = "", -- symbol prepended to a group
     },
-    delay = 0,
+    preset = "modern",
+    delay = function()
+      return 0
+    end,
   },
   config = function(_, opts)
     dofile(vim.g.base46_cache .. "whichkey")
