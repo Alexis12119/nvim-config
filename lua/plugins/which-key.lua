@@ -11,7 +11,10 @@ return {
     win = {
       border = vim.g.border_enabled and "rounded" or "none",
     },
-    delay = 800,
+    preset = "modern",
+    delay = function()
+      return 0
+    end,
   },
   config = function(_, opts)
     dofile(vim.g.base46_cache .. "whichkey")
