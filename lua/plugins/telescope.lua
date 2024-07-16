@@ -10,6 +10,8 @@ return {
       { desc = "Telescope | Autocommands", silent = true }
     )
 
+    vim.keymap.set("n", "<leader>fc", "<cmd>Telescope git_commits<cr>", { desc = "Telescope | Commits", silent = true })
+
     vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Telescope | Files", silent = true })
 
     -- vim.keymap.set("n", "<leader>fs", "<cmd>Telescope persisted<cr>", { desc = "Telescope | Sessions", silent = true })
@@ -100,6 +102,9 @@ return {
       },
     },
     extensions_list = { "themes", "terms", "fzf", "projects" },
+    file_previewer = require("telescope.previewers").cat.new,
+    grep_previewer = require("telescope.previewers").vimgrep.new,
+    qflist_previewer = require("telescope.previewers").qflist.new,
     defaults = {
       path_display = { "smart" },
       mappings = {
