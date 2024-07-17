@@ -71,12 +71,16 @@ return {
     -- table.insert(opts.sources, 2, { name = "copilot" })
     -- table.insert(opts.sources, 2, { name = "codeium" })
     -- table.insert(opts.sources, 1, { name = "supermaven" })
+
     opts.mapping = vim.tbl_extend("force", {}, opts.mapping, {
       -- You can add here new mappings.
       ["<tab>"] = setup_supertab_forward(require "cmp"),
       ["<S-tab>"] = setup_supertab_backward(require "cmp"),
       ["<A-;>"] = require("cmp").mapping.complete(), -- For Windows Terminal: Send Ctrl+Space into Alt+;
     })
+
+    opts.completion["completeopt"] = "menu,menuone,noselect" -- disable autoselect
+
     opts.enabled = function()
       return (vim.g.toggle_cmp and vim.bo.buftype == "")
     end
@@ -100,10 +104,7 @@ return {
     require("luasnip").filetype_extend("vue", { "html" })
     require("luasnip").filetype_extend("php", { "html" })
 
-    opts.completion["completeopt"] = "menu,menuone,noselect" -- disable autoselect
-
     --NOTE: add border for cmp window
-
     if vim.g.border_enabled then
       opts.window = {
         completion = require("cmp").config.window.bordered(),
@@ -120,9 +121,11 @@ return {
     })
   end,
   dependencies = {
+    -- Icons
     {
       "onsails/lspkind.nvim",
     },
+    -- For Rust
     {
       "saecki/crates.nvim",
       tag = "v0.4.0",
@@ -136,7 +139,9 @@ return {
     {
       "Exafunction/codeium.nvim",
       enabled = false,
-      opts = {},
+      opts = {
+        enable_chat = true,
+      },
     },
     -- AI Copilot
     -- {
@@ -148,10 +153,11 @@ return {
     {
       "supermaven-inc/supermaven-nvim",
       enabled = false,
+      commit = "df3ecf7",
       event = "User FilePost",
       opts = {
-        -- disable_keymaps = true,
-        -- disable_inline_completion = true,
+        disable_keymaps = true,
+        disable_inline_completion = true,
         keymaps = {
           accept_suggestion = "<C-y>",
           clear_suggestion = "<C-]>",
