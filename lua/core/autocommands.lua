@@ -24,6 +24,16 @@ autocmd("VimEnter", {
   desc = "Open Telescope when it's a Directory",
 })
 
+-- Enable Line Number in Telescope
+autocmd("User", {
+  pattern = "TelescopePreviewerLoaded",
+  callback = function()
+    vim.opt_local.number = true
+  end,
+  group = general,
+  desc = "Enable Line Number in Telescope",
+})
+
 -- Hide folds and Disable statuscolumn in these filetypes
 autocmd("FileType", {
   pattern = { "sagaoutline", "nvcheatsheet" },
