@@ -15,7 +15,7 @@ return {
   end,
   config = function(_, opts)
     table.insert(opts.sources, 2, { name = "codeium" })
-    -- table.insert(opts.sources, 1, { name = "supermaven" })
+    table.insert(opts.sources, 1, { name = "supermaven" })
     opts.mapping = vim.tbl_extend("force", {}, opts.mapping, {
       -- You can add here new mappings.
     })
@@ -67,15 +67,17 @@ return {
     -- AI Autocomplete
     {
       "Exafunction/codeium.nvim",
-      opts = {},
+      opts = {
+        enable_chat = true,
+      },
     },
     {
       "supermaven-inc/supermaven-nvim",
-      enabled = false,
+      commit = "df3ecf7",
       event = "User FilePost",
       opts = {
-        -- disable_keymaps = true,
-        -- disable_inline_completion = true,
+        disable_keymaps = true,
+        disable_inline_completion = true,
         keymaps = {
           accept_suggestion = "<C-y>",
           clear_suggestion = "<C-]>",
