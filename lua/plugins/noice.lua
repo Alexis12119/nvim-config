@@ -39,8 +39,21 @@ return {
       {
         filter = {
           event = "msg_show",
-          kind = "",
           find = "Offline", -- for Copilot while disable
+        },
+        opts = { skip = true },
+      },
+      {
+        filter = {
+          event = "notify",
+          find = "No information available", -- Suppress notification on fail hover
+        },
+        opts = { skip = true },
+      },
+      {
+        filter = {
+          event = "notify",
+          find = "No signature help available", -- Suppress notification on fail signature help
         },
         opts = { skip = true },
       },
