@@ -16,9 +16,13 @@ return {
   config = function(_, opts)
     table.insert(opts.sources, 2, { name = "codeium" })
     table.insert(opts.sources, 1, { name = "supermaven" })
+
     opts.mapping = vim.tbl_extend("force", {}, opts.mapping, {
       -- You can add here new mappings.
     })
+
+    opts.completion["completeopt"] = "menu,menuone,noselect" -- disable autoselect
+
     opts.enabled = function()
       return (vim.g.toggle_cmp and vim.bo.buftype == "")
     end
@@ -42,7 +46,6 @@ return {
     require("luasnip").filetype_extend("vue", { "html" })
     require("luasnip").filetype_extend("php", { "html" })
 
-    opts.completion["completeopt"] = "menu,menuone,noselect" -- disable autoselect
     require("cmp").setup(opts)
     require("cmp").setup.cmdline(":", {
       mapping = require("cmp").mapping.preset.cmdline(),
@@ -52,9 +55,11 @@ return {
     })
   end,
   dependencies = {
+    -- Icons
     {
       "onsails/lspkind.nvim",
     },
+    -- For Rust
     {
       "saecki/crates.nvim",
       tag = "v0.4.0",
