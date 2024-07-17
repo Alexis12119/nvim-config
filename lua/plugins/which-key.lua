@@ -13,7 +13,7 @@ return {
     },
     preset = "modern",
     delay = function()
-      return 0
+      return 500
     end,
   },
   config = function(_, opts)
