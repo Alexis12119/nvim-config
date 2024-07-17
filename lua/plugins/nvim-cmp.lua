@@ -81,6 +81,19 @@ return {
       return (vim.g.toggle_cmp and vim.bo.buftype == "")
     end
 
+    local icons = require "nvchad.icons.lspkind"
+
+    opts.formatting = {
+      format = function(entry, vim_item)
+        local kind = require("lspkind").cmp_format { mode = "text", maxwidth = 50 }(entry, vim_item)
+        local strings = vim.split(kind.kind, " ", { trimempty = true })
+        kind.kind = string.format(" %s  %s", icons[vim_item.kind], strings[1])
+        kind.menu = " " .. (strings[2] or "") .. ""
+
+        return kind
+      end,
+    }
+
     require("luasnip").filetype_extend("javascriptreact", { "html" })
     require("luasnip").filetype_extend("typescriptreact", { "html" })
     require("luasnip").filetype_extend("svelte", { "html" })
@@ -107,6 +120,9 @@ return {
     })
   end,
   dependencies = {
+    {
+      "onsails/lspkind.nvim",
+    },
     {
       "saecki/crates.nvim",
       tag = "v0.4.0",
