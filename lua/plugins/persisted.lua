@@ -4,12 +4,12 @@ return {
   enabled = true,
   lazy = true,
   init = function()
-    vim.keymap.set("n", "<leader>ss", "<cmd>SessionSave<cr>", { desc = "Persisted | Save", silent = true })
-    vim.keymap.set("n", "<leader>so", "<cmd>SessionStop<cr>", { desc = "Persisted | Stop", silent = true })
-    vim.keymap.set("n", "<leader>sl", "<cmd>SessionLoad<cr>", { desc = "Persisted | Load", silent = true })
-    vim.keymap.set("n", "<leader>sL", "<cmd>SessionLoadLast<cr>", { desc = "Persisted | Load Last", silent = true })
-    vim.keymap.set("n", "<leader>sd", "<cmd>SessionDelete<cr>", { desc = "Persisted | Delete", silent = true })
-    vim.keymap.set("n", "<leader>st", "<cmd>SessionToggle<cr>", { desc = "Persisted | Toggle", silent = true })
+    vim.keymap.set("n", "<leader>Ss", "<cmd>SessionSave<cr>", { desc = "Persisted | Save", silent = true })
+    vim.keymap.set("n", "<leader>So", "<cmd>SessionStop<cr>", { desc = "Persisted | Stop", silent = true })
+    vim.keymap.set("n", "<leader>Sl", "<cmd>SessionLoad<cr>", { desc = "Persisted | Load", silent = true })
+    vim.keymap.set("n", "<leader>SL", "<cmd>SessionLoadLast<cr>", { desc = "Persisted | Load Last", silent = true })
+    vim.keymap.set("n", "<leader>Sd", "<cmd>SessionDelete<cr>", { desc = "Persisted | Delete", silent = true })
+    vim.keymap.set("n", "<leader>St", "<cmd>SessionToggle<cr>", { desc = "Persisted | Toggle", silent = true })
   end,
   cmd = {
     "SessionSave",
