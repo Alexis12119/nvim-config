@@ -153,15 +153,15 @@ return {
     {
       "supermaven-inc/supermaven-nvim",
       enabled = false,
-      commit = "df3ecf7",
+      -- commit = "df3ecf7",
       event = "User FilePost",
       opts = {
-        disable_keymaps = true,
-        disable_inline_completion = true,
+        disable_keymaps = false,
+        disable_inline_completion = false,
         keymaps = {
-          accept_suggestion = "<C-y>",
-          clear_suggestion = "<C-]>",
-          accept_word = "<C-j>",
+          accept_suggestion = "<C-;>",
+          clear_suggestion = "<Nop>",
+          accept_word = "<C-y>",
         },
       },
     },
