@@ -102,9 +102,6 @@ return {
       },
     },
     extensions_list = { "themes", "terms", "fzf", "projects" },
-    file_previewer = require("telescope.previewers").cat.new,
-    grep_previewer = require("telescope.previewers").vimgrep.new,
-    qflist_previewer = require("telescope.previewers").qflist.new,
     defaults = {
       path_display = { "smart" },
       mappings = {
