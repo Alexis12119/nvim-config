@@ -69,15 +69,9 @@ function RunCode()
   local selected_cmd = ""
   local term_cmd = "bot 10 new | term "
   local supported_filetypes = {
-    html = {
-      default = "%",
-    },
     c = {
       default = "gcc % -o $fileBase && $fileBase",
       debug = "gcc -g % -o $fileBase && $fileBase",
-    },
-    cs = {
-      default = "dotnet run",
     },
     cpp = {
       default = "g++ % -o  $fileBase && $fileBase",
@@ -85,39 +79,45 @@ function RunCode()
       -- competitive = "g++ -std=c++17 -Wall -DAL -O2 % -o $fileBase && $fileBase<input.txt",
       competitive = "g++ -std=c++17 -Wall -DAL -O2 % -o $fileBase && $fileBase",
     },
-    py = {
-      default = "python %",
+    cs = {
+      default = "dotnet run",
     },
     go = {
       default = "go run %",
     },
+    html = {
+      default = "%",
+    },
     java = {
       default = "java %",
+    },
+    jl = {
+      default = "julia %",
     },
     js = {
       default = "node %",
       debug = "node --inspect %",
     },
-    ts = {
-      default = "tsc % && node $fileBase",
-    },
-    rs = {
-      default = "rustc % && $fileBase",
-    },
     php = {
       default = "php %",
+    },
+    pl = {
+      default = "perl %",
+    },
+    py = {
+      default = "python %",
     },
     r = {
       default = "Rscript %",
     },
-    jl = {
-      default = "julia %",
-    },
     rb = {
       default = "ruby %",
     },
-    pl = {
-      default = "perl %",
+    rs = {
+      default = "rustc % && $fileBase",
+    },
+    ts = {
+      default = "tsc % && node $fileBase",
     },
   }
 
