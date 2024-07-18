@@ -14,8 +14,8 @@ return {
     end, { desc = "Options | Toggle Autocomplete" })
   end,
   config = function(_, opts)
-    table.insert(opts.sources, 2, { name = "codeium" })
-    table.insert(opts.sources, 1, { name = "supermaven" })
+    -- table.insert(opts.sources, 2, { name = "codeium" })
+    -- table.insert(opts.sources, 1, { name = "supermaven" })
 
     opts.mapping = vim.tbl_extend("force", {}, opts.mapping, {
       -- You can add here new mappings.
@@ -78,15 +78,15 @@ return {
     },
     {
       "supermaven-inc/supermaven-nvim",
-      commit = "df3ecf7",
+      -- commit = "df3ecf7",
       event = "User FilePost",
       opts = {
-        disable_keymaps = true,
-        disable_inline_completion = true,
+        disable_keymaps = false,
+        disable_inline_completion = false,
         keymaps = {
-          accept_suggestion = "<C-y>",
-          clear_suggestion = "<C-]>",
-          accept_word = "<C-j>",
+          accept_suggestion = "<C-;>",
+          clear_suggestion = "<Nop>",
+          accept_word = "<C-y>",
         },
       },
     },
