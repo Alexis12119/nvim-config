@@ -3,7 +3,7 @@ return {
   dependencies = { "nvim-telescope/telescope.nvim" },
   cmd = { "LoremIpsum" },
   init = function()
-    vim.keymap.set("n", "<leader>oL", function()
+    vim.keymap.set("n", "<leader>uL", function()
       vim.ui.input({ prompt = "Enter number of word(s) / paragraph(s)" }, function(number)
         number = number ~= nil and number or ""
         vim.ui.select({ "words", "paragraphs" }, {
