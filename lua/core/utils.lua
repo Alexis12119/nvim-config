@@ -98,6 +98,9 @@ function RunCode()
       default = "node %",
       debug = "node --inspect %",
     },
+    lua = {
+      default = "lua %",
+    },
     php = {
       default = "php %",
     },
