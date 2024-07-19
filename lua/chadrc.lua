@@ -247,4 +247,8 @@ M.base46 = {
 -- check core.mappings for table structure
 -- M.mappings = require "mappings"
 
+M.lsp = {
+  signature = false,
+}
+
 return M
