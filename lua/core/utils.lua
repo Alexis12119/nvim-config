@@ -86,7 +86,7 @@ function RunCode()
       default = "go run %",
     },
     html = {
-      default = "%",
+      default = "firefox %",
     },
     java = {
       default = "java %",
@@ -108,7 +108,7 @@ function RunCode()
       default = "perl %",
     },
     py = {
-      default = "python %",
+      default = "python3 %",
     },
     r = {
       default = "Rscript %",
