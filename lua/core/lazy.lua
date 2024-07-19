@@ -12,13 +12,13 @@ return {
     cmd = "diffview.nvim",
   },
   ui = {
+    border = vim.g.border_enabled and "rounded" or "none",
     icons = {
       ft = "",
       lazy = "󰂠 ",
       loaded = "",
       not_loaded = "",
     },
-    border = vim.g.border_enabled and "rounded" or "none",
   },
   performance = {
     rtp = {

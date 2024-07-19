@@ -8,10 +8,10 @@ return {
       separator = "➜", -- symbol used between a key and it's label
       group = "", -- symbol prepended to a group
     },
+    preset = "modern",
     win = {
       border = vim.g.border_enabled and "rounded" or "none",
     },
-    preset = "modern",
     delay = function()
       return 500
     end,

@@ -26,6 +26,7 @@ return {
 
       mason.setup {
         ui = {
+          border = vim.g.border_enabled and "rounded" or "none",
           -- Whether to automatically check for new versions when opening the :Mason window.
           check_outdated_packages_on_open = false,
           icons = {
@@ -33,7 +34,6 @@ return {
             package_installed = " ",
             package_uninstalled = " ",
           },
-          border = vim.g.border_enabled and "rounded" or "none",
         },
         -- install_root_dir = path.concat { vim.fn.stdpath "config", "/lua/custom/mason" },
       }
