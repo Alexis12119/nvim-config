@@ -1,4 +1,5 @@
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/nvchad/base46/"
+vim.g.border_enabled = false -- NOTE: Toggle border for LSP Windows, nvim-cmp, lazy, which-key, mason
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 

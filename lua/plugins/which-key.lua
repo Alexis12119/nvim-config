@@ -9,6 +9,9 @@ return {
       group = "", -- symbol prepended to a group
     },
     preset = "modern",
+    win = {
+      border = vim.g.border_enabled and "rounded" or "none",
+    },
     delay = function()
       return 0
     end,

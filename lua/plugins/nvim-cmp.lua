@@ -46,6 +46,14 @@ return {
     require("luasnip").filetype_extend("vue", { "html" })
     require("luasnip").filetype_extend("php", { "html" })
 
+    --NOTE: add border for cmp window
+    if vim.g.border_enabled then
+      opts.window = {
+        completion = require("cmp").config.window.bordered(),
+        documentation = require("cmp").config.window.bordered(),
+      }
+    end
+
     require("cmp").setup(opts)
     require("cmp").setup.cmdline(":", {
       mapping = require("cmp").mapping.preset.cmdline(),
