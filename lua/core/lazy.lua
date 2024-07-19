@@ -12,6 +12,7 @@ return {
     cmd = "diffview.nvim",
   },
   ui = {
+    border = vim.g.border_enabled and "rounded" or "none",
     icons = {
       ft = "",
       lazy = "󰂠 ",
