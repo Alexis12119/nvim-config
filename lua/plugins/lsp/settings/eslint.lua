@@ -2,7 +2,7 @@ return {
   settings = {
     eslint = {
       format = {
-        enable = true,
+        enable = false,
       },
       rules = {
         customizations = {
