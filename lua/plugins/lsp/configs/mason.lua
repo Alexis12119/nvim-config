@@ -51,7 +51,7 @@ return {
           "tsserver",
           -- "denols",
           -- "vuels",
-          -- "tailwindcss",
+          "tailwindcss",
           "emmet_language_server",
           "jsonls",
           -- "eslint",
