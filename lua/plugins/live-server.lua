@@ -14,7 +14,7 @@ return {
         return state
       end
     end)()
-    vim.keymap.set("n", "<leader>ul", function()
+    vim.keymap.set("n", "<leader>uL", function()
       if toggle_state() then
         vim.cmd "LiveServerStart"
       else
