@@ -153,14 +153,40 @@ autocmd("ModeChanged", {
   desc = "Highlighting matched words when searching",
 })
 
+-- autocmd("FileType", {
+--   pattern = { "gitcommit", "markdown", "text", "log" },
+--   callback = function()
+--     vim.opt_local.wrap = true
+--     vim.opt_local.spell = true
+--   end,
+--   group = general,
+--   desc = "Enable Wrap in these filetypes",
+-- })
+
 autocmd("FileType", {
-  pattern = { "gitcommit", "markdown", "text", "log" },
+  pattern = {
+    "gitcommit",
+    "text",
+    "log",
+  },
   callback = function()
     vim.opt_local.wrap = true
     vim.opt_local.spell = true
   end,
   group = general,
   desc = "Enable Wrap in these filetypes",
+})
+
+autocmd("FileType", {
+  pattern = {
+    "markdown",
+  },
+  callback = function()
+    vim.b.minianimate_disable = true
+    vim.b.cinnamon_disable = true
+  end,
+  group = general,
+  desc = "Disable animation in these filetype",
 })
 
 autocmd("FileType", {
