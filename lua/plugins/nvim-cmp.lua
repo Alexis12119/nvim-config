@@ -17,7 +17,8 @@ local setup_supertab_forward = function(cmp)
   return cmp.mapping(function(fallback)
     if cmp.visible() then
       -- You could replace select_next_item() with confirm({ select = true }) to get VS Code autocompletion behavior
-      cmp.select_next_item()
+      -- cmp.select_next_item()
+      cmp.select_next_item { behavior = cmp.SelectBehavior.Select }
       -- elseif neogen.jumpable() then
       --   neogen.jump_next()
       -- elseif luasnip.expand_or_jumpable() then
@@ -68,7 +69,7 @@ return {
     end, { desc = "Options | Toggle Autocomplete" })
   end,
   config = function(_, opts)
-    -- table.insert(opts.sources, 2, { name = "copilot" })
+    table.insert(opts.sources, 2, { name = "copilot" })
     -- table.insert(opts.sources, 2, { name = "codeium" })
     -- table.insert(opts.sources, 1, { name = "supermaven" })
 
@@ -144,12 +145,17 @@ return {
       },
     },
     -- AI Copilot
-    -- {
-    --   "zbirenbaum/copilot-cmp",
-    --   dependencies = { "zbirenbaum/copilot.lua" },
-    --   fix_pairs = true,
-    --   config = true,
-    -- },
+    {
+      "zbirenbaum/copilot-cmp",
+      opts = {
+        event = {
+          "InsertEnter",
+          "LspAttach",
+        },
+        fix_pairs = true,
+      },
+      config = true,
+    },
     {
       "supermaven-inc/supermaven-nvim",
       enabled = false,

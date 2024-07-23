@@ -38,13 +38,6 @@ return {
       },
       {
         filter = {
-          event = "msg_show",
-          find = "Offline", -- for Copilot while disable
-        },
-        opts = { skip = true },
-      },
-      {
-        filter = {
           event = "notify",
           find = "No information available", -- Suppress notification on fail hover
         },

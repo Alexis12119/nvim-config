@@ -1,42 +1,55 @@
 return {
-  -- {
-  --   "zbirenbaum/copilot.lua",
-  --   build = ":Copilot auth",
-  --   cmd = "Copilot",
-  --   opts = {
-  --     panel = { enabled = false },
-  --     suggestion = { enabled = false },
-  --   },
-  --   config = function(_, opts)
-  --     require("copilot").setup(opts)
-  --     vim.cmd "Copilot disable"
-  --   end,
-  -- },
   {
-    "github/copilot.vim",
+    "zbirenbaum/copilot.lua",
+    build = ":Copilot auth",
     cmd = "Copilot",
-    build = ":Copilot setup",
+    opts = {
+      panel = {
+        enabled = false,
+      },
+      suggestion = {
+        enabled = false,
+      },
+      filetypes = {
+        ["copilot-chat"] = false,
+      },
+    },
     init = function()
+      vim.keymap.set("n", "<leader>at", "<cmd>Copilot toggle<cr>", { desc = "Copilot | Toggle", silent = true })
       vim.keymap.set("n", "<leader>ad", "<cmd>Copilot disable<cr>", { desc = "Copilot | Disable", silent = true })
       vim.keymap.set("n", "<leader>ae", "<cmd>Copilot enable<cr>", { desc = "Copilot | Enable", silent = true })
       vim.keymap.set("n", "<leader>aP", "<cmd>Copilot panel<cr>", { desc = "Copilot | Panel", silent = true })
-      vim.keymap.set("i", "<M-Right>", "<Plug>(copilot-accept-word)", { desc = "Copilot | Accept Word", silent = true })
-      vim.keymap.set(
-        "i",
-        "<M-C-Right>",
-        "<Plug>(copilot-accept-line)",
-        { desc = "Copilot | Accept Line", silent = true }
-      )
-      vim.keymap.set("i", "<M-]>", "<Plug>(copilot-next)", { desc = "Copilot | Show Next Suggestion", silent = true })
-      vim.keymap.set(
-        "i",
-        "<M-[>",
-        "<Plug>(copilot-previous)",
-        { desc = "Copilot | Show Previous Suggestion", silent = true }
-      )
-      vim.g.copilot_filetypes = { ["copilot-chat"] = false }
+    end,
+    config = function(_, opts)
+      require("copilot").setup(opts)
+      vim.cmd "Copilot disable"
     end,
   },
+  -- {
+  --   "github/copilot.vim",
+  --   cmd = "Copilot",
+  --   build = ":Copilot setup",
+  --   init = function()
+  --     vim.keymap.set("n", "<leader>ad", "<cmd>Copilot disable<cr>", { desc = "Copilot | Disable", silent = true })
+  --     vim.keymap.set("n", "<leader>ae", "<cmd>Copilot enable<cr>", { desc = "Copilot | Enable", silent = true })
+  --     vim.keymap.set("n", "<leader>aP", "<cmd>Copilot panel<cr>", { desc = "Copilot | Panel", silent = true })
+  --     vim.keymap.set("i", "<M-Right>", "<Plug>(copilot-accept-word)", { desc = "Copilot | Accept Word", silent = true })
+  --     vim.keymap.set(
+  --       "i",
+  --       "<M-C-Right>",
+  --       "<Plug>(copilot-accept-line)",
+  --       { desc = "Copilot | Accept Line", silent = true }
+  --     )
+  --     vim.keymap.set("i", "<M-]>", "<Plug>(copilot-next)", { desc = "Copilot | Show Next Suggestion", silent = true })
+  --     vim.keymap.set(
+  --       "i",
+  --       "<M-[>",
+  --       "<Plug>(copilot-previous)",
+  --       { desc = "Copilot | Show Previous Suggestion", silent = true }
+  --     )
+  --     vim.g.copilot_filetypes = { ["copilot-chat"] = false }
+  --   end,
+  -- },
   {
     "CopilotC-Nvim/CopilotChat.nvim",
     cmd = {
@@ -60,11 +73,11 @@ return {
       "CopilotChatCommitStaged",
     },
     dependencies = {
-      -- "zbirenbaum/copilot.lua",
-      "github/copilot.vim",
+      "hrsh7th/nvim-cmp",
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope.nvim",
-      "hrsh7th/nvim-cmp",
+      "zbirenbaum/copilot.lua",
+      -- "github/copilot.vim",
     },
     opts = {
       allow_insecure = true,
