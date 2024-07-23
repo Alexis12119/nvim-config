@@ -19,6 +19,15 @@ return {
       vim.keymap.set("n", "<leader>ad", "<cmd>Copilot disable<cr>", { desc = "Copilot | Disable", silent = true })
       vim.keymap.set("n", "<leader>ae", "<cmd>Copilot enable<cr>", { desc = "Copilot | Enable", silent = true })
       vim.keymap.set("n", "<leader>aP", "<cmd>Copilot panel<cr>", { desc = "Copilot | Panel", silent = true })
+
+      -- NOTE: Itegrate to nvimp-cmp so that we don't use those keymaps
+
+      -- vim.keymap.set("i", "<M-Right>", function()
+      --   require("copilot.suggestion").accept_word()
+      -- end, { desc = "Copilot | Accept Word", silent = true })
+      -- vim.keymap.set("i", "<M-C-Right>", function()
+      --   require("copilot.suggestion").accept_line()
+      -- end, { desc = "Copilot | Accept Line", silent = true })
     end,
     config = function(_, opts)
       require("copilot").setup(opts)
