@@ -13,7 +13,7 @@ return {
         line = 150, -- Maximum delta for line movements
         column = 200, -- Maximum delta for column movements
       },
-      mode = "window", ---@type "cursor" | "window"
+      mode = "cursor", ---@type "cursor" | "window"
     },
   },
 }
