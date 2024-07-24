@@ -39,10 +39,9 @@ local formatters = {
       "--fallback-style=Microsoft",
     },
   },
-  ["ruff_fix"] = {
+  ["doctoc"] = {
     append_args = {
-      "--select=I",
-      "--ignore=F401",
+      "--update-only",
     },
   },
   ["markdown-toc"] = {
@@ -50,9 +49,16 @@ local formatters = {
       "--bullets=-",
     },
   },
-  ["doctoc"] = {
+  ["prettier"] = {
     append_args = {
-      "--update-only",
+      "--single-quote",
+      -- "--jsx-single-quote", -- NOTE: Don't use this if you want all jsx to be single quote
+    },
+  },
+  ["ruff_fix"] = {
+    append_args = {
+      "--select=I",
+      "--ignore=F401",
     },
   },
 }
