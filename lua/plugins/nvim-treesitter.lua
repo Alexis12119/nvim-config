@@ -51,16 +51,23 @@ return {
     },
   },
   opts = {
-    -- highlight = {
-    --   enable = true,
-    --   disable = function(_, buf)
-    --     local max_filesize = 10000 * 1024 -- 10 MB
-    --     local ok, status = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-    --     if ok and status and status.size > max_filesize then
-    --       return true
-    --     end
-    --   end,
-    -- },
+    highlight = {
+      enable = true,
+      -- disable = function(_, buf)
+      --   local max_filesize = 10000 * 1024 -- 10 MB
+      --   local ok, status = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+      --   if ok and status and status.size > max_filesize then
+      --     return true
+      --   end
+      -- end,
+
+      disable = function()
+        -- Disable for chezmoi template file: https://github.com/alker0/chezmoi.vim#-can-i-use-nvim-treesitter-for-my-chezmoi-template
+        if string.find(vim.bo.filetype, "chezmoitmpl") then
+          return true
+        end
+      end,
+    },
     ensure_installed = {
       "vim",
       "vimdoc",
