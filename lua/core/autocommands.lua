@@ -256,16 +256,16 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 vim.api.nvim_create_autocmd({ "FileType" }, {
   group = lazyvim,
   pattern = "bigfile",
-  callback = function(ev)
+  callback = function() -- Pass in "ev" if use below schedule to disable syntax highlight
     vim.b.minianimate_disable = true
     vim.b.cinnamon_disable = true
     local status_ok, _ = pcall(require, "neoscroll")
     if status_ok then
-      vim.cmd "NeoscrollEnablePM"
+      vim.cmd "NeoscrollEnableBufferPM"
     end
-    vim.schedule(function()
-      vim.bo[ev.buf].syntax = vim.filetype.match { buf = ev.buf } or ""
-    end)
+    -- vim.schedule(function()
+    --   vim.bo[ev.buf].syntax = vim.filetype.match { buf = ev.buf } or ""
+    -- end)
   end,
 })
 
