@@ -259,6 +259,10 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   callback = function(ev)
     vim.b.minianimate_disable = true
     vim.b.cinnamon_disable = true
+    local status_ok, _ = pcall(require, "neoscroll")
+    if status_ok then
+      vim.cmd "NeoscrollEnablePM"
+    end
     vim.schedule(function()
       vim.bo[ev.buf].syntax = vim.filetype.match { buf = ev.buf } or ""
     end)
