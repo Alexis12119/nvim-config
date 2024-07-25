@@ -17,8 +17,8 @@ local setup_supertab_forward = function(cmp)
   return cmp.mapping(function(fallback)
     if cmp.visible() then
       -- You could replace select_next_item() with confirm({ select = true }) to get VS Code autocompletion behavior
-      -- cmp.select_next_item()
-      cmp.select_next_item { behavior = cmp.SelectBehavior.Select }
+      cmp.select_next_item()
+      -- cmp.select_next_item { behavior = cmp.SelectBehavior.Select }
       -- elseif neogen.jumpable() then
       --   neogen.jump_next()
       -- elseif luasnip.expand_or_jumpable() then
