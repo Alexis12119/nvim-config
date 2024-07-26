@@ -235,13 +235,11 @@ M.lsp = { signature = false }
 
 M.base46 = {
   integrations = {
-    -- "blankline", -- Disable because "lukas-reineke/indent-blankline.nvim" is disabled
     "cmp",
     "dap",
     "defaults",
     "devicons",
     "lsp",
-    "lspsaga",
     "mason",
     "notify",
     "nvdash",
@@ -253,6 +251,8 @@ M.base46 = {
     "treesitter",
     "trouble",
     "whichkey",
+    -- "blankline", -- Disable because "lukas-reineke/indent-blankline.nvim" is disabled
+    -- "lspsaga", -- Not to use this because it's suck on transparent
   },
 }
 
