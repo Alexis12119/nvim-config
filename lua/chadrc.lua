@@ -235,7 +235,7 @@ M.lsp = { signature = false }
 
 M.base46 = {
   integrations = {
-    "blankline",
+    -- "blankline", -- Disable because "lukas-reineke/indent-blankline.nvim" is disabled
     "cmp",
     "dap",
     "defaults",
