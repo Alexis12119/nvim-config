@@ -70,4 +70,8 @@ return {
       -- pattern = [[\b(KEYWORDS)\b]], -- match without the extra colon. You'll likely get false positives
     },
   },
+  config = function(_, opts)
+    dofile(vim.g.base46_cache .. "todo")
+    require("todo-comments").setup(opts)
+  end,
 }

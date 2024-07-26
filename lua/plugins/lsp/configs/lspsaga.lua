@@ -153,4 +153,8 @@ return {
       },
     },
   },
+  config = function(_, opts)
+    dofile(vim.g.base46_cache .. "lspsaga")
+    require("lspsaga").setup(opts)
+  end,
 }

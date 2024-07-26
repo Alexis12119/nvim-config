@@ -235,10 +235,24 @@ M.lsp = { signature = false }
 
 M.base46 = {
   integrations = {
-    "notify",
+    "blankline",
+    "cmp",
     "dap",
-    "trouble",
+    "defaults",
+    "devicons",
+    "lsp",
+    "lspsaga",
+    "mason",
+    "notify",
+    "nvdash",
+    "nvimtree",
     "rainbowdelimiters",
+    "statusline",
+    "telescope",
+    "todo",
+    "treesitter",
+    "trouble",
+    "whichkey",
   },
 }
 
