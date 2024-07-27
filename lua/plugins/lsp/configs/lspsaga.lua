@@ -133,6 +133,7 @@ return {
       auto_refresh = true,
       auto_close = true,
       custom_sort = nil,
+      layout = "normal", --- @type "normal" | "float" Defaults to `"normal"`
       keys = {
         jump = "o",
         expand_collaspe = "u",
