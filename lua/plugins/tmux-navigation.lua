@@ -1,10 +1,7 @@
 -- NOTE: Tmux navigation
-return {
+local plugin = {
   "alexghergh/nvim-tmux-navigation",
-  event = "VeryLazy",
-  enabled = function()
-    return vim.fn.has "win32" == 0
-  end,
+  cond = vim.fn.executable "tmux" == 1,
   opts = {
     keybindings = {
       left = "<C-h>",
@@ -16,3 +13,9 @@ return {
     },
   },
 }
+
+if vim.env.TMUX ~= nil then
+  plugin.event = "VeryLazy"
+end
+
+return plugin
