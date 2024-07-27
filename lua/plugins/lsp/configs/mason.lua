@@ -72,6 +72,9 @@ return {
           -- Yaml
           "yamlls",
 
+          -- Toml
+          "taplo",
+
           -- Python
           "pyright",
 
