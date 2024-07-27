@@ -1,1 +1,3 @@
-*.lua text=auto
+* text=auto
+*.png binary
+*.jpg binary
