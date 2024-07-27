@@ -29,16 +29,16 @@ snippet vf
 	var ${1:function_name} = function $1(${2}) {
 		${0:${VISUAL}}
 	};
-# Immediate function
-snippet (f
-	(function(${1}) {
-		${0:${VISUAL}}
-	}(${2}));
-# Minify safe iife
-snippet ;fe
-	;(function(${1}) {
-		${0:${VISUAL}}
-	}(${2}))
+# # Immediate function
+# snippet (f
+# 	(function(${1}) {
+# 		${0:${VISUAL}}
+# 	}(${2}));
+# # Minify safe iife
+# snippet ;fe
+# 	;(function(${1}) {
+# 		${0:${VISUAL}}
+# 	}(${2}))
 # self-defining function
 snippet sdf
 	var ${1:function_name} = function (${2:argument}) {
@@ -124,11 +124,11 @@ snippet fori
 		${0:$2[$1]}
 	}
 # Objects
-# Object Method
-snippet :f
-	${1:method_name}: function (${2:attribute}) {
-		${0:${VISUAL}}
-	},
+# # Object Method
+# snippet :f
+# 	${1:method_name}: function (${2:attribute}) {
+# 		${0:${VISUAL}}
+# 	},
 # hasOwnProperty
 snippet has
 	hasOwnProperty(${0})
