@@ -1,7 +1,8 @@
 -- NOTE: Tmux navigation
-local plugin = {
+return {
   "alexghergh/nvim-tmux-navigation",
   cond = vim.fn.executable "tmux" == 1,
+  event = vim.env.TMUX ~= nil and "VeryLazy" or nil,
   opts = {
     keybindings = {
       left = "<C-h>",
@@ -13,9 +14,3 @@ local plugin = {
     },
   },
 }
-
-if vim.env.TMUX ~= nil then
-  plugin.event = "VeryLazy"
-end
-
-return plugin
