@@ -1,6 +1,6 @@
 return {
   "ThePrimeagen/refactoring.nvim",
-  event = { "User FilePost" },
+  cmd = "Refactor",
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-treesitter/nvim-treesitter",
@@ -42,11 +42,12 @@ return {
       { desc = "Refactor | Extract to File", silent = true }
     )
     vim.keymap.set(
-      "v",
+      "n",
       "<leader>Rv",
-      "<cmd>Refactor Refactor extract_var<cr>",
+      "<cmd>Refactor extract_var<cr>",
       { desc = "Refactor | Extract Variable", silent = true }
     )
+    vim.keymap.set("n", "<leader>Rn", "<cmd>Refactor refactor_names<cr>", { desc = "Refactor | Names", silent = true })
   end,
   opts = {
     prompt_func_return_type = {
@@ -71,7 +72,7 @@ return {
     print_var_statements = {},
     show_success_message = false,
   },
-  config = function()
-    require("refactoring").setup()
+  config = function(_, opts)
+    require("refactoring").setup(opts)
   end,
 }
