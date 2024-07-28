@@ -284,6 +284,17 @@ vim.keymap.set("n", "<leader>ng", function()
   }
 end, { desc = "Neovim | Grep Config Files", silent = true })
 
+-- Quick go to row and column
+vim.keymap.set("n", "<leader>nG", function()
+  vim.ui.input({ prompt = "Enter line number" }, function(row)
+    row = row ~= "" and row or 0
+    vim.ui.input({ prompt = "Enter char number" }, function(col)
+      col = col ~= "" and col or 0
+      vim.cmd("call cursor(" .. row .. ", " .. col .. ")")
+    end)
+  end)
+end, { desc = "Neovim | Goto Row & Col", silent = true })
+
 -- Toggle Cheatsheet
 vim.keymap.set("n", "<leader>nc", function()
   if vim.bo.filetype == "nvcheatsheet" then
