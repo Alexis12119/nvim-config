@@ -73,6 +73,7 @@ return {
       "vimdoc",
       "lua",
       "html",
+      "scss",
       "css",
       "javascript",
       "typescript",
@@ -91,6 +92,8 @@ return {
       "json5",
       "jsonc",
       "dockerfile",
+      "git_config",
+      "ssh_config",
     },
     indent = {
       enable = false,
