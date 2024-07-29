@@ -5,7 +5,8 @@
 -- Copilot tab completion: https://github.com/zbirenbaum/copilot-cmp?tab=readme-ov-file#tab-completion-configuration-highly-recommended
 -- Neogen tab cycling: https://github.com/danymat/neogen?tab=readme-ov-file#default-cycling-support
 
-local setup_supertab_forward = function(cmp)
+local setup_supertab_forward = function()
+  local cmp = require "cmp"
   -- local neogen = require "neogen"
 
   local has_words_before = function()
@@ -39,7 +40,8 @@ local setup_supertab_forward = function(cmp)
   end, { "i", "s" })
 end
 
-local setup_supertab_backward = function(cmp)
+local setup_supertab_backward = function()
+  local cmp = require "cmp"
   return cmp.mapping(function(fallback)
     if cmp.visible() then
       cmp.select_prev_item()
@@ -53,6 +55,27 @@ local setup_supertab_backward = function(cmp)
       fallback()
     end
   end, { "i", "s" })
+end
+
+-- NOTE: Ref: https://github.com/hrsh7th/nvim-cmp/issues/429#issuecomment-954121524
+local setup_toggle_autocomplete_menu = function()
+  local cmp = require "cmp"
+  return cmp.mapping {
+    i = function()
+      if cmp.visible() then
+        cmp.abort()
+      else
+        cmp.complete()
+      end
+    end,
+    c = function()
+      if cmp.visible() then
+        cmp.close()
+      else
+        cmp.complete()
+      end
+    end,
+  }
 end
 
 return {
@@ -77,9 +100,13 @@ return {
 
     opts.mapping = vim.tbl_extend("force", {}, opts.mapping, {
       -- You can add here new mappings.
-      ["<tab>"] = setup_supertab_forward(require "cmp"),
-      ["<S-tab>"] = setup_supertab_backward(require "cmp"),
-      ["<A-;>"] = require("cmp").mapping.complete(), -- For Windows Terminal: Send Ctrl+Space into Alt+;
+      ["<tab>"] = setup_supertab_forward(),
+      ["<S-tab>"] = setup_supertab_backward(),
+      -- ["<A-;>"] = require("cmp").mapping.complete(), -- For Windows Terminal: Send Ctrl+Space into Alt+;
+      ["<A-;>"] = setup_toggle_autocomplete_menu(), -- For Windows Terminal: Send Ctrl+Space into Alt+;
+      ["<C-Space>"] = setup_toggle_autocomplete_menu(),
+      ["<Down>"] = require("cmp").mapping.select_next_item(),
+      ["<Up>"] = require("cmp").mapping.select_prev_item(),
     })
 
     opts.completion["completeopt"] = "menu,menuone,noselect" -- disable autoselect
