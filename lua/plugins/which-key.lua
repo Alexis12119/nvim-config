@@ -16,6 +16,10 @@ return {
     delay = function()
       return 500
     end,
+    triggers = {
+      { "<auto>", mode = "nxsot" },
+      { "s", mode = "n" },
+    },
   },
   config = function(_, opts)
     dofile(vim.g.base46_cache .. "whichkey")
