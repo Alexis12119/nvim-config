@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 return {
   "alker0/chezmoi.vim",
   cond = vim.fn.executable "chezmoi" == 1,

@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 return {
   {
     "laytan/cloak.nvim",

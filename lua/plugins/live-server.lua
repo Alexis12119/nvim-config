@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: If you face the permission issue, read this https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally
 return {
   "barrett-ruth/live-server.nvim",

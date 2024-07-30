@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 return {
   {
     "pocco81/true-zen.nvim",

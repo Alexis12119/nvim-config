@@ -1,3 +1,5 @@
+---@type NvPluginSpec
+-- NOTE: For database query and processing
 return {
   {
     "tpope/vim-dadbod",

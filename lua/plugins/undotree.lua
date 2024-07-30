@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 return {
   "mbbill/undotree",
   init = function()

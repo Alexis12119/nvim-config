@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 return {
   "monaqa/dial.nvim",
   init = function()

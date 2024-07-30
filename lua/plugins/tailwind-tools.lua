@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 return {
   "luckasRanarison/tailwind-tools.nvim",
   enabled = false,

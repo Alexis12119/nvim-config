@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: Dim code, well use along with "folke/zen-mode.nvim"
 return {
   "folke/twilight.nvim",

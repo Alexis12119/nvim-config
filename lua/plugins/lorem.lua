@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 return {
   "derektata/lorem.nvim",
   dependencies = {

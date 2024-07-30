@@ -4,6 +4,7 @@ local ask_ext = function(cmd)
   end)
 end
 
+---@type NvPluginSpec
 return {
   "mistricky/codesnap.nvim",
   enabled = vim.fn.has "win32" == 0,

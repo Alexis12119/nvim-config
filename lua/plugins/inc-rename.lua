@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 return {
   "smjonas/inc-rename.nvim",
   enabled = false,

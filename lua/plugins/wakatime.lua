@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE:
 -- Type ":Lazy load vim-wakatime" to generate ".wakatime.cfg".
 -- You only need to do this once.

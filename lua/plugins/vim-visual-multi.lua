@@ -1,6 +1,7 @@
+---@type NvPluginSpec
 return {
   "mg979/vim-visual-multi",
-  event = { "User FilePost" },
+  event = "User FilePost",
   init = function(_)
     vim.g.VM_mouse_mappings = 1
     vim.g.VM_maps = {

@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: Screensaver plugins
 -- But it's WIP
 return {

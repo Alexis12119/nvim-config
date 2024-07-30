@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 return {
   {
     "b0o/nvim-tree-preview.lua",

@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: Just For Fun Plugin
 return {
   "tamton-aquib/duck.nvim",

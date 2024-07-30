@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 return {
   "ThePrimeagen/refactoring.nvim",
   cmd = "Refactor",

@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 return {
   {
     "zbirenbaum/copilot.lua",

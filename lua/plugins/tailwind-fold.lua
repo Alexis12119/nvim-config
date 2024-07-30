@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 return {
   "razak17/tailwind-fold.nvim",
   enabled = false,

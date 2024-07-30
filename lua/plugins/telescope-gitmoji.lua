@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 return {
   "olacin/telescope-gitmoji.nvim",
   dependencies = {

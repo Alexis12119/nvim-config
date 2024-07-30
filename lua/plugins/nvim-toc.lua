@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 return {
   "richardbizik/nvim-toc",
   cmd = {

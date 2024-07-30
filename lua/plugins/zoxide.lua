@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 return {
   {
     "nanotee/zoxide.vim",

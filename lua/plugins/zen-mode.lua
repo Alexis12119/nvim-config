@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: For zen mode
 return {
   "folke/zen-mode.nvim",
