@@ -129,6 +129,8 @@ return {
       end,
     }
 
+    require("luasnip").filetype_extend("javascript", { "javascriptreact" })
+    require("luasnip").filetype_extend("typescript", { "typescriptreact" })
     require("luasnip").filetype_extend("javascriptreact", { "html" })
     require("luasnip").filetype_extend("typescriptreact", { "html" })
     require("luasnip").filetype_extend("svelte", { "html" })
