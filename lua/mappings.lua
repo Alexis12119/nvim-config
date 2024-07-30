@@ -330,6 +330,10 @@ vim.keymap.set("n", "<leader>nr", function()
   RunCode()
 end, { desc = "Neovim | Run Code", silent = true })
 
+vim.keymap.set("n", "<leader>np", function()
+  print(vim.api.nvim_buf_get_name(0))
+end, { desc = "Neovim | Get Current File Path", silent = true })
+
 -- Clean
 vim.keymap.set("n", "<leader>pc", "<cmd>Lazy clean<cr>", { desc = "Lazy | Clean", silent = true })
 
