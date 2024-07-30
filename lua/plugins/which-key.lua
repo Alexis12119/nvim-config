@@ -18,7 +18,7 @@ return {
     end,
     triggers = {
       { "<auto>", mode = "nxsot" },
-      { "s", mode = "n" },
+      { "s", mode = "n" }, -- Enable show menu for "s" keymap, replace default nvim's behavior
     },
   },
   config = function(_, opts)
