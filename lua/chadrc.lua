@@ -34,10 +34,6 @@ end
 local highlights = require "highlights"
 
 M.ui = {
-  theme = "mountain",
-  theme_toggle = { "mountain", "one_light" },
-  hl_override = highlights.override,
-  hl_add = highlights.add,
   telescope = { style = "borderless" }, -- borderless / bordered
   cmp = {
     icons = true,
@@ -227,11 +223,16 @@ M.ui = {
   },
 
   cheatsheet = { theme = "grid" }, -- simple/grid
+  mason = { cmd = true, pkgs = {} },
 }
 
 M.lsp = { signature = false }
 
 M.base46 = {
+  theme = "mountain",
+  theme_toggle = { "mountain", "one_light" },
+  hl_override = highlights.override,
+  hl_add = highlights.add,
   integrations = {
     "notify",
     "dap",
