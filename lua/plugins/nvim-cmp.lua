@@ -8,7 +8,6 @@
 
 local setup_supertab_forward = function()
   local cmp = require "cmp"
-  -- local neogen = require "neogen"
 
   local has_words_before = function()
     unpack = unpack or table.unpack
@@ -20,15 +19,6 @@ local setup_supertab_forward = function()
     if cmp.visible() then
       -- You could replace select_next_item() with confirm({ select = true }) to get VS Code autocompletion behavior
       cmp.select_next_item()
-      -- cmp.select_next_item { behavior = cmp.SelectBehavior.Select }
-      -- elseif neogen.jumpable() then
-      --   neogen.jump_next()
-      -- elseif luasnip.expand_or_jumpable() then
-      --   luasnip.expand_or_jump()
-      -- elseif luasnip.expandable() then
-      --   luasnip.expand()
-      -- elseif luasnip.jumpable() then
-      --   luasnip.jump()
     elseif vim.snippet.active { direction = 1 } then
       vim.schedule(function()
         vim.snippet.jump(1)
@@ -79,6 +69,7 @@ local setup_toggle_autocomplete_menu = function()
   }
 end
 
+---@type NvPluginSpec
 return {
   "hrsh7th/nvim-cmp",
   event = { "InsertEnter", "CmdlineEnter" },
@@ -101,14 +92,16 @@ return {
 
     opts.mapping = vim.tbl_extend("force", {}, opts.mapping, {
       -- You can add here new mappings.
-      ["<tab>"] = setup_supertab_forward(),
-      ["<S-tab>"] = setup_supertab_backward(),
-      -- ["<A-;>"] = require("cmp").mapping.complete(), -- For Windows Terminal: Send Ctrl+Space into Alt+;
+      ["<Tab>"] = setup_supertab_forward(),
+      ["<S-Tab>"] = setup_supertab_backward(),
       ["<A-;>"] = setup_toggle_autocomplete_menu(), -- For Windows Terminal: Send Ctrl+Space into Alt+;
       ["<C-Space>"] = setup_toggle_autocomplete_menu(),
       ["<Down>"] = require("cmp").mapping.select_next_item(),
       ["<Up>"] = require("cmp").mapping.select_prev_item(),
+      -- ["<CR>"] = require("cmp").mapping.confirm { select = false },
     })
+
+    -- opts.preselect = require("cmp").PreselectMode.None -- Disable Enter to select without choosing suggestion. Config along with mapping["<CR>"]
 
     opts.completion["completeopt"] = "menu,menuone,noselect" -- disable autoselect
 
