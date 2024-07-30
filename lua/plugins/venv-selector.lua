@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: For switching between Python venv
 return {
   "linux-cultist/venv-selector.nvim",

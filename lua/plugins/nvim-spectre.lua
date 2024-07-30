@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: Find And Replace Words
 return {
   "nvim-pack/nvim-spectre",

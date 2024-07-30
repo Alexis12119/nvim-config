@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: Keymaps Popup/Guide
 return {
   "folke/which-key.nvim",

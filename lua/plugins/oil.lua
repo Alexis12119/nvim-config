@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: File explorer like vim-vinegar
 return {
   "stevearc/oil.nvim",

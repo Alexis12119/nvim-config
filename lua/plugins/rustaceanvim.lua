@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: Improve Rust Development
 return {
   "mrcjkb/rustaceanvim",

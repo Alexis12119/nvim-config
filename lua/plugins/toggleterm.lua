@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: Terminal Integration
 return {
   "akinsho/toggleterm.nvim",

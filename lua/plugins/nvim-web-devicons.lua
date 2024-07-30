@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: Icons
 return {
   "nvim-tree/nvim-web-devicons",

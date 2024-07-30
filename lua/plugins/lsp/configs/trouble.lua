@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: For managing error and warning messages
 return {
   "folke/trouble.nvim",

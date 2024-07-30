@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: Code Runner
 return {
   "Zeioth/compiler.nvim",

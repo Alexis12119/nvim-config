@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: Completion Engine
 
 return {

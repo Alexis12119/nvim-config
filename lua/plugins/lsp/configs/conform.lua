@@ -28,6 +28,7 @@ for _, filetype in pairs(prettier_ft) do
   formatters_by_ft[filetype] = { "prettier" }
 end
 
+---@type NvPluginSpec
 return {
   -- NOTE: Formatting
   "stevearc/conform.nvim",

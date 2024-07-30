@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: Tests
 return {
   "nvim-neotest/neotest",

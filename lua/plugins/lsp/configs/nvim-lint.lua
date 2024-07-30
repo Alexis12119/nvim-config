@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: Linting
 return {
   "mfussenegger/nvim-lint",

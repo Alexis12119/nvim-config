@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: For Typescript
 return {
   "pmizio/typescript-tools.nvim",

@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: Vim Motions Guide
 return {
   "tris203/precognition.nvim",

@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 --  NOTE: LSP Configuration
 return {
   "neovim/nvim-lspconfig",

@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: Show Screenkey
 return {
   "NStefan002/screenkey.nvim",

@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: Fuzzy Finder
 return {
   "nvim-telescope/telescope.nvim",

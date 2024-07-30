@@ -1,3 +1,5 @@
+---@type NvPluginSpec
+-- NOTE: Debug Adapter Protocol
 return {
   "mfussenegger/nvim-dap",
   config = function()

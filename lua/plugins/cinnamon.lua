@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: Smooth scrolling with Cinnamon
 return {
   "declancm/cinnamon.nvim",

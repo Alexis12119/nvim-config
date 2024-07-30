@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: Git Signs
 return {
   "lewis6991/gitsigns.nvim",
