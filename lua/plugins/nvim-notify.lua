@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: Notification
 return {
   "rcarriga/nvim-notify",

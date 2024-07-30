@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: Manage Projects
 return {
   "ahmedkhalf/project.nvim",

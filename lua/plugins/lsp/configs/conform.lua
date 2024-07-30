@@ -63,6 +63,7 @@ local formatters = {
   },
 }
 
+---@type NvPluginSpec
 return {
   -- NOTE: Formatting
   "stevearc/conform.nvim",

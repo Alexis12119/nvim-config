@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: Package installer
 return {
   "williamboman/mason.nvim",

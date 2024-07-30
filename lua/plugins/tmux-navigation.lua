@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: Tmux navigation
 return {
   "alexghergh/nvim-tmux-navigation",

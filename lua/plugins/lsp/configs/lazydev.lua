@@ -1,3 +1,5 @@
+---@type NvPluginSpec
+-- NOTE: Improved Lua Development
 return {
   {
     "folke/lazydev.nvim",

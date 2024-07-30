@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: Utility plugins
 return {
   -- Utilities

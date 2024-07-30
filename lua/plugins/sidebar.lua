@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: Sidebar
 return {
   "sidebar-nvim/sidebar.nvim",

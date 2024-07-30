@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 --  NOTE: LSP Configuration
 return {
   "neovim/nvim-lspconfig",
@@ -21,7 +22,7 @@ return {
 
     local config = {
       -- Enable virtual text
-      virtual_text = true,
+      virtual_text = false,
       update_in_insert = false,
       underline = true,
       severity_sort = true,

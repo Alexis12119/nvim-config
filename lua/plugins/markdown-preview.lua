@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: Preview Markdown
 return {
   "iamcco/markdown-preview.nvim",

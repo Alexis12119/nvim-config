@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: Search motions
 return {
   "folke/flash.nvim",

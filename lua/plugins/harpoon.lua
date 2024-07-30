@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: Marks
 return {
   "ThePrimeagen/harpoon",

@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: Highlight, List and Search Todo comments in your projects
 return {
   "folke/todo-comments.nvim",

@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: For Typescript
 -- For further information: https://github.com/typescript-language-server/typescript-language-server/blob/HEAD/docs/configuration.md
 return {

@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: For Flutter Development
 return {
   "akinsho/flutter-tools.nvim",

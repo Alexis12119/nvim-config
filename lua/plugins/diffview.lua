@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: Show diffs
 return {
   "sindrets/diffview.nvim",

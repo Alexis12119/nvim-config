@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: Completion Engine
 
 --NOTE: Supertab setup referenced from LazyVim documentation

@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: Note Taking
 return {
   "nvim-neorg/neorg",

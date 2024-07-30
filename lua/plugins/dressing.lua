@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: Improve UI
 return {
   "stevearc/dressing.nvim",

@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 -- NOTE: Sessions
 return {
   "olimorris/persisted.nvim",
