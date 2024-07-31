@@ -124,6 +124,8 @@ return {
 
     require("luasnip").filetype_extend("javascriptreact", { "html" })
     require("luasnip").filetype_extend("typescriptreact", { "html" })
+    require("luasnip").filetype_extend("javascript", { "javascriptreact" })
+    require("luasnip").filetype_extend("typescript", { "typescriptreact" })
     require("luasnip").filetype_extend("svelte", { "html" })
     require("luasnip").filetype_extend("vue", { "html" })
     require("luasnip").filetype_extend("php", { "html" })
@@ -143,6 +145,8 @@ return {
         { name = "cmdline" },
       },
     })
+
+    require("luasnip.loaders.from_vscode").lazy_load() -- Load "friendly-snippets"
   end,
   dependencies = {
     -- Icons
@@ -198,12 +202,6 @@ return {
       "L3MON4D3/LuaSnip",
       dependencies = "rafamadriz/friendly-snippets",
       build = "make install_jsregexp",
-    },
-    {
-      "mlaursen/vim-react-snippets",
-      config = function()
-        require("vim-react-snippets").lazy_load()
-      end,
     },
   },
 }

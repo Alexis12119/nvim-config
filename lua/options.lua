@@ -54,6 +54,7 @@ local options = {
 local global = {
   mkdp_auto_close = false, -- Don't Exit Preview When Switching Buffers
   snipmate_snippets_path = vim.fn.stdpath "config" .. "/snippets/snipmate",
+  vscode_snippets_path = vim.fn.stdpath "config" .. "/snippets/vscode",
   startup_message = false, -- Show startup message
   random_header = false, -- Show random header
   skip_ts_context_commentstring_module = true,
