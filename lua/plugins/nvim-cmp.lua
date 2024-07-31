@@ -41,11 +41,16 @@ return {
       end,
     }
 
+    -- Load friendly-snippets
+    require("luasnip.loaders.from_vscode").lazy_load()
+
     require("luasnip").filetype_extend("javascriptreact", { "html" })
     require("luasnip").filetype_extend("typescriptreact", { "html" })
     require("luasnip").filetype_extend("svelte", { "html" })
     require("luasnip").filetype_extend("vue", { "html" })
     require("luasnip").filetype_extend("php", { "html" })
+    require("luasnip").filetype_extend("javascript", { "javascriptreact" })
+    require("luasnip").filetype_extend("typescript", { "typescriptreact" })
 
     --NOTE: add border for cmp window
     if vim.g.border_enabled then
