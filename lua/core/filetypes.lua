@@ -3,6 +3,8 @@ vim.filetype.add {
   extension = {
     ["templ"] = "templ",
     ["json"] = "jsonc",
+    ["js"] = "javascript.javascriptreact", -- Add filetype react for "vim-react-snippets"
+    ["ts"] = "typescript.typescriptreact",
   },
   pattern = {
     [".*%.github/workflows/.*%.yml"] = "yaml.ghaction",
