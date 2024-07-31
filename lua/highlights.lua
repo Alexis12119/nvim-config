@@ -23,10 +23,16 @@ M.override = {
   TblineFill = { link = "Normal" },
   NvimTreeRootFolder = { link = "NvimTreeFolderName" },
   gitcommitComment = { link = "Comment", fg = "grey_fg2" },
-  -- NOTE: Change visual color for easier to see the selection in catppuccin theme (based on Mocha)
+
+  -- WARN: Only suitable while using catppuccin. Consider to remove if use another theme.
+
+  -- Change visual color for easier to see the selection in catppuccin theme
   Visual = {
-    bg = "#45475a",
+    bg = "one_bg2",
   },
+  -- Change Telescope color for easier to see in finding and matching while using transparent
+  TelescopeSelection = { bg = "one_bg2" },
+  TelescopeMatching = { bg = "NONE" },
 }
 
 ---@type HLTable
