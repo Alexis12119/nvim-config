@@ -26,9 +26,7 @@ return {
     require("which-key").setup(opts)
     require("which-key").add {
       {
-        -- { "<leader>h", group = "Harpoon", icon = "" },
         { "<leader>R", group = "Refactor", icon = "󰮓", mode = { "n", "v" } },
-        { "<leader>S", group = "Sessions", icon = "󰔚" },
         { "<leader>T", group = "Tests", icon = "󰙨" },
         { "<leader>a", group = "AI", icon = "", mode = { "n", "v" } },
         { "<leader>d", group = "Debugging", icon = "" },
@@ -40,6 +38,7 @@ return {
         { "<leader>o", group = "Options", icon = "" },
         { "<leader>p", group = "Plugins", icon = "" },
         { "<leader>r", group = "Runner", icon = "" },
+        { "<leader>s", group = "Sessions", icon = "󰔚" },
         { "<leader>s", group = "Snapshot", icon = "", mode = { "v" } },
         { "<leader>t", group = "Terminal", icon = "" },
         { "<leader>u", group = "Utils", icon = "" },
