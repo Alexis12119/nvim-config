@@ -68,20 +68,25 @@ end, { desc = "Options | Toggle Spell Check", silent = true })
 
 -- Toggle Theme
 vim.keymap.set("n", "<leader>ot", function()
-  vim.g.switch_theme = not vim.g.switch_theme
+  local opts = require("nvconfig").base46
   require("base46").toggle_theme()
-  if vim.g.switch_theme then
-    vim.notify("Light Mode", vim.log.levels.INFO, { title = "Theme" })
-  else
+  if
+    opts.theme_toggle == nil
+    or (opts.theme ~= opts.theme_toggle[1] and opts.theme ~= opts.theme_toggle[2])
+  then
+    return
+  end
+  if opts.theme == opts.theme_toggle[1] then
     vim.notify("Dark Mode", vim.log.levels.INFO, { title = "Theme" })
+  else
+    vim.notify("Light Mode", vim.log.levels.INFO, { title = "Theme" })
   end
 end, { desc = "Options | Toggle Theme", silent = true })
 
 -- Toggle Transparency
 vim.keymap.set("n", "<leader>oT", function()
-  vim.g.transparency_enabled = not vim.g.transparency_enabled
   require("base46").toggle_transparency()
-  if vim.g.transparency_enabled then
+  if require("nvconfig").base46.transparency then
     vim.notify("Toggled On", vim.log.levels.INFO, { title = "Transparency" })
   else
     vim.notify("Toggled Off", vim.log.levels.INFO, { title = "Transparency" })
