@@ -10,16 +10,11 @@ return {
   init = function()
     vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
-    vim.keymap.set(
-      "n",
-      "<leader>St",
-      "<cmd>SesssionToggleAutoSave<cr>",
-      { desc = "Auto-Session | Toggle", silent = true }
-    )
-    vim.keymap.set("n", "<leader>sS", "<cmd>SessionSearch<cr>", { desc = "Auto-Session | Search", silent = true })
-    vim.keymap.set("n", "<leader>sd", "<cmd>SessionDelete<cr>", { desc = "Auto-Session | Delete", silent = true })
-    vim.keymap.set("n", "<leader>sr", "<cmd>SessionRestore<cr>", { desc = "Auto-Session | Restore", silent = true })
-    vim.keymap.set("n", "<leader>ss", "<cmd>SessionSave<cr>", { desc = "Auto-Session | Save", silent = true })
+    vim.keymap.set("n", "<leader>st", "<cmd>SessionToggleAutoSave<cr>", { desc = "Session | Toggle", silent = true })
+    vim.keymap.set("n", "<leader>sS", "<cmd>SessionSearch<cr>", { desc = "Session | Search", silent = true })
+    vim.keymap.set("n", "<leader>sd", "<cmd>SessionDelete<cr>", { desc = "Session | Delete", silent = true })
+    vim.keymap.set("n", "<leader>sr", "<cmd>SessionRestore<cr>", { desc = "Session | Restore", silent = true })
+    vim.keymap.set("n", "<leader>ss", "<cmd>SessionSave<cr>", { desc = "Session | Save", silent = true })
 
     vim.api.nvim_create_autocmd({ "BufEnter" }, {
       pattern = "NvimTree*",
