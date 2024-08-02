@@ -221,10 +221,11 @@ M.ui = {
       { "  Mappings", "Spc n c", "NvCheatsheet" },
     },
   },
-
-  cheatsheet = { theme = "grid" }, -- simple/grid
-  mason = { cmd = true, pkgs = {} },
 }
+
+M.cheatsheet = { theme = "grid" } -- simple/grid
+
+M.mason = { cmd = true, pkgs = {} }
 
 M.lsp = { signature = false }
 
