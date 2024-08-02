@@ -191,14 +191,31 @@ autocmd("FileType", {
 
 autocmd("FileType", {
   desc = "Set tab width to 2 for specific filetypes",
-  pattern = { "json", "markdown", "yaml", "toml", "javascript", "typescript", "html", "htmlx", "jsonc" },
+  pattern = {
+    "html",
+    "htmlx",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "jsonc",
+    "markdown",
+    "toml",
+    "typescript",
+    "typescriptreact",
+    "yaml",
+  },
   command = "set tabstop=2 shiftwidth=2 expandtab",
   group = general,
 })
 
 autocmd("FileType", {
   desc = "Set tab width to 4 for specific filetypes",
-  pattern = { "c", "cpp", "cs", "py" },
+  pattern = {
+    "c",
+    "cpp",
+    "cs",
+    "py",
+  },
   command = "set tabstop=4 shiftwidth=4 expandtab",
   group = general,
 })
