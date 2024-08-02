@@ -39,12 +39,6 @@ vim.keymap.set("n", "<leader>y", "<cmd>%y+<cr>", { desc = "General | Yank All Te
 -- Quit
 vim.keymap.set("n", "<leader>q", "<cmd>qa!<cr>", { desc = "General | Quit", silent = true })
 
--- Close Buffer
--- vim.keymap.set("n", "<leader>c", "<cmd>Bdelete!<cr>", { desc = "General | Close Buffer", silent = true })
-vim.keymap.set("n", "<leader>c", function()
-  delete_buffer ""
-end, { desc = "General | Close Buffer", silent = true })
-
 -- Toggle Tabufline
 vim.keymap.set("n", "<leader>ob", function()
   if vim.o.showtabline == 2 then
@@ -189,6 +183,32 @@ end, { desc = "General | Go to previous buffer", silent = true })
 vim.keymap.set("n", "L", function()
   require("nvchad.tabufline").next()
 end, { desc = "General | Go to next buffer", silent = true })
+
+-- Close Buffer
+vim.keymap.set("n", "<leader>c", function()
+  require("nvchad.tabufline").close_buffer()
+end, { desc = "General | Close Buffer", silent = true })
+
+-- Close Other Buffers
+vim.keymap.set("n", "<leader>C", function()
+  local bufs = vim.api.nvim_list_bufs()
+  local current_buf = vim.api.nvim_get_current_buf()
+  for _, i in ipairs(bufs) do
+    if i ~= current_buf then
+      vim.api.nvim_buf_delete(i, {})
+    end
+  end
+end, { desc = "General | Close Other Buffers", silent = true })
+
+-- Close buffers from Left
+vim.keymap.set("n", "scl", function()
+  require("nvchad.tabufline").closeBufs_at_direction "left"
+end, { desc = "General | Close Buffers from Left", silent = true })
+
+-- Close buffers from Right
+vim.keymap.set("n", "scr", function()
+  require("nvchad.tabufline").closeBufs_at_direction "right"
+end, { desc = "General | Close Buffers from Right", silent = true })
 
 -- Go to previous tab
 vim.keymap.set("n", "<Left>", "<cmd>tabprevious<CR>", { desc = "General | Go to previous tab", silent = true })
@@ -377,26 +397,6 @@ vim.keymap.set("n", "sv", "<cmd>vsplit<cr>", { desc = "General | Split Vertical"
 -- Close Current Window
 vim.keymap.set("n", "sq", "<cmd>close<cr>", { desc = "General | Close Current Windows", silent = true })
 
--- Save
-vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<cmd>w<cr>", { desc = "General | Save", silent = true })
-
--- Close Other Buffers
-vim.keymap.set("n", "<leader>C", function()
-  local bufs = vim.api.nvim_list_bufs()
-  local current_buf = vim.api.nvim_get_current_buf()
-  for _, i in ipairs(bufs) do
-    if i ~= current_buf then
-      vim.api.nvim_buf_delete(i, {})
-    end
-  end
-end, { desc = "General | Close Other Buffers", silent = true })
-
--- Clear Search Highlight
-vim.keymap.set("n", "<Esc>", "<cmd>noh<cr>", { desc = "General | Clear Search Highlight", silent = true })
-
--- Select All
-vim.keymap.set("n", "<leader>A", "ggVG", { desc = "General | Select All", silent = true })
-
 -- Move window
 vim.keymap.set("n", "sh", "<C-w>H", { desc = "General | Move Window to Far Left", silent = true })
 vim.keymap.set("n", "sj", "<C-w>J", { desc = "General | Move Window to Far Down", silent = true })
@@ -407,3 +407,12 @@ vim.keymap.set("n", "sR", "<C-w>R", { desc = "General | Rotate Window Up/Left", 
 
 -- Close other windows
 vim.keymap.set("n", "<leader>W", "<cmd>only<cr>", { desc = "General | Close Other Windows", silent = true })
+
+-- Save
+vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<cmd>w<cr>", { desc = "General | Save", silent = true })
+
+-- Clear Search Highlight
+vim.keymap.set("n", "<Esc>", "<cmd>noh<cr>", { desc = "General | Clear Search Highlight", silent = true })
+
+-- Select All
+vim.keymap.set("n", "<leader>A", "ggVG", { desc = "General | Select All", silent = true })
