@@ -25,6 +25,7 @@ M.override = {
   gitcommitComment = { link = "Comment", fg = "grey_fg2" },
 
   -- WARN: Only suitable while using catppuccin. Consider to remove if use another theme.
+  TbFill = { bg = "NONE" },
   Visual = {
     bg = "one_bg2",
   },
