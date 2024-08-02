@@ -24,6 +24,10 @@ M.override = {
   NvimTreeRootFolder = { link = "NvimTreeFolderName" },
   gitcommitComment = { link = "Comment", fg = "grey_fg2" },
 
+  -- User style
+  NvDashAscii = { bg = "blue", fg = "black" },
+  NvDashButtons = { bg = "black2", fg = "white" },
+
   -- WARN: Only suitable while using catppuccin. Consider to remove if use another theme.
   TbFill = { bg = "NONE" },
   Visual = {
