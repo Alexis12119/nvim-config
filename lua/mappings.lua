@@ -68,15 +68,15 @@ end, { desc = "Options | Toggle Spell Check", silent = true })
 
 -- Toggle Theme
 vim.keymap.set("n", "<leader>ot", function()
-  local base46_opts = require("nvconfig").base46
+  local opts = require("nvconfig").base46
   require("base46").toggle_theme()
   if
-    base46_opts.theme_toggle == nil
-    or (base46_opts.theme ~= base46_opts.theme_toggle[1] and base46_opts.theme ~= base46_opts.theme_toggle[2])
+    opts.theme_toggle == nil
+    or (opts.theme ~= opts.theme_toggle[1] and opts.theme ~= opts.theme_toggle[2])
   then
     return
   end
-  if base46_opts.theme == base46_opts.theme_toggle[1] then
+  if opts.theme == opts.theme_toggle[1] then
     vim.notify("Dark Mode", vim.log.levels.INFO, { title = "Theme" })
   else
     vim.notify("Light Mode", vim.log.levels.INFO, { title = "Theme" })
