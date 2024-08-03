@@ -36,6 +36,10 @@ return {
       "~/",
       "~/Downloads",
     },
+    bypass_session_save_file_types = {
+      "NvimTree",
+      "nvdash",
+    },
     session_lens = {
       -- If load_on_setup is false, make sure you use `:SessionSearch` to open the picker as it will initialize everything first
       load_on_setup = true,
