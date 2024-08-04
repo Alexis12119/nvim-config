@@ -60,7 +60,7 @@ return {
     require("cmp").setup(opts)
 
     local cmdline_mappings = vim.tbl_extend("force", {}, require("cmp").mapping.preset.cmdline(), {
-      ["<CR>"] = { c = require("cmp").mapping.confirm { select = true } },
+      -- ["<CR>"] = { c = require("cmp").mapping.confirm { select = true } },
     })
 
     require("cmp").setup.cmdline(":", {
