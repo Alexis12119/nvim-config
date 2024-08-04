@@ -70,10 +70,7 @@ end, { desc = "Options | Toggle Spell Check", silent = true })
 vim.keymap.set("n", "<leader>ot", function()
   local opts = require("nvconfig").base46
   require("base46").toggle_theme()
-  if
-    opts.theme_toggle == nil
-    or (opts.theme ~= opts.theme_toggle[1] and opts.theme ~= opts.theme_toggle[2])
-  then
+  if opts.theme_toggle == nil or (opts.theme ~= opts.theme_toggle[1] and opts.theme ~= opts.theme_toggle[2]) then
     return
   end
   if opts.theme == opts.theme_toggle[1] then
