@@ -34,8 +34,9 @@ local options = {
   lazyredraw = false, -- Won't be redrawn while executing macros, register and other commands.
   termguicolors = true, -- Enables 24-bit RGB color in the TUI
   fillchars = { eob = " ", fold = " ", foldopen = "", foldsep = " ", foldclose = "", lastline = " " }, -- make EndOfBuffer invisible
-  ruler = false,
-  cmdheight = 0,
+  ruler = false, -- show the line and column number of the cursor position``
+  cmdheight = 0, -- height of the command line
+  helpheight = 10, -- height of the help window
   -- shell = vim.fn.executable "pwsh" and "pwsh" or "powershell",
   -- shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;",
   -- shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait",
@@ -46,15 +47,15 @@ local options = {
 
 local global = {
   mkdp_auto_close = false, -- Don't Exit Preview When Switching Buffers
-  snipmate_snippets_path = vim.fn.stdpath "config" .. "/snippets/snipmate",
+  snipmate_snippets_path = vim.fn.stdpath "config" .. "/snippets/snipmate", -- path to snipmate snippets
   startup_message = false, -- Show startup message
   random_header = false, -- Show random header
-  skip_ts_context_commentstring_module = true,
-  toggle_cmp = true,
-  ["loaded_node_provider"] = 0,
-  ["loaded_python3_provider"] = 0,
-  ["loaded_perl_provider"] = 0,
-  ["loaded_ruby_provider"] = 0,
+  skip_ts_context_commentstring_module = true, -- disable treesitter context commentstring
+  toggle_cmp = true, -- enable nvim-cmp
+  ["loaded_node_provider"] = 0, -- disable node provider
+  ["loaded_python3_provider"] = 0, -- disable python3 provider
+  ["loaded_perl_provider"] = 0, -- disable perl provider
+  ["loaded_ruby_provider"] = 0, -- disable ruby provider
   toggle_theme_icon = "   ",
 }
 
