@@ -82,6 +82,7 @@ return {
       "java",
       "http",
       "json",
+      "latex",
     },
     indent = {
       enable = false,
