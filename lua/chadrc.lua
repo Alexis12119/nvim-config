@@ -187,6 +187,14 @@ M.ui = {
           end
         end
 
+        local lint_ok, lint = pcall(require, "lint")
+        if lint_ok then
+          local linters = lint.linters_by_ft[vim.bo.filetype]
+          if linters then
+            table.insert(clients, table.concat(linters, ", "))
+          end
+        end
+
         if #clients == 0 then
           return ""
         else
