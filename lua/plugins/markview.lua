@@ -1,3 +1,5 @@
+---@type NvPluginSpec
+-- NOTE: Better Markdown
 return {
   "OXY2DEV/markview.nvim",
   lazy = false, -- Recommended
