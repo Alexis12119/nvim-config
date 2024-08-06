@@ -10,9 +10,9 @@ local java_test_path = vim.fn.stdpath "data" .. "/mason/packages/java-test/"
 local jdtls_path = vim.fn.stdpath "data" .. "/mason/packages/jdtls/"
 
 local bundles = {
-  vim.fn.glob(java_debug_path .. "extension/server/com.microsoft.java.debug.plugin-*.jar", 1),
+  vim.fn.glob(java_debug_path .. "extension/server/com.microsoft.java.debug.plugin-*.jar", true),
 }
-vim.list_extend(bundles, vim.split(vim.fn.glob(java_test_path .. "extension/server/*.jar", 1), "\n"))
+vim.list_extend(bundles, vim.split(vim.fn.glob(java_test_path .. "extension/server/*.jar", true), "\n"))
 
 -- NOTE: Decrease the amount of files to improve speed(Experimental).
 -- INFO: It's annoying to edit the version again and again.
