@@ -179,19 +179,23 @@ M.ui = {
           table.insert(clients, client.name)
         end
 
+        local lint_ok, lint = pcall(require, "lint")
+        if lint_ok then
+          local linters = {}
+          local fts = vim.split(vim.bo.filetype, ".", { plain = true, trimempty = true })
+          for _, ft in pairs(fts) do
+            vim.list_extend(linters, lint.linters_by_ft[ft] or {})
+          end
+          if #linters ~= 0 then
+            table.insert(clients, table.concat(linters, ", "))
+          end
+        end
+
         local conform_ok, conform = pcall(require, "conform")
         if conform_ok then
           local formatters = conform.list_formatters(0)
           for _, formatter in pairs(formatters) do
             table.insert(clients, formatter.name)
-          end
-        end
-
-        local lint_ok, lint = pcall(require, "lint")
-        if lint_ok then
-          local linters = lint.linters_by_ft[vim.bo.filetype]
-          if linters then
-            table.insert(clients, table.concat(linters, ", "))
           end
         end
 
