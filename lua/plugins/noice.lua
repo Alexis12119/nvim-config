@@ -2,6 +2,7 @@
 -- NOTE: UI for messages, cmdline, and popup
 return {
   "folke/noice.nvim",
+  lazy = false,
   dependencies = { { "MunifTanjim/nui.nvim" }, { "rcarriga/nvim-notify" } },
   opts = {
     cmdline = {
