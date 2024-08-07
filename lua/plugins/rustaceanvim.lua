@@ -5,7 +5,7 @@ return {
   version = "^4", -- Recommended
   event = "User FilePost",
   config = function()
-    local extension_path = vim.env.HOME .. "/.local/share/nvim/mason/packages/codelldb/extension/"
+    local extension_path = vim.fn.stdpath "data" .. "/mason/packages/codelldb/extension/"
     local codelldb_path = extension_path .. "adapter/codelldb"
     local liblldb_path = extension_path .. "lldb/lib/liblldb"
     local this_os = vim.uv.os_uname().sysname
