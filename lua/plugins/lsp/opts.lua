@@ -14,7 +14,7 @@ local function lsp_keymaps(bufnr)
   keymap("n", "gp", "<cmd>Lspsaga peek_definition<cr>", buf_opts)
   -- keymap("n", "K", vim.lsp.buf.hover, buf_opts)
   keymap("n", "K", "<cmd>Lspsaga hover_doc<cr>", buf_opts)
-  keymap("n", "gi", "<cmd>Telescope lsp_implementations<cr>", buf_opts)
+  keymap("n", "gI", "<cmd>Telescope lsp_implementations<cr>", buf_opts)
 end
 
 -- Highlight symbol under cursor
