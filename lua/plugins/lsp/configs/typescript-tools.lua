@@ -9,6 +9,7 @@ return {
       client.server_capabilities.documentRangeFormattingProvider = false
     end,
     settings = {
+    separate_diagnostic_server = false, -- Disable separate diagnostic server
       tsserver_file_preferences = {
         includeInlayParameterNameHints = "all",
         includeCompletionsForModuleExports = true,
