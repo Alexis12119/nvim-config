@@ -39,50 +39,6 @@ return {
         -- install_root_dir = path.concat { vim.fn.stdpath "config", "/lua/custom/mason" },
       }
 
-      mason_lspconfig.setup {
-        automatic_installation = true,
-        ensure_installed = {
-          -- Lua
-          "lua_ls",
-          "vimls",
-
-          -- Web Development
-          -- "cssls",
-          -- "html",
-          -- "tsserver",
-          -- "denols",
-          -- "vuels",
-          -- "tailwindcss",
-          -- "emmet_language_server",
-          -- "eslint-lsp",
-
-          -- PHP
-          -- "intelephense",
-
-          -- C/C++
-          -- "clangd",
-
-          -- CMake
-          -- "neocmake",
-
-          -- Java
-          -- "jdtls",
-
-          -- Yaml
-          -- "yamlls",
-
-          -- Python
-          -- "pyright",
-
-          -- Go
-          -- "gopls",
-
-          -- C#
-          -- "omnisharp",
-          -- "omnisharp-mono",
-        },
-      }
-
       local disabled_servers = {
         "jdtls",
         "rust_analyzer",
