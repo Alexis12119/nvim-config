@@ -16,7 +16,7 @@ local formatters_by_ft = {
   less = { "prettier" },
   markdown = { "prettier" },
   scss = { "prettier" },
-  typescript = { "prettier", "deno_fmt" },
+  typescript = { "prettier" },
   typescriptreact = { "prettier" },
   vue = { "prettier" },
 }
