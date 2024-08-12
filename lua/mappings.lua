@@ -261,7 +261,7 @@ end, { desc = "Neovim | Toggle Cheatsheet", silent = true })
 
 -- Inspect
 vim.keymap.set("n", "<leader>ni", function()
-  if vim.fn.has "nvim-0.9.0" == 1 then
+  if vim.version().minor >= 9 then
     vim.cmd "Inspect"
   else
     vim.notify("Inspect isn't available in this neovim version", vim.log.levels.WARN, { title = "Inspect" })

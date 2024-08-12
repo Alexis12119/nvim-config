@@ -10,7 +10,7 @@ return {
     vim.keymap.set("v", "<leader>lf", "<cmd>Format<cr>", { desc = "LSP | Format", silent = true })
 
     vim.keymap.set("n", "<leader>lh", function()
-      if vim.fn.has "nvim-0.10" == 1 then
+      if vim.version().minor >= 10 then
         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
       end
     end, { desc = "LSP | Toggle Inlay Hints", silent = true })
@@ -38,7 +38,7 @@ return {
 
     local signs = { Error = "", Warn = "", Hint = "󰌵", Info = "" }
 
-    if vim.fn.has "nvim-0.11" == 1 then
+    if vim.version().minor >= 11 then
       config.signs = {
         text = {
           [vim.diagnostic.severity.ERROR] = signs.Error,

@@ -3,7 +3,7 @@ vim.g.border_enabled = false -- NOTE: Toggle border for LSP Windows, nvim-cmp, l
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
-if vim.fn.has "nvim-0.11" == 1 then
+if vim.version().minor >= 11 then
   vim.tbl_add_reverse_lookup = function(tbl)
     for k, v in pairs(tbl) do
       tbl[v] = k
