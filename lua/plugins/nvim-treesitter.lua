@@ -68,7 +68,6 @@ return {
       "java",
       "javascript",
       "json",
-      "latex",
       "lua",
       "markdown",
       "markdown_inline",
