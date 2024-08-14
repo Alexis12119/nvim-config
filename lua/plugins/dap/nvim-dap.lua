@@ -5,7 +5,6 @@ return {
   config = function()
     -- NOTE: Check out this for guide
     -- https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation
-    dofile(vim.g.base46_cache .. "dap")
     local dap = require "dap"
     vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticSignError", linehl = "", numhl = "" })
 

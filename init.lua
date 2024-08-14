@@ -38,9 +38,8 @@ require("lazy").setup({
   { import = "plugins" },
 }, lazy_config)
 
--- load theme
-dofile(vim.g.base46_cache .. "defaults")
-dofile(vim.g.base46_cache .. "statusline")
+-- Load the highlights
+dofile(vim.g.base46_cache .. "all")
 
 require "nvchad.autocmds"
 

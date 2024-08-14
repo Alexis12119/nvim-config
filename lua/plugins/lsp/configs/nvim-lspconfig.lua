@@ -17,9 +17,6 @@ return {
   end,
   cmd = "LspInfo",
   config = function()
-    dofile(vim.g.base46_cache .. "lsp")
-    require "nvchad.lsp"
-
     local config = {
       -- Enable virtual text
       virtual_text = false,
