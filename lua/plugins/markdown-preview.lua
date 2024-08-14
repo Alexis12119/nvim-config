@@ -13,6 +13,7 @@ return {
     end, { desc = "Markdown Preview", silent = true })
   end,
   build = function()
+    require("lazy").load { plugins = { "markdown-preview.nvim" } }
     vim.fn["mkdp#util#install"]()
   end,
   ft = "markdown",
