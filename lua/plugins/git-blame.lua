@@ -28,15 +28,7 @@ return {
       { desc = "GitBlame | Copy File Url", silent = true }
     )
     vim.keymap.set("n", "<leader>gs", "<cmd>GitBlameCopySHA<cr>", { desc = "GitBlame | Copy SHA", silent = true })
-    vim.keymap.set("n", "<leader>gt", function()
-      if vim.g.gitblame_enabled ~= true then
-        vim.cmd "GitBlameEnable"
-        vim.g.gitblame_enabled = true
-      else
-        vim.cmd "GitBlameDisable"
-        vim.g.gitblame_enabled = false
-      end
-    end, { desc = "GitBlame | Toggle Blame", silent = true })
+    vim.keymap.set("n", "<leader>gt", "<cmd>GitBlameToggle<cr>", { desc = "GitBlame | Toggle Blame", silent = true })
   end,
   cmd = {
     "GitBlameToggle",
