@@ -39,7 +39,7 @@ require("lazy").setup({
 }, lazy_config)
 
 -- Load the highlights
-dofile(vim.g.base46_cache .. "all")
+require("base46").load_all_highlights()
 
 require "nvchad.autocmds"
 
