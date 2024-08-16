@@ -12,7 +12,8 @@ return {
     timeout = 3000,
     top_down = false,
   },
-  config = function()
+  config = function(_, opts)
+    require("notify").setup(opts)
     vim.notify = require "notify"
     local messages = require "core.messages"
     math.randomseed(os.time())
