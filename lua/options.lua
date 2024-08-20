@@ -37,6 +37,7 @@ local options = {
   ruler = false, -- show the line and column number of the cursor position``
   cmdheight = 0, -- height of the command line
   helpheight = 10, -- height of the help window
+  -- NOTE: Uncomment these options to enable pwsh for Windows
   -- shell = vim.fn.executable "pwsh" and "pwsh" or "powershell",
   -- shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;",
   -- shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait",
