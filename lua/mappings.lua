@@ -92,8 +92,8 @@ end, { desc = "Options | Toggle Transparency", silent = true })
 
 -- Toggle Wrap
 vim.keymap.set("n", "<leader>ow", function()
-  vim.o.wrap = not vim.o.wrap
-  if vim.o.wrap then
+  vim.wo.wrap = not vim.wo.wrap
+  if vim.wo.wrap then
     vim.notify("Toggled On", vim.log.levels.INFO, { title = "Line Wrap" })
   else
     vim.notify("Toggled Off", vim.log.levels.INFO, { title = "Line Wrap" })
@@ -213,8 +213,8 @@ vim.keymap.set("v", "<A-j>", "<cmd>m '>+1<CR>gv=gv", { desc = "General | Move th
 -- Move the selected text down (Visual Mode)
 vim.keymap.set("v", "<A-k>", "<cmd>m '<-2<CR>gv=gv", { desc = "General | Move the selected text down", silent = true })
 
--- Enter Insert Mode Terminal
-vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Enter Insert Mode", silent = true })
+-- Enter Normal Mode Terminal
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Enter Normal Mode(Terminal)", silent = true })
 
 -- Word Search Increment
 vim.keymap.set("c", "<Tab>", function()
