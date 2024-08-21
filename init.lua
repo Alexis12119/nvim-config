@@ -21,9 +21,10 @@ end
 
 vim.opt.runtimepath:prepend(lazypath)
 
+-- NOTE: lazy.nvim options
 local lazy_config = require "core.lazy"
 
--- load plugins
+-- NOTE: Load plugins
 require("lazy").setup({
   {
     "NvChad/NvChad",

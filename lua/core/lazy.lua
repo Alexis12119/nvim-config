@@ -1,4 +1,4 @@
--- NOTE: Lazy(Plugin Manager) options
+-- NOTE: lazy.nvim(Plugin Manager) options
 return {
   defaults = { lazy = true },
   install = { colorscheme = { "nvchad" } },
