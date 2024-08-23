@@ -84,6 +84,7 @@ end, { desc = "Options | Toggle Theme", silent = true })
 vim.keymap.set("n", "<leader>oT", function()
   require("base46").toggle_transparency()
   if require("nvconfig").base46.transparency then
+    vim.api.nvim_set_hl(0, "NotifyBackground", { bg = "#000000" })
     vim.notify("Toggled On", vim.log.levels.INFO, { title = "Transparency" })
   else
     vim.notify("Toggled Off", vim.log.levels.INFO, { title = "Transparency" })
