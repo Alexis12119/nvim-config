@@ -13,6 +13,12 @@ return {
     top_down = false,
   },
   config = function(_, opts)
+    local base46 = require("nvconfig").base46
+
+    if base46.transparency then
+      opts.background_colour = "#000000"
+    end
+
     require("notify").setup(opts)
 
     vim.notify = require "notify"
