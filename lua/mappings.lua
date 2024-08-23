@@ -87,6 +87,7 @@ vim.keymap.set("n", "<leader>oT", function()
     vim.api.nvim_set_hl(0, "NotifyBackground", { bg = "#000000" })
     vim.notify("Toggled On", vim.log.levels.INFO, { title = "Transparency" })
   else
+    vim.api.nvim_set_hl(0, "NotifyBackground", { link = "Normal" })
     vim.notify("Toggled Off", vim.log.levels.INFO, { title = "Transparency" })
   end
 end, { desc = "Options | Toggle Transparency", silent = true })
