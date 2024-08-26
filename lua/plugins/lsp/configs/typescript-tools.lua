@@ -2,7 +2,7 @@
 -- NOTE: For Typescript
 return {
   "pmizio/typescript-tools.nvim",
-  event = "User FilePost",
+  event = "BufReadPost",
   opts = {
     on_attach = function(client)
       client.server_capabilities.documentFormattingProvider = false
