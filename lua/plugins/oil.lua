@@ -3,7 +3,13 @@
 return {
   "stevearc/oil.nvim",
   init = function()
-    vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Oil | Open Oil" })
+    vim.keymap.set("n", "<leader>O", function()
+      if vim.bo.filetype == "oil" then
+        vim.cmd "Bdelete!"
+      else
+        vim.cmd "Oil"
+      end
+    end, { desc = "Oil | Toggle Oil" })
   end,
   cmd = "Oil",
   opts = {
