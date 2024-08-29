@@ -174,27 +174,3 @@ autocmd("FileType", {
   group = overseer,
   desc = "Enter Normal Mode In OverseerList",
 })
-
--- For Godot
-local godot = augroup("Godot", { clear = true })
-
-autocmd("FileType", {
-  pattern = { "gdscript" },
-  callback = function()
-    vim.g.godot = true
-    local port = os.getenv "GDScript_Port" or "6005"
-    local cmd = vim.lsp.rpc.connect("127.0.0.1", port)
-    local pipe = "/tmp/godot.pipe"
-
-    vim.lsp.start {
-      name = "godot",
-      cmd = cmd,
-      root_dir = vim.fs.dirname(vim.fs.find({ "project.godot" }, { upward = true })[1]),
-      on_attach = function(_, _)
-        vim.api.nvim_command('echo serverstart("' .. pipe .. '")')
-      end,
-    }
-  end,
-  group = godot,
-  desc = "Start Godot LSP",
-})
