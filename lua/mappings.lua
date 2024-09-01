@@ -218,6 +218,18 @@ vim.keymap.set("v", "<A-k>", "<cmd>m '<-2<CR>gv=gv", { desc = "General | Move th
 -- Enter Normal Mode Terminal
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Enter Normal Mode(Terminal)", silent = true })
 
+-- Go to upper window (Terminal)
+vim.keymap.set("t", "<C-j>", "<C-\\><C-N><C-j>", { desc = "General | Go to upper window(Terminal)", silent = true })
+
+-- Go to lower window (Terminal)
+vim.keymap.set("t", "<C-k>", "<C-\\><C-N><C-k>", { desc = "General | Go to lower window(Terminal)", silent = true })
+
+-- Go to left window (Terminal)
+vim.keymap.set("t", "<C-h>", "<C-\\<C-N><C-h>", {  desc = "General | Go to left window(Terminal)", silent = true })
+
+-- Go to right window (Terminal)
+vim.keymap.set("t", "<C-l>", "<C-\\><C-N><C-l>", { desc = "General | Go to right window(Terminal)", silent = true })
+
 -- Word Search Increment
 vim.keymap.set("c", "<Tab>", function()
   if fn.getcmdtype() == "/" or fn.getcmdtype() == "?" then
