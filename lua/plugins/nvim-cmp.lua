@@ -28,31 +28,6 @@ return {
       return (vim.g.toggle_cmp and vim.bo.buftype == "")
     end
 
-    local icons = require "nvchad.icons.lspkind"
-
-    -- Add your custom menu here
-    local menu = {
-      -- ["vim-dadbod-completion"] = "",
-    }
-
-    opts.formatting = {
-      format = function(entry, vim_item)
-        local kind = require("lspkind").cmp_format { menu = menu, mode = "text", maxwidth = 50 }(entry, vim_item)
-        local strings = vim.split(kind.kind, " ", { trimempty = true })
-        kind.kind = string.format(" %s  %s", icons[vim_item.kind], strings[1])
-        kind.menu = " " .. (kind.menu or "")
-
-        return kind
-      end,
-    }
-
-    -- vim.api.nvim_create_autocmd("FileType", {
-    --   pattern = { "sql", "mysql", "plsql" },
-    --   callback = function()
-    --     require("cmp").setup.buffer { sources = { { name = "vim-dadbod-completion" } } }
-    --   end,
-    -- })
-
     require("luasnip").filetype_extend("javascriptreact", { "html" })
     require("luasnip").filetype_extend("typescriptreact", { "html" })
     require("luasnip").filetype_extend("svelte", { "html" })
@@ -83,10 +58,6 @@ return {
     })
   end,
   dependencies = {
-    -- Icons
-    {
-      "onsails/lspkind.nvim",
-    },
     -- For Rust
     {
       "saecki/crates.nvim",
