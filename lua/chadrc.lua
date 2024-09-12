@@ -36,9 +36,7 @@ local highlights = require "highlights"
 M.ui = {
   telescope = { style = "borderless" }, -- borderless / bordered
   cmp = {
-    icons = true,
-    lspkind_text = true,
-    style = "default", -- default/flat_light/flat_dark/atom/atom_colored
+    style = "atom", -- default/flat_light/flat_dark/atom/atom_colored
   },
   statusline = {
     theme = "minimal", -- default/vscode/vscode_colored/minimal
@@ -248,15 +246,15 @@ M.ui = {
   },
 
   nvdash = {
-    load_on_startup = true,
+    load_on_startup = false,
     header = get_header(),
     buttons = {
-      { "  Find File", "Spc f f", "Telescope find_files" },
-      { "󰈚  Recent Files", "Spc f r", "Telescope oldfiles" },
-      { "󰈭  Find Word", "Spc f w", "Telescope live_grep" },
-      { "  Find Projects", "Spc f p", "Telescope projects" },
-      { "  Themes", "Spc f t", "Telescope themes" },
-      { "  Mappings", "Spc n c", "NvCheatsheet" },
+      { txt = "  Find File", keys = "Spc f f", cmd = "Telescope find_files" },
+      { txt = "󰈚  Recent Files", keys = "Spc f r", cmd = "Telescope oldfiles" },
+      { txt = "󰈭  Find Word", keys = "Spc f w", cmd = "Telescope live_grep" },
+      { txt = "  Find Projects", keys = "Spc f p", cmd = "Telescope projects" },
+      { txt = "  Themes", keys = "Spc f t", cmd = "Telescope themes" },
+      { txt = "  Mappings", keys = "Spc n c", cmd = "NvCheatsheet" },
     },
   },
 }
