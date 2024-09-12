@@ -8,7 +8,10 @@ return {
   },
   {
     "NvChad/ui",
+    branch = "clean",
   },
   { "nvchad/volt" },
-  { "nvchad/minty", event = "BufReadPost" },
+  {
+    "nvchad/minty",
+  },
 }
