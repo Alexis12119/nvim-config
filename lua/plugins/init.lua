@@ -8,7 +8,6 @@ return {
   },
   {
     "NvChad/ui",
-    branch = "clean",
   },
   { "nvchad/volt" },
   {
