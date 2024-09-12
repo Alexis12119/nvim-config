@@ -2,7 +2,7 @@
 -- NOTE: Preview colors
 return {
   "NvChad/nvim-colorizer.lua",
-  enabled = true,
+  enabled = false,
   opts = {
     user_default_options = {
       RGB = true, -- #RGB hex codes
