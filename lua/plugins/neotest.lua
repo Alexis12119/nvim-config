@@ -37,12 +37,27 @@ return {
   end,
   dependencies = {
     "nvim-neotest/neotest-python",
-    "nvim-neotest/neotest-go",
+    -- "nvim-neotest/neotest-go", -- does not support monorepos where go.mod is not in root
     -- "marilari88/neotest-vitest",
     -- "nvim-neotest/neotest-jest",
     -- "rouge8/neotest-rust",
     -- "rcasia/neotest-java",
     "nvim-treesitter/nvim-treesitter",
+    -- extra dependencies for golang debugging with suppport for monorepos
+    -- ref https://github.com/fredrikaverpil/neotest-golang/?tab=readme-ov-file#example-configuration-debugging
+    "nvim-neotest/nvim-nio",
+    "nvim-lua/plenary.nvim",
+    {
+      "fredrikaverpil/neotest-golang", -- Installation
+      dependencies = {
+        {
+          "leoluz/nvim-dap-go",
+          init = function()
+            require("dap-go").setup()
+          end,
+        },
+      },
+    },
   },
   config = function()
     require("neotest").setup {
@@ -50,7 +65,7 @@ return {
         require "neotest-python" {
           runner = "pytest",
         },
-        require "neotest-go",
+        require "neotest-golang", -- Registration
       },
     }
   end,
