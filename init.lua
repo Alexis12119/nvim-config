@@ -28,9 +28,6 @@ require("lazy").setup({
     lazy = false,
     branch = "v2.5",
     import = "nvchad.plugins",
-    config = function()
-      require "options"
-    end,
   },
 
   { import = "plugins" },
@@ -39,6 +36,7 @@ require("lazy").setup({
 -- Load the highlights
 require("base46").load_all_highlights()
 
+require "options"
 require "nvchad.autocmds"
 
 vim.schedule(function()
