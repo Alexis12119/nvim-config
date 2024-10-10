@@ -15,6 +15,7 @@ local global = {
   border_enabled = false, -- NOTE: Toggle border for LSP Windows, nvim-cmp, lazy, which-key, mason
   mapleader = " ",
   maplocalleader = "\\",
+  disable_autoformat = true,
 }
 
 for name, value in pairs(global) do
