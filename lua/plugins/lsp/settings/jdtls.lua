@@ -4,12 +4,12 @@
 -- local jdtls_path = vim.fn.stdpath "data" .. "/mason/packages/jdtls/"
 -- local equinox_version = "1.6.400.v20210924-0641"
 
--- WORKSPACE_PATH = home .. "/workspace/"
--- if vim.fn.has "mac" == 1 then
+-- WORKSPACE_PATH = vim.fn.stdpath "data" .. "/workspace/"
+-- if vim.g.os == "Darwin" then
 --   OS_NAME = "mac"
--- elseif vim.fn.has "unix" == 1 then
+-- elseif vim.g.os == "Linux" then
 --   OS_NAME = "linux"
--- elseif vim.fn.has "win32" == 1 then
+-- elseif vim.g.os == "Windows" then
 --   OS_NAME = "win"
 -- else
 --   vim.notify("Unsupported OS", vim.log.levels.WARN, { title = "Jdtls" })

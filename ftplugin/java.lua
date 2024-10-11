@@ -27,11 +27,11 @@ for _, file in pairs(equinox_path) do
 end
 
 WORKSPACE_PATH = vim.fn.stdpath "data" .. "/workspace/"
-if vim.fn.has "mac" == 1 then
+if vim.g.os == "Darwin" then
   OS_NAME = "mac"
-elseif vim.fn.has "unix" == 1 then
+elseif vim.g.os == "Linux" then
   OS_NAME = "linux"
-elseif vim.fn.has "win32" == 1 then
+elseif vim.g.os == "Windows" then
   OS_NAME = "win"
 else
   vim.notify("Unsupported OS", vim.log.levels.WARN, { title = "Jdtls" })

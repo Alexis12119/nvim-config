@@ -1,4 +1,6 @@
 -- NOTE: Global Variables
+local sysname = vim.uv.os_uname().sysname
+
 local global = {
   mkdp_auto_close = false, -- Don't Exit Preview When Switching Buffers
   snipmate_snippets_path = vim.fn.stdpath "config" .. "/snippets/snipmate", -- path to snipmate snippets
@@ -15,7 +17,11 @@ local global = {
   border_enabled = false, -- NOTE: Toggle border for LSP Windows, nvim-cmp, lazy, which-key, mason
   mapleader = " ",
   maplocalleader = "\\",
+  os = sysname:match "Windows" and "Windows" or sysname:match "Linux" and "Linux" or sysname, -- Windows, Linux, Darwin, NetBSD,...
 }
+
+global.path_delimiter = global.os == "Windows" and ";" or ":"
+global.path_separator = global.os == "Windows" and "\\" or "/"
 
 for name, value in pairs(global) do
   vim.g[name] = value
