@@ -1,7 +1,7 @@
 local dap = require "dap"
 local path = ""
 
-if vim.fn.has "win32" == 1 then
+if vim.g.os == "Windows" then
   path = vim.fn.stdpath "data" .. "/mason/packages/debugpy/venv/Scripts/python"
 else
   path = vim.fn.stdpath "data" .. "/mason/packages/debugpy/venv/bin/python"

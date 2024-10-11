@@ -14,12 +14,15 @@ return {
     local capabilities = require("plugins.lsp.opts").capabilities
 
     -- The path is different on Windows
-    if this_os:find "Windows" then
+    if vim.g.os == "Windows" then
       codelldb_path = extension_path .. "adapter\\codelldb.exe"
       liblldb_path = extension_path .. "lldb\\bin\\liblldb.dll"
-    else
-      -- The liblldb extension is .so for Linux and .dylib for MacOS
-      liblldb_path = liblldb_path .. (this_os == "Linux" and ".so" or ".dylib")
+    elseif vim.g.os == "Linux" then
+      -- The liblldb extension is .so for Linux
+      liblldb_path = liblldb_path .. ".so"
+    elseif vim.g.os == "Darwin" then
+      -- And .dylib for MacOS
+      liblldb_path = liblldb_path .. ".dylib"
     end
 
     vim.g.rustaceanvim = {

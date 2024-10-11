@@ -151,11 +151,7 @@ M.ui = {
 
         local status = {}
         local get_full_path = function(root, value)
-          if vim.loop.os_uname().sysname == "Windows_NT" then
-            return root .. "\\" .. value
-          end
-
-          return root .. "/" .. value
+          return root .. vim.g.path_separator .. value
         end
 
         for i = 1, length do
