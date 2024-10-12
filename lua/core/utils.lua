@@ -40,6 +40,22 @@ command("FormatEnable", function(args)
   end
 end, { desc = "Enable Autoformat", bang = true })
 
+command("FormatToggle", function(args)
+  if args.bang then
+    if vim.b.disable_autoformat then
+      vim.cmd "FormatEnable!"
+    else
+      vim.cmd "FormatDisable!"
+    end
+  else
+    if vim.g.disable_autoformat then
+      vim.cmd "FormatEnable"
+    else
+      vim.cmd "FormatDisable"
+    end
+  end
+end, { desc = "Toggle Autoformat", bang = true })
+
 command("LuaSnipEdit", function()
   require("luasnip.loaders").edit_snippet_files()
 end, { nargs = "*", desc = "Edit the available snippets in the filetype" })

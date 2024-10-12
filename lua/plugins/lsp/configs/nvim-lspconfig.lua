@@ -4,16 +4,9 @@ return {
   "neovim/nvim-lspconfig",
   init = function()
     vim.keymap.set("n", "<leader>lf", "<cmd>Format<cr>", { desc = "LSP | Format", silent = true })
+    vim.keymap.set("n", "<leader>lF", "<cmd>FormatToggle<cr>", { desc = "LSP | Toggle Autoformat", silent = true })
     vim.keymap.set("n", "<leader>li", "<cmd>LspInfo<cr>", { desc = "LSP | Info", silent = true })
     vim.keymap.set("n", "<leader>lR", "<cmd>LspRestart<cr>", { desc = "LSP | Restart", silent = true })
-
-    vim.keymap.set("n", "<leader>lF", function()
-      if vim.b.disable_autoformat then
-        vim.cmd "FormatEnable!"
-      else
-        vim.cmd "FormatDisable!"
-      end
-    end, { desc = "Conform | Toggle Autoformat", silent = true })
 
     vim.keymap.set("n", "<leader>lh", function()
       if vim.version().minor >= 10 then
