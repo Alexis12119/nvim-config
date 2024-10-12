@@ -1,5 +1,6 @@
 -- NOTE: Global Variables
 local sysname = vim.uv.os_uname().sysname
+local os = sysname:match "Windows" and "Windows" or sysname:match "Linux" and "Linux" or sysname -- Windows, Linux, Darwin, NetBSD,...
 
 local global = {
   mkdp_auto_close = false, -- Don't Exit Preview When Switching Buffers
@@ -17,11 +18,10 @@ local global = {
   border_enabled = false, -- NOTE: Toggle border for LSP Windows, nvim-cmp, lazy, which-key, mason
   mapleader = " ",
   maplocalleader = "\\",
-  os = sysname:match "Windows" and "Windows" or sysname:match "Linux" and "Linux" or sysname, -- Windows, Linux, Darwin, NetBSD,...
+  os = os,
+  path_delimiter = os == "Windows" and ";" or ":",
+  path_separator = os == "Windows" and "\\" or "/",
 }
-
-global.path_delimiter = global.os == "Windows" and ";" or ":"
-global.path_separator = global.os == "Windows" and "\\" or "/"
 
 for name, value in pairs(global) do
   vim.g[name] = value
