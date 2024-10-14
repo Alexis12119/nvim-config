@@ -18,6 +18,7 @@ local global = {
   border_enabled = false, -- NOTE: Toggle border for LSP Windows, nvim-cmp, lazy, which-key, mason
   mapleader = " ",
   maplocalleader = "\\",
+  disable_autoformat = true,
   os = os,
   path_delimiter = os == "Windows" and ";" or ":",
   path_separator = os == "Windows" and "\\" or "/",
