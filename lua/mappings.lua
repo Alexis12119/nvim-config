@@ -2,6 +2,7 @@
 local fn = vim.fn
 local cwd = vim.fn.stdpath "config" .. "/"
 local config_dir = { cwd }
+local utils = require("core.utils")
 
 -- Remove All Text
 vim.keymap.set("n", "<leader>R", "<cmd>%d+<cr>", { desc = "General | Remove All Text", silent = true })
@@ -296,7 +297,7 @@ end, { desc = "Neovim | Version", silent = true })
 
 -- Run Code
 vim.keymap.set("n", "<leader>nr", function()
-  RunCode()
+  utils.run_code()
 end, { desc = "Neovim | Run Code", silent = true })
 
 -- Clean

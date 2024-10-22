@@ -3,6 +3,7 @@
 return {
   "akinsho/toggleterm.nvim",
   init = function()
+    local utils = require("core.utils")
     vim.keymap.set(
       "n",
       "<leader>tf",
@@ -25,7 +26,7 @@ return {
     )
 
     vim.keymap.set("n", "<leader>gg", function()
-      ClickGit()
+      utils.git()
     end, { desc = "ToggleTerm | Lazygit", silent = true })
   end,
   cmd = {
