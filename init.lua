@@ -38,6 +38,7 @@ require("base46").load_all_highlights()
 
 require "options"
 require "nvchad.autocmds"
+require "core.commands"
 
 vim.schedule(function()
   require "mappings"
