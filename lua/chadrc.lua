@@ -24,7 +24,11 @@ end
 M.ui = {
   telescope = { style = "borderless" }, -- borderless / bordered
   cmp = {
-    style = "atom", -- default/flat_light/flat_dark/atom/atom_colored
+    lspkind_text = true,
+    style = "default", -- default/flat_light/flat_dark/atom/atom_colored
+    format_colors = {
+      tailwind = true,
+    },
   },
   statusline = {
     theme = "minimal", -- default/vscode/vscode_colored/minimal
