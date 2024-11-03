@@ -44,13 +44,13 @@ M.ui = {
       "cwd",
       "total_lines",
     },
-    modules = require "core.statusline".modules,
+    modules = require("core.statusline").modules,
   },
 
   tabufline = {
     enabled = true,
     order = { "treeOffset", "buffers", "tabs", "btns" },
-    modules = require "core.tabufline".modules,
+    modules = require("core.tabufline").modules,
   },
 }
 
