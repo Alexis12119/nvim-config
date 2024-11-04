@@ -36,7 +36,7 @@ In windows, you can use [scoop](https://scoop.sh/) to install them.
 
 - **Neovim:**
 
-  - [Neovim 0.9+](https://github.com/neovim/neovim/releases)
+  - [Neovim 0.10+](https://github.com/neovim/neovim/releases)
   </details>
 
 ## 💻 Installation
