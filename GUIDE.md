@@ -101,7 +101,6 @@ return {
 This is a window specific problem. The problem is that the version of `gcc` is outdated.
 
 To solve this:
-
 - Just make sure to use the updated compiler like this [one](https://nuwen.net/mingw.html).
 - Run `:TSUninstall all` to remove all the language parsers.
 - Install the parser again for the language you want to use.
