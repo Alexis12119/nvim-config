@@ -79,7 +79,7 @@ return {
     {
       "supermaven-inc/supermaven-nvim",
       -- commit = "df3ecf7",
-      commit = "40bde487fe31723cdd180843b182f70c6a991226",
+      -- commit = "40bde487fe31723cdd180843b182f70c6a991226",
       event = "BufReadPost",
       opts = {
         disable_keymaps = false,
