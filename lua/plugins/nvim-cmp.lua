@@ -14,7 +14,7 @@ return {
       end
     end, { desc = "Options | Toggle Autocomplete" })
   end,
-  config = function(_, opts)
+  opts = function(_, opts)
     -- table.insert(opts.sources, 2, { name = "codeium" })
     -- table.insert(opts.sources, 1, { name = "supermaven" })
 
@@ -43,19 +43,6 @@ return {
         documentation = require("cmp").config.window.bordered(),
       }
     end
-
-    require("cmp").setup(opts)
-
-    local cmdline_mappings = vim.tbl_extend("force", {}, require("cmp").mapping.preset.cmdline(), {
-      -- ["<CR>"] = { c = require("cmp").mapping.confirm { select = true } },
-    })
-
-    require("cmp").setup.cmdline(":", {
-      mapping = cmdline_mappings,
-      sources = {
-        { name = "cmdline" },
-      },
-    })
   end,
   dependencies = {
     -- For Rust
@@ -67,6 +54,18 @@ return {
     -- Commandline completions
     {
       "hrsh7th/cmp-cmdline",
+      config = function()
+        local cmdline_mappings = vim.tbl_extend("force", {}, require("cmp").mapping.preset.cmdline(), {
+          -- ["<CR>"] = { c = require("cmp").mapping.confirm { select = true } },
+        })
+
+        require("cmp").setup.cmdline(":", {
+          mapping = cmdline_mappings,
+          sources = {
+            { name = "cmdline" },
+          },
+        })
+      end,
     },
     -- AI Autocomplete
     {
