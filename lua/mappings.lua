@@ -2,7 +2,7 @@
 local fn = vim.fn
 local cwd = vim.fn.stdpath "config" .. "/"
 local config_dir = { cwd }
-local utils = require("core.utils")
+local utils = require "core.utils"
 
 -- Remove All Text
 vim.keymap.set("n", "<leader>R", "<cmd>%d+<cr>", { desc = "General | Remove All Text", silent = true })
@@ -226,7 +226,7 @@ vim.keymap.set("t", "<C-j>", "<C-\\><C-N><C-j>", { desc = "General | Go to upper
 vim.keymap.set("t", "<C-k>", "<C-\\><C-N><C-k>", { desc = "General | Go to lower window(Terminal)", silent = true })
 
 -- Go to left window (Terminal)
-vim.keymap.set("t", "<C-h>", "<C-\\<C-N><C-h>", {  desc = "General | Go to left window(Terminal)", silent = true })
+vim.keymap.set("t", "<C-h>", "<C-\\<C-N><C-h>", { desc = "General | Go to left window(Terminal)", silent = true })
 
 -- Go to right window (Terminal)
 vim.keymap.set("t", "<C-l>", "<C-\\><C-N><C-l>", { desc = "General | Go to right window(Terminal)", silent = true })
@@ -266,13 +266,7 @@ vim.keymap.set("n", "<leader>ng", function()
 end, { desc = "Neovim | Grep Config Files", silent = true })
 
 -- Toggle Cheatsheet
-vim.keymap.set("n", "<leader>nc", function()
-  if vim.bo.filetype == "nvcheatsheet" then
-    vim.cmd "Bdelete!"
-  else
-    vim.cmd "NvCheatsheet"
-  end
-end, { desc = "Neovim | Toggle Cheatsheet", silent = true })
+vim.keymap.set("n", "<leader>nc", "<cmd>NvCheatsheet<cr>", { desc = "Neovim | Toggle Cheatsheet", silent = true })
 
 -- Inspect
 vim.keymap.set("n", "<leader>ni", function()
