@@ -9,7 +9,12 @@ return {
 
     vim.keymap.set("n", "<leader>rs", "<cmd>CompilerStop<cr>", { desc = "Compiler | Stop All Tasks", silent = true })
 
-    vim.keymap.set("n", "<leader>rt", "<cmd>CompilerToggleResults<cr>", { desc = "Compiler | Toggle Results", silent = true })
+    vim.keymap.set(
+      "n",
+      "<leader>rt",
+      "<cmd>CompilerToggleResults<cr>",
+      { desc = "Compiler | Toggle Results", silent = true }
+    )
   end,
   cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
   dependencies = {
