@@ -3,7 +3,7 @@
 return {
   "akinsho/toggleterm.nvim",
   init = function()
-    local utils = require("core.utils")
+    local utils = require "core.utils"
     vim.keymap.set(
       "n",
       "<leader>tf",
