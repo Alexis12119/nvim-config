@@ -128,7 +128,7 @@ M.lsp = { signature = false }
 
 M.base46 = {
   theme = "mountain",
-  transparency = true,
+  transparency = false,
   theme_toggle = { "mountain", "one_light" },
   hl_override = highlights.override,
   hl_add = highlights.add,
