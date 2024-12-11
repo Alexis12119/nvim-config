@@ -33,7 +33,7 @@ return {
       { desc = "Lspsaga | Prev Diagnostic", silent = true }
     )
 
-    vim.keymap.set("v", "<leader>la", "<cmd>Lspsaga code_action<cr>", { desc = "Lspsaga | Code Action", silent = true })
+    -- vim.keymap.set("v", "<leader>la", "<cmd>Lspsaga code_action<cr>", { desc = "Lspsaga | Code Action", silent = true })
   end,
   opts = {
     preview = {
