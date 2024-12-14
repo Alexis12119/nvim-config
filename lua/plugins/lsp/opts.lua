@@ -4,7 +4,7 @@ local cmp_nvim_lsp = require "cmp_nvim_lsp"
 
 M.capabilities = cmp_nvim_lsp.default_capabilities()
 
-local function lsp_keymaps(bufnr)
+M.lsp_keymaps = function(bufnr)
   -- keymap("n", "gD", vim.lsp.buf.declaration, { buffer = bufnr, silent = true })
   keymap("n", "gD", "<cmd>Lspsaga finder<cr>", { buffer = bufnr, silent = true })
   keymap("n", "gd", "<cmd>Lspsaga goto_definition<cr>", { buffer = bufnr, silent = true })
@@ -19,7 +19,7 @@ local function lsp_keymaps(bufnr)
 end
 
 -- Highlight symbol under cursor
-local function lsp_highlight(client, bufnr)
+M.lsp_highlight = function(client, bufnr)
   if client.supports_method "textDocument/documentHighlight" then
     vim.api.nvim_create_augroup("lsp_document_highlight", {
       clear = false,
@@ -42,8 +42,8 @@ local function lsp_highlight(client, bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-  lsp_keymaps(bufnr)
-  lsp_highlight(client, bufnr)
+  M.lsp_keymaps(bufnr)
+  M.lsp_highlight(client, bufnr)
 end
 
 M.on_init = function(client, _)
