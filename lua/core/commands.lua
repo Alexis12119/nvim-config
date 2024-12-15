@@ -57,16 +57,26 @@ end, { desc = "Toggle Autoformat", bang = true })
 
 command("LuaSnipEdit", function()
   require("luasnip.loaders").edit_snippet_files()
-end, { nargs = "*", desc = "Edit the available snippets in the filetype" })
-
-command("RemoveEmptyLines", function()
-  vim.cmd ":g/^$/d"
-  -- :v/./d
-  --
-  -- :g/^\s*$/d
-  -- :v/\S/d
-end, { nargs = "*", desc = "Remove all empty lines" })
+end, { desc = "Edit the available snippets in the filetype" })
 
 command("RemoveTrailingSpaces", function()
   vim.cmd ":%s/s+$//e"
-end, { nargs = "*", desc = "Remove all trailing spaces " })
+end, { desc = "Remove all trailing spaces" })
+
+command("AppendToEnd", function(args)
+  local prefix = args.line1 .. "," .. args.line2
+  local chars = args.fargs[1] ~= nil and args.fargs[1] or ";"
+  vim.cmd(prefix .. "g/./normal A" .. chars)
+  vim.cmd "nohlsearch"
+end, { nargs = "?", desc = 'Append char(s) to end of each line (Default: ";")', range = true })
+
+command("JoinEmptyLines", function(args)
+  -- This command have issue with noice.nvim, it doesn't matter
+  if args.bang then
+    vim.cmd "g/^$/-j" -- Join without empty line
+  else
+    vim.cmd "g/^$/,/./-1j" -- Join max 1 empty line
+  end
+  vim.cmd [[%s/\_s*\%$//e]] -- remove the last empty lines
+  vim.cmd "nohlsearch"
+end, { desc = "Join empty lines", bang = true })
