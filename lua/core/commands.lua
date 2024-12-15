@@ -71,12 +71,14 @@ command("AppendToEnd", function(args)
 end, { nargs = "?", desc = 'Append char(s) to end of each line (Default: ";")', range = true })
 
 command("JoinEmptyLines", function(args)
-  -- This command have issue with noice.nvim, it doesn't matter
-  if args.bang then
-    vim.cmd "g/^$/-j" -- Join without empty line
+  -- We need silent! because if no match pattern, it will notify error
+  if args.fargs[1] ~= nil then
+    vim.cmd("silent! g/^$/,/./-" .. args.fargs[1] .. "j") -- Max "n" empty line(s)
+  elseif args.bang then
+    vim.cmd "silent! g/^$/-j" -- No empty line
   else
-    vim.cmd "g/^$/,/./-1j" -- Join max 1 empty line
+    vim.cmd "silent! g/^$/,/./-1j" -- Join max 1 empty line
   end
   vim.cmd [[%s/\_s*\%$//e]] -- remove the last empty lines
   vim.cmd "nohlsearch"
-end, { desc = "Join empty lines", bang = true })
+end, { desc = "Join empty lines", bang = true, nargs = "?" })
