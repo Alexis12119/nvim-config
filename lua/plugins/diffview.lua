@@ -11,6 +11,6 @@ return {
       end
     end, { desc = "Diffview | Toggle Diffview", silent = true })
   end,
-  event = "BufReadPost",
+  event = "User FilePost",
   cmd = { "DiffviewOpen", "DiffviewClose" },
 }

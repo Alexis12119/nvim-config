@@ -2,6 +2,6 @@
 -- NOTE: Better QuickFixList
 return {
   "stevearc/quicker.nvim",
-  event = "BufReadPost",
+  event = "User FilePost",
   opts = {},
 }

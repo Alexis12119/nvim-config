@@ -1,6 +1,6 @@
 ---@type NvPluginSpec
 return {
   "folke/ts-comments.nvim",
-  event = "BufReadPost",
+  event = "User FilePost",
   opts = {},
 }

@@ -3,7 +3,7 @@
 return {
   "lukas-reineke/indent-blankline.nvim",
   -- enabled = false,
-  event = "BufReadPost",
+  event = "User FilePost",
   opts = {
     scope = {
       show_start = false,

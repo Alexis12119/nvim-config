@@ -2,6 +2,6 @@
 -- NOTE: Extend a/i neovim powers
 return {
   "echasnovski/mini.ai",
-  event = "BufReadPost",
+  event = "User FilePost",
   opts = {},
 }
