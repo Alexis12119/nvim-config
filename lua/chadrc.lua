@@ -71,6 +71,16 @@ M.nvdash = {
     { txt = "  Find Projects", keys = "Spc f p", cmd = "Telescope projects" },
     { txt = "  Themes", keys = "Spc f t", cmd = "Telescope themes" },
     { txt = "  Mappings", keys = "Spc n c", cmd = "NvCheatsheet" },
+    { txt = "─", no_gap = true, rep = true },
+    {
+      txt = function()
+        local stats = require("lazy").stats()
+        local milliseconds = math.floor(stats.startuptime) .. " ms"
+        return "  Loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. milliseconds
+      end,
+      no_gap = true,
+    },
+    { txt = "─", no_gap = true, rep = true },
   },
 }
 
