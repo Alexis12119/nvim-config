@@ -2,7 +2,7 @@
 -- NOTE: Highlight, List and Search Todo comments in your projects
 return {
   "folke/todo-comments.nvim",
-  event = "User FilePost",
+  event = "VeryLazy",
   cmd = { "TodoTrouble", "TodoLocList", "TodoQuickFix", "TodoTelescope" },
   init = function()
     vim.keymap.set("n", "<leader>fT", "<cmd>TodoTelescope<cr>", { desc = "Todo | Telescope", silent = true })

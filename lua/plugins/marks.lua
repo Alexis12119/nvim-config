@@ -2,6 +2,6 @@
 -- NOTE: Show Marks
 return {
   "chentoast/marks.nvim",
-  event = "User FilePost",
+  event = "VeryLazy",
   opts = {},
 }

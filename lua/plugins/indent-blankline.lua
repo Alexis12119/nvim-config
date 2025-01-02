@@ -3,7 +3,7 @@
 return {
   "lukas-reineke/indent-blankline.nvim",
   -- enabled = false,
-  event = "User FilePost",
+  event = "VeryLazy",
   opts = {
     scope = {
       show_start = false,
