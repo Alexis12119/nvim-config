@@ -2,7 +2,7 @@
 -- NOTE: Show Indentlines
 return {
   "lukas-reineke/indent-blankline.nvim",
-  -- enabled = false,
+  -- cond = false,
   event = "VeryLazy",
   opts = {
     scope = {

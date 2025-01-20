@@ -2,7 +2,7 @@
 -- NOTE: Preview Markdown
 return {
   "iamcco/markdown-preview.nvim",
-  enabled = false,
+  cond = false,
   init = function()
     vim.keymap.set("n", "<leader>m", function()
       if vim.bo.filetype == "markdown" then

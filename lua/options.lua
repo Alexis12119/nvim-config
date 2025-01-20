@@ -53,8 +53,3 @@ vim.opt.iskeyword:append "-"
 for name, value in pairs(options) do
   vim.opt[name] = value
 end
-
--- add binaries installed by mason.nvim to path
-vim.env.PATH = table.concat({ vim.fn.stdpath "data", "mason", "bin" }, vim.g.path_separator)
-  .. vim.g.path_delimiter
-  .. vim.env.PATH
