@@ -1,4 +1,5 @@
 require "core.globals"
+require "core.env"
 
 if vim.version().minor >= 11 then
   vim.tbl_add_reverse_lookup = function(tbl)
@@ -41,9 +42,7 @@ end
 require "options"
 require "nvchad.autocmds"
 require "core.commands"
-
-vim.schedule(function()
-  require "mappings"
-end)
-
-require "myinit"
+require "core.autocommands"
+require "core.filetypes"
+require "core.utils"
+require "mappings"

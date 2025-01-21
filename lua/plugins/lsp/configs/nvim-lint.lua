@@ -3,11 +3,11 @@
 return {
   "mfussenegger/nvim-lint",
   event = "VeryLazy",
-  enabled = false,
+  cond = false,
   config = function()
     require("lint").linters_by_ft = {
       -- python = { "flake8" },
-      -- ghaction = { "actionlint" },
+      -- github = { "actionlint" },
     }
 
     vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {

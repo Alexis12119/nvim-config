@@ -2,7 +2,7 @@
 -- NOTE: Sidebar
 return {
   "sidebar-nvim/sidebar.nvim",
-  enabled = false,
+  cond = false,
   cmd = {
     "SidebarNvimToggle",
     "SidebarNvimOpen",
