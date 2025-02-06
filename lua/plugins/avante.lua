@@ -7,7 +7,7 @@ return {
   opts = {
     -- add any opts here
     -- for example
-    provider = "gemini",
+    provider = "claude",
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
   build = "make",
