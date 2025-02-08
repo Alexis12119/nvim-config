@@ -4,7 +4,7 @@ return {
   -- NvChad Default Terminal
   {
     "NvChad/nvterm",
-    cond = false,
+    enabled = false,
   },
   {
     "NvChad/ui",

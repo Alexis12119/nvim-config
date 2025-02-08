@@ -2,7 +2,7 @@
 -- NOTE: Tmux navigation
 return {
   "alexghergh/nvim-tmux-navigation",
-  cond = vim.fn.executable "tmux" == 1,
+  enabled = vim.fn.executable "tmux" == 1,
   event = vim.env.TMUX ~= nil and "VeryLazy" or nil,
   opts = {
     keybindings = {
