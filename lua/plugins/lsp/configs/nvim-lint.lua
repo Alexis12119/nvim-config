@@ -3,7 +3,7 @@
 return {
   "mfussenegger/nvim-lint",
   event = "VeryLazy",
-  cond = false,
+  enabled = false,
   config = function()
     require("lint").linters_by_ft = {
       -- python = { "flake8" },

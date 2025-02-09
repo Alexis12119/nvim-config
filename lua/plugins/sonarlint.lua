@@ -2,7 +2,7 @@
 -- NOTE: SonarLint
 return {
   url = "https://gitlab.com/schrieveslaach/sonarlint.nvim",
-  cond = false,
+  enabled = false,
   ft = { "python", "cpp", "java" },
   config = function()
     local mason = vim.fn.stdpath "data" .. "/mason"

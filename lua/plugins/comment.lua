@@ -2,7 +2,7 @@
 -- NOTE: Commenter
 return {
   "numToStr/Comment.nvim",
-  cond = false,
+  enabled = false,
   config = function()
     require("Comment").setup {
       -- ignores empty lines
