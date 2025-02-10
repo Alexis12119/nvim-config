@@ -3,10 +3,20 @@
 return {
   "folke/todo-comments.nvim",
   event = "VeryLazy",
-  cmd = { "TodoTrouble", "TodoLocList", "TodoQuickFix", "TodoTelescope" },
-  init = function()
-    vim.keymap.set("n", "<leader>fT", "<cmd>TodoTelescope<cr>", { desc = "Todo | Telescope", silent = true })
-  end,
+  cmd = {
+    "TodoTrouble",
+    "TodoLocList",
+    "TodoQuickFix",
+    "TodoTelescope",
+  },
+  keys = {
+    {
+      "<leader>fT",
+      "<cmd>TodoTelescope<cr>",
+      desc = "Todo | Telescope",
+      silent = true,
+    },
+  },
   opts = {
     signs = true, -- show icons in the signs column
     sign_priority = 8, -- sign priority

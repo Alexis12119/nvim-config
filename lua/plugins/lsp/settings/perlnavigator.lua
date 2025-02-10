@@ -1,3 +1,5 @@
 return {
-  cmd = { "perlnavigator" },
+  cmd = {
+    "perlnavigator",
+  },
 }

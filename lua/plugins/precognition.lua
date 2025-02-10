@@ -3,11 +3,16 @@
 return {
   "tris203/precognition.nvim",
   enabled = false,
-  init = function()
-    vim.keymap.set("n", "<leader>op", function()
-      require("precognition").toggle()
-    end, { desc = "Precognition | Toggle Precognition", silent = true })
-  end,
+  keys = {
+    {
+      "<leader>op",
+      function()
+        require("precognition").toggle()
+      end,
+      desc = "Precognition | Toggle Precognition",
+      silent = true,
+    },
+  },
   opts = {
     startVisible = false,
     -- showBlankVirtLine = true,

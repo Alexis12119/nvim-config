@@ -2,33 +2,32 @@
 -- NOTE: Terminal Integration
 return {
   "akinsho/toggleterm.nvim",
-  init = function()
-    local utils = require "core.utils"
-    vim.keymap.set(
-      "n",
+  keys = {
+    {
       "<leader>tf",
       "<cmd>ToggleTerm direction=float<cr>",
-      { desc = "ToggleTerm | Float Terminal", silent = true }
-    )
-
-    vim.keymap.set(
-      "n",
+      desc = "ToggleTerm | Float Terminal",
+      silent = true,
+    },
+    {
       "<leader>th",
       "<cmd>ToggleTerm direction=horizontal<cr>",
-      { desc = "ToggleTerm | Horizontal Terminal", silent = true }
-    )
-
-    vim.keymap.set(
-      "n",
+      desc = "ToggleTerm | Horizontal Terminal",
+      silent = true,
+    },
+    {
       "<leader>tv",
       "<cmd>ToggleTerm direction=vertical<cr>",
-      { desc = "ToggleTerm | Vertical Terminal", silent = true }
-    )
-
-    vim.keymap.set("n", "<leader>gg", function()
-      utils.git()
-    end, { desc = "ToggleTerm | Lazygit", silent = true })
-  end,
+      desc = "ToggleTerm | Vertical Terminal",
+      silent = true,
+    },
+    {
+      "<leader>gg",
+      require "core.utils".git,
+      desc = "ToggleTerm | Lazygit",
+      silent = true,
+    },
+  },
   cmd = {
     "ToggleTerm",
     "ToggleTermSendCurrentLine",

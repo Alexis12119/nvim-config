@@ -4,16 +4,20 @@
 return {
   "hrsh7th/nvim-cmp",
   event = { "InsertEnter", "CmdlineEnter" },
-  init = function()
-    vim.keymap.set("n", "<leader>oa", function()
-      vim.g.toggle_cmp = not vim.g.toggle_cmp
-      if vim.g.toggle_cmp then
-        vim.notify("Toggled On", vim.log.levels.INFO, { title = "Autocomplete" })
-      else
-        vim.notify("Toggled Off", vim.log.levels.INFO, { title = "Autocomplete" })
-      end
-    end, { desc = "Options | Toggle Autocomplete" })
-  end,
+  keys = {
+    {
+      "<leader>oa",
+      function()
+        vim.g.toggle_cmp = not vim.g.toggle_cmp
+        if vim.g.toggle_cmp then
+          vim.notify("Toggled On", vim.log.levels.INFO, { title = "Autocomplete" })
+        else
+          vim.notify("Toggled Off", vim.log.levels.INFO, { title = "Autocomplete" })
+        end
+      end,
+      desc = "Options | Toggle Autocomplete",
+    },
+  },
   opts = function(_, opts)
     -- table.insert(opts.sources, 2, { name = "codeium" })
     -- table.insert(opts.sources, 1, { name = "supermaven" })

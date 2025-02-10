@@ -2,18 +2,42 @@
 --  NOTE: LSP Configuration
 return {
   "neovim/nvim-lspconfig",
-  init = function()
-    vim.keymap.set("n", "<leader>lf", "<cmd>Format<cr>", { desc = "LSP | Format", silent = true })
-    vim.keymap.set("n", "<leader>lF", "<cmd>FormatToggle<cr>", { desc = "LSP | Toggle Autoformat", silent = true })
-    vim.keymap.set("n", "<leader>li", "<cmd>LspInfo<cr>", { desc = "LSP | Info", silent = true })
-    vim.keymap.set("n", "<leader>lR", "<cmd>LspRestart<cr>", { desc = "LSP | Restart", silent = true })
-
-    vim.keymap.set("n", "<leader>lh", function()
-      if vim.version().minor >= 10 then
-        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-      end
-    end, { desc = "LSP | Toggle Inlay Hints", silent = true })
-  end,
+  keys = {
+    {
+      "<leader>lf",
+      "<cmd>Format<cr>",
+      desc = "LSP | Format",
+      silent = true,
+    },
+    {
+      "<leader>lF",
+      "<cmd>FormatToggle<cr>",
+      desc = "LSP | Toggle Autoformat",
+      silent = true,
+    },
+    {
+      "<leader>li",
+      "<cmd>LspInfo<cr>",
+      desc = "LSP | Info",
+      silent = true,
+    },
+    {
+      "<leader>lR",
+      "<cmd>LspRestart<cr>",
+      desc = "LSP | Restart",
+      silent = true,
+    },
+    {
+      "<leader>lh",
+      function()
+        if vim.version().minor >= 10 then
+          vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+        end
+      end,
+      desc = "LSP | Toggle Inlay Hints",
+      silent = true,
+    },
+  },
   cmd = "LspInfo",
   config = function()
     local config = {

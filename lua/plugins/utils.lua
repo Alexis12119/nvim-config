@@ -10,6 +10,14 @@ return {
   -- Buffer Delete
   {
     "moll/vim-bbye",
-    cmd = { "Bdelete", "Bwipeout" },
+    cmd = {
+      "Bdelete",
+      "Bwipeout",
+    },
+  },
+  {
+    "luarocks/hererocks", -- For not being deleted. lazy.nvim will use it.
+    priority = 10000,
+    optional = true,
   },
 }
