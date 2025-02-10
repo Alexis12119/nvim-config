@@ -2,7 +2,10 @@
 -- NOTE: Improve Folds
 return {
   "kevinhwang91/nvim-ufo",
-  event = "VeryLazy",
+  event = {
+    "BufReadPost",
+    "BufNewFile",
+  },
   init = function()
     vim.o.foldcolumn = "1"
     vim.o.foldlevel = 99
