@@ -14,6 +14,7 @@ return {
         end
       end,
       desc = "Markdown Preview",
+      ft = "markdown",
       silent = true,
     },
   },

@@ -5,25 +5,33 @@ return {
   keys = {
     {
       "<leader>gp",
-      "<cmd>lua require 'gitsigns'.preview_hunk()<cr>",
+      function()
+        require("gitsigns").preview_hunk()
+      end,
       desc = "Gitsigns | Preview Hunk",
       silent = true,
     },
     {
       "<leader>gj",
-      "<cmd>lua require 'gitsigns'.next_hunk()<cr>",
+      function()
+        require("gitsigns").nav_hunk "next"
+      end,
       desc = "Gitsigns | Next Hunk",
       silent = true,
     },
     {
       "<leader>gk",
-      "<cmd>lua require 'gitsigns'.prev_hunk()<cr>",
+      function()
+        require("gitsigns").nav_hunk "prev"
+      end,
       desc = "Gitsigns | Prev Hunk",
       silent = true,
     },
     {
       "<leader>gl",
-      "<cmd>lua require 'gitsigns'.blame_line()<cr>",
+      function()
+        require("gitsigns").blame_line()
+      end,
       desc = "Gitsigns | Blame Line",
       silent = true,
     },
