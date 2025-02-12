@@ -3,7 +3,10 @@
 return {
   "mrcjkb/rustaceanvim",
   version = "^4", -- Recommended
-  event = "VeryLazy",
+  event = {
+    "BufReadPost",
+    "BufNewFile",
+  },
   config = function()
     local extension_path = vim.fn.stdpath "data" .. "/mason/packages/codelldb/extension/"
     local codelldb_path = extension_path .. "adapter/codelldb"

@@ -2,7 +2,10 @@
 -- NOTE: Linting
 return {
   "mfussenegger/nvim-lint",
-  event = "VeryLazy",
+  event = {
+    "BufReadPost",
+    "BufNewFile",
+  },
   enabled = false,
   config = function()
     require("lint").linters_by_ft = {

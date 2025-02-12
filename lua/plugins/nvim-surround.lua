@@ -2,6 +2,9 @@
 -- NOTE: Surround "", {}, '', ()
 return {
   "kylechui/nvim-surround",
-  event = "VeryLazy",
+  event = {
+    "BufReadPost",
+    "BufNewFile",
+  },
   opts = {},
 }
