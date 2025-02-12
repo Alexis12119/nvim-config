@@ -1,6 +1,7 @@
 -- NOTE: Global Variables
 local sysname = vim.uv.os_uname().sysname
 local os = sysname:match "Windows" and "Windows" or sysname:match "Linux" and "Linux" or sysname -- Windows, Linux, Darwin, NetBSD,...
+local is_windows = os == "Windows"
 
 local global = {
   mkdp_auto_close = false, -- Don't Exit Preview When Switching Buffers
@@ -20,8 +21,9 @@ local global = {
   maplocalleader = "\\",
   disable_autoformat = true,
   os = os,
-  path_delimiter = os == "Windows" and ";" or ":",
-  path_separator = os == "Windows" and "\\" or "/",
+  is_windows = is_windows,
+  path_delimiter = is_windows and ";" or ":",
+  path_separator = is_windows and "\\" or "/",
 }
 
 for name, value in pairs(global) do
