@@ -7,5 +7,10 @@ return {
     "nvim-lua/plenary.nvim",
     "stevearc/dressing.nvim", -- optional for vim.ui.select
   },
-  config = true,
+  opts = {
+    lsp = {
+      on_attach = require("plugins.lsp.opts").on_attach,
+      capabilities = require("plugins.lsp.opts").capabilities,
+    },
+  },
 }
