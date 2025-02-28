@@ -2,7 +2,8 @@
 -- NOTE: Note Taking
 return {
   "nvim-neorg/neorg",
-  ft = "norg",
+  lazy = false,
+  version = "*",
   opts = {
     load = {
       ["core.defaults"] = {}, -- Loads default behaviour
