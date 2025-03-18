@@ -22,6 +22,7 @@ return {
     require("which-key").add {
       {
         -- { "<leader>s", group = "Sessions", icon = "󰔚" },
+        { "<leader>a", group = "Avante", icon = "" },
         { "<leader>T", group = "Tests", icon = "󰙨" },
         { "<leader>d", group = "Debugging", icon = "" },
         { "<leader>f", group = "Find", icon = "" },
