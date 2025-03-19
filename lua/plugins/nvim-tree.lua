@@ -1,4 +1,6 @@
 ---@type NvPluginSpec
+-- NOTE: File Explorer
+
 local function on_attach(bufnr)
   local api = require "nvim-tree.api"
 
@@ -67,7 +69,6 @@ return {
 
     renderer = {
       highlight_git = false,
-      -- root_folder_label = false,
       root_folder_label = ":~:s?$?",
       icons = {
         show = {

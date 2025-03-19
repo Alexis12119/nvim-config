@@ -92,13 +92,13 @@ autocmd("TextYankPost", {
   desc = "Highlight when yanking",
 })
 
-autocmd({ "BufEnter", "BufNewFile" }, {
-  callback = function()
-    vim.o.showtabline = 0
-  end,
-  group = general,
-  desc = "Disable Tabline",
-})
+-- autocmd({ "BufEnter", "BufNewFile" }, {
+--   callback = function()
+--     vim.o.showtabline = 0
+--   end,
+--   group = general,
+--   desc = "Disable Tabline",
+-- })
 
 autocmd("FileType", {
   pattern = "*",
