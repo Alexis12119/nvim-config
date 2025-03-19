@@ -8,6 +8,14 @@ return {
     -- add any opts here
     -- for example
     provider = "gemini",
+    windows = {
+      width = 0.2 * vim.o.columns,
+    },
+    mappings = {
+      sidebar = {
+        close = { "q" },
+      },
+    },
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
   build = "make",
@@ -36,14 +44,6 @@ return {
           use_absolute_path = true,
         },
       },
-    },
-    {
-      -- Make sure to set this up properly if you have lazy=true
-      "MeanderingProgrammer/render-markdown.nvim",
-      opts = {
-        file_types = { "Avante" },
-      },
-      ft = { "Avante" },
     },
   },
 }
