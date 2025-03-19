@@ -3,6 +3,13 @@
 return {
   "OXY2DEV/markview.nvim",
   lazy = false,
+  opts = {
+    preview = {
+      filetypes = { "markdown", "Avante" },
+      ignore_buftypes = {},
+    },
+    max_length = 99999,
+  },
   -- enabled = false,
   -- ft = "markdown" -- If you decide to lazy-load anyway
   dependencies = {
