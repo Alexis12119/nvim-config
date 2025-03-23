@@ -51,6 +51,13 @@ return {
 
     vim.keymap.set(
       "n",
+      "<leader>fR",
+      "<cmd>Telescope resume<cr>",
+      { desc = "Telescope | Resume", silent = true }
+    )
+
+    vim.keymap.set(
+      "n",
       "<leader>fH",
       "<cmd>Telescope highlights<cr>",
       { desc = "Telescope | Highlights", silent = true }
