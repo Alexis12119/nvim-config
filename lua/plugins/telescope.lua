@@ -51,7 +51,7 @@ return {
 
     vim.keymap.set(
       "n",
-      "<leader>fR",
+      "<leader>fB",
       "<cmd>Telescope resume<cr>",
       { desc = "Telescope | Resume", silent = true }
     )
