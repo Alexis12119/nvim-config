@@ -27,7 +27,10 @@ return {
     --- The below dependencies are optional,
     "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
     "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
-    "zbirenbaum/copilot.lua", -- for providers='copilot'
+    {
+      "zbirenbaum/copilot.lua",
+      opts = {},
+    }, -- for providers='copilot'
     {
       -- support for image pasting
       "HakonHarnes/img-clip.nvim",
