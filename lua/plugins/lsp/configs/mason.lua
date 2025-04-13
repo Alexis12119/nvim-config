@@ -68,7 +68,11 @@ return {
             opts = vim.tbl_deep_extend("force", opts, server)
           end
 
-          require("lspconfig")[server_name].setup(opts)
+          -- Neovim < 0.11
+          -- require("lspconfig")[server_name].setup(opts)
+          -- Neovim >= 0.11
+          vim.lsp.config(server_name, opts)
+          vim.lsp.enable(server_name)
         end,
       }
     end,

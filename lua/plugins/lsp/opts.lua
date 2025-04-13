@@ -20,7 +20,7 @@ end
 
 -- Highlight symbol under cursor
 M.lsp_highlight = function(client, bufnr)
-  if client.supports_method "textDocument/documentHighlight" then
+  if client:supports_method "textDocument/documentHighlight" then
     vim.api.nvim_create_augroup("lsp_document_highlight", {
       clear = false,
     })
@@ -47,7 +47,7 @@ M.on_attach = function(client, bufnr)
 end
 
 M.on_init = function(client, _)
-  if client.supports_method "textDocument/semanticTokens" then
+  if client:supports_method "textDocument/semanticTokens" then
     client.server_capabilities.semanticTokensProvider = nil
   end
 end
