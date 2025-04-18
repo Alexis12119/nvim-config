@@ -4,6 +4,8 @@ local cwd = vim.fn.stdpath "config" .. "/"
 local config_dir = { cwd }
 local utils = require "core.utils"
 
+-- Save with root privileges
+vim.keymap.set("n", "<leader>s", "<cmd>SudaWrite<cr>", { desc = "General | Save with root privileges", silent = true })
 -- Remove All Text
 vim.keymap.set("n", "<leader>R", "<cmd>%d+<cr>", { desc = "General | Remove All Text", silent = true })
 
