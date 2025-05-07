@@ -24,9 +24,6 @@ return {
       local mason = require "mason"
       -- local path = require "mason-core.path"
       local mason_lspconfig = require "mason-lspconfig"
-      local on_attach = require("plugins.lsp.opts").on_attach
-      local on_init = require("plugins.lsp.opts").on_init
-      local capabilities = require("plugins.lsp.opts").capabilities
 
       mason.setup {
         ui = {
@@ -42,39 +39,15 @@ return {
         -- install_root_dir = path.concat { vim.fn.stdpath "config", "/lua/custom/mason" },
       }
 
-      local disabled_servers = {
-        "jdtls",
-        "rust_analyzer",
-        "ts_ls",
-      }
-
-      mason_lspconfig.setup_handlers {
-        -- Automatically configure the LSP installed
-        function(server_name)
-          for _, name in pairs(disabled_servers) do
-            if name == server_name then
-              return
-            end
-          end
-
-          local opts = {
-            on_attach = on_attach,
-            on_init = on_init,
-            capabilities = capabilities,
-          }
-
-          local require_ok, server = pcall(require, "plugins.lsp.settings." .. server_name)
-          if require_ok then
-            opts = vim.tbl_deep_extend("force", opts, server)
-          end
-
-          -- if vim.version().minor >= 12 then
-          --   vim.lsp.config(server_name, opts)
-          --   vim.lsp.enable(server_name)
-          -- else
-          require("lspconfig")[server_name].setup(opts)
-          -- end
-        end,
+      mason_lspconfig.setup {
+        ensure_installed = {},
+        automatic_enable = {
+          exclude = {
+            "jdtls",
+            "rust_analyzer",
+            "ts_ls",
+          },
+        },
       }
     end,
   },

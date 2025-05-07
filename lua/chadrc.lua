@@ -137,9 +137,9 @@ M.mason = {
 M.lsp = { signature = false }
 
 M.base46 = {
-  theme = "material-deep-ocean",
+  theme = "mountain",
   transparency = false,
-  theme_toggle = { "material-deep-ocean", "one_light" },
+  theme_toggle = { "mountain", "one_light" },
   hl_override = highlights.override,
   hl_add = highlights.add,
   integrations = {
