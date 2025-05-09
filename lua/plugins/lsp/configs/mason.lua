@@ -43,8 +43,8 @@ return {
         ensure_installed = {},
         automatic_enable = {
           exclude = {
-            "jdtls",
-            "ts_ls",
+            "jdtls", -- conflicts with nvim-jdtls
+            "ts_ls", -- conflicts with typescript-tools
           },
         },
       }
