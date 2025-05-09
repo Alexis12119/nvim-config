@@ -42,11 +42,7 @@ return {
       mason_lspconfig.setup {
         ensure_installed = {},
         automatic_enable = {
-          exclude = {
-            "jdtls",
-            "rust_analyzer",
-            "ts_ls",
-          },
+          exclude = {},
         },
       }
     end,
