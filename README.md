@@ -4,12 +4,9 @@
 
 [![](https://img.shields.io/badge/Neovim-0.10+-blueviolet.svg?style=for-the-badge&color=000F10&logo=Neovim&logoColor=green&labelColor=302D41)](https://github.com/neovim/neovim)
 
-
 ![241129_14h36m50s_screenshot](https://github.com/user-attachments/assets/3391b51c-118b-4827-8839-e3cc20f836eb)
 
-
 ![241129_14h34m39s_screenshot](https://github.com/user-attachments/assets/ab981434-29ef-4a0d-9912-38da0a7886e9)
-
 
 </div>
 
@@ -83,6 +80,7 @@ Please follow these steps:
 - **Integrated Terminal**: Access a terminal within Neovim using [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim).
 - **Git Integration**: Effortlessly manage Git repositories with [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) and [lazygit](https://github.com/jesseduffield/lazygit).
 - **Keymap Cheatsheet**: Quickly reference keymaps with [which-key.nvim](https://github.com/folke/which-key.nvim).
+- **Discord Rich Presence**: Tailor your presence like never before with [cord.nvim](https://github.com/vyfor/cord.nvim).
 <!-- - **Markdown Preview**: Preview your Markdown files with [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim). -->
 
 ## 🌟 Stargazers
