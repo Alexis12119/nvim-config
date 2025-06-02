@@ -109,4 +109,3 @@ To solve this:
 #### 15. Discord Rich Presence
 
 - Run `:DiscordRichPresence` to enable or disable the Rich Presence.
-- Install `arrpc` to get the rich presence in the Browser.
