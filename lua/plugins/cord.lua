@@ -4,5 +4,7 @@ return {
   "vyfor/cord.nvim",
   build = ":Cord update",
   lazy = false,
-  opts = {},
+  config = function()
+    require("cord").setup()
+  end,
 }
