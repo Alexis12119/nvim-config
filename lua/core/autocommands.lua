@@ -206,6 +206,7 @@ autocmd("BufReadPost", {
       vim.lsp.config("*", {
         capabilities = opts.capabilities,
         on_attach = opts.on_attach,
+        on_init = opts.on_init,
       })
 
       local servers = mason_lspconfig.get_installed_servers()
