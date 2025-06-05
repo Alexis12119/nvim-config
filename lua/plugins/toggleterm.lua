@@ -7,23 +7,46 @@ return {
     vim.keymap.set(
       "n",
       "<leader>tf",
+      "<cmd>TermNew direction=float<cr>",
+      { desc = "ToggleTerm | New Float Terminal", silent = true }
+    )
+    vim.keymap.set(
+      "n",
+      "<leader>tF",
       "<cmd>ToggleTerm direction=float<cr>",
-      { desc = "ToggleTerm | Float Terminal", silent = true }
+      { desc = "ToggleTerm | Toggle Float Terminal", silent = true }
     )
 
     vim.keymap.set(
       "n",
       "<leader>th",
+      "<cmd>TermNew direction=horizontal<cr>",
+      { desc = "ToggleTerm | New Horizontal Terminal", silent = true }
+    )
+
+    vim.keymap.set(
+      "n",
+      "<leader>tH",
       "<cmd>ToggleTerm direction=horizontal<cr>",
-      { desc = "ToggleTerm | Horizontal Terminal", silent = true }
+      { desc = "ToggleTerm | Toggle Horizontal Terminal", silent = true }
     )
 
     vim.keymap.set(
       "n",
       "<leader>tv",
-      "<cmd>ToggleTerm direction=vertical<cr>",
-      { desc = "ToggleTerm | Vertical Terminal", silent = true }
+      "<cmd>TermNew direction=vertical<cr>",
+      { desc = "ToggleTerm | New Vertical Terminal", silent = true }
     )
+
+    vim.keymap.set(
+      "n",
+      "<leader>tV",
+      "<cmd>ToggleTerm direction=vertical<cr>",
+      { desc = "ToggleTerm | Toggle Vertical Terminal", silent = true }
+    )
+
+    vim.keymap.set("n", "<leader>ts", "<cmd>TermSelect<cr>", { desc = "ToggleTerm | Select Terminal", silent = true })
+    vim.keymap.set("n", "<leader>tt", "<cmd>ToggleTermToggleAll<cr>", { desc = "ToggleTerm | Toggle/Close All Terminal", silent = true })
 
     vim.keymap.set("n", "<leader>gg", function()
       utils.git()
@@ -31,6 +54,9 @@ return {
   end,
   cmd = {
     "ToggleTerm",
+    "TermNew",
+    "TermSelect",
+    "ToggleTermToggleAll",
     "ToggleTermSendCurrentLine",
     "ToggleTermSendVisualLines",
     "ToggleTermSendVisualSelection",
