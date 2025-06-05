@@ -49,12 +49,7 @@ return {
       { desc = "Telescope | Recent Files", silent = true }
     )
 
-    vim.keymap.set(
-      "n",
-      "<leader>fb",
-      "<cmd>Telescope resume<cr>",
-      { desc = "Telescope | Resume", silent = true }
-    )
+    vim.keymap.set("n", "<leader>fb", "<cmd>Telescope resume<cr>", { desc = "Telescope | Resume", silent = true })
 
     vim.keymap.set(
       "n",

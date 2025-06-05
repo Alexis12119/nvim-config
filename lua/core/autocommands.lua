@@ -131,7 +131,7 @@ autocmd("FileChangedRO", {
 autocmd({ "FocusLost", "BufLeave", "BufWinLeave", "InsertLeave" }, {
   -- nested = true, -- for format on save
   callback = function()
-    if (vim.bo.filetype ~= "" and vim.bo.buftype == "") then
+    if vim.bo.filetype ~= "" and vim.bo.buftype == "" then
       vim.cmd "silent! w"
     end
   end,
@@ -188,4 +188,40 @@ autocmd("FileType", {
   end,
   group = overseer,
   desc = "Enter Normal Mode In OverseerList",
+})
+
+local LSP = augroup("LSP", { clear = true })
+
+autocmd("BufReadPost", {
+  once = true,
+  pattern = "*",
+  callback = function()
+    vim.schedule(function()
+      local ok_mason, mason_lspconfig = pcall(require, "mason-lspconfig")
+      local ok_opts, opts = pcall(require, "plugins.lsp.opts")
+      if not (ok_mason and ok_opts) then
+        return
+      end
+
+      vim.lsp.config("*", {
+        capabilities = opts.capabilities,
+        on_attach = opts.on_attach,
+      })
+
+      local servers = mason_lspconfig.get_installed_servers()
+      local excluded = { ts_ls = true, jdtls = true }
+
+      for _, server in ipairs(servers) do
+        if not excluded[server] then
+          vim.lsp.enable(server)
+          local ok_settings, settings = pcall(require, "plugins.lsp.settings." .. server)
+          if ok_settings then
+            vim.lsp.config(server, { settings = settings })
+          end
+        end
+      end
+    end)
+  end,
+  group = LSP,
+  desc = "Enable Installed LSP Servers",
 })
