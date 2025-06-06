@@ -58,10 +58,13 @@ return {
 
           for _, server in ipairs(servers) do
             if not vim.tbl_contains(excluded, server) then
+              -- Load LSP Settings(If Exists)
               local ok_settings, settings = pcall(require, "plugins.lsp.settings." .. server)
               if ok_settings then
                 vim.lsp.config(server, settings)
               end
+
+              -- Enable LSP
               vim.lsp.enable(server)
             end
           end
