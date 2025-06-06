@@ -60,7 +60,7 @@ return {
             if not vim.tbl_contains(excluded, server) then
               local ok_settings, settings = pcall(require, "plugins.lsp.settings." .. server)
               if ok_settings then
-                vim.lsp.config(server, { settings = settings })
+                vim.lsp.config(server, settings)
               end
               vim.lsp.enable(server)
             end
