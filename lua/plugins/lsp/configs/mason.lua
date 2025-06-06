@@ -57,7 +57,7 @@ return {
           local excluded = { "ts_ls", "jdtls" }
 
           for _, server in ipairs(servers) do
-            if not excluded[server] then
+            if not vim.tbl_contains(excluded, server) then
               vim.lsp.enable(server)
               local ok_settings, settings = pcall(require, "plugins.lsp.settings." .. server)
               if ok_settings then
