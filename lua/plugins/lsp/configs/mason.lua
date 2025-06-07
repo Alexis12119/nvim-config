@@ -61,7 +61,7 @@ return {
               -- Load LSP Settings(If Exists)
               local ok_settings, settings = pcall(require, "plugins.lsp.settings." .. server)
               if ok_settings then
-                vim.lsp.config(server, settings)
+                vim.lsp.config(string.lower(server), settings)
               end
 
               -- Enable LSP
