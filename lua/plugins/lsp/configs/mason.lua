@@ -68,6 +68,8 @@ return {
               vim.lsp.enable(server)
             end
           end
+
+          vim.lsp.enable "gdscript"
         end)
       end,
     },
