@@ -9,6 +9,7 @@ return {
       ignore_buftypes = {},
     },
     max_length = 99999,
+    experimental = { check_rtp_message = false },
   },
   -- enabled = false,
   -- ft = "markdown" -- If you decide to lazy-load anyway
