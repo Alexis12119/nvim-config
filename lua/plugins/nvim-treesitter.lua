@@ -57,6 +57,7 @@ return {
     --     end
     --   end,
     -- },
+    experimental = { check_rtp_message = false },
     ensure_installed = {
       "bash",
       "c",
