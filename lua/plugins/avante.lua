@@ -7,7 +7,7 @@ return {
   opts = {
     -- add any opts here
     -- for example
-    provider = "gemini",
+    provider = "copilot",
     windows = {
       width = 0.2 * vim.o.columns,
     },
