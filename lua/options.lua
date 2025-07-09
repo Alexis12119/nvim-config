@@ -15,6 +15,7 @@ local options = {
   smartindent = true, -- make indenting smarter again
   splitbelow = true, -- force all horizontal splits to go below current window
   splitright = true, -- force all vertical splits to go to the right of current window
+  splitkeep = "screen", -- don't automatically close empty splits
   swapfile = true, -- creates a swapfile
   timeoutlen = 500, -- time to wait for a mapped sequence to complete (in milliseconds)
   undofile = true, -- enable persistent undo
