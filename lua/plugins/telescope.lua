@@ -114,6 +114,7 @@ return {
           ["<C-j>"] = require("telescope.actions").toggle_selection + require("telescope.actions").move_selection_worse,
           ["<C-k>"] = require("telescope.actions").toggle_selection
             + require("telescope.actions").move_selection_better,
+          ["<C-h>"] = require("telescope.actions.layout").toggle_preview,
           ["<C-q>"] = require("trouble.sources.telescope").open,
         },
       },
