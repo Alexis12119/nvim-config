@@ -3,13 +3,14 @@
 return {
   "tris203/precognition.nvim",
   enabled = false,
+  event = "VeryLazy",
   init = function()
     vim.keymap.set("n", "<leader>op", function()
       require("precognition").toggle()
     end, { desc = "Precognition | Toggle Precognition", silent = true })
   end,
   opts = {
-    startVisible = false,
+    startVisible = true,
     -- showBlankVirtLine = true,
     -- highlightColor = { link = "Comment"),
     -- hints = {
