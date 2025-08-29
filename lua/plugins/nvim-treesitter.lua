@@ -34,7 +34,7 @@ return {
         vim.keymap.set(
           "n",
           "<leader>oc",
-          "<cmd>TSContextToggle<cr>",
+          "<cmd>TSContext toggle<cr>",
           { desc = "Treesitter | Toggle Context", silent = true }
         )
         vim.keymap.set("n", "[c", function()
