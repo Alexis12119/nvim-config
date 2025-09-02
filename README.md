@@ -68,6 +68,7 @@ Please follow these steps:
 - **Plugin Management**: Efficiently manage plugins with [lazy.nvim](https://github.com/folke/lazy.nvim).
 - **Compiler**: Compile your code with [compiler.nvim](https://github.com/Zeioth/compiler.nvim).
 - **Debugging**: Debug issues with [nvim-dap](https://github.com/mfussenegger/nvim-dap) with [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui).
+- **Refractoring**: Refactor your code with [nvim-refactoring](https://github.com/ThePrimeagen/refactoring.nvim).
 - **Tests**: Run tests with [neotest](https://github.com/nvim-neotest/neotest).
 - **Project Management**: Simplify project handling with [project.nvim](https://github.com/ahmedkhalf/project.nvim).
 - **Diff Viewer**: Easily cycle through diffs with [diffview.nvim](https://github.com/sindrets/diffview.nvim).
