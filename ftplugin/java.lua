@@ -17,14 +17,10 @@ vim.list_extend(bundles, vim.split(vim.fn.glob(java_test_path .. "extension/serv
 
 -- NOTE: Decrease the amount of files to improve speed(Experimental).
 -- INFO: It's annoying to edit the version again and again.
-local equinox_path = vim.split(vim.fn.glob(vim.fn.stdpath "data" .. "/mason/packages/jdtls/plugins/*jar"), "\n")
-local equinox_launcher = ""
+local equinox_launcher = jdtls_path .. "plugins/org.eclipse.equinox.launcher.jar"
 
-for _, file in pairs(equinox_path) do
-  if file:match "launcher_" then
-    equinox_launcher = file
-    break
-  end
+if vim.fn.filereadable(equinox_launcher) == 0 then
+  vim.notify("JDTLS launcher jar not found: " .. equinox_launcher, vim.log.levels.ERROR)
 end
 
 WORKSPACE_PATH = vim.fn.stdpath "data" .. "/workspace/"
