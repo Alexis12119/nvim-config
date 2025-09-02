@@ -7,7 +7,7 @@ return {
   opts = {
     -- add any opts here
     -- for example
-    provider = "copilot",
+    provider = "gemini",
     windows = {
       width = 0.2 * vim.o.columns,
     },
@@ -31,7 +31,6 @@ return {
       "zbirenbaum/copilot.lua",
       opts = {
         filetypes = {
-          markdown = true,
           ["*"] = false,
           sh = function()
             if string.match(vim.fs.basename(vim.api.nvim_buf_get_name(0)), "^%.env.*") then
