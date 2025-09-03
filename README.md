@@ -19,12 +19,13 @@ Before you dive in, ensure you have the following requirements installed:
 
 In windows, you can use [scoop](https://scoop.sh/) to install them.
 
-- **Git:**
+- **Docker:**
+  - [lazydocker](https://github.com/jesseduffield/lazydocker)
 
+- **Git:**
   - [lazygit](https://github.com/jesseduffield/lazygit)
 
 - **Telescope:**
-
   - [fd](https://github.com/sharkdp/fd)
   - [bat](https://github.com/sharkdp/bat)
   - [ripgrep](https://github.com/BurntSushi/ripgrep)
@@ -32,12 +33,10 @@ In windows, you can use [scoop](https://scoop.sh/) to install them.
   - [mingw-nuwen](https://nuwen.net/mingw.html)
 
 - **Nerd Font (For Icons):**
-
   - [JetBrainsMono](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/JetBrainsMono)
   - [Other Fonts](https://www.nerdfonts.com/font-downloads)
 
 - **Neovim:**
-
   - [Neovim 0.10+](https://github.com/neovim/neovim/releases)
   </details>
 
@@ -46,12 +45,10 @@ In windows, you can use [scoop](https://scoop.sh/) to install them.
 Please follow these steps:
 
 1. **Preparation**:
-
    - Ensure that Neovim is not running.
    - Remove or move your current `nvim` directory (if it exists).
 
 2. **Installation**:
-
    - On Linux/MacOS:
 
      ```sh

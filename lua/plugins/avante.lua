@@ -28,21 +28,6 @@ return {
     "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
     "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
     {
-      "zbirenbaum/copilot.lua",
-      opts = {
-        filetypes = {
-          ["*"] = false,
-          sh = function()
-            if string.match(vim.fs.basename(vim.api.nvim_buf_get_name(0)), "^%.env.*") then
-              -- disable for .env files
-              return false
-            end
-            return true
-          end,
-        },
-      },
-    }, -- for providers='copilot'
-    {
       -- support for image pasting
       "HakonHarnes/img-clip.nvim",
       event = "VeryLazy",
