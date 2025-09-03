@@ -55,7 +55,7 @@ M.ui = {
   },
 
   tabufline = {
-    enabled = false,
+    enabled = true,
     order = { "treeOffset", "buffers", "tabs", "btns" },
     modules = require("core.tabufline").modules,
   },

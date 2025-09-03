@@ -160,12 +160,12 @@ vim.keymap.set(
 
 -- Go to previous buffer
 vim.keymap.set("n", "H", function()
-  vim.cmd "bprev"
+  require("nvchad.tabufline").prev()
 end, { desc = "General | Go to previous buffer", silent = true })
 
 -- Go to next buffer
 vim.keymap.set("n", "L", function()
-  vim.cmd "bnext"
+  require("nvchad.tabufline").next()
 end, { desc = "General | Go to next buffer", silent = true })
 
 -- Go to previous tab
