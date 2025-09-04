@@ -3,6 +3,15 @@
 return {
   "OXY2DEV/markview.nvim",
   lazy = false,
+  init = function()
+    vim.keymap.set("n", "<leader>m", function()
+      if vim.bo.filetype == "markdown" then
+        vim.cmd "Markview Toggle"
+      else
+        vim.notify("Only available in markdown", vim.log.levels.WARN, { title = "Markview" })
+      end
+    end, { desc = "Toggle Markview", silent = true })
+  end,
   opts = {
     preview = {
       filetypes = { "markdown", "Avante", "codecompanion" },
