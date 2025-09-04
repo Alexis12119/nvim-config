@@ -3,6 +3,42 @@
 return {
   "nvim-telescope/telescope.nvim",
   lazy = false,
+  dependencies = {
+    {
+      "nvim-telescope/telescope-fzf-native.nvim",
+      build = "make",
+      enabled = function()
+        return vim.fn.executable "make" == 1
+      end,
+    },
+  },
+  opts = {
+    pickers = {
+      oldfiles = {
+        prompt_title = "Recent Files",
+      },
+      find_files = {
+        hidden = true,
+      },
+    },
+    extensions_list = { "themes", "terms", "fzf", "projects", "laravel" },
+    defaults = {
+      path_display = { "smart" },
+      mappings = {
+        i = {
+          ["<Tab>"] = require("telescope.actions").move_selection_next,
+          ["<S-Tab>"] = require("telescope.actions").move_selection_previous,
+          ["<C-j>"] = require("telescope.actions").toggle_selection + require("telescope.actions").move_selection_worse,
+          ["<C-k>"] = require("telescope.actions").toggle_selection
+            + require("telescope.actions").move_selection_better,
+          ["<C-h>"] = require("telescope.actions.layout").toggle_preview,
+          ["<C-q>"] = require("trouble.sources.telescope").open,
+        },
+      },
+      file_ignore_patterns = { "node_modules", ".git/" },
+    },
+  },
+
   init = function()
     vim.keymap.set(
       "n",
@@ -86,39 +122,4 @@ return {
       { desc = "Telescope | Checkout commit", silent = true }
     )
   end,
-  dependencies = {
-    {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      build = "make",
-      enabled = function()
-        return vim.fn.executable "make" == 1
-      end,
-    },
-  },
-  opts = {
-    pickers = {
-      oldfiles = {
-        prompt_title = "Recent Files",
-      },
-      find_files = {
-        hidden = true,
-      },
-    },
-    extensions_list = { "themes", "terms", "fzf", "projects" },
-    defaults = {
-      path_display = { "smart" },
-      mappings = {
-        i = {
-          ["<Tab>"] = require("telescope.actions").move_selection_next,
-          ["<S-Tab>"] = require("telescope.actions").move_selection_previous,
-          ["<C-j>"] = require("telescope.actions").toggle_selection + require("telescope.actions").move_selection_worse,
-          ["<C-k>"] = require("telescope.actions").toggle_selection
-            + require("telescope.actions").move_selection_better,
-          ["<C-h>"] = require("telescope.actions.layout").toggle_preview,
-          ["<C-q>"] = require("trouble.sources.telescope").open,
-        },
-      },
-      file_ignore_patterns = { "node_modules", ".git/" },
-    },
-  },
 }
