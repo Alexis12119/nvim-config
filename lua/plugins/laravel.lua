@@ -89,7 +89,6 @@ return {
       noremap = true,
     },
   },
-  event = { "VeryLazy" },
   opts = {
     lsp_server = "intelephense", -- "phpactor | intelephense"
     features = {
