@@ -9,9 +9,10 @@ return {
       separator = "➜", -- symbol used between a key and it's label
       group = "", -- symbol prepended to a group
     },
-    preset = "modern",
+    preset = "classic",
     win = {
       border = vim.g.border_enabled and "rounded" or "none",
+      no_overlap = false,
     },
     delay = function()
       return 0
