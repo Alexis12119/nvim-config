@@ -1,6 +1,6 @@
 return {
   "adalessa/laravel.nvim",
-  cmd = { "Laravel" },
+  event = "VeryLazy",
   keys = {
     {
       "<leader>Ll",
@@ -93,7 +93,7 @@ return {
     lsp_server = "intelephense", -- "phpactor | intelephense"
     features = {
       pickers = {
-        provider = "telescope", -- "snacks | telescope | fzf-lua | ui-select"
+        provider = "snacks", -- "snacks | telescope | fzf-lua | ui-select"
       },
     },
   },
