@@ -26,10 +26,10 @@ return {
       -- path_display = { "smart" },
       mappings = {
         i = {
-          ["<Tab>"] = require("telescope.actions").move_selection_next,
-          ["<S-Tab>"] = require("telescope.actions").move_selection_previous,
-          ["<C-j>"] = require("telescope.actions").toggle_selection + require("telescope.actions").move_selection_worse,
-          ["<C-k>"] = require("telescope.actions").toggle_selection
+          ["<C-j>"] = require("telescope.actions").move_selection_next,
+          ["<C-k>"] = require("telescope.actions").move_selection_previous,
+          ["<Tab>"] = require("telescope.actions").toggle_selection + require("telescope.actions").move_selection_worse,
+          ["<S-Tab>"] = require("telescope.actions").toggle_selection
             + require("telescope.actions").move_selection_better,
           ["<C-h>"] = require("telescope.actions.layout").toggle_preview,
           ["<C-q>"] = require("trouble.sources.telescope").open,
