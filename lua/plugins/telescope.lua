@@ -23,7 +23,7 @@ return {
     },
     extensions_list = { "themes", "terms", "fzf", "projects", "laravel" },
     defaults = {
-      path_display = { "smart" },
+      -- path_display = { "smart" },
       mappings = {
         i = {
           ["<Tab>"] = require("telescope.actions").move_selection_next,
