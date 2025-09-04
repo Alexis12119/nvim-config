@@ -63,6 +63,7 @@ Please follow these steps:
 ## ✨ Features
 
 - **Plugin Management**: Efficiently manage plugins with [lazy.nvim](https://github.com/folke/lazy.nvim).
+- **Session Management**: Manage sessions with [auto-session](https://github.com/rmagatti/auto-session).
 - **Compiler**: Compile your code with [compiler.nvim](https://github.com/Zeioth/compiler.nvim).
 - **Debugging**: Debug issues with [nvim-dap](https://github.com/mfussenegger/nvim-dap) with [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui).
 - **Refractoring**: Refactor your code with [nvim-refactoring](https://github.com/ThePrimeagen/refactoring.nvim).
