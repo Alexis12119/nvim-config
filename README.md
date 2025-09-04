@@ -37,7 +37,7 @@ In windows, you can use [scoop](https://scoop.sh/) to install them.
   - [Other Fonts](https://www.nerdfonts.com/font-downloads)
 
 - **Neovim:**
-  - [Neovim 0.10+](https://github.com/neovim/neovim/releases)
+  - [Neovim 0.11+](https://github.com/neovim/neovim/releases)
   </details>
 
 ## 💻 Installation
