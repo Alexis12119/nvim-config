@@ -64,6 +64,7 @@ Please follow these steps:
 
 - **Plugin Management**: Efficiently manage plugins with [lazy.nvim](https://github.com/folke/lazy.nvim).
 - **AI Assistant**: Use AI assistant with [avante.nvim](https://github.com/yetone/avante.nvim) and [superman.nvim](https://github.com/supermaven-inc/supermaven-nvim).
+- **Database**: Manage databases with [vim-dadbod-ui](https://github.com/kristijanhusak/vim-dadbod-ui).
 - **Session Management**: Manage sessions with [auto-session](https://github.com/rmagatti/auto-session).
 - **Compiler**: Compile your code with [compiler.nvim](https://github.com/Zeioth/compiler.nvim).
 - **Debugging**: Debug issues with [nvim-dap](https://github.com/mfussenegger/nvim-dap) with [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui).
