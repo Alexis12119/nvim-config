@@ -27,26 +27,18 @@ return {
     })
   end,
   opts = {
-    auto_save_enabled = true, -- Enables/disables auto saving
-    auto_restore_enabled = true, --Enables/disables auto restoring
-    auto_session_enabled = true, -- Enables/disables the plugin's auto save and restore features
-    auto_session_use_git_branch = true, -- Use the git branch to differentiate the session name
-    auto_session_suppress_dirs = {
+    auto_save = true, -- Enables/disables auto saving
+    auto_restore = true, --Enables/disables auto restoring
+    auto_create = true, -- Enables/disables auto creating new session files. Can be a function that returns true if a new session file should be allowed
+    git_use_branch_name = true, --Include git branch name in session name
+    suppressed_dirs = {
       "/",
       "~/",
       "~/Downloads",
     },
-    bypass_session_save_file_types = {
+    bypass_save_filetypes = {
       "NvimTree",
       "nvdash",
-    },
-    session_lens = {
-      -- If load_on_setup is false, make sure you use `:SessionSearch` to open the picker as it will initialize everything first
-      load_on_setup = true,
-      theme_conf = {
-        border = true,
-      },
-      previewer = true,
     },
   },
 }
