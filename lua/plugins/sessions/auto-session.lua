@@ -26,6 +26,9 @@ return {
       end,
     })
   end,
+  ---enables autocomplete for opts
+  ---@module "auto-session"
+  ---@type AutoSession.Config
   opts = {
     auto_save = true, -- Enables/disables auto saving
     auto_restore = true, --Enables/disables auto restoring

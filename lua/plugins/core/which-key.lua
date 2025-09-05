@@ -26,6 +26,7 @@ return {
         { "<leader>a", group = "Avante", icon = "" },
         { "<leader>T", group = "Tests", icon = "󰙨" },
         { "<leader>d", group = "Debugging", icon = "" },
+        { "<leader>D", group = "Database", icon = "󰆼" },
         { "<leader>f", group = "Find", icon = "" },
         { "<leader>g", group = "Git", icon = "󰊢" },
         { "<leader>h", group = "Harpoon", icon = "" },

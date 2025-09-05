@@ -15,4 +15,5 @@ return {
   { import = "plugins.testing" },
   { import = "plugins.ui" },
   { import = "plugins.writing" },
+  { import = "plugins.database" },
 }
