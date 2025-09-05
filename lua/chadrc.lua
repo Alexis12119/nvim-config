@@ -150,7 +150,7 @@ M.base46 = {
 }
 
 M.colorify = {
-  mode = "bg",
+  mode = "virtual",
 }
 
 -- M.lazy_nvim = require "core.lazy" -- config for lazy.nvim startup options
