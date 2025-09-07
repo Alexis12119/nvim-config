@@ -6,6 +6,9 @@ return {
   enabled = not vim.g.is_windows,
   opts = {
     backend = "kitty",
+    rocks = {
+      enabled = false,
+    },
     processor = "magick_cli",
     integrations = {
       markdown = {
