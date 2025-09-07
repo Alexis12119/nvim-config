@@ -3,7 +3,7 @@
 return {
   "3rd/image.nvim",
   event = "VeryLazy",
-  enabled = vim.g.is_windows,
+  enabled = not vim.g.is_windows,
   opts = {
     backend = "kitty",
     processor = "magick_cli",
