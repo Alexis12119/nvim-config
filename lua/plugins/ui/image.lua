@@ -2,8 +2,9 @@
 -- NOTE: Image Support
 return {
   "3rd/image.nvim",
+  enabled = false,
+  -- enabled = not vim.g.is_windows,
   event = "VeryLazy",
-  enabled = not vim.g.is_windows,
   opts = {
     backend = "kitty",
     rocks = {
