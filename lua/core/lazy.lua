@@ -1,9 +1,10 @@
 -- NOTE: lazy.nvim(Plugin Manager) options
+
 return {
   defaults = { lazy = true },
   install = { colorscheme = { "nvchad" } },
   -- automatically check for plugin updates
-  checker = { enabled = true },
+  checker = { enabled = not vim.g.is_windows },
   change_detection = {
     -- automatically check for config file changes and reload the ui
     enabled = true,
