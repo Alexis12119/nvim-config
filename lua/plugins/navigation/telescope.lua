@@ -1,5 +1,20 @@
 ---@type NvPluginSpec
 -- NOTE: Fuzzy Finder
+
+local focus_preview = function(prompt_bufnr)
+  local action_state = require "telescope.actions.state"
+  local picker = action_state.get_current_picker(prompt_bufnr)
+  local prompt_win = picker.prompt_win
+  local previewer = picker.previewer
+  local bufnr = previewer.state.bufnr or previewer.state.termopen_bufnr
+  local winid = previewer.state.winid or vim.fn.win_findbuf(bufnr)[1]
+  vim.keymap.set("n", "<Tab>", function()
+    vim.cmd(string.format("noautocmd lua vim.api.nvim_set_current_win(%s)", prompt_win))
+  end, { buffer = bufnr })
+  vim.cmd(string.format("noautocmd lua vim.api.nvim_set_current_win(%s)", winid))
+  -- api.nvim_set_current_win(winid)
+end
+
 return {
   "nvim-telescope/telescope.nvim",
   lazy = false,
@@ -29,9 +44,10 @@ return {
         i = {
           ["<C-j>"] = require("telescope.actions").move_selection_next,
           ["<C-k>"] = require("telescope.actions").move_selection_previous,
-          ["<Tab>"] = require("telescope.actions").toggle_selection + require("telescope.actions").move_selection_worse,
-          ["<S-Tab>"] = require("telescope.actions").toggle_selection
-            + require("telescope.actions").move_selection_better,
+          -- ["<Tab>"] = require("telescope.actions").toggle_selection + require("telescope.actions").move_selection_worse,
+          -- ["<S-Tab>"] = require("telescope.actions").toggle_selection
+          --   + require("telescop  e.actions").move_selection_better,
+          ["<Tab>"] = focus_preview,
           ["<C-h>"] = require("telescope.actions.layout").toggle_preview,
           ["<C-q>"] = require("trouble.sources.telescope").open,
         },
