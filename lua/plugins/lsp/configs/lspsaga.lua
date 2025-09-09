@@ -5,7 +5,6 @@ return {
   event = "LspAttach",
   -- commit = "898030df423a527c55a6fd85e85e58e840ff6e82",
   init = function()
-    -- vim.keymap.set("n", "<leader>la", "<cmd>Lspsaga code_action<cr>", { desc = "Lspsaga | Code Action", silent = true })
     vim.keymap.set("n", "<leader>lo", "<cmd>Lspsaga outline<cr>", { desc = "Lspsaga | Code Outline", silent = true })
     vim.keymap.set(
       "n",
@@ -33,7 +32,8 @@ return {
       { desc = "Lspsaga | Prev Diagnostic", silent = true }
     )
 
-    -- vim.keymap.set("v", "<leader>la", "<cmd>Lspsaga code_action<cr>", { desc = "Lspsaga | Code Action", silent = true })
+    vim.keymap.set("n", "<leader>la", "<cmd>Lspsaga code_action<cr>", { desc = "Lspsaga | Code Action", silent = true })
+    vim.keymap.set("v", "<leader>la", "<cmd>Lspsaga code_action<cr>", { desc = "Lspsaga | Code Action", silent = true })
   end,
   opts = {
     preview = {
@@ -44,7 +44,7 @@ return {
     code_action = {
       num_shortcut = true,
       keys = {
-        quit = ";",
+        quit = "q",
         exec = "<CR>",
       },
     },
@@ -64,7 +64,7 @@ return {
     },
 
     rename = {
-      quit = ";",
+      quit = "q",
       exec = "<CR>",
       in_select = false,
     },
@@ -74,7 +74,7 @@ return {
       vsplit = "s",
       split = "i",
       tabe = "t",
-      quit = { ";", "<ESC>" },
+      quit = { "q", "<ESC>" },
     },
 
     diagnostic = {
@@ -90,7 +90,7 @@ return {
       border_follow = true,
       keys = {
         exec_action = "o",
-        quit = ";",
+        quit = "q",
       },
     },
 
@@ -107,7 +107,7 @@ return {
       vsplit = "<C-c>v",
       split = "<C-c>i",
       tabe = "<C-c>t",
-      quit = ";",
+      quit = "q",
       close = "<Esc>",
     },
 
@@ -136,7 +136,7 @@ return {
       keys = {
         jump = "o",
         expand_collaspe = "u",
-        quit = ";",
+        quit = "q",
       },
     },
 
@@ -148,7 +148,7 @@ return {
         split = "i",
         tabe = "t",
         jump = "o",
-        quit = ";",
+        quit = "q",
         expand_collaspe = "u",
       },
     },
