@@ -11,6 +11,7 @@ return {
         return vim.fn.executable "make" == 1
       end,
     },
+    "debugloop/telescope-undo.nvim",
   },
   opts = {
     pickers = {
@@ -21,7 +22,7 @@ return {
         hidden = true,
       },
     },
-    extensions_list = { "themes", "terms", "fzf", "projects", "laravel" },
+    extensions_list = { "themes", "terms", "fzf", "projects", "laravel", "undo" },
     defaults = {
       -- path_display = { "smart" },
       mappings = {
@@ -121,5 +122,7 @@ return {
       "<cmd>Telescope git_commits<cr>",
       { desc = "Telescope | Checkout commit", silent = true }
     )
+
+    vim.keymap.set("n", "<leader>fu", "<cmd>Telescope undo<cr>", { desc = "Telescope | Undo", silent = true })
   end,
 }
