@@ -8,7 +8,7 @@ local focus_preview = function(prompt_bufnr)
   local previewer = picker.previewer
   local bufnr = previewer.state.bufnr or previewer.state.termopen_bufnr
   local winid = previewer.state.winid or vim.fn.win_findbuf(bufnr)[1]
-  vim.keymap.set("n", "<Tab>", function()
+  vim.keymap.set("n", "<C-p>", function()
     vim.cmd(string.format("noautocmd lua vim.api.nvim_set_current_win(%s)", prompt_win))
   end, { buffer = bufnr })
   vim.cmd(string.format("noautocmd lua vim.api.nvim_set_current_win(%s)", winid))
@@ -42,12 +42,12 @@ return {
       -- path_display = { "smart" },
       mappings = {
         i = {
-          ["<C-j>"] = require("telescope.actions").move_selection_next,
-          ["<C-k>"] = require("telescope.actions").move_selection_previous,
-          -- ["<Tab>"] = require("telescope.actions").toggle_selection + require("telescope.actions").move_selection_worse,
-          -- ["<S-Tab>"] = require("telescope.actions").toggle_selection
-          --   + require("telescop  e.actions").move_selection_better,
-          ["<Tab>"] = focus_preview,
+          ["<Tab>"] = require("telescope.actions").move_selection_next,
+          ["<S-Tab>"] = require("telescope.actions").move_selection_previous,
+          ["<C-j>"] = require("telescope.actions").toggle_selection + require("telescope.actions").move_selection_worse,
+          ["<C-k>"] = require("telescope.actions").toggle_selection
+            + require("telescope.actions").move_selection_better,
+          ["<C-p>"] = focus_preview,
           ["<C-h>"] = require("telescope.actions.layout").toggle_preview,
           ["<C-q>"] = require("trouble.sources.telescope").open,
         },
