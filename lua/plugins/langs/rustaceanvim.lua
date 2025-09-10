@@ -1,8 +1,9 @@
 ---@type NvPluginSpec
+
 -- NOTE: Improve Rust Development
 return {
   "mrcjkb/rustaceanvim",
-  version = "^4", -- Recommended
+  version = "^6", -- Recommended
   event = {
     "BufReadPost",
     "BufNewFile",

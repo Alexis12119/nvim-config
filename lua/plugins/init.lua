@@ -1,5 +1,7 @@
+
 return {
   { import = "plugins.ai" },
+  { import = "plugins.completion" },
   { import = "plugins.core" },
   { import = "plugins.dap" },
   { import = "plugins.editing" },

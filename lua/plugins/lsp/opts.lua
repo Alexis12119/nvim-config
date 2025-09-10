@@ -1,8 +1,26 @@
 local M = {}
 local keymap = vim.keymap.set
-local cmp_nvim_lsp = require "cmp_nvim_lsp"
+-- local cmp_nvim_lsp = require "cmp_nvim_lsp"
 
-M.capabilities = cmp_nvim_lsp.default_capabilities()
+M.capabilities = vim.lsp.protocol.make_client_capabilities()
+
+M.capabilities.textDocument.completion.completionItem = {
+  documentationFormat = { "markdown", "plaintext" },
+  snippetSupport = true,
+  preselectSupport = true,
+  insertReplaceSupport = true,
+  labelDetailsSupport = true,
+  deprecatedSupport = true,
+  commitCharactersSupport = true,
+  tagSupport = { valueSet = { 1 } },
+  resolveSupport = {
+    properties = {
+      "documentation",
+      "detail",
+      "additionalTextEdits",
+    },
+  },
+}
 
 M.lsp_keymaps = function(bufnr)
   -- keymap("n", "gD", vim.lsp.buf.declaration, { buffer = bufnr, silent = true })
