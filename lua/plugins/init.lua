@@ -1,4 +1,3 @@
-
 return {
   { import = "plugins.ai" },
   { import = "plugins.completion" },

@@ -8,6 +8,13 @@ return {
     "BufReadPost",
     "BufNewFile",
   },
+  dependencies = {
+    {
+      "saecki/crates.nvim",
+      tag = "v0.4.0",
+      opts = {},
+    },
+  },
   config = function()
     local extension_path = vim.fn.stdpath "data" .. "/mason/packages/codelldb/extension/"
     local codelldb_path = extension_path .. "adapter/codelldb"

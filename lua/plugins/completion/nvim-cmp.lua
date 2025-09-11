@@ -17,6 +17,10 @@ return {
   opts = function(_, opts)
     -- table.insert(opts.sources, 2, { name = "codeium" })
     -- table.insert(opts.sources, 1, { name = "supermaven" })
+    table.insert(opts.sources, {
+      name = "lazydev",
+      group_index = 0, -- set group index to 0 to skip loading LuaLS completions
+    })
 
     require("cmp").setup.filetype({ "mysql", "sql" }, {
       sources = {
@@ -52,12 +56,6 @@ return {
     end
   end,
   dependencies = {
-    -- For Rust
-    {
-      "saecki/crates.nvim",
-      tag = "v0.4.0",
-      opts = {},
-    },
     -- Commandline completions
     {
       "hrsh7th/cmp-cmdline",
