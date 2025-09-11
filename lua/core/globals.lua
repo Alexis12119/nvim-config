@@ -10,6 +10,7 @@ local global = {
   random_header = false, -- Show random header
   skip_ts_context_commentstring_module = true, -- disable treesitter context commentstring
   toggle_cmp = true, -- enable nvim-cmp
+  toggle_blink = true, -- enable blink-cmp
   ["loaded_node_provider"] = 0, -- disable node provider
   ["loaded_python3_provider"] = 0, -- disable python3 provider
   ["loaded_perl_provider"] = 0, -- disable perl provider

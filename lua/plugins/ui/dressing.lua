@@ -5,7 +5,7 @@ return {
   event = "VeryLazy",
   opts = {
     input = {
-      enabled = true,
+      enabled = false,
       default_prompt = "➤ ",
       win_options = {
         winblend = 0,
