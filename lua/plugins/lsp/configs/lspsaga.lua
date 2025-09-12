@@ -44,7 +44,7 @@ return {
     code_action = {
       num_shortcut = true,
       keys = {
-        quit = "q",
+        quit = ";",
         exec = "<CR>",
       },
     },
@@ -56,17 +56,19 @@ return {
     request_timeout = 2000,
 
     lightbulb = {
-      enable = false,
+      enable = true,
       enable_in_insert = true,
       sign = true,
       sign_priority = 40,
-      virtual_text = true,
+      virtual_text = false,
     },
 
     rename = {
-      quit = "q",
-      exec = "<CR>",
-      in_select = false,
+      keys = {
+        quit = ";",
+        exec = "<CR>",
+        in_select = false,
+      },
     },
 
     finder = {
@@ -74,7 +76,7 @@ return {
       vsplit = "s",
       split = "i",
       tabe = "t",
-      quit = { "q", "<ESC>" },
+      quit = { ";", "<ESC>" },
     },
 
     diagnostic = {
@@ -82,7 +84,7 @@ return {
       jump_num_shortcut = true,
       on_insert = false,
       on_insert_follow = false,
-      show_code_action = true,
+      show_code_action = false,
       show_source = true,
       custom_fix = nil,
       custom_msg = nil,
@@ -90,7 +92,7 @@ return {
       border_follow = true,
       keys = {
         exec_action = "o",
-        quit = "q",
+        quit = ";",
       },
     },
 
@@ -103,12 +105,14 @@ return {
     },
 
     definition = {
-      edit = "<C-c>o",
-      vsplit = "<C-c>v",
-      split = "<C-c>i",
-      tabe = "<C-c>t",
-      quit = "q",
-      close = "<Esc>",
+      keys = {
+        edit = "<C-c>o",
+        vsplit = "<C-c>v",
+        split = "<C-c>i",
+        tabe = "<C-c>t",
+        quit = ";",
+        close = "<Esc>",
+      },
     },
 
     ui = {
@@ -136,7 +140,7 @@ return {
       keys = {
         jump = "o",
         expand_collaspe = "u",
-        quit = "q",
+        quit = ";",
       },
     },
 
@@ -148,7 +152,7 @@ return {
         split = "i",
         tabe = "t",
         jump = "o",
-        quit = "q",
+        quit = ";",
         expand_collaspe = "u",
       },
     },
