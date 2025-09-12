@@ -25,7 +25,7 @@ return {
 
       vim.keymap.set("n", "<leader>oa", function()
         vim.g.toggle_blink = not vim.g.toggle_blink
-        if vim.b.toggle_blink then
+        if vim.g.toggle_blink then
           vim.notify("Toggled On", vim.log.levels.INFO, { title = "Autocomplete" })
         else
           vim.notify("Toggled Off", vim.log.levels.INFO, { title = "Autocomplete" })
@@ -36,8 +36,9 @@ return {
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
     opts = {
+      -- Use this solution for now.
       enabled = function()
-        return vim.g.toggle_blink
+        return not vim.tbl_contains({ "DressingInput", "sagarename" }, vim.bo.filetype) and vim.g.toggle_blink
       end,
       -- Default list of enabled providers defined so that you can extend it
       -- elsewhere in your config, without redefining it, due to `opts_extend`
