@@ -40,6 +40,9 @@ return {
       enabled = function()
         return not vim.tbl_contains({ "DressingInput", "sagarename" }, vim.bo.filetype) and vim.g.toggle_blink
       end,
+      cmdline = {
+        enabled = false,
+      },
       -- Default list of enabled providers defined so that you can extend it
       -- elsewhere in your config, without redefining it, due to `opts_extend`
       sources = {
