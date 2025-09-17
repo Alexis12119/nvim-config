@@ -4,9 +4,11 @@
 return {
   {
     import = "nvchad.blink.lazyspec",
+    enabled = false,
   },
   {
     "saghen/blink.cmp",
+    enabled = false,
     -- optional: provides snippets for the snippet source
     -- use a release tag to download pre-built binaries
     version = "1.*",
