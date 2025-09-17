@@ -37,7 +37,7 @@ return {
         hidden = true,
       },
     },
-    extensions_list = { "themes", "terms", "fzf", "projects", "laravel", "undo" },
+    extensions_list = { "themes", "terms", "fzf", "projects", "laravel", "undo", "persisted" },
     defaults = {
       -- path_display = { "smart" },
       mappings = {
