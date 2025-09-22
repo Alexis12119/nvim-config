@@ -13,7 +13,7 @@ return {
       require("plugins.lsp.opts").on_attach(client, bufnr)
     end,
     settings = {
-      separate_diagnostic_server = false, -- Disable separate diagnostic server
+      separate_diagnostic_server = true, -- Disable separate diagnostic server
       tsserver_file_preferences = {
         includeInlayParameterNameHints = "all",
         includeCompletionsForModuleExports = true,
