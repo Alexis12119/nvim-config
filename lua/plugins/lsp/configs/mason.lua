@@ -70,6 +70,7 @@ return {
 
           setup_servers()
 
+          -- This code snippet is from Lazyvim: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/plugins/lsp/init.lua#L241-L251
           local mr = require "mason-registry"
           mr:on("package:install:success", function(pkg)
             if pkg.spec.categories[1] == "LSP" then
