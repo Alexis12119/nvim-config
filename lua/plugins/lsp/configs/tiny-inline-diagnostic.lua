@@ -2,9 +2,10 @@
 -- NOTE: Show Better Diagnostic Inline
 return {
   "rachartier/tiny-inline-diagnostic.nvim",
-  event = {
-    "BufReadPost",
-    "BufNewFile",
+  event = "LspAttach",
+  priority = 1000,
+  opts = {
+    throttle = 0,
+    enable_on_insert = true,
   },
-  opts = {},
 }
