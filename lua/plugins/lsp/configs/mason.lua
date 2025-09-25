@@ -21,7 +21,6 @@ return {
   opts = {
     ui = {
       border = vim.g.border_enabled and "rounded" or "none",
-      -- Whether to automatically check for new versions when opening the :Mason window.
       check_outdated_packages_on_open = false,
       icons = {
         package_pending = " ",
@@ -29,7 +28,6 @@ return {
         package_uninstalled = " ",
       },
     },
-    -- install_root_dir = path.concat { vim.fn.stdpath "config", "/lua/custom/mason" },
     registries = {
       "github:nvim-java/mason-registry",
       "github:mason-org/mason-registry",
@@ -39,7 +37,6 @@ return {
     {
       "mason-org/mason-lspconfig.nvim",
       config = function()
-        -- NOTE: Load LSP Installed
         vim.schedule(function()
           local ok_mason, mason_lspconfig = pcall(require, "mason-lspconfig")
           local ok_opts, opts = pcall(require, "plugins.lsp.opts")
@@ -47,29 +44,45 @@ return {
             return
           end
 
+          -- Default config for all servers
           vim.lsp.config("*", {
             capabilities = opts.capabilities,
             on_attach = opts.on_attach,
             on_init = opts.on_init,
           })
 
-          local servers = mason_lspconfig.get_installed_servers()
           local excluded = { "ts_ls", "jdtls", "rust_analyzer" }
 
-          for _, server in ipairs(servers) do
-            if not vim.tbl_contains(excluded, server) then
-              -- Load LSP Settings(If Exists)
-              local ok_settings, settings = pcall(require, "plugins.lsp.settings." .. server)
-              if ok_settings then
-                vim.lsp.config(string.lower(server), settings)
+          local function setup_servers()
+            for _, server in ipairs(mason_lspconfig.get_installed_servers()) do
+              if not vim.tbl_contains(excluded, server) then
+                -- Load server-specific settings if available
+                local ok_settings, settings = pcall(require, "plugins.lsp.settings." .. server)
+                if ok_settings then
+                  vim.lsp.config(server, settings)
+                end
+                vim.lsp.enable(server)
               end
-
-              -- Enable LSP
-              vim.lsp.enable(server)
             end
+
+            vim.lsp.enable "gdscript"
           end
 
-          vim.lsp.enable "gdscript"
+          setup_servers()
+
+          local mr = require "mason-registry"
+          mr:on("package:install:success", function(pkg)
+            if pkg.spec.categories[1] == "LSP" then
+              vim.defer_fn(function()
+                setup_servers()
+                -- retrigger FileType so buffer picks up the new server
+                require("lazy.core.handler.event").trigger {
+                  event = "FileType",
+                  buf = vim.api.nvim_get_current_buf(),
+                }
+              end, 100)
+            end
+          end)
         end)
       end,
     },
