@@ -2,6 +2,7 @@
 -- NOTE: AI Chat
 return {
   "yetone/avante.nvim",
+  enabled = false,
   event = "VeryLazy",
   build = vim.fn.has "win32" ~= 0 and "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
     or "make",
