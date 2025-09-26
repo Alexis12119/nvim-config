@@ -155,16 +155,30 @@ autocmd("VimResized", {
   desc = "Equalize Splits",
 })
 
+-- autocmd("ModeChanged", {
+--   callback = function()
+--     if fn.getcmdtype() == "/" or fn.getcmdtype() == "?" then
+--       vim.opt.hlsearch = true
+--     else
+--       vim.opt.hlsearch = false
+--     end
+--   end,
+--   group = general,
+--   desc = "Highlighting matched words when searching",
+-- })
+
 autocmd("ModeChanged", {
+  pattern = "*",
   callback = function()
-    if fn.getcmdtype() == "/" or fn.getcmdtype() == "?" then
-      vim.opt.hlsearch = true
+    local mode = vim.fn.mode()
+    if mode:match "i" then
+      vim.opt.hlsearch = false -- hide in insert mode
     else
-      vim.opt.hlsearch = false
+      vim.opt.hlsearch = true  -- show in normal / visual / command modes
     end
   end,
   group = general,
-  desc = "Highlighting matched words when searching",
+  desc = "Show search highlights in normal mode, hide in insert mode",
 })
 
 autocmd("FileType", {

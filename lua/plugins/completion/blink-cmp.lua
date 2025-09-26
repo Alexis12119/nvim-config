@@ -4,11 +4,11 @@
 return {
   {
     import = "nvchad.blink.lazyspec",
-    enabled = false,
+    enabled = true,
   },
   {
     "saghen/blink.cmp",
-    enabled = false,
+    enabled = true,
     -- optional: provides snippets for the snippet source
     -- use a release tag to download pre-built binaries
     version = "1.*",
@@ -43,7 +43,15 @@ return {
         return not vim.tbl_contains({ "DressingInput", "sagarename" }, vim.bo.filetype) and vim.g.toggle_blink
       end,
       cmdline = {
-        enabled = false,
+        completion = {
+          menu = {
+            auto_show = function(ctx)
+              return vim.fn.getcmdtype() == ":"
+              -- enable for inputs as well, with:
+              -- or vim.fn.getcmdtype() == '@'
+            end,
+          },
+        },
       },
       -- Default list of enabled providers defined so that you can extend it
       -- elsewhere in your config, without redefining it, due to `opts_extend`

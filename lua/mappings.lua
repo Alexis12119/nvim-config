@@ -1,5 +1,5 @@
 -- NOTE: NvChad Related Mappings
-local fn = vim.fn
+-- local fn = vim.fn
 local cwd = vim.fn.stdpath "config" .. "/"
 local config_dir = { cwd }
 local utils = require "core.utils"
@@ -234,21 +234,25 @@ vim.keymap.set("t", "<C-h>", "<C-\\<C-N><C-h>", { desc = "General | Go to left w
 -- Go to right window (Terminal)
 vim.keymap.set("t", "<C-l>", "<C-\\><C-N><C-l>", { desc = "General | Go to right window(Terminal)", silent = true })
 
+--NOTE: It has conflict with blink-cmp cmdline
 -- Word Search Increment
-vim.keymap.set("c", "<Tab>", function()
-  if fn.getcmdtype() == "/" or fn.getcmdtype() == "?" then
-    return "<CR>/<C-r>/"
-  end
-  return "<C-z>"
-end, { desc = "General | Word Search Increment", expr = true })
+-- vim.keymap.set("c", "<Tab>", function()
+--   if fn.getcmdtype() == "/" or fn.getcmdtype() == "?" then
+--     return "<CR>/<C-r>/"
+--   end
+--   return "<C-z>"
+-- end, { desc = "General | Word Search Increment", expr = true })
+--
+-- -- Word Search Decrement
+-- vim.keymap.set("c", "<S-Tab>", function()
+--   if fn.getcmdtype() == "/" or fn.getcmdtype() == "?" then
+--     return "<CR>?<C-r>/"
+--   end
+--   return "<S-Tab>"
+-- end, { desc = "General | Word Search Decrement", expr = true })
 
--- Word Search Decrement
-vim.keymap.set("c", "<S-Tab>", function()
-  if fn.getcmdtype() == "/" or fn.getcmdtype() == "?" then
-    return "<CR>?<C-r>/"
-  end
-  return "<S-Tab>"
-end, { desc = "General | Word Search Decrement", expr = true })
+-- Clear highlights manually with Esc
+vim.keymap.set("n", "<Esc>", "<Cmd>nohlsearch<CR><Esc>", { desc = "General | Clear search highlight with Esc" })
 
 -- Find Config Files
 vim.keymap.set("n", "<leader>nf", function()
