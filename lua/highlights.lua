@@ -23,9 +23,9 @@ M.override = {
   LspReferenceWrite = { link = "Underlined" },
   TbFill = { link = "Normal" },
   NvimTreeRootFolder = { link = "NvimTreeFolderName" },
-  NvimTreeOpenedFolderName = { fg = "grey" },
-  NvimTreeFolderName = { fg = "light_grey" },
-  NvimTreeFolderIcon = { fg = "light_grey" },
+  -- NvimTreeOpenedFolderName = { fg = "grey" },
+  -- NvimTreeFolderName = { fg = "light_grey" },
+  -- NvimTreeFolderIcon = { fg = "light_grey" },
 }
 
 ---@type HLTable
