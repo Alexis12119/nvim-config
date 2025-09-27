@@ -21,19 +21,24 @@ M.override = {
   LspReferenceRead = { link = "Underlined" },
   LspReferenceText = { link = "Underlined" },
   LspReferenceWrite = { link = "Underlined" },
-  TblineFill = { link = "Normal" },
+  TbFill = { link = "Normal" },
   NvimTreeRootFolder = { link = "NvimTreeFolderName" },
+  NvimTreeOpenedFolderName = { fg = "grey" },
+  NvimTreeFolderName = { fg = "light_grey" },
+  NvimTreeFolderIcon = { fg = "light_grey" },
 }
 
 ---@type HLTable
 M.add = {
-  WinBar = { link = "Normal" },
-  WinBarNC = { link = "Normal" },
-  DiffviewDiffAdd = { fg = "black", bg = "green" },
-  DiffviewDiffChange = { fg = "black", bg = "green" },
+  WinBar = { fg = "foregroundColor", bg = "backgroundColor" },
+  WinBarNC = { fg = "grey_fg", bg = "backgroundColor" },
+  DiffviewDiffAdd = { fg = "black", bg = "vibrant_green" },
+  DiffviewDiffChange = { fg = "black", bg = "yellow" },
   DiffviewDiffDelete = { fg = "black", bg = "red" },
   DiffviewDiffAddAsDelete = { fg = "black", bg = "red" },
-  LspInlayHint = { link = "Comment" },
+  LspInlayHint = { fg = "infoForeground", italic = true },
+  CursorLine = { bg = "selectionBackground" },
+  Visual = { bg = "selectionBackground" },
 }
 
 return M
