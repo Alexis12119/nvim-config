@@ -56,10 +56,6 @@ return {
     vim.keymap.set("n", "<leader>gg", function()
       utils.git()
     end, { desc = "ToggleTerm | Lazygit", silent = true })
-
-    vim.keymap.set("n", "<leader>td", function()
-      utils.docker()
-    end, { desc = "ToggleTerm | Docker", silent = true })
   end,
   cmd = {
     "ToggleTerm",
