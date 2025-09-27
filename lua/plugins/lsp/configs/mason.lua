@@ -76,6 +76,8 @@ return {
             if pkg.spec.categories[1] == "LSP" then
               vim.defer_fn(function()
                 setup_servers()
+
+                vim.notify("Auto-Enable: " .. pkg.name, vim.log.levels.INFO)
                 -- retrigger FileType so buffer picks up the new server
                 require("lazy.core.handler.event").trigger {
                   event = "FileType",
