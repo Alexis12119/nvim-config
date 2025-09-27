@@ -2,7 +2,7 @@
 
 ![Last commit](https://img.shields.io/github/last-commit/Alexis12119/nvim-config?style=for-the-badge&logo=git&color=000F10&logoColor=dark%20orange&labelColor=302D41)
 
-[![](https://img.shields.io/badge/Neovim-0.10+-blueviolet.svg?style=for-the-badge&color=000F10&logo=Neovim&logoColor=green&labelColor=302D41)](https://github.com/neovim/neovim)
+[![](https://img.shields.io/badge/Neovim-0.11.4+-blueviolet.svg?style=for-the-badge&color=000F10&logo=Neovim&logoColor=green&labelColor=302D41)](https://github.com/neovim/neovim)
 
 <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/fd99297d-235e-4902-bd72-9e0b02bc6d04" />
 
