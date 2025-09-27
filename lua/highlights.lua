@@ -39,6 +39,7 @@ M.add = {
   LspInlayHint = { fg = "infoForeground", italic = true },
   CursorLine = { bg = "selectionBackground" },
   Visual = { bg = "selectionBackground" },
+  NotifyBackground = { bg = "black" },
 }
 
 return M
