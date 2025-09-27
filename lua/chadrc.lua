@@ -56,6 +56,7 @@ M.ui = {
 
   tabufline = {
     enabled = true,
+    lazyload = false,
     order = { "treeOffset", "buffers", "tabs", "btns" },
     modules = require("core.tabufline").modules,
   },
@@ -137,9 +138,9 @@ M.mason = {
 M.lsp = { signature = false }
 
 M.base46 = {
-  theme = "rxyhn",
+  theme = "midnight_breeze",
   transparency = false,
-  theme_toggle = { "rxyhn", "one_light" },
+  theme_toggle = { "midnight_breeze", "sunrise_breeze" },
   hl_override = highlights.override,
   hl_add = highlights.add,
   integrations = {
