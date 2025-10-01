@@ -3,6 +3,7 @@
 
 return {
   "olimorris/codecompanion.nvim",
+  enabled = false,
   event = "VeryLazy",
   opts = {
     strategies = {
