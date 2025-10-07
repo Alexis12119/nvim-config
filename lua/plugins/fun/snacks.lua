@@ -51,8 +51,8 @@ return {
       Snacks.scratch()
     end, { desc = "Snacks | Toggle Scratch", silent = true })
 
-    vim.keymap.set("n", "<leader>fs", function()
-      Snacks.scratch.select()
-    end, { desc = "Snacks | Select Scratch", silent = true })
+    -- vim.keymap.set("n", "<leader>fs", function()
+    --   Snacks.scratch.select()
+    -- end, { desc = "Snacks | Select Scratch", silent = true })
   end,
 }
