@@ -2,6 +2,7 @@
 -- NOTE: MCP Hub
 return {
   "ravitemer/mcphub.nvim",
+  enabled = false,
   dependencies = {
     "nvim-lua/plenary.nvim",
   },

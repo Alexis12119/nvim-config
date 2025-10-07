@@ -2,6 +2,7 @@
 -- NOTE: Improve UI
 return {
   "stevearc/dressing.nvim",
+  enabled = false,
   event = "VeryLazy",
   opts = {
     input = {
