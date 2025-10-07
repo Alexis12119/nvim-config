@@ -4,9 +4,7 @@
 
 [![](https://img.shields.io/badge/Neovim-0.11.4+-blueviolet.svg?style=for-the-badge&color=000F10&logo=Neovim&logoColor=green&labelColor=302D41)](https://github.com/neovim/neovim)
 
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/fd99297d-235e-4902-bd72-9e0b02bc6d04" />
-
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/20c94106-1dfe-41a5-92de-d55851c3b5d6" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/b7ea1b11-e0bb-4b79-a74f-f236590e69af" />
 
 </div>
 
