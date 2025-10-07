@@ -13,4 +13,13 @@ return {
   config = function()
     require("spring-initializr").setup()
   end,
+  init = function()
+    vim.keymap.set("n", "<leader>Si", "<cmd>SpringInitializr<cr>", { desc = "Spring | Initializr", silent = true })
+    vim.keymap.set(
+      "n",
+      "<leader>Sp",
+      "<cmd>SpringGenerateProject<cr>",
+      { desc = "Spring | Generate Project", silent = true }
+    )
+  end,
 }

@@ -5,7 +5,7 @@ local config_dir = { cwd }
 local utils = require "core.utils"
 
 -- Save with root privileges
-vim.keymap.set("n", "<leader>S", "<cmd>SudaWrite<cr>", { desc = "General | Save With Root", silent = true })
+vim.keymap.set("n", "<leader>nS", "<cmd>SudaWrite<cr>", { desc = "Neovim | Save With Root", silent = true })
 
 -- Remove All Text
 vim.keymap.set("n", "<leader>R", "<cmd>%d+<cr>", { desc = "General | Remove All Text", silent = true })
