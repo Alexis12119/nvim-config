@@ -47,5 +47,12 @@ return {
         vim.notify("Can't Close Window", vim.log.levels.WARN, { title = "Close Window" })
       end
     end, { desc = "Snacks | Close window", silent = true })
+    vim.keymap.set("n", "<leader>ns", function()
+      Snacks.scratch()
+    end, { desc = "Snacks | Toggle Scratch", silent = true })
+
+    vim.keymap.set("n", "<leader>fs", function()
+      Snacks.scratch.select()
+    end, { desc = "Snacks | Select Scratch", silent = true })
   end,
 }
