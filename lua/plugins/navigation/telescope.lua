@@ -80,12 +80,12 @@ return {
 
     vim.keymap.set("n", "<leader>fB", "<cmd>Telescope buffers<cr>", { desc = "Telescope | Buffers", silent = true })
 
-    vim.keymap.set(
-      "n",
-      "<leader>fn",
-      "<cmd>lua require('telescope').extensions.notify.notify()<cr>",
-      { desc = "Telescope | Notify History", silent = true }
-    )
+    -- vim.keymap.set(
+    --   "n",
+    --   "<leader>fn",
+    --   "<cmd>lua require('telescope').extensions.notify.notify()<cr>",
+    --   { desc = "Telescope | Notify History", silent = true }
+    -- )
 
     vim.keymap.set("n", "<leader>fp", "<cmd>Telescope projects<cr>", { desc = "Telescope | Projects", silent = true })
 

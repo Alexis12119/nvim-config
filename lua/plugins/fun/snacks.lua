@@ -24,4 +24,9 @@ return {
     words = { enabled = false },
     image = { enabled = true },
   },
+  init = function()
+    vim.keymap.set("n", "<leader>fn", function()
+      Snacks.picker.notifications()
+    end, { desc = "Notification History" })
+  end,
 }
