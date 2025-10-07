@@ -63,7 +63,7 @@ Please follow these steps:
 ## ✨ Features
 
 - **Plugin Management**: Efficiently manage plugins with [lazy.nvim](https://github.com/folke/lazy.nvim).
-- **AI Assistant**: Use AI assistant with [avante.nvim](https://github.com/yetone/avante.nvim) and [superman.nvim](https://github.com/supermaven-inc/supermaven-nvim).
+- **AI Assistant**: Use AI assistant with [opencode.nvim](https://github.com/sudo-tee/opencode.nvim) and [superman.nvim](https://github.com/supermaven-inc/supermaven-nvim).
 - **Database**: Manage databases with [vim-dadbod-ui](https://github.com/kristijanhusak/vim-dadbod-ui).
 - **Session Management**: Manage sessions with [auto-session](https://github.com/rmagatti/auto-session).
 - **Compiler**: Compile your code with [compiler.nvim](https://github.com/Zeioth/compiler.nvim).
@@ -73,7 +73,7 @@ Please follow these steps:
 - **Project Management**: Simplify project handling with [project.nvim](https://github.com/ahmedkhalf/project.nvim).
 - **Diff Viewer**: Easily cycle through diffs with [diffview.nvim](https://github.com/sindrets/diffview.nvim).
 - **Enhanced Searching**: Improve searching with [flash.nvim](https://github.com/folke/flash.nvim).
-- **Autocompletion**: Experience intelligent autocompletion with [nvim-cmp](https://github.com/hrsh7th/nvim-cmp).
+- **Autocompletion**: Experience intelligent autocompletion with [blink.cmp](https://github.com/Saghen/blink.cmp).
 - **Language Support**: Harness the power of Language Server Protocol with [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig).
 - **Formatting**: Keep your code clean with [conform.nvim](https://github.com/stevearc/conform.nvim).
 - **Syntax Highlighting**: Enjoy enhanced syntax highlighting with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter).
