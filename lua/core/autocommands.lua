@@ -147,6 +147,14 @@ autocmd("FocusGained", {
   desc = "Update file when there are changes",
 })
 
+autocmd("FileChangedShellPost", {
+  callback = function()
+    vim.notify("File reloaded automatically", vim.log.levels.INFO, { title = "nvim" })
+  end,
+  group = general,
+  desc = "Notify when file is reloaded",
+})
+
 autocmd("VimResized", {
   callback = function()
     vim.cmd "wincmd ="
@@ -174,7 +182,7 @@ autocmd("ModeChanged", {
     if mode:match "i" then
       vim.opt.hlsearch = false -- hide in insert mode
     else
-      vim.opt.hlsearch = true  -- show in normal / visual / command modes
+      vim.opt.hlsearch = true -- show in normal / visual / command modes
     end
   end,
   group = general,
