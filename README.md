@@ -61,6 +61,7 @@ Please follow these steps:
 ## ✨ Features
 
 - **Plugin Management**: Efficiently manage plugins with [lazy.nvim](https://github.com/folke/lazy.nvim).
+- Plugin Store: Easily install and manage plugins with [store.nvim](https://github.com/alex-popov-tech/store.nvim).
 - **AI Assistant**: Use AI assistant with [opencode.nvim](https://github.com/sudo-tee/opencode.nvim) and [superman.nvim](https://github.com/supermaven-inc/supermaven-nvim).
 - **Database**: Manage databases with [vim-dadbod-ui](https://github.com/kristijanhusak/vim-dadbod-ui).
 - **Session Management**: Manage sessions with [auto-session](https://github.com/rmagatti/auto-session).
