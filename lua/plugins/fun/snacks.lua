@@ -32,6 +32,20 @@ return {
   init = function()
     vim.keymap.set("n", "<leader>fn", function()
       Snacks.picker.notifications()
-    end, { desc = "Snacks | Notification History" })
+    end, { desc = "Snacks | Notification History", silent = true })
+    vim.keymap.set("n", "<leader>c", function()
+      Snacks.bufdelete()
+    end, { desc = "Snacks | Close Buffer", silent = true })
+    -- Close window
+    vim.keymap.set("n", "<leader>w", function()
+      if vim.bo.buftype == "terminal" then
+        Snacks.bufdelete()
+        vim.cmd "silent! close"
+      elseif #vim.api.nvim_list_wins() > 1 then
+        vim.cmd "silent! close"
+      else
+        vim.notify("Can't Close Window", vim.log.levels.WARN, { title = "Close Window" })
+      end
+    end, { desc = "Snacks | Close window", silent = true })
   end,
 }

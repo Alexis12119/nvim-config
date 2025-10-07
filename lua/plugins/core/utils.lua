@@ -10,6 +10,7 @@ return {
   -- Buffer Delete
   {
     "moll/vim-bbye",
+    enabled = false,
     cmd = { "Bdelete", "Bwipeout" },
   },
 }

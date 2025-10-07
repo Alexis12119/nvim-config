@@ -16,9 +16,6 @@ vim.keymap.set("n", "<leader>y", "<cmd>%y+<cr>", { desc = "General | Yank All Te
 -- Quit
 vim.keymap.set("n", "<leader>q", "<cmd>qa!<cr>", { desc = "General | Quit", silent = true })
 
--- Close Buffer
-vim.keymap.set("n", "<leader>c", "<cmd>Bdelete!<cr>", { desc = "General | Close Buffer", silent = true })
-
 -- Toggle Tabufline
 vim.keymap.set("n", "<leader>ob", function()
   if vim.o.showtabline == 2 then
@@ -123,18 +120,6 @@ vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "General | Go to left window", s
 
 -- Go to right window
 vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "General | Go to right window", silent = true })
-
--- Close window
-vim.keymap.set("n", "<leader>w", function()
-  if vim.bo.buftype == "terminal" then
-    vim.cmd "Bdelete!"
-    vim.cmd "silent! close"
-  elseif #vim.api.nvim_list_wins() > 1 then
-    vim.cmd "silent! close"
-  else
-    vim.notify("Can't Close Window", vim.log.levels.WARN, { title = "Close Window" })
-  end
-end, { desc = "General | Close window", silent = true })
 
 -- Add size at the top
 vim.keymap.set("n", "<C-Up>", "<cmd>resize +2<CR>", { desc = "General | Add size at the top", silent = true })
