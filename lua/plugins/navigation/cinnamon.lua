@@ -2,6 +2,7 @@
 -- NOTE: Smooth scrolling with Cinnamon
 return {
   "declancm/cinnamon.nvim",
+  enabled = false,
   event = {
     "BufReadPost",
     "BufNewFile",
