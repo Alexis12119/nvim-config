@@ -2,7 +2,8 @@
 -- NOTE: Better Markdown
 return {
   "OXY2DEV/markview.nvim",
-  lazy = false,
+  -- lazy = false,
+  ft = { "markdown", "Avante", "codecompanion", "opencode_output" },
   init = function()
     vim.keymap.set("n", "<leader>m", function()
       if vim.bo.filetype == "markdown" then

@@ -2,7 +2,7 @@
 -- NOTE: For Java
 return {
   "nvim-java/nvim-java",
-  event = "VeryLazy",
+  ft = { "java" },
   config = function()
     require("java").setup()
     require("lspconfig").jdtls.setup {

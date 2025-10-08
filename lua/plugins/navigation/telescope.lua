@@ -17,7 +17,6 @@ end
 
 return {
   "nvim-telescope/telescope.nvim",
-  lazy = false,
   dependencies = {
     {
       "nvim-telescope/telescope-fzf-native.nvim",
@@ -55,7 +54,6 @@ return {
       file_ignore_patterns = { "node_modules", ".git/" },
     },
   },
-
   init = function()
     vim.keymap.set(
       "n",
