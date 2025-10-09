@@ -39,7 +39,6 @@ local options = {
   cmdheight = 0, -- height of the command line
   helpheight = 10, -- height of the help window
   sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions",
-  -- NOTE: Uncomment these options to enable pwsh for Windows
   -- shell = vim.fn.executable "pwsh" and "pwsh" or "powershell",
   -- shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;",
   -- shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait",
