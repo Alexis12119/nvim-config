@@ -210,7 +210,7 @@ local last_check = {}
 
 autocmd("VimEnter", {
   callback = function()
-    file_check_timer = fn.timer_start(3000, function()
+    file_check_timer = fn.timer_start(5000, function()
       local bufnr = vim.api.nvim_get_current_buf()
       local fname = vim.api.nvim_buf_get_name(bufnr)
       if fname == "" then
@@ -224,11 +224,6 @@ autocmd("VimEnter", {
 
       if last_check[bufnr] and current_time > last_check[bufnr] then
         vim.cmd "checktime"
-        if vim.bo.modified then
-          vim.cmd "edit!"
-        else
-          vim.cmd "edit"
-        end
       end
 
       last_check[bufnr] = current_time
