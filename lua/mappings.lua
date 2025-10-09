@@ -286,6 +286,16 @@ vim.keymap.set("n", "<leader>nr", function()
   utils.run_code()
 end, { desc = "Neovim | Run Code", silent = true })
 
+-- Restart Neovim
+vim.keymap.set("n", "<leader>nR", function()
+  -- check if the current version is the latesto
+  if vim.version().minor >= 12 then
+    vim.cmd "restart"
+  else
+    vim.notify("Restart isn't available in this neovim version", vim.log.levels.WARN, { title = "Restart" })
+  end
+end, { desc = "Neovim | Restart", silent = true })
+
 -- Clean
 vim.keymap.set("n", "<leader>pc", "<cmd>Lazy clean<cr>", { desc = "Lazy | Clean", silent = true })
 

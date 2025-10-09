@@ -4,10 +4,7 @@
 return {
   "mrcjkb/rustaceanvim",
   version = "^6", -- Recommended
-  event = {
-    "BufReadPost",
-    "BufNewFile",
-  },
+  ft = { "rust" },
   dependencies = {
     {
       "saecki/crates.nvim",
