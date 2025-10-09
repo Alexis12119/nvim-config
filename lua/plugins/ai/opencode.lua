@@ -15,7 +15,7 @@ return {
     keymap_prefix = "<leader>a",
     keymap = {
       editor = {
-        ["<leader>ag"] = { "toggle" }, -- Open opencode. Close if opened
+        ["<leader>aa"] = { "toggle" }, -- Open opencode. Close if opened
         ["<leader>ai"] = { "open_input" }, -- Opens and focuses on input window on insert mode
         ["<leader>aI"] = { "open_input_new_session" }, -- Opens and focuses on input window on insert mode. Creates a new session
         ["<leader>ao"] = { "open_output" }, -- Opens and focuses on output window
