@@ -131,7 +131,7 @@ autocmd("FileChangedRO", {
 autocmd({ "FocusLost", "BufLeave", "BufWinLeave", "InsertLeave" }, {
   -- nested = true, -- for format on save
   callback = function()
-    if vim.bo.filetype ~= "" and vim.bo.buftype == "" then
+    if vim.bo.filetype ~= "" and vim.bo.buftype == "" and vim.bo.modified then
       vim.cmd "silent! w"
     end
   end,
