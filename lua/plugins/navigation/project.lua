@@ -22,14 +22,12 @@ return {
     patterns = {
       ".git",
       "Cargo.toml",
-      "pubspec.yaml",
       "*.cfg",
       "CMakeLists.txt",
       "build.zig",
       ".vscode",
       ".svn",
       "Makefile",
-      "package.json",
     },
 
     -- Table of lsp clients to ignore by name
