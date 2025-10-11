@@ -28,10 +28,6 @@ return {
   ---@module "auto-session"
   ---@type AutoSession.Config
   opts = {
-    auto_save = true, -- Enables/disables auto saving
-    auto_restore = true, --Enables/disables auto restoring
-    auto_create = true, -- Enables/disables auto creating new session files. Can be a function that returns true if a new session file should be allowed
-    git_use_branch_name = false, --Include git branch name in session name
     suppressed_dirs = {
       "/",
       "~/",
