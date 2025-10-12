@@ -140,7 +140,7 @@ M.lsp = { signature = false }
 M.base46 = {
   theme = "github_dark_dimmed",
   transparency = false,
-  theme_toggle = { "github_dark_dimmed", "github_light_dimmed" },
+  theme_toggle = { "github_dark_dimmed", "sunrise_breeze" },
   hl_override = highlights.override,
   hl_add = highlights.add,
   integrations = {
