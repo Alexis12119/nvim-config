@@ -99,6 +99,7 @@ M.polish_hl = {
     ["@property"] = { fg = M.base_30.white },
     ["@variable"] = { fg = M.base_30.white },
     ["@variable.builtin"] = { fg = "#f69d50" },
+    ["@punctuation.bracket"] = { fg = M.base_30.red },
 
     -- Python-specific Tree-sitter highlights
     ["@keyword.import.python"] = { fg = "#c8a1ff", italic = true },
