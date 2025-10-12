@@ -35,7 +35,6 @@ M.base_30 = {
   folder_bg = "#768390",
 }
 
--- Reuse base_30 values for base_16
 M.base_16 = {
   base00 = M.base_30.black,
   base01 = M.base_30.black2,
@@ -49,10 +48,10 @@ M.base_16 = {
   base09 = M.base_30.orange,
   base0A = M.base_30.yellow,
   base0B = M.base_30.vibrant_green,
-  base0C = M.base_30.teal,
-  base0D = M.base_30.blue,
-  base0E = M.base_30.purple,
-  base0F = M.base_30.baby_pink,
+  base0C = "#56d4dd",
+  base0D = "#539bf5",
+  base0E = "#b083f0",
+  base0F = "#f69d50",
 }
 
 M.polish_hl = {
@@ -80,6 +79,10 @@ M.polish_hl = {
     DiffAddAsDelete = { bg = "#422b2b", fg = M.base_30.red },
     DiffDeleteText = { bg = "#422b2b", fg = M.base_30.red },
     DiffChangeDelete = { bg = "#2b3240", fg = M.base_30.blue },
+
+    GitSignsAdd = { fg = M.base_30.green },
+    GitSignsChange = { fg = M.base_30.blue },
+    GitSignsDelete = { fg = M.base_30.red },
   },
 
   treesitter = {
