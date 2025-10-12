@@ -138,9 +138,9 @@ M.mason = {
 M.lsp = { signature = false }
 
 M.base46 = {
-  theme = "midnight_breeze",
+  theme = "github_dark_dimmed",
   transparency = false,
-  theme_toggle = { "midnight_breeze", "sunrise_breeze" },
+  theme_toggle = { "github_dark_dimmed", "github_light_dimmed" },
   hl_override = highlights.override,
   hl_add = highlights.add,
   integrations = {

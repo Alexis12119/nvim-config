@@ -30,12 +30,12 @@ M.override = {
 
 ---@type HLTable
 M.add = {
-  WinBar = { fg = "foregroundColor", bg = "backgroundColor" },
-  WinBarNC = { fg = "grey_fg", bg = "backgroundColor" },
-  DiffviewDiffAdd = { fg = "black", bg = "vibrant_green" },
-  DiffviewDiffChange = { fg = "black", bg = "yellow" },
-  DiffviewDiffDelete = { fg = "black", bg = "red" },
-  DiffviewDiffAddAsDelete = { fg = "black", bg = "red" },
+  -- WinBar = { fg = "foregroundColor", bg = "backgroundColor" },
+  -- WinBarNC = { fg = "grey_fg", bg = "backgroundColor" },
+  -- DiffviewDiffAdd = { fg = "black", bg = "vibrant_green" },
+  -- DiffviewDiffChange = { fg = "black", bg = "yellow" },
+  -- DiffviewDiffDelete = { fg = "black", bg = "red" },
+  -- DiffviewDiffAddAsDelete = { fg = "black", bg = "red" },
   LspInlayHint = { fg = "infoForeground", italic = true },
   CursorLine = { bg = "selectionBackground" },
   Visual = { bg = "selectionBackground" },
