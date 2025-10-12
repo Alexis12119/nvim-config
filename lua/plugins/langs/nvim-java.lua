@@ -8,6 +8,7 @@ return {
     require("lspconfig").jdtls.setup {
       on_attach = require("plugins.lsp.opts").on_attach,
       capabilities = require("plugins.lsp.opts").capabilities,
+      on_init = require("plugins.lsp.opts").on_init,
     }
   end,
 }
