@@ -95,10 +95,10 @@ return {
     --   Snacks.picker.lsp_workspace_symbols()
     -- end, { desc = "Snacks | Workspace Symbols", silent = true })
 
-    -- Notifications
-    vim.keymap.set("n", "<leader>fn", function()
-      Snacks.picker.notifications()
-    end, { desc = "Snacks | Notification History", silent = true })
+    -- -- Notifications
+    -- vim.keymap.set("n", "<leader>fn", function()
+    --   Snacks.picker.notifications()
+    -- end, { desc = "Snacks | Notification History", silent = true })
 
     -- Buffers / Scratch
     vim.keymap.set("n", "<leader>c", function()
