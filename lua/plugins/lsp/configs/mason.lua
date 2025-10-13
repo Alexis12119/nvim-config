@@ -48,7 +48,6 @@ return {
           vim.lsp.config("*", {
             capabilities = opts.capabilities,
             on_attach = opts.on_attach,
-            on_init = opts.on_init,
           })
 
           local excluded = { "ts_ls", "jdtls", "rust_analyzer" }

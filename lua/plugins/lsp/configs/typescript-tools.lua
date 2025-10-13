@@ -11,7 +11,6 @@ return {
       client.server_capabilities.documentFormattingProvider = false
       client.server_capabilities.documentRangeFormattingProvider = false
       require("plugins.lsp.opts").on_attach(client, bufnr)
-      require("plugins.lsp.opts").on_init(client, bufnr)
     end,
     settings = {
       separate_diagnostic_server = true, -- Disable separate diagnostic server

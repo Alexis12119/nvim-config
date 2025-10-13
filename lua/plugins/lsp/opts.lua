@@ -62,9 +62,8 @@ end
 M.on_attach = function(client, bufnr)
   M.lsp_keymaps(bufnr)
   M.lsp_highlight(client, bufnr)
-end
 
-M.on_init = function(client, _)
+  -- NOTE: Disable Semantic Tokens
   if client:supports_method "textDocument/semanticTokens" then
     client.server_capabilities.semanticTokensProvider = nil
   end
