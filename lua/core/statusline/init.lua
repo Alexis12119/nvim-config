@@ -171,7 +171,10 @@ M.modules = {
     if conform_ok then
       local formatters = conform.list_formatters(0)
       for _, formatter in pairs(formatters) do
-        table.insert(clients, formatter.name)
+        -- Check if the formatter is already in the clients table
+        if not vim.tbl_contains(clients, formatter.name) then
+          table.insert(clients, formatter.name)
+        end
       end
     end
 
