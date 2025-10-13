@@ -6,7 +6,7 @@ return {
   { import = "plugins.editing" },
   { import = "plugins.folding" },
   { import = "plugins.fun" },
-  { import = "plugins.git" },
+  { import = "plugins.version-control" },
   { import = "plugins.integration" },
   { import = "plugins.langs" },
   { import = "plugins.lsp.configs" },
