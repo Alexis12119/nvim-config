@@ -23,7 +23,12 @@ return {
     scroll = { enabled = false },
     statuscolumn = { enabled = false },
     words = { enabled = false },
-    image = { enabled = true },
+    image = {
+      enabled = true,
+      convert = {
+        notify = false,
+      },
+    },
   },
   init = function()
     -- Snacks replacements for old Telescope mappings
