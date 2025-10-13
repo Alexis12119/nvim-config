@@ -85,7 +85,7 @@ M.modules = {
     if theme == "default" then
       return "%#St_pos_sep#" .. sep_l .. "%#St_pos_icon# %#St_pos_text# %p %% "
     elseif theme == "vscode" or theme == "vscode_colored" then
-      return "%#StText# %L"
+      return "%#StText# %L "
     end
     return gen_block("", "%L", "%#St_Pos_sep#", "%#St_Pos_bg#", "%#St_Pos_txt#")
   end,
