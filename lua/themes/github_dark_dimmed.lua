@@ -188,7 +188,7 @@ M.polish_hl = {
     ["@conditional.java"] = { fg = C.red },
     ["@repeat.java"] = { fg = C.red },
 
-    -- JavaScript / TypeScript
+    -- JavaScript
     ["@keyword.import.javascript"] = { fg = E.keyword_purple, italic = true },
     ["@keyword.export.javascript"] = { fg = E.keyword_purple, italic = true },
     ["@keyword.return.javascript"] = { fg = E.keyword_purple, bold = true },
@@ -211,6 +211,53 @@ M.polish_hl = {
     ["@punctuation.delimiter.javascript"] = { fg = C.light_grey },
     ["@conditional.javascript"] = { fg = C.red },
     ["@repeat.javascript"] = { fg = C.red },
+
+    -- TypeScript
+    ["@keyword.import.typescript"] = { fg = E.keyword_purple, italic = true },
+    ["@keyword.export.typescript"] = { fg = E.keyword_purple, italic = true },
+    ["@keyword.return.typescript"] = { fg = E.keyword_purple, bold = true },
+    ["@keyword.typescript"] = { fg = E.keyword_purple, italic = true },
+    ["@keyword.function.typescript"] = { fg = E.keyword_purple, italic = true },
+    ["@type.typescript"] = { fg = E.light_blue },
+    ["@type.builtin.typescript"] = { fg = C.teal },
+    ["@class.typescript"] = { fg = E.light_blue },
+    ["@constructor.typescript"] = { fg = C.blue, bold = true },
+    ["@function.typescript"] = { fg = C.blue },
+    ["@function.call.typescript"] = { fg = C.blue },
+    ["@function.builtin.typescript"] = { fg = E.lighter_blue_builtin, italic = true },
+    ["@variable.parameter.typescript"] = { fg = C.pink },
+    ["@variable.member.typescript"] = { fg = C.white },
+    ["@variable.builtin.typescript"] = { fg = C.orange, italic = true },
+    ["@string.typescript"] = { fg = E.lighter_blue },
+    ["@number.typescript"] = { fg = C.yellow },
+    ["@boolean.typescript"] = { fg = C.yellow },
+    ["@constant.typescript"] = { fg = C.yellow },
+    ["@constant.builtin.typescript"] = { fg = C.orange },
+    ["@operator.typescript"] = { fg = C.purple },
+    ["@punctuation.delimiter.typescript"] = { fg = C.light_grey },
+    ["@conditional.typescript"] = { fg = C.red },
+    ["@repeat.typescript"] = { fg = C.red },
+
+    -- JavaScript React (JSX)
+    ["@tag.jsx"] = { fg = C.blue },
+    ["@tag.attribute.jsx"] = { fg = C.pink },
+    ["@tag.delimiter.jsx"] = { fg = C.light_grey },
+    ["@property.jsx"] = { fg = C.white },
+    ["@string.jsx"] = { fg = E.lighter_blue },
+    ["@constant.jsx"] = { fg = C.yellow },
+    ["@function.jsx"] = { fg = C.blue },
+    ["@keyword.jsx"] = { fg = E.keyword_purple, italic = true },
+
+    -- TypeScript React (TSX)
+    ["@keyword.import.tsx"] = { fg = E.keyword_purple, italic = true },
+    ["@keyword.export.tsx"] = { fg = E.keyword_purple, italic = true },
+    ["@keyword.return.tsx"] = { fg = E.keyword_purple, bold = true },
+    ["@keyword.tsx"] = { fg = E.keyword_purple, italic = true },
+    ["@function.tsx"] = { fg = C.blue },
+    ["@type.tsx"] = { fg = E.light_blue },
+    ["@class.tsx"] = { fg = E.light_blue },
+    ["@string.tsx"] = { fg = E.lighter_blue },
+    ["@variable.tsx"] = { fg = C.white },
 
     -- HTML
     ["@tag.html"] = { fg = C.blue },
