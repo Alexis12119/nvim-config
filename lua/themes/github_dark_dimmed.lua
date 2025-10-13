@@ -330,6 +330,79 @@ M.polish_hl = {
     ["@operator.rust"] = { fg = C.purple },
     ["@conditional.rust"] = { fg = C.red },
     ["@repeat.rust"] = { fg = C.red },
+
+    -- Markdown
+    ["@markup.heading.1.markdown"] = { fg = C.red, bold = true },
+    ["@markup.heading.2.markdown"] = { fg = C.orange, bold = true },
+    ["@markup.heading.3.markdown"] = { fg = C.yellow, bold = true },
+    ["@markup.heading.4.markdown"] = { fg = C.green, bold = true },
+    ["@markup.heading.5.markdown"] = { fg = C.blue, bold = true },
+    ["@markup.heading.6.markdown"] = { fg = C.purple, bold = true },
+    ["@markup.heading.1.marker.markdown"] = { fg = C.red, bold = true },
+    ["@markup.heading.2.marker.markdown"] = { fg = C.orange, bold = true },
+    ["@markup.heading.3.marker.markdown"] = { fg = C.yellow, bold = true },
+    ["@markup.heading.4.marker.markdown"] = { fg = C.green, bold = true },
+    ["@markup.heading.5.marker.markdown"] = { fg = C.blue, bold = true },
+    ["@markup.heading.6.marker.markdown"] = { fg = C.purple, bold = true },
+
+    ["@markup.strong.markdown_inline"] = { fg = C.orange, bold = true },
+    ["@markup.italic.markdown_inline"] = { fg = C.white, italic = true },
+    ["@markup.strikethrough.markdown_inline"] = { fg = C.light_grey, strikethrough = true },
+
+    ["@markup.link.label.markdown_inline"] = { fg = E.light_blue },
+    ["@markup.link.url.markdown_inline"] = { fg = C.cyan, underline = true },
+    ["@markup.link.markdown_inline"] = { fg = C.cyan, underline = true },
+
+    ["@markup.raw.markdown_inline"] = { fg = C.teal },
+    ["@markup.raw.block.markdown"] = { fg = C.teal },
+
+    ["@markup.quote.markdown"] = { fg = C.light_grey, italic = true },
+    ["@markup.list.checked.markdown"] = { fg = C.green },
+    ["@markup.list.unchecked.markdown"] = { fg = C.red },
+    ["@markup.list.markdown"] = { fg = C.yellow },
+
+    ["@punctuation.special.markdown"] = { fg = C.purple },
+
+    -- PHP
+    ["@keyword.php"] = { fg = E.keyword_purple, italic = true },
+    ["@keyword.import.php"] = { fg = E.keyword_purple, italic = true },
+    ["@keyword.return.php"] = { fg = E.keyword_purple, bold = true },
+    ["@keyword.function.php"] = { fg = E.keyword_purple, italic = true },
+    ["@keyword.modifier.php"] = { fg = E.keyword_purple, italic = true },
+
+    ["@type.php"] = { fg = E.light_blue },
+    ["@type.builtin.php"] = { fg = C.teal },
+    ["@class.php"] = { fg = E.light_blue },
+    ["@interface.php"] = { fg = E.light_blue, italic = true },
+    ["@constructor.php"] = { fg = C.blue, bold = true },
+
+    ["@function.php"] = { fg = C.blue },
+    ["@function.call.php"] = { fg = C.blue },
+    ["@function.builtin.php"] = { fg = E.lighter_blue_builtin, italic = true },
+    ["@method.php"] = { fg = C.blue },
+    ["@method.call.php"] = { fg = C.blue },
+
+    ["@variable.php"] = { fg = C.white },
+    ["@variable.parameter.php"] = { fg = C.pink },
+    ["@variable.member.php"] = { fg = C.white },
+    ["@variable.builtin.php"] = { fg = C.orange, italic = true },
+    ["@property.php"] = { fg = C.white },
+    ["@field.php"] = { fg = C.white },
+
+    ["@string.php"] = { fg = E.lighter_blue },
+    ["@constant.php"] = { fg = C.yellow },
+    ["@constant.builtin.php"] = { fg = C.orange },
+    ["@number.php"] = { fg = C.yellow },
+    ["@boolean.php"] = { fg = C.yellow },
+
+    ["@operator.php"] = { fg = C.purple },
+    ["@punctuation.delimiter.php"] = { fg = C.light_grey },
+    ["@exception.php"] = { fg = C.red, bold = true },
+    ["@conditional.php"] = { fg = C.red },
+    ["@repeat.php"] = { fg = C.red },
+
+    ["@tag.php"] = { fg = C.red }, -- PHP tags (<?php, ?>)
+    ["@namespace.php"] = { fg = E.light_blue },
   },
 }
 
