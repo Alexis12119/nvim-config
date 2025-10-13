@@ -15,29 +15,29 @@ end
 M.modules = {
   -- NOTE: Add colors to the git status
 
-  -- git = function()
-  --   local stbufnr = vim.api.nvim_win_get_buf(vim.g.statusline_winid or 0)
-  --   if not vim.b[stbufnr].gitsigns_head or vim.b[stbufnr].gitsigns_git_status then
-  --     return ""
-  --   end
-  --
-  --   local git_status = vim.b[stbufnr].gitsigns_status_dict
-  --
-  --   local added = (git_status.added and git_status.added ~= 0) and ("  " .. git_status.added) or ""
-  --   local changed = (git_status.changed and git_status.changed ~= 0) and ("  " .. git_status.changed) or ""
-  --   local removed = (git_status.removed and git_status.removed ~= 0) and ("  " .. git_status.removed) or ""
-  --   local branch_name = " " .. git_status.head
-  --
-  --   return " "
-  --     .. "%#St_gitIcons#"
-  --     .. branch_name
-  --     .. "%#GitSignsAdd#"
-  --     .. added
-  --     .. "%#GitSignsChange#"
-  --     .. changed
-  --     .. "%#GitSignsDelete#"
-  --     .. removed
-  -- end,
+  git = function()
+    local stbufnr = vim.api.nvim_win_get_buf(vim.g.statusline_winid or 0)
+    if not vim.b[stbufnr].gitsigns_head or vim.b[stbufnr].gitsigns_git_status then
+      return ""
+    end
+
+    local git_status = vim.b[stbufnr].gitsigns_status_dict
+
+    local added = (git_status.added and git_status.added ~= 0) and ("  " .. git_status.added) or ""
+    local changed = (git_status.changed and git_status.changed ~= 0) and ("  " .. git_status.changed) or ""
+    local removed = (git_status.removed and git_status.removed ~= 0) and ("  " .. git_status.removed) or ""
+    local branch_name = " " .. git_status.head
+
+    return " "
+      .. "%#St_gitIcons#"
+      .. branch_name
+      .. "%#GitSignsAdd#"
+      .. added
+      .. "%#GitSignsChange#"
+      .. changed
+      .. "%#GitSignsDelete#"
+      .. removed
+  end,
 
   total_lines = function()
     local separators = {}
