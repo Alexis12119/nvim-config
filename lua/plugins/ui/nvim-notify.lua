@@ -2,16 +2,15 @@
 -- NOTE: Notification
 return {
   "rcarriga/nvim-notify",
-  enabled = false,
-  -- lazy = false,
-  event = "VeryLazy",
+  lazy = false,
+  -- event = "VeryLazy",
   opts = {
     level = 2,
-    minimum_width = 50,
-    render = "default",
+    minimum_width = 30,
+    render = "wrapped-compact",
     stages = "fade_in_slide_out",
     timeout = 3000,
-    top_down = false,
+    -- top_down = true,
   },
   config = function(_, opts)
     local base46 = require("nvconfig").base46

@@ -45,7 +45,7 @@ return {
           ["<S-Tab>"] = require("telescope.actions").move_selection_previous,
           ["<C-j>"] = require("telescope.actions").toggle_selection + require("telescope.actions").move_selection_worse,
           ["<C-k>"] = require("telescope.actions").toggle_selection
-              + require("telescope.actions").move_selection_better,
+            + require("telescope.actions").move_selection_better,
           ["<C-p>"] = focus_preview,
           ["<C-h>"] = require("telescope.actions.layout").toggle_preview,
           ["<C-q>"] = require("trouble.sources.telescope").open,
@@ -78,12 +78,12 @@ return {
 
     vim.keymap.set("n", "<leader>fB", "<cmd>Telescope buffers<cr>", { desc = "Telescope | Buffers", silent = true })
 
-    -- vim.keymap.set(
-    --   "n",
-    --   "<leader>fn",
-    --   "<cmd>lua require('telescope').extensions.notify.notify()<cr>",
-    --   { desc = "Telescope | Notify History", silent = true }
-    -- )
+    vim.keymap.set(
+      "n",
+      "<leader>fn",
+      "<cmd>lua require('telescope').extensions.notify.notify()<cr>",
+      { desc = "Telescope | Notify History", silent = true }
+    )
 
     vim.keymap.set("n", "<leader>fp", "<cmd>Telescope projects<cr>", { desc = "Telescope | Projects", silent = true })
 
