@@ -30,8 +30,8 @@ local options = {
   numberwidth = 5, -- set number column width to 4 {default 4}
   signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time
   wrap = false, -- display lines as one long line
-  scrolloff = 4, -- minimal number of columns to scroll horizontally.
-  sidescrolloff = 4, -- minimal number of screen columns
+  -- scrolloff = 4, -- minimal number of columns to scroll horizontally.
+  -- sidescrolloff = 4, -- minimal number of screen columns
   lazyredraw = false, -- Won't be redrawn while executing macros, register and other commands.
   termguicolors = true, -- Enables 24-bit RGB color in the TUI
   fillchars = { eob = " ", fold = " ", foldopen = "", foldsep = " ", foldclose = "", lastline = " " }, -- make EndOfBuffer invisible
