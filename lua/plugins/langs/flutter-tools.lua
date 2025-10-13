@@ -11,6 +11,7 @@ return {
     lsp = {
       on_attach = function(client, bufnr)
         require("plugins.lsp.opts").on_attach(client, bufnr)
+        require("plugins.lsp.opts").on_init(client, bufnr)
       end,
       capabilities = function()
         return require("plugins.lsp.opts").capabilities
