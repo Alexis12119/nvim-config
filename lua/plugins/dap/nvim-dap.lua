@@ -36,4 +36,8 @@ return {
     -- -- require "plugins.dap.settings.go-debug-adapter"
     -- require "plugins.dap.settings.js-debug"
   end,
+  dependencies = {
+    "rcarriga/nvim-dap-ui",
+    "theHamsta/nvim-dap-virtual-text",
+  },
 }
