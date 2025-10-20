@@ -27,11 +27,10 @@ end
 M.ui = {
   telescope = { style = "borderless" }, -- borderless / bordered
   cmp = {
-    lspkind_text = true,
+    icons_left = true,
     style = "default", -- default/flat_light/flat_dark/atom/atom_colored
-    format_colors = {
-      tailwind = true,
-    },
+    -- for tailwind, css lsp etc
+    format_colors = { lsp = true, icon = "󱓻" },
   },
   statusline = {
     theme = "vscode_colored", -- default/vscode/vscode_colored/minimal
