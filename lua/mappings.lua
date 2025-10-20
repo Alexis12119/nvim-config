@@ -219,7 +219,7 @@ vim.keymap.set("t", "<C-h>", "<C-\\<C-N><C-h>", { desc = "General | Go to left w
 -- Go to right window (Terminal)
 vim.keymap.set("t", "<C-l>", "<C-\\><C-N><C-l>", { desc = "General | Go to right window(Terminal)", silent = true })
 
---NOTE: It has conflict with blink-cmp cmdline
+-- NOTE: It has conflict with blink-cmp cmdline
 -- Word Search Increment
 -- vim.keymap.set("c", "<Tab>", function()
 --   if fn.getcmdtype() == "/" or fn.getcmdtype() == "?" then

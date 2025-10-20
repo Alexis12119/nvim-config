@@ -147,6 +147,7 @@ M.base46 = {
     "notify",
     "dap",
     "trouble",
+    "flash",
   },
 }
 
