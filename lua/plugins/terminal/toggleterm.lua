@@ -93,7 +93,7 @@ return {
     },
     float_opts = {
       border = "rounded",
-      height = math.ceil(vim.o.lines * 1.0 - 6),
+      height = math.ceil(vim.o.lines * 1.0 - 4),
       width = math.ceil(vim.o.columns * 0.8),
       winblend = 0,
     },
