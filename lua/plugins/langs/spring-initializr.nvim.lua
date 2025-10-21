@@ -4,6 +4,7 @@
 ---@type NvPluginSpec
 return {
   "jkeresman01/spring-initializr.nvim",
+  enabled = false,
   cmd = { "SpringInitializr", "SpringGenerateProject" },
   dependencies = {
     "nvim-lua/plenary.nvim",
