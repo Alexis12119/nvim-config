@@ -522,7 +522,7 @@ M.polish_hl = {
     ["@lsp.mod.async"] = { italic = true },
     ["@lsp.mod.declaration"] = { bold = true },
     ["@lsp.mod.defaultLibrary"] = { fg = C.blue },
-    ["@lsp.mod.definition"] = { underline = true },
+    ["@lsp.mod.definition"] = { underline = false },
     ["@lsp.mod.deprecated"] = { strikethrough = true },
     ["@lsp.mod.documentation"] = { fg = C.light_grey, italic = true },
     ["@lsp.mod.modification"] = { underline = true },
