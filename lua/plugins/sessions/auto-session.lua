@@ -28,6 +28,7 @@ return {
   ---@module "auto-session"
   ---@type AutoSession.Config
   opts = {
+    auto_restore = false,
     suppressed_dirs = {
       "/",
       "~/",
