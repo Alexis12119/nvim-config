@@ -2,10 +2,7 @@
 -- NOTE: Sessions
 return {
   "rmagatti/auto-session",
-  lazy = false,
-  dependencies = {
-    "nvim-telescope/telescope.nvim", -- Only needed if you want to use sesssion lens
-  },
+  event = "VeryLazy",
   init = function()
     vim.keymap.set("n", "<leader>st", "<cmd>SessionToggleAutoSave<cr>", { desc = "Session | Toggle", silent = true })
     vim.keymap.set("n", "<leader>sS", "<cmd>Telescope session-lens<cr>", { desc = "Session | Search", silent = true })
