@@ -1,0 +1,3 @@
+return {
+  filetypes = { "jinja", "htmldjango" },
+}
