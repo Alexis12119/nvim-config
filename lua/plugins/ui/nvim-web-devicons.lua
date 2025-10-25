@@ -8,6 +8,7 @@ return {
 
     icons.set_icon {
       deb = { icon = "", name = "Deb", color = "#A1B7EE" },
+      jinja = { icon = "", name = "Jinja", color = "#A1B7EE" },
     }
   end,
 }
