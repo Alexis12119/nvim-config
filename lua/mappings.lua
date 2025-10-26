@@ -286,6 +286,11 @@ vim.keymap.set("n", "<leader>nr", function()
   utils.run_code()
 end, { desc = "Neovim | Run Code", silent = true })
 
+-- Project Bootstrapper
+vim.keymap.set("n", "<leader>nb", function()
+  utils.bootstrap_project()
+end, { desc = "Neovim | Bootstrap Project", silent = true })
+
 -- Restart Neovim
 vim.keymap.set("n", "<leader>nR", function()
   -- check if the current version is the latesto
