@@ -233,12 +233,25 @@ M.bootstrap_project = function()
     -- Laravel
     if selected.name:find "Laravel" then
       local kits = {
-        { name = "None (Vanilla)", cmd = "" },
+        { name = "None (Vanilla Laravel)", cmd = "" },
         { name = "Breeze (Blade)", cmd = "composer require laravel/breeze --dev && php artisan breeze:install blade" },
         { name = "Breeze (Vue)", cmd = "composer require laravel/breeze --dev && php artisan breeze:install vue" },
+        { name = "Breeze (React)", cmd = "composer require laravel/breeze --dev && php artisan breeze:install react" },
         {
           name = "Jetstream (Livewire)",
           cmd = "composer require laravel/jetstream && php artisan jetstream:install livewire",
+        },
+        {
+          name = "Jetstream (Vue)",
+          cmd = "composer require laravel/jetstream && php artisan jetstream:install inertia --stack=vue",
+        },
+        {
+          name = "Jetstream (React)",
+          cmd = "composer require laravel/jetstream && php artisan jetstream:install inertia --stack=react",
+        },
+        {
+          name = "Bootstrapped Breeze",
+          cmd = "composer require laravel/breeze --dev && php artisan breeze:install blade --bootstrap",
         },
       }
 
