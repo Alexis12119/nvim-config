@@ -51,7 +51,7 @@ M.bootstrap_project = function()
         { name = "  Spring Boot", cmd = "springboot" },
         {
           name = "  Flask",
-          cmd = "mkdir $project_name && cd $project_name && python3 -m venv venv && source venv/bin/activate && pip install flask && echo \"from flask import Flask\\napp = Flask(__name__)\\n@app.route('/')\\ndef home():\\n    return 'Hello, Flask!'\\n\\nif __name__ == '__main__':\\n    app.run(debug=True)\" > app.py",
+          cmd = "mkdir $project_name && cd $project_name && python3 -m venv venv && source venv/bin/activate.fish && pip install flask && echo \"from flask import Flask\\napp = Flask(__name__)\\n@app.route('/')\\ndef home():\\n    return 'Hello, Flask!'\\n\\nif __name__ == '__main__':\\n    app.run(debug=True)\" > app.py",
         },
         {
           name = "  Django",
