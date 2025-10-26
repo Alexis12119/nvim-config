@@ -138,74 +138,95 @@ M.bootstrap_project = function()
 
     -- Spring Boot
     if selected.name:find "Spring Boot" then
-      vim.notify("  Fetching available Spring Boot dependencies...", vim.log.levels.INFO)
+      vim.ui.select(
+        { "Maven", "Gradle (Kotlin)", "Gradle (Groovy)" },
+        { prompt = "  Choose a build tool:" },
+        function(build_tool)
+          if not build_tool then
+            return
+          end
 
-      local ok, metadata_json = pcall(function()
-        return vim.fn.system "curl -s https://start.spring.io/metadata/client"
-      end)
-      if not ok or metadata_json == "" then
-        vim.notify("  Failed to fetch Spring Boot metadata!", vim.log.levels.ERROR)
-        return
-      end
+          local type_flag = ""
+          if build_tool == "Maven" then
+            type_flag = "-d type=maven-project"
+          elseif build_tool == "Gradle (Kotlin)" then
+            type_flag = "-d type=gradle-kotlin-dsl"
+          elseif build_tool == "Gradle (Groovy)" then
+            type_flag = "-d type=gradle-project"
+          end
 
-      local ok2, metadata = pcall(vim.fn.json_decode, metadata_json)
-      if not ok2 or not metadata or not metadata.dependencies then
-        vim.notify("  Could not parse Spring Boot dependency metadata.", vim.log.levels.ERROR)
-        return
-      end
+          vim.notify("  Selected " .. build_tool, vim.log.levels.INFO)
+          vim.notify("  Fetching available Spring Boot dependencies...", vim.log.levels.INFO)
 
-      local deps = {}
-      for _, group in ipairs(metadata.dependencies.values) do
-        for _, dep in ipairs(group.values or {}) do
-          table.insert(deps, {
-            label = string.format("%-25s — %s", dep.id, dep.name or dep.description or ""),
-            id = dep.id,
-          })
-        end
-      end
+          local ok, metadata_json = pcall(function()
+            return vim.fn.system "curl -s https://start.spring.io/metadata/client"
+          end)
+          if not ok or metadata_json == "" then
+            vim.notify("  Failed to fetch Spring Boot metadata!", vim.log.levels.ERROR)
+            return
+          end
 
-      if #deps == 0 then
-        vim.notify("  No dependencies found from Spring Initializr!", vim.log.levels.WARN)
-        return
-      end
+          local ok2, metadata = pcall(vim.fn.json_decode, metadata_json)
+          if not ok2 or not metadata or not metadata.dependencies then
+            vim.notify("  Could not parse Spring Boot metadata.", vim.log.levels.ERROR)
+            return
+          end
 
-      local selected_deps = {}
-      local function pick_dependencies()
-        vim.ui.select(
-          vim.tbl_map(function(d)
-            return d.label
-          end, deps),
-          { prompt = "  Select dependencies (Enter to confirm, ESC when done)", kind = "multi" },
-          function(choice)
-            if choice then
-              local dep = vim.tbl_filter(function(d)
-                return d.label == choice
-              end, deps)[1]
-              if dep then
-                table.insert(selected_deps, dep.id)
-              end
-              pick_dependencies()
-            else
-              local deps_str = table.concat(selected_deps, ",")
-              local cmd = string.format(
-                "mkdir %s && cd %s && curl -s https://start.spring.io/starter.zip -d dependencies=%s -d name=%s -d packageName=com.example.%s -o %s.zip && unzip %s.zip && rm %s.zip",
-                name,
-                name,
-                deps_str ~= "" and deps_str or "web",
-                name,
-                name,
-                name,
-                name,
-                name
-              )
-              run_in_terminal(dir, cmd, "  Creating Spring Boot project '" .. name .. "'...")
-              finalize_project(5000)
+          local deps = {}
+          for _, group in ipairs(metadata.dependencies.values) do
+            for _, dep in ipairs(group.values or {}) do
+              table.insert(deps, {
+                label = string.format("%-25s — %s", dep.id, dep.name or dep.description or ""),
+                id = dep.id,
+              })
             end
           end
-        )
-      end
 
-      pick_dependencies()
+          if #deps == 0 then
+            vim.notify("  No dependencies found from Spring Initializr!", vim.log.levels.WARN)
+            return
+          end
+
+          local selected_deps = {}
+          local function pick_dependencies()
+            vim.ui.select(
+              vim.tbl_map(function(d)
+                return d.label
+              end, deps),
+              { prompt = "  Select dependencies (Enter to confirm, ESC when done)", kind = "multi" },
+              function(choice)
+                if choice then
+                  local dep = vim.tbl_filter(function(d)
+                    return d.label == choice
+                  end, deps)[1]
+                  if dep then
+                    table.insert(selected_deps, dep.id)
+                  end
+                  pick_dependencies()
+                else
+                  local deps_str = table.concat(selected_deps, ",")
+                  local cmd = string.format(
+                    "mkdir %s && cd %s && curl -s https://start.spring.io/starter.zip %s -d dependencies=%s -d name=%s -d packageName=com.example.%s -o %s.zip && unzip %s.zip && rm %s.zip",
+                    name,
+                    name,
+                    type_flag,
+                    deps_str ~= "" and deps_str or "web",
+                    name,
+                    name,
+                    name,
+                    name,
+                    name
+                  )
+                  run_in_terminal(dir, cmd, "  Creating Spring Boot project '" .. name .. "'...")
+                  finalize_project(5000)
+                end
+              end
+            )
+          end
+
+          pick_dependencies()
+        end
+      )
       return
     end
 
