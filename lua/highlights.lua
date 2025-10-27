@@ -42,7 +42,6 @@ M.add = {
   NotifyBackground = { bg = "black" },
 
   SnacksNormal = { bg = "darker_black" },
-  -- SnacksPickerIcon = { bg = "darker_black", fg = "red" },
   SnacksPickerPreviewTitle = {
     fg = "black",
     bg = "green",
@@ -54,7 +53,6 @@ M.add = {
   SnacksPickerSelected = { bg = "darker_black", fg = "green" },
   SnacksPickerMatch = { bg = "one_bg", fg = "blue" },
   SnacksPickerBorder = { fg = "darker_black", bg = "darker_black" },
-  SnacksPickerPrompt = { fg = "white", bg = "darker_black" },
   SnacksPickerDir = { fg = "white" },
 }
 

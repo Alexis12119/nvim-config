@@ -8,7 +8,6 @@
 
 <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/53014fc1-defc-472d-9419-15dafe78c279" />
 
-
 </div>
 
 ## 📄 Requirements
@@ -63,6 +62,7 @@ Please follow these steps:
 
 ## ✨ Features
 
+- **Project Boostrap**: Easily create a new project with my custom function for it.
 - **Plugin Management**: Efficiently manage plugins with [lazy.nvim](https://github.com/folke/lazy.nvim).
 - **Plugin Store**: Easily install and manage plugins with [store.nvim](https://github.com/alex-popov-tech/store.nvim).
 - **AI Assistant**: Use AI assistant with [opencode.nvim](https://github.com/sudo-tee/opencode.nvim) and [superman.nvim](https://github.com/supermaven-inc/supermaven-nvim).
