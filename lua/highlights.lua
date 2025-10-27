@@ -40,6 +40,21 @@ M.add = {
   CursorLine = { bg = "selectionBackground" },
   Visual = { bg = "selectionBackground" },
   NotifyBackground = { bg = "black" },
+
+  SnacksNormal = { bg = "darker_black" },
+  -- SnacksPickerIcon = { bg = "darker_black", fg = "red" },
+  SnacksPickerPreviewTitle = {
+    fg = "black",
+    bg = "green",
+  },
+  SnacksTitle = {
+    fg = "black",
+    bg = "red",
+  },
+  SnacksPickerSelected = { bg = "darker_black", fg = "green" },
+  SnacksPickerMatch = { bg = "one_bg", fg = "blue" },
+  SnacksPickerBorder = { fg = "darker_black", bg = "darker_black" },
+  SnacksPickerPrompt = { fg = "white", bg = "darker_black" },
 }
 
 return M
