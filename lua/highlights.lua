@@ -55,6 +55,7 @@ M.add = {
   SnacksPickerMatch = { bg = "one_bg", fg = "blue" },
   SnacksPickerBorder = { fg = "darker_black", bg = "darker_black" },
   SnacksPickerPrompt = { fg = "white", bg = "darker_black" },
+  SnacksPickerDir = { fg = "white" },
 }
 
 return M
