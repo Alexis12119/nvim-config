@@ -65,7 +65,10 @@ return {
     vim.keymap.set("n", "<leader>fc", "<cmd>Telescope git_commits<cr>", { desc = "Telescope | Commits", silent = true })
 
     vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Telescope | Files", silent = true })
-
+    -- { "<leader><space>", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
+    vim.keymap.set("n", "<leader>fF", function()
+      Snacks.picker.smart()
+    end, { desc = "Find Files" })
     -- vim.keymap.set("n", "<leader>fs", "<cmd>Telescope persisted<cr>", { desc = "Telescope | Sessions", silent = true })
 
     vim.keymap.set("n", "<leader>fm", "<cmd>Telescope marks<cr>", { desc = "Telescope | Marks", silent = true })
