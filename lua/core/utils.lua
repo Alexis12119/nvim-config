@@ -89,41 +89,82 @@ M.bootstrap_project = function()
     vim.cmd(string.format("botright 15new | term cd %s && %s", dir, cmd))
   end
 
-  local function change_dir_after_delay(path, delay)
-    vim.defer_fn(function()
-      if vim.fn.isdirectory(path) == 1 then
-        vim.cmd("cd " .. path)
-        vim.notify("  Changed directory to " .. path, vim.log.levels.INFO)
-      end
-    end, delay or 3000)
-  end
-
   local function ask_git_init(path)
     vim.ui.select({ "Yes", "No" }, { prompt = " Initialize a Git repository?" }, function(choice)
       if choice == "Yes" then
-        vim.defer_fn(function()
-          if vim.fn.isdirectory(path) == 1 then
-            local cmd =
-              string.format("cd %s && git init -q && git add . && git commit -m 'Initial commit' >/dev/null 2>&1", path)
-            os.execute(cmd)
-            vim.notify(" Initialized new Git repository in " .. path, vim.log.levels.INFO)
-          end
-        end, 1000)
+        if vim.fn.isdirectory(path) == 1 then
+          local cmd =
+            string.format("cd %s && git init -q && git add . && git commit -m 'Initial commit' >/dev/null 2>&1", path)
+          os.execute(cmd)
+          vim.notify(" Initialized new Git repository in " .. path, vim.log.levels.INFO)
+        end
       else
         vim.notify("Skipped Git initialization.", vim.log.levels.INFO)
       end
     end)
   end
 
+  -- 🧠 Smarter project readiness watcher
+  local function wait_for_project_ready(path, framework, callback)
+    local attempts = 0
+    local max_attempts = 120 -- up to 2 minutes
+    local timer = vim.loop.new_timer()
+
+    local markers = {
+      ["Laravel"] = "artisan",
+      ["NestJS"] = "package.json",
+      ["Express.js"] = "package.json",
+      ["Fastify"] = "package.json",
+      ["Next.js"] = "package.json",
+      ["React"] = "package.json",
+      ["Vite"] = "package.json",
+      ["Remix"] = "package.json",
+      ["T3 Stack"] = "package.json",
+      ["Flask"] = "app.py",
+      ["Django"] = "manage.py",
+      ["uv"] = "pyproject.toml",
+      ["Spring Boot"] = "pom.xml",
+    }
+
+    local marker = markers[framework] or ""
+
+    timer:start(2000, 2000, function()
+      attempts = attempts + 1
+      local ready = false
+
+      if marker ~= "" then
+        ready = vim.fn.filereadable(path .. "/" .. marker) == 1
+      else
+        ready = vim.fn.isdirectory(path) == 1
+      end
+
+      if ready then
+        vim.schedule(function()
+          vim.notify("  Project ready: " .. path, vim.log.levels.INFO)
+          timer:stop()
+          timer:close()
+          callback(path)
+        end)
+      elseif attempts >= max_attempts then
+        vim.schedule(function()
+          vim.notify("  Timeout waiting for project to finish setup: " .. path, vim.log.levels.WARN)
+        end)
+        timer:stop()
+        timer:close()
+      end
+    end)
+  end
+
+  local function finalize_project(target_path, framework)
+    wait_for_project_ready(target_path, framework, function(path)
+      vim.cmd("cd " .. path)
+      vim.notify("  Changed directory to " .. path, vim.log.levels.INFO)
+      ask_git_init(path)
+    end)
+  end
+
   local function choose_framework(category, dir, name, selected)
     local target_path = dir .. "/" .. name
-
-    local function finalize_project(delay)
-      change_dir_after_delay(target_path, delay or 4000)
-      vim.defer_fn(function()
-        ask_git_init(target_path)
-      end, (delay or 4000) + 1000)
-    end
 
     -- Python
     if category.name:find "Python" then
@@ -132,7 +173,7 @@ M.bootstrap_project = function()
         selected.cmd:gsub("$project_name", name),
         string.format("  Creating Python project '%s' using %s...", name, selected.name)
       )
-      -- finalize_project()
+      finalize_project(target_path, selected.name)
       return
     end
 
@@ -218,7 +259,7 @@ M.bootstrap_project = function()
                     name
                   )
                   run_in_terminal(dir, cmd, "  Creating Spring Boot project '" .. name .. "'...")
-                  -- finalize_project(5000)
+                  finalize_project(target_path, selected.name)
                 end
               end
             )
@@ -273,6 +314,7 @@ M.bootstrap_project = function()
             selected.cmd:gsub("$project_name", name),
             "  Creating Laravel project '" .. name .. "'..."
           )
+
           vim.defer_fn(function()
             if kit and kit.cmd ~= "" then
               run_in_terminal(
@@ -281,7 +323,7 @@ M.bootstrap_project = function()
                 "Installing Laravel Starter Kit: " .. kit_choice
               )
             end
-            -- finalize_project(5000)
+            finalize_project(target_path, selected.name)
           end, 4000)
         end
       )
@@ -294,7 +336,7 @@ M.bootstrap_project = function()
       selected.cmd:gsub("$project_name", name),
       string.format("  Creating %s project '%s'...", selected.name, name)
     )
-    -- finalize_project()
+    finalize_project(target_path, selected.name)
   end
 
   vim.ui.select(
