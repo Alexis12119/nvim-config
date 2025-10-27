@@ -132,7 +132,7 @@ M.bootstrap_project = function()
         selected.cmd:gsub("$project_name", name),
         string.format("  Creating Python project '%s' using %s...", name, selected.name)
       )
-      finalize_project()
+      -- finalize_project()
       return
     end
 
@@ -218,7 +218,7 @@ M.bootstrap_project = function()
                     name
                   )
                   run_in_terminal(dir, cmd, "  Creating Spring Boot project '" .. name .. "'...")
-                  finalize_project(5000)
+                  -- finalize_project(5000)
                 end
               end
             )
@@ -281,7 +281,7 @@ M.bootstrap_project = function()
                 "Installing Laravel Starter Kit: " .. kit_choice
               )
             end
-            finalize_project(5000)
+            -- finalize_project(5000)
           end, 4000)
         end
       )
@@ -294,7 +294,7 @@ M.bootstrap_project = function()
       selected.cmd:gsub("$project_name", name),
       string.format("  Creating %s project '%s'...", selected.name, name)
     )
-    finalize_project()
+    -- finalize_project()
   end
 
   vim.ui.select(
