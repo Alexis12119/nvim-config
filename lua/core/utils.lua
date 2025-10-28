@@ -76,6 +76,45 @@ M.bootstrap_project = function()
       },
     },
     {
+      name = "󰌛 .NET/C#",
+      items = {
+        -- Console & Desktop
+        { name = "󰌛 Console App", cmd = "dotnet new console -n $project_name" },
+        { name = "󰌛 Console App (Top-level)", cmd = "dotnet new console -n $project_name --use-program-main false" },
+        { name = "󰌛 Class Library", cmd = "dotnet new classlib -n $project_name" },
+        { name = "󰌛 MAUI App", cmd = "dotnet new maui -n $project_name" },
+        { name = "󰌛 MAUI Blazor App", cmd = "dotnet new maui-blazor -n $project_name" },
+        { name = "󰌛 Avalonia .NET App", cmd = "dotnet new avalonia.app -n $project_name" },
+        { name = "󰌛 Avalonia .NET MVVM App", cmd = "dotnet new avalonia.mvvm -n $project_name" },
+        { name = "󰌛 Avalonia Cross Platform App", cmd = "dotnet new avalonia.xplat -n $project_name" },
+        { name = "󰌛 WPF Application", cmd = "dotnet new wpf -n $project_name" },
+        { name = "󰌛 Windows Forms", cmd = "dotnet new winforms -n $project_name" },
+
+        -- Web & API
+        { name = "󰌛 ASP.NET Core Web App", cmd = "dotnet new webapp -n $project_name" },
+        { name = "󰌛 ASP.NET Core Web API", cmd = "dotnet new webapi -n $project_name" },
+        { name = "󰌛 ASP.NET Core Web API (Minimal)", cmd = "dotnet new webapi -n $project_name --use-minimal-apis" },
+        { name = "󰌛 ASP.NET Core MVC", cmd = "dotnet new mvc -n $project_name" },
+        { name = "󰌛 Blazor Server App", cmd = "dotnet new blazorserver -n $project_name" },
+        { name = "󰌛 Blazor WebAssembly App", cmd = "dotnet new blazorwasm -n $project_name" },
+        { name = "󰌛 Blazor Web App", cmd = "dotnet new blazor -n $project_name" },
+        { name = "󰌛 Razor Class Library", cmd = "dotnet new razorclasslib -n $project_name" },
+        { name = "󰌛 gRPC Service", cmd = "dotnet new grpc -n $project_name" },
+        { name = "󰌛 Worker Service", cmd = "dotnet new worker -n $project_name" },
+
+        -- Testing
+        { name = "󰌛 xUnit Test Project", cmd = "dotnet new xunit -n $project_name" },
+        { name = "󰌛 NUnit Test Project", cmd = "dotnet new nunit -n $project_name" },
+        { name = "󰌛 MSTest Test Project", cmd = "dotnet new mstest -n $project_name" },
+
+        -- Configuration
+        { name = "󰌛 Solution File", cmd = "dotnet new sln -n $project_name" },
+        { name = "󰌛 EditorConfig", cmd = "dotnet new editorconfig -n $project_name" },
+        { name = "󰌛 Global.json", cmd = "dotnet new globaljson -n $project_name" },
+        { name = "󰌛 NuGet Config", cmd = "dotnet new nugetconfig -n $project_name" },
+      },
+    },
+    {
       name = "  Mobile",
       items = {
         { name = "󰜈  React Native", cmd = "npx react-native init $project_name" },
@@ -104,7 +143,6 @@ M.bootstrap_project = function()
     end)
   end
 
-  -- 🧠 Smarter project readiness watcher
   local function wait_for_project_ready(path, framework, callback)
     local attempts = 0
     local max_attempts = 120 -- up to 2 minutes
