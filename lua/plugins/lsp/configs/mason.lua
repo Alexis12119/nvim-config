@@ -44,11 +44,13 @@ return {
             return
           end
 
-          -- Default config for all servers
-          vim.lsp.config("*", {
+          local default_config = {
             capabilities = opts.capabilities,
             on_attach = opts.on_attach,
-          })
+          }
+
+          -- Default config for all servers
+          vim.lsp.config("*", default_config)
 
           local excluded = { "ts_ls", "jdtls", "rust_analyzer" }
 
@@ -58,7 +60,8 @@ return {
                 -- Load server-specific settings if available
                 local ok_settings, settings = pcall(require, "plugins.lsp.settings." .. server)
                 if ok_settings then
-                  vim.lsp.config(server, settings)
+                  local cfg = vim.tbl_deep_extend("force", settings, default_config)
+                  vim.lsp.config(server, cfg)
                 end
                 vim.lsp.enable(server)
               end
