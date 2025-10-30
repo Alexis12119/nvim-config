@@ -6,6 +6,7 @@ local function map(mode, lhs, vscode_cmd)
   end, { noremap = true, silent = true })
 end
 
+vim.o.clipboard = "unnamedplus"
 -- File explorer
 map("n", "<leader>e", "workbench.action.toggleSidebarVisibility")
 
