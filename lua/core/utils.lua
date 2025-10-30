@@ -512,6 +512,17 @@ M.run_code = function()
   end
 end
 
+local function find_eslint_root()
+  local cwd = vim.fn.getcwd()
+  local file = vim.fs.find({ "eslint.config.js" }, { path = cwd, upward = false, type = "file" })[1]
+
+  if file then
+    return vim.fn.fnamemodify(file, ":h") -- return folder containing it
+  end
+
+  return nil
+end
+
 M.lint_project = function()
   local root = vim.fs.root(0, {
     "package-lock.json",
@@ -519,7 +530,8 @@ M.lint_project = function()
     "pnpm-lock.yaml",
     "bun.lockb",
     "bun.lock",
-  }) or vim.fn.getcwd()
+  }) or find_eslint_root()
+  print(find_eslint_root())
 
   if not root then
     vim.notify("No package.json or eslint.config.js found.", vim.log.levels.ERROR)
