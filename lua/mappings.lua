@@ -328,5 +328,6 @@ vim.keymap.set("n", "<leader>pH", "<cmd>Lazy help<cr>", { desc = "Lazy | Help", 
 -- Profile
 vim.keymap.set("n", "<leader>pp", "<cmd>Lazy profile<cr>", { desc = "Lazy | Profile", silent = true })
 
+vim.keymap.set("n", "<leader>lL", ":EslintRun<CR>", { desc = "LSP | Run ESLint", silent = true })
 -- Update
 vim.keymap.set("n", "<leader>pu", "<cmd>Lazy update<cr>", { desc = "Lazy | Update", silent = true })

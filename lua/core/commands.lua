@@ -94,3 +94,6 @@ command("DiscordRichPresence", function()
     vim.cmd "Cord disable"
   end
 end, { desc = "Toggle Discord Rich Presence" })
+command("EslintRun", function()
+  require("core.utils").lint_project()
+end, { desc = "Run ESLint (npm run lint)" })
