@@ -560,174 +560,238 @@ M.pick_eslint_config = function(callback)
   end)
 end
 
+-- M.lint_project = function()
+--   M.pick_eslint_config(function(config_path)
+--     local root = vim.fn.fnamemodify(config_path, ":h")
+--
+--     if not root then
+--       vim.notify("No slint.config.js found.", vim.log.levels.ERROR)
+--       return
+--     end
+--
+--     local cmd = "npm run lint"
+--     vim.notify("Running ESLint in " .. root .. " ...", vim.log.levels.INFO)
+--
+--     local output = {}
+--     local file_map = {}
+--
+--     vim.fn.jobstart(cmd, {
+--       cwd = root,
+--       stdout_buffered = true,
+--       stderr_buffered = true,
+--
+--       on_stdout = function(_, data)
+--         if data and #data > 0 then
+--           vim.list_extend(output, data)
+--         end
+--       end,
+--
+--       on_stderr = function(_, data)
+--         if data and #data > 0 then
+--           vim.list_extend(output, data)
+--         end
+--       end,
+--
+--       on_exit = function(_, _)
+--         local buf_name = "ESLint Results"
+--         local buf = nil
+--
+--         -- Reuse buffer if it already exists
+--         for _, b in ipairs(vim.api.nvim_list_bufs()) do
+--           if vim.api.nvim_buf_get_name(b):match(buf_name) then
+--             buf = b
+--             break
+--           end
+--         end
+--
+--         if not buf then
+--           buf = vim.api.nvim_create_buf(true, false)
+--           vim.api.nvim_buf_set_name(buf, buf_name)
+--         end
+--
+--         -- Check if ESLint buffer is visible
+--         local buf_visible = false
+--         for _, win in ipairs(vim.api.nvim_list_wins()) do
+--           if vim.api.nvim_win_get_buf(win) == buf then
+--             buf_visible = true
+--             break
+--           end
+--         end
+--
+--         -- If not visible, open it in a horizontal split
+--         if not buf_visible then
+--           vim.cmd "belowright split"
+--           vim.api.nvim_win_set_height(0, math.floor(vim.o.lines * 0.3)) -- 30% height
+--           vim.api.nvim_win_set_buf(0, buf)
+--         end
+--
+--         vim.bo[buf].modifiable = true
+--         -- Hide the buffer from buffer list
+--         vim.bo[buf].buflisted = false
+--         vim.api.nvim_buf_set_lines(buf, 0, -1, false, {})
+--
+--         -- Header
+--         local formatted = { "  ESLint Report", string.rep("─", 80) }
+--         local current_file = nil
+--         local last_line_blank = false
+--
+--         for _, line in ipairs(output) do
+--           if line:match "^>" or line:match "^info" or line:match "^$" then
+--             goto continue
+--           end
+--
+--           if line:match "^%./" then
+--             current_file = line:match "^%./(.*)"
+--             if not last_line_blank then
+--               table.insert(formatted, "")
+--             end
+--             table.insert(formatted, " " .. line)
+--             last_line_blank = false
+--             goto continue
+--           end
+--
+--           local lnum, col, msg = line:match "^(%d+):(%d+)%s+(.*)"
+--           if lnum and col and msg and current_file then
+--             local icon = msg:match "Error:" and "" or msg:match "Warning:" and "" or ""
+--             table.insert(formatted, string.format("  %s %s", icon, line))
+--             file_map[#formatted] = {
+--               file = current_file,
+--               line = tonumber(lnum),
+--               col = tonumber(col),
+--             }
+--             last_line_blank = false
+--           else
+--             if line:match "%S" then
+--               table.insert(formatted, line)
+--               last_line_blank = false
+--             else
+--               last_line_blank = true
+--             end
+--           end
+--
+--           ::continue::
+--         end
+--
+--         if #output == 0 then
+--           table.insert(formatted, " No ESLint issues found.")
+--         end
+--
+--         vim.api.nvim_buf_set_lines(buf, 0, -1, false, formatted)
+--         vim.bo[buf].modifiable = false
+--
+--         -- Highlighting setup
+--         local ns = vim.api.nvim_create_namespace "eslint_highlight"
+--         vim.api.nvim_buf_clear_namespace(buf, ns, 0, -1)
+--
+--         vim.api.nvim_set_hl(0, "EslintError", { fg = "#ff6b6b", bold = true })
+--         vim.api.nvim_set_hl(0, "EslintWarning", { fg = "#eab308" })
+--         vim.api.nvim_set_hl(0, "EslintFile", { fg = "#00bcd4", bold = true })
+--
+--         local END_COL = 10000
+--         for lnum, line in ipairs(vim.api.nvim_buf_get_lines(buf, 0, -1, false)) do
+--           local row = lnum - 1
+--           if line:match "" then
+--             vim.hl.range(buf, ns, "EslintError", { row, 0 }, { row, END_COL }, {})
+--           elseif line:match "" then
+--             vim.hl.range(buf, ns, "EslintWarning", { row, 0 }, { row, END_COL }, {})
+--           elseif line:match "" then
+--             vim.hl.range(buf, ns, "EslintFile", { row, 0 }, { row, END_COL }, {})
+--           end
+--         end
+--
+--         -- Jump-to-issue mapping
+--         vim.keymap.set("n", "<CR>", function()
+--           local cur_line = vim.fn.line "."
+--           local entry = file_map[cur_line]
+--           if not entry then
+--             vim.notify("No location info for this line.", vim.log.levels.WARN)
+--             return
+--           end
+--
+--           -- Try to reuse any existing window (besides the ESLint one)
+--           local target_win = nil
+--           for _, win in ipairs(vim.api.nvim_list_wins()) do
+--             if vim.api.nvim_win_get_buf(win) ~= buf then
+--               target_win = win
+--               break
+--             end
+--           end
+--
+--           if target_win and vim.api.nvim_win_is_valid(target_win) then
+--             vim.api.nvim_set_current_win(target_win)
+--             local abs_file = vim.fn.fnamemodify(root .. "/" .. entry.file, ":p")
+--             vim.cmd("edit " .. vim.fn.fnameescape(abs_file))
+--           else
+--             vim.cmd("vsplit " .. vim.fn.fnameescape(entry.file))
+--             target_win = vim.api.nvim_get_current_win()
+--           end
+--
+--           vim.api.nvim_win_set_cursor(target_win, { entry.line, entry.col - 1 })
+--         end, { buffer = buf, desc = "Jump to ESLint issue" })
+--       end,
+--     })
+--   end)
+-- end
+
 M.lint_project = function()
   M.pick_eslint_config(function(config_path)
     local root = vim.fn.fnamemodify(config_path, ":h")
-
-    if not root then
-      vim.notify("No slint.config.js found.", vim.log.levels.ERROR)
-      return
-    end
-
     local cmd = "npm run lint"
-    vim.notify("Running ESLint in " .. root .. " ...", vim.log.levels.INFO)
-
     local output = {}
-    local file_map = {}
 
     vim.fn.jobstart(cmd, {
       cwd = root,
       stdout_buffered = true,
       stderr_buffered = true,
-
       on_stdout = function(_, data)
-        if data and #data > 0 then
+        if data then
           vim.list_extend(output, data)
         end
       end,
-
       on_stderr = function(_, data)
-        if data and #data > 0 then
+        if data then
           vim.list_extend(output, data)
         end
       end,
-
-      on_exit = function(_, _)
-        local buf_name = "ESLint Results"
-        local buf = nil
-
-        -- Reuse buffer if it already exists
-        for _, b in ipairs(vim.api.nvim_list_bufs()) do
-          if vim.api.nvim_buf_get_name(b):match(buf_name) then
-            buf = b
-            break
-          end
-        end
-
-        if not buf then
-          buf = vim.api.nvim_create_buf(true, false)
-          vim.api.nvim_buf_set_name(buf, buf_name)
-        end
-
-        -- Check if ESLint buffer is visible
-        local buf_visible = false
-        for _, win in ipairs(vim.api.nvim_list_wins()) do
-          if vim.api.nvim_win_get_buf(win) == buf then
-            buf_visible = true
-            break
-          end
-        end
-
-        -- If not visible, open it in a horizontal split
-        if not buf_visible then
-          vim.cmd "belowright split"
-          vim.api.nvim_win_set_height(0, math.floor(vim.o.lines * 0.3)) -- 30% height
-          vim.api.nvim_win_set_buf(0, buf)
-        end
-
-        vim.bo[buf].modifiable = true
-        -- Hide the buffer from buffer list
-        vim.bo[buf].buflisted = false
-        vim.api.nvim_buf_set_lines(buf, 0, -1, false, {})
-
-        -- Header
-        local formatted = { "  ESLint Report", string.rep("─", 80) }
+      on_exit = function()
+        local qf_list = {}
         local current_file = nil
-        local last_line_blank = false
 
         for _, line in ipairs(output) do
+          -- Skip info / empty lines
           if line:match "^>" or line:match "^info" or line:match "^$" then
             goto continue
           end
 
+          -- File header lines
           if line:match "^%./" then
             current_file = line:match "^%./(.*)"
-            if not last_line_blank then
-              table.insert(formatted, "")
-            end
-            table.insert(formatted, " " .. line)
-            last_line_blank = false
             goto continue
           end
 
+          -- Messages: line:col  type: message
           local lnum, col, msg = line:match "^(%d+):(%d+)%s+(.*)"
           if lnum and col and msg and current_file then
-            local icon = msg:match "Error:" and "" or msg:match "Warning:" and "" or ""
-            table.insert(formatted, string.format("  %s %s", icon, line))
-            file_map[#formatted] = {
-              file = current_file,
-              line = tonumber(lnum),
+            -- Optional: prepend icons like in your buffer
+            -- local icon = msg:match "Error:" and "" or msg:match "Warning:" and "" or ""
+            table.insert(qf_list, {
+              filename = root .. "/" .. current_file,
+              lnum = tonumber(lnum),
               col = tonumber(col),
-            }
-            last_line_blank = false
-          else
-            if line:match "%S" then
-              table.insert(formatted, line)
-              last_line_blank = false
-            else
-              last_line_blank = true
-            end
+              text = msg,
+            })
           end
-
           ::continue::
         end
 
-        if #output == 0 then
-          table.insert(formatted, " No ESLint issues found.")
+        if #qf_list == 0 then
+          vim.notify(" No ESLint issues found.", vim.log.levels.INFO)
+          vim.fn.setqflist {}
+          return
         end
 
-        vim.api.nvim_buf_set_lines(buf, 0, -1, false, formatted)
-        vim.bo[buf].modifiable = false
-
-        -- Highlighting setup
-        local ns = vim.api.nvim_create_namespace "eslint_highlight"
-        vim.api.nvim_buf_clear_namespace(buf, ns, 0, -1)
-
-        vim.api.nvim_set_hl(0, "EslintError", { fg = "#ff6b6b", bold = true })
-        vim.api.nvim_set_hl(0, "EslintWarning", { fg = "#eab308" })
-        vim.api.nvim_set_hl(0, "EslintFile", { fg = "#00bcd4", bold = true })
-
-        local END_COL = 10000
-        for lnum, line in ipairs(vim.api.nvim_buf_get_lines(buf, 0, -1, false)) do
-          local row = lnum - 1
-          if line:match "" then
-            vim.hl.range(buf, ns, "EslintError", { row, 0 }, { row, END_COL }, {})
-          elseif line:match "" then
-            vim.hl.range(buf, ns, "EslintWarning", { row, 0 }, { row, END_COL }, {})
-          elseif line:match "" then
-            vim.hl.range(buf, ns, "EslintFile", { row, 0 }, { row, END_COL }, {})
-          end
-        end
-
-        -- Jump-to-issue mapping
-        vim.keymap.set("n", "<CR>", function()
-          local cur_line = vim.fn.line "."
-          local entry = file_map[cur_line]
-          if not entry then
-            vim.notify("No location info for this line.", vim.log.levels.WARN)
-            return
-          end
-
-          -- Try to reuse any existing window (besides the ESLint one)
-          local target_win = nil
-          for _, win in ipairs(vim.api.nvim_list_wins()) do
-            if vim.api.nvim_win_get_buf(win) ~= buf then
-              target_win = win
-              break
-            end
-          end
-
-          if target_win and vim.api.nvim_win_is_valid(target_win) then
-            vim.api.nvim_set_current_win(target_win)
-            local abs_file = vim.fn.fnamemodify(root .. "/" .. entry.file, ":p")
-            vim.cmd("edit " .. vim.fn.fnameescape(abs_file))
-          else
-            vim.cmd("vsplit " .. vim.fn.fnameescape(entry.file))
-            target_win = vim.api.nvim_get_current_win()
-          end
-
-          vim.api.nvim_win_set_cursor(target_win, { entry.line, entry.col - 1 })
-        end, { buffer = buf, desc = "Jump to ESLint issue" })
+        vim.fn.setqflist({}, " ", { title = "ESLint", items = qf_list })
+        vim.cmd "copen"
       end,
     })
   end)
