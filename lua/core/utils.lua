@@ -166,31 +166,33 @@ M.bootstrap_project = function()
 
     local marker = markers[framework] or ""
 
-    timer:start(2000, 2000, function()
-      attempts = attempts + 1
-      local ready = false
+    if timer ~= nil then
+      timer:start(2000, 2000, function()
+        attempts = attempts + 1
+        local ready = false
 
-      if marker ~= "" then
-        ready = vim.fn.filereadable(path .. "/" .. marker) == 1
-      else
-        ready = vim.fn.isdirectory(path) == 1
-      end
+        if marker ~= "" then
+          ready = vim.fn.filereadable(path .. "/" .. marker) == 1
+        else
+          ready = vim.fn.isdirectory(path) == 1
+        end
 
-      if ready then
-        vim.schedule(function()
-          vim.notify("  Project ready: " .. path, vim.log.levels.INFO)
+        if ready then
+          vim.schedule(function()
+            vim.notify("  Project ready: " .. path, vim.log.levels.INFO)
+            timer:stop()
+            timer:close()
+            callback(path)
+          end)
+        elseif attempts >= max_attempts then
+          vim.schedule(function()
+            vim.notify("  Timeout waiting for project to finish setup: " .. path, vim.log.levels.WARN)
+          end)
           timer:stop()
           timer:close()
-          callback(path)
-        end)
-      elseif attempts >= max_attempts then
-        vim.schedule(function()
-          vim.notify("  Timeout waiting for project to finish setup: " .. path, vim.log.levels.WARN)
-        end)
-        timer:stop()
-        timer:close()
-      end
-    end)
+        end
+      end)
+    end
   end
 
   local function finalize_project(target_path, framework)
@@ -533,7 +535,7 @@ M.lint_project = function()
       end
     end,
 
-    on_exit = function(_, code)
+    on_exit = function(_, _)
       local buf_name = "ESLint Results"
       local buf = nil
 
