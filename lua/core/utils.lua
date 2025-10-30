@@ -512,17 +512,6 @@ M.run_code = function()
   end
 end
 
-local function find_eslint_root()
-  local cwd = vim.fn.getcwd()
-  local file = vim.fs.find({ "eslint.config.js" }, { path = cwd, upward = false, type = "file" })[1]
-
-  if file then
-    return vim.fn.fnamemodify(file, ":h") -- return folder containing it
-  end
-
-  return nil
-end
-
 M.pick_eslint_config = function(callback)
   local cwd = vim.fn.getcwd()
 
