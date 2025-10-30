@@ -676,7 +676,8 @@ M.lint_project = function()
 
         if target_win and vim.api.nvim_win_is_valid(target_win) then
           vim.api.nvim_set_current_win(target_win)
-          vim.cmd("edit " .. vim.fn.fnameescape(entry.file))
+          local abs_file = vim.fn.fnamemodify(root .. "/" .. entry.file, ":p")
+          vim.cmd("edit " .. vim.fn.fnameescape(abs_file))
         else
           vim.cmd("vsplit " .. vim.fn.fnameescape(entry.file))
           target_win = vim.api.nvim_get_current_win()
