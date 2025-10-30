@@ -534,7 +534,7 @@ M.lint_project = function()
   print(find_eslint_root())
 
   if not root then
-    vim.notify("No package.json or eslint.config.js found.", vim.log.levels.ERROR)
+    vim.notify("No slint.config.js found.", vim.log.levels.ERROR)
     return
   end
 
