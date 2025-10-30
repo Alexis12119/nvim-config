@@ -513,13 +513,27 @@ M.run_code = function()
 end
 
 M.lint_project = function()
+  local root = vim.fs.root(0, {
+    "package-lock.json",
+    "yarn.lock",
+    "pnpm-lock.yaml",
+    "bun.lockb",
+    "bun.lock",
+  }) or vim.fn.getcwd()
+
+  if not root then
+    vim.notify("No package.json or eslint.config.js found.", vim.log.levels.ERROR)
+    return
+  end
+
   local cmd = "npm run lint"
-  vim.notify("Running ESLint (npm run lint)...", vim.log.levels.INFO)
+  vim.notify("Running ESLint in " .. root .. " ...", vim.log.levels.INFO)
 
   local output = {}
   local file_map = {}
 
   vim.fn.jobstart(cmd, {
+    cwd = root,
     stdout_buffered = true,
     stderr_buffered = true,
 
