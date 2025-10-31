@@ -4,6 +4,7 @@
 return {
   "monkoose/neocodeium",
   event = "VeryLazy",
+  enabled = false,
   opts = {
     filetypes = {
       TelescopePrompt = false,
