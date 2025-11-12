@@ -3,7 +3,6 @@
 return {
   {
     "nvchad/ui",
-    cond = vim.g.colorscheme == "nvchad",
     config = function()
       require("nvchad")
     end,
@@ -11,7 +10,6 @@ return {
 
   {
     "nvchad/base46",
-    cond = vim.g.colorscheme == "nvchad",
     lazy = true,
     build = function()
       require("base46").load_all_highlights()

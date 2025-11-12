@@ -11,8 +11,8 @@ return {
   {
     "LazyVim/LazyVim",
     opts = function(_, opts)
-      vim.g.colorscheme = "tokyonight"
-      opts.colorscheme = vim.g.colorscheme
+      opts.colorscheme = "tokyonight"
+      vim.g.colorscheme = opts.colorscheme
 
       if opts.colorscheme == "nvchad" then
         for _, v in ipairs(vim.fn.readdir(vim.g.base46_cache)) do
@@ -20,8 +20,5 @@ return {
         end
       end
     end,
-    keys = {
-      { "<leader>uC", false },
-    },
   },
 }
