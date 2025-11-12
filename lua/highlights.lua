@@ -32,31 +32,6 @@ M.override = {
 M.add = {
   -- WinBar = { fg = "foregroundColor", bg = "backgroundColor" },
   -- WinBarNC = { fg = "grey_fg", bg = "backgroundColor" },
-  -- DiffviewDiffAdd = { fg = "black", bg = "vibrant_green" },
-  -- DiffviewDiffChange = { fg = "black", bg = "yellow" },
-  -- DiffviewDiffDelete = { fg = "black", bg = "red" },
-  -- DiffviewDiffAddAsDelete = { fg = "black", bg = "red" },
-  LspInlayHint = { fg = "infoForeground", italic = true },
-  CursorLine = { bg = "selectionBackground" },
-  Visual = { bg = "selectionBackground" },
-  NotifyBackground = { bg = "black" },
-
-  NeoTreeDirectoryIcon = { fg = "light_grey" },
-  NeoTreeDirectoryName = { fg = "light_grey" },
-  SnacksNormal = { bg = "darker_black" },
-  SnacksPickerPreviewTitle = {
-    fg = "black",
-    bg = "green",
-  },
-  SnacksTitle = {
-    fg = "black",
-    bg = "red",
-  },
-  -- SnacksPickerSelected = { bg = "darker_black", fg = "green" },
-  -- SnacksPickerMatch = { bg = "one_bg", fg = "blue" },
-  -- SnacksPickerBorder = { fg = "darker_black", bg = "darker_black" },
-  NoiceLspProgressTitle = { fg = "light_grey" },
-  SnacksPickerDir = { fg = "light_grey" },
 }
 
 return M

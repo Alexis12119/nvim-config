@@ -99,6 +99,26 @@ M.polish_hl = {
     GitSignsAdd = { fg = C.green },
     GitSignsChange = { fg = C.blue },
     GitSignsDelete = { fg = C.red },
+    CursorLine = { bg = C.black2 },
+    Visual = { bg = C.black2 },
+    NotifyBackground = { bg = C.black },
+
+    NeoTreeDirectoryIcon = { fg = C.light_grey },
+    NeoTreeDirectoryName = { fg = C.light_grey },
+    SnacksNormal = { bg = C.darker_black },
+    SnacksPickerPreviewTitle = {
+      fg = C.black,
+      bg = C.green,
+    },
+    SnacksTitle = {
+      fg = C.black,
+      bg = C.red,
+    },
+    -- SnacksPickerSelected = { bg = C.darker_black, fg = C.green },
+    -- SnacksPickerMatch = { bg = C.one_bg, fg = C.blue },
+    -- SnacksPickerBorder = { fg = C.darker_black, bg = C.darker_black },
+    NoiceLspProgressTitle = { fg = C.light_grey },
+    SnacksPickerDir = { fg = C.light_grey },
   },
 
   treesitter = {
