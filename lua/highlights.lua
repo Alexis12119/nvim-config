@@ -41,6 +41,8 @@ M.add = {
   Visual = { bg = "selectionBackground" },
   NotifyBackground = { bg = "black" },
 
+  NeoTreeDirectoryIcon = { fg = "light_grey" },
+  NeoTreeDirectoryName = { fg = "light_grey" },
   SnacksNormal = { bg = "darker_black" },
   SnacksPickerPreviewTitle = {
     fg = "black",
@@ -50,10 +52,11 @@ M.add = {
     fg = "black",
     bg = "red",
   },
-  SnacksPickerSelected = { bg = "darker_black", fg = "green" },
-  SnacksPickerMatch = { bg = "one_bg", fg = "blue" },
-  SnacksPickerBorder = { fg = "darker_black", bg = "darker_black" },
-  SnacksPickerDir = { fg = "white" },
+  -- SnacksPickerSelected = { bg = "darker_black", fg = "green" },
+  -- SnacksPickerMatch = { bg = "one_bg", fg = "blue" },
+  -- SnacksPickerBorder = { fg = "darker_black", bg = "darker_black" },
+  NoiceLspProgressTitle = { fg = "light_grey" },
+  SnacksPickerDir = { fg = "light_grey" },
 }
 
 return M

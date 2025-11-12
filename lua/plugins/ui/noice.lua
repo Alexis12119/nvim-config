@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 -- NOTE: UI for messages, cmdline, and popup
 return {
   "folke/noice.nvim",
@@ -6,12 +6,12 @@ return {
   dependencies = { { "MunifTanjim/nui.nvim" } },
   opts = {
     notify = {
-      enabled = false,
+      enabled = true,
     },
     cmdline = {
-      enabled = true,         -- enables the Noice cmdline UI
+      enabled = true, -- enables the Noice cmdline UI
       view = "cmdline_popup", -- view for rendering the cmdline. Change to `cmdline` to get a classic cmdline at the bottom
-      opts = {},              -- global options for the cmdline. See section on views
+      opts = {}, -- global options for the cmdline. See section on views
       format = {
         -- conceal: (default=true) This will hide the text in the cmdline that matches the pattern.
         -- view: (default is cmdline view)
@@ -44,7 +44,7 @@ return {
     },
     lsp = {
       progress = {
-        enabled = false,
+        enabled = true,
         -- Lsp Progress is formatted using the builtins for lsp_progress. See config.format.builtin
         -- See the section on formatting for more details on how to customize.
         format = "lsp_progress",
@@ -60,22 +60,16 @@ return {
         -- override cmp documentation with Noice (needs the other options to work)
         ["cmp.entry.get_documentation"] = true,
       },
-      hover = {
-        enabled = true,
-        silent = false, -- set to true to not show a message if hover is not available
-        view = nil,     -- when nil, use defaults from documentation
-        opts = {},      -- merged with defaults from documentation
-      },
       signature = {
         enabled = true,
         auto_open = {
-          enabled = true,
+          enabled = false,
           trigger = true, -- Automatically show signature help when typing a trigger character from the LSP
           luasnip = true, -- Will open signature help when jumping to Luasnip insert nodes
-          throttle = 50,  -- Debounce lsp signature help request by 50ms
+          throttle = 50, -- Debounce lsp signature help request by 50ms
         },
-        view = nil,       -- when nil, use defaults from documentation
-        opts = {},        -- merged with defaults from documentation
+        view = nil, -- when nil, use defaults from documentation
+        opts = {}, -- merged with defaults from documentation
       },
       message = {
         -- Messages shown by lsp servers
@@ -94,15 +88,6 @@ return {
           win_options = { concealcursor = "n", conceallevel = 3 },
         },
       },
-    },
-    presets = {
-      -- you can enable a preset by setting it to true, or a table that will override the preset config
-      -- you can also add custom presets that you can enable/disable with enabled=true
-      bottom_search = true,         -- use a classic bottom cmdline for search
-      command_palette = true,       -- position the cmdline and popupmenu together
-      long_message_to_split = true, -- long messages will be sent to a split
-      inc_rename = false,           -- enables an input dialog for inc-rename.nvim
-      lsp_doc_border = false,       -- add a border to hover docs and signature help
     },
   },
 }

@@ -18,7 +18,7 @@ function Install-ScoopPackages
     Write-Host "Installing Scoop..."
     # The following line is optional and only needed to run a remote script the first time
     Set-ExecutionPolicy RemoteSigned -Scope CurrentUser 
-    Invoke-RestMethod get.scoop.sh | Invoke-Expression
+    Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
     scoop bucket add main
     scoop bucket add extras
   }

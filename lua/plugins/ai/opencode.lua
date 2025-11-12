@@ -1,8 +1,8 @@
----@type NvPluginSpec
--- NOTE:  Opencode
-
+---@type LazySpec
+-- NOTE: Opencode
 return {
   "sudo-tee/opencode.nvim",
+  enabled = false,
   event = "VeryLazy",
   opts = {
     ui = {

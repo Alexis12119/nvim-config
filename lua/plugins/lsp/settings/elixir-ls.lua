@@ -1,3 +1,0 @@
-return {
-  cmd = { "elixir-ls" },
-}

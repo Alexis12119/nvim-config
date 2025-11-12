@@ -1,9 +1,9 @@
----@type NvPluginSpec
+---@type LazySpec
 -- NOTE: Discord Rich Presence
 return {
   "vyfor/cord.nvim",
   build = ":Cord update",
-  event = { "BufReadPost", "BufNewFile" },
+  event = "VeryLazy",
   config = function()
     require("cord").setup()
   end,

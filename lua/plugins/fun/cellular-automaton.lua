@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 -- NOTE: Just For Fun Plugin
 return {
   "eandrju/cellular-automaton.nvim",

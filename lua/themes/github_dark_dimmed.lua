@@ -77,6 +77,7 @@ M.polish_hl = {
     IncSearch = { fg = C.black, bg = C.blue },
     CurSearch = { fg = C.black, bg = C.blue },
     Substitute = { fg = C.white, bg = C.one_bg3 },
+    SupermavenSuggestion = { fg = C.light_grey },
 
     -- DiffView syntax highlights (WebStorm-style)
     DiffAdd = { bg = E.diff_dark_green, fg = C.green },
@@ -492,44 +493,14 @@ M.polish_hl = {
 
     ["@annotation.dart"] = { fg = C.purple, italic = true },
     ["@attribute.dart"] = { fg = C.purple },
-
-    -- LSP Semantic Highlights
-    ["@lsp.type.class"] = { fg = E.light_blue },
-    ["@lsp.type.comment"] = { fg = C.light_grey, italic = true },
-    ["@lsp.type.decorator"] = { fg = C.purple, italic = true },
-    ["@lsp.type.enum"] = { fg = E.light_blue },
-    ["@lsp.type.enumMember"] = { fg = C.yellow },
-    ["@lsp.type.event"] = { fg = C.blue },
-    ["@lsp.type.function"] = { fg = C.blue },
-    ["@lsp.type.interface"] = { fg = E.light_blue, italic = true },
-    ["@lsp.type.keyword"] = { fg = C.red },
-    ["@lsp.type.macro"] = { fg = C.purple },
-    ["@lsp.type.method"] = { fg = C.blue },
-    ["@lsp.type.modifier"] = { fg = C.red, italic = true },
-    ["@lsp.type.namespace"] = { fg = E.light_blue },
-    ["@lsp.type.number"] = { fg = C.yellow },
-    ["@lsp.type.operator"] = { fg = C.purple },
-    ["@lsp.type.parameter"] = { fg = C.pink },
-    ["@lsp.type.property"] = { fg = C.white },
-    ["@lsp.type.regexp"] = { fg = E.lighter_blue },
-    ["@lsp.type.string"] = { fg = E.lighter_blue },
-    ["@lsp.type.struct"] = { fg = E.light_blue },
-    ["@lsp.type.type"] = { fg = C.teal },
-    ["@lsp.type.typeParameter"] = { fg = C.pink },
-    ["@lsp.type.variable"] = { fg = C.white },
-
-    ["@lsp.mod.abstract"] = { bold = true },
-    ["@lsp.mod.async"] = { italic = true },
-    ["@lsp.mod.declaration"] = { bold = true },
-    ["@lsp.mod.defaultLibrary"] = { fg = C.blue },
-    ["@lsp.mod.definition"] = { underline = false },
-    ["@lsp.mod.deprecated"] = { strikethrough = true },
-    ["@lsp.mod.documentation"] = { fg = C.light_grey, italic = true },
-    ["@lsp.mod.modification"] = { underline = true },
-    ["@lsp.mod.readonly"] = { fg = C.yellow },
-    ["@lsp.mod.static"] = { bold = true },
   },
 }
+
+-- Dynamically add all LSP semantic highlight groups as empty
+local lsp_groups = vim.fn.getcompletion("@lsp", "highlight")
+for _, group in ipairs(lsp_groups) do
+  M.polish_hl.treesitter[group] = M.polish_hl.treesitter[group] or {}
+end
 
 M.type = "dark"
 
