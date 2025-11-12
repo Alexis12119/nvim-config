@@ -47,6 +47,13 @@ return {
       desc = "Dotnet: Build Project",
     },
     {
+      "<leader>cDbs",
+      function()
+        vim.cmd("Dotnet build solution")
+      end,
+      desc = "Dotnet: Build Solution",
+    },
+    {
       "<leader>cDr",
       function()
         vim.cmd("Dotnet run")

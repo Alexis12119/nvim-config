@@ -1,6 +1,45 @@
-# 💤 LazyVim Configuration
-
-A highly customized LazyVim setup with extensive language support, AI integration, and modern development tools.
+- [💤 LazyVim Configuration](#💤-lazyvim-configuration)
+  - [🚀 Installation](#🚀-installation)
+    - [Prerequisites](#prerequisites)
+    - [Quick Install (Recommended)](#quick-install-recommended)
+      - [Linux/macOS](#linuxmacos)
+      - [Windows (PowerShell)](#windows-powershell)
+    - [Manual Install](#manual-install)
+  - [✨ Features](#features)
+    - [🤖 AI & Coding](#🤖-ai-coding)
+    - [🔧 Development Tools](#🔧-development-tools)
+    - [🎨 UI & Experience](#🎨-ui-experience)
+    - [🌐 Language Support](#🌐-language-support)
+      - [Web Development](#web-development)
+      - [Backend & Systems](#backend-systems)
+      - [Data & DevOps](#data-devops)
+      - [Documentation & Markup](#documentation-markup)
+    - [🛠️ Tooling](#🛠️-tooling)
+    - [🚀 Unique Features](#🚀-unique-features)
+  - [⚙️ Configuration](#️-configuration)
+    - [Managing Language Support](#managing-language-support)
+      - [Using LazyExtras UI](#using-lazyextras-ui)
+      - [Direct Configuration](#direct-configuration)
+      - [Common Extras to Consider Removing](#common-extras-to-consider-removing)
+    - [Theme](#theme)
+    - [Key Customizations](#key-customizations)
+    - [Disabled Features](#disabled-features)
+  - [📁 Structure](#📁-structure)
+    - [Custom Additions](#custom-additions)
+    - [Enhanced Features](#enhanced-features)
+    - [Disabled Features](#disabled-features)
+  - [🛠️ Customization Guide](#🛠️-customization-guide)
+    - [Adding New Plugins](#adding-new-plugins)
+    - [Modifying Theme](#modifying-theme)
+    - [Project Configuration](#project-configuration)
+    - [LSP Customization](#lsp-customization)
+  - [🔍 Troubleshooting](#🔍-troubleshooting)
+    - [Common Issues](#common-issues)
+    - [Getting Help](#getting-help)
+  - [🤝 Contributing](#🤝-contributing)
+  - [📄 License](#📄-license)
+  - [🙏 Credits](#🙏-credits)
+  - [🔗 Links](#🔗-links)
 
 ## 🚀 Installation
 
@@ -36,7 +75,7 @@ In windows, you can use [scoop](https://scoop.sh/) to install them.
 #### Linux/macOS
 
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/Alexis12119/LazyVim-starter/main/installer/install.sh)
+bash <(curl -s https://raw.githubusercontent.com/Alexis12119/nvim-config/main/installer/install.sh)
 ```
 
 #### Windows (PowerShell)
@@ -44,7 +83,7 @@ bash <(curl -s https://raw.githubusercontent.com/Alexis12119/LazyVim-starter/mai
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
-Invoke-WebRequest https://raw.githubusercontent.com/Alexis12119/LazyVim-starter/main/installer/install.ps1 -UseBasicParsing | Invoke-Expression
+Invoke-WebRequest https://raw.githubusercontent.com/Alexis12119/nvim-config/main/installer/install.ps1 -UseBasicParsing | Invoke-Expression
 ```
 
 ### Manual Install
@@ -65,10 +104,10 @@ Invoke-WebRequest https://raw.githubusercontent.com/Alexis12119/LazyVim-starter/
 
    ```bash
    # Linux/macOS
-   git clone https://github.com/Alexis12119/LazyVim-starter.git ~/.config/nvim
+   git clone https://github.com/Alexis12119/nvim-config.git ~/.config/nvim
 
    # Windows
-   git clone https://github.com/Alexis12119/LazyVim-starter.git $env:LOCALAPPDATA\nvim
+   git clone https://github.com/Alexis12119/nvim-config.git $env:LOCALAPPDATA\nvim
    ```
 
 3. Start Neovim and let Lazy install the plugins:
@@ -322,12 +361,11 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
 
 ## 🙏 Credits
 
-- [LazyVim](https://github.com/LazyVim/LazyVim) - The base distribution
+- [LazyVim](https://github.com/LazyVim/LazyVim) - The base configuration
 - [NvChad](https://github.com/NvChad/NvChad) - UI components and inspiration
 - All the plugin authors and contributors
 
 ## 🔗 Links
 
-- **Repository**: [https://github.com/Alexis12119/LazyVim-starter](https://github.com/Alexis12119/LazyVim-starter)
 - **LazyVim Docs**: [https://lazyvim.github.io/](https://lazyvim.github.io/)
 - **Neovim**: [https://neovim.io/](https://neovim.io/)

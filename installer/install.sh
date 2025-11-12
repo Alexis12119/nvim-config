@@ -2,7 +2,7 @@
 
 config_dir="$HOME/.config/nvim"
 config_plugins="$HOME/.local/share/nvim/lazy"
-config_repo="https://github.com/Alexis12119/LazyVim-starter.git"
+config_repo="https://github.com/Alexis12119/nvim-config.git"
 
 # Function to clone a Git repository with error handling
 clone_repository() {

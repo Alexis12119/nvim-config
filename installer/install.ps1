@@ -16,7 +16,7 @@ function Clone-Repository {
 }
 
 # Main script
-$ConfigRepo = "https://github.com/Alexis12119/LazyVim-starter.git"
+$ConfigRepo = "https://github.com/Alexis12119/nvim-config.git"
 $ConfigPlugins = "$env:LOCALAPPDATA\nvim-data\lazy"
 $ConfigPath = "$env:LOCALAPPDATA\nvim"
 
