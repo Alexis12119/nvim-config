@@ -8,8 +8,13 @@ return {
       ---@type "left"|"right"
       direction = "right",
     },
-  }, -- your configuration here
-  init = function()
-    vim.keymap.set("n", "<leader>bu", ":Atone toggle<CR>", { desc = "Undo Tree" })
-  end,
+  },
+  keys = {
+    {
+      "<leader>bu",
+      "<cmd>Atone toggle<cr>",
+      desc = "Undo Tree",
+      silent = true,
+    },
+  },
 }

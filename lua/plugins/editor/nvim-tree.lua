@@ -1,6 +1,3 @@
----@type LazySpec
--- NOTE: File Explorer
-
 local function on_attach(bufnr)
   local api = require("nvim-tree.api")
 
@@ -14,13 +11,11 @@ local function on_attach(bufnr)
   vim.keymap.set("n", "u", api.tree.change_root_to_parent, opts("Up"))
 end
 
+---@type LazySpec
 -- NOTE: File Explorer
 return {
   "nvim-tree/nvim-tree.lua",
   enabled = false,
-  init = function()
-    vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { desc = "NvimTree | Explorer", silent = true })
-  end,
   cmd = {
     "NvimTreeOpen",
     "NvimTreeToggle",
@@ -28,11 +23,17 @@ return {
     "NvimTreeFindFile",
     "NvimTreeFindFileToggle",
   },
+  keys = {
+    {
+      "<leader>e",
+      "<cmd>NvimTreeToggle<cr>",
+      desc = "NvimTree: Explorer",
+      silent = true,
+    },
+  },
   opts = {
     on_attach = on_attach,
-    diagnostics = {
-      enable = true,
-    },
+    diagnostics = { enable = true },
     sync_root_with_cwd = true,
     update_focused_file = {
       enable = true,
@@ -66,9 +67,7 @@ return {
       highlight_git = true,
       root_folder_label = ":~:s?$?",
       indent_width = 2,
-      indent_markers = {
-        enable = true,
-      },
+      indent_markers = { enable = true },
     },
   },
 }

@@ -1,29 +1,35 @@
 ---@type LazySpec
 -- NOTE: Code Runner
-
 return {
   {
     "Zeioth/compiler.nvim",
-    init = function()
-      vim.keymap.set(
-        "n",
+    cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo", "CompilerStop" },
+    keys = {
+      {
         "<leader>Cr",
         "<cmd>CompilerRedo<cr>",
-        { desc = "Compiler | Redo Last Action", silent = true }
-      )
-
-      vim.keymap.set("n", "<leader>Co", "<cmd>CompilerOpen<cr>", { desc = "Compiler | Open", silent = true })
-
-      vim.keymap.set("n", "<leader>Cs", "<cmd>CompilerStop<cr>", { desc = "Compiler | Stop All Tasks", silent = true })
-
-      vim.keymap.set(
-        "n",
+        desc = "Compiler: Redo Last Action",
+        silent = true,
+      },
+      {
+        "<leader>Co",
+        "<cmd>CompilerOpen<cr>",
+        desc = "Compiler: Open",
+        silent = true,
+      },
+      {
+        "<leader>Cs",
+        "<cmd>CompilerStop<cr>",
+        desc = "Compiler: Stop All Tasks",
+        silent = true,
+      },
+      {
         "<leader>Ct",
         "<cmd>CompilerToggleResults<cr>",
-        { desc = "Compiler | Toggle Results", silent = true }
-      )
-    end,
-    cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
+        desc = "Compiler: Toggle Results",
+        silent = true,
+      },
+    },
     dependencies = {
       {
         "stevearc/overseer.nvim",
