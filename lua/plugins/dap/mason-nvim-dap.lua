@@ -22,19 +22,19 @@ return {
   config = function()
     -- NOTE: Make sure to install the needed files/exectubles through mason
     -- Load adapter settings based on nvim_dap adapter names
-    require("plugins.dap.settings.coreclr")
+
+    require("plugins.dap.settings.cpptools")
+    require("plugins.dap.settings.netcoredbg")
     require("plugins.dap.settings.godot")
-    require("plugins.dap.settings.bash")
-    require("plugins.dap.settings.php")
-    require("plugins.dap.settings.dart")
-    require("plugins.dap.settings.chrome")
-    require("plugins.dap.settings.firefox")
-    require("plugins.dap.settings.javadbg")
-    require("plugins.dap.settings.node2")
-    require("plugins.dap.settings.python")
-    require("plugins.dap.settings.delve")
-    require("plugins.dap.settings.js")
-    require("plugins.dap.settings.cppdbg")
-    require("plugins.dap.settings.codelldb")
+    require("plugins.dap.settings.bash-debug-adapter")
+    require("plugins.dap.settings.php-debug-adapter")
+    require("plugins.dap.settings.dart-debug-adapter")
+    require("plugins.dap.settings.chrome-debug-adapter")
+    require("plugins.dap.settings.firefox-debug-adapter")
+    require("plugins.dap.settings.java-debug")
+    require("plugins.dap.settings.node-debug2")
+    require("plugins.dap.settings.debugpy")
+    require("plugins.dap.settings.go-debug-adapter")
+    require("plugins.dap.settings.js-debug")
   end,
 }
