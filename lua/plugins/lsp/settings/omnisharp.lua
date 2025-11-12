@@ -1,5 +1,5 @@
 return {
-  cmd = { "omnisharp" },
+  -- cmd = { "omnisharp" },
 
   -- Enables support for reading code style, naming convention and analyzer
   -- settings from .editorconfig.
