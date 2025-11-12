@@ -1,47 +1,23 @@
-- [💤 LazyVim Configuration](#💤-lazyvim-configuration)
-  - [🚀 Installation](#🚀-installation)
-    - [Prerequisites](#prerequisites)
-    - [Quick Install (Recommended)](#quick-install-recommended)
-      - [Linux/macOS](#linuxmacos)
-      - [Windows (PowerShell)](#windows-powershell)
-    - [Manual Install](#manual-install)
-  - [✨ Features](#features)
-    - [🤖 AI & Coding](#🤖-ai-coding)
-    - [🔧 Development Tools](#🔧-development-tools)
-    - [🎨 UI & Experience](#🎨-ui-experience)
-    - [🌐 Language Support](#🌐-language-support)
-      - [Web Development](#web-development)
-      - [Backend & Systems](#backend-systems)
-      - [Data & DevOps](#data-devops)
-      - [Documentation & Markup](#documentation-markup)
-    - [🛠️ Tooling](#🛠️-tooling)
-    - [🚀 Unique Features](#🚀-unique-features)
-  - [⚙️ Configuration](#️-configuration)
-    - [Managing Language Support](#managing-language-support)
-      - [Using LazyExtras UI](#using-lazyextras-ui)
-      - [Direct Configuration](#direct-configuration)
-      - [Common Extras to Consider Removing](#common-extras-to-consider-removing)
-    - [Theme](#theme)
-    - [Key Customizations](#key-customizations)
-    - [Disabled Features](#disabled-features)
-  - [📁 Structure](#📁-structure)
-    - [Custom Additions](#custom-additions)
-    - [Enhanced Features](#enhanced-features)
-    - [Disabled Features](#disabled-features)
-  - [🛠️ Customization Guide](#🛠️-customization-guide)
-    - [Adding New Plugins](#adding-new-plugins)
-    - [Modifying Theme](#modifying-theme)
-    - [Project Configuration](#project-configuration)
-    - [LSP Customization](#lsp-customization)
-  - [🔍 Troubleshooting](#🔍-troubleshooting)
-    - [Common Issues](#common-issues)
-    - [Getting Help](#getting-help)
-  - [🤝 Contributing](#🤝-contributing)
-  - [📄 License](#📄-license)
-  - [🙏 Credits](#🙏-credits)
-  - [🔗 Links](#🔗-links)
+# 🚀 Modern Development Environment
 
-## 🚀 Installation
+A modern Neovim setup with AI-powered coding, extensive language support,
+and IDE features.
+
+Perfect for developers seeking a single, unified environment for web development,
+backend systems, mobile apps, and competitive programming.
+
+- [🚀 Installation](#installation)
+- [✨ Features](#features)
+- [⚙️ Configuration](#configuration)
+- [📁 Structure](#structure)
+- [🛠️ Customization Guide](#customization-guide)
+- [🔍 Troubleshooting](#troubleshooting)
+- [🤝 Contributing](#contributing)
+- [📄 License](#license)
+- [🙏 Credits](#credits)
+- [🔗 Links](#links)
+
+## Installation
 
 ### Prerequisites
 
@@ -83,7 +59,8 @@ bash <(curl -s https://raw.githubusercontent.com/Alexis12119/nvim-config/main/in
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
-Invoke-WebRequest https://raw.githubusercontent.com/Alexis12119/nvim-config/main/installer/install.ps1 -UseBasicParsing | Invoke-Expression
+Invoke-WebRequest https://raw.githubusercontent.com/Alexis12119/nvim-config/main/installer/install.ps1 -UseBasicParsing |
+Invoke-Expression
 ```
 
 ### Manual Install
@@ -116,7 +93,7 @@ Invoke-WebRequest https://raw.githubusercontent.com/Alexis12119/nvim-config/main
    nvim
    ```
 
-## ✨ Features
+## Features
 
 ### 🤖 AI & Coding
 
@@ -200,11 +177,13 @@ Invoke-WebRequest https://raw.githubusercontent.com/Alexis12119/nvim-config/main
 - **Competitive Programming** - cphelper.nvim
 - **Performance Optimizations** - Custom Neovim options for better responsiveness
 
-## ⚙️ Configuration
+## Configuration
 
 ### Managing Language Support
 
-This configuration includes extensive language support through LazyVim Extras. If you're seeing too many notifications about missing language servers or tools, you can easily remove unwanted language integrations:
+This configuration includes extensive language support through LazyVim Extras.
+If you're seeing too many notifications about missing language servers or tools,
+you can easily remove unwanted language integrations:
 
 #### Using LazyExtras UI
 
@@ -228,11 +207,13 @@ Edit `lazyvim.json` in your config root and remove unwanted extras from the list
 
 - **Theme**: Custom GitHub Dark Dimmed with extensive language-specific highlighting
 - **Telescope Style**: Borderless
-- **Custom Highlights**: Detailed syntax highlighting for Python, Java, JavaScript/TypeScript, Go, Rust, PHP, Dart, C#, and more
+- **Custom Highlights**: Detailed syntax highlighting for Python, Java,
+  JavaScript/TypeScript, Go, Rust, PHP, Dart, C#, and more
 
 ### Key Customizations
 
-- **Performance Optimizations**: Faster completion (100ms updatetime), optimized UI settings
+- **Performance Optimizations**: Faster completion (100ms updatetime),
+  optimized UI settings
 - **Custom LSP Settings**: Tailored configurations for each language
 - **AI Integration**: Supermaven for intelligent code completion
 - **Project Management**: Custom patterns for project detection
@@ -246,9 +227,9 @@ The following plugins are intentionally disabled to avoid conflicts:
 - **oil.nvim** - Buffer explorer (disabled)
 - **opencode** - AI assistant (disabled, Supermaven used instead)
 
-## 📁 Structure
+## Structure
 
-```
+```text
 ~/.config/nvim/
 ├── installer/          # Installation scripts
 │   ├── install.ps1     # PowerShell installer
@@ -301,12 +282,12 @@ The following plugins are intentionally disabled to avoid conflicts:
 - **Testing** - Multi-language neotest adapters
 - **Performance** - Optimized Neovim options for better responsiveness
 
-### Disabled Features
+### Intentionally Disabled
 
 - nvim-tree and oil.nvim (file explorers)
 - opencode plugins (using Supermaven instead)
 
-## 🛠️ Customization Guide
+## Customization Guide
 
 ### Adding New Plugins
 
@@ -330,7 +311,7 @@ The following plugins are intentionally disabled to avoid conflicts:
 - Language-specific LSP settings are in `lua/plugins/lsp/settings/`
 - Create new files for additional language servers
 
-## 🔍 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -345,7 +326,7 @@ The following plugins are intentionally disabled to avoid conflicts:
 - Review plugin-specific documentation in their repositories
 - Open an issue on this repository for configuration-specific problems
 
-## 🤝 Contributing
+## Contributing
 
 Feel free to submit issues and enhancement requests!
 
@@ -355,17 +336,18 @@ Feel free to submit issues and enhancement requests!
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📄 License
+## License
 
-This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache License 2.0 -
+see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Credits
+## Credits
 
 - [LazyVim](https://github.com/LazyVim/LazyVim) - The base configuration
 - [NvChad](https://github.com/NvChad/NvChad) - UI components and inspiration
 - All the plugin authors and contributors
 
-## 🔗 Links
+## Links
 
 - **LazyVim Docs**: [https://lazyvim.github.io/](https://lazyvim.github.io/)
 - **Neovim**: [https://neovim.io/](https://neovim.io/)
