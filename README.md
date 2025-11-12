@@ -301,11 +301,6 @@ The following plugins are intentionally disabled to avoid conflicts:
 - Modify `lua/highlights.lua` for additional syntax highlighting
 - Language-specific highlights are defined in the theme file
 
-### Project Configuration
-
-- Project detection patterns are in `lua/plugins/util/project.lua`
-- Add new patterns to the `patterns` array for your project types
-
 ### LSP Customization
 
 - Language-specific LSP settings are in `lua/plugins/lsp/settings/`
