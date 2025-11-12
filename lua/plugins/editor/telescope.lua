@@ -30,7 +30,6 @@ return {
         width = 0.87,
         height = 0.80,
       },
-      extensions_list = { "themes", "terms", "fzf", "projects", "laravel", "undo", "persisted" },
       mappings = {
         i = {
           ["<Tab>"] = require("telescope.actions").move_selection_next,
@@ -51,6 +50,21 @@ return {
       find_files = {
         hidden = true,
       },
+    },
+  },
+  keys = {
+    {
+      "<leader>uC",
+      function()
+        if vim.g.colorscheme == "nvchad" then
+          -- NvChad theme switcher
+          vim.cmd("Telescope themes")
+        else
+          -- LazyVim colorscheme picker with preview
+          LazyVim.pick("colorscheme", { enable_preview = true })()
+        end
+      end,
+      desc = "Colorscheme with Preview",
     },
   },
 }
