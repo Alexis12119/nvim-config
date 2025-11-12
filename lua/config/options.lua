@@ -132,3 +132,5 @@ vim.opt.whichwrap:append("<>[]hl")
 
 -- Treat hyphenated words as a single word (for motions like 'w' and 'b')
 vim.opt.iskeyword:append("-")
+
+require("config.globals")
