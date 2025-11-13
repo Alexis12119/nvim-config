@@ -1,6 +1,5 @@
 ---@type LazySpec
 -- NOTE: Tokyonight
-
 return {
   "folke/tokyonight.nvim",
   opts = {
