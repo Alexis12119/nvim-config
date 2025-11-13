@@ -146,42 +146,62 @@ M.modules = {
   end,
 
   clients = function()
-    local clients = {}
     local buf = vim.api.nvim_get_current_buf()
 
-    -- Iterate through all the clients for the current buffer
-    for _, client in pairs(vim.lsp.get_clients({ bufnr = buf })) do
-      -- Add the client name to the `clients` table
-      table.insert(clients, client.name)
+    -- Preallocate small tables
+    local clients = {}
+    local added = {} -- For deduplication (faster than vim.tbl_contains)
+
+    -- Collect LSP clients
+    local lsp_clients = vim.lsp.get_clients({ bufnr = buf })
+    for i = 1, #lsp_clients do
+      local name = lsp_clients[i].name
+      clients[#clients + 1] = name
+      added[name] = true
     end
 
-    local lint_ok, lint = pcall(require, "lint")
-    if lint_ok then
-      local linters = {}
-      local fts = vim.split(vim.bo.filetype, ".", { plain = true, trimempty = true })
-      for _, ft in pairs(fts) do
-        vim.list_extend(linters, lint.linters_by_ft[ft] or {})
-      end
-      if #linters ~= 0 then
-        table.insert(clients, table.concat(linters, ", "))
-      end
-    end
-
-    local conform_ok, conform = pcall(require, "conform")
-    if conform_ok then
-      local formatters = conform.list_formatters(0)
-      for _, formatter in pairs(formatters) do
-        -- Check if the formatter is already in the clients table
-        if not vim.tbl_contains(clients, formatter.name) then
-          table.insert(clients, formatter.name)
+    -- Collect linters (if available)
+    local ok_lint, lint = pcall(require, "lint")
+    if ok_lint then
+      local linters_by_ft = lint.linters_by_ft
+      if linters_by_ft then
+        for ft in vim.gsplit(vim.bo.filetype, ".", { plain = true, trimempty = true }) do
+          local linters = linters_by_ft[ft]
+          if linters then
+            for j = 1, #linters do
+              local name = linters[j]
+              if not added[name] then
+                clients[#clients + 1] = name
+                added[name] = true
+              end
+            end
+          end
         end
       end
     end
 
-    if #clients == 0 then
+    -- Collect formatters (if available)
+    local ok_conform, conform = pcall(require, "conform")
+    if ok_conform and conform.list_formatters then
+      local formatters = conform.list_formatters(0)
+      for i = 1, #formatters do
+        local name = formatters[i].name
+        if not added[name] then
+          clients[#clients + 1] = name
+          added[name] = true
+        end
+      end
+    end
+
+    local count = #clients
+    if count == 0 then
       return ""
+    end
+
+    if vim.o.columns > 100 then
+      return " %#St_gitIcons#" .. table.concat(clients, ", ") .. " "
     else
-      return (vim.o.columns > 100 and (" %#St_gitIcons#" .. table.concat(clients, ", ") .. " ")) or "  LSP "
+      return "  LSP "
     end
   end,
 }
