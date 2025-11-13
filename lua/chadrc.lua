@@ -38,7 +38,7 @@ M.ui = {
     modules = require("config.statusline").modules,
   },
   tabufline = {
-    enabled = true,
+    enabled = false,
     lazyload = true,
     modules = require("config.tabufline").modules,
   },
