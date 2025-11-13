@@ -11,7 +11,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = function(_, opts)
-      opts.colorscheme = "nvchad"
+      opts.colorscheme = "tokyonight"
       vim.g.colorscheme = opts.colorscheme
 
       if opts.colorscheme == "nvchad" then
