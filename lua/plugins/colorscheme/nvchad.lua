@@ -3,6 +3,7 @@
 return {
   {
     "nvchad/ui",
+    enabled = false,
     config = function()
       require("nvchad")
     end,
@@ -10,6 +11,7 @@ return {
 
   {
     "nvchad/base46",
+    enabled = false,
     lazy = true,
     build = function()
       require("base46").load_all_highlights()
