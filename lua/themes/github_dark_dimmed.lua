@@ -119,7 +119,7 @@ M.polish_hl = {
     -- SnacksPickerBorder = { fg = C.darker_black, bg = C.darker_black },
     NoiceLspProgressTitle = { fg = C.light_grey },
     SnacksPickerDir = { fg = C.white },
-    SnacksPickerBorder = { fg = C.light_grey },
+    -- SnacksPickerBorder = { fg = C.light_grey },
   },
 
   treesitter = {
