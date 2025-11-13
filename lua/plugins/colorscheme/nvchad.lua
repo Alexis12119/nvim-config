@@ -18,16 +18,4 @@ return {
 
   "nvchad/volt", -- optional, needed for theme switcher
   -- or just use Telescope themes
-
-  {
-    "nvim-telescope/telescope.nvim",
-    optional = true,
-    opts = function()
-      LazyVim.on_load("telescope.nvim", function()
-        if vim.g.colorscheme == "nvchad" then
-          require("telescope").load_extension("themes")
-        end
-      end)
-    end,
-  },
 }
