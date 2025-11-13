@@ -56,7 +56,7 @@ return {
     {
       "<leader>uC",
       function()
-        if vim.api.nvim_set_option_value("colorscheme", "nvchad", { global = true }) then
+        if vim.g.colorscheme == "nvchad" then
           -- NvChad theme switcher
           vim.cmd("Telescope themes")
         else
