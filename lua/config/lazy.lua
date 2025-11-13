@@ -35,7 +35,7 @@ require("lazy").setup({
   install = { colorscheme = { "nvchad", "tokyonight", "habamax" } },
   checker = {
     enabled = true, -- check for plugin updates periodically
-    notify = false, -- notify on update
+    notify = not vim.g.is_windows, -- notify on update
   }, -- automatically check for plugin updates
   diff = {
     cmd = "diffview.nvim",
