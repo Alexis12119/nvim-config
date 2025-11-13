@@ -9,28 +9,6 @@ local default_symbols = {
 -- Track ongoing LSP progress
 local lsp_work_by_client_id = {}
 
--- Register autocmd once
-if not vim.g._lsp_progress_autocmd_set then
-  vim.g._lsp_progress_autocmd_set = true
-  pcall(vim.api.nvim_create_autocmd, "LspProgress", {
-    desc = "Track LSP progress for lualine spinner",
-    group = vim.api.nvim_create_augroup("custom_lualine_lsp_progress", {}),
-    callback = function(event)
-      local kind = event.data.params.value.kind
-      local client_id = event.data.client_id
-
-      local work = lsp_work_by_client_id[client_id] or 0
-      local work_change = (kind == "begin" and 1) or (kind == "end" and -1) or 0
-
-      lsp_work_by_client_id[client_id] = math.max(work + work_change, 0)
-
-      if (work == 0 and work_change > 0) or (work == 1 and work_change < 0) then
-        require("lualine").refresh()
-      end
-    end,
-  })
-end
-
 M.clients = function()
   local result = {}
   local buf = vim.api.nvim_get_current_buf()
