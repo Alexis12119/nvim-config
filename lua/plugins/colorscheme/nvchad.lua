@@ -24,7 +24,9 @@ return {
     optional = true,
     opts = function()
       LazyVim.on_load("telescope.nvim", function()
-        require("telescope").load_extension("themes")
+        if vim.g.colorscheme == "nvchad" then
+          require("telescope").load_extension("themes")
+        end
       end)
     end,
   },
