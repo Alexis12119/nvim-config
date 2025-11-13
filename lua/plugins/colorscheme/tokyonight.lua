@@ -6,6 +6,10 @@ return {
     style = "night",
     on_highlights = function(hl, _)
       hl.DiffviewDiffDelete = { bg = "#422b2b", fg = "#422b2b" }
+
+      hl.LspReferenceRead = { link = "Underlined" }
+      hl.LspReferenceText = { link = "Underlined" }
+      hl.LspReferenceWrite = { link = "Underlined" }
     end,
   },
 }
