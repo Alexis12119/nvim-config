@@ -12,7 +12,6 @@ return {
     "LazyVim/LazyVim",
     opts = function(_, opts)
       opts.colorscheme = "nvchad"
-      vim.g.colorscheme = opts.colorscheme
 
       if opts.colorscheme == "nvchad" then
         for _, v in ipairs(vim.fn.readdir(vim.g.base46_cache)) do
