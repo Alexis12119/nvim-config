@@ -1,3 +1,8 @@
+local ok, _ = pcall(require, "telescope")
+if not ok then
+  return {}
+end
+
 local focus_preview = function(prompt_bufnr)
   local action_state = require("telescope.actions.state")
   local picker = action_state.get_current_picker(prompt_bufnr)
@@ -16,6 +21,7 @@ end
 -- NOTE: Fuzzy Finder
 return {
   "nvim-telescope/telescope.nvim",
+  enabled = false,
   opts = {
     defaults = {
       prompt_prefix = "   ",
