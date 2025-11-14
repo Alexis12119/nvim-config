@@ -243,6 +243,7 @@ The following plugins are intentionally disabled to avoid conflicts:
 │   │   ├── ai/         # AI-related plugins
 │   │   ├── collaboration/ # Real-time collaboration
 │   │   ├── colorscheme/ # Theme configuration
+│   │   ├── dap/       # Debug Adapter Protocol (DAP) configurations
 │   │   ├── editor/     # Core editor plugins
 │   │   ├── fun/        # Fun and experimental plugins
 │   │   ├── integration/ # Integration plugins
