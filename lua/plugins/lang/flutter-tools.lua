@@ -2,7 +2,7 @@
 -- NOTE: For Flutter Development
 return {
   "akinsho/flutter-tools.nvim",
-  ft = "dart",
+  event = "VeryLazy",
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
