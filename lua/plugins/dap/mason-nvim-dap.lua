@@ -29,7 +29,6 @@ return {
     require("plugins.dap.settings.bash-debug-adapter")
     require("plugins.dap.settings.php-debug-adapter")
     require("plugins.dap.settings.dart-debug-adapter")
-    require("plugins.dap.settings.chrome-debug-adapter")
     require("plugins.dap.settings.firefox-debug-adapter")
     require("plugins.dap.settings.java-debug")
     require("plugins.dap.settings.node-debug2")
