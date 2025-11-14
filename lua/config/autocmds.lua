@@ -211,10 +211,10 @@ autocmd("LspAttach", {
     end
 
     -- NOTE: Disable Semantic Tokens
-    -- Disable semantic tokens (optional: prevents over-highlighting)
-    -- if client and client.server_capabilities.semanticTokensProvider then
-    --   client.server_capabilities.semanticTokensProvider = nil
-    -- end
+    local lsp_groups = vim.fn.getcompletion("@lsp", "highlight")
+    for _, group in ipairs(lsp_groups) do
+      vim.api.nvim_set_hl(0, group, {})
+    end
 
     -- Populate workspace diagnostics (external plugin)
     require("workspace-diagnostics").populate_workspace_diagnostics(client, vim.api.nvim_get_current_buf())
