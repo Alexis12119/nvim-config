@@ -50,3 +50,6 @@ vim.g.path_separator = is_windows and "\\" or "/" -- Used for filesystem paths
 
 -- Enable Inline Completion
 vim.g.ai_cmp = false
+
+-- Environment-specific settings
+require("config.env")
