@@ -21,7 +21,7 @@ M.override = {
   LspReferenceRead = { link = "Underlined" },
   LspReferenceText = { link = "Underlined" },
   LspReferenceWrite = { link = "Underlined" },
-  TbFill = { link = "Normal" },
+  -- TbFill = { link = "Normal" },
   NvimTreeRootFolder = { link = "NvimTreeFolderName" },
   -- NvimTreeOpenedFolderName = { fg = "grey" },
   -- NvimTreeFolderName = { fg = "light_grey" },

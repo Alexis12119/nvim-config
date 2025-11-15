@@ -5,6 +5,7 @@ local statusline = require("config.statusline")
 return {
   {
     "nvim-lualine/lualine.nvim",
+    enabled = vim.g.colorscheme ~= "nvchad",
     opts = function(_, opts)
       -- table.insert(opts.sections.lualine_x, { statusline.clients })
       table.insert(opts.sections.lualine_x, {

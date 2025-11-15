@@ -17,7 +17,7 @@ M.base46 = {
 M.ui = {
   telescope = { style = "bordered" },
   statusline = {
-    enabled = false,
+    enabled = vim.g.colorscheme == "nvchad",
     theme = "default", -- default/vscode/vscode_colored/minimal
     -- default/round/block/arrow separators work only for default statusline theme
     -- round and block will work for minimal theme only
@@ -38,7 +38,7 @@ M.ui = {
     modules = require("config.statusline").modules,
   },
   tabufline = {
-    enabled = false,
+    enabled = vim.g.colorscheme == "nvchad",
     lazyload = true,
     modules = require("config.tabufline").modules,
   },

@@ -210,6 +210,21 @@ Edit `lazyvim.json` in your config root and remove unwanted extras from the list
 - **Custom Highlights**: Detailed syntax highlighting for Python, Java,
   JavaScript/TypeScript, Go, Rust, PHP, Dart, C#, and more
 
+#### Changing Colorscheme
+
+To change the colorscheme, edit `lua/config/globals.lua` and modify the `vim.g.colorscheme` value:
+
+Available themes:
+
+- `tokyonight` - Default modern dark theme
+- `nvchad` - Base46 NvChad themes
+
+Example:
+
+```lua
+vim.g.colorscheme = "tokyonight"  -- Switch theme
+```
+
 ### Key Customizations
 
 - **Performance Optimizations**: Faster completion (100ms updatetime),
