@@ -44,7 +44,7 @@ return {
     },
     lsp = {
       progress = {
-        enabled = not vim.g.colorscheme == "nvchad",
+        enabled = vim.g.colorscheme ~= "nvchad",
         -- Lsp Progress is formatted using the builtins for lsp_progress. See config.format.builtin
         -- See the section on formatting for more details on how to customize.
         format = "lsp_progress",
