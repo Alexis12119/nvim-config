@@ -5,6 +5,7 @@ return {
   event = { "BufReadPost", "BufNewFile" },
   cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewFileHistory" },
   keys = {
+    { "<leader>gd", false },
     {
       "<leader>gd",
       function()
