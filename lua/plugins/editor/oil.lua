@@ -3,7 +3,7 @@
 return {
   "stevearc/oil.nvim",
   ---@module 'oil'
-  enabled = false,
+  enabled = true,
   lazy = false,
   opts = {},
   keys = {
