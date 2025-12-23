@@ -3,6 +3,7 @@
 return {
   {
     "nvim-java/nvim-java",
+    ft = { "java" },
     dependencies = {
       {
         "neovim/nvim-lspconfig",
@@ -23,7 +24,7 @@ return {
                 },
                 jdk = {
                   auto_install = false,
-                  version = "17",
+                  version = "21",
                 },
               })
             end,
