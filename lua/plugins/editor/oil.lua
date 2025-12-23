@@ -2,7 +2,6 @@
 -- NOTE: Buffer Explorer
 return {
   "stevearc/oil.nvim",
-  ---@module 'oil'
   enabled = true,
   lazy = false,
   opts = {},
