@@ -3,15 +3,34 @@
 return {
   {
     "nvim-java/nvim-java",
-    ft = { "java" },
-    opts = {},
-    config = function(_, opts)
-      require("java").setup(opts)
-      require("lspconfig").jdtls.setup({
-        on_attach = require("lazyvim.util.lsp").on_attach(),
-        capabilities = require("blink.cmp").get_lsp_capabilities(),
-      })
-    end,
+    dependencies = {
+      {
+        "neovim/nvim-lspconfig",
+        opts = {
+          servers = {
+            jdtls = {
+              -- Your custom jdtls settings goes here
+              capabilities = require("blink.cmp").get_lsp_capabilities(),
+            },
+          },
+          setup = {
+            jdtls = function()
+              require("java").setup({
+                -- Your custom nvim-java configuration goes here
+                spring_boot_tools = {
+                  enable = false,
+                  version = "1.63.0",
+                },
+                jdk = {
+                  auto_install = false,
+                  version = "17",
+                },
+              })
+            end,
+          },
+        },
+      },
+    },
   },
   {
     "mfussenegger/nvim-jdtls",
