@@ -5,7 +5,7 @@ return {
   event = "VeryLazy",
   dependencies = { "MunifTanjim/nui.nvim" },
   opts = {
-    enabled = true,
+    enabled = false,
   },
   keys = {
     {
