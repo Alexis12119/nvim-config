@@ -95,6 +95,10 @@ Invoke-Expression
 
 ## Features
 
+### Neovim
+- **Hardtime** - Breaks your vim bad habits
+- **Precognition** - Assits you in your vim journey
+
 ### 🤖 AI & Coding
 
 - **Supermaven** - AI-powered code completion

@@ -2,7 +2,6 @@
 -- NOTE: Vim Motions Guide
 return {
   "tris203/precognition.nvim",
-  enabled = false,
   event = "VeryLazy",
   opts = {
     startVisible = true,
@@ -13,7 +12,7 @@ return {
       function()
         require("precognition").toggle()
       end,
-      desc = "Precognition: Toggle",
+      desc = "Toggle Precognition",
       silent = true,
     },
   },
