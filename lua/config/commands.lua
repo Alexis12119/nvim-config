@@ -106,3 +106,25 @@ command("DiscordRichPresence", function()
 end, {
   desc = "Toggle Discord Rich Presence (cord.nvim)",
 })
+
+-- --------------------------------------------------------------------
+-- Clear Vim Registers
+-- --------------------------------------------------------------------
+-- Clears most commonly used registers to avoid clipboard/yank pollution.
+-- This includes:
+--   - unnamed register (")
+--   - numbered registers (0–9)
+--   - named registers (a–z, A–Z)
+--   - small delete (-)
+--   - search register (/)
+--
+-- Does NOT touch system clipboard (+, *) by default.
+command("ClearRegisters", function()
+  local regs = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-"'
+  for r in regs:gmatch('.') do
+    vim.fn.setreg(r, '')
+  end
+  vim.notify("Registers cleared", vim.log.levels.INFO, { title = "Neovim" })
+end, {
+  desc = "Clear yank/delete registers",
+})

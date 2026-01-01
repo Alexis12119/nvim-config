@@ -1,10 +1,8 @@
-# 🚀 Modern Development Environment
+# 🚀 Professional IDE-Class Neovim Configuration
 
-A modern Neovim setup with AI-powered coding, extensive language support,
-and IDE features.
+A sophisticated Neovim setup that combines **LazyVim**'s powerful foundation with **NvChad**'s polished UI components, creating a professional IDE-class experience with AI-powered coding, extensive language support (15+ languages), and advanced workflow automation.
 
-Perfect for developers seeking a single, unified environment for web development,
-backend systems, mobile apps, and competitive programming.
+Perfect for developers seeking a unified environment for web development, backend systems, mobile apps, competitive programming, and real-time collaboration.
 
 - [🚀 Installation](#installation)
 - [✨ Features](#features)
@@ -101,11 +99,12 @@ Invoke-Expression
 
 ### 🤖 AI & Coding
 
-- **Supermaven** - AI-powered code completion
-- **LuaSnip** - Snippet engine
-- **Mini Comment/Surround** - Quick commenting and surrounding
-- **Yanky** - Enhanced yank/paste functionality
-- **Refactoring** - Code refactoring tools
+- **Supermaven** - Primary AI-powered code completion with blazing fast suggestions
+- **OpenCode (Disabled)** - Alternative AI assistant available but disabled for performance
+- **LuaSnip** - Snippet engine with VSCode-compatible snippet support
+- **Mini Comment/Surround** - Quick commenting and surrounding operations
+- **Yanky** - Enhanced yank/paste with ring buffer and system clipboard integration
+- **Refactoring** - Advanced code refactoring tools with LSP-powered transformations
 
 ### 🔧 Development Tools
 
@@ -173,15 +172,39 @@ Invoke-Expression
 - **Dot** - Graphviz support
 - **Neotest** - Testing framework with multi-language adapters
 
-### 🚀 Unique Features
+### 🚀 Advanced Workflow Features
 
-- **Real-time Collaboration** - Nomad for pair programming
-- **Database Integration** - vim-dadbod for database management
-- **Framework Support** - Laravel, Spring Boot, Flutter-tools
-- **Competitive Programming** - cphelper.nvim
-- **Performance Optimizations** - Custom Neovim options for better responsiveness
+#### Project Bootstrap System (`<leader>P`)
+- **20+ Framework Templates**: Next.js, Laravel, Spring Boot, Flutter, React Native, and more
+- **Interactive Setup**: Smart dependency management and configuration
+- **Git Integration**: Automatic repository initialization with sensible defaults
+- **Cross-platform**: Works seamlessly on Linux, macOS, and Windows
+
+#### Advanced Code Runner (`<leader>ce`)
+- **Multi-language Support**: C/C++, Python, JavaScript, Go, Rust, Java, C#, PHP, and more
+- **Compilation Modes**: Standard, debug, and competitive programming modes
+- **Smart Error Handling**: Terminal integration with intelligent error detection
+- **Quick Integration**: Seamless quickfix list navigation
+
+#### Real-time Collaboration
+- **Nomad.nvim**: Live pair programming with cursor synchronization
+- **Cross-platform**: Works on all platforms (disabled on Windows for compatibility)
+
+#### Performance & Utilities
+- **Competitive Programming**: cphelper.nvim for contest preparation
+- **Smart Navigation**: Tmux integration with intuitive Ctrl+h/j/k/l movement
+- **Project-wide Linting**: ESLint integration with quickfix navigation
+- **Variable Substitution**: Dynamic command execution with placeholder replacement
 
 ## Configuration
+
+### Architecture Overview
+
+This configuration uses a **hybrid architecture** combining the best of both worlds:
+
+- **LazyVim Foundation**: Provides the core functionality, plugin management, and extensive language extras system (42+ extras pre-configured)
+- **NvChad UI Components**: Delivers polished statuslines, tablines, and theme system with Base46 color schemes
+- **Custom Layer**: Adds project management, advanced tooling, and workflow automation
 
 ### Managing Language Support
 
@@ -229,14 +252,22 @@ Example:
 vim.g.colorscheme = "tokyonight"  -- Switch theme
 ```
 
+### Performance Optimizations
+
+- **Fast Response Time**: 100ms updatetime for responsive UI updates
+- **Semantic Tokens Disabled**: Improved performance for large files
+- **Lazy Loading**: Intelligent plugin loading with custom triggers
+- **Optimized File Detection**: 5-second periodic file change monitoring
+- **Auto-save Configuration**: Saves on focus lost and buffer leave
+- **Memory Management**: Optimized settings for better resource usage
+
 ### Key Customizations
 
-- **Performance Optimizations**: Faster completion (100ms updatetime),
-  optimized UI settings
-- **Custom LSP Settings**: Tailored configurations for each language
+- **Custom LSP Settings**: Tailored configurations for each language server
 - **AI Integration**: Supermaven for intelligent code completion
-- **Project Management**: Custom patterns for project detection
+- **Project Management**: Custom patterns for intelligent project detection
 - **Database Tools**: Integrated vim-dadbod suite for database management
+- **Smart Search**: Dynamic search highlighting with intelligent toggling
 
 ### Disabled Features
 
@@ -358,9 +389,9 @@ see the [LICENSE](LICENSE) file for details.
 
 ## Credits
 
-- [LazyVim](https://github.com/LazyVim/LazyVim) - The base configuration
-- [NvChad](https://github.com/NvChad/NvChad) - UI components and inspiration
-- All the plugin authors and contributors
+- [LazyVim](https://github.com/LazyVim/LazyVim) - Core foundation and plugin management system
+- [NvChad](https://github.com/NvChad/NvChad) - UI components, statuslines, and Base46 theme system
+- All the plugin authors and contributors who make this configuration possible
 
 ## Links
 
