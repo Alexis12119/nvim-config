@@ -40,6 +40,7 @@ M.ui = {
   tabufline = {
     enabled = vim.g.colorscheme == "nvchad",
     lazyload = true,
+    order = { "treeOffset", "buffers", "tabs", "btns" },
     modules = require("config.tabufline").modules,
   },
 }
