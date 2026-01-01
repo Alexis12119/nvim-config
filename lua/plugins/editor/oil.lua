@@ -3,7 +3,6 @@
 return {
   "stevearc/oil.nvim",
   enabled = true,
-  lazy = false,
   opts = {},
   keys = {
     {
