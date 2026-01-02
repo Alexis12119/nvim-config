@@ -78,4 +78,4 @@ vim.keymap.set("n", "<leader>uC", function()
   else
     Snacks.picker.colorschemes()
   end
-end)
+end, { desc = "Colorschemes" })
