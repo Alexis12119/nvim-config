@@ -71,3 +71,11 @@ end, { silent = true })
 vim.keymap.set("n", "<C-l>", function()
   smart_move("l", "-R")
 end, { silent = true })
+
+vim.keymap.set("n", "<leader>uC", function()
+  if vim.g.colorscheme == "nvchad" then
+    require("config.utils").theme_picker.open()
+  else
+    Snacks.picker.colorschemes()
+  end
+end)
