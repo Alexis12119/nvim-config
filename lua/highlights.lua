@@ -32,6 +32,17 @@ M.override = {
 M.add = {
   -- WinBar = { fg = "foregroundColor", bg = "backgroundColor" },
   -- WinBarNC = { fg = "grey_fg", bg = "backgroundColor" },
+  SnacksPickerPreviewTitle = {
+    fg = "black",
+    bg = "green",
+  },
+  SnacksTitle = {
+    fg = "black",
+    bg = "red",
+  },
+  SnacksPickerDir = { fg = "white" },
+  SnacksPickerBorder = { fg = "light_grey" },
+  SnacksPicker = { fg = "light_grey" },
 }
 
 return M
