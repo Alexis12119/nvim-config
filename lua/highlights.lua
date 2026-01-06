@@ -43,6 +43,7 @@ M.add = {
   SnacksPickerDir = { fg = "white" },
   SnacksPickerBorder = { fg = "light_grey" },
   SnacksPicker = { fg = "light_grey" },
+  SupermavenSuggestion = { fg = "light_grey" },
 }
 
 return M
