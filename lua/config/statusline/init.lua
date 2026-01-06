@@ -145,6 +145,15 @@ M.modules = {
     end
   end,
 
+  lazy_updates = function()
+    local updates = require("lazy.status").updates()
+    if updates then
+      return updates .. " "
+    else
+      return ""
+    end
+  end,
+
   clients = function()
     local buf = vim.api.nvim_get_current_buf()
 
