@@ -136,6 +136,15 @@ M.modules = {
     end
   end,
 
+  debug_status = function()
+    local status = require("dap").status()
+    if status ~= "" then
+      return "  " .. status
+    else
+      return ""
+    end
+  end,
+
   command = function()
     local noice_ok, noice = pcall(require, "noice.api")
     if noice_ok and noice.status.command.has() then
