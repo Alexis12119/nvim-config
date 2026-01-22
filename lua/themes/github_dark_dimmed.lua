@@ -106,6 +106,9 @@ M.polish_hl = {
 
     NeoTreeDirectoryIcon = { fg = C.light_grey },
     NeoTreeDirectoryName = { fg = C.light_grey },
+    NeoTreeNormalNC = { bg = C.darker_black },
+    NeoTreeNormal = { bg = C.darker_black },
+    NeoTreeWinSeparator = { fg = C.darker_black, bg = C.darker_black },
 
     SnacksPickerPreviewTitle = {
       fg = C.black,
