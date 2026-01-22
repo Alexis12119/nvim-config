@@ -94,6 +94,7 @@ Invoke-Expression
 ## Features
 
 ### Neovim
+
 - **Hardtime** - Breaks your vim bad habits
 - **Precognition** - Assits you in your vim journey
 
@@ -175,22 +176,26 @@ Invoke-Expression
 ### 🚀 Advanced Workflow Features
 
 #### Project Bootstrap System (`<leader>P`)
+
 - **20+ Framework Templates**: Next.js, Laravel, Spring Boot, Flutter, React Native, and more
 - **Interactive Setup**: Smart dependency management and configuration
 - **Git Integration**: Automatic repository initialization with sensible defaults
 - **Cross-platform**: Works seamlessly on Linux, macOS, and Windows
 
 #### Advanced Code Runner (`<leader>ce`)
+
 - **Multi-language Support**: C/C++, Python, JavaScript, Go, Rust, Java, C#, PHP, and more
 - **Compilation Modes**: Standard, debug, and competitive programming modes
 - **Smart Error Handling**: Terminal integration with intelligent error detection
 - **Quick Integration**: Seamless quickfix list navigation
 
 #### Real-time Collaboration
+
 - **Nomad.nvim**: Live pair programming with cursor synchronization
-- **Cross-platform**: Works on all platforms (disabled on Windows for compatibility)
+- **Team Type**: You can use it for pair programming or note-taking
 
 #### Performance & Utilities
+
 - **Competitive Programming**: cphelper.nvim for contest preparation
 - **Smart Navigation**: Tmux integration with intuitive Ctrl+h/j/k/l movement
 - **Project-wide Linting**: ESLint integration with quickfix navigation
