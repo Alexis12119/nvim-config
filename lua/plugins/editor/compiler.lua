@@ -3,6 +3,7 @@
 return {
   {
     "Zeioth/compiler.nvim",
+    enabled = false,
     cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo", "CompilerStop" },
     keys = {
       {
