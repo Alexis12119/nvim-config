@@ -2,8 +2,7 @@
 -- NOTE: Code Runner
 return {
   {
-    "Zeioth/compiler.nvim",
-    enabled = false,
+    "Alexis12119/compiler.nvim",
     cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo", "CompilerStop" },
     keys = {
       {
