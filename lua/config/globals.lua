@@ -3,7 +3,7 @@
 -- Colorscheme
 -- Available themes: "tokyonight" and "nvchad"
 -- github_dark_dimmed is a custom NvChad theme with extensive language highlighting
-vim.g.colorscheme = "nvchad"
+vim.g.colorscheme = "tokyonight"
 
 -- ====================================================================
 -- Global Variables Configuration
