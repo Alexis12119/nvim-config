@@ -151,7 +151,7 @@ Invoke-Expression
 
 #### Data & DevOps
 
-- **SQL** - Database queries with vim-dadbod suite
+- **SQL** - Database queries with dadbod-grip suite
 - **Docker** - Container support
 - **Git** - Version control with Diffview integration
 - **Prisma** - Database ORM
