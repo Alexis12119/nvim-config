@@ -1,4 +1,5 @@
--- lazy.nvim (always latest stable release)
+---@type LazySpec
+-- NOTE: Database Grip
 return {
   {
     "joryeugene/dadbod-grip.nvim",

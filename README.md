@@ -127,6 +127,10 @@ Invoke-Expression
 
 ### 🌐 Language Support
 
+#### CSV/TSV
+
+- **csvview.nvim** - CSV/TSV file editing
+
 #### Web Development
 
 - **TypeScript/JavaScript** - Full TS/JS support with Volar/VTSLS
