@@ -6,6 +6,7 @@ return {
     "BufReadPost",
     "BufNewFile",
   },
+  enabled = false,
   init = function()
     vim.o.foldcolumn = "1"
     vim.o.foldlevel = 99
