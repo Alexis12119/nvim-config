@@ -7,8 +7,8 @@ return {
     virtual_text = "newline", -- or "inline"
     prefix = " = ", -- prefix shown before the output
     date_format = "iso", -- or: "uk", "us", "long"
-    width = 0.4, -- 0–1 = fraction of terminal width, >1 = absolute columns
-    height = 0.4, -- 0–1 = fraction of terminal height, >1 = absolute lines
+    width = 0.8, -- 0–1 = fraction of terminal width, >1 = absolute columns
+    height = 0.8, -- 0–1 = fraction of terminal height, >1 = absolute lines
     keys = {
       run = "<CR>", -- run/refresh calculations
       reset = "R", -- reset buffer
