@@ -1,3 +1,5 @@
+---@type LazySpec
+-- NOTE: Manage Project Dependencies
 return {
   "lvim-tech/lvim-dependencies",
   commit = "f52ec6923a2274a455be4d17d0154fe588e34097",
