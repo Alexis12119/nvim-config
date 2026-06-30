@@ -54,13 +54,13 @@ return {
       },
     },
   },
-  {
-    "folke/which-key.nvim",
-    optional = true,
-    opts = {
-      spec = {
-        { "<leader>C", group = "compiler" },
-      },
-    },
-  },
+  -- {
+  --   "folke/which-key.nvim",
+  --   optional = true,
+  --   opts = {
+  --     spec = {
+  --       { "<leader>C", group = "compiler" },
+  --     },
+  --   },
+  -- },
 }
