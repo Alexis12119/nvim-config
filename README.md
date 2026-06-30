@@ -109,7 +109,6 @@ Invoke-Expression
 
 ### 🔧 Development Tools
 
-- **Compiler.nvim** - Code compilation and running with task management
 - **Debug Adapter Protocol** - Integrated debugging
 - **Telescope** - Fuzzy finder and picker
 - **Aerial** - Code outline/symbols
@@ -118,7 +117,6 @@ Invoke-Expression
 
 ### 🎨 UI & Experience
 
-- **Custom GitHub Dark Dimmed** theme with extensive language-specific highlighting
 - **Indent Blankline** - Visual indentation guides
 - **Treesitter Context** - Context-aware code display
 - **Noice** - Modern UI for commands and notifications
