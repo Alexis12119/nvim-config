@@ -23,7 +23,6 @@ M.bootstrap_project = function()
         { name = "  Fastify", cmd = "npm create fastify@latest $project_name" },
         { name = "  NestJS", cmd = "npx @nestjs/cli new $project_name" },
         { name = "  Laravel", cmd = "composer create-project laravel/laravel $project_name" },
-        { name = "  Spring Boot", cmd = "springboot" },
         {
           name = "  Flask",
           cmd = "mkdir $project_name && cd $project_name && python3 -m venv venv && source venv/bin/activate.fish && pip install flask && echo \"from flask import Flask\\napp = Flask(__name__)\\n@app.route('/')\\ndef home():\\n    return 'Hello, Flask!'\\n\\nif __name__ == '__main__':\\n    app.run(debug=True)\" > app.py",
@@ -32,6 +31,57 @@ M.bootstrap_project = function()
           name = "  Django",
           cmd = "mkdir $project_name && cd $project_name && python3 -m venv venv && source venv/bin/activate.fish && pip install django && python3 -m django startproject $project_name .",
         },
+      },
+    },
+    {
+      name = " Rust Ecosystem",
+      items = {
+        { name = "󰣆  Plain Binary (Application)", cmd = "cargo new --bin $project_name" },
+        { name = "  Plain Library", cmd = "cargo new --lib $project_name" },
+      },
+    },
+    {
+      name = "󰟓 Go Ecosystem",
+      items = {
+        {
+          name = "󰟓 Go Module (CLI/App)",
+          cmd = 'mkdir $project_name && cd $project_name && go mod init $project_name && printf \'package main\\n\\nimport "fmt"\\n\\nfunc main() {\\n\\tfmt.Println("Hello, Go!")\\n}\\n\' > main.go',
+        },
+      },
+    },
+    {
+      name = " C/C++ Ecosystem",
+      items = {
+        {
+          name = "  Plain C (Makefile)",
+          cmd = "mkdir $project_name && cd $project_name && mkdir -p src include && printf '#include <stdio.h>\\n\\nint main() {\\n    printf(\"Hello, World!\\\\n\");\\n    return 0;\\n}\\n' > src/main.c && printf 'CC = gcc\\nCFLAGS = -Iinclude -Wall -Wextra -O2\\nSRC = $(wildcard src/*.c)\\nOBJ = $(SRC:.c=.o)\\nTARGET = main\\n\\nall: $(TARGET)\\n\\n$(TARGET): $(OBJ)\\n\\t$(CC) -o $@ $^\\n\\n%%.o: %%.c\\n\\t$(CC) $(CFLAGS) -c $< -o $@\\n\\nclean:\\n\\trm -f src/*.o $(TARGET)\\n' > Makefile",
+        },
+        {
+          name = "  C++ (CMake)",
+          cmd = "mkdir $project_name && cd $project_name && mkdir -p src include && printf '#include <iostream>\\n\\nint main() {\\n    std::col << \"Hello, C++ World!\" << std::endl;\\n    return 0;\\n}\\n' > src/main.cpp && printf 'cmake_minimum_required(VERSION 3.15)\\nproject($project_name)\\n\\nset(CMAKE_CXX_STANDARD 17)\\nset(CMAKE_CXX_STANDARD_REQUIRED ON)\\n\\ninclude_directories(include)\\n\\nadd_executable($project_name src/main.cpp)\\n' > CMakeLists.txt",
+        },
+      },
+    },
+    {
+      name = "  Java Ecosystem",
+      items = {
+        {
+          name = "  Plain Java (Maven)",
+          cmd = "mvn archetype:generate -DgroupId=com.example -DartifactId=$project_name -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false",
+        },
+        {
+          name = "  Plain Java (Gradle)",
+          cmd = "mkdir $project_name && cd $project_name && gradle init --type java-application",
+        },
+        {
+          name = "  JavaFX (Maven)",
+          cmd = "mvn archetype:generate -DgroupId=com.example -DartifactId=$project_name -DarchetypeGroupId=org.openjfx -DarchetypeArtifactId=javafx-archetype-simple -DarchetypeVersion=0.0.6 -DinteractiveMode=false",
+        },
+        {
+          name = "  JavaFX (Gradle)",
+          cmd = "mkdir $project_name && cd $project_name && gradle init --type java-application",
+        },
+        { name = "  Spring Boot", cmd = "springboot" },
       },
     },
     {
@@ -64,17 +114,28 @@ M.bootstrap_project = function()
     vim.cmd(string.format("botright 15new | term cd %s && %s", dir, cmd))
   end
 
-  local function ask_git_init(path)
+  local function ask_git_init(path, framework)
     vim.ui.select({ "Yes", "No" }, { prompt = " Initialize a Git repository?" }, function(choice)
       if choice == "Yes" then
         if vim.fn.isdirectory(path) == 1 then
-          local cmd =
-            string.format("cd %s && git init -q && git add . && git commit -m 'Initial commit' >/dev/null 2>&1", path)
+          -- Map your framework string to gitignore.io targets
+          local gi_map = { ["C++ (CMake)"] = "cmake,c++", ["Plain C (Makefile)"] = "c", ["uv"] = "python" }
+          local target = gi_map[framework] or ""
+
+          local gi_cmd = ""
+          if target ~= "" then
+            gi_cmd =
+              string.format("curl -sL https://www.toptal.com/developers/gitignore/api/%s > .gitignore && ", target)
+          end
+
+          local cmd = string.format(
+            "cd %s && %sgit init -q && git add . && git commit -m 'Initial commit' >/dev/null 2>&1",
+            path,
+            gi_cmd
+          )
           os.execute(cmd)
-          vim.notify(" Initialized new Git repository in " .. path, vim.log.levels.INFO)
+          vim.notify(" Initialized Git repository with .gitignore in " .. path, vim.log.levels.INFO)
         end
-      else
-        vim.notify("Skipped Git initialization.", vim.log.levels.INFO)
       end
     end)
   end
@@ -98,6 +159,12 @@ M.bootstrap_project = function()
       ["Django"] = "manage.py",
       ["uv"] = "pyproject.toml",
       ["Spring Boot"] = "pom.xml",
+      ["Plain Java (Maven)"] = "pom.xml",
+      ["Plain Java (Gradle)"] = "build.gradle",
+      ["JavaFX (Maven)"] = "pom.xml",
+      ["JavaFX (Gradle)"] = "build.gradle",
+      ["Plain C (Makefile)"] = "Makefile",
+      ["C++ (CMake)"] = "CMakeLists.txt",
     }
 
     local marker = markers[framework] or ""
@@ -109,6 +176,7 @@ M.bootstrap_project = function()
 
         if marker ~= "" then
           ready = vim.fn.filereadable(path .. "/" .. marker) == 1
+            or vim.fn.filereadable(path .. "/" .. marker .. ".kts") == 1
         else
           ready = vim.fn.isdirectory(path) == 1
         end
@@ -148,6 +216,28 @@ M.bootstrap_project = function()
         dir,
         selected.cmd:gsub("$project_name", name),
         string.format("  Creating Python project '%s' using %s...", name, selected.name)
+      )
+      finalize_project(target_path, selected.name)
+      return
+    end
+
+    -- C / C++
+    if category.name:find("C / C++") then
+      run_in_terminal(
+        dir,
+        selected.cmd:gsub("$project_name", name),
+        string.format("  Creating C/C++ project '%s' using %s...", name, selected.name)
+      )
+      finalize_project(target_path, selected.name)
+      return
+    end
+
+    -- Java / JavaFX Custom Handling
+    if category.name:find("Java Ecosystem") then
+      run_in_terminal(
+        dir,
+        selected.cmd:gsub("$project_name", name),
+        string.format("  Creating Java project '%s' via %s...", name, selected.name)
       )
       finalize_project(target_path, selected.name)
       return
