@@ -395,7 +395,6 @@ M.bootstrap_project = function()
     end
 
     -- Spring Boot Handling
-    -- Spring Boot Handling
     if selected.name:find("Spring Boot") then
       vim.ui.select(
         { "Maven", "Gradle (Kotlin)", "Gradle (Groovy)" },
@@ -414,77 +413,87 @@ M.bootstrap_project = function()
             type_flag = "-d type=gradle-project"
           end
 
-          vim.notify("  Selected " .. build_tool, vim.log.levels.INFO)
-          vim.notify("  Fetching available Spring Boot dependencies...", vim.log.levels.INFO)
-
-          local ok, metadata_json = pcall(function()
-            return vim.fn.system("curl -s https://start.spring.io/metadata/client")
-          end)
-          if not ok or metadata_json == "" then
-            vim.notify("  Failed to fetch Spring Boot metadata!", vim.log.levels.ERROR)
-            return
-          end
-
-          local ok2, metadata = pcall(vim.fn.json_decode, metadata_json)
-          if not ok2 or not metadata or not metadata.dependencies then
-            vim.notify("  Could not parse Spring Boot metadata.", vim.log.levels.ERROR)
-            return
-          end
-
-          local deps = {}
-          for _, group in ipairs(metadata.dependencies.values) do
-            for _, dep in ipairs(group.values or {}) do
-              table.insert(deps, {
-                label = string.format("%-25s — %s", dep.id, dep.name or dep.description or ""),
-                id = dep.id,
-              })
+          -- IntelliJ Style Step: Select Java Target Runtime
+          vim.ui.select({ "25", "21", "17" }, { prompt = "  Select Java Version:" }, function(java_version)
+            if not java_version then
+              return
             end
-          end
+            local java_flag = "-d javaVersion=" .. java_version
 
-          if #deps == 0 then
-            vim.notify("  No dependencies found from Spring Initializr!", vim.log.levels.WARN)
-            return
-          end
+            vim.notify("  Selected " .. build_tool .. " with Java " .. java_version, vim.log.levels.INFO)
+            vim.notify("  Fetching available Spring Boot dependencies...", vim.log.levels.INFO)
 
-          local selected_deps = {}
-          local function pick_dependencies()
-            vim.ui.select(
-              vim.tbl_map(function(d)
-                return d.label
-              end, deps),
-              { prompt = "  Select dependencies (Enter to confirm, ESC when done)", kind = "multi" },
-              function(choice)
-                if choice then
-                  local dep = vim.tbl_filter(function(d)
-                    return d.label == choice
-                  end, deps)[1]
-                  if dep then
-                    table.insert(selected_deps, dep.id)
-                  end
-                  pick_dependencies()
-                else
-                  local deps_str = table.concat(selected_deps, ",")
-                  -- Changed from com.example.%s to com.%s to target the structural root cleanly
-                  local cmd = string.format(
-                    "mkdir %s && cd %s && curl -s https://start.spring.io/starter.zip %s -d dependencies=%s -d name=%s -d packageName=com.%s -o %s.zip && unzip %s.zip && rm %s.zip",
-                    name,
-                    name,
-                    type_flag,
-                    deps_str ~= "" and deps_str or "web",
-                    name,
-                    name,
-                    name,
-                    name,
-                    name
-                  )
-                  run_in_terminal(dir, cmd, "  Creating Spring Boot project '" .. name .. "'...")
-                  finalize_project(target_path, selected.name, name)
-                end
+            local ok, metadata_json = pcall(function()
+              return vim.fn.system("curl -s https://start.spring.io/metadata/client")
+            end)
+            if not ok or metadata_json == "" then
+              vim.notify("  Failed to fetch Spring Boot metadata!", vim.log.levels.ERROR)
+              return
+            end
+
+            local ok2, metadata = pcall(vim.fn.json_decode, metadata_json)
+            if not ok2 or not metadata or not metadata.dependencies then
+              vim.notify("  Could not parse Spring Boot metadata.", vim.log.levels.ERROR)
+              return
+            end
+
+            local deps = {}
+            for _, group in ipairs(metadata.dependencies.values) do
+              for _, dep in ipairs(group.values or {}) do
+                table.insert(deps, {
+                  label = string.format("%-25s — %s", dep.id, dep.name or dep.description or ""),
+                  id = dep.id,
+                })
               end
-            )
-          end
+            end
 
-          pick_dependencies()
+            if #deps == 0 then
+              vim.notify("  No dependencies found from Spring Initializr!", vim.log.levels.WARN)
+              return
+            end
+
+            local selected_deps = {}
+            local function pick_dependencies()
+              vim.ui.select(
+                vim.tbl_map(function(d)
+                  return d.label
+                end, deps),
+                { prompt = "  Select dependencies (Enter to confirm, ESC when done)", kind = "multi" },
+                function(choice)
+                  if choice then
+                    local dep = vim.tbl_filter(function(d)
+                      return d.label == choice
+                    end, deps)[1]
+                    if dep then
+                      table.insert(selected_deps, dep.id)
+                    end
+                    pick_dependencies()
+                  else
+                    local deps_str = table.concat(selected_deps, ",")
+
+                    -- Injected type_flag and java_flag values directly into the zip initialization
+                    local cmd = string.format(
+                      "mkdir %s && cd %s && curl -s https://start.spring.io/starter.zip %s %s -d dependencies=%s -d name=%s -d packageName=com.%s -o %s.zip && unzip %s.zip && rm %s.zip",
+                      name,
+                      name,
+                      type_flag,
+                      java_flag,
+                      deps_str ~= "" and deps_str or "web",
+                      name,
+                      name,
+                      name,
+                      name,
+                      name
+                    )
+                    run_in_terminal(dir, cmd, "  Creating Spring Boot project '" .. name .. "'...")
+                    finalize_project(target_path, selected.name, name)
+                  end
+                end
+              )
+            end
+
+            pick_dependencies()
+          end)
         end
       )
       return
