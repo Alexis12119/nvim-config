@@ -285,6 +285,7 @@ M.run_code = function()
     },
     java = {
       ["󰐊  Run Main Class"] = function()
+        vim.cmd("JavaBuildBuildWorkspace")
         vim.cmd("JavaRunnerRunMain")
       end,
       ["󰗨  Run with Arguments"] = function()
